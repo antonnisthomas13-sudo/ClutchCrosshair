@@ -333,6 +333,7 @@ main h2::before {
     justify-content: center;
     font-weight: 800;
     object-fit: cover;
+    object-position: center top;
 }
 
 /* ===== Cartes Trending ===== */
@@ -429,6 +430,7 @@ footer {
     font-size: 40px;
     font-weight: 800;
     object-fit: cover;
+    object-position: center top;
 }
 
 #modal-name {
@@ -545,7 +547,7 @@ footer {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 560 / 220;
+    aspect-ratio: 560 / 160;
     border-radius: 10px;
     border: 1px solid var(--line);
     image-rendering: pixelated;

@@ -1,6 +1,199 @@
 [
-    { "name": "donk", "team": "Team Spirit", "category": "pro", "code": "CSGO-O4Jsi-V36wY-rTMGK-9w7qF-jQ8WB", "updated": "15/10/2026", "trending": true },
-    { "name": "ZywOo", "team": "Team Vitality", "category": "pro", "code": "CSGO-BBBBB-BBBBB-BBBBB-BBBBB-BBBBB", "updated": "12/10/2026", "trending": true },
-    { "name": "m0NESY", "team": "Falcons", "category": "pro", "code": "CSGO-CCCCC-CCCCC-CCCCC-CCCCC-CCCCC", "updated": "10/10/2026", "trending": false },
-    { "name": "Maj3r", "team": "Creator", "category": "creator", "country": "tr", "code": "CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD", "updated": "08/10/2026", "trending": true }
+    {
+        "name": "donk",
+        "team": "Team Spirit",
+        "category": "pro",
+        "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+        "updated": "17/10/2026",
+        "trending": true,
+        "steamid": "76561198386265483"
+    },
+    {
+        "name": "ZywOo",
+        "team": "Team Vitality",
+        "category": "pro",
+        "code": "CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H",
+        "updated": "17/10/2026",
+        "trending": true,
+        "steamid": "76561198113666193"
+    },
+    {
+        "name": "m0NESY",
+        "team": "Falcons",
+        "category": "pro",
+        "code": "CSGO-CCCCC-CCCCC-CCCCC-CCCCC-CCCCC",
+        "updated": "10/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Maj3r",
+        "team": "Creator",
+        "category": "creator",
+        "country": "tr",
+        "code": "CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD",
+        "updated": "08/10/2026",
+        "trending": true
+    },
+    {
+        "name": "mezii",
+        "steamid": "76561197973140692",
+        "team": "Team Vitality",
+        "category": "pro",
+        "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "flameZ",
+        "steamid": "76561197978835160",
+        "team": "Team Vitality",
+        "category": "pro",
+        "code": "CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "apEX",
+        "steamid": "76561197989744167",
+        "team": "Team Vitality",
+        "category": "pro",
+        "code": "CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "ropz",
+        "steamid": "76561197991272318",
+        "team": "Team Vitality",
+        "category": "pro",
+        "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Spinx",
+        "steamid": "76561198063336407",
+        "team": "MOUZ",
+        "category": "pro",
+        "code": "CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "xertioN",
+        "steamid": "76561198193174134",
+        "team": "MOUZ",
+        "category": "pro",
+        "code": "CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "PR",
+        "steamid": "76561198310561479",
+        "team": "MOUZ",
+        "category": "pro",
+        "code": "CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "torzsi",
+        "steamid": "76561198355739212",
+        "team": "MOUZ",
+        "category": "pro",
+        "code": "CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "xelex",
+        "steamid": "76561198998266210",
+        "team": "MOUZ",
+        "category": "pro",
+        "code": "CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "XANTARES",
+        "steamid": "76561198044118796",
+        "team": "Aurora",
+        "category": "pro",
+        "code": "CSbTEaGDR5GhNAifhXfx8dnavVdRCvsLSCeTDvSS8ndJQE",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "kyxsan",
+        "steamid": "76561198057282432",
+        "team": "Aurora",
+        "category": "pro",
+        "code": "CSQaHG2Moau8ecdQzGUHEAPn6i9auNVGRCc6r77f9Hxcjb",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "sh1ro",
+        "steamid": "76561198081484775",
+        "team": "Team Spirit",
+        "category": "pro",
+        "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "woxic",
+        "steamid": "76561198083485506",
+        "team": "Aurora",
+        "category": "pro",
+        "code": "CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Wicadia",
+        "steamid": "76561198812513923",
+        "team": "Aurora",
+        "category": "pro",
+        "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Jimpphat",
+        "steamid": "76561198855375325",
+        "team": "Aurora",
+        "category": "pro",
+        "code": "CSS3icJJQwV55YBzYH92DceaxScLJYKMhkQWdzLxWncaNP",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "tN1R",
+        "steamid": "76561198872013168",
+        "team": "Team Spirit",
+        "category": "pro",
+        "code": "CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "zont1x",
+        "steamid": "76561198995880877",
+        "team": "Team Spirit",
+        "category": "pro",
+        "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "magixx",
+        "steamid": "76561199063238565",
+        "team": "Team Spirit",
+        "category": "pro",
+        "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
+        "updated": "17/10/2026",
+        "trending": false
+    }
 ]

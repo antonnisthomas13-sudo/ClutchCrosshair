@@ -1,5 +1,5 @@
 // ===== Librairie qui décode les codes de partage CS2 =====
-import { decodeCrosshairShareCode, crosshairToConVars } from "https://cdn.jsdelivr.net/npm/csgo-sharecode@5.0.0/+esm";
+import { decodeCrosshairShareCode, crosshairToConVars } from "https://cdn.jsdelivr.net/npm/csgo-sharecode@7.0.1/+esm";
 
 // Transforme "CSGO-XXXXX-..." en commandes console sur une seule ligne
 function consoleCommands(code) {
@@ -13,20 +13,39 @@ function consoleCommands(code) {
 
 // ===== Aperçu visuel du crosshair =====
 
-// Couleurs de base de CS2 (cl_crosshaircolor 0 à 4). La 5 = couleur perso (R, G, B)
+// Couleurs de base de CS:GO (anciens codes) : 0 à 4. La 5 = couleur perso (R, G, B)
 const CS_COLORS = [[250, 50, 50], [50, 250, 50], [250, 250, 50], [50, 50, 250], [50, 250, 250]];
 
-// Dessine le crosshair dans un <canvas>, sur un fond moitié clair / moitié sombre
+// Fond de l'aperçu : sombre avec une grille discrète
+function drawBackground(ctx, w, h) {
+    const r = ctx.createRadialGradient(w / 2, h / 2, 10, w / 2, h / 2, w * 0.6);
+    r.addColorStop(0, "#232A33");
+    r.addColorStop(1, "#0C0F13");
+    ctx.fillStyle = r;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
+    ctx.lineWidth = 1;
+    for (let x = (w / 2) % 40; x < w; x += 40) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+    }
+    for (let y = (h / 2) % 40; y < h; y += 40) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+    }
+}
+
+// Dessine le crosshair dans un <canvas>
 function drawCrosshair(canvas, code) {
     const ctx = canvas.getContext("2d");
     const w = canvas.width;
     const h = canvas.height;
-
-    // Fond : sable à gauche, mur sombre à droite (pour voir s'il reste lisible partout)
-    ctx.fillStyle = "#C8B38A";
-    ctx.fillRect(0, 0, w / 2, h);
-    ctx.fillStyle = "#2A3036";
-    ctx.fillRect(w / 2, 0, w / 2, h);
+    drawBackground(ctx, w, h);
 
     let c;
     try {
@@ -40,39 +59,53 @@ function drawCrosshair(canvas, code) {
         return;
     }
 
-    const zoom = 4; // on agrandit pour bien voir
-    const rgb = c.color === 5 || !CS_COLORS[c.color] ? [c.red, c.green, c.blue] : CS_COLORS[c.color];
-    const alpha = c.alphaEnabled ? c.alpha / 255 : 1;
-    const length = Math.round((c.length ?? c.size ?? 5) * 2 * zoom);
-    const thick = Math.max(zoom, Math.round(c.thickness * 2 * zoom));
-    const gap = Math.max(-Math.floor(thick / 2), Math.round((c.gap + 4) * zoom));
+    let rgb, alpha, length, thick, gap, outline, outlineColor;
+    const zoom = 3; // agrandissement de l'aperçu
+
+    if (c.format === "legacy-v1") {
+        // Ancien code CS:GO (CSGO-xxxxx-...)
+        rgb = c.color === 5 || !CS_COLORS[c.color] ? [c.red, c.green, c.blue] : CS_COLORS[c.color];
+        alpha = c.alphaEnabled ? c.alpha / 255 : 1;
+        length = Math.round((c.length ?? 5) * 2 * zoom);
+        thick = Math.max(zoom, Math.round(c.thickness * 2 * zoom));
+        gap = Math.round((c.gap + 4) * zoom);
+        outline = c.outlineEnabled ? Math.max(1, Math.round(c.outline * zoom)) : 0;
+        outlineColor = "rgba(0, 0, 0, " + alpha + ")";
+    } else {
+        // Nouveau code CS2 (CS...) : tailles en pixels pour la hauteur d'écran du joueur
+        const scale = zoom * 1080 / (c.screenHeight || 1080);
+        rgb = [c.red, c.green, c.blue];
+        alpha = c.alpha / 255;
+        length = Math.max(1, Math.round(c.length * scale));
+        thick = Math.max(2, Math.round(c.thickness * scale));
+        gap = Math.round(c.gap * scale);
+        outline = c.outlineMode > 0 ? 2 : 0;
+        outlineColor = "rgba(" + (c.outlineRed ?? 0) + ", " + (c.outlineGreen ?? 0) + ", " + (c.outlineBlue ?? 0) + ", " + ((c.outlineAlpha ?? 255) / 255) + ")";
+    }
+
     const half = Math.floor(thick / 2);
     const cx = Math.round(w / 2);
     const cy = Math.round(h / 2);
+    const start = half + gap; // distance entre le centre et le début de chaque trait
 
-    // Les 4 traits (x, y, largeur, hauteur)
     const bars = [
-        [cx + gap, cy - half, length, thick],          // droite
-        [cx - gap - length, cy - half, length, thick], // gauche
-        [cx - half, cy + gap, thick, length]           // bas
+        [cx + start, cy - half, length, thick],
+        [cx - start - length, cy - half, length, thick],
+        [cx - half, cy + start, thick, length]
     ];
     if (!c.tStyleEnabled) {
-        bars.push([cx - half, cy - gap - length, thick, length]); // haut (absent en style T)
+        bars.push([cx - half, cy - start - length, thick, length]);
     }
     if (c.centerDotEnabled) {
-        bars.push([cx - half, cy - half, thick, thick]); // point central
+        bars.push([cx - half, cy - half, thick, thick]);
     }
 
-    // Contour noir
-    if (c.outlineEnabled) {
-        const o = Math.max(1, Math.round(c.outline * zoom));
-        ctx.fillStyle = "rgba(0, 0, 0, " + alpha + ")";
+    if (outline > 0) {
+        ctx.fillStyle = outlineColor;
         bars.forEach(function (b) {
-            ctx.fillRect(b[0] - o, b[1] - o, b[2] + o * 2, b[3] + o * 2);
+            ctx.fillRect(b[0] - outline, b[1] - outline, b[2] + outline * 2, b[3] + outline * 2);
         });
     }
-
-    // Le crosshair
     ctx.fillStyle = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
     bars.forEach(function (b) {
         ctx.fillRect(b[0], b[1], b[2], b[3]);
@@ -188,7 +221,7 @@ function buildSite(players) {
                     <span class="team">${teamBadge(player.team)}${player.team}</span>
                 </div>
             </div>
-            <canvas class="preview" width="560" height="220"></canvas>
+            <canvas class="preview" width="560" height="160"></canvas>
             <div class="field">
                 <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
                 <div class="field-row">
@@ -218,11 +251,13 @@ function buildSite(players) {
             copyText(card.querySelector(".console").textContent, event.target);
         });
 
-        // Clic sur la carte = fiche (sauf sur un bouton ou le lien du nom)
+        // Clic sur la carte (ou sur le nom) = fiche du joueur (sauf sur un bouton Copy)
+        // Le lien du nom reste là pour Google, mais on ouvre la fiche à la place
         card.addEventListener("click", function (event) {
-            if (event.target.tagName === "BUTTON" || event.target.tagName === "A") {
+            if (event.target.tagName === "BUTTON") {
                 return;
             }
+            event.preventDefault();
             openPlayer(player);
         });
 
@@ -423,13 +458,26 @@ modalCopyConsole.addEventListener("click", function () {
     copyText(document.getElementById("modal-console").textContent, modalCopyConsole);
 });
 
-// 9. Photo du joueur (ou ses initiales s'il n'a pas encore de photo)
-function photoHTML(player, className) {
-    if (player.photo) {
-        return `<img class="${className}" src="${player.photo}" alt="${player.name}">`;
+// 9. Photo du joueur : on cherche photos/pseudo.png (puis .webp, puis .jpg)
+//    S'il n'y a aucune photo, on affiche ses initiales
+window.photoFallback = function (img) {
+    const formats = ["webp", "jpg"];
+    const step = Number(img.dataset.step || 0);
+    if (step < formats.length) {
+        img.dataset.step = step + 1;
+        img.src = img.src.replace(/\.\w+$/, "." + formats[step]);
+    } else {
+        const div = document.createElement("div");
+        div.className = img.className;
+        div.textContent = img.dataset.initials;
+        img.replaceWith(div);
     }
+};
+
+function photoHTML(player, className) {
     const initials = player.name.slice(0, 2).toUpperCase();
-    return `<div class="${className}">${initials}</div>`;
+    const src = player.photo || "photos/" + slug(player.name) + ".png";
+    return `<img class="${className}" src="${src}" alt="${player.name}" data-initials="${initials}" onerror="photoFallback(this)">`;
 }
 
 // 10. Transforme un nom en adresse propre : "ZywOo" -> "zywoo"
