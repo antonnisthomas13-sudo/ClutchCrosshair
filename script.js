@@ -24,7 +24,7 @@ function buildSite(players) {
         const card = document.createElement("article");
         card.className = "card";
         card.innerHTML = `
-            <img src="" alt="${player.name} photo">
+            ${photoHTML(player, "card-photo")}
             <h3>${player.name}</h3>
             <span class="team">${player.team}</span>
             <p>${player.code}</p>
@@ -43,6 +43,35 @@ function buildSite(players) {
         } else {
             document.getElementById("creators").appendChild(card);
         }
+    });
+
+    // Section Trending : uniquement les joueurs avec "trending": true
+    players.forEach(function (player) {
+        if (!player.trending) {
+            return;
+        }
+
+        const trend = document.createElement("article");
+        trend.className = "trend-card";
+        trend.innerHTML = `
+            <h3>${player.name}</h3>
+            <span>${player.team}</span>
+            <button>Copy</button>
+        `;
+
+        trend.querySelector("button").addEventListener("click", function (event) {
+            navigator.clipboard.writeText(player.code);
+            event.target.textContent = "Copied!";
+        });
+
+        trend.addEventListener("click", function (event) {
+            if (event.target.tagName === "BUTTON") {
+                return;
+            }
+            openPlayer(player);
+        });
+
+        document.getElementById("trending").appendChild(trend);
     });
 
     // 2. Bouton Copy
@@ -133,6 +162,7 @@ const modalCopy = document.getElementById("modal-copy");
 
 function openPlayer(player) {
     document.getElementById("modal-name").textContent = player.name;
+    document.getElementById("modal-photo").innerHTML = photoHTML(player, "modal-img");
     document.getElementById("modal-team").textContent = player.team;
     document.getElementById("modal-date").textContent = "Last update: " + player.updated;
     document.getElementById("modal-code").textContent = player.code;
@@ -163,3 +193,12 @@ modalCopy.addEventListener("click", function () {
     navigator.clipboard.writeText(code);
     modalCopy.textContent = "Copied!";
 });
+
+// 7. Photo du joueur (ou ses initiales s'il n'a pas encore de photo)
+function photoHTML(player, className) {
+    if (player.photo) {
+        return `<img class="${className}" src="${player.photo}" alt="${player.name}">`;
+    }
+    const initials = player.name.slice(0, 2).toUpperCase();
+    return `<div class="${className}">${initials}</div>`;
+}
