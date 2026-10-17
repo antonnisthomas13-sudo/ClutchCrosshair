@@ -5,40 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS2 Crosshair Codes of Pro Players & Creators | ClutchCrosshair</title>
     <meta name="description" content="Copy the latest CS2 crosshair codes of pro players and content creators in one click. donk, ZywOo, m0NESY and more. Browse CS2 crosshairs by team.">
+    <link rel="icon" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>ClutchCrosshair</h1>
-        <p class="tagline">CS2 crosshair codes of pro players and creators</p>
-        <input type="text" id="search" placeholder="Search a CS2 player, team or creator...">
-        <button id="theme-toggle">Light mode</button>
-    </header>
+    <div class="layout">
 
-    <nav id="teams"></nav>
+        <aside class="sidebar">
+            <a href="index.html" class="logo">
+                <img class="logo-img logo-dark" src="logo-horizontal-dark.svg" alt="ClutchCrosshair">
+                <img class="logo-img logo-light" src="logo-horizontal-light.svg" alt="ClutchCrosshair">
+            </a>
 
-    <main>
-        <section id="trending">
-            <h2>Trending CS2 Crosshairs</h2>
-        </section>
+            <p class="side-title">Pro teams</p>
+            <nav id="teams" class="side-nav"></nav>
 
-        <section id="pros">
-            <h2>CS2 Pro Crosshairs</h2>
-        </section>
+            <p class="side-title">Creators by country</p>
+            <nav id="countries" class="side-nav"></nav>
+        </aside>
 
-        <section id="creators">
-            <h2>CS2 Creator Crosshairs</h2>
-        </section>
-    </main>
+        <div class="content">
+            <header class="topbar">
+                <input type="text" id="search" placeholder="Search a CS2 player, team or creator...">
+                <button id="theme-toggle">Light mode</button>
+            </header>
 
-    <div class="about">
-        <h2>Find the best CS2 crosshair</h2>
-        <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Click Copy, then in CS2 go to Settings › Game › Crosshair › Share or Import and paste the code.</p>
+            <div class="hero">
+                <h1>CS2 Crosshair Codes</h1>
+                <p>The latest crosshairs of CS2 pro players and creators. One click to copy.</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="home">Crosshairs</button>
+                <button class="tab" data-tab="trending">Trending</button>
+            </div>
+
+            <main>
+                <div id="tab-home" class="tab-panel">
+                    <section id="pros">
+                        <h2>CS2 Pro Crosshairs</h2>
+                    </section>
+
+                    <section id="creators">
+                        <h2>CS2 Creator Crosshairs</h2>
+                    </section>
+
+                    <p id="empty" class="empty hidden">No crosshair here yet. More players coming soon!</p>
+                </div>
+
+                <div id="tab-trending" class="tab-panel hidden">
+                    <section id="trending">
+                        <h2>Trending CS2 Crosshairs</h2>
+                    </section>
+                </div>
+            </main>
+
+            <div class="about">
+                <h2>Find the best CS2 crosshair</h2>
+                <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Click Copy, then in CS2 go to Settings › Game › Crosshair and import the code.</p>
+            </div>
+
+            <footer>
+                <p>© 2026 ClutchCrosshair. All rights reserved.</p>
+            </footer>
+        </div>
     </div>
-
-    <footer>
-        <p>© 2026 ClutchCrosshair. All rights reserved.</p>
-    </footer>
 
     <div id="modal" class="modal hidden">
         <div class="modal-box">

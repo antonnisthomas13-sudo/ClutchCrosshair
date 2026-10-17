@@ -1,244 +1,295 @@
+/* ===== Les couleurs du site (variables) ===== */
+:root {
+    --bg: #0E1114;
+    --sidebar: #12161A;
+    --panel: #161A1F;
+    --panel2: #1C2128;
+    --line: #272D35;
+    --text: #EEF1F4;
+    --muted: #97A1AD;
+    --accent: #E3262E;
+    --accent-strong: #FF4A52;
+    --accent2: #A78BFA;
+    --accent-text: #FFFFFF;
+    --glow1: rgba(227, 38, 46, 0.12);
+    --glow2: rgba(167, 139, 250, 0.08);
+}
+
+/* Mode clair : on change juste les variables */
+body.light {
+    --bg: #F4F5F7;
+    --sidebar: #FFFFFF;
+    --panel: #FFFFFF;
+    --panel2: #F1F3F5;
+    --line: #DDE1E6;
+    --text: #12161B;
+    --muted: #5B6573;
+    --accent-strong: #C81E26;
+    --glow1: rgba(227, 38, 46, 0.12);
+    --glow2: rgba(167, 139, 250, 0.12);
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
 body {
-background-color: #1a1a1a;
-color: white;
-font-family: Arial, sans-serif;
+    margin: 0;
+    color: var(--text);
+    font-family: "Sora", system-ui, sans-serif;
+    background:
+        radial-gradient(900px 400px at 80% -10%, var(--glow1), transparent),
+        radial-gradient(700px 400px at 10% 0%, var(--glow2), transparent),
+        var(--bg);
+    background-attachment: fixed;
+    transition: color 0.25s;
 }
 
-.card {
-background-color: #2a2a2a;
-padding: 16px;
-margin: 12px;
-border-radius: 8px;
-}
-
-header {
-padding: 20px;
-text-align: center;
-}
-
-h2 {
-padding-left: 12px;
-padding-top: 24px;
-width: 100%;
+a {
+    color: var(--accent-strong);
 }
 
 button {
-background-color: #4caf50;
-color: white;
-border: none;
-padding: 10px 16px;
-border-radius: 6px;
-cursor: pointer;
-font-weight: bold;
-}
-
-#search {
-width: 300px;
-padding: 10px;
-border: 1px solid #444;
-border-radius: 6px;
-font-size: 14px;
-background-color: #3a3a3a;
-color: white;
-}
-
-section {
-display: flex;
-flex-wrap: wrap;
-}
-
-main {
-padding-top: 10px;
-}
-
-body.light {
-    background-color: #f2f2f2;
-    color: #1a1a1a;
-}
-
-body.light .card {
-    background-color: white;
-}
-
-body.light #search {
-    background-color: white;
-    color: #1a1a1a;
-    border: 1px solid #ccc;
-}
-
-#teams {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 0 12px;
-}
-
-.team-btn {
-    background-color: #2a2a2a;
-    color: white;
-}
-
-.team-btn.active {
-    background-color: #4caf50;
-}
-
-body.light .team-btn {
-    background-color: white;
-    color: #1a1a1a;
-}
-
-body.light .team-btn.active {
-    background-color: #4caf50;
-    color: white;
-}
-
-.card {
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
     cursor: pointer;
 }
 
-.modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
+.hidden {
+    display: none !important;
 }
 
-.modal.hidden {
+/* ===== Mise en page : menu à gauche + contenu à droite ===== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background-color: var(--sidebar);
+    border-right: 1px solid var(--line);
+    padding: 24px 16px;
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Logo (version sombre ou claire selon le mode) ===== */
+.logo {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+}
+
+.logo-light {
     display: none;
 }
 
-.modal-box {
-    position: relative;
-    background-color: #2a2a2a;
-    border-radius: 16px;
-    padding: 32px;
-    width: 100%;
-    max-width: 420px;
-    text-align: center;
+body.light .logo-dark {
+    display: none;
 }
 
-.modal-photo {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background-color: #1a1a1a;
-    border: 3px solid #4caf50;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-}
-
-.modal-team,
-.modal-date {
-    color: #aaa;
-    margin: 4px 0;
-}
-
-.modal-code {
-    font-family: monospace;
-    background-color: #1a1a1a;
-    padding: 12px;
-    border-radius: 8px;
-    word-break: break-all;
-}
-
-.modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: transparent;
-    color: white;
-    font-size: 18px;
-}
-
-body.light .modal-box {
-    background-color: white;
-}
-
-body.light .modal-code,
-body.light .modal-photo {
-    background-color: #f2f2f2;
-}
-
-body.light .modal-close {
-    color: #1a1a1a;
-}
-
-.trend-card {
-    background-color: #2a2a2a;
-    padding: 16px;
-    margin: 12px;
-    border-radius: 8px;
-    border: 2px solid #4caf50;
-    min-width: 180px;
-    cursor: pointer;
-}
-
-.trend-card h3 {
-    margin: 0 0 4px;
-}
-
-.trend-card span {
+body.light .logo-light {
     display: block;
-    color: #aaa;
-    margin-bottom: 12px;
 }
 
-body.light .trend-card {
-    background-color: white;
+.side-title {
+    margin: 24px 0 10px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 
-.card-photo {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: #3a3a3a;
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.side-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    font-weight: bold;
+    gap: 10px;
+    padding: 12px;
+    background-color: transparent;
+    color: var(--text);
+    text-align: left;
+    font-weight: 600;
+}
+
+.side-btn:hover,
+.side-btn.active {
+    background-color: var(--panel2);
+}
+
+.flag {
+    width: 22px;
+    height: 15px;
+    border-radius: 3px;
     object-fit: cover;
 }
 
-.modal-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+/* ===== Barre du haut ===== */
+.topbar {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 44px;
-    font-weight: bold;
-    color: white;
-    object-fit: cover;
+    gap: 12px;
+    padding: 18px 32px;
+    border-bottom: 1px solid var(--line);
 }
 
-body.light .card-photo {
-    background-color: #e6e6e6;
-}
-
-body.light .modal-img {
-    color: #1a1a1a;
-}
-
-.tagline {
-    color: #aaa;
-    margin: 0 0 16px;
-}
-
-.about {
-    max-width: 800px;
-    margin: 40px auto 0;
+#search {
+    flex: 1;
+    max-width: 560px;
+    height: 46px;
     padding: 0 16px;
-    color: #aaa;
-    line-height: 1.6;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+#search:focus {
+    border-color: var(--accent);
+}
+
+#theme-toggle {
+    margin-left: auto;
+    background-color: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+/* ===== Titre principal ===== */
+.hero {
+    padding: 32px 32px 0;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, var(--text) 40%, var(--accent-strong));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+/* ===== Onglets ===== */
+.tabs {
+    display: flex;
+    gap: 8px;
+    padding: 24px 32px 0;
+}
+
+.tab {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--muted);
+}
+
+.tab.active {
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border-color: transparent;
+}
+
+/* ===== Sections de cartes ===== */
+main {
+    padding: 0 32px 32px;
+}
+
+#trending,
+#pros,
+#creators {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+main h2 {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+
+main h2::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.empty {
+    margin-top: 32px;
+    color: var(--muted);
+}
+
+/* ===== Carte joueur ===== */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--team, var(--accent));
+    background-color: var(--panel);
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: var(--team, var(--accent));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
 }
 
 .card h3 a {
@@ -250,14 +301,212 @@ body.light .modal-img {
     text-decoration: underline;
 }
 
+.team {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.card p {
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--panel2);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.date {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.card-photo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid var(--team, var(--accent));
+    background-color: var(--panel2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    object-fit: cover;
+}
+
+/* ===== Cartes Trending ===== */
+.trend-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--team, var(--accent)) 18%, transparent), var(--panel) 60%);
+    cursor: pointer;
+}
+
+.trend-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.trend-card h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.trend-card button {
+    padding: 8px 12px;
+}
+
+/* ===== Texte SEO + pied de page ===== */
+.about {
+    max-width: 800px;
+    padding: 0 32px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.about h2 {
+    color: var(--text);
+    font-size: 20px;
+}
+
+footer {
+    margin-top: auto;
+    padding: 24px 32px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ===== Fiche joueur (fenêtre) ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    text-align: center;
+}
+
+.modal-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent);
+    background-color: var(--panel2);
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 800;
+    object-fit: cover;
+}
+
+#modal-name {
+    margin: 8px 0 0;
+}
+
+.modal-team,
+.modal-date {
+    margin: 0;
+    color: var(--muted);
+}
+
+.modal-code {
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: var(--panel2);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 10px;
+    background-color: transparent;
+    color: var(--text);
+    font-size: 18px;
+}
+
+/* ===== Pages joueurs (players/...) ===== */
 .player-page {
     max-width: 600px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
 }
 
 .back-link {
-    color: #4caf50;
+    display: inline-block;
+    margin: 24px;
+    color: var(--accent-strong);
     text-decoration: none;
+}
+
+/* ===== Téléphone ===== */
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .side-nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .side-btn {
+        white-space: nowrap;
+    }
+
+    .topbar,
+    .hero,
+    .tabs,
+    main,
+    .about,
+    footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
