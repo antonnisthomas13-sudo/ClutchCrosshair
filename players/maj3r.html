@@ -4,30 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maj3r CS2 Crosshair Code (2026) | ClutchCrosshair</title>
-    <meta name="description" content="Copy Maj3r's latest CS2 crosshair code (Creator). Updated 08/10/2026. One click to copy and import in Counter-Strike 2.">
+    <meta name="description" content="Copy Maj3r&#39;s CS2 crosshair code (Creator), with a live preview and console commands. Updated 08/10/2026.">
     <link rel="canonical" href="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/maj3r.html">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:title" content="Maj3r CS2 Crosshair Code">
+    <meta property="og:description" content="Copy Maj3r&#39;s CS2 crosshair code (Creator), with a live preview and console commands. Updated 08/10/2026.">
+    <meta property="og:url" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/maj3r.html">
+    <meta property="og:image" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/preview-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#E3262E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=14">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CS2 Crosshairs","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/"},{"@type":"ListItem","position":2,"name":"Maj3r crosshair","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/maj3r.html"}]}</script>
 </head>
-<body>
-    <header>
-        <a href="../index.html" class="back-link">← All CS2 crosshairs</a>
-    </header>
-    <main class="player-page">
-        <h1>Maj3r CS2 Crosshair</h1>
-        <p class="modal-team">Creator</p>
-        <p class="modal-date">Last update: 08/10/2026</p>
-        <p class="modal-code" id="code">CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD</p>
-        <button id="copy">Copy crosshair</button>
-        <h2>How to use Maj3r's crosshair in CS2</h2>
-        <p>Click Copy, then in CS2 go to Settings › Game › Crosshair and import the code.</p>
-    </main>
-    <footer>
-        <p>© 2026 ClutchCrosshair. All rights reserved.</p>
-    </footer>
+<body class="page">
     <script>
-        document.getElementById("copy").addEventListener("click", function () {
-            navigator.clipboard.writeText(document.getElementById("code").textContent);
-            this.textContent = "Copied!";
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="ClutchCrosshair home">
+            <img class="logo-img logo-dark" src="../logo-horizontal-dark.svg" alt="ClutchCrosshair">
+            <img class="logo-img logo-light" src="../logo-horizontal-light.svg" alt="ClutchCrosshair">
+        </a>
+        <a href="../" class="back-link">← All CS2 crosshairs</a>
+    </header>
+
+    <main class="player-page" style="--team: #A78BFA">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <span>Maj3r</span></nav>
+
+        <div class="player-head">
+            <div class="player-photo">MA</div>
+            <div>
+                <h1>Maj3r CS2 Crosshair</h1>
+                <p class="player-team">Creator</p>
+                <p class="player-date">Last update: <time datetime="2026-10-08">08/10/2026</time></p>
+            </div>
+        </div>
+
+        <canvas id="preview" class="preview player-preview" width="760" height="300" role="img" aria-label="Maj3r CS2 crosshair preview"></canvas>
+
+        <div class="field">
+            <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
+            <div class="field-row">
+                <code id="code" class="code">CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD</code>
+                <button id="copy" class="mini">Copy</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">Console <span>· Paste in the CS2 console (~)</span></div>
+            <div class="field-row">
+                <code id="console" class="console">Invalid crosshair code</code>
+                <button id="copy-console" class="mini btn-secondary">Copy</button>
+            </div>
+        </div>
+
+        <h2>About Maj3r's crosshair</h2>
+        <p>Maj3r is a CS2 content creator. This is Maj3r's CS2 crosshair, last checked on 08/10/2026.</p>
+        
+
+        <h2>How to use Maj3r's crosshair in CS2</h2>
+        <ol>
+            <li>Click <strong>Copy</strong> next to the share code.</li>
+            <li>In CS2, open <strong>Settings › Game › Crosshair</strong>.</li>
+            <li>Click <strong>Share or Import</strong> and paste the code.</li>
+        </ol>
+        <p>Or copy the console commands, open the CS2 console (~) and paste them. <a href="../faq.html">More questions in the FAQ ›</a></p>
+
+        
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="../faq.html">FAQ</a>
+            <a href="../legal.html">Legal notice</a>
+        </nav>
+        <p>© 2026 ClutchCrosshair. All rights reserved.</p>
+        <p>Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with these teams.</p>
+    </footer>
+
+    <script type="module">
+        import { copyText, drawCrosshair } from "../crosshair.js?v=2";
+
+        drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
+
+        document.getElementById("copy").addEventListener("click", function (event) {
+            copyText(document.getElementById("code").textContent, event.target);
+        });
+        document.getElementById("copy-console").addEventListener("click", function (event) {
+            copyText(document.getElementById("console").textContent, event.target);
         });
     </script>
 </body>

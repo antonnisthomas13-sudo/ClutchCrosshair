@@ -142,13 +142,6 @@ body.light .logo-light {
     background-color: var(--panel2);
 }
 
-.flag {
-    width: 22px;
-    height: 15px;
-    border-radius: 3px;
-    object-fit: cover;
-}
-
 /* ===== Barre du haut ===== */
 .topbar {
     display: flex;
@@ -177,7 +170,7 @@ body.light .logo-light {
 }
 
 #theme-toggle {
-    margin-left: auto;
+    flex-shrink: 0;
     background-color: var(--panel);
     color: var(--text);
     border: 1px solid var(--line);
@@ -206,22 +199,58 @@ body.light .logo-light {
 /* ===== Onglets ===== */
 .tabs {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     padding: 24px 32px 0;
 }
 
-.tab {
-    padding: 10px 18px;
-    border-radius: 999px;
+/* Le cadre qui entoure les onglets */
+.tab-bar {
+    display: inline-flex;
+    gap: 4px;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 5px;
+    border-radius: 14px;
     border: 1px solid var(--line);
     background-color: var(--panel);
-    color: var(--muted);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
+.tab {
+    position: relative;
+    padding: 9px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.tab:hover {
+    background-color: var(--panel2);
+    color: var(--text);
+}
+
+/* Onglet actif : couleurs inversées (blanc en mode sombre, foncé en mode clair) + trait rouge */
 .tab.active {
+    background-color: var(--text);
+    color: var(--bg);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
     background-color: var(--accent);
-    color: var(--accent-text);
-    border-color: transparent;
+    transform: translateX(-50%);
 }
 
 /* ===== Sections de cartes ===== */
@@ -336,37 +365,9 @@ main h2::before {
     object-position: center top;
 }
 
-/* ===== Cartes Trending ===== */
-.trend-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    border-radius: 16px;
-    border: 1px solid var(--line);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--team, var(--accent)) 18%, transparent), var(--panel) 60%);
-    cursor: pointer;
-}
-
-.trend-info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.trend-card h3 {
-    margin: 0;
-    font-size: 16px;
-}
-
-.trend-card button {
-    padding: 8px 12px;
-}
-
 /* ===== Texte SEO + pied de page ===== */
 .about {
-    max-width: 800px;
+    max-width: 1000px;
     padding: 0 32px;
     color: var(--muted);
     line-height: 1.6;
@@ -463,22 +464,224 @@ footer {
     font-size: 18px;
 }
 
-/* ===== Pages joueurs (players/...) ===== */
-.player-page {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 32px 16px;
+/* Lien "Open the full crosshair page ›" en bas de la fiche */
+.modal-page-link {
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.modal-page-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Pages joueurs (players/...) et page 404 ===== */
+body.page {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    min-height: 100vh;
+}
+
+.page-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 32px;
+    border-bottom: 1px solid var(--line);
+}
+
+.page-top .logo-img {
+    height: 40px;
 }
 
 .back-link {
-    display: inline-block;
-    margin: 24px;
-    color: var(--accent-strong);
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
     text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--text);
+}
+
+.player-page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.6;
+}
+
+.player-page h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.player-page h2 {
+    margin: 20px 0 0;
+    font-size: 20px;
+}
+
+.player-page p,
+.player-page ol {
+    margin: 0;
+    color: var(--muted);
+}
+
+.player-page strong {
+    color: var(--text);
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.breadcrumb a {
+    color: var(--muted);
+}
+
+.player-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.player-photo {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 3px solid var(--team, var(--accent));
+    background-color: var(--panel2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 800;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.player-team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.player-team-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.player-preview {
+    aspect-ratio: 760 / 300;
+}
+
+/* Réglages détaillés du crosshair */
+.specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin: 0;
+}
+
+.specs div {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+}
+
+.specs dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.specs dd {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 0;
+    font-weight: 600;
+}
+
+.swatch {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+}
+
+/* Liens vers les coéquipiers */
+.related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.related a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.related a:hover {
+    border-color: var(--team, var(--accent));
+}
+
+.not-found {
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* ===== Liste de tous les joueurs (en bas de l'accueil, écrite par build.js) ===== */
+.about h3 {
+    margin: 18px 0 4px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.about p {
+    margin: 0 0 8px;
+}
+
+.directory {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 24px;
+}
+
+.directory a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.directory a:hover {
+    color: var(--text);
+    text-decoration: underline;
 }
 
 /* ===== Code de partage + commandes console ===== */
@@ -681,6 +884,139 @@ body.light .team-badge img[src*="fut"] {
     margin-top: 16px;
 }
 
+/* ===== Bas du menu de gauche : réseaux sociaux + contact ===== */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-footer {
+    margin-top: auto; /* pousse le bloc tout en bas du menu */
+    padding-top: 16px;
+}
+
+.socials {
+    display: flex;
+    gap: 8px;
+    padding: 0 10px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--muted);
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.social svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+    color: var(--text);
+    border-color: var(--muted);
+}
+
+.social-discord:hover {
+    color: #5865F2;
+    border-color: #5865F2;
+}
+
+.social-tiktok:hover {
+    color: #25F4EE;
+    border-color: #FE2C55;
+}
+
+.contact-btn {
+    display: block;
+    margin: 12px 10px 0;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.contact-btn:hover {
+    background-color: var(--accent);
+    color: var(--accent-text);
+}
+
+.side-note {
+    margin: 6px 10px 0;
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ===== Liens du pied de page (FAQ, mentions légales) ===== */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Choix de la langue (en haut à droite) ===== */
+.lang {
+    margin-left: auto; /* pousse la langue et "Light mode" tout à droite */
+    width: 76px;
+    flex-shrink: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ===== Menu de tri (à droite des onglets) ===== */
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.sort select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 /* ===== Téléphone (TOUJOURS EN DERNIER) ===== */
 @media (max-width: 800px) {
     .layout {
@@ -710,8 +1046,49 @@ body.light .team-badge img[src*="fut"] {
     .tabs,
     main,
     .about,
-    footer {
+    footer,
+    .page-top {
         padding-left: 16px;
         padding-right: 16px;
+    }
+
+    #search {
+        min-width: 0;
+    }
+
+    /* Réseaux sociaux + contact sur une seule ligne */
+    .side-footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-top: 12px;
+    }
+
+    .side-footer .side-title,
+    .side-note {
+        display: none;
+    }
+
+    .socials {
+        padding: 0;
+    }
+
+    .contact-btn {
+        flex: 1;
+        margin: 0;
+    }
+
+    .player-head {
+        gap: 14px;
+    }
+
+    .player-photo {
+        width: 84px;
+        height: 84px;
+        font-size: 26px;
+    }
+
+    .player-page h1 {
+        font-size: 22px;
     }
 }

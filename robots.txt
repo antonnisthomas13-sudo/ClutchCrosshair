@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://antonnisthomas13-sudo.github.io/ClutchCrosshair/sitemap.xml
