@@ -1,3 +1,32 @@
+// ===== Librairie qui décode les codes de partage CS2 =====
+import { decodeCrosshairShareCode, crosshairToConVars } from "https://cdn.jsdelivr.net/npm/csgo-sharecode@5.0.0/+esm";
+
+// Transforme "CSGO-XXXXX-..." en commandes console sur une seule ligne
+function consoleCommands(code) {
+    try {
+        const crosshair = decodeCrosshairShareCode(code);
+        return crosshairToConVars(crosshair).trim().split("\n").join("; ");
+    } catch (error) {
+        return "Invalid crosshair code";
+    }
+}
+
+// Copier un texte et afficher "Copied!" 1,5 seconde sur le bouton
+function copyText(text, button) {
+    navigator.clipboard.writeText(text);
+
+    // On garde le texte d'origine du bouton (même si on clique plusieurs fois)
+    if (!button.dataset.label) {
+        button.dataset.label = button.textContent;
+    }
+    button.textContent = "Copied!";
+
+    clearTimeout(button.copyTimer);
+    button.copyTimer = setTimeout(function () {
+        button.textContent = button.dataset.label;
+    }, 1500);
+}
+
 // ===== Les données du site =====
 
 // Les équipes (le nom doit être EXACTEMENT le même que dans players.json)
@@ -9,12 +38,26 @@ const teams = [
 
 // Les pays des créateurs (code à 2 lettres = celui de "country" dans players.json)
 const countries = [
-    { code: "fr", name: "France" },
-    { code: "ua", name: "Ukraine" },
-    { code: "tr", name: "Türkiye" },
     { code: "br", name: "Brazil" },
+    { code: "ru", name: "Russia" },
+    { code: "tr", name: "Türkiye" },
+    { code: "ua", name: "Ukraine" },
     { code: "pl", name: "Poland" },
-    { code: "dk", name: "Denmark" }
+    { code: "dk", name: "Denmark" },
+    { code: "us", name: "United States" },
+    { code: "fr", name: "France" },
+    { code: "de", name: "Germany" },
+    { code: "se", name: "Sweden" },
+    { code: "kz", name: "Kazakhstan" },
+    { code: "es", name: "Spain" },
+    { code: "cz", name: "Czechia" },
+    { code: "gb", name: "United Kingdom" },
+    { code: "pt", name: "Portugal" },
+    { code: "fi", name: "Finland" },
+    { code: "mn", name: "Mongolia" },
+    { code: "ar", name: "Argentina" },
+    { code: "no", name: "Norway" },
+    { code: "ca", name: "Canada" }
 ];
 
 // Retrouver la couleur d'une équipe (violet par défaut pour les créateurs)
@@ -54,12 +97,33 @@ function buildSite(players) {
                     <span class="team">${player.team}</span>
                 </div>
             </div>
-            <p>${player.code}</p>
+            <div class="field">
+                <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">${player.code}</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span>· Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">${consoleCommands(player.code)}</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
             <span class="date">Updated ${player.updated}</span>
-            <button>Copy crosshair</button>
         `;
 
-        // Clic sur la carte = fiche (sauf sur le bouton Copy ou le lien du nom)
+        // Boutons Copy de la carte (code de partage OU commandes console)
+        card.querySelector(".copy-code").addEventListener("click", function (event) {
+            copyText(card.querySelector(".code").textContent, event.target);
+        });
+
+        card.querySelector(".copy-console").addEventListener("click", function (event) {
+            copyText(card.querySelector(".console").textContent, event.target);
+        });
+
+        // Clic sur la carte = fiche (sauf sur un bouton ou le lien du nom)
         card.addEventListener("click", function (event) {
             if (event.target.tagName === "BUTTON" || event.target.tagName === "A") {
                 return;
@@ -74,7 +138,7 @@ function buildSite(players) {
         }
     });
 
-    // Onglet Trending : uniquement les joueurs avec "trending": true
+    // 2. Onglet Trending : uniquement les joueurs avec "trending": true
     players.forEach(function (player) {
         if (!player.trending) {
             return;
@@ -93,8 +157,7 @@ function buildSite(players) {
         `;
 
         trend.querySelector("button").addEventListener("click", function (event) {
-            navigator.clipboard.writeText(player.code);
-            event.target.textContent = "Copied!";
+            copyText(player.code, event.target);
         });
 
         trend.addEventListener("click", function (event) {
@@ -105,15 +168,6 @@ function buildSite(players) {
         });
 
         document.getElementById("trending").appendChild(trend);
-    });
-
-    // 2. Bouton Copy des cartes
-    document.querySelectorAll(".card button").forEach(function (button) {
-        button.addEventListener("click", function () {
-            const code = button.parentElement.querySelector("p").textContent;
-            navigator.clipboard.writeText(code);
-            button.textContent = "Copied!";
-        });
     });
 
     // 3. Filtrer les cartes (utilisé par la recherche ET par le menu de gauche)
@@ -153,7 +207,7 @@ function buildSite(players) {
     const search = document.getElementById("search");
 
     search.addEventListener("input", function () {
-        const text = search.value.toLowerCase();
+        const text = search.value.toLowerCase().trim();
         filterCards(function (card) {
             const name = card.querySelector("h3").textContent.toLowerCase();
             const team = card.dataset.team.toLowerCase();
@@ -170,6 +224,7 @@ function buildSite(players) {
             button.style.borderLeft = "4px solid " + color;
         }
         button.addEventListener("click", function () {
+            search.value = "";
             filterCards(test, button);
         });
         container.appendChild(button);
@@ -234,6 +289,7 @@ themeButton.addEventListener("click", function () {
 // 8. Fiche joueur
 const modal = document.getElementById("modal");
 const modalCopy = document.getElementById("modal-copy");
+const modalCopyConsole = document.getElementById("modal-copy-console");
 
 function openPlayer(player) {
     document.getElementById("modal-name").textContent = player.name;
@@ -241,7 +297,7 @@ function openPlayer(player) {
     document.getElementById("modal-team").textContent = player.team;
     document.getElementById("modal-date").textContent = "Last update: " + player.updated;
     document.getElementById("modal-code").textContent = player.code;
-    modalCopy.textContent = "Copy crosshair";
+    document.getElementById("modal-console").textContent = consoleCommands(player.code);
     modal.classList.remove("hidden");
 }
 
@@ -264,9 +320,11 @@ document.addEventListener("keydown", function (event) {
 });
 
 modalCopy.addEventListener("click", function () {
-    const code = document.getElementById("modal-code").textContent;
-    navigator.clipboard.writeText(code);
-    modalCopy.textContent = "Copied!";
+    copyText(document.getElementById("modal-code").textContent, modalCopy);
+});
+
+modalCopyConsole.addEventListener("click", function () {
+    copyText(document.getElementById("modal-console").textContent, modalCopyConsole);
 });
 
 // 9. Photo du joueur (ou ses initiales s'il n'a pas encore de photo)

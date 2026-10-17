@@ -64,7 +64,7 @@
 
             <div class="about">
                 <h2>Find the best CS2 crosshair</h2>
-                <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Click Copy, then in CS2 go to Settings › Game › Crosshair and import the code.</p>
+                <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Copy the share code and import it in CS2 (Settings › Game › Crosshair), or copy the console commands and paste them in the CS2 console.</p>
             </div>
 
             <footer>
@@ -75,16 +75,30 @@
 
     <div id="modal" class="modal hidden">
         <div class="modal-box">
-            <button id="modal-close" class="modal-close">✕</button>
+            <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
             <div id="modal-photo" class="modal-photo"></div>
             <h2 id="modal-name"></h2>
             <p id="modal-team" class="modal-team"></p>
             <p id="modal-date" class="modal-date"></p>
-            <p id="modal-code" class="modal-code"></p>
-            <button id="modal-copy">Copy crosshair</button>
+
+            <div class="field">
+                <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code id="modal-code" class="code"></code>
+                    <button id="modal-copy" class="mini">Copy</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="field-label">Console <span>· Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code id="modal-console" class="console"></code>
+                    <button id="modal-copy-console" class="mini btn-secondary">Copy</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
