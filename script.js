@@ -16,8 +16,43 @@ function consoleCommands(code) {
 // Couleurs de base de CS:GO (anciens codes) : 0 à 4. La 5 = couleur perso (R, G, B)
 const CS_COLORS = [[250, 50, 50], [50, 250, 50], [250, 250, 50], [50, 50, 250], [50, 250, 250]];
 
-// Fond de l'aperçu : sombre avec une grille discrète
+// Image de fond : une vraie capture d'écran de CS2 (preview-bg.jpg)
+// Elle est chargée une seule fois ; quand elle arrive, on redessine tous les aperçus
+const bgImage = new Image();
+bgImage.src = "preview-bg.jpg";
+bgImage.onload = function () {
+    document.querySelectorAll("canvas[data-code]").forEach(function (canvas) {
+        drawCrosshair(canvas, canvas.dataset.code);
+    });
+};
+
+// Fond de l'aperçu : la capture CS2 (recadrée, un peu assombrie)
+// S'il n'y a pas encore de capture : fond sombre avec une grille discrète
 function drawBackground(ctx, w, h) {
+    if (bgImage.complete && bgImage.naturalWidth > 0) {
+        // On remplit tout l'aperçu en coupant ce qui dépasse (comme "cover" en CSS)
+        const scale = Math.max(w / bgImage.naturalWidth, h / bgImage.naturalHeight) * 1.6; // zoom de la photo
+        const iw = bgImage.naturalWidth * scale;
+        const ih = bgImage.naturalHeight * scale;
+        // Point de la photo placé derrière le crosshair (0 = bord gauche/haut, 1 = bord droit/bas)
+        const focusX = 0.38;
+        const focusY = 0.47;
+        // On décale la photo, sans jamais laisser de bord vide
+        const x = Math.min(0, Math.max(w - iw, w / 2 - focusX * iw));
+        const y = Math.min(0, Math.max(h - ih, h / 2 - focusY * ih));
+        ctx.filter = "brightness(0.8)";
+        ctx.drawImage(bgImage, x, y, iw, ih);
+        ctx.filter = "none";
+
+        // Halo sombre derrière le crosshair pour qu'il reste bien lisible
+        const halo = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, h * 0.55);
+        halo.addColorStop(0, "rgba(0, 0, 0, 0.55)");
+        halo.addColorStop(1, "rgba(0, 0, 0, 0)");
+        ctx.fillStyle = halo;
+        ctx.fillRect(0, 0, w, h);
+        return;
+    }
+
     const r = ctx.createRadialGradient(w / 2, h / 2, 10, w / 2, h / 2, w * 0.6);
     r.addColorStop(0, "#232A33");
     r.addColorStop(1, "#0C0F13");
@@ -45,6 +80,7 @@ function drawCrosshair(canvas, code) {
     const ctx = canvas.getContext("2d");
     const w = canvas.width;
     const h = canvas.height;
+    canvas.dataset.code = code; // pour pouvoir le redessiner quand la capture de fond arrive
     drawBackground(ctx, w, h);
 
     let c;
@@ -206,8 +242,8 @@ fetch("players.json")
 
 function buildSite(players) {
 
-    // 1. Fabriquer une carte pour chaque joueur
-    players.forEach(function (player) {
+    // 1. Fabriquer une carte complète pour un joueur (utilisée par Crosshairs ET Trending)
+    function makeCard(player) {
         const card = document.createElement("article");
         card.className = "card";
         card.dataset.team = player.team;
@@ -261,47 +297,26 @@ function buildSite(players) {
             openPlayer(player);
         });
 
-        if (player.category === "pro") {
-            document.getElementById("pros").appendChild(card);
-        } else {
-            document.getElementById("creators").appendChild(card);
-        }
-    });
+        return card;
+    }
 
-    // 2. Onglet Trending : uniquement les joueurs avec "trending": true
     players.forEach(function (player) {
-        if (!player.trending) {
-            return;
+        if (player.category === "pro") {
+            document.getElementById("pros").appendChild(makeCard(player));
+        } else {
+            document.getElementById("creators").appendChild(makeCard(player));
         }
-
-        const trend = document.createElement("article");
-        trend.className = "trend-card";
-        trend.style.setProperty("--team", teamColor(player.team));
-        trend.innerHTML = `
-            ${photoHTML(player, "card-photo")}
-            <div class="trend-info">
-                <h3>${player.name}</h3>
-                <span class="team">${player.team}</span>
-            </div>
-            <button>Copy</button>
-        `;
-
-        trend.querySelector("button").addEventListener("click", function (event) {
-            copyText(player.code, event.target);
-        });
-
-        trend.addEventListener("click", function (event) {
-            if (event.target.tagName === "BUTTON") {
-                return;
-            }
-            openPlayer(player);
-        });
-
-        document.getElementById("trending").appendChild(trend);
     });
 
-    // 3. Filtrer les cartes (utilisé par la recherche ET par le menu de gauche)
-    const cards = document.querySelectorAll(".card");
+    // 2. Onglet Trending : uniquement les joueurs avec "trending": true (même carte que Crosshairs)
+    players.forEach(function (player) {
+        if (player.trending) {
+            document.getElementById("trending").appendChild(makeCard(player));
+        }
+    });
+
+    // 3. Filtrer les cartes de l'onglet Crosshairs (utilisé par la recherche ET par le menu de gauche)
+    const cards = document.querySelectorAll("#tab-home .card");
 
     function filterCards(test, clickedButton) {
         cards.forEach(function (card) {

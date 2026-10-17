@@ -61,7 +61,9 @@ def read_demo(path):
         codes = codes[codes.astype(str).str.startswith("CS")]
         if codes.empty:
             continue
+        # Dernier nom d'équipe non vide (dans certaines démos il est vide à la fin du match)
         teams = rows["team_clan_name"].dropna()
+        teams = teams[teams.astype(str).str.strip() != ""]
         players.append({
             "name": str(rows["name"].iloc[-1]),
             "steamid": str(steamid),

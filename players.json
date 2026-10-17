@@ -21,9 +21,10 @@
         "name": "m0NESY",
         "team": "Falcons",
         "category": "pro",
-        "code": "CSGO-CCCCC-CCCCC-CCCCC-CCCCC-CCCCC",
-        "updated": "10/10/2026",
-        "trending": false
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "17/10/2026",
+        "trending": false,
+        "steamid": "76561198074762801"
     },
     {
         "name": "Maj3r",
@@ -120,7 +121,7 @@
         "steamid": "76561198044118796",
         "team": "Aurora",
         "category": "pro",
-        "code": "CSbTEaGDR5GhNAifhXfx8dnavVdRCvsLSCeTDvSS8ndJQE",
+        "code": "CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf",
         "updated": "17/10/2026",
         "trending": false
     },
@@ -129,7 +130,7 @@
         "steamid": "76561198057282432",
         "team": "Aurora",
         "category": "pro",
-        "code": "CSQaHG2Moau8ecdQzGUHEAPn6i9auNVGRCc6r77f9Hxcjb",
+        "code": "CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW",
         "updated": "17/10/2026",
         "trending": false
     },
@@ -156,7 +157,7 @@
         "steamid": "76561198812513923",
         "team": "Aurora",
         "category": "pro",
-        "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
+        "code": "CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ",
         "updated": "17/10/2026",
         "trending": false
     },
@@ -165,7 +166,7 @@
         "steamid": "76561198855375325",
         "team": "Aurora",
         "category": "pro",
-        "code": "CSS3icJJQwV55YBzYH92DceaxScLJYKMhkQWdzLxWncaNP",
+        "code": "CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb",
         "updated": "17/10/2026",
         "trending": false
     },
@@ -193,6 +194,447 @@
         "team": "Team Spirit",
         "category": "pro",
         "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "FalleN",
+        "steamid": "76561197960690195",
+        "team": "FURIA",
+        "category": "pro",
+        "code": "CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "KSCERATO",
+        "steamid": "76561198058500492",
+        "team": "FURIA",
+        "category": "pro",
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "YEKINDAR",
+        "steamid": "76561198134401925",
+        "team": "FURIA",
+        "category": "pro",
+        "code": "CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "yuurih",
+        "steamid": "76561198164970560",
+        "team": "FURIA",
+        "category": "pro",
+        "code": "CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "molodoy",
+        "steamid": "76561198200982290",
+        "team": "FURIA",
+        "category": "pro",
+        "code": "CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "karrigan",
+        "steamid": "76561197989430253",
+        "team": "Falcons",
+        "category": "pro",
+        "code": "CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "TeSeS",
+        "steamid": "76561197996678278",
+        "team": "Falcons",
+        "category": "pro",
+        "code": "CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "NiKo",
+        "steamid": "76561198041683378",
+        "team": "Falcons",
+        "category": "pro",
+        "code": "CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "zorte",
+        "steamid": "76561198059614402",
+        "team": "BetBoom",
+        "category": "pro",
+        "code": "CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Boombl4",
+        "steamid": "76561198146207066",
+        "team": "BetBoom",
+        "category": "pro",
+        "code": "CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "S1ren",
+        "steamid": "76561198167785069",
+        "team": "BetBoom",
+        "category": "pro",
+        "code": "CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Magnojez",
+        "steamid": "76561198372023214",
+        "team": "BetBoom",
+        "category": "pro",
+        "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "d1Ledez",
+        "steamid": "76561198859428279",
+        "team": "BetBoom",
+        "category": "pro",
+        "code": "CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "kyousuke",
+        "steamid": "76561199032006224",
+        "team": "Falcons",
+        "category": "pro",
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "art",
+        "steamid": "76561198043769572",
+        "team": "Legacy",
+        "category": "pro",
+        "code": "CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "n1ssim",
+        "steamid": "76561198061763596",
+        "team": "Legacy",
+        "category": "pro",
+        "code": "CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "dumau",
+        "steamid": "76561198194325317",
+        "team": "Legacy",
+        "category": "pro",
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "try",
+        "steamid": "76561198365118288",
+        "team": "Legacy",
+        "category": "pro",
+        "code": "CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "latto",
+        "steamid": "76561198850020186",
+        "team": "Legacy",
+        "category": "pro",
+        "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "FL1T",
+        "steamid": "76561197995817501",
+        "team": "PARIVISION",
+        "category": "pro",
+        "code": "CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "huNter-",
+        "steamid": "76561198012872053",
+        "team": "G2 Esports",
+        "category": "pro",
+        "code": "CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Hobbit",
+        "steamid": "76561198028292758",
+        "team": "PARIVISION",
+        "category": "pro",
+        "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Jame",
+        "steamid": "76561198036125584",
+        "team": "PARIVISION",
+        "category": "pro",
+        "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "NertZ",
+        "steamid": "76561198053126645",
+        "team": "G2 Esports",
+        "category": "pro",
+        "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "HeavyGod",
+        "steamid": "76561198068002993",
+        "team": "G2 Esports",
+        "category": "pro",
+        "code": "CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "xiELO",
+        "steamid": "76561198141272052",
+        "team": "PARIVISION",
+        "category": "pro",
+        "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "zweih",
+        "steamid": "76561198210626739",
+        "team": "PARIVISION",
+        "category": "pro",
+        "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "r1nkle",
+        "steamid": "76561198294381090",
+        "team": "G2 Esports",
+        "category": "pro",
+        "code": "CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "MATYS",
+        "steamid": "76561199046478501",
+        "team": "G2 Esports",
+        "category": "pro",
+        "code": "CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Aleksib",
+        "steamid": "76561198013243326",
+        "team": "Natus Vincere",
+        "category": "pro",
+        "code": "CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "iM",
+        "steamid": "76561198050250233",
+        "team": "Natus Vincere",
+        "category": "pro",
+        "code": "CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "b1t",
+        "steamid": "76561198246607476",
+        "team": "Natus Vincere",
+        "category": "pro",
+        "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "w0nderful",
+        "steamid": "76561199063068840",
+        "team": "Natus Vincere",
+        "category": "pro",
+        "code": "CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "makazze",
+        "steamid": "76561199076189612",
+        "team": "Natus Vincere",
+        "category": "pro",
+        "code": "CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "JBOEN",
+        "steamid": "76561198016138527",
+        "team": "FaZe Clan",
+        "category": "pro",
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Twistzz",
+        "steamid": "76561198016255205",
+        "team": "FaZe Clan",
+        "category": "pro",
+        "code": "CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "frozen",
+        "steamid": "76561198068422762",
+        "team": "FaZe Clan",
+        "category": "pro",
+        "code": "CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "jcobbb",
+        "steamid": "76561198178737429",
+        "team": "FaZe Clan",
+        "category": "pro",
+        "code": "CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Neityu",
+        "steamid": "76561198971718392",
+        "team": "FaZe Clan",
+        "category": "pro",
+        "code": "CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Staehr",
+        "steamid": "76561198005107817",
+        "team": "Astralis",
+        "category": "pro",
+        "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "insani",
+        "steamid": "76561198061423730",
+        "team": "MIBR",
+        "category": "pro",
+        "code": "CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "LNZ",
+        "steamid": "76561198104626893",
+        "team": "MIBR",
+        "category": "pro",
+        "code": "CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "siuhy",
+        "steamid": "76561198150673360",
+        "team": "Astralis",
+        "category": "pro",
+        "code": "CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "ryu",
+        "steamid": "76561198168401372",
+        "team": "Astralis",
+        "category": "pro",
+        "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "venomzera",
+        "steamid": "76561198218265253",
+        "team": "MIBR",
+        "category": "pro",
+        "code": "CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "nqz",
+        "steamid": "76561198350342505",
+        "team": "MIBR",
+        "category": "pro",
+        "code": "CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "phzy",
+        "steamid": "76561198408199043",
+        "team": "Astralis",
+        "category": "pro",
+        "code": "CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "tomaszin",
+        "steamid": "76561198422434044",
+        "team": "MIBR",
+        "category": "pro",
+        "code": "CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J",
+        "updated": "17/10/2026",
+        "trending": false
+    },
+    {
+        "name": "cmtry",
+        "steamid": "76561199313968259",
+        "team": "Astralis",
+        "category": "pro",
+        "code": "CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM",
         "updated": "17/10/2026",
         "trending": false
     }
