@@ -227,3 +227,37 @@ body.light .card-photo {
 body.light .modal-img {
     color: #1a1a1a;
 }
+
+.tagline {
+    color: #aaa;
+    margin: 0 0 16px;
+}
+
+.about {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 0 16px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
+}
+
+.player-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+}
+
+.back-link {
+    color: #4caf50;
+    text-decoration: none;
+}

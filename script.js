@@ -25,14 +25,15 @@ function buildSite(players) {
         card.className = "card";
         card.innerHTML = `
             ${photoHTML(player, "card-photo")}
-            <h3>${player.name}</h3>
+            <h3><a href="players/${slug(player.name)}.html">${player.name}</a></h3>
             <span class="team">${player.team}</span>
             <p>${player.code}</p>
             <button>Copy</button>
         `;
 
+        // Clic sur la carte = fiche (sauf sur le bouton Copy ou le lien du nom)
         card.addEventListener("click", function (event) {
-            if (event.target.tagName === "BUTTON") {
+            if (event.target.tagName === "BUTTON" || event.target.tagName === "A") {
                 return;
             }
             openPlayer(player);
@@ -201,4 +202,9 @@ function photoHTML(player, className) {
     }
     const initials = player.name.slice(0, 2).toUpperCase();
     return `<div class="${className}">${initials}</div>`;
+}
+
+// 8. Transforme un nom en adresse propre : "ZywOo" -> "zywoo"
+function slug(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
