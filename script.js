@@ -101,7 +101,19 @@ function copyText(text, button) {
 const teams = [
     { name: "Team Spirit", color: "#B7BEC8" },
     { name: "Team Vitality", color: "#F5D547" },
-    { name: "Falcons", color: "#2ECC71" }
+    { name: "MOUZ", color: "#E8505B" },
+    { name: "FURIA", color: "#E6E6E6" },
+    { name: "Falcons", color: "#2ECC71" },
+    { name: "Aurora", color: "#8E7CF0" },
+    { name: "Natus Vincere", color: "#FFD400" },
+    { name: "G2 Esports", color: "#D9DDE3" },
+    { name: "FaZe Clan", color: "#E2394A" },
+    { name: "Astralis", color: "#FF4655" },
+    { name: "Legacy", color: "#4FA3FF" },
+    { name: "MIBR", color: "#3D7BFF" },
+    { name: "FUT Esports", color: "#9AE66E" },
+    { name: "PARIVISION", color: "#C084FC" },
+    { name: "BetBoom", color: "#FF8A3D" }
 ];
 
 // Les pays des créateurs (code à 2 lettres = celui de "country" dans players.json)
