@@ -11,6 +11,74 @@ function consoleCommands(code) {
     }
 }
 
+// ===== Aperçu visuel du crosshair =====
+
+// Couleurs de base de CS2 (cl_crosshaircolor 0 à 4). La 5 = couleur perso (R, G, B)
+const CS_COLORS = [[250, 50, 50], [50, 250, 50], [250, 250, 50], [50, 50, 250], [50, 250, 250]];
+
+// Dessine le crosshair dans un <canvas>, sur un fond moitié clair / moitié sombre
+function drawCrosshair(canvas, code) {
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+
+    // Fond : sable à gauche, mur sombre à droite (pour voir s'il reste lisible partout)
+    ctx.fillStyle = "#C8B38A";
+    ctx.fillRect(0, 0, w / 2, h);
+    ctx.fillStyle = "#2A3036";
+    ctx.fillRect(w / 2, 0, w / 2, h);
+
+    let c;
+    try {
+        c = decodeCrosshairShareCode(code);
+    } catch (error) {
+        ctx.fillStyle = "#97A1AD";
+        ctx.font = "600 26px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("No preview", w / 2, h / 2);
+        return;
+    }
+
+    const zoom = 4; // on agrandit pour bien voir
+    const rgb = c.color === 5 || !CS_COLORS[c.color] ? [c.red, c.green, c.blue] : CS_COLORS[c.color];
+    const alpha = c.alphaEnabled ? c.alpha / 255 : 1;
+    const length = Math.round((c.length ?? c.size ?? 5) * 2 * zoom);
+    const thick = Math.max(zoom, Math.round(c.thickness * 2 * zoom));
+    const gap = Math.max(-Math.floor(thick / 2), Math.round((c.gap + 4) * zoom));
+    const half = Math.floor(thick / 2);
+    const cx = Math.round(w / 2);
+    const cy = Math.round(h / 2);
+
+    // Les 4 traits (x, y, largeur, hauteur)
+    const bars = [
+        [cx + gap, cy - half, length, thick],          // droite
+        [cx - gap - length, cy - half, length, thick], // gauche
+        [cx - half, cy + gap, thick, length]           // bas
+    ];
+    if (!c.tStyleEnabled) {
+        bars.push([cx - half, cy - gap - length, thick, length]); // haut (absent en style T)
+    }
+    if (c.centerDotEnabled) {
+        bars.push([cx - half, cy - half, thick, thick]); // point central
+    }
+
+    // Contour noir
+    if (c.outlineEnabled) {
+        const o = Math.max(1, Math.round(c.outline * zoom));
+        ctx.fillStyle = "rgba(0, 0, 0, " + alpha + ")";
+        bars.forEach(function (b) {
+            ctx.fillRect(b[0] - o, b[1] - o, b[2] + o * 2, b[3] + o * 2);
+        });
+    }
+
+    // Le crosshair
+    ctx.fillStyle = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
+    bars.forEach(function (b) {
+        ctx.fillRect(b[0], b[1], b[2], b[3]);
+    });
+}
+
 // Copier un texte et afficher "Copied!" 1,5 seconde sur le bouton
 function copyText(text, button) {
     navigator.clipboard.writeText(text);
@@ -97,6 +165,7 @@ function buildSite(players) {
                     <span class="team">${player.team}</span>
                 </div>
             </div>
+            <canvas class="preview" width="560" height="220"></canvas>
             <div class="field">
                 <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
                 <div class="field-row">
@@ -113,6 +182,9 @@ function buildSite(players) {
             </div>
             <span class="date">Updated ${player.updated}</span>
         `;
+
+        // Dessiner l'aperçu du crosshair
+        drawCrosshair(card.querySelector(".preview"), player.code);
 
         // Boutons Copy de la carte (code de partage OU commandes console)
         card.querySelector(".copy-code").addEventListener("click", function (event) {
@@ -298,6 +370,7 @@ function openPlayer(player) {
     document.getElementById("modal-date").textContent = "Last update: " + player.updated;
     document.getElementById("modal-code").textContent = player.code;
     document.getElementById("modal-console").textContent = consoleCommands(player.code);
+    drawCrosshair(document.getElementById("modal-preview"), player.code);
     modal.classList.remove("hidden");
 }
 

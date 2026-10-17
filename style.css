@@ -527,6 +527,22 @@ footer {
     text-decoration: none;
 }
 
+/* ===== Aperçu du crosshair ===== */
+.preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 560 / 220;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    image-rendering: pixelated;
+}
+
+#modal-preview {
+    aspect-ratio: 760 / 300;
+    margin: 4px 0;
+}
+
 /* ===== Téléphone (doit TOUJOURS rester à la fin du fichier) ===== */
 @media (max-width: 800px) {
     .layout {
