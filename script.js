@@ -99,21 +99,21 @@ function copyText(text, button) {
 
 // Les équipes (le nom doit être EXACTEMENT le même que dans players.json)
 const teams = [
-    { name: "Team Spirit", color: "#B7BEC8" },
-    { name: "Team Vitality", color: "#F5D547" },
-    { name: "MOUZ", color: "#E8505B" },
-    { name: "FURIA", color: "#E6E6E6" },
-    { name: "Falcons", color: "#2ECC71" },
-    { name: "Aurora", color: "#8E7CF0" },
-    { name: "Natus Vincere", color: "#FFD400" },
-    { name: "G2 Esports", color: "#D9DDE3" },
-    { name: "FaZe Clan", color: "#E2394A" },
-    { name: "Astralis", color: "#FF4655" },
-    { name: "Legacy", color: "#4FA3FF" },
-    { name: "MIBR", color: "#3D7BFF" },
-    { name: "FUT Esports", color: "#9AE66E" },
-    { name: "PARIVISION", color: "#C084FC" },
-    { name: "BetBoom", color: "#FF8A3D" }
+    { name: "Team Spirit", color: "#B7BEC8", logo: "logos/spirit.png" },
+    { name: "Team Vitality", color: "#F5D547", logo: "logos/vitality.png" },
+    { name: "MOUZ", color: "#E8505B", logo: "logos/mouz.png" },
+    { name: "FURIA", color: "#E6E6E6", logo: "logos/furia.png" },
+    { name: "Falcons", color: "#2ECC71", logo: "logos/falcons.png" },
+    { name: "Aurora", color: "#8E7CF0", logo: "logos/aurora.png" },
+    { name: "Natus Vincere", color: "#FFD400", logo: "logos/navi.png" },
+    { name: "G2 Esports", color: "#D9DDE3", logo: "logos/g2.png" },
+    { name: "FaZe Clan", color: "#E2394A", logo: "logos/faze.png" },
+    { name: "Astralis", color: "#FF4655", logo: "logos/astralis.png" },
+    { name: "Legacy", color: "#4FA3FF", logo: "logos/legacy.png" },
+    { name: "MIBR", color: "#3D7BFF", logo: "logos/mibr.png" },
+    { name: "FUT Esports", color: "#9AE66E", logo: "logos/fut.png" },
+    { name: "PARIVISION", color: "#C084FC", logo: "logos/parivision.png" },
+    { name: "BetBoom", color: "#FF8A3D", logo: "logos/betboom.png" }
 ];
 
 // Les pays des créateurs (code à 2 lettres = celui de "country" dans players.json)
@@ -148,6 +148,17 @@ function teamColor(teamName) {
     return team ? team.color : "#A78BFA";
 }
 
+// Petit logo de l'équipe (si le fichier manque, on garde la pastille de couleur)
+function teamBadge(teamName) {
+    const team = teams.find(function (t) {
+        return t.name === teamName;
+    });
+    if (!team) {
+        return "";
+    }
+    return `<span class="team-badge" style="--c: ${team.color}"><img src="${team.logo}" alt="" onerror="this.remove()"></span>`;
+}
+
 // 0. Charger les joueurs depuis players.json, puis construire le site
 fetch("players.json")
     .then(function (response) {
@@ -174,7 +185,7 @@ function buildSite(players) {
                 ${photoHTML(player, "card-photo")}
                 <div>
                     <h3><a href="players/${slug(player.name)}.html">${player.name}</a></h3>
-                    <span class="team">${player.team}</span>
+                    <span class="team">${teamBadge(player.team)}${player.team}</span>
                 </div>
             </div>
             <canvas class="preview" width="560" height="220"></canvas>
@@ -323,9 +334,9 @@ function buildSite(players) {
     allButton.classList.add("active");
 
     teams.forEach(function (team) {
-        addSideButton(teamsMenu, team.name, function (card) {
+        addSideButton(teamsMenu, teamBadge(team.name) + team.name, function (card) {
             return card.dataset.team === team.name;
-        }, team.color);
+        });
     });
 
     const countriesMenu = document.getElementById("countries");
