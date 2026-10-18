@@ -496,6 +496,11 @@ body.page {
     height: 40px;
 }
 
+.page-top-links {
+    display: flex;
+    gap: 20px;
+}
+
 .back-link {
     color: var(--muted);
     font-size: 14px;
@@ -753,7 +758,6 @@ body.page {
     aspect-ratio: 560 / 160;
     border-radius: 10px;
     border: 1px solid var(--line);
-    image-rendering: pixelated;
 }
 
 #modal-preview {
@@ -981,8 +985,35 @@ body.light .team-badge img[src*="fut"] {
 }
 
 /* ===== Choix de la langue (en haut à droite) ===== */
+/* Bouton FAQ (en haut à droite, avant la langue) */
+.top-link {
+    margin-left: auto; /* pousse FAQ, la langue et "Light mode" tout à droite */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+.top-link svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--accent);
+}
+
+.top-link:hover {
+    border-color: var(--accent);
+}
+
 .lang {
-    margin-left: auto; /* pousse la langue et "Light mode" tout à droite */
     width: 76px;
     flex-shrink: 0;
     padding: 10px 12px;
@@ -1052,8 +1083,24 @@ body.light .team-badge img[src*="fut"] {
         padding-right: 16px;
     }
 
+    /* Sur téléphone : la recherche prend toute la ligne, les boutons passent en dessous */
+    .topbar {
+        flex-wrap: wrap;
+    }
+
     #search {
+        flex: 1 1 100%;
+        max-width: none;
         min-width: 0;
+    }
+
+    /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */
+    .top-link span {
+        display: none;
+    }
+
+    .top-link {
+        padding: 10px;
     }
 
     /* Réseaux sociaux + contact sur une seule ligne */

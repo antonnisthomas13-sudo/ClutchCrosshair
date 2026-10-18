@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css?v=14">
+    <link rel="stylesheet" href="../style.css?v=17">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CS2 Crosshairs","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/"},{"@type":"ListItem","position":2,"name":"zweih crosshair","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/zweih.html"}]}</script>
 </head>
 <body class="page">
@@ -35,7 +35,10 @@
             <img class="logo-img logo-dark" src="../logo-horizontal-dark.svg" alt="ClutchCrosshair">
             <img class="logo-img logo-light" src="../logo-horizontal-light.svg" alt="ClutchCrosshair">
         </a>
-        <a href="../" class="back-link">← All CS2 crosshairs</a>
+        <nav class="page-top-links">
+            <a href="../faq.html" class="back-link">FAQ</a>
+            <a href="../" class="back-link">← All CS2 crosshairs</a>
+        </nav>
     </header>
 
     <main class="player-page" style="--team: #C084FC">
@@ -94,7 +97,7 @@
     </footer>
 
     <script type="module">
-        import { copyText, drawCrosshair } from "../crosshair.js?v=2";
+        import { copyText, drawCrosshair } from "../crosshair.js?v=4";
 
         drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
 

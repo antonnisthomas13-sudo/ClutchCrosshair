@@ -34,7 +34,7 @@ export function copyText(text, button) {
 // Couleurs de base de CS:GO (anciens codes) : 0 à 4. La 5 = couleur perso (R, G, B)
 const CS_COLORS = [[250, 50, 50], [50, 250, 50], [250, 250, 50], [50, 50, 250], [50, 250, 250]];
 
-// Image de fond : une vraie capture d'écran de CS2 (preview-bg.jpg, à côté de ce fichier)
+// Image de fond : une vraie capture d'écran de CS2 en plein écran (preview-bg.jpg, à côté de ce fichier)
 // Elle est chargée une seule fois ; quand elle arrive, on redessine tous les aperçus
 const bgImage = new Image();
 bgImage.src = new URL("preview-bg.jpg", import.meta.url).href;
@@ -44,12 +44,51 @@ bgImage.onload = function () {
     });
 };
 
-// Fond de l'aperçu : la capture CS2 (recadrée, un peu assombrie)
+// L'aperçu est dessiné à TAILLE RÉELLE, comme le jeu sur l'écran du visiteur :
+// on compte en VRAIS pixels de l'écran (pas en pixels de la page, qui sont agrandis
+// par l'échelle Windows 125 % / 150 % ou le zoom du navigateur).
+// Le décor et le crosshair sont agrandis exactement du même facteur : les proportions sont celles du jeu.
+function screenPixelsHigh() {
+    const ratio = window.devicePixelRatio || 1;
+    const height = Math.round((window.screen && window.screen.height ? window.screen.height : 1080) * ratio);
+    return height > 0 ? height : 1080; // ex. 1080 sur un écran Full HD, 1440 sur un écran 2K...
+}
+
+// Quand la taille d'un aperçu change (onglet ouvert, fenêtre redimensionnée...), on le redessine net
+const resizeWatcher = typeof ResizeObserver === "function"
+    ? new ResizeObserver(function (entries) {
+        entries.forEach(function (entry) {
+            const canvas = entry.target;
+            if (canvas.dataset.code && entry.contentRect.width > 0) {
+                drawCrosshair(canvas, canvas.dataset.code);
+            }
+        });
+    })
+    : null;
+
+// Donne au canvas autant de pixels que l'écran en affiche (pas d'agrandissement/rétrécissement = image nette)
+// Renvoie le nombre de pixels du canvas pour 1 pixel de la page (2 sur un écran "Retina", par exemple)
+function fitToScreen(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) {
+        return 1; // aperçu caché (onglet fermé) : il sera redessiné quand il apparaîtra
+    }
+    const ratio = window.devicePixelRatio || 1;
+    const w = Math.round(rect.width * ratio);
+    const h = Math.round(rect.height * ratio);
+    if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+    }
+    return ratio;
+}
+
+// Fond de l'aperçu : la capture CS2 à taille réelle (un peu assombrie), centrée sur un espace libre
 // S'il n'y a pas encore de capture : fond sombre avec une grille discrète
-function drawBackground(ctx, w, h) {
+function drawBackground(ctx, w, h, ratio) {
     if (bgImage.complete && bgImage.naturalWidth > 0) {
-        // On remplit tout l'aperçu en coupant ce qui dépasse (comme "cover" en CSS)
-        const scale = Math.max(w / bgImage.naturalWidth, h / bgImage.naturalHeight) * 1.6; // zoom de la photo
+        // La capture représente tout l'écran : on l'affiche à la hauteur de l'écran du visiteur (en vrais pixels)
+        const scale = screenPixelsHigh() / bgImage.naturalHeight;
         const iw = bgImage.naturalWidth * scale;
         const ih = bgImage.naturalHeight * scale;
         // Point de la photo placé derrière le crosshair (0 = bord gauche/haut, 1 = bord droit/bas)
@@ -77,15 +116,16 @@ function drawBackground(ctx, w, h) {
     ctx.fillStyle = r;
     ctx.fillRect(0, 0, w, h);
 
+    const step = 40 * ratio;
     ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
     ctx.lineWidth = 1;
-    for (let x = (w / 2) % 40; x < w; x += 40) {
+    for (let x = (w / 2) % step; x < w; x += step) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
         ctx.lineTo(x, h);
         ctx.stroke();
     }
-    for (let y = (h / 2) % 40; y < h; y += 40) {
+    for (let y = (h / 2) % step; y < h; y += step) {
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(w, y);
@@ -93,62 +133,74 @@ function drawBackground(ctx, w, h) {
     }
 }
 
-// Dessine le crosshair dans un <canvas>
+// Dessine le crosshair dans un <canvas>, à taille réelle
 export function drawCrosshair(canvas, code) {
+    if (resizeWatcher && !canvas.dataset.code) {
+        resizeWatcher.observe(canvas);
+    }
+    canvas.dataset.code = code; // pour pouvoir le redessiner (capture de fond arrivée, taille changée)
+
+    const ratio = fitToScreen(canvas);
     const ctx = canvas.getContext("2d");
     const w = canvas.width;
     const h = canvas.height;
-    canvas.dataset.code = code; // pour pouvoir le redessiner quand la capture de fond arrive
-    drawBackground(ctx, w, h);
+    drawBackground(ctx, w, h, ratio);
 
     let c;
     try {
         c = decodeCrosshairShareCode(code);
     } catch (error) {
         ctx.fillStyle = "#97A1AD";
-        ctx.font = "600 26px sans-serif";
+        ctx.font = "600 " + Math.round(14 * ratio) + "px sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText("No preview", w / 2, h / 2);
         return;
     }
 
-    let rgb, alpha, length, thick, gap, outline, outlineColor;
-    const zoom = 3; // agrandissement de l'aperçu
+    // "unit" = nombre de pixels du canvas pour 1 pixel de crosshair
+    let unit, rgb, alpha, length, thick, gap, outline, outlineColor;
 
     if (c.format === "legacy-v1") {
-        // Ancien code CS:GO (CSGO-xxxxx-...)
+        // Ancien code CS:GO (CSGO-xxxxx-...) : anciennes unités, approximation
+        unit = screenPixelsHigh() / 480;
         rgb = c.color === 5 || !CS_COLORS[c.color] ? [c.red, c.green, c.blue] : CS_COLORS[c.color];
         alpha = c.alphaEnabled ? c.alpha / 255 : 1;
-        length = Math.round((c.length ?? 5) * 2 * zoom);
-        thick = Math.max(zoom, Math.round(c.thickness * 2 * zoom));
-        gap = Math.round((c.gap + 4) * zoom);
-        outline = c.outlineEnabled ? Math.max(1, Math.round(c.outline * zoom)) : 0;
+        length = (c.length ?? 5) * unit;
+        thick = Math.max(0.5, c.thickness) * unit;
+        gap = (c.gap + 4) * unit / 2;
+        outline = c.outlineEnabled ? c.outline * unit / 2 : 0;
         outlineColor = "rgba(0, 0, 0, " + alpha + ")";
     } else {
-        // Nouveau code CS2 (CS...) : tailles en pixels pour la hauteur d'écran du joueur
-        const scale = zoom * 1080 / (c.screenHeight || 1080);
+        // Nouveau code CS2 (CS...) : tailles en pixels pour la hauteur d'écran du joueur (screenHeight)
+        unit = screenPixelsHigh() / (c.screenHeight || 1080);
         rgb = [c.red, c.green, c.blue];
         alpha = c.alpha / 255;
-        length = Math.max(1, Math.round(c.length * scale));
-        thick = Math.max(2, Math.round(c.thickness * scale));
-        gap = Math.round(c.gap * scale);
-        outline = c.outlineMode > 0 ? 2 : 0;
+        length = c.length * unit;
+        thick = c.thickness * unit;
+        gap = c.gap * unit;
+        outline = c.outlineMode > 0 ? unit : 0; // contour de 1 pixel
         outlineColor = "rgba(" + (c.outlineRed ?? 0) + ", " + (c.outlineGreen ?? 0) + ", " + (c.outlineBlue ?? 0) + ", " + ((c.outlineAlpha ?? 255) / 255) + ")";
     }
 
+    // On arrondit au pixel près pour des traits nets (au moins 1 pixel)
+    length = Math.max(1, Math.round(length));
+    thick = Math.max(1, Math.round(thick));
+    gap = Math.round(gap);
+    outline = outline > 0 ? Math.max(1, Math.round(outline)) : 0;
+
+    const cx = Math.floor(w / 2);
+    const cy = Math.floor(h / 2);
     const half = Math.floor(thick / 2);
-    const cx = Math.round(w / 2);
-    const cy = Math.round(h / 2);
-    const start = half + gap; // distance entre le centre et le début de chaque trait
+    const start = Math.ceil(thick / 2) + gap; // distance entre le centre et le début de chaque trait
 
     const bars = [
-        [cx + start, cy - half, length, thick],
-        [cx - start - length, cy - half, length, thick],
-        [cx - half, cy + start, thick, length]
+        [cx + start, cy - half, length, thick],          // droite
+        [cx - start - length, cy - half, length, thick], // gauche
+        [cx - half, cy + start, thick, length]           // bas
     ];
     if (!c.tStyleEnabled) {
-        bars.push([cx - half, cy - start - length, thick, length]);
+        bars.push([cx - half, cy - start - length, thick, length]); // haut (absent en style "T")
     }
     if (c.centerDotEnabled) {
         bars.push([cx - half, cy - half, thick, thick]);

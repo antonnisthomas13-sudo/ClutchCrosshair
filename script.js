@@ -1,7 +1,7 @@
 // ===== script.js : la page d'accueil (cartes, recherche, onglets, fiche joueur...) =====
 // crosshair.js : l'aperçu du crosshair + le bouton Copy (partagé avec les pages joueurs)
 // render.js    : le HTML des cartes (partagé avec build.js, qui écrit déjà les cartes dans index.html pour Google)
-import { copyText, drawCrosshair } from "./crosshair.js?v=2";
+import { copyText, drawCrosshair } from "./crosshair.js?v=4";
 import { teams } from "./teams.js?v=1";
 import { slug, consoleCommands, teamBadge, photoHTML, cardHTML } from "./render.js?v=1";
 

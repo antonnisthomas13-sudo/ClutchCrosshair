@@ -12,8 +12,8 @@ const fs = require("fs");
 const SITE_URL = "https://antonnisthomas13-sudo.github.io/ClutchCrosshair";
 
 // Numéros de version des fichiers CSS/JS (comme dans index.html) : à augmenter quand on les modifie
-const CSS_VERSION = 14;
-const CROSSHAIR_JS_VERSION = 2;
+const CSS_VERSION = 17;
+const CROSSHAIR_JS_VERSION = 4;
 
 // Mentions légales : À REMPLIR avant de publier
 const PUBLISHER_NAME = "[À REMPLIR : ton nom]";
@@ -113,7 +113,10 @@ async function main() {
             <img class="logo-img logo-dark" src="${prefix}logo-horizontal-dark.svg" alt="ClutchCrosshair">
             <img class="logo-img logo-light" src="${prefix}logo-horizontal-light.svg" alt="ClutchCrosshair">
         </a>
-        <a href="${prefix}" class="back-link">← All CS2 crosshairs</a>
+        <nav class="page-top-links">
+            <a href="${prefix}faq.html" class="back-link">FAQ</a>
+            <a href="${prefix}" class="back-link">← All CS2 crosshairs</a>
+        </nav>
     </header>`;
     }
 
