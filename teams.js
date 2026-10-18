@@ -2,14 +2,14 @@
 // Utilisé par la page d'accueil (script.js) ET par build.js (pages joueurs)
 // Les équipes (le nom doit être EXACTEMENT le même que dans players.json)
 export const teams = [
-    { name: "Team Spirit", color: "#B7BEC8", logo: "logos/spirit.png" },
+    { name: "Team Spirit", color: "#8E98A8", logo: "logos/spirit.png" },
     { name: "Team Vitality", color: "#F5D547", logo: "logos/vitality.png" },
     { name: "MOUZ", color: "#E8505B", logo: "logos/mouz.png" },
-    { name: "FURIA", color: "#E6E6E6", logo: "logos/furia.png" },
+    { name: "FURIA", color: "#222329", logo: "logos/furia.png" },
     { name: "Falcons", color: "#2ECC71", logo: "logos/falcons.png" },
     { name: "Aurora", color: "#8E7CF0", logo: "logos/aurora.png" },
     { name: "Natus Vincere", color: "#FFD400", logo: "logos/navi.png" },
-    { name: "G2 Esports", color: "#D9DDE3", logo: "logos/g2.png" },
+    { name: "G2 Esports", color: "#ECEEF2", logo: "logos/g2.png" },
     { name: "FaZe Clan", color: "#E2394A", logo: "logos/faze.png" },
     { name: "Astralis", color: "#FF4655", logo: "logos/astralis.png" },
     { name: "Legacy", color: "#4FA3FF", logo: "logos/legacy.png" },

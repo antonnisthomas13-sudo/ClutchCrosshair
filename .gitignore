@@ -4,3 +4,8 @@ demos/
 
 # Fichiers temporaires de Python
 __pycache__/
+
+# Fichiers de travail d Impeccable (captures, esquisses) : seulement sur le PC
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/brief-body.md

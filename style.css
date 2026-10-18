@@ -1,32 +1,150 @@
-/* ===== Les couleurs du site (variables) ===== */
-:root {
-    --bg: #0E1114;
-    --sidebar: #12161A;
-    --panel: #161A1F;
-    --panel2: #1C2128;
-    --line: #272D35;
-    --text: #EEF1F4;
-    --muted: #97A1AD;
-    --accent: #E3262E;
-    --accent-strong: #FF4A52;
-    --accent2: #A78BFA;
-    --accent-text: #FFFFFF;
-    --glow1: rgba(227, 38, 46, 0.12);
-    --glow2: rgba(167, 139, 250, 0.08);
+/* =====================================================================
+   ClutchCrosshair — univers « Retransmission Major »
+   Chaque pro = une fiche joueur de retransmission : bandeau couleur d'équipe,
+   nom en majuscules étroites, le crosshair en « stat », COPY en action principale.
+   ===================================================================== */
+
+/* ===== Les polices, hébergées sur le site (dossier fonts/, licence OFL) =====
+   Aucune requête vers Google Fonts : plus rapide (pas d'autre serveur à contacter) et plus respectueux de la vie privée.
+   Sous-ensemble « latin » ; les caractères rares s'affichent avec la police de secours. */
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("fonts/inter-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Mode clair : on change juste les variables */
+@font-face {
+    font-family: "Barlow Condensed";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/barlow-condensed-700-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/jetbrains-mono-400-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ===== Les variables : couleurs + typographie =====
+   Palette « Charbon & Rouge signature » : noir charbon (fond, ~70 %), gris profond (cartes, ~25 %),
+   rouge signature (boutons, sélection, interactions, ~5 %). Le jaune est réservé aux couleurs d'équipes.
+   Toutes les couleurs et tous les réglages de texte du site sont ici : on change une valeur, tout le site suit.
+   Mode sombre d'abord (prioritaire), puis le mode clair juste en dessous. */
+:root {
+    color-scheme: dark;         /* menus déroulants, barres de défilement... du navigateur en version sombre */
+
+    /* --- Fonds et surfaces (du plus sombre au plus clair) --- */
+    --stat: #08090A;            /* fond de la boîte « Crosshair » */
+    --sidebar: #0C0D0F;         /* rail des équipes, barre du haut, en-têtes */
+    --bg: #111214;              /* fond principal : noir charbon */
+    --panel: #1B1D21;           /* cartes et panneaux : gris profond */
+    --panel2: #24272C;          /* champs dans les cartes, survols */
+    --line: #30343A;            /* séparations de 1 px */
+
+    /* --- Textes --- */
+    --text: #ECEDEF;            /* texte principal (16:1 sur le fond) */
+    --muted: #9DA2AA;           /* texte secondaire, aides, dates (6,6:1 sur les cartes) */
+
+    /* --- Rouge signature : boutons, sélection, interactions --- */
+    --accent: #D7262F;          /* boutons Copy, barre COPIED, sélection (texte blanc 5,0:1) */
+    --accent-hover: #B51C25;    /* survol (6,7:1) */
+    --accent-active: #9C1820;   /* bouton appuyé (8,2:1) */
+    --accent-text: #FFFFFF;     /* texte posé sur le rouge */
+    --accent-line: #D7262F;     /* traits, onglet actif, focus clavier, repères (3,8:1 sur le fond) */
+    --link: #FF5C63;            /* liens (6,2:1) */
+    --label: #C9CCD1;           /* étiquette « Crosshair » (posée sur la boîte sombre) */
+    --alert: #FF5C63;           /* alerte / changement (réservé) */
+
+    /* --- Transparences --- */
+    --scrim: rgba(8, 9, 10, 0.8);             /* fond derrière la fiche joueur */
+    --chip-scrim: rgba(8, 9, 10, 0.8);        /* fond de l'étiquette « Crosshair » */
+    --plate: rgba(0, 0, 0, 0.18);             /* support des photos dans les bandeaux d'équipe */
+    --plate-strong: rgba(0, 0, 0, 0.35);      /* bouton fermer posé sur le bandeau */
+    --plate-strong-hover: rgba(0, 0, 0, 0.6);
+    --slab-rim: rgba(255, 255, 255, 0.12);    /* liseré des bandeaux d'équipe */
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.55);
+
+    /* --- Couleurs officielles des réseaux sociaux --- */
+    --brand-discord: #5865F2;
+    --brand-tiktok: #FFFFFF;
+    --brand-tiktok-cyan: #25F4EE;
+    --brand-tiktok-pink: #FE2C55;
+    --brand-x: #FFFFFF;
+
+    /* --- Typographie : 3 familles --- */
+    --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;  /* titres : condensée, sportive */
+    --font-ui: "Inter", system-ui, sans-serif;                        /* texte courant et interface */
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;           /* codes de crosshair et commandes */
+
+    /* Tailles */
+    --fs-2xs: 11px;
+    --fs-xs: 12px;
+    --fs-sm: 13px;
+    --fs-ui: 14px;
+    --fs-body: 15px;
+    --fs-lg: 18px;
+    --fs-xl: 24px;
+    --fs-2xl: 32px;
+    --fs-3xl: 48px;
+
+    /* Graisses */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Interlignages */
+    --lh-tight: 1;
+    --lh-heading: 1.1;
+    --lh-ui: 1.3;
+    --lh-body: 1.55;
+
+    /* Espacement des lettres */
+    --track-caps: 0.06em;       /* petits libellés en majuscules */
+    --track-display: 0.01em;    /* titres condensés */
+
+    /* --- Mouvement --- */
+    --ease: cubic-bezier(0.16, 1, 0.3, 1); /* sortie exponentielle */
+}
+
+/* Mode clair : on change juste les variables (les bandeaux d'équipe et la boîte « Crosshair » ne bougent pas)
+   La classe "light" est posée sur <html> ET <body> : ainsi la barre de défilement de la page suit aussi le thème. */
+html.light,
 body.light {
-    --bg: #F4F5F7;
+    color-scheme: light;        /* menus déroulants, barres de défilement... du navigateur en version claire */
     --sidebar: #FFFFFF;
+    --bg: #F3F4F6;
     --panel: #FFFFFF;
-    --panel2: #F1F3F5;
-    --line: #DDE1E6;
-    --text: #12161B;
-    --muted: #5B6573;
-    --accent-strong: #C81E26;
-    --glow1: rgba(227, 38, 46, 0.12);
-    --glow2: rgba(167, 139, 250, 0.12);
+    --panel2: #EDEFF2;
+    --line: #D9DCE1;
+    --stat: #0C0D0F;
+
+    --text: #15171A;
+    --muted: #575D66;
+
+    --accent: #C8202A;          /* texte blanc 5,7:1 */
+    --accent-hover: #B51C25;
+    --accent-active: #9C1820;
+    --accent-text: #FFFFFF;
+    --accent-line: #C8202A;     /* 5,2:1 sur le fond clair */
+    --link: #B51C25;            /* 6,7:1 */
+    --alert: #B51C25;
+
+    --scrim: rgba(21, 23, 26, 0.6);
+    --shadow: 0 8px 24px rgba(21, 23, 26, 0.12);
+    --shadow-modal: 0 24px 60px rgba(21, 23, 26, 0.3);
+    --brand-tiktok: #000000;
+    --brand-x: #000000;
 }
 
 /* ===== Base ===== */
@@ -34,50 +152,130 @@ body.light {
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-color: var(--line) var(--bg);
+}
+
 body {
     margin: 0;
     color: var(--text);
-    font-family: "Sora", system-ui, sans-serif;
-    background:
-        radial-gradient(900px 400px at 80% -10%, var(--glow1), transparent),
-        radial-gradient(700px 400px at 10% 0%, var(--glow2), transparent),
-        var(--bg);
-    background-attachment: fixed;
-    transition: color 0.25s;
+    background-color: var(--bg);
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    font-variant-numeric: tabular-nums;
+    caret-color: var(--accent-line);
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--accent-text);
 }
 
 a {
-    color: var(--accent-strong);
+    color: var(--link);
+    text-underline-offset: 3px;
 }
 
 button {
     background-color: var(--accent);
     color: var(--accent-text);
     border: none;
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 10px 16px;
     font-family: inherit;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
     cursor: pointer;
+    transition: background-color 0.18s var(--ease), color 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+/* Survol et appui : seulement les boutons d'action ambre (Copy) */
+.mini:not(.btn-secondary):hover {
+    background-color: var(--accent-hover);
+}
+
+.mini:not(.btn-secondary):active {
+    background-color: var(--accent-active);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* Contour visible quand on navigue au clavier */
+:focus-visible {
+    outline: 2px solid var(--accent-line);
+    outline-offset: 2px;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* ===== Mise en page : menu à gauche + contenu à droite ===== */
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran (ex. « Copied to clipboard ») */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Lien « aller aux crosshairs » : invisible, il apparaît au premier appui sur Tab (navigation au clavier) */
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 20;
+    padding: 10px 14px;
+    border-radius: 2px;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    transform: translateY(-160%);
+    transition: transform 0.18s var(--ease);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* La zone principale reçoit le focus via le lien ci-dessus : pas de grand contour autour de toute la liste */
+main:focus {
+    outline: none;
+}
+
+/* ===== Mise en page : rail des équipes à gauche + contenu à droite ===== */
 .layout {
     display: flex;
     min-height: 100vh;
 }
 
 .sidebar {
-    width: 260px;
+    position: sticky;
+    top: 0;
+    width: 248px;
+    height: 100vh;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 18px 12px;
     background-color: var(--sidebar);
     border-right: 1px solid var(--line);
-    padding: 24px 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
 }
 
 .content {
@@ -90,13 +288,13 @@ button {
 /* ===== Logo (version sombre ou claire selon le mode) ===== */
 .logo {
     display: block;
-    margin-bottom: 20px;
+    margin: 0 4px 8px;
 }
 
 .logo-img {
     display: block;
     width: 100%;
-    max-width: 210px;
+    max-width: 190px;
 }
 
 .logo-light {
@@ -112,10 +310,11 @@ body.light .logo-light {
 }
 
 .side-title {
-    margin: 24px 0 10px 8px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    margin: 20px 0 6px 10px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
     text-transform: uppercase;
     color: var(--muted);
 }
@@ -123,148 +322,344 @@ body.light .logo-light {
 .side-nav {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 1px;
 }
 
 .side-btn {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 12px;
+    padding: 7px 10px;
+    border-radius: 2px;
     background-color: transparent;
     color: var(--text);
     text-align: left;
-    font-weight: 600;
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-medium);
 }
 
-.side-btn:hover,
+.side-btn:hover {
+    background-color: var(--panel);
+}
+
+/* Équipe sélectionnée : fond clair + petit repère rouge (comme un onglet de retransmission) */
 .side-btn.active {
     background-color: var(--panel2);
+    box-shadow: inset 1px 0 0 var(--accent-line);
 }
 
 /* ===== Barre du haut ===== */
 .topbar {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 32px;
-    border-bottom: 1px solid var(--line);
+    gap: 10px;
+    padding: 10px 32px;
+    border-bottom: 2px solid var(--accent-line);
+    background-color: var(--sidebar);
+    justify-content: flex-end;
 }
 
 #search {
-    flex: 1;
-    max-width: 560px;
-    height: 46px;
-    padding: 0 16px;
-    border-radius: 12px;
+    width: 100%;
+    height: 52px;
+    padding: 0 16px 0 46px;
+    border-radius: 2px;
     border: 1px solid var(--line);
     background-color: var(--panel);
     color: var(--text);
     font-family: inherit;
-    font-size: 15px;
+    font-size: var(--fs-body);
     outline: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+#search::placeholder {
+    color: var(--muted);
 }
 
 #search:focus {
-    border-color: var(--accent);
+    border-color: var(--accent-line);
+}
+
+/* Choix du jeu : CS2 actif, Valorant bientôt */
+.game:not(.active):not(:disabled):hover {
+    background-color: var(--panel2);
+    color: var(--text);
+}
+
+.game-switch {
+    display: flex;
+    margin-left: auto; /* pousse le jeu, FAQ, la langue et le mode tout à droite */
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.game {
+    padding: 0 14px;
+    height: 34px;
+    border-radius: 0;
+    background-color: var(--panel);
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+}
+
+.game.active {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.game:disabled {
+    background-color: var(--panel);
+    color: var(--muted);
+}
+
+.game small {
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0;
+    text-transform: none;
+    opacity: 0.8;
+}
+
+/* Boutons de la barre : FAQ, langue, mode clair/sombre */
+.top-link,
+.lang,
+#theme-toggle {
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+}
+
+.top-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 14px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.top-link svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--accent-line);
+}
+
+.top-link:hover,
+#theme-toggle:hover {
+    border-color: var(--accent-line);
+    background-color: var(--panel);
+}
+
+.lang {
+    width: 76px;
+    padding: 0 10px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
 }
 
 #theme-toggle {
-    flex-shrink: 0;
-    background-color: var(--panel);
-    color: var(--text);
-    border: 1px solid var(--line);
+    padding: 0 14px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
 }
 
 /* ===== Titre principal ===== */
 .hero {
-    padding: 32px 32px 0;
+    padding: 40px 32px 8px;
 }
 
 .hero h1 {
     margin: 0;
-    font-size: 34px;
-    letter-spacing: -0.02em;
-    background: linear-gradient(90deg, var(--text) 40%, var(--accent-strong));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--track-display);
 }
 
 .hero p {
-    margin: 8px 0 0;
+    margin: 10px 0 0;
+    max-width: 62ch;
+    color: var(--muted);
+    font-size: var(--fs-body);
+}
+
+/* Grande barre de recherche, juste sous le titre */
+.hero-search {
+    position: relative;
+    max-width: 640px;
+    margin-top: 22px;
+}
+
+.hero-search svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    fill: var(--muted);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Trois accès rapides : Pros, Creators, Trending */
+.quick {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 640px;
+    margin-top: 12px;
+}
+
+.quick-btn {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    text-align: left;
+    transition: border-color 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.quick-btn:hover {
+    border-color: var(--accent-line);
+    background-color: var(--panel2);
+}
+
+.quick-btn svg {
+    grid-row: 1 / 3;
+    width: 22px;
+    height: 22px;
+    fill: var(--accent-line);
+}
+
+.quick-name {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
+}
+
+.quick-count {
+    min-height: 1.3em; /* place réservée : pas de saut quand le nombre s'affiche */
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
     color: var(--muted);
 }
 
-/* ===== Onglets ===== */
+/* ===== Onglets (rail de retransmission) + tri ===== */
 .tabs {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 24px 32px 0;
+    margin: 20px 32px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-/* Le cadre qui entoure les onglets */
 .tab-bar {
-    display: inline-flex;
-    gap: 4px;
+    display: flex;
+    gap: 2px;
     max-width: 100%;
     overflow-x: auto;
-    padding: 5px;
-    border-radius: 14px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    scrollbar-width: none;
 }
 
 .tab {
     position: relative;
-    padding: 9px 20px;
-    border-radius: 10px;
+    padding: 10px 18px 12px;
+    border-radius: 2px 2px 0 0;
     background-color: transparent;
     color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
     white-space: nowrap;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .tab:hover {
-    background-color: var(--panel2);
+    background-color: var(--panel);
     color: var(--text);
 }
 
-/* Onglet actif : couleurs inversées (blanc en mode sombre, foncé en mode clair) + trait rouge */
+/* Onglet actif : bandeau clair + barre rouge en dessous */
 .tab.active {
     background-color: var(--text);
     color: var(--bg);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .tab.active::after {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: 4px;
-    width: 18px;
-    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background-color: var(--accent-line);
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 6px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--muted);
+}
+
+.sort select {
+    height: 36px;
+    padding: 0 10px;
     border-radius: 2px;
-    background-color: var(--accent);
-    transform: translateX(-50%);
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
 }
 
 /* ===== Sections de cartes ===== */
 main {
-    padding: 0 32px 32px;
+    padding: 0 32px 40px;
 }
 
 #trending,
 #pros,
 #creators {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-    margin-top: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+    gap: 14px;
+    margin-top: 22px;
 }
 
 main h2 {
@@ -273,52 +668,71 @@ main h2 {
     align-items: center;
     gap: 10px;
     margin: 0;
-    font-size: 20px;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--track-display);
+    line-height: var(--lh-heading);
 }
 
+/* Petit bandeau rouge biseauté devant les titres de section */
 main h2::before {
     content: "";
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
+    width: 6px;
+    height: 18px;
+    background-color: var(--accent-line);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
 
 .empty {
-    margin-top: 32px;
+    margin-top: 28px;
     color: var(--muted);
 }
 
-/* ===== Carte joueur ===== */
+/* ===== Carte joueur = fiche joueur de retransmission ===== */
 .card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 18px;
-    border-radius: 16px;
+    overflow: hidden;
+    border-radius: 2px;
     border: 1px solid var(--line);
-    border-top: 3px solid var(--team, var(--accent));
     background-color: var(--panel);
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    transition: transform 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    /* Performance : le navigateur ne dessine pas les cartes hors de l'écran (place réservée : ~440 px) */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 440px;
 }
 
 .card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: var(--team, var(--accent));
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow);
 }
 
+/* Le bandeau couleur d'équipe : nom + photo découpée, coin coupé en biseau */
 .card-top {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: flex-end;
+    height: 96px;
+    padding: 12px 96px 12px 16px;
+    background-color: var(--team, var(--accent));
+    color: var(--on-team, #FFFFFF);
+    box-shadow: inset 0 0 0 1px var(--slab-rim); /* liseré : le bandeau reste visible même sur fond sombre */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
 }
 
 .card h3 {
     margin: 0;
-    font-size: 18px;
+    min-width: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--track-display);
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
 }
 
 .card h3 a {
@@ -328,349 +742,141 @@ main h2::before {
 
 .card h3 a:hover {
     text-decoration: underline;
-}
-
-.team {
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.card p {
-    margin: 0;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: var(--panel2);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
-    word-break: break-all;
-}
-
-.date {
-    font-size: 12px;
-    color: var(--muted);
+    text-decoration-thickness: 2px;
 }
 
 .card-photo {
-    width: 56px;
-    height: 56px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 2px solid var(--team, var(--accent));
-    background-color: var(--panel2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    object-fit: cover;
-    object-position: center top;
-}
-
-/* ===== Texte SEO + pied de page ===== */
-.about {
-    max-width: 1000px;
-    padding: 0 32px;
-    color: var(--muted);
-    line-height: 1.6;
-}
-
-.about h2 {
-    color: var(--text);
-    font-size: 20px;
-}
-
-footer {
-    margin-top: auto;
-    padding: 24px 32px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* ===== Fiche joueur (fenêtre) ===== */
-.modal {
-    position: fixed;
-    inset: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-box {
-    position: relative;
-    width: 100%;
-    max-width: 420px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 32px;
-    border-radius: 20px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-    text-align: center;
-}
-
-.modal-photo {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid var(--accent);
-    background-color: var(--panel2);
-}
-
-.modal-img {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    font-weight: 800;
-    object-fit: cover;
-    object-position: center top;
-}
-
-#modal-name {
-    margin: 8px 0 0;
-}
-
-.modal-team,
-.modal-date {
-    margin: 0;
-    color: var(--muted);
-}
-
-.modal-code {
-    margin: 8px 0;
-    padding: 12px;
-    border-radius: 10px;
-    background-color: var(--panel2);
-    font-family: "JetBrains Mono", monospace;
-    font-size: 13px;
-    word-break: break-all;
-}
-
-.modal-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    padding: 6px 10px;
-    background-color: transparent;
-    color: var(--text);
-    font-size: 18px;
-}
-
-/* Lien "Open the full crosshair page ›" en bas de la fiche */
-.modal-page-link {
-    margin-top: 4px;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.modal-page-link:hover {
-    text-decoration: underline;
-}
-
-/* ===== Pages joueurs (players/...) et page 404 ===== */
-body.page {
+    right: 14px;
+    bottom: 0;
+    width: 76px;
+    height: 86px;
+    border-radius: 38px 38px 0 0;
+    background-color: var(--plate);
+    object-fit: cover;
+    object-position: center top;
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--on-team, #FFFFFF);
 }
 
-.page-top {
+/* Ligne équipe + date */
+.card-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 14px 32px;
-    border-bottom: 1px solid var(--line);
-}
-
-.page-top .logo-img {
-    height: 40px;
-}
-
-.page-top-links {
-    display: flex;
-    gap: 20px;
-}
-
-.back-link {
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.back-link:hover {
-    color: var(--text);
-}
-
-.player-page {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 24px 16px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    line-height: 1.6;
-}
-
-.player-page h1 {
-    margin: 0;
-    font-size: 28px;
-    line-height: 1.2;
-}
-
-.player-page h2 {
-    margin: 20px 0 0;
-    font-size: 20px;
-}
-
-.player-page p,
-.player-page ol {
-    margin: 0;
-    color: var(--muted);
-}
-
-.player-page strong {
-    color: var(--text);
-}
-
-.breadcrumb {
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.breadcrumb a {
-    color: var(--muted);
-}
-
-.player-head {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.player-photo {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 3px solid var(--team, var(--accent));
-    background-color: var(--panel2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 34px;
-    font-weight: 800;
-    object-fit: cover;
-    object-position: center top;
-}
-
-.player-team {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    font-weight: 600;
+    padding: 10px 16px 0;
 }
 
-.player-team-logo {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-.player-preview {
-    aspect-ratio: 760 / 300;
-}
-
-/* Réglages détaillés du crosshair */
-.specs {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 8px;
-    margin: 0;
-}
-
-.specs div {
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-}
-
-.specs dt {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.specs dd {
+.team {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin: 2px 0 0;
-    font-weight: 600;
+    min-width: 0;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--muted);
+    white-space: nowrap;
 }
 
-.swatch {
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-    border-radius: 3px;
-    border: 1px solid var(--line);
+.date {
+    font-family: var(--font-mono);
+    font-size: var(--fs-2xs);
+    color: var(--muted);
+    white-space: nowrap;
 }
 
-/* Liens vers les coéquipiers */
-.related {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/* La boîte « Crosshair » : l'aperçu en taille réelle, comme une stat à l'écran */
+.stat {
+    position: relative;
+    margin: 10px 16px 0;
 }
 
-.related a {
+.stat-label {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    z-index: 1;
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    padding: 2px 6px;
+    background-color: var(--chip-scrim);
+    color: var(--label);
+    pointer-events: none;
+}
+
+.card .field {
+    margin: 10px 16px 0;
+}
+
+.card .field:last-child {
+    margin-bottom: 16px;
+}
+
+.card .field-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card .field-label span {
     display: block;
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Le "·" sépare le libellé de l'aide quand ils sont sur la même ligne ; sur les cartes l'aide passe à la ligne */
+.sep {
+    font-style: normal;
+}
+
+.card .sep {
+    display: none;
+}
+
+.card .preview {
+    aspect-ratio: 560 / 200;
+}
+
+/* ===== Texte SEO + liste des joueurs + pied de page ===== */
+.about {
+    max-width: 1000px;
+    margin-top: 8px;
+    padding: 0 32px 8px;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.about h2 {
+    margin: 28px 0 8px;
     color: var(--text);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--track-display);
+    line-height: var(--lh-heading);
 }
 
-.related a:hover {
-    border-color: var(--team, var(--accent));
-}
-
-.not-found {
-    text-align: center;
-    padding-top: 80px;
-}
-
-/* ===== Liste de tous les joueurs (en bas de l'accueil, écrite par build.js) ===== */
 .about h3 {
-    margin: 18px 0 4px;
+    margin: 14px 0 2px;
     color: var(--text);
-    font-size: 15px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
 }
 
 .about p {
     margin: 0 0 8px;
+    max-width: 75ch;
 }
 
 .directory {
@@ -689,35 +895,422 @@ body.page {
     text-decoration: underline;
 }
 
+footer {
+    margin-top: auto;
+    padding: 24px 32px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--link);
+}
+
+/* ===== Fiche joueur (fenêtre) ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: var(--scrim);
+    animation: fade-in 0.2s var(--ease);
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 24px 24px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    box-shadow: var(--shadow-modal);
+    text-align: left;
+    animation: rise-in 0.24s var(--ease);
+}
+
+/* Bandeau couleur d'équipe en haut de la fiche */
+.modal-box::before {
+    content: "";
+    display: block;
+    height: 140px;
+    margin: 0 -24px -136px;
+    background-color: var(--team, var(--accent));
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+}
+
+.modal-photo {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin: 0 4px 0 auto;
+    overflow: hidden;
+    border-radius: 64px 64px 0 0;
+    background-color: var(--plate);
+}
+
+.modal-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    color: var(--on-team, #FFFFFF);
+    object-fit: cover;
+    object-position: center top;
+}
+
+#modal-name {
+    position: relative;
+    max-width: calc(100% - 150px);
+    margin: -64px 0 24px;
+    color: var(--on-team, #FFFFFF);
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--track-display);
+    text-transform: uppercase;
+}
+
+.modal-team,
+.modal-date {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.modal-team {
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+}
+
+.modal-date {
+    font-size: var(--fs-sm);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 2px;
+    background-color: var(--plate-strong);
+    color: #FFFFFF; /* posé sur le bandeau d'équipe */
+    font-size: var(--fs-lg);
+}
+
+.modal-close:hover {
+    background-color: var(--plate-strong-hover);
+}
+
+/* Lien "Open the full crosshair page ›" en bas de la fiche */
+.modal-page-link {
+    margin-top: 4px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+}
+
+.modal-page-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Pages joueurs (players/...), FAQ, mentions légales et page 404 ===== */
+body.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 32px;
+    background-color: var(--sidebar);
+    border-bottom: 2px solid var(--accent-line);
+}
+
+.page-top .logo {
+    margin: 0;
+}
+
+.page-top .logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.page-top-links {
+    display: flex;
+    gap: 20px;
+}
+
+.back-link {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--text);
+}
+
+.player-page {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1.6;
+}
+
+.player-page h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--track-display);
+    text-transform: uppercase;
+}
+
+.player-page h2 {
+    margin: 24px 0 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--track-display);
+    line-height: var(--lh-heading);
+}
+
+.player-page p,
+.player-page ol {
+    margin: 0;
+    max-width: 75ch;
+    color: var(--muted);
+}
+
+.player-page strong {
+    color: var(--text);
+}
+
+.breadcrumb {
+    font-size: var(--fs-sm);
+    color: var(--muted);
+}
+
+.breadcrumb a {
+    color: var(--muted);
+}
+
+/* En-tête de la page joueur : le même bandeau couleur d'équipe que les cartes */
+.player-head {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    min-height: 150px;
+    padding: 16px 20px 0;
+    background-color: var(--team, var(--accent));
+    color: var(--on-team, #FFFFFF);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.player-head > div {
+    padding-bottom: 16px;
+}
+
+.player-head h1 {
+    color: inherit;
+}
+
+.player-head .player-team,
+.player-head .player-date {
+    color: inherit;
+    opacity: 0.85;
+}
+
+.player-photo {
+    width: 120px;
+    height: 134px;
+    flex-shrink: 0;
+    border-radius: 60px 60px 0 0;
+    background-color: var(--plate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    object-fit: cover;
+    object-position: center top;
+}
+
+.player-team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0 0;
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+}
+
+.player-team-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.player-preview {
+    aspect-ratio: 760 / 300;
+}
+
+/* Réglages détaillés du crosshair */
+.specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1px;
+    margin: 0;
+    border: 1px solid var(--line);
+    background-color: var(--line);
+}
+
+.specs div {
+    padding: 10px 12px;
+    background-color: var(--panel);
+}
+
+.specs dt {
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.specs dd {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 0;
+    font-weight: var(--fw-semibold);
+}
+
+.swatch {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 1px;
+    border: 1px solid var(--line);
+}
+
+/* Liens vers les coéquipiers */
+.related {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.related a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.related a:hover {
+    border-color: var(--team, var(--accent));
+}
+
+.not-found {
+    text-align: center;
+    padding-top: 80px;
+}
+
 /* ===== Code de partage + commandes console ===== */
 .field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     text-align: left;
 }
 
 .field-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
     text-transform: uppercase;
     color: var(--text);
 }
 
 .field-label span {
-    font-weight: 500;
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
     letter-spacing: 0;
     text-transform: none;
     color: var(--muted);
 }
 
 .field-row {
+    position: relative;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 6px 6px 12px;
-    border-radius: 10px;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 2px;
     border: 1px solid var(--line);
     background-color: var(--panel2);
 }
@@ -725,11 +1318,13 @@ body.page {
 .field-row code {
     flex: 1;
     min-width: 0;
+    align-self: center;
+    padding: 0 10px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-family: "JetBrains Mono", monospace;
-    font-size: 12px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
     color: var(--text);
 }
 
@@ -737,17 +1332,63 @@ body.page {
     color: var(--muted);
 }
 
+/* Bouton Copy : un « onglet » d'action collé à droite du code */
 .mini {
     flex-shrink: 0;
-    padding: 7px 14px;
-    border-radius: 8px;
-    font-size: 12px;
+    padding: 9px 16px;
+    border-radius: 0;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
 }
 
 .btn-secondary {
     background-color: var(--bg);
     color: var(--text);
-    border: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+/* Geste signature : la barre rouge « COPIED » balaie la ligne du code */
+.field-row::after {
+    content: "Copied";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    transform: translateX(-101%);
+    pointer-events: none;
+}
+
+.field-row.copied::after {
+    animation: copy-wipe 1.5s var(--ease) forwards;
+}
+
+@keyframes copy-wipe {
+    0% { transform: translateX(-101%); }
+    15% { transform: translateX(0); }
+    80% { transform: translateX(0); }
+    100% { transform: translateX(101%); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+}
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(12px); }
 }
 
 /* ===== Aperçu du crosshair ===== */
@@ -756,8 +1397,9 @@ body.page {
     width: 100%;
     height: auto;
     aspect-ratio: 560 / 160;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid var(--line);
+    background-color: var(--stat);
 }
 
 #modal-preview {
@@ -774,7 +1416,7 @@ body.page {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 2px;
     background-color: var(--c);
 }
 
@@ -788,16 +1430,9 @@ body.page {
     object-fit: contain;
 }
 
-.team {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
 .team .team-badge {
     width: 16px;
     height: 16px;
-    border-radius: 4px;
 }
 
 /* Logos noirs : en blanc en mode sombre */
@@ -813,87 +1448,7 @@ body.light .team-badge img[src*="fut"] {
     filter: invert(1);
 }
 
-/* ===== Gagner de la place ===== */
-
-/* Le menu de gauche reste fixe et défile tout seul */
-.sidebar {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    padding: 18px 12px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--line) transparent;
-}
-
-.logo {
-    margin-bottom: 8px;
-}
-
-.logo-img {
-    max-width: 190px;
-}
-
-.side-title {
-    margin: 18px 0 6px 10px;
-}
-
-.side-nav {
-    gap: 2px;
-}
-
-.side-btn {
-    gap: 10px;
-    padding: 7px 10px;
-    border-radius: 8px;
-    font-size: 13px;
-}
-
-/* Titre et onglets plus compacts */
-.topbar {
-    padding: 14px 32px;
-}
-
-.hero {
-    padding: 22px 32px 0;
-}
-
-.hero h1 {
-    font-size: 30px;
-}
-
-.tabs {
-    padding: 16px 32px 0;
-}
-
-#trending,
-#pros,
-#creators {
-    gap: 14px;
-    margin-top: 20px;
-}
-
-/* Cartes plus compactes */
-.card {
-    gap: 10px;
-    padding: 16px;
-}
-
-.card-photo {
-    width: 72px;
-    height: 72px;
-}
-
-.about {
-    margin-top: 16px;
-}
-
 /* ===== Bas du menu de gauche : réseaux sociaux + contact ===== */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-}
-
 .side-footer {
     margin-top: auto; /* pousse le bloc tout en bas du menu */
     padding-top: 16px;
@@ -901,7 +1456,7 @@ body.light .team-badge img[src*="fut"] {
 
 .socials {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     padding: 0 10px;
 }
 
@@ -911,11 +1466,11 @@ body.light .team-badge img[src*="fut"] {
     justify-content: center;
     width: 38px;
     height: 38px;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid var(--line);
     background-color: var(--panel);
     color: var(--muted);
-    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+    transition: color 0.18s var(--ease), border-color 0.18s var(--ease), transform 0.18s var(--ease);
 }
 
 .social svg {
@@ -926,32 +1481,53 @@ body.light .team-badge img[src*="fut"] {
 
 .social:hover {
     transform: translateY(-2px);
-    color: var(--text);
     border-color: var(--muted);
 }
 
+/* Les logos gardent les couleurs officielles des marques, en permanence */
+.social-discord {
+    color: var(--brand-discord);
+}
+
 .social-discord:hover {
-    color: #5865F2;
-    border-color: #5865F2;
+    border-color: var(--brand-discord);
+}
+
+/* TikTok : logo blanc (noir en mode clair) avec son décalage cyan / rose */
+.social-tiktok {
+    color: var(--brand-tiktok);
+}
+
+.social-tiktok svg {
+    filter: drop-shadow(-1px -1px 0 var(--brand-tiktok-cyan)) drop-shadow(1px 1px 0 var(--brand-tiktok-pink));
 }
 
 .social-tiktok:hover {
-    color: #25F4EE;
-    border-color: #FE2C55;
+    border-color: var(--brand-tiktok-pink);
+}
+
+/* X : blanc en mode sombre, noir en mode clair (ses couleurs officielles) */
+.social-x {
+    color: var(--brand-x);
+}
+
+.social-x:hover {
+    border-color: var(--text);
 }
 
 .contact-btn {
     display: block;
     margin: 12px 10px 0;
     padding: 9px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--accent);
+    border-radius: 2px;
+    border: 1px solid var(--accent-line);
     color: var(--text);
-    font-size: 13px;
-    font-weight: 700;
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.18s var(--ease), color 0.18s var(--ease);
 }
 
 .contact-btn:hover {
@@ -959,93 +1535,29 @@ body.light .team-badge img[src*="fut"] {
     color: var(--accent-text);
 }
 
+.contact-btn:active {
+    background-color: var(--accent-active);
+}
+
 .side-note {
     margin: 6px 10px 0;
-    font-size: 11px;
+    font-size: var(--fs-2xs);
     color: var(--muted);
     text-align: center;
 }
 
-/* ===== Liens du pied de page (FAQ, mentions légales) ===== */
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-bottom: 8px;
-}
+/* ===== Moins d'animations pour ceux qui le demandent ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 
-.footer-links a {
-    color: var(--text);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-/* ===== Choix de la langue (en haut à droite) ===== */
-/* Bouton FAQ (en haut à droite, avant la langue) */
-.top-link {
-    margin-left: auto; /* pousse FAQ, la langue et "Light mode" tout à droite */
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-    color: var(--text);
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: border-color 0.2s;
-}
-
-.top-link svg {
-    width: 16px;
-    height: 16px;
-    fill: var(--accent);
-}
-
-.top-link:hover {
-    border-color: var(--accent);
-}
-
-.lang {
-    width: 76px;
-    flex-shrink: 0;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-    color: var(--text);
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-/* ===== Menu de tri (à droite des onglets) ===== */
-.sort {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--muted);
-}
-
-.sort select {
-    padding: 8px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background-color: var(--panel);
-    color: var(--text);
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
+    .field-row::after {
+        display: none;
+    }
 }
 
 /* ===== Téléphone (TOUJOURS EN DERNIER) ===== */
@@ -1054,61 +1566,55 @@ body.light .team-badge img[src*="fut"] {
         flex-direction: column;
     }
 
+    /* Le rail se « déplie » : logo et équipes en haut, réseaux sociaux tout en bas de la page */
     .sidebar {
-        position: static;
-        width: auto;
-        height: auto;
-        overflow-y: visible;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
+        display: contents;
+    }
+
+    .logo {
+        order: 0;
+        margin: 0;
+        padding: 14px 16px 0;
+        background-color: var(--sidebar);
+    }
+
+    .logo-img {
+        max-width: 160px;
+    }
+
+    .sidebar > .side-title {
+        order: 1;
+        margin: 0;
+        padding: 10px 16px 4px;
+        background-color: var(--sidebar);
     }
 
     .side-nav {
+        order: 2;
         flex-direction: row;
         overflow-x: auto;
+        padding: 0 12px 10px;
+        background-color: var(--sidebar);
+        scrollbar-width: none;
     }
 
     .side-btn {
         white-space: nowrap;
     }
 
-    .topbar,
-    .hero,
-    .tabs,
-    main,
-    .about,
-    footer,
-    .page-top {
-        padding-left: 16px;
-        padding-right: 16px;
+    .content {
+        order: 3;
     }
 
-    /* Sur téléphone : la recherche prend toute la ligne, les boutons passent en dessous */
-    .topbar {
-        flex-wrap: wrap;
-    }
-
-    #search {
-        flex: 1 1 100%;
-        max-width: none;
-        min-width: 0;
-    }
-
-    /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */
-    .top-link span {
-        display: none;
-    }
-
-    .top-link {
-        padding: 10px;
-    }
-
-    /* Réseaux sociaux + contact sur une seule ligne */
     .side-footer {
+        order: 4;
         display: flex;
         align-items: center;
         gap: 8px;
-        padding-top: 12px;
+        margin: 0;
+        padding: 16px;
+        border-top: 1px solid var(--line);
+        background-color: var(--sidebar);
     }
 
     .side-footer .side-title,
@@ -1125,17 +1631,140 @@ body.light .team-badge img[src*="fut"] {
         margin: 0;
     }
 
+    .topbar,
+    .hero,
+    main,
+    .about,
+    footer,
+    .page-top {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tabs {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* Barre du haut : la recherche prend toute la ligne, les boutons passent en dessous */
+    .topbar {
+        flex-wrap: wrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #search {
+        flex: 1 1 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .game-switch {
+        margin-left: 0;
+    }
+
+    .game:disabled {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1;
+    }
+
+    .game small {
+        font-size: var(--fs-2xs);
+    }
+
+    .tab-bar {
+        -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent);
+        mask-image: linear-gradient(90deg, #000 82%, transparent);
+        padding-right: 24px;
+    }
+
+    .game,
+    #theme-toggle,
+    .top-link {
+        padding: 0 10px;
+        font-size: var(--fs-sm);
+    }
+
+    .lang {
+        width: 60px;
+        font-size: var(--fs-sm);
+    }
+
+    .page-top .logo-img {
+        height: 32px;
+    }
+
+    .page-top-links {
+        gap: 12px;
+    }
+
+    .back-link {
+        font-size: var(--fs-sm);
+        white-space: nowrap;
+    }
+
+    /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */
+    .top-link span {
+        display: none;
+    }
+
+    .top-link {
+        margin-left: auto;
+    }
+
+    .hero {
+        padding-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: var(--fs-2xl);
+    }
+
+    .quick {
+        gap: 6px;
+    }
+
+    .quick-btn {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .quick-btn svg {
+        display: none;
+    }
+
+    .quick-name {
+        font-size: var(--fs-ui);
+    }
+
+    .quick-count {
+        font-size: var(--fs-2xs);
+    }
+
+    .hero p {
+        margin-top: 6px;
+        font-size: var(--fs-ui);
+    }
+
+    .tabs {
+        margin-top: 14px;
+    }
+
     .player-head {
         gap: 14px;
+        min-height: 120px;
+        padding: 12px 14px 0;
     }
 
     .player-photo {
         width: 84px;
-        height: 84px;
-        font-size: 26px;
+        height: 96px;
+        font-size: var(--fs-xl);
     }
 
     .player-page h1 {
-        font-size: 22px;
+        font-size: var(--fs-2xl);
     }
 }

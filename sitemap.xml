@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/faq.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/donk.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/zywoo.html</loc><lastmod>2026-10-17</lastmod></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/donk.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/donk.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/zywoo.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/zywoo.webp</image:loc></image:image></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/m0nesy.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/maj3r.html</loc><lastmod>2026-10-08</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/mezii.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/flamez.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/apex.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/ropz.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/spinx.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/xertion.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/pr.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/torzsi.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/xelex.html</loc><lastmod>2026-10-17</lastmod></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/mezii.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/mezii.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/flamez.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/flamez.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/apex.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/apex.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/ropz.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/ropz.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/spinx.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/spinx.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/xertion.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/xertion.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/pr.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/pr.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/torzsi.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/torzsi.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/xelex.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/xelex.webp</image:loc></image:image></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/xantares.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/kyxsan.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/sh1ro.html</loc><lastmod>2026-10-17</lastmod></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/sh1ro.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/sh1ro.webp</image:loc></image:image></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/woxic.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/wicadia.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/jimpphat.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/tn1r.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/zont1x.html</loc><lastmod>2026-10-17</lastmod></url>
-    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/magixx.html</loc><lastmod>2026-10-17</lastmod></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/tn1r.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/tn1r.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/zont1x.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/zont1x.webp</image:loc></image:image></url>
+    <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/magixx.html</loc><lastmod>2026-10-17</lastmod><image:image><image:loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/photos/magixx.webp</image:loc></image:image></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/fallen.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/kscerato.html</loc><lastmod>2026-10-17</lastmod></url>
     <url><loc>https://antonnisthomas13-sudo.github.io/ClutchCrosshair/players/yekindar.html</loc><lastmod>2026-10-17</lastmod></url>

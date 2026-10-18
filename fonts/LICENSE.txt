@@ -1,0 +1,9 @@
+Fonts hosted with ClutchCrosshair (latin subsets, WOFF2), all licensed under the
+SIL Open Font License, Version 1.1 — https://openfontlicense.org
+
+- Barlow Condensed (700): Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
+- Inter (variable, 400–600): Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+- JetBrains Mono (400): Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+Files downloaded from Google Fonts (fonts.google.com) and served from this site,
+so visitors' browsers do not contact any third-party font server.

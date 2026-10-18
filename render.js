@@ -1,9 +1,9 @@
 // ===== render.js : fabrique le HTML des cartes joueurs =====
-// Partagé par script.js (dans le navigateur) ET build.js (qui écrit les cartes directement dans index.html pour Google)
+// Utilisé par build.js, qui écrit les cartes directement dans index.html (lisibles par Google, rien à calculer dans le navigateur).
 // Ce fichier ne touche pas à la page : il ne fait que renvoyer du texte HTML.
 
 import { decodeCrosshairShareCode, crosshairToConVars } from "./lib/csgo-sharecode.js";
-import { teams } from "./teams.js?v=1";
+import { teams } from "./teams.js";
 
 // Transforme un nom en adresse propre : "ZywOo" -> "zywoo", "huNter-" -> "hunter"
 export function slug(name) {
@@ -50,55 +50,72 @@ export function teamColor(teamName) {
     return team ? team.color : "#A78BFA";
 }
 
+// Couleur du texte posé sur la couleur de l'équipe : noir sur les couleurs claires, blanc sur les foncées
+export function textOnColor(hex) {
+    const n = parseInt(String(hex).replace("#", ""), 16);
+    const light = (0.2126 * ((n >> 16) & 255) + 0.7152 * ((n >> 8) & 255) + 0.0722 * (n & 255)) / 255;
+    return light > 0.55 ? "#111214" : "#FFFFFF";
+}
+
 // Petit logo de l'équipe (si le fichier manque, on garde la pastille de couleur)
-export function teamBadge(teamName, prefix = "") {
+// logo = chemin du logo optimisé (logos/sm/...) quand build.js l'a préparé ; size = taille affichée en pixels
+export function teamBadge(teamName, logo, size) {
     const team = teamInfo(teamName);
     if (!team) {
         return "";
     }
-    return `<span class="team-badge" style="--c: ${team.color}"><img src="${prefix}${team.logo}" alt="" onerror="this.remove()"></span>`;
+    const px = size || 16;
+    return `<span class="team-badge" style="--c: ${team.color}"><img src="${logo || team.logo}" alt="" width="${px}" height="${px}" decoding="async" onerror="this.remove()"></span>`;
 }
 
-// Photo du joueur. "file" = le vrai fichier quand on le connaît (build.js) ;
-// sinon on essaie photos/pseudo.webp, puis .png, puis .jpg (voir photoFallback dans script.js), puis les initiales
-export function photoHTML(player, className, file) {
+// Photo du joueur dans une carte. "file" = la vignette préparée par build.js ("" = pas de photo -> initiales)
+// eager = true pour les premières cartes (visibles sans défiler) : chargées tout de suite, c'est ce que Google mesure en premier
+export function photoHTML(player, className, file, eager) {
     const initials = esc(player.name.slice(0, 2).toUpperCase());
-    if (file === "") {
+    if (!file) {
         return `<div class="${className}">${initials}</div>`;
     }
-    const src = esc(file || player.photo || "photos/" + slug(player.name) + ".webp");
     // loading="lazy" : la photo ne se télécharge que quand on arrive dessus en faisant défiler
-    return `<img class="${className}" src="${src}" alt="${esc(player.name)}" loading="lazy" decoding="async" data-initials="${initials}" onerror="photoFallback(this)">`;
+    // width/height : la place est réservée avant le chargement, la page ne "saute" pas
+    return `<img class="${className}" src="${esc(file)}" alt="${esc(player.name)}" width="76" height="86" loading="${eager ? "eager" : "lazy"}" decoding="async" data-initials="${initials}" onerror="photoFallback(this)">`;
 }
 
-// La carte complète d'un joueur (photo, aperçu, code, console)
-export function cardHTML(player, photoFile) {
+// La carte complète d'un joueur, façon "fiche joueur" de retransmission :
+// bandeau couleur d'équipe (nom + photo), ligne équipe/date, boîte "Crosshair" (aperçu taille réelle), code, console
+// options : photo (vignette), photoMd (photo moyenne pour la fiche), eager (charger tout de suite), logo (logo optimisé)
+export function cardHTML(player, options) {
+    const o = options || {};
     const name = esc(player.name);
     const team = esc(player.team);
-    return `<article class="card" data-slug="${slug(player.name)}" data-team="${team}" data-name="${esc(player.name.toLowerCase())}" data-updated="${sortableDate(player.updated)}" style="--team: ${teamColor(player.team)}">
+    const color = teamColor(player.team);
+    const photoAttr = o.photoMd ? ` data-photo="${esc(o.photoMd)}"` : "";
+    return `<article class="card" data-slug="${slug(player.name)}" data-team="${team}" data-name="${esc(player.name.toLowerCase())}" data-updated="${sortableDate(player.updated)}" data-date="${esc(player.updated)}"${photoAttr} style="--team: ${color}; --on-team: ${textOnColor(color)}">
             <div class="card-top">
-                ${photoHTML(player, "card-photo", photoFile)}
-                <div>
-                    <h3><a href="players/${slug(player.name)}.html">${name}</a></h3>
-                    <span class="team">${teamBadge(player.team)}${team}</span>
-                </div>
+                <h3><a href="players/${slug(player.name)}.html">${name}</a></h3>
+                ${photoHTML(player, "card-photo", o.photo, o.eager)}
             </div>
-            <canvas class="preview" width="560" height="160" role="img" aria-label="${name} CS2 crosshair preview"></canvas>
+            <div class="card-meta">
+                <span class="team">${teamBadge(player.team, o.logo, 16)}${team}</span>
+                <span class="date">Updated ${esc(player.updated)}</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="${name} CS2 crosshair preview"></canvas>
+            </div>
             <div class="field">
-                <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
                 <div class="field-row">
                     <code class="code">${esc(player.code)}</code>
                     <button class="copy-code mini">Copy</button>
                 </div>
             </div>
             <div class="field">
-                <div class="field-label">Console <span>· Paste in the CS2 console (~)</span></div>
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
                 <div class="field-row">
                     <code class="console">${esc(consoleCommands(player.code))}</code>
                     <button class="copy-console mini btn-secondary">Copy</button>
                 </div>
             </div>
-            <span class="date">Updated ${esc(player.updated)}</span>
         </article>`;
 }
 

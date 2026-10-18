@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T06:30:00+02:00",
+  "title": "Design System: ClutchCrosshair",
+  "extensions": {
+    "colorMeta": {
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "canonical": "#111214",
+        "tonalRamp": [
+          "#08090A",
+          "#0C0D0F",
+          "#111214",
+          "#1B1D21",
+          "#24272C",
+          "#30343A",
+          "#9DA2AA",
+          "#ECEDEF"
+        ]
+      },
+      "signature-red": {
+        "role": "primary",
+        "displayName": "Signature Red",
+        "canonical": "#D7262F",
+        "tonalRamp": [
+          "#3A0A0D",
+          "#6B1218",
+          "#9C1820",
+          "#B51C25",
+          "#D7262F",
+          "#FF5C63",
+          "#FF9DA1",
+          "#FFD9DB"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home H1 only, Barlow Condensed."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Player names in slabs, uppercase."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section titles."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Tabs, buttons, navigation, tiles (Inter 600)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text (Inter 400)."
+      },
+      "label-caps": {
+        "displayName": "Label caps",
+        "purpose": "Small uppercase field labels."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Share codes and console commands."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-hover",
+        "value": "0 8px 24px rgba(0, 0, 0, 0.35)",
+        "purpose": "Only on hovered cards."
+      },
+      {
+        "name": "modal",
+        "value": "0 24px 60px rgba(0, 0, 0, 0.5)",
+        "purpose": "Player modal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-broadcast",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out for every transition (180-240 ms)."
+      },
+      {
+        "name": "copy-wipe",
+        "value": "1.5s, enter 15% (~220 ms), hold, exit",
+        "purpose": "Signature red COPIED wipe on the code row; off under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "button-copy",
+      "description": "The primary action: copy the share code.",
+      "html": "<button class=\"ds-btn-copy\">Copy</button>",
+      "css": ".ds-btn-copy { background: #D7262F; color: #FFFFFF; border: none; border-radius: 0; padding: 9px 16px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: background-color 0.18s cubic-bezier(0.16,1,0.3,1); } .ds-btn-copy:hover { background: #B51C25; } .ds-btn-copy:active { background: #9C1820; } .ds-btn-copy:focus-visible { outline: 2px solid #D7262F; outline-offset: 2px; } .ds-btn-copy:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Console Copy Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action: copy the console commands.",
+      "html": "<button class=\"ds-btn-secondary\">Copy</button>",
+      "css": ".ds-btn-secondary { background: #111214; color: #ECEDEF; border: none; border-left: 1px solid #30343A; border-radius: 0; padding: 9px 16px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; } .ds-btn-secondary:hover { background: #ECEDEF; color: #111214; } .ds-btn-secondary:focus-visible { outline: 2px solid #D7262F; outline-offset: 2px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "Search a player, team or creator.",
+      "html": "<input class=\"ds-input\" type=\"search\" placeholder=\"Search a CS2 player, team or creator...\">",
+      "css": ".ds-input { height: 42px; width: 360px; padding: 0 14px; border: 1px solid #30343A; border-radius: 2px; background: #1B1D21; color: #ECEDEF; font: 15px Inter, system-ui, sans-serif; caret-color: #D7262F; outline: none; } .ds-input::placeholder { color: #9DA2AA; } .ds-input:focus { border-color: #D7262F; }"
+    },
+    {
+      "name": "Tab Rail",
+      "kind": "nav",
+      "refersTo": "tab-active",
+      "description": "Pros / Creators / Trending / Generator / Pro Skins.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-tab ds-on\">Pros</button><button class=\"ds-tab\">Creators</button><button class=\"ds-tab\">Trending</button></nav>",
+      "css": ".ds-tabs { display: flex; gap: 2px; border-bottom: 1px solid #30343A; background: #111214; } .ds-tab { position: relative; padding: 10px 18px 12px; border: none; border-radius: 2px 2px 0 0; background: transparent; color: #9DA2AA; font-family: Inter, sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; } .ds-tab:hover { background: #1B1D21; color: #ECEDEF; } .ds-tab.ds-on { background: #ECEDEF; color: #111214; } .ds-tab.ds-on::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: #D7262F; }"
+    },
+    {
+      "name": "Player Spotlight Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Signature card: team slab, meta line, crosshair stat box, code row.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-slab\"><h3>NiKo</h3></div><div class=\"ds-meta\"><span>Falcons</span><span>Updated 17/10/2026</span></div><div class=\"ds-stat\"><span>Crosshair</span></div><div class=\"ds-row\"><code>CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK</code><button>Copy</button></div></article>",
+      "css": ".ds-card { width: 280px; background: #1B1D21; border: 1px solid #30343A; border-radius: 2px; overflow: hidden; font-family: Inter, sans-serif; color: #ECEDEF; transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.2s; } .ds-card:hover { transform: translateY(-2px); border-color: #2ECC71; box-shadow: 0 8px 24px rgba(0,0,0,0.35); } .ds-slab { height: 96px; display: flex; align-items: flex-end; padding: 12px 16px; background: #2ECC71; color: #0B0C10; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); clip-path: polygon(0 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%); } .ds-slab h3 { margin: 0; font: 700 32px/1 'Barlow Condensed', sans-serif; text-transform: uppercase; } .ds-meta { display: flex; justify-content: space-between; padding: 10px 16px 0; font: 600 13px Inter, sans-serif; color: #9DA2AA; } .ds-meta span:last-child { font: 11px 'JetBrains Mono', monospace; letter-spacing: 0; text-transform: none; } .ds-stat { position: relative; height: 80px; margin: 10px 16px 0; background: #08090A; border: 1px solid #30343A; } .ds-stat span { position: absolute; top: 6px; left: 8px; padding: 2px 6px; background: rgba(7,8,10,0.78); color: #D7262F; font: 600 11px Inter, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; } .ds-row { display: flex; margin: 10px 16px 16px; border: 1px solid #30343A; background: #24272C; } .ds-row code { flex: 1; min-width: 0; align-self: center; padding: 0 10px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 500 12px 'JetBrains Mono', monospace; } .ds-row button { border: none; background: #D7262F; color: #FFFFFF; padding: 9px 16px; font: 600 13px Inter, sans-serif; }"
+    },
+    {
+      "name": "Game Switch",
+      "kind": "chip",
+      "refersTo": "tab-active",
+      "description": "CS2 active, Valorant coming soon.",
+      "html": "<div class=\"ds-switch\"><button class=\"ds-on\">CS2</button><button disabled>Valorant <small>soon</small></button></div>",
+      "css": ".ds-switch { display: inline-flex; border: 1px solid #30343A; border-radius: 2px; overflow: hidden; } .ds-switch button { height: 40px; padding: 0 14px; border: none; background: #1B1D21; color: #9DA2AA; font: 600 13px Inter, sans-serif; } .ds-switch .ds-on { background: #ECEDEF; color: #111214; } .ds-switch button:disabled { cursor: not-allowed; } .ds-switch small { font: 600 11px Inter, sans-serif; text-transform: none; letter-spacing: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Broadcast Booth",
+    "overview": "ClutchCrosshair looks like the graphics package of a CS Major broadcast, applied to a working tool. Charcoal ground (~70%), deep grey cards (~25%), one signature red for actions (~5%). Barlow Condensed for headings and player names only, Inter for the interface, JetBrains Mono for codes. The home page opens on a compact navigation, a strong title, a large search and three quick-access tiles, then the grid.",
+    "keyCharacteristics": [
+      "Team-colour slabs with chamfered corners as the identity of every player.",
+      "Charcoal 70%, deep grey 25%, signature red 5%; yellow only from teams.",
+      "Condensed display type for headings only; Inter for the interface; mono for codes.",
+      "Flat panels divided by 1px seams; no glows, no gradient text.",
+      "The crosshair preview is always drawn at true in-game size."
+    ],
+    "rules": [
+      {
+        "name": "The Five Percent Rule",
+        "body": "Red covers roughly 5% of any screen: actions, the selection and thin interaction lines. It is never a large fill and never decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Second Accent Rule",
+        "body": "There is no second interface accent. Yellow, green and cyan belong to teams and crosshairs.",
+        "section": "colors"
+      },
+      {
+        "name": "The Brand Marks Rule",
+        "body": "Social icons always show their official colours: Discord in brand-discord, TikTok white (black in light mode) with its cyan and pink offset, X white (black in light mode).",
+        "section": "colors"
+      },
+      {
+        "name": "The Variables Only Rule",
+        "body": "Every colour, family, size, weight and line height comes from a CSS variable on :root or body.light. Nothing is hard-coded inside a component.",
+        "section": "colors"
+      },
+      {
+        "name": "The Headlines Only Rule",
+        "body": "The condensed face is only for headings and player names. Controls, labels and text are always Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Glow Rule",
+        "body": "No halos, glows or gradient text. Depth comes from tone and seams.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep red at about 5% of the screen: actions, selection, thin interaction lines.",
+      "Do use the condensed face only for headings and player names.",
+      "Do read every colour and type setting from a CSS variable.",
+      "Do draw the crosshair preview at true in-game size."
+    ],
+    "donts": [
+      "Don't reintroduce yellow or amber as an interface accent.",
+      "Don't add a marketing banner, a long slogan or decorative motion to the home hero.",
+      "Don't add a kicker or eyebrow above a heading.",
+      "Don't use glows, gradient text or glassmorphism."
+    ]
+  }
+}
