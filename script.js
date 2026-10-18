@@ -2,7 +2,7 @@
 // Tout le contenu (cartes, menu des équipes, onglet Trending, compteurs) est déjà écrit dans index.html par build.js :
 // ce fichier ajoute seulement les interactions. Rien de plus à télécharger (pas de players.json).
 // crosshair.js : l'aperçu du crosshair + le bouton Copy (partagé avec les pages joueurs)
-import { copyText, drawCrosshair } from "./crosshair.js?v=416fae957b";
+import { copyText, drawCrosshair } from "./crosshair.js?v=35c7499c7d";
 
 const layout = document.querySelector(".layout");
 const main = document.getElementById("main");
@@ -140,6 +140,22 @@ function showTab(name) {
         tab.setAttribute("aria-selected", active ? "true" : "false");
         tab.tabIndex = active ? 0 : -1;
     });
+    if (name === "generator") {
+        loadGenerator();
+    }
+}
+
+// Le générateur n'est téléchargé qu'à la première ouverture de son onglet : l'accueil reste léger
+let generatorLoading = null;
+
+function loadGenerator() {
+    if (!generatorLoading) {
+        generatorLoading = import("./generator.js?v=4372d1c5c7").then(function (module) {
+            module.initGenerator(document.getElementById("gen"));
+        }).catch(function () {
+            generatorLoading = null; // connexion coupée : on réessaiera au prochain clic
+        });
+    }
 }
 
 tabs.forEach(function (tab, i) {

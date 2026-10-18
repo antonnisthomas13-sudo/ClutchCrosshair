@@ -4,6 +4,7 @@
 //     et la liste de tous les joueurs — lisibles par Google sans JavaScript
 //   - une page complète par joueur (players/<slug>.html) — et supprime les pages des joueurs qui n'existent plus
 //   - faq.html (FAQ complète, avec des statistiques calculées sur les crosshairs des pros)
+//   - generator.html (générateur de crosshair CS2) — le même générateur est aussi écrit dans l'onglet Generator de l'accueil
 //   - legal.html (mentions légales)
 //   - sitemap.xml (avec la date de mise à jour et la photo de chaque page) et 404.html
 //   - les "empreintes" ?v=... des fichiers CSS/JS : changent toutes seules quand le fichier change
@@ -17,11 +18,19 @@ const { optimizeImages } = require("./images.js");
 const SITE_URL = "https://antonnisthomas13-sudo.github.io/ClutchCrosshair";
 
 // Mentions légales : À REMPLIR avant de publier
-const PUBLISHER_NAME = "[À REMPLIR : ton nom]";
+const PUBLISHER_NAME = "Anto";
 const PUBLISHER_EMAIL = "[À REMPLIR : ton e-mail de contact]";
 
 // Nombre de cartes dont la photo est chargée tout de suite (la première rangée, visible sans défiler)
 const EAGER_CARDS = 4;
+
+// Crosshair de départ du générateur : vert, statique, sans contour, tailles en pixels pour un écran 1080p
+const GENERATOR_DEFAULT = {
+    format: "cs2-v1", style: 4, followRecoil: false, centerDotEnabled: false, tStyleEnabled: false, outlineMode: 0,
+    red: 0, green: 255, blue: 0, alpha: 255, outlineRed: 0, outlineGreen: 0, outlineBlue: 0, outlineAlpha: 255,
+    gap: 2, length: 4, thickness: 2, dynamicSpreadLimit: 181, splitDistance: 2, innerSplitAlpha: 0, outerSplitAlpha: 1,
+    splitSizeRatio: 1, screenHeight: 1080, scopeDotScale: 1, scopeDotUseCrosshairColor: false
+};
 
 // Date "17/10/2026" -> "2026-10-17" (format demandé par le sitemap et les données structurées)
 function isoDate(date) {
@@ -56,19 +65,40 @@ async function main() {
     const sharecode = await import("./lib/csgo-sharecode.js");
     const { teams } = await import("./teams.js");
     const render = await import("./render.js");
-    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName } = render;
+    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName, generatorHTML } = render;
 
     const players = JSON.parse(fs.readFileSync("players.json", "utf8"));
 
     // Empreintes des fichiers CSS / JS (voir tout en haut)
+    // Ordre important : crosshair.js -> generator.js (qui l'importe) -> script.js (qui importe les deux)
+    function setImportVersion(file, imported, hash) {
+        const text = fs.readFileSync(file, "utf8");
+        const updated = text.replace(new RegExp("(\\./" + imported.replace(".", "\\.") + "\\?v=)[^\"']*", "g"), "$1" + hash);
+        if (updated !== text) {
+            fs.writeFileSync(file, updated);
+        }
+    }
     const CSS_HASH = fingerprint("style.css");
     const CROSSHAIR_HASH = fingerprint("crosshair.js");
-    let script = fs.readFileSync("script.js", "utf8");
-    const updatedScript = script.replace(/(\.\/crosshair\.js\?v=)[^"']*/, "$1" + CROSSHAIR_HASH);
-    if (updatedScript !== script) {
-        fs.writeFileSync("script.js", updatedScript);
-    }
+    setImportVersion("generator.js", "crosshair.js", CROSSHAIR_HASH);
+    setImportVersion("script.js", "crosshair.js", CROSSHAIR_HASH);
+    const GENERATOR_HASH = fingerprint("generator.js");
+    setImportVersion("script.js", "generator.js", GENERATOR_HASH);
     const SCRIPT_HASH = fingerprint("script.js");
+
+    // Le générateur : code de départ + liste des pros (codes CS2 valides seulement), par équipe
+    const generatorCode = sharecode.encodeCrosshair(GENERATOR_DEFAULT);
+    const generatorGroups = teams.map(function (t) {
+        return {
+            title: t.name,
+            players: players.filter(function (p) {
+                return p.team === t.name && /^CS(?!GO-)/.test(p.code) && decode(p.code);
+            }).sort(byTeamThenName)
+        };
+    }).filter(function (g) {
+        return g.players.length > 0;
+    });
+    const generatorBlock = generatorHTML(generatorCode, generatorGroups);
 
     // Photo d'origine, vignette (cartes) et photo moyenne (fiche, page joueur) d'un joueur
     function photoFiles(player) {
@@ -155,7 +185,8 @@ async function main() {
     <link rel="stylesheet" href="${p}style.css?v=${CSS_HASH}">${o.crosshair ? `
     <link rel="modulepreload" href="${p}crosshair.js?v=${CROSSHAIR_HASH}">
     <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
-    <link rel="preload" href="${p}preview-bg.webp" as="image" type="image/webp">` : ""}${o.jsonLd ? `
+    <link rel="preload" href="${p}preview-bg.webp" as="image" type="image/webp">` : ""}${o.generator ? `
+    <link rel="modulepreload" href="${p}generator.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
     <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
     }
 
@@ -167,6 +198,7 @@ async function main() {
             <img class="logo-img logo-light" src="${prefix}logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
         </a>
         <nav class="page-top-links">
+            <a href="${prefix}generator.html" class="back-link">Generator</a>
             <a href="${prefix}faq.html" class="back-link">FAQ</a>
             <a href="${prefix}" class="back-link">← All CS2 crosshairs</a>
         </nav>
@@ -176,6 +208,7 @@ async function main() {
     function footer(prefix) {
         return `<footer>
         <nav class="footer-links" aria-label="Footer">
+            <a href="${prefix}generator.html">Crosshair Generator</a>
             <a href="${prefix}faq.html">FAQ</a>
             <a href="${prefix}legal.html">Legal notice</a>
         </nav>
@@ -348,6 +381,7 @@ async function main() {
             <li>Click <strong>Share or Import</strong> and paste the code.</li>
         </ol>
         <p>Or copy the console commands, open the CS2 console (~) and paste them. <a href="../faq.html">More questions in the FAQ ›</a></p>
+        ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">Edit ${name}'s crosshair in the CS2 crosshair generator ›</a></p>` : ""}
 
         ${matesHtml}
     </main>
@@ -431,6 +465,9 @@ async function main() {
         }).join(", ")}</p></div>`;
     }).join("\n")}\n                </div>`;
     index = replaceBetween(index, "PLAYERS", directory, "                ");
+
+    // Le générateur dans l'onglet Generator (son JavaScript ne se charge qu'au clic sur l'onglet)
+    index = replaceBetween(index, "GENERATOR", generatorBlock, "                        ");
 
     // Empreintes des fichiers CSS/JS dans index.html
     index = index
@@ -536,6 +573,123 @@ ${faq.map(function (q) {
 </html>
 `);
 
+    // ===== 3 bis. generator.html : le générateur de crosshair CS2 (cible la recherche « CS2 crosshair generator ») =====
+    function mostCommon(values) {
+        const count = {};
+        values.forEach(function (v) {
+            count[v] = (count[v] || 0) + 1;
+        });
+        return Object.keys(count).sort(function (a, b) {
+            return count[b] - count[a];
+        })[0];
+    }
+    const famous = ["ZywOo", "donk", "m0NESY", "NiKo", "ropz", "sh1ro", "Twistzz", "b1t"].map(function (n) {
+        return pros.find(function (p) { return p.name === n; });
+    }).filter(Boolean);
+
+    const genFaq = [
+        ["Is this CS2 crosshair generator free?",
+            "Yes. It is free, with no sign-up and no download. Everything runs in your browser."],
+        ["How do I put my new crosshair in CS2?",
+            "Click Copy next to your share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. You can also copy the console commands and paste them in the CS2 console (~)."],
+        ["Why does my crosshair look different in 4:3 stretched?",
+            "In 4:3 stretched (1280×960, 1024×768...) or 5:4 stretched (1280×1024), the game image is stretched to fill a 16:9 screen, so the crosshair gets wider: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview (16:9, 4:3, 16:10 or 5:4) to see exactly how your crosshair will look in game. Your crosshair code stays the same."],
+        ["Can I start from a pro player's crosshair?",
+            "Yes. Pick a pro in the Start from list, or paste any CS2 crosshair code, then change the color, size or gap. The new code updates instantly."],
+        ["Does it work with old CSGO- crosshair codes?",
+            "No. Since the CS2 update of September 30, 2026, only the new codes starting with CS can be imported in the game. The generator only creates new CS2 codes."]
+    ];
+
+    const genUrl = `${SITE_URL}/generator.html`;
+    const genGraph = [
+        {
+            "@type": "WebPage",
+            "@id": genUrl,
+            "url": genUrl,
+            "name": "CS2 Crosshair Generator",
+            "inLanguage": "en",
+            "isPartOf": { "@id": SITE_URL + "/#website" },
+            "breadcrumb": { "@id": genUrl + "#breadcrumb" },
+            "mainEntity": { "@id": genUrl + "#app" }
+        },
+        {
+            "@type": "WebApplication",
+            "@id": genUrl + "#app",
+            "name": "CS2 Crosshair Generator",
+            "url": genUrl,
+            "description": "Free online CS2 crosshair generator: choose the color, length, thickness, gap and outline, see a real-size preview, then copy your CS2 crosshair code or console commands.",
+            "applicationCategory": "GameApplication",
+            "operatingSystem": "Any",
+            "browserRequirements": "Requires JavaScript",
+            "isAccessibleForFree": true,
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "publisher": { "@id": SITE_URL + "/#organization" }
+        },
+        breadcrumb("CS2 crosshair generator", genUrl),
+        {
+            "@type": "FAQPage",
+            "@id": genUrl + "#faq",
+            "mainEntity": genFaq.map(function (q) {
+                return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+            })
+        }
+    ];
+
+    fs.writeFileSync("generator.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: "CS2 Crosshair Generator: Create &amp; Copy Your Code | ClutchCrosshair",
+        ogTitle: "CS2 Crosshair Generator",
+        description: "Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.",
+        url: genUrl,
+        prefix: "",
+        crosshair: true,
+        generator: true,
+        jsonLd: { "@context": "https://schema.org", "@graph": genGraph }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("./")}
+    <main class="player-page gen-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">CS2 Crosshairs</a> › <span>Crosshair generator</span></nav>
+        <h1>CS2 Crosshair Generator</h1>
+        <p>Create your own CS2 crosshair in a few seconds: choose the color, length, thickness, gap and outline, see it live at real size on a CS2 map, then copy your crosshair code or console commands. Free, no sign-up, made for the new CS2 crosshair codes.</p>
+
+        ${generatorBlock}
+
+        <h2>How to use the CS2 crosshair generator</h2>
+        <ol>
+            <li>Start from scratch, from a <strong>pro crosshair</strong>, or paste your own code.</li>
+            <li>Choose the <strong>color</strong>, then adjust the <strong>length</strong>, <strong>thickness</strong> and <strong>gap</strong>. The preview updates live.</li>
+            <li>Pick <strong>your CS2 resolution</strong> under the preview to see the crosshair exactly as in game (4:3 stretched included).</li>
+            <li>Click <strong>Copy</strong>, then in CS2 open <strong>Settings › Game › Crosshair › Share or Import</strong> and paste the code.</li>
+        </ol>
+
+        <h2>What crosshair do CS2 pros use?</h2>
+        <p>Based on the ${total} pro crosshairs on ClutchCrosshair, the most used colors are ${esc(familyText)}. The most common settings are a length of ${mostCommon(decoded.map(function (c) { return c.length; }))}, a thickness of ${mostCommon(decoded.map(function (c) { return c.thickness; }))} and a gap of ${mostCommon(decoded.map(function (c) { return c.gap; }))} pixels; ${percent(withDot)} use a center dot and ${percent(withOutline)} an outline. <a href="faq.html">More stats in the FAQ ›</a></p>
+        ${famous.length ? `<ul class="related">${famous.map(function (p) {
+            return `<li><a href="players/${slug(p.name)}.html">${esc(p.name)} crosshair</a></li>`;
+        }).join("")}</ul>` : ""}
+
+        <h2>Crosshair generator FAQ</h2>
+${genFaq.map(function (q) {
+        return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+    }).join("\n")}
+        <p><a href="./">Browse all CS2 pro crosshairs ›</a></p>
+    </main>
+    ${footer("")}
+
+    <script type="module">
+        import { initGenerator } from "./generator.js?v=${GENERATOR_HASH}";
+        initGenerator(document.getElementById("gen"), { syncHash: true });
+    </script>
+</body>
+</html>
+`);
+
     // ===== 4. legal.html : mentions légales (obligatoires en France) =====
     fs.writeFileSync("legal.html", `<!DOCTYPE html>
 <html lang="en">
@@ -581,6 +735,7 @@ ${faq.map(function (q) {
 
     // ===== 5. Le sitemap : toutes les pages, leur date de mise à jour et la photo des joueurs (Google Images) =====
     let urls = `    <url><loc>${SITE_URL}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
+    urls += `    <url><loc>${genUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     urls += `    <url><loc>${faqUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     players.forEach(function (player) {
         const lastmod = isoDate(player.updated);
@@ -617,7 +772,7 @@ ${urls}</urlset>
 </html>
 `);
 
-    console.log(players.length + " pages joueurs + accueil + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
+    console.log(players.length + " pages joueurs + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
 }
 
 main();

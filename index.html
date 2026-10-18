@@ -33,8 +33,8 @@
          (les ?v= sont des empreintes calculées par build.js : ne pas les modifier à la main) -->
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=36278c54a3">
-    <link rel="modulepreload" href="crosshair.js?v=416fae957b">
+    <link rel="stylesheet" href="style.css?v=0e1a5fa425">
+    <link rel="modulepreload" href="crosshair.js?v=35c7499c7d">
     <link rel="modulepreload" href="lib/csgo-sharecode.js">
     <link rel="preload" href="preview-bg.webp" as="image" type="image/webp" fetchpriority="low">
 
@@ -2305,7 +2305,108 @@
                 <div id="tab-generator" role="tabpanel" aria-labelledby="tab-btn-generator" class="tab-panel hidden">
                     <section id="generator">
                         <h2>CS2 Crosshair Generator</h2>
-                        <p class="empty">Create your own CS2 crosshair: pick the color, size, gap, thickness and outline, see a live preview, then copy your crosshair code or console commands. Coming soon!</p>
+                        <p class="gen-intro">Create your own CS2 crosshair: pick the color, size, gap and outline, see it live at real size, then copy your code. <a href="generator.html">Open the generator page ›</a></p>
+                        <!-- GENERATOR:START (générateur écrit automatiquement par build.js, ne pas modifier à la main) -->
+                        <div class="gen" id="gen">
+        <div class="gen-view">
+            <div class="gen-stage">
+                <canvas class="preview gen-preview" data-gen="preview" data-bg="raw" data-res="1920x1080" data-stretch="1" width="760" height="320" role="img" aria-label="Live preview of your CS2 crosshair"></canvas>
+                <div class="gen-zoom" role="group" aria-label="Preview size">
+                    <button type="button" data-zoom="1" aria-pressed="true">Real size</button>
+                    <button type="button" data-zoom="3" aria-pressed="false">Zoom ×3</button>
+                </div>
+            </div>
+            <div class="gen-res">
+                <label class="gen-label" for="gen-res">Preview in your CS2 resolution</label>
+                <select id="gen-res" data-gen="res">
+                    <optgroup label="16:9"><option value="1920x1080" data-stretch="1" selected>1920 × 1080</option><option value="2560x1440" data-stretch="1">2560 × 1440</option><option value="1600x900" data-stretch="1">1600 × 900</option><option value="1280x720" data-stretch="1">1280 × 720</option><option value="3840x2160" data-stretch="1">3840 × 2160</option></optgroup><optgroup label="4:3 stretched"><option value="1280x960" data-stretch="1.333">1280 × 960 stretched</option><option value="1024x768" data-stretch="1.333">1024 × 768 stretched</option><option value="1440x1080" data-stretch="1.333">1440 × 1080 stretched</option><option value="1152x864" data-stretch="1.333">1152 × 864 stretched</option></optgroup><optgroup label="16:10"><option value="1680x1050" data-stretch="1">1680 × 1050</option><option value="1440x900" data-stretch="1">1440 × 900</option><option value="1280x800" data-stretch="1">1280 × 800</option><option value="1920x1200" data-stretch="1">1920 × 1200</option></optgroup><optgroup label="5:4 stretched"><option value="1280x1024" data-stretch="1.422">1280 × 1024 stretched</option></optgroup>
+                </select>
+                <p class="gen-hint">Preview only: your crosshair code stays the same.</p>
+            </div>
+            <div class="field">
+                <div class="field-label">Your share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code" data-gen="code">CSqRJsYaOxvHaRK7ef73Sr3FSdC4y4o6JK8DZ3PPWBSFdR</code>
+                    <button type="button" class="mini" data-copy="code">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console" data-gen="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;2&quot;; cl_crosshair_dynamic_spread_limit &quot;181&quot;; cl_crosshair_gap &quot;2&quot;; cl_crosshair_length &quot;4&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1080&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;0&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button type="button" class="mini btn-secondary" data-copy="console">Copy</button>
+                </div>
+            </div>
+            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the crosshair generator.</p></noscript>
+        </div>
+
+        <div class="gen-controls">
+            <fieldset class="gen-group">
+                <legend>Start from</legend>
+                <div class="gen-start">
+                    <label class="gen-label" for="gen-pro">A pro crosshair</label>
+                    <select id="gen-pro" data-gen="pro">
+                        <option value="">Choose a pro player…</option>
+                        <optgroup label="Team Spirit"><option value="CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH">donk</option><option value="CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW">magixx</option><option value="CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH">sh1ro</option><option value="CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G">tN1R</option><option value="CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH">zont1x</option></optgroup><optgroup label="Team Vitality"><option value="CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi">apEX</option><option value="CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj">flameZ</option><option value="CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C">mezii</option><option value="CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc">ropz</option><option value="CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H">ZywOo</option></optgroup><optgroup label="MOUZ"><option value="CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h">PR</option><option value="CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR">Spinx</option><option value="CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A">torzsi</option><option value="CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD">xelex</option><option value="CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac">xertioN</option></optgroup><optgroup label="FURIA"><option value="CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD">FalleN</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">KSCERATO</option><option value="CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD">molodoy</option><option value="CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd">YEKINDAR</option><option value="CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ">yuurih</option></optgroup><optgroup label="Falcons"><option value="CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO">karrigan</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">kyousuke</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">m0NESY</option><option value="CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK">NiKo</option><option value="CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX">TeSeS</option></optgroup><optgroup label="Aurora"><option value="CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb">Jimpphat</option><option value="CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW">kyxsan</option><option value="CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ">Wicadia</option><option value="CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc">woxic</option><option value="CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf">XANTARES</option></optgroup><optgroup label="Natus Vincere"><option value="CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD">Aleksib</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">b1t</option><option value="CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ">iM</option><option value="CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn">makazze</option><option value="CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD">w0nderful</option></optgroup><optgroup label="G2 Esports"><option value="CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA">HeavyGod</option><option value="CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie">huNter-</option><option value="CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c">MATYS</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">NertZ</option><option value="CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC">r1nkle</option></optgroup><optgroup label="FaZe Clan"><option value="CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG">frozen</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">JBOEN</option><option value="CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS">jcobbb</option><option value="CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B">Neityu</option><option value="CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL">Twistzz</option></optgroup><optgroup label="Astralis"><option value="CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM">cmtry</option><option value="CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd">phzy</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">ryu</option><option value="CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE">siuhy</option><option value="CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF">Staehr</option></optgroup><optgroup label="Legacy"><option value="CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF">art</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">dumau</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">latto</option><option value="CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT">n1ssim</option><option value="CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP">try</option></optgroup><optgroup label="MIBR"><option value="CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU">insani</option><option value="CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW">LNZ</option><option value="CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT">nqz</option><option value="CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J">tomaszin</option><option value="CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ">venomzera</option></optgroup><optgroup label="PARIVISION"><option value="CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA">FL1T</option><option value="CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW">Hobbit</option><option value="CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW">Jame</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">xiELO</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">zweih</option></optgroup><optgroup label="BetBoom"><option value="CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF">Boombl4</option><option value="CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A">d1Ledez</option><option value="CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X">Magnojez</option><option value="CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H">S1ren</option><option value="CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV">zorte</option></optgroup>
+                    </select>
+                    <label class="gen-label" for="gen-import">Or paste a code</label>
+                    <input type="text" id="gen-import" data-gen="import" placeholder="CS…" autocomplete="off" spellcheck="false">
+                </div>
+                <p class="gen-status" data-gen="status" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Color</legend>
+                <div class="gen-swatches">
+                    <button type="button" class="gen-swatch" data-color="#00FF00" style="--swatch: #00FF00" aria-pressed="true" aria-label="Green" title="Green"></button>
+                    <button type="button" class="gen-swatch" data-color="#FFFF00" style="--swatch: #FFFF00" aria-pressed="false" aria-label="Yellow" title="Yellow"></button>
+                    <button type="button" class="gen-swatch" data-color="#00FFFF" style="--swatch: #00FFFF" aria-pressed="false" aria-label="Cyan" title="Cyan"></button>
+                    <button type="button" class="gen-swatch" data-color="#FF0000" style="--swatch: #FF0000" aria-pressed="false" aria-label="Red" title="Red"></button>
+                    <button type="button" class="gen-swatch" data-color="#FF00FF" style="--swatch: #FF00FF" aria-pressed="false" aria-label="Pink" title="Pink"></button>
+                    <button type="button" class="gen-swatch" data-color="#FFFFFF" style="--swatch: #FFFFFF" aria-pressed="false" aria-label="White" title="White"></button>
+                    <label class="gen-custom">
+                        <input type="color" data-gen="color" value="#00ff00">
+                        <span>Custom</span>
+                    </label>
+                </div>
+                <div class="gen-slider">
+                    <label for="gen-alpha">Opacity</label>
+                    <input type="range" id="gen-alpha" data-field="alpha" min="50" max="255" step="1" value="255" style="--fill: 100%">
+                    <output class="gen-out" data-gen="alpha-out" for="gen-alpha">100%</output>
+                </div>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Size <span>in pixels</span></legend>
+                <div class="gen-slider">
+                <label for="gen-length">Length</label>
+                <input type="range" id="gen-length" data-field="length" min="0" max="20" step="1" value="4" style="--fill: 20%">
+                <input type="number" data-field="length" min="0" max="20" step="1" value="4" inputmode="numeric" aria-label="Length (pixels)">
+            </div>
+                <div class="gen-slider">
+                <label for="gen-thickness">Thickness</label>
+                <input type="range" id="gen-thickness" data-field="thickness" min="1" max="10" step="1" value="2" style="--fill: 11%">
+                <input type="number" data-field="thickness" min="1" max="10" step="1" value="2" inputmode="numeric" aria-label="Thickness (pixels)">
+            </div>
+                <div class="gen-slider">
+                <label for="gen-gap">Gap</label>
+                <input type="range" id="gen-gap" data-field="gap" min="-5" max="10" step="1" value="2" style="--fill: 47%">
+                <input type="number" data-field="gap" min="-5" max="10" step="1" value="2" inputmode="numeric" aria-label="Gap (pixels)">
+            </div>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Style</legend>
+                <div class="gen-toggles">
+                    <label class="gen-toggle"><input type="checkbox" data-field="outlineMode"><span>Outline</span></label>
+                    <label class="gen-toggle"><input type="checkbox" data-field="centerDotEnabled"><span>Center dot</span></label>
+                    <label class="gen-toggle"><input type="checkbox" data-field="tStyleEnabled"><span>T-style</span></label>
+                </div>
+                <button type="button" class="gen-reset" data-gen="reset">Reset</button>
+            </fieldset>
+        </div>
+    </div>
+                        <!-- GENERATOR:END -->
                     </section>
                 </div>
 
@@ -2319,7 +2420,7 @@
 
             <section class="about">
                 <h2>Find the best CS2 crosshair</h2>
-                <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Every code is read from official match demos, so you get the exact crosshair each pro used in a recent match, in the new CS2 format. Copy the share code and import it in CS2 (Settings › Game › Crosshair › Share or Import), or paste the console commands in the CS2 console. Questions? Read the <a href="faq.html">CS2 crosshair FAQ</a>.</p>
+                <p>ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Every code is read from official match demos, so you get the exact crosshair each pro used in a recent match, in the new CS2 format. Copy the share code and import it in CS2 (Settings › Game › Crosshair › Share or Import), or paste the console commands in the CS2 console. Want your own? Make it with the <a href="generator.html">CS2 crosshair generator</a>. Questions? Read the <a href="faq.html">CS2 crosshair FAQ</a>.</p>
 
                 <h2>All CS2 pro crosshairs</h2>
                 <!-- PLAYERS:START (liste écrite automatiquement par build.js, ne pas modifier à la main) -->
@@ -2345,6 +2446,7 @@
 
             <footer>
                 <nav class="footer-links" aria-label="Footer">
+                    <a href="generator.html">Crosshair Generator</a>
                     <a href="faq.html">FAQ</a>
                     <a href="legal.html">Legal notice</a>
                 </nav>
@@ -2383,6 +2485,6 @@
         </div>
     </div>
 
-    <script type="module" src="script.js?v=275b75e690"></script>
+    <script type="module" src="script.js?v=948ffb3875"></script>
 </body>
 </html>

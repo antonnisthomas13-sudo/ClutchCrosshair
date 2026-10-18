@@ -119,6 +119,139 @@ export function cardHTML(player, options) {
         </article>`;
 }
 
+// ===== Le générateur de crosshair (generator.html + onglet Generator de l'accueil) =====
+// defaultCode : le crosshair de départ ; groups : [{ title: "Team Spirit", players: [{ name, code }] }]
+// Rendu vivant par generator.js. Les réglages en pixels suivent le format CS2 (sizes in pixels for a screen height).
+const GEN_COLORS = [["Green", "#00FF00"], ["Yellow", "#FFFF00"], ["Cyan", "#00FFFF"], ["Red", "#FF0000"], ["Pink", "#FF00FF"], ["White", "#FFFFFF"]];
+// Résolutions utilisées sur CS2, par format d'écran. Elles ne changent PAS le code : elles servent à l'aperçu,
+// pour voir le crosshair comme en jeu dans cette résolution. Les formats "stretched" (4:3, 5:4) sont étirés
+// en largeur sur un écran 16:9 : stretch = (16/9) / (largeur/hauteur)
+const GEN_RESOLUTIONS = [
+    ["16:9", false, ["1920x1080", "2560x1440", "1600x900", "1280x720", "3840x2160"]],
+    ["4:3 stretched", true, ["1280x960", "1024x768", "1440x1080", "1152x864"]],
+    ["16:10", false, ["1680x1050", "1440x900", "1280x800", "1920x1200"]],
+    ["5:4 stretched", true, ["1280x1024"]]
+];
+
+function stretchOf(resolution, stretched) {
+    const size = resolution.split("x").map(Number);
+    return stretched ? Math.round((16 / 9) / (size[0] / size[1]) * 1000) / 1000 : 1;
+}
+
+function genSlider(field, label, min, max, value, help) {
+    return `<div class="gen-slider">
+                <label for="gen-${field}">${label}</label>
+                <input type="range" id="gen-${field}" data-field="${field}" min="${min}" max="${max}" step="1" value="${value}" style="--fill: ${Math.round((value - min) / (max - min) * 100)}%">
+                <input type="number" data-field="${field}" min="${min}" max="${max}" step="1" value="${value}" inputmode="numeric" aria-label="${label} (${help})">
+            </div>`;
+}
+
+function genToggle(field, label, checked) {
+    return `<label class="gen-toggle"><input type="checkbox" data-field="${field}"${checked ? " checked" : ""}><span>${label}</span></label>`;
+}
+
+export function generatorHTML(defaultCode, groups) {
+    const c = decodeCrosshairShareCode(defaultCode);
+    const hex = "#" + [c.red, c.green, c.blue].map(function (v) {
+        return v.toString(16).padStart(2, "0");
+    }).join("").toUpperCase();
+
+    const proOptions = groups.map(function (g) {
+        return `<optgroup label="${esc(g.title)}">${g.players.map(function (p) {
+            return `<option value="${esc(p.code)}">${esc(p.name)}</option>`;
+        }).join("")}</optgroup>`;
+    }).join("");
+
+    return `<div class="gen" id="gen">
+        <div class="gen-view">
+            <div class="gen-stage">
+                <canvas class="preview gen-preview" data-gen="preview" data-bg="raw" data-res="1920x1080" data-stretch="1" width="760" height="320" role="img" aria-label="Live preview of your CS2 crosshair"></canvas>
+                <div class="gen-zoom" role="group" aria-label="Preview size">
+                    <button type="button" data-zoom="1" aria-pressed="true">Real size</button>
+                    <button type="button" data-zoom="3" aria-pressed="false">Zoom ×3</button>
+                </div>
+            </div>
+            <div class="gen-res">
+                <label class="gen-label" for="gen-res">Preview in your CS2 resolution</label>
+                <select id="gen-res" data-gen="res">
+                    ${GEN_RESOLUTIONS.map(function (group) {
+                        return `<optgroup label="${group[0]}">${group[2].map(function (res) {
+                            return `<option value="${res}" data-stretch="${stretchOf(res, group[1])}"${res === "1920x1080" ? " selected" : ""}>${res.replace("x", " × ")}${group[1] ? " stretched" : ""}</option>`;
+                        }).join("")}</optgroup>`;
+                    }).join("")}
+                </select>
+                <p class="gen-hint">Preview only: your crosshair code stays the same.</p>
+            </div>
+            <div class="field">
+                <div class="field-label">Your share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code" data-gen="code">${esc(defaultCode)}</code>
+                    <button type="button" class="mini" data-copy="code">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console" data-gen="console">${esc(consoleCommands(defaultCode))}</code>
+                    <button type="button" class="mini btn-secondary" data-copy="console">Copy</button>
+                </div>
+            </div>
+            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the crosshair generator.</p></noscript>
+        </div>
+
+        <div class="gen-controls">
+            <fieldset class="gen-group">
+                <legend>Start from</legend>
+                <div class="gen-start">
+                    <label class="gen-label" for="gen-pro">A pro crosshair</label>
+                    <select id="gen-pro" data-gen="pro">
+                        <option value="">Choose a pro player…</option>
+                        ${proOptions}
+                    </select>
+                    <label class="gen-label" for="gen-import">Or paste a code</label>
+                    <input type="text" id="gen-import" data-gen="import" placeholder="CS…" autocomplete="off" spellcheck="false">
+                </div>
+                <p class="gen-status" data-gen="status" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Color</legend>
+                <div class="gen-swatches">
+                    ${GEN_COLORS.map(function (color) {
+                        return `<button type="button" class="gen-swatch" data-color="${color[1]}" style="--swatch: ${color[1]}" aria-pressed="${color[1] === hex}" aria-label="${color[0]}" title="${color[0]}"></button>`;
+                    }).join("\n                    ")}
+                    <label class="gen-custom">
+                        <input type="color" data-gen="color" value="${hex.toLowerCase()}">
+                        <span>Custom</span>
+                    </label>
+                </div>
+                <div class="gen-slider">
+                    <label for="gen-alpha">Opacity</label>
+                    <input type="range" id="gen-alpha" data-field="alpha" min="50" max="255" step="1" value="${c.alpha}" style="--fill: ${Math.round((c.alpha - 50) / 205 * 100)}%">
+                    <output class="gen-out" data-gen="alpha-out" for="gen-alpha">${Math.round((c.alpha / 255) * 100)}%</output>
+                </div>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Size <span>in pixels</span></legend>
+                ${genSlider("length", "Length", 0, 20, c.length, "pixels")}
+                ${genSlider("thickness", "Thickness", 1, 10, c.thickness, "pixels")}
+                ${genSlider("gap", "Gap", -5, 10, c.gap, "pixels")}
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Style</legend>
+                <div class="gen-toggles">
+                    ${genToggle("outlineMode", "Outline", c.outlineMode > 0)}
+                    ${genToggle("centerDotEnabled", "Center dot", c.centerDotEnabled)}
+                    ${genToggle("tStyleEnabled", "T-style", c.tStyleEnabled)}
+                </div>
+                <button type="button" class="gen-reset" data-gen="reset">Reset</button>
+            </fieldset>
+        </div>
+    </div>`;
+}
+
 // Ordre par défaut des cartes : par équipe (ordre de teams.js), puis par nom
 export function byTeamThenName(a, b) {
     const ia = teams.findIndex(function (t) { return t.name === a.team; });

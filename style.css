@@ -1546,6 +1546,401 @@ body.light .team-badge img[src*="fut"] {
     text-align: center;
 }
 
+/* ===== Générateur de crosshair (generator.html + onglet Generator) =====
+   À gauche : l'aperçu (reste visible en défilant) + le code et la console. À droite : les réglages. */
+.gen-page {
+    max-width: 1120px;
+}
+
+.gen-page h3 {
+    margin: 12px 0 0;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
+}
+
+.gen-intro {
+    margin: 10px 0 0;
+    max-width: 75ch;
+    color: var(--muted);
+}
+
+.gen {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-top: 16px;
+    line-height: var(--lh-ui);
+}
+
+.gen-view {
+    position: sticky;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gen-stage {
+    position: relative;
+}
+
+.gen-preview {
+    aspect-ratio: 760 / 320;
+}
+
+/* Taille réelle / zoom : posé sur l'aperçu (toujours sombre, même en mode clair) */
+.gen-zoom {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: var(--chip-scrim);
+}
+
+.gen-zoom button {
+    padding: 6px 10px;
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--label);
+    font-size: var(--fs-xs);
+}
+
+.gen-zoom button[aria-pressed="true"] {
+    background-color: var(--label);
+    color: var(--stat);
+}
+
+.gen-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.gen-group {
+    min-width: 0;
+    margin: 0;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+}
+
+/* Le titre du groupe passe à l'intérieur du cadre (et pas sur la bordure) */
+.gen-group legend {
+    float: left;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 0;
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.gen-group legend span {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--muted);
+}
+
+.gen-group > :not(legend) {
+    clear: both;
+}
+
+.gen-group > :not(legend) + :not(legend) {
+    margin-top: 12px;
+}
+
+.gen-start,
+.gen-res {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px 12px;
+}
+
+.gen-label {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--muted);
+}
+
+.gen select,
+.gen input[type="text"],
+.gen input[type="number"] {
+    width: 100%;
+    min-width: 0;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+}
+
+.gen input[type="text"],
+.gen input[type="number"] {
+    font-family: var(--font-mono);
+}
+
+.gen select:focus,
+.gen input[type="text"]:focus,
+.gen input[type="number"]:focus {
+    border-color: var(--accent-line);
+    outline: none;
+}
+
+.gen select {
+    cursor: pointer;
+}
+
+.gen-hint {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+}
+
+.gen-status {
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+}
+
+.gen-status:empty {
+    display: none;
+}
+
+.gen-status-error {
+    color: var(--alert);
+}
+
+/* Couleurs toutes prêtes + couleur personnalisée */
+.gen-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.gen-swatch {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--swatch);
+}
+
+.gen-swatch[aria-pressed="true"] {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
+.gen-custom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 10px 0 6px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+}
+
+.gen-custom:hover {
+    border-color: var(--accent-line);
+}
+
+.gen-custom input {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.gen-custom input::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.gen-custom input::-webkit-color-swatch {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+}
+
+.gen-custom input::-moz-color-swatch {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+}
+
+/* Curseurs : nom, barre, valeur exacte (modifiable au clavier) */
+.gen-slider {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 64px;
+    align-items: center;
+    gap: 12px;
+}
+
+.gen-slider label {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+}
+
+.gen-slider input[type="number"] {
+    padding: 0 6px;
+    text-align: center;
+}
+
+.gen-out {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    text-align: center;
+}
+
+.gen input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 24px;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.gen input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(var(--accent-line), var(--accent-line)) 0 / var(--fill, 50%) 100% no-repeat, var(--line);
+}
+
+.gen input[type="range"]::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--line);
+}
+
+.gen input[type="range"]::-moz-range-progress {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-line);
+}
+
+.gen input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+    margin-top: -8px;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--text);
+    transition: background-color 0.18s var(--ease);
+}
+
+.gen input[type="range"]::-moz-range-thumb {
+    width: 10px;
+    height: 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--text);
+}
+
+.gen input[type="range"]:hover::-webkit-slider-thumb,
+.gen input[type="range"]:active::-webkit-slider-thumb {
+    background-color: var(--accent-line);
+}
+
+.gen input[type="range"]:hover::-moz-range-thumb,
+.gen input[type="range"]:active::-moz-range-thumb {
+    background-color: var(--accent-line);
+}
+
+/* Interrupteurs : contour, point central, style T */
+.gen-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.gen-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    transition: border-color 0.18s var(--ease);
+}
+
+.gen-toggle:hover,
+.gen-toggle:has(input:checked) {
+    border-color: var(--accent-line);
+}
+
+.gen-toggle input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    flex-shrink: 0;
+    width: 28px;
+    height: 16px;
+    margin: 0;
+    border-radius: 2px;
+    background-color: var(--line);
+    cursor: pointer;
+    transition: background-color 0.18s var(--ease);
+}
+
+.gen-toggle input::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 1px;
+    background-color: var(--muted);
+    transition: transform 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.gen-toggle input:checked {
+    background-color: var(--accent);
+}
+
+.gen-toggle input:checked::before {
+    background-color: var(--accent-text);
+    transform: translateX(12px);
+}
+
+.gen-reset {
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    background-color: transparent;
+    color: var(--muted);
+}
+
+.gen-reset:hover {
+    border-color: var(--text);
+    color: var(--text);
+}
+
 /* ===== Moins d'animations pour ceux qui le demandent ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1766,5 +2161,47 @@ body.light .team-badge img[src*="fut"] {
 
     .player-page h1 {
         font-size: var(--fs-2xl);
+    }
+
+    /* Générateur : une colonne ; l'aperçu reste collé en haut de l'écran pendant les réglages,
+       le code et la console passent sous les réglages */
+    .gen {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .gen-view {
+        display: contents;
+    }
+
+    .gen-stage {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 8px 0;
+        background-color: var(--bg);
+    }
+
+    .gen-zoom {
+        top: 16px;
+        right: 8px;
+    }
+
+    .gen-controls {
+        order: 1;
+    }
+
+    .gen-view > .field {
+        order: 2;
+    }
+
+    .gen-start {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 6px;
+    }
+
+    .gen-slider {
+        grid-template-columns: 72px minmax(0, 1fr) 56px;
+        gap: 10px;
     }
 }

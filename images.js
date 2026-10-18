@@ -187,7 +187,7 @@ function optimizeImages() {
             add({ src: "logos/" + f, out: "logos/sm/" + f.replace(/\.\w+$/, "") + ".webp", w: 48, h: 48, fit: "contain", position: "center", type: "image/webp", quality: 0.9 });
         }
     });
-    add({ src: "preview-bg.jpg", out: "preview-bg.webp", w: 1280, h: 960, fit: "cover", position: "center", type: "image/webp", quality: 0.78 });
+    add({ src: "preview-bg.jpg", out: "preview-bg.webp", w: 1920, h: 1080, fit: "cover", position: "center", type: "image/webp", quality: 0.9 });
     add({ src: "favicon.svg", out: "apple-touch-icon.png", w: 180, h: 180, fit: "contain", position: "center", type: "image/png", background: "#111214", scale: 0.84 });
     add({ src: "favicon.svg", out: "icon-512.png", w: 512, h: 512, fit: "contain", position: "center", type: "image/png", background: "#111214", scale: 0.84 });
 
