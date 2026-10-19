@@ -28,7 +28,7 @@
     <meta name="twitter:image" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/og-image.jpg">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=9aec79fef0">
+    <link rel="stylesheet" href="style.css?v=1113e18f22">
 </head>
 <body class="page">
     <script>
@@ -45,15 +45,16 @@
             <img class="logo-img logo-dark" src="./logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
             <img class="logo-img logo-light" src="./logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
         </a>
-        <nav class="page-top-links">
-            <a href="./generator.html" class="back-link">Generator</a>
-            <a href="./skins/" class="back-link">Pro Skins</a>
-            <a href="./faq.html" class="back-link">FAQ</a>
-            <a href="./" class="back-link back-home">← All CS2 crosshairs</a>
+        <nav class="main-nav" aria-label="Main">
+            <a href="./">Crosshairs</a>
+            <a href="./skins/">Pro Skins</a>
+            <a href="./guides/">Guides</a>
+            <a href="./commands/">Commands</a>
+            <a href="./tools/">Tools</a>
         </nav>
     </header>
     <main class="player-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">CS2 Crosshairs</a> › <span>Legal notice</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Home</a> › <span>Legal notice</span></nav>
         <h1>Legal notice</h1>
 
         <h2>Publisher</h2>
@@ -66,7 +67,7 @@
 
         <h2>Intellectual property</h2>
         <p>Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>
-        <p>Crosshair codes are game settings read from public match demos. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
+        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
 
         <h2>Privacy</h2>
         <p>ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode choice is only stored in your own browser (localStorage). Everything, fonts included, is served from this site: your browser does not contact any third-party server.</p>
@@ -74,17 +75,20 @@
         <h2>Mentions légales (français)</h2>
         <p>Éditeur et directeur de la publication : Anto, particulier (France). Contact : [À REMPLIR : ton e-mail de contact].<br>
         Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
-        Counter-Strike et CS2 sont des marques de Valve Corporation. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
+        Counter-Strike et CS2 sont des marques de Valve Corporation ; les noms et images des skins appartiennent à Valve, les inventaires viennent de Steam et les prix de CSFloat. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
     </main>
     <footer>
         <nav class="footer-links" aria-label="Footer">
             <a href="generator.html">Crosshair Generator</a>
+            <a href="tools/bind-generator.html">Bind Generator</a>
             <a href="skins/">CS2 Pro Skins</a>
+            <a href="guides/">CS2 Guides</a>
+            <a href="commands/">Console Commands</a>
             <a href="faq.html">FAQ</a>
             <a href="legal.html">Legal notice</a>
         </nav>
         <p>© 2026 ClutchCrosshair. All rights reserved.</p>
-        <p>Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with these teams.</p>
+        <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>
 </body>
 </html>

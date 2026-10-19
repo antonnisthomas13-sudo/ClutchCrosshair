@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+# Fichiers de travail du site (notes, scripts, données brutes) : pas à indexer
+Disallow: /*.md$
+Disallow: /*.py$
+Disallow: /*.yml$
+Disallow: /.impeccable/
+Disallow: /.github/
 
 Sitemap: https://antonnisthomas13-sudo.github.io/ClutchCrosshair/sitemap.xml

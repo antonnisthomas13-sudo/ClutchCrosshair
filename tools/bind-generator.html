@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Bind Generator: Buy Binds &amp; Jump Throw | ClutchCrosshair</title>
+    <meta name="description" content="Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="CS2 Bind Generator">
+    <meta property="og:description" content="Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.">
+    <meta property="og:url" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html">
+    <meta property="og:image" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: find your perfect CS2 crosshair">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CS2 Bind Generator">
+    <meta name="twitter:description" content="Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.">
+    <meta name="twitter:image" content="https://antonnisthomas13-sudo.github.io/ClutchCrosshair/og-image.jpg">
+    <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.css?v=1113e18f22">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html","url":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html","name":"CS2 Bind Generator","inLanguage":"en","isPartOf":{"@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/#website"},"breadcrumb":{"@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html#breadcrumb"},"mainEntity":{"@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html#app"},"dateModified":"2026-10-19"},{"@type":"WebApplication","@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html#app","name":"CS2 Bind Generator","url":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html","description":"Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/#organization"}},{"@type":"BreadcrumbList","@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/"},{"@type":"ListItem","position":2,"name":"CS2 Tools","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/"},{"@type":"ListItem","position":3,"name":"CS2 bind generator","item":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html"}]},{"@type":"FAQPage","@id":"https://antonnisthomas13-sudo.github.io/ClutchCrosshair/tools/bind-generator.html#faq","mainEntity":[{"@type":"Question","name":"How do I make a bind in CS2?","acceptedAnswer":{"@type":"Answer","text":"Open the console (~) and type bind followed by the key and the command between quotes, for example bind \"kp_end\" \"buy ak47; buy m4a1\". The ClutchCrosshair bind generator writes the line for you."}},{"@type":"Question","name":"Do buy binds still work in CS2?","acceptedAnswer":{"@type":"Answer","text":"Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped."}},{"@type":"Question","name":"How do I remove a bind in CS2?","acceptedAnswer":{"@type":"Answer","text":"Type unbind followed by the key in the console, for example unbind kp_end."}},{"@type":"Question","name":"How do I save my CS2 binds?","acceptedAnswer":{"@type":"Answer","text":"Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."}},{"@type":"Question","name":"What is a jump throw bind?","acceptedAnswer":{"@type":"Answer","text":"A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."}}]}]}</script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="ClutchCrosshair home">
+            <img class="logo-img logo-dark" src="../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Main">
+            <a href="../">Crosshairs</a>
+            <a href="../skins/">Pro Skins</a>
+            <a href="../guides/">Guides</a>
+            <a href="../commands/">Commands</a>
+            <a href="../tools/" aria-current="page">Tools</a>
+        </nav>
+    </header>
+
+    <main class="player-page bind-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Home</a> › <a href="./">Tools</a> › <span>Bind generator</span></nav>
+        <h1>CS2 Bind Generator</h1>
+        <p>Create CS2 binds in a few clicks: choose a key, choose what it does (buy your weapons, jump throw, toggle the radar zoom...), then copy the command or download a ready-made autoexec.cfg. Free, no sign-up.</p>
+
+        <div class="bind" id="bind-tool">
+            <div class="bind-controls">
+                <fieldset class="gen-group">
+                    <legend>1. Choose a key</legend>
+                    <div class="bind-key">
+                        <select id="bind-key" aria-label="Key">
+                            <optgroup label="Numpad"><option value="kp_end">Numpad 1</option><option value="kp_downarrow">Numpad 2</option><option value="kp_pgdn">Numpad 3</option><option value="kp_leftarrow">Numpad 4</option><option value="kp_5">Numpad 5</option><option value="kp_rightarrow">Numpad 6</option><option value="kp_home">Numpad 7</option><option value="kp_uparrow">Numpad 8</option><option value="kp_pgup">Numpad 9</option><option value="kp_ins">Numpad 0</option><option value="kp_del">Numpad .</option><option value="kp_slash">Numpad /</option><option value="kp_multiply">Numpad *</option><option value="kp_minus">Numpad -</option><option value="kp_plus">Numpad +</option><option value="kp_enter">Numpad Enter</option></optgroup><optgroup label="Function keys"><option value="f1">F1</option><option value="f2">F2</option><option value="f3">F3</option><option value="f4">F4</option><option value="f5">F5</option><option value="f6">F6</option><option value="f7">F7</option><option value="f8">F8</option><option value="f9">F9</option><option value="f10">F10</option><option value="f11">F11</option><option value="f12">F12</option></optgroup><optgroup label="Mouse"><option value="mouse3">Middle click</option><option value="mouse4">Mouse 4 (side)</option><option value="mouse5">Mouse 5 (side)</option><option value="mwheelup">Wheel up</option><option value="mwheeldown">Wheel down</option></optgroup><optgroup label="Letters"><option value="c">C</option><option value="f">F</option><option value="g">G</option><option value="h">H</option><option value="j">J</option><option value="k">K</option><option value="l">L</option><option value="n">N</option><option value="t">T</option><option value="v">V</option><option value="x">X</option><option value="z">Z</option></optgroup><optgroup label="Numbers"><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="0">0</option></optgroup><optgroup label="Other"><option value="space">Space</option><option value="alt">Alt</option><option value="capslock">Caps Lock</option><option value="ins">Insert</option><option value="del">Delete</option><option value="home">Home</option><option value="end">End</option><option value="pgup">Page Up</option><option value="pgdn">Page Down</option><option value="uparrow">Arrow up</option><option value="downarrow">Arrow down</option><option value="leftarrow">Arrow left</option><option value="rightarrow">Arrow right</option></optgroup>
+                        </select>
+                        <button type="button" class="bind-capture" id="bind-capture">Press a key…</button>
+                    </div>
+                    <p class="gen-status" id="bind-key-status" aria-live="polite"></p>
+                </fieldset>
+
+                <fieldset class="gen-group">
+                    <legend>2. Choose an action</legend>
+                    <div class="bind-actions" role="group" aria-label="Action">
+                        <button type="button" data-action="buy" aria-pressed="true">Buy</button>
+                        <button type="button" data-action="jumpthrow" aria-pressed="false">Jump throw</button>
+                        <button type="button" data-action="toggle" aria-pressed="false">Toggle</button>
+                        <button type="button" data-action="volume" aria-pressed="false">Volume</button>
+                        <button type="button" data-action="grenade" aria-pressed="false">Grenade</button>
+                        <button type="button" data-action="other" aria-pressed="false">Other</button>
+                        <button type="button" data-action="custom" aria-pressed="false">Custom</button>
+                    </div>
+
+                    <div class="bind-panel" data-panel="buy">
+                        <div class="bind-buy-group"><p class="gen-label">Rifles</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="ak47" data-buy><span>AK-47</span></label><label class="gen-toggle"><input type="checkbox" value="m4a1" data-buy><span>M4A4 / M4A1-S (your loadout)</span></label><label class="gen-toggle"><input type="checkbox" value="galilar" data-buy><span>Galil AR</span></label><label class="gen-toggle"><input type="checkbox" value="famas" data-buy><span>FAMAS</span></label><label class="gen-toggle"><input type="checkbox" value="sg556" data-buy><span>SG 553</span></label><label class="gen-toggle"><input type="checkbox" value="aug" data-buy><span>AUG</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">Snipers</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="awp" data-buy><span>AWP</span></label><label class="gen-toggle"><input type="checkbox" value="ssg08" data-buy><span>SSG 08 (Scout)</span></label><label class="gen-toggle"><input type="checkbox" value="g3sg1" data-buy><span>G3SG1</span></label><label class="gen-toggle"><input type="checkbox" value="scar20" data-buy><span>SCAR-20</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">Pistols</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="deagle" data-buy><span>Desert Eagle / R8</span></label><label class="gen-toggle"><input type="checkbox" value="p250" data-buy><span>P250</span></label><label class="gen-toggle"><input type="checkbox" value="tec9" data-buy><span>Tec-9 / CZ75 (T)</span></label><label class="gen-toggle"><input type="checkbox" value="fiveseven" data-buy><span>Five-SeveN / CZ75 (CT)</span></label><label class="gen-toggle"><input type="checkbox" value="elite" data-buy><span>Dual Berettas</span></label><label class="gen-toggle"><input type="checkbox" value="cz75a" data-buy><span>CZ75-Auto</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">SMGs</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="mac10" data-buy><span>MAC-10</span></label><label class="gen-toggle"><input type="checkbox" value="mp9" data-buy><span>MP9</span></label><label class="gen-toggle"><input type="checkbox" value="mp7" data-buy><span>MP7 / MP5-SD</span></label><label class="gen-toggle"><input type="checkbox" value="ump45" data-buy><span>UMP-45</span></label><label class="gen-toggle"><input type="checkbox" value="p90" data-buy><span>P90</span></label><label class="gen-toggle"><input type="checkbox" value="bizon" data-buy><span>PP-Bizon</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">Heavy</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="nova" data-buy><span>Nova</span></label><label class="gen-toggle"><input type="checkbox" value="xm1014" data-buy><span>XM1014</span></label><label class="gen-toggle"><input type="checkbox" value="mag7" data-buy><span>MAG-7</span></label><label class="gen-toggle"><input type="checkbox" value="sawedoff" data-buy><span>Sawed-Off</span></label><label class="gen-toggle"><input type="checkbox" value="m249" data-buy><span>M249</span></label><label class="gen-toggle"><input type="checkbox" value="negev" data-buy><span>Negev</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">Gear</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="vesthelm" data-buy><span>Kevlar + Helmet</span></label><label class="gen-toggle"><input type="checkbox" value="vest" data-buy><span>Kevlar</span></label><label class="gen-toggle"><input type="checkbox" value="defuser" data-buy><span>Defuse kit</span></label><label class="gen-toggle"><input type="checkbox" value="taser" data-buy><span>Zeus x27</span></label></div></div>
+                        <div class="bind-buy-group"><p class="gen-label">Grenades</p><div class="bind-checks"><label class="gen-toggle"><input type="checkbox" value="smokegrenade" data-buy><span>Smoke</span></label><label class="gen-toggle"><input type="checkbox" value="flashbang" data-buy><span>Flashbang</span></label><label class="gen-toggle"><input type="checkbox" value="hegrenade" data-buy><span>HE grenade</span></label><label class="gen-toggle"><input type="checkbox" value="molotov" data-buy><span>Molotov / Incendiary</span></label><label class="gen-toggle"><input type="checkbox" value="decoy" data-buy><span>Decoy</span></label></div></div>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="jumpthrow">
+                        <p class="gen-hint">Hold your grenade with the attack button pressed, then press this key: you jump and throw at the same moment, for perfectly repeatable lineups.</p>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="toggle">
+                        <label class="gen-label" for="bind-toggle">Setting to switch</label>
+                        <select id="bind-toggle"><option value="toggle cl_radar_scale 0.3 0.7">Radar zoom (zoomed out / normal)</option><option value="toggle crosshair 0 1">Crosshair on / off</option><option value="toggle cl_draw_only_deathnotices 1 0">Clean screen (only crosshair and kill feed)</option><option value="toggle snd_voipvolume 0 1">Mute / unmute voice chat</option><option value="toggle cl_showfps 1 0">FPS counter on / off</option></select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="volume">
+                        <label class="gen-label" for="bind-volume">Direction</label>
+                        <select id="bind-volume"><option value="incrementvar volume 0 1 0.05">Volume up</option><option value="incrementvar volume 0 1 -0.05">Volume down</option></select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="grenade">
+                        <label class="gen-label" for="bind-grenade">Grenade to select</label>
+                        <select id="bind-grenade"><option value="slot6">HE grenade</option><option value="slot7">Flashbang</option><option value="slot8">Smoke grenade</option><option value="slot9">Decoy</option><option value="slot10">Molotov / Incendiary</option></select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="other">
+                        <label class="gen-label" for="bind-other">Action</label>
+                        <select id="bind-other"><option value="lastinv">Quick switch to your last weapon</option><option value="player_ping">Ping where you aim (tell your team)</option><option value="+spray_menu">Open the graffiti wheel</option><option value="sv_rethrow_last_grenade">Rethrow your last grenade (practice server, sv_cheats 1)</option><option value="noclip">Fly through walls (practice server, sv_cheats 1)</option></select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="custom">
+                        <label class="gen-label" for="bind-custom">Any console command (separate several with ;)</label>
+                        <input type="text" id="bind-custom" placeholder="e.g. say gg; disconnect" autocomplete="off" spellcheck="false">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="bind-result">
+                <div class="bind-now">
+                    <div class="field-label">Your bind <span><i class="sep">· </i>Paste it in the CS2 console (~)</span></div>
+                    <div class="code-block"><pre><code id="bind-output">bind &quot;kp_end&quot; &quot;buy ak47&quot;</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
+                    <button type="button" class="bind-add" id="bind-add">Add to my binds</button>
+                </div>
+
+                <div class="bind-mine">
+                    <div class="field-label">My binds <span id="bind-count"></span></div>
+                    <ul class="bind-list" id="bind-list"></ul>
+                    <p class="gen-hint" id="bind-empty">Your binds will appear here. Add as many as you want, then copy them all or download your autoexec.cfg.</p>
+                    <div class="bind-buttons">
+                        <button type="button" class="mini" id="bind-copy-all">Copy all</button>
+                        <button type="button" class="mini btn-secondary" id="bind-download">Download autoexec.cfg</button>
+                        <button type="button" class="mini btn-secondary" id="bind-clear">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the bind generator.</p></noscript>
+        </div>
+
+        <h2>How to use your CS2 binds</h2>
+        <ol>
+            <li>Build your bind above, then click <strong>Copy</strong>.</li>
+            <li>In CS2, open the console with <strong>~</strong> (enable it in Settings › Game if needed), paste and press <strong>Enter</strong>.</li>
+            <li>To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href="../guides/cs2-launch-options.html">launch options</a>.</li>
+        </ol>
+
+        <h2>Popular CS2 binds</h2>
+        <p>Ready-to-copy binds most players use. Change the key name if you want another key.</p>
+        <h3>Buy AK-47 or M4 + armor</h3>
+        <div class="field-row"><code>bind &quot;kp_end&quot; &quot;buy ak47; buy m4a1; buy vesthelm&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Buy AWP + armor</h3>
+        <div class="field-row"><code>bind &quot;kp_downarrow&quot; &quot;buy awp; buy vesthelm&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Buy all grenades</h3>
+        <div class="field-row"><code>bind &quot;kp_pgdn&quot; &quot;buy smokegrenade; buy flashbang; buy hegrenade; buy molotov&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Buy armor + defuse kit</h3>
+        <div class="field-row"><code>bind &quot;kp_leftarrow&quot; &quot;buy vesthelm; buy defuser&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Toggle radar zoom</h3>
+        <div class="field-row"><code>bind &quot;kp_plus&quot; &quot;toggle cl_radar_scale 0.3 0.7&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Volume up / down</h3>
+        <div class="field-row"><code>bind &quot;kp_uparrow&quot; &quot;incrementvar volume 0 1 0.05&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+        <h3>Rethrow last grenade (practice)</h3>
+        <div class="field-row"><code>bind &quot;x&quot; &quot;sv_rethrow_last_grenade&quot;</code><button type="button" class="mini" data-copy>Copy</button></div>
+
+        <h2>CS2 jump throw bind</h2>
+        <p>A jump throw bind makes you jump and release the grenade at the exact same moment, so your smokes and flashes land in the same place every time. Paste these three lines (change the key in the last line):</p>
+        <div class="code-block"><pre><code>alias "+jumpthrow" "+jump;-attack;-attack2"
+alias "-jumpthrow" "-jump"
+bind "v" "+jumpthrow"</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
+
+        <h2>CS2 buy commands list</h2>
+        <p>Every buy command works in a bind, alone or several at once separated by <code>;</code>. Buy commands give you the weapon equipped in that slot of your loadout.</p>
+        <div class="table-wrap"><table class="cmd-values">
+            <thead><tr><th scope="col">Item</th><th scope="col">Buy command</th></tr></thead>
+            <tbody><tr><td>AK-47</td><td><code>buy ak47</code></td></tr><tr><td>M4A4 / M4A1-S (your loadout)</td><td><code>buy m4a1</code></td></tr><tr><td>Galil AR</td><td><code>buy galilar</code></td></tr><tr><td>FAMAS</td><td><code>buy famas</code></td></tr><tr><td>SG 553</td><td><code>buy sg556</code></td></tr><tr><td>AUG</td><td><code>buy aug</code></td></tr><tr><td>AWP</td><td><code>buy awp</code></td></tr><tr><td>SSG 08 (Scout)</td><td><code>buy ssg08</code></td></tr><tr><td>G3SG1</td><td><code>buy g3sg1</code></td></tr><tr><td>SCAR-20</td><td><code>buy scar20</code></td></tr><tr><td>Desert Eagle / R8</td><td><code>buy deagle</code></td></tr><tr><td>P250</td><td><code>buy p250</code></td></tr><tr><td>Tec-9 / CZ75 (T)</td><td><code>buy tec9</code></td></tr><tr><td>Five-SeveN / CZ75 (CT)</td><td><code>buy fiveseven</code></td></tr><tr><td>Dual Berettas</td><td><code>buy elite</code></td></tr><tr><td>CZ75-Auto</td><td><code>buy cz75a</code></td></tr><tr><td>MAC-10</td><td><code>buy mac10</code></td></tr><tr><td>MP9</td><td><code>buy mp9</code></td></tr><tr><td>MP7 / MP5-SD</td><td><code>buy mp7</code></td></tr><tr><td>UMP-45</td><td><code>buy ump45</code></td></tr><tr><td>P90</td><td><code>buy p90</code></td></tr><tr><td>PP-Bizon</td><td><code>buy bizon</code></td></tr><tr><td>Nova</td><td><code>buy nova</code></td></tr><tr><td>XM1014</td><td><code>buy xm1014</code></td></tr><tr><td>MAG-7</td><td><code>buy mag7</code></td></tr><tr><td>Sawed-Off</td><td><code>buy sawedoff</code></td></tr><tr><td>M249</td><td><code>buy m249</code></td></tr><tr><td>Negev</td><td><code>buy negev</code></td></tr><tr><td>Kevlar + Helmet</td><td><code>buy vesthelm</code></td></tr><tr><td>Kevlar</td><td><code>buy vest</code></td></tr><tr><td>Defuse kit</td><td><code>buy defuser</code></td></tr><tr><td>Zeus x27</td><td><code>buy taser</code></td></tr><tr><td>Smoke</td><td><code>buy smokegrenade</code></td></tr><tr><td>Flashbang</td><td><code>buy flashbang</code></td></tr><tr><td>HE grenade</td><td><code>buy hegrenade</code></td></tr><tr><td>Molotov / Incendiary</td><td><code>buy molotov</code></td></tr><tr><td>Decoy</td><td><code>buy decoy</code></td></tr></tbody>
+        </table></div>
+
+        <h2>CS2 bind generator FAQ</h2>
+        <h3>How do I make a bind in CS2?</h3>
+        <p>Open the console (~) and type bind followed by the key and the command between quotes, for example bind &quot;kp_end&quot; &quot;buy ak47; buy m4a1&quot;. The ClutchCrosshair bind generator writes the line for you.</p>
+        <h3>Do buy binds still work in CS2?</h3>
+        <p>Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped.</p>
+        <h3>How do I remove a bind in CS2?</h3>
+        <p>Type unbind followed by the key in the console, for example unbind kp_end.</p>
+        <h3>How do I save my CS2 binds?</h3>
+        <p>Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you.</p>
+        <h3>What is a jump throw bind?</h3>
+        <p>A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key.</p>
+
+        <h2>Related</h2>
+        <ul class="related">
+            <li><a href="../commands/bind.html">bind command</a></li>
+            <li><a href="../commands/alias.html">alias command</a></li>
+            <li><a href="../commands/exec.html">exec command</a></li>
+            <li><a href="../generator.html">CS2 crosshair generator</a></li>
+            <li><a href="../guides/cs2-launch-options.html">CS2 launch options</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="../generator.html">Crosshair Generator</a>
+            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../skins/">CS2 Pro Skins</a>
+            <a href="../guides/">CS2 Guides</a>
+            <a href="../commands/">Console Commands</a>
+            <a href="../faq.html">FAQ</a>
+            <a href="../legal.html">Legal notice</a>
+        </nav>
+        <p>© 2026 ClutchCrosshair. All rights reserved.</p>
+        <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
+    </footer>
+    <script type="application/json" id="bind-data">{"toggles":[["radar","Radar zoom (zoomed out / normal)","toggle cl_radar_scale 0.3 0.7"],["crosshair","Crosshair on / off","toggle crosshair 0 1"],["hud","Clean screen (only crosshair and kill feed)","toggle cl_draw_only_deathnotices 1 0"],["voice","Mute / unmute voice chat","toggle snd_voipvolume 0 1"],["fps","FPS counter on / off","toggle cl_showfps 1 0"]],"volume":[["up","Volume up","incrementvar volume 0 1 0.05"],["down","Volume down","incrementvar volume 0 1 -0.05"]],"grenades":[["slot6","HE grenade"],["slot7","Flashbang"],["slot8","Smoke grenade"],["slot9","Decoy"],["slot10","Molotov / Incendiary"]],"other":[["lastinv","Quick switch to your last weapon"],["player_ping","Ping where you aim (tell your team)"],["+spray_menu","Open the graffiti wheel"],["sv_rethrow_last_grenade","Rethrow your last grenade (practice server, sv_cheats 1)"],["noclip","Fly through walls (practice server, sv_cheats 1)"]]}</script>
+    <script type="module">
+        import { copyText } from "../crosshair.js?v=66de5554f9";
+
+        // Boutons Copy (lignes simples et blocs de plusieurs lignes)
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row, .code-block").querySelector("code").textContent, button);
+            }
+        });
+
+        const $ = function (id) { return document.getElementById(id); };
+        const keySelect = $("bind-key");
+        const output = $("bind-output");
+        let action = "buy";
+
+        // Le texte du bind selon la touche et l'action choisies
+        function lines() {
+            const key = keySelect.value;
+            const bind = function (cmd) { return ["bind \"" + key + "\" \"" + cmd + "\""]; };
+            if (action === "buy") {
+                const items = Array.from(document.querySelectorAll("[data-buy]:checked")).map(function (c) { return "buy " + c.value; });
+                return items.length ? bind(items.join("; ")) : [];
+            }
+            if (action === "jumpthrow") {
+                return ["alias \"+jumpthrow\" \"+jump;-attack;-attack2\"", "alias \"-jumpthrow\" \"-jump\"", "bind \"" + key + "\" \"+jumpthrow\""];
+            }
+            if (action === "custom") {
+                const cmd = $("bind-custom").value.replace(/"/g, "").trim();
+                return cmd ? bind(cmd) : [];
+            }
+            return bind($("bind-" + action).value);
+        }
+
+        function render() {
+            const l = lines();
+            output.textContent = l.length ? l.join("\n") : (action === "buy" ? "Tick what to buy" : "Type a command");
+            $("bind-add").disabled = !l.length;
+        }
+
+        // Choix de l'action
+        document.querySelectorAll("[data-action]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                action = button.dataset.action;
+                document.querySelectorAll("[data-action]").forEach(function (b) { b.setAttribute("aria-pressed", b === button ? "true" : "false"); });
+                document.querySelectorAll("[data-panel]").forEach(function (p) { p.classList.toggle("hidden", p.dataset.panel !== action); });
+                render();
+            });
+        });
+        document.getElementById("bind-tool").addEventListener("input", render);
+        document.getElementById("bind-tool").addEventListener("change", render);
+
+        // "Press a key" : on lit la prochaine touche (ou bouton de souris) et on la traduit en nom CS2
+        const CODES = { Space: "space", Tab: "tab", CapsLock: "capslock", ShiftLeft: "shift", ShiftRight: "rshift", ControlLeft: "ctrl", ControlRight: "rctrl", AltLeft: "alt", AltRight: "ralt",
+            Insert: "ins", Delete: "del", Home: "home", End: "end", PageUp: "pgup", PageDown: "pgdn", ArrowUp: "uparrow", ArrowDown: "downarrow", ArrowLeft: "leftarrow", ArrowRight: "rightarrow",
+            Numpad0: "kp_ins", Numpad1: "kp_end", Numpad2: "kp_downarrow", Numpad3: "kp_pgdn", Numpad4: "kp_leftarrow", Numpad5: "kp_5", Numpad6: "kp_rightarrow", Numpad7: "kp_home",
+            Numpad8: "kp_uparrow", Numpad9: "kp_pgup", NumpadDecimal: "kp_del", NumpadDivide: "kp_slash", NumpadMultiply: "kp_multiply", NumpadSubtract: "kp_minus", NumpadAdd: "kp_plus", NumpadEnter: "kp_enter",
+            Backquote: "`", Minus: "-", Equal: "=", BracketLeft: "[", BracketRight: "]", Semicolon: "semicolon", Quote: "'", Comma: ",", Period: ".", Slash: "/", Backslash: "\\", Enter: "enter", Backspace: "backspace" };
+        const DEFAULT_KEYS = ["w", "a", "s", "d", "space", "ctrl", "shift", "e", "r", "q", "b", "tab", "mouse1", "mouse2", "1", "2", "3", "4", "5"];
+        const status = $("bind-key-status");
+        const capture = $("bind-capture");
+        let listening = false;
+
+        function setKey(name, label) {
+            let option = Array.from(keySelect.options).find(function (o) { return o.value === name; });
+            if (!option) {
+                option = new Option(label || name.toUpperCase(), name);
+                keySelect.add(option);
+            }
+            keySelect.value = name;
+            status.textContent = DEFAULT_KEYS.includes(name) ? "Careful: " + name + " already has an important default action in CS2." : "Key set: " + name;
+            status.classList.toggle("gen-status-error", DEFAULT_KEYS.includes(name));
+            render();
+        }
+
+        function stopListening() {
+            listening = false;
+            capture.textContent = "Press a key…";
+            capture.setAttribute("aria-pressed", "false");
+        }
+
+        capture.addEventListener("click", function () {
+            listening = true;
+            capture.textContent = "Waiting for a key…";
+            capture.setAttribute("aria-pressed", "true");
+            status.textContent = "Press the key you want to use (Escape to cancel).";
+            status.classList.remove("gen-status-error");
+        });
+        document.addEventListener("keydown", function (event) {
+            if (!listening) {
+                return;
+            }
+            event.preventDefault();
+            stopListening();
+            if (event.code === "Escape") {
+                status.textContent = "";
+                return;
+            }
+            let name = CODES[event.code];
+            if (!name && /^Key[A-Z]$/.test(event.code)) {
+                name = event.code.slice(3).toLowerCase();
+            } else if (!name && /^Digit\d$/.test(event.code)) {
+                name = event.code.slice(5);
+            } else if (!name && /^F\d{1,2}$/.test(event.code)) {
+                name = event.code.toLowerCase();
+            }
+            if (name) {
+                setKey(name);
+            } else {
+                status.textContent = "This key is not supported, choose one in the list.";
+            }
+        });
+        document.addEventListener("mousedown", function (event) {
+            const mouse = { 1: "mouse3", 3: "mouse4", 4: "mouse5" }[event.button];
+            if (listening && mouse && event.target !== capture) {
+                event.preventDefault();
+                stopListening();
+                setKey(mouse);
+            }
+        });
+
+        // Ma liste de binds (gardée dans ce navigateur)
+        let mine = [];
+        try { mine = JSON.parse(localStorage.getItem("cc-binds") || "[]"); } catch (error) { mine = []; }
+        function save() {
+            try { localStorage.setItem("cc-binds", JSON.stringify(mine)); } catch (error) {}
+        }
+        function allText() {
+            const out = [];
+            mine.forEach(function (b) { b.lines.forEach(function (l) { if (!out.includes(l)) { out.push(l); } }); });
+            return out.join("\n");
+        }
+        function renderList() {
+            const list = $("bind-list");
+            list.textContent = "";
+            mine.forEach(function (b, i) {
+                const li = document.createElement("li");
+                const code = document.createElement("code");
+                code.textContent = b.lines[b.lines.length - 1];
+                const remove = document.createElement("button");
+                remove.type = "button";
+                remove.className = "bind-remove";
+                remove.textContent = "Remove";
+                remove.setAttribute("aria-label", "Remove the bind on " + b.key);
+                remove.addEventListener("click", function () {
+                    mine.splice(i, 1);
+                    save();
+                    renderList();
+                });
+                li.append(code, remove);
+                list.appendChild(li);
+            });
+            $("bind-empty").classList.toggle("hidden", mine.length > 0);
+            $("bind-count").textContent = mine.length ? "· " + mine.length : "";
+            ["bind-copy-all", "bind-download", "bind-clear"].forEach(function (id) { $(id).disabled = !mine.length; });
+        }
+        $("bind-add").addEventListener("click", function () {
+            const l = lines();
+            if (!l.length) {
+                return;
+            }
+            // Une seule action par touche : un nouveau bind sur la même touche remplace l'ancien
+            mine = mine.filter(function (b) { return b.key !== keySelect.value; });
+            mine.push({ key: keySelect.value, lines: l });
+            save();
+            renderList();
+        });
+        $("bind-copy-all").addEventListener("click", function (event) {
+            copyText(allText(), event.currentTarget);
+        });
+        $("bind-download").addEventListener("click", function () {
+            const text = "// CS2 binds made with ClutchCrosshair bind generator\n" + allText() + "\n";
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
+            link.download = "autoexec.cfg";
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(link.href); link.remove(); }, 1000);
+        });
+        $("bind-clear").addEventListener("click", function () {
+            mine = [];
+            save();
+            renderList();
+        });
+
+        // Départ : AK-47 coché pour montrer un exemple
+        const ak = document.querySelector("[data-buy][value=ak47]");
+        if (ak && !document.querySelector("[data-buy]:checked")) {
+            ak.checked = true;
+        }
+        render();
+        renderList();
+    </script>
+</body>
+</html>

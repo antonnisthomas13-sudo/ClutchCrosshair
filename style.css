@@ -51,8 +51,9 @@
     --line: #30343A;            /* séparations de 1 px */
 
     /* --- Textes --- */
-    --text: #ECEDEF;            /* texte principal (16:1 sur le fond) */
-    --muted: #9DA2AA;           /* texte secondaire, aides, dates (6,6:1 sur les cartes) */
+    --text: #ECEDEF;            /* texte principal, titres (16:1 sur le fond) */
+    --text-body: #C4C8CE;       /* textes à lire : paragraphes, FAQ, pied de page, fil d'Ariane (11:1 sur le fond, 10:1 sur les cartes) */
+    --muted: #A8ADB5;           /* petits libellés secondaires, dates, compteurs (8:1 sur le fond, 7,4:1 sur les cartes) */
 
     /* --- Rouge signature : boutons, sélection, interactions --- */
     --accent: #D7262F;          /* boutons Copy, barre COPIED, sélection (texte blanc 5,0:1) */
@@ -130,7 +131,8 @@ body.light {
     --stat: #0C0D0F;
 
     --text: #15171A;
-    --muted: #575D66;
+    --text-body: #33373D;       /* 11:1 sur le fond clair */
+    --muted: #4F545C;           /* 7:1 sur le fond clair */
 
     --accent: #C8202A;          /* texte blanc 5,7:1 */
     --accent-hover: #B51C25;
@@ -399,10 +401,21 @@ body.light .logo-light {
     padding: 10px 32px;
     border-bottom: 2px solid var(--accent-line);
     background-color: var(--sidebar);
-    justify-content: flex-end;
+    /* Menu à gauche, boutons à droite ; s'il manque de place (tablette),
+       le bloc des boutons passe à la ligne au lieu de déborder sur le logo */
+    flex-wrap: wrap;
+    row-gap: 8px;
 }
 
-#search {
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+#search,
+#cmd-search {
     width: 100%;
     height: 52px;
     padding: 0 16px 0 46px;
@@ -416,11 +429,13 @@ body.light .logo-light {
     transition: border-color 0.18s var(--ease);
 }
 
-#search::placeholder {
+#search::placeholder,
+#cmd-search::placeholder {
     color: var(--muted);
 }
 
-#search:focus {
+#search:focus,
+#cmd-search:focus {
     border-color: var(--accent-line);
 }
 
@@ -575,7 +590,7 @@ body.light .logo-light {
 .hero p {
     margin: 10px 0 0;
     max-width: 62ch;
-    color: var(--muted);
+    color: var(--text-body);
     font-size: var(--fs-body);
 }
 
@@ -762,7 +777,7 @@ main h2::before {
 
 .empty {
     margin-top: 28px;
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 /* ===== Carte joueur = fiche joueur de retransmission ===== */
@@ -928,7 +943,7 @@ main h2::before {
     max-width: 1000px;
     margin-top: 8px;
     padding: 0 32px 8px;
-    color: var(--muted);
+    color: var(--text-body);
     line-height: 1.65;
 }
 
@@ -955,27 +970,11 @@ main h2::before {
     max-width: 75ch;
 }
 
-.directory {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 4px 24px;
-}
-
-.directory a {
-    color: var(--muted);
-    text-decoration: none;
-}
-
-.directory a:hover {
-    color: var(--text);
-    text-decoration: underline;
-}
-
 footer {
     margin-top: auto;
     padding: 24px 32px;
     border-top: 1px solid var(--line);
-    color: var(--muted);
+    color: var(--text-body);
     font-size: var(--fs-sm);
 }
 
@@ -1083,7 +1082,7 @@ footer p {
 .modal-team,
 .modal-date {
     margin: 0;
-    color: var(--muted);
+    color: var(--text-body);
     font-size: var(--fs-sm);
 }
 
@@ -1134,17 +1133,19 @@ body.page {
     min-height: 100vh;
 }
 
+/* En-tête des pages : le menu commence exactement au même endroit que sur l'accueil
+   (accueil : rail des équipes de 248 px + 32 px de marge = 280 px) et a la même hauteur */
 .page-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 12px 32px;
+    gap: 32px;
+    padding: 9px 32px;
     background-color: var(--sidebar);
     border-bottom: 2px solid var(--accent-line);
 }
 
 .page-top .logo {
+    flex: 0 0 216px;
     margin: 0;
 }
 
@@ -1153,21 +1154,9 @@ body.page {
     width: auto;
 }
 
-.page-top-links {
-    display: flex;
-    gap: 20px;
-}
-
-.back-link {
-    color: var(--muted);
-    font-family: var(--font-ui);
-    font-size: var(--fs-ui);
-    font-weight: var(--fw-semibold);
-    text-decoration: none;
-}
-
-.back-link:hover {
-    color: var(--text);
+/* Menu principal dans l'en-tête des pages : trait rouge sous la rubrique actuelle */
+.page-top .main-nav a[aria-current="page"]::after {
+    bottom: -3px;
 }
 
 .player-page {
@@ -1204,7 +1193,7 @@ body.page {
 .player-page ol {
     margin: 0;
     max-width: 75ch;
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .player-page strong {
@@ -1221,11 +1210,28 @@ body.page {
 
 .breadcrumb {
     font-size: var(--fs-sm);
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .breadcrumb a {
-    color: var(--muted);
+    color: var(--text-body);
+}
+
+.breadcrumb a:hover {
+    color: var(--text);
+}
+
+/* "Home" avec une petite maison : le retour à l'accueil, visible sur toutes les pages */
+.crumb-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.crumb-icon {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
 }
 
 /* En-tête de la page joueur : le même bandeau couleur d'équipe que les cartes */
@@ -1631,7 +1637,7 @@ body.light .team-badge img[src*="fut"] {
 .side-note {
     margin: 6px 10px 0;
     font-size: var(--fs-2xs);
-    color: var(--muted);
+    color: var(--text-body);
     text-align: center;
 }
 
@@ -1644,7 +1650,7 @@ body.light .team-badge img[src*="fut"] {
 .gen-intro {
     margin: 10px 0 0;
     max-width: 75ch;
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .gen {
@@ -1680,7 +1686,7 @@ body.light .team-badge img[src*="fut"] {
     display: flex;
     border-radius: 2px;
     overflow: hidden;
-    background-color: var(--chip-scrim);
+    background-color: var(--stat); /* fond opaque : lisible quelle que soit l'image derrière */
 }
 
 .gen-zoom button {
@@ -1790,13 +1796,13 @@ body.light .team-badge img[src*="fut"] {
     grid-column: 1 / -1;
     margin: 0;
     font-size: var(--fs-xs);
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .gen-status {
     margin: 0;
     font-size: var(--fs-xs);
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .gen-status:empty {
@@ -2202,7 +2208,7 @@ body.light .team-badge img[src*="fut"] {
 .skin-note {
     margin: 0;
     font-size: var(--fs-xs);
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .ps .skin-note {
@@ -2335,7 +2341,7 @@ body.light .team-badge img[src*="fut"] {
     margin: 0 0 12px;
     max-width: 75ch;
     font-size: var(--fs-ui);
-    color: var(--muted);
+    color: var(--text-body);
 }
 
 .ps-more {
@@ -2364,6 +2370,709 @@ body.light .team-badge img[src*="fut"] {
     width: 80px;
     height: 60px;
     object-fit: contain;
+}
+
+/* ===== Commandes console (commands/) ===== */
+.cmd-hub {
+    max-width: 1120px;
+}
+
+/* Petits bouts de code dans le texte (noms de commandes, valeurs) */
+.player-page p code,
+.player-page li code,
+.player-page td code,
+.player-page dt code {
+    padding: 1px 5px;
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+}
+
+.player-page p a code,
+.player-page li a code {
+    color: inherit;
+}
+
+/* Le nom de la commande en titre : en police "code", sans majuscules */
+.player-page .cmd-title {
+    font-family: var(--font-mono);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0;
+    text-transform: none;
+    overflow-wrap: anywhere;
+}
+
+.cmd-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-sm);
+}
+
+.cmd-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 7px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.cmd-meta .cmd-badge {
+    margin-left: 0;
+}
+
+.cmd-removed {
+    border-color: var(--alert);
+    color: var(--alert);
+}
+
+.player-page .cmd-lead {
+    color: var(--text);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-body);
+}
+
+.cmd-syntax {
+    font-size: var(--fs-body);
+}
+
+/* Tableau des valeurs possibles */
+.cmd-values {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--line);
+    font-size: var(--fs-ui);
+}
+
+.cmd-values th,
+.cmd-values td {
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.cmd-values th {
+    background-color: var(--panel);
+    color: var(--muted);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.cmd-values td {
+    border-top: 1px solid var(--line);
+    color: var(--text-body);
+}
+
+.cmd-values td:first-child {
+    width: 30%;
+    white-space: nowrap;
+}
+
+/* Statistiques des pros : une barre par valeur */
+.cmd-stats {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+}
+
+.cmd-stats div {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+
+.cmd-stats dd {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+}
+
+.cmd-bar {
+    flex: 1;
+    max-width: 240px;
+    height: 6px;
+    border-radius: 2px;
+    background-color: var(--line);
+    overflow: hidden;
+}
+
+.cmd-bar i {
+    display: block;
+    height: 100%;
+    background-color: var(--accent-line);
+}
+
+/* Liste de toutes les commandes : recherche + filtres collés en haut pendant le défilement */
+.cmd-tools {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    background-color: var(--bg);
+}
+
+.cmd-tools .cmd-search {
+    max-width: none;
+    margin-top: 0;
+}
+
+.cmd-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.cmd-filter {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: var(--fs-sm);
+}
+
+.cmd-filter:hover {
+    border-color: var(--accent-line);
+}
+
+.cmd-filter span {
+    margin-left: 4px;
+    color: var(--muted);
+    font-weight: var(--fw-medium);
+}
+
+.cmd-filter[aria-pressed="true"] {
+    border-color: var(--text);
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.cmd-filter[aria-pressed="true"] span {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.cmd-section,
+.cmd {
+    scroll-margin-top: 150px;
+}
+
+.cmd-section h2 {
+    margin-bottom: 12px;
+}
+
+.cmd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 10px;
+}
+
+.cmd {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+}
+
+.cmd:target {
+    border-color: var(--accent-line);
+}
+
+.cmd-is-removed {
+    border-left: 3px solid var(--alert);
+}
+
+.cmd .cmd-name {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    overflow-wrap: anywhere;
+}
+
+.cmd-name a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.cmd-name a:hover {
+    color: var(--link);
+    text-decoration: underline;
+}
+
+.player-page .cmd p {
+    font-size: var(--fs-sm);
+}
+
+.cmd-default {
+    white-space: nowrap;
+}
+
+.cmd-empty {
+    color: var(--text-body);
+}
+
+/* ===== Guides (guides/) ===== */
+.guide-hub {
+    max-width: 1120px;
+}
+
+/* Titre des guides : phrase normale (pas tout en majuscules, plus lisible pour un long titre) */
+.player-page .guide-title {
+    text-transform: none;
+    line-height: var(--lh-heading);
+}
+
+.player-page .guide-meta {
+    font-size: var(--fs-sm);
+}
+
+.player-page .guide-lead {
+    color: var(--text);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-body);
+}
+
+.player-page ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-body);
+}
+
+.player-page .related,
+.player-page .guide-toc ol {
+    padding-left: 0;
+}
+
+.player-page ol > li + li,
+.player-page ul:not(.related) > li + li {
+    margin-top: 4px;
+}
+
+/* Sommaire "On this page" */
+.guide-toc {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-line);
+    border-radius: 2px;
+    background-color: var(--panel);
+}
+
+.player-page .guide-toc-title {
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.player-page .guide-toc ol {
+    list-style: none;
+    counter-reset: toc;
+}
+
+.guide-toc li {
+    counter-increment: toc;
+}
+
+.guide-toc li::before {
+    content: counter(toc) ".";
+    display: inline-block;
+    width: 22px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.guide-toc a {
+    font-size: var(--fs-ui);
+}
+
+.guide-page section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guide-page h2 {
+    scroll-margin-top: 16px;
+}
+
+/* Encadré "conseil" */
+.player-page .guide-tip {
+    padding: 12px 14px;
+    border-left: 3px solid var(--accent-line);
+    border-radius: 2px;
+    background-color: var(--panel);
+    color: var(--text);
+}
+
+.player-page .guide-note {
+    font-size: var(--fs-sm);
+}
+
+/* Tableau qui défile sur téléphone au lieu de déborder */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table-wrap .cmd-values td:first-child {
+    white-space: normal;
+}
+
+/* Les noms de commandes ne se coupent pas au milieu (le tableau défile si besoin) */
+.table-wrap .cmd-values td code {
+    white-space: nowrap;
+    overflow-wrap: normal;
+}
+
+/* Bloc de plusieurs commandes avec un seul bouton Copy */
+.code-block {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 12px 90px 12px 14px;
+    overflow-x: auto;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+}
+
+.code-block .mini {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 2px 0 2px;
+}
+
+/* Calculatrice de sensibilité */
+.sens-calc {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+}
+
+.sens-calc label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+}
+
+.sens-calc input {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: var(--fs-body);
+}
+
+.sens-calc input:focus {
+    border-color: var(--accent-line);
+    outline: none;
+}
+
+.player-page .sens-out {
+    grid-column: 1 / -1;
+    color: var(--text);
+}
+
+.sens-out strong {
+    font-family: var(--font-mono);
+    font-size: var(--fs-lg);
+}
+
+/* Cartes de la page d'accueil des guides */
+.guide-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.guide-card:hover {
+    border-color: var(--accent-line);
+}
+
+.guide-card-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-heading);
+}
+
+.guide-card-desc {
+    color: var(--text-body);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+}
+
+/* ===== Générateur de binds (tools/bind-generator.html) =====
+   À gauche : touche + action ; à droite (reste visible en défilant) : le bind, et "My binds". */
+.bind-page {
+    max-width: 1120px;
+}
+
+.bind {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-top: 8px;
+    line-height: var(--lh-ui);
+}
+
+.bind-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.bind-key {
+    display: flex;
+    gap: 8px;
+}
+
+.bind select,
+.bind input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+}
+
+.bind input[type="text"] {
+    font-family: var(--font-mono);
+}
+
+.bind select:focus,
+.bind input[type="text"]:focus {
+    border-color: var(--accent-line);
+    outline: none;
+}
+
+.bind-capture {
+    flex-shrink: 0;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    background-color: var(--panel2);
+    color: var(--text);
+    font-size: var(--fs-sm);
+}
+
+.bind-capture:hover,
+.bind-capture[aria-pressed="true"] {
+    border-color: var(--accent-line);
+}
+
+/* Choix de l'action : même style que les filtres des commandes */
+.bind-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.bind-actions button {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background-color: var(--panel2);
+    color: var(--text);
+    font-size: var(--fs-sm);
+}
+
+.bind-actions button:hover {
+    border-color: var(--accent-line);
+}
+
+.bind-actions button[aria-pressed="true"] {
+    border-color: var(--text);
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.bind-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.bind-buy-group + .bind-buy-group {
+    margin-top: 6px;
+}
+
+.bind-buy-group .gen-label {
+    margin: 0 0 6px;
+}
+
+.bind-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.bind-checks .gen-toggle {
+    padding: 6px 10px;
+}
+
+.bind-result {
+    position: sticky;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.bind-now {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bind-result .code-block pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.bind-add {
+    width: 100%;
+}
+
+.bind-add:hover {
+    background-color: var(--accent-hover);
+}
+
+.bind-add:disabled,
+.bind-buttons .mini:disabled {
+    opacity: 0.5;
+}
+
+.bind-mine {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+}
+
+.bind-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bind-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 6px 6px 10px;
+    border-radius: 2px;
+    background-color: var(--panel2);
+}
+
+.bind-list code {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+}
+
+.bind-remove {
+    flex-shrink: 0;
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+    background-color: transparent;
+    color: var(--text-body);
+    font-size: var(--fs-xs);
+}
+
+.bind-remove:hover {
+    border-color: var(--accent-line);
+    color: var(--text);
+}
+
+.bind-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.bind-buttons .mini {
+    border-radius: 2px;
+}
+
+.bind-buttons .btn-secondary {
+    border: 1px solid var(--line);
 }
 
 /* ===== Moins d'animations pour ceux qui le demandent ===== */
@@ -2486,7 +3195,7 @@ body.light .team-badge img[src*="fut"] {
     /* Menu principal : sur sa propre ligne, au-dessus des boutons */
     .main-nav {
         flex: 1 1 100%;
-        gap: 20px;
+        gap: 14px;
         min-height: 32px;
         overflow-x: auto;
         scrollbar-width: none;
@@ -2494,6 +3203,15 @@ body.light .team-badge img[src*="fut"] {
 
     .main-nav a[aria-current="page"]::after {
         bottom: 0;
+    }
+
+    .main-nav a {
+        font-size: var(--fs-sm);
+    }
+
+    .top-actions {
+        flex: 1 1 100%;
+        margin-left: 0;
     }
 
     .game:disabled {
@@ -2529,18 +3247,20 @@ body.light .team-badge img[src*="fut"] {
         height: 32px;
     }
 
-    .page-top-links {
-        gap: 12px;
+    /* En-tête des pages : le logo, puis le menu sur sa propre ligne */
+    .page-top {
+        flex-wrap: wrap;
+        row-gap: 4px;
+        padding-top: 10px;
+        padding-bottom: 6px;
     }
 
-    .back-link {
-        font-size: var(--fs-sm);
-        white-space: nowrap;
+    .page-top .main-nav a[aria-current="page"]::after {
+        bottom: 0;
     }
 
-    /* Plus de place : le logo et le fil d'Ariane ramènent déjà à l'accueil */
-    .back-home {
-        display: none;
+    .page-top .logo {
+        flex: 0 0 auto;
     }
 
     /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */
@@ -2676,6 +3396,62 @@ body.light .team-badge img[src*="fut"] {
 
     .skin-body {
         padding: 8px 10px 10px;
+    }
+
+    /* Générateur de binds : une colonne, le résultat sous les réglages */
+    /* Le bind et "Add to my binds" restent collés en haut pendant les choix ; "My binds" passe en bas */
+    .bind {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .bind-result {
+        display: contents;
+    }
+
+    .bind-now {
+        order: -1;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 8px 0;
+        background-color: var(--bg);
+    }
+
+    .bind-mine {
+        order: 2;
+    }
+
+    .bind-result .code-block pre {
+        max-height: 96px;
+    }
+
+    /* Guides : calculatrice et cartes sur une colonne */
+    .sens-calc,
+    .guide-cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Commandes : une colonne, filtres sur une ligne qui défile */
+    .cmd-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cmd-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .cmd-filter {
+        flex-shrink: 0;
+    }
+
+    .cmd-stats div {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
     }
 
     .ps-players {

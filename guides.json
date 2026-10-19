@@ -1,0 +1,440 @@
+{
+ "about": "Guides CS2 de ClutchCrosshair. Textes originaux en anglais. Mise en forme dans les textes : `code` (les noms de commandes avec une page deviennent des liens), **gras**, [texte](lien). Blocs : p, list, steps, table, tip, copy (une ligne à copier par élément), config (bloc de plusieurs lignes avec un seul bouton Copy), pro-crosshair-stats et sens-calc (blocs calculés / interactifs).",
+ "updated": "19/10/2026",
+ "guides": [
+  {
+   "slug": "cs2-launch-options",
+   "category": "Settings",
+   "title": "Best CS2 Launch Options (2026)",
+   "seoTitle": "Best CS2 Launch Options (2026): What Works | ClutchCrosshair",
+   "description": "The CS2 launch options that still work in 2026, how to add them in Steam, and the old CS:GO launch options that do nothing anymore.",
+   "intro": "Launch options are small commands that Steam passes to CS2 when the game starts. A few of them are genuinely useful, but most of the long lists you find online were made for CS:GO and do nothing in CS2. Here are the ones worth using, and the myths to forget.",
+   "commands": ["fps_max", "exec", "toggleconsole"],
+   "sections": [
+    {
+     "title": "How to add launch options in Steam",
+     "blocks": [
+      {"type": "steps", "items": ["Open your Steam **Library** and right-click **Counter-Strike 2**.", "Click **Properties**, then stay on the **General** tab.", "Type your options in the **Launch Options** field, separated by spaces.", "Close the window and start CS2: the options apply right away."]},
+      {"type": "tip", "text": "Options that start with a minus sign (-console) are launch parameters. Options that start with a plus sign (+exec autoexec) run a console command when the game starts."}
+     ]
+    },
+    {
+     "title": "The launch options worth using",
+     "blocks": [
+      {"type": "table", "head": ["Launch option", "What it does"], "rows": [
+       ["`-console`", "Opens the developer console as soon as the game starts. Handy if you use it often."],
+       ["`+exec autoexec`", "Runs your autoexec.cfg file at every launch, so your settings and binds are always applied."],
+       ["`-fullscreen`", "Forces exclusive fullscreen, usually the mode with the lowest input delay."],
+       ["`-w 1280 -h 960`", "Forces a resolution (width and height). Useful if the game starts in the wrong resolution."],
+       ["`-freq 240`", "Asks for a refresh rate in Hz. Use the real refresh rate of your monitor."],
+       ["`-vulkan`", "Starts CS2 with the Vulkan renderer instead of DirectX on Windows. It can help or hurt depending on your PC, so compare your FPS."],
+       ["`-allow_third_party_software`", "Lets software that hooks into the game (some recording or overlay tools) work. Only add it if a tool needs it."]
+      ]},
+      {"type": "p", "text": "A simple, safe set for most players looks like this:"},
+      {"type": "copy", "items": ["-console +exec autoexec -fullscreen"]}
+     ]
+    },
+    {
+     "title": "Launch options that do nothing in CS2",
+     "blocks": [
+      {"type": "p", "text": "These come from old CS:GO guides. They are harmless at best, and some can make things worse:"},
+      {"type": "table", "head": ["Old option", "Why to remove it"], "rows": [
+       ["`-high`", "Forces a high CPU priority. Modern Windows already gives the game what it needs, and it can make background apps like voice chat stutter."],
+       ["`-threads`", "CS2 detects your CPU cores on its own; forcing a number usually lowers performance."],
+       ["`-tickrate 128`", "Official CS2 servers run at 64 tick with sub-tick updates; this option does not change matchmaking."],
+       ["`-novid`", "Skipped the intro video in CS:GO. CS2 has no intro video to skip."],
+       ["`-d3d9ex`, `+mat_queue_mode 2`, `+cl_forcepreload 1`", "Settings of the old Source 1 engine. CS2 runs on Source 2 and ignores them."]
+      ]},
+      {"type": "tip", "text": "If your game behaves strangely, the first thing to try is an empty Launch Options field."}
+     ]
+    },
+    {
+     "title": "Launch options and the console: what is the difference?",
+     "blocks": [
+      {"type": "p", "text": "Most settings are better placed in an autoexec file than in launch options. Create a file named **autoexec.cfg** in `Counter-Strike Global Offensive/game/csgo/cfg`, write one command per line (for example `fps_max 0` or your crosshair commands), then add `+exec autoexec` to your launch options. You can find every useful command in our [CS2 console commands list](../commands/)."}
+     ]
+    }
+   ],
+   "faq": [
+    ["What are the best CS2 launch options?", "Keep it short: -console to open the console, +exec autoexec to load your settings, and -fullscreen. Add -w, -h or -freq only if the game starts with the wrong resolution or refresh rate."],
+    ["Does -high increase FPS in CS2?", "No. It only changes the CPU priority of the game, which modern Windows already handles well, and it can make other programs stutter."],
+    ["Does -tickrate 128 work in CS2?", "No. Official CS2 servers use 64 tick with sub-tick updates, and the launch option does not change matchmaking."],
+    ["Where do I put launch options for CS2?", "In Steam: right-click Counter-Strike 2 in your library, then Properties › General › Launch Options."]
+   ],
+   "related": ["cs2-fps-boost", "cs2-best-settings", "cs2-stretched-resolution"]
+  },
+  {
+   "slug": "cs2-best-settings",
+   "category": "Settings",
+   "title": "Best CS2 Settings (2026): Video, Game and Audio",
+   "seoTitle": "Best CS2 Settings (2026): Video, Game & Audio | ClutchCrosshair",
+   "description": "The best CS2 settings for visibility and FPS: video options to change, game and radar settings, and audio settings to hear footsteps clearly.",
+   "intro": "Good settings in CS2 do two things: they make enemies easy to see, and they keep your frame rate high and stable. Visual beauty comes last. This guide goes through the video, game and audio options and explains what each one changes, so you can make your own choices instead of copying random numbers.",
+   "commands": ["fps_max", "cl_radar_scale", "cl_radar_always_centered", "cl_hud_radar_scale", "viewmodel_fov", "cl_hud_color", "snd_headphone_eq", "volume", "cl_hud_telemetry_frametime_show"],
+   "sections": [
+    {
+     "title": "Video settings",
+     "blocks": [
+      {"type": "p", "text": "Open **Settings › Video › Advanced Video**. The table below favors visibility and FPS, the choice of most competitive players:"},
+      {"type": "table", "head": ["Setting", "Recommended", "Why"], "rows": [
+       ["Boost Player Contrast", "Enabled", "Makes player models stand out from the background."],
+       ["Wait for Vertical Sync", "Disabled", "V-Sync adds input delay."],
+       ["NVIDIA Reflex Low Latency", "Enabled", "Lowers input delay on supported graphics cards."],
+       ["Multisampling Anti-Aliasing", "2x or 4x MSAA", "Smoother edges; lower it first if you need FPS."],
+       ["Global Shadow Quality", "Medium or High", "Shadows can reveal players around corners."],
+       ["Model / Texture Detail", "Low or Medium", "Little effect on visibility, frees up FPS."],
+       ["Shader Detail", "Low", "Fewer effects, clearer image."],
+       ["Particle Detail", "Low", "Less visual noise from effects."],
+       ["Ambient Occlusion", "Disabled", "Costs FPS without helping you spot enemies."],
+       ["High Dynamic Range", "Performance", "Faster, with a very similar image."],
+       ["FidelityFX Super Resolution", "Disabled", "Upscaling makes the image blurry, bad for spotting far enemies."]
+      ]},
+      {"type": "tip", "text": "Change one setting at a time and check your FPS with `cl_hud_telemetry_frametime_show 2`. The right settings are the ones that keep your FPS stable on your PC."}
+     ]
+    },
+    {
+     "title": "Resolution and display mode",
+     "blocks": [
+      {"type": "p", "text": "Use **Fullscreen** as display mode for the lowest input delay. For the resolution, there is no single best answer: native 16:9 gives the sharpest image and the widest view, while 4:3 stretched makes models look wider. Our [stretched resolution guide](cs2-stretched-resolution.html) explains the trade-offs in detail."}
+     ]
+    },
+    {
+     "title": "Game and HUD settings",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Radar**: zoom out with `cl_radar_scale 0.35` and use `cl_radar_always_centered 0` so the radar shows more of the map. Make it bigger with `cl_hud_radar_scale`.",
+       "**Viewmodel**: `viewmodel_fov 68` pushes your weapon away and shows more of the screen.",
+       "**HUD color**: pick a color you read easily with `cl_hud_color`.",
+       "**Telemetry**: show your FPS and ping in Settings › Game › Telemetry to spot performance problems.",
+       "**Crosshair**: start from a [pro crosshair](../) or build yours in the [crosshair generator](../generator.html)."
+      ]},
+      {"type": "config", "lines": ["cl_radar_scale 0.35", "cl_radar_always_centered 0", "cl_hud_radar_scale 1.15", "viewmodel_fov 68"]}
+     ]
+    },
+    {
+     "title": "Audio settings",
+     "blocks": [
+      {"type": "list", "items": [
+       "Play with **headphones**: CS2's positional audio is made for them.",
+       "Try each **EQ Profile** in the audio settings and keep the one where footsteps sound clearest to you.",
+       "Keep the main `volume` fairly high and turn down the music instead (round start, MVP, menu music).",
+       "Lower the voice chat with `snd_voipvolume` if your teammates cover the footsteps."
+      ]},
+      {"type": "config", "lines": ["snd_roundstart_volume 0", "snd_mvp_volume 0", "snd_menumusic_volume 0"]}
+     ]
+    }
+   ],
+   "faq": [
+    ["What are the best CS2 settings for FPS?", "Lower Shader, Particle and Model/Texture Detail, disable Ambient Occlusion and FidelityFX Super Resolution, set High Dynamic Range to Performance, and keep V-Sync off. Then check your FPS with the telemetry display."],
+    ["Should I enable Boost Player Contrast in CS2?", "Yes. It makes player models stand out from the background, which helps you spot enemies faster."],
+    ["Is FidelityFX Super Resolution good for CS2?", "Usually not for competitive play: it renders the game at a lower resolution and upscales it, which makes far enemies blurry."],
+    ["What audio settings do pros use in CS2?", "Most play with headphones, keep the main volume fairly high and mute the music (round start, MVP, menu) so footsteps are easier to hear."]
+   ],
+   "related": ["cs2-fps-boost", "cs2-stretched-resolution", "cs2-crosshair-guide"]
+  },
+  {
+   "slug": "cs2-stretched-resolution",
+   "category": "Settings",
+   "title": "CS2 Stretched Resolution: 4:3 vs 16:9 (2026)",
+   "seoTitle": "CS2 Stretched Resolution: 4:3 vs 16:9 Guide | ClutchCrosshair",
+   "description": "Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.",
+   "intro": "Many CS2 pros still play in 4:3 stretched, usually 1280×960, a habit inherited from CS 1.6 and CS:GO. It is not magic: you gain wider-looking models and lose part of your field of view. This guide explains exactly what changes, so you can decide for yourself.",
+   "commands": ["m_yaw", "cl_crosshair_screen_height", "sensitivity"],
+   "sections": [
+    {
+     "title": "What stretched 4:3 actually changes",
+     "blocks": [
+      {"type": "table", "head": ["", "16:9 native (1920×1080)", "4:3 stretched (1280×960)"], "rows": [
+       ["Field of view", "Widest: you see more on the sides", "Narrower: the sides of the screen are cut"],
+       ["Player models", "Normal width", "Look wider, easier to hit for some players"],
+       ["Image sharpness", "Sharpest", "Softer, stretched pixels"],
+       ["Mouse feel", "Same speed in all directions", "Horizontal movement feels faster"],
+       ["FPS", "Lower", "A little higher (fewer pixels to render)"]
+      ]},
+      {"type": "tip", "text": "Stretching does not make the hitboxes bigger: the models only look wider because the image is stretched. Whether that helps is a matter of personal feel."}
+     ]
+    },
+    {
+     "title": "What resolution do CS2 pros use?",
+     "blocks": [
+      {"type": "p", "text": "Every CS2 crosshair code stores the screen height the crosshair was made for. On ClutchCrosshair, most pro crosshairs are made for a **960 px** screen height, the height of 1280×960, which suggests that 4:3 stretched is still the most popular choice at the top level. You can see each pro's value on their crosshair page."},
+      {"type": "pro-resolution-stats"}
+     ]
+    },
+    {
+     "title": "How to play CS2 in 4:3 stretched",
+     "blocks": [
+      {"type": "steps", "items": [
+       "In CS2, open **Settings › Video › Video**. Set **Aspect Ratio** to **Normal 4:3** and **Resolution** to **1280×960** (or 1024×768, 1440×1080).",
+       "Set **Display Mode** to **Fullscreen**.",
+       "**NVIDIA**: open the NVIDIA Control Panel › Adjust desktop size and position, choose **Full-screen** scaling and **Perform scaling on: GPU**, then tick **Override the scaling mode set by games and programs**.",
+       "**AMD**: open AMD Software › Settings › Display, enable **GPU Scaling** and set **Scaling Mode** to **Full Panel**.",
+       "Restart CS2. If you see black bars on the sides, the scaling setting of your graphics card is not applied yet."
+      ]}
+     ]
+    },
+    {
+     "title": "Your crosshair and sensitivity in stretched",
+     "blocks": [
+      {"type": "p", "text": "In stretched, everything on screen is wider, including your crosshair: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview of our [crosshair generator](../generator.html) to see exactly how a crosshair looks in 4:3 stretched before using it."},
+      {"type": "p", "text": "Your mouse also feels faster horizontally. Most players simply get used to it. Some lower `m_yaw` to compensate; for 1280×960 on a 16:9 monitor, the math gives about 0.0165 instead of 0.022, but it is a matter of taste."}
+     ]
+    }
+   ],
+   "faq": [
+    ["Is 4:3 stretched better in CS2?", "Not objectively. Models look wider and FPS is slightly higher, but you see less on the sides and the image is less sharp. Try both for a few days and keep what feels best."],
+    ["What is the most common CS2 pro resolution?", "1280×960 stretched is still very common among pros: most pro crosshair codes on ClutchCrosshair are made for a 960 px screen height."],
+    ["Why do I have black bars in 4:3?", "Your graphics card is not set to stretch the image. Set Full-screen scaling performed by the GPU in the NVIDIA Control Panel, or GPU Scaling with Full Panel in AMD Software."],
+    ["Does stretched make hitboxes bigger in CS2?", "No. Hitboxes stay the same; the models only look wider because the image is stretched horizontally."]
+   ],
+   "related": ["cs2-sensitivity", "cs2-crosshair-guide", "cs2-best-settings"]
+  },
+  {
+   "slug": "cs2-sensitivity",
+   "category": "Aim",
+   "title": "CS2 Sensitivity Guide: eDPI, cm/360 and Calculator",
+   "seoTitle": "CS2 Sensitivity Guide & eDPI Calculator | ClutchCrosshair",
+   "description": "Find your best CS2 sensitivity: what eDPI and cm/360 mean, typical pro ranges, a free eDPI calculator and how to convert your Valorant sensitivity.",
+   "intro": "Your sensitivity decides how far your crosshair moves when you move your mouse. There is no perfect number, but there is a sensible range for CS2, and two simple measures help you compare: eDPI and cm/360. Use the calculator below to find yours.",
+   "commands": ["sensitivity", "zoom_sensitivity_ratio", "m_yaw", "m_pitch"],
+   "sections": [
+    {
+     "title": "eDPI and cm/360 calculator",
+     "blocks": [
+      {"type": "p", "text": "Enter your mouse DPI and your CS2 `sensitivity`:"},
+      {"type": "sens-calc"}
+     ]
+    },
+    {
+     "title": "eDPI and cm/360, explained",
+     "blocks": [
+      {"type": "list", "items": [
+       "**eDPI** = mouse DPI × in-game sensitivity. 400 DPI at 2.0 and 800 DPI at 1.0 both give 800 eDPI: the same speed in game.",
+       "**cm/360** is the distance your mouse travels for a full 360° turn. It is the most honest measure, because it is the same in every game."
+      ]},
+      {"type": "p", "text": "Most CS2 pros play between about **600 and 1200 eDPI**, which is roughly 35 to 70 cm per 360° turn. Lower sensitivities help precise aiming at a distance but need a large mousepad."}
+     ]
+    },
+    {
+     "title": "How to find your sensitivity",
+     "blocks": [
+      {"type": "steps", "items": [
+       "Start around 800 eDPI (for example 400 DPI at 2.0 or 800 DPI at 1.0).",
+       "Play a few deathmatches. If you often overshoot your targets, lower it a little; if you struggle to turn quickly, raise it.",
+       "Change it in small steps (about 5 to 10%) and keep each value for several days.",
+       "Once you find it, stop changing it: consistency matters more than the exact number."
+      ]},
+      {"type": "copy", "items": ["sensitivity 2", "zoom_sensitivity_ratio 1"]}
+     ]
+    },
+    {
+     "title": "Convert your sensitivity from Valorant",
+     "blocks": [
+      {"type": "p", "text": "Valorant uses a different scale. To get the same speed in CS2, multiply your Valorant sensitivity by **3.18**. For example, 0.4 in Valorant equals about 1.27 in CS2 at the same DPI. The calculator above does it for you."}
+     ]
+    },
+    {
+     "title": "Scoped and raw input",
+     "blocks": [
+      {"type": "list", "items": [
+       "`zoom_sensitivity_ratio` changes your speed when scoped with the AWP or Scout. 1 is the default and feels natural for most players.",
+       "CS2 always reads your mouse directly (raw input), so the old `m_rawinput` command is gone. Turn off **Enhance pointer precision** in Windows and acceleration in your mouse software."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["What is a good sensitivity for CS2?", "Most pros play between about 600 and 1200 eDPI (DPI × sensitivity). A good starting point is 800 eDPI, then adjust in small steps."],
+    ["How do I calculate eDPI in CS2?", "Multiply your mouse DPI by your in-game sensitivity. 800 DPI at 1.1 gives 880 eDPI."],
+    ["How do I convert Valorant sensitivity to CS2?", "Multiply your Valorant sensitivity by 3.18 (with the same DPI). 0.4 in Valorant is about 1.27 in CS2."],
+    ["Should I use 400 or 800 DPI in CS2?", "Both work. Only your eDPI matters for speed; 800 DPI with half the sensitivity of 400 DPI feels the same and can be slightly smoother."]
+   ],
+   "related": ["cs2-aim-training", "cs2-stretched-resolution", "cs2-best-settings"]
+  },
+  {
+   "slug": "cs2-fps-boost",
+   "category": "Performance",
+   "title": "How to Boost FPS in CS2 (2026)",
+   "seoTitle": "How to Boost FPS in CS2 (2026) | ClutchCrosshair",
+   "description": "Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.",
+   "intro": "High and stable FPS make CS2 feel smoother and more responsive. The good news: the biggest gains come from a few in-game settings and basic PC care, not from secret tweaks. Here is what really helps, in order.",
+   "commands": ["fps_max", "cl_showfps", "cl_hud_telemetry_frametime_show", "fps_max_ui", "engine_low_latency_sleep_after_client_tick"],
+   "sections": [
+    {
+     "title": "1. Measure your FPS first",
+     "blocks": [
+      {"type": "p", "text": "Before changing anything, turn on the telemetry display so you can see the effect of each change:"},
+      {"type": "copy", "items": ["cl_hud_telemetry_frametime_show 2", "cl_showfps 1"]},
+      {"type": "p", "text": "Look at how stable the frame rate is, not only its maximum: drops during fights are what you feel."}
+     ]
+    },
+    {
+     "title": "2. Lower the heaviest video settings",
+     "blocks": [
+      {"type": "p", "text": "In Settings › Video › Advanced Video, these settings cost the most performance for the least competitive benefit:"},
+      {"type": "list", "items": ["Ambient Occlusion: **Disabled**.", "Shader Detail and Particle Detail: **Low**.", "Model / Texture Detail: **Low** or **Medium**.", "High Dynamic Range: **Performance**.", "Multisampling Anti-Aliasing: lower it to 2x or None if you still need FPS."]},
+      {"type": "p", "text": "Our [best CS2 settings guide](cs2-best-settings.html) explains every video option."}
+     ]
+    },
+    {
+     "title": "3. Cap your frame rate",
+     "blocks": [
+      {"type": "p", "text": "An unlimited frame rate that keeps jumping feels worse than a stable one. Cap it with `fps_max` at a value your PC can hold almost all the time, ideally above your monitor's refresh rate. Turn on **NVIDIA Reflex Low Latency** if your graphics card supports it."},
+      {"type": "copy", "items": ["fps_max 300", "fps_max_ui 60"]}
+     ]
+    },
+    {
+     "title": "4. Basic PC care",
+     "blocks": [
+      {"type": "list", "items": [
+       "Update your graphics card driver.",
+       "Turn on **Game Mode** in Windows settings and use a high performance power plan on desktops.",
+       "Close heavy programs while playing (browsers with many tabs, recording software you do not use).",
+       "On a laptop, plug it in and use the dedicated graphics card for CS2.",
+       "Make sure your PC is not overheating: dust in the fans can halve your performance."
+      ]}
+     ]
+    },
+    {
+     "title": "What does not help",
+     "blocks": [
+      {"type": "list", "items": [
+       "Old CS:GO launch options like `-high`, `-threads` or `+mat_queue_mode 2` (see our [launch options guide](cs2-launch-options.html)).",
+       "\"FPS boost\" programs and registry tweaks: at best useless, at worst unstable.",
+       "Very low resolutions that make enemies hard to see: a slightly lower FPS is better than not seeing anyone."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["How can I get more FPS in CS2?", "Disable Ambient Occlusion, lower Shader, Particle and Model/Texture Detail, set HDR to Performance, update your graphics driver and close heavy background programs."],
+    ["Should I uncap my FPS in CS2?", "Not necessarily. A cap with fps_max that your PC can hold steadily often feels smoother than an unlimited frame rate that keeps jumping."],
+    ["How do I show FPS in CS2?", "Type cl_hud_telemetry_frametime_show 2 or cl_showfps 1 in the console, or enable the Telemetry options in Settings › Game."],
+    ["Do launch options increase FPS in CS2?", "Barely. Most FPS launch options were made for CS:GO; in-game video settings matter far more."]
+   ],
+   "related": ["cs2-best-settings", "cs2-launch-options", "cs2-stretched-resolution"]
+  },
+  {
+   "slug": "cs2-crosshair-guide",
+   "category": "Crosshair",
+   "title": "CS2 Crosshair Guide: Codes, Commands and Pro Stats",
+   "seoTitle": "CS2 Crosshair Guide: Codes & Pro Stats | ClutchCrosshair",
+   "description": "Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.",
+   "intro": "Your crosshair is the one thing you look at every second of a match. This guide explains how CS2 crosshair codes work since the September 30, 2026 update, which console commands control each setting, and what the pros on ClutchCrosshair actually use, based on their real match demos.",
+   "commands": ["cl_crosshair_length", "cl_crosshair_thickness", "cl_crosshair_gap", "cl_crosshair_screen_height", "cl_crosshairstyle", "cl_crosshair_drawoutline", "cl_crosshairdot", "cl_crosshair_t", "cl_crosshaircolor_r"],
+   "sections": [
+    {
+     "title": "How to import a crosshair code",
+     "blocks": [
+      {"type": "steps", "items": ["Copy a code, for example from a [pro crosshair page](../).", "In CS2, open **Settings › Game › Crosshair**.", "Click **Share or Import**, paste the code and confirm."]},
+      {"type": "tip", "text": "Since the CS2 update of September 30, 2026, codes start with CS (without dashes). Old CSGO-xxxxx codes can no longer be imported."}
+     ]
+    },
+    {
+     "title": "What crosshair do CS2 pros use?",
+     "blocks": [
+      {"type": "p", "text": "These numbers are computed from the crosshairs of every pro on ClutchCrosshair, read from official match demos. They update every time a new demo is added:"},
+      {"type": "pro-crosshair-stats"}
+     ]
+    },
+    {
+     "title": "The crosshair console commands",
+     "blocks": [
+      {"type": "table", "head": ["Command", "What it changes"], "rows": [
+       ["`cl_crosshair_length`", "Length of the lines, in pixels"],
+       ["`cl_crosshair_thickness`", "Thickness of the lines, in pixels"],
+       ["`cl_crosshair_gap`", "Space in the center, in pixels"],
+       ["`cl_crosshair_screen_height`", "Screen height the sizes are made for"],
+       ["`cl_crosshairstyle`", "Static (4) or dynamic crosshair"],
+       ["`cl_crosshaircolor_r`", "Custom color, with _g and _b"],
+       ["`cl_crosshair_drawoutline`", "Black outline for visibility"],
+       ["`cl_crosshairdot`", "Center dot"],
+       ["`cl_crosshair_t`", "T-style (no top line)"]
+      ]},
+      {"type": "p", "text": "Here is a typical small static pro-style crosshair you can paste in the console:"},
+      {"type": "config", "lines": ["cl_crosshairstyle 4", "cl_crosshair_length 2", "cl_crosshair_thickness 2", "cl_crosshair_gap 2", "cl_crosshair_drawoutline 0", "cl_crosshairdot 0", "cl_crosshaircolor_r 0", "cl_crosshaircolor_g 255", "cl_crosshaircolor_b 255", "cl_crosshaircolor_a 255"]}
+     ]
+    },
+    {
+     "title": "How to choose your crosshair",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Color**: pick one that contrasts with every map. Cyan, green and yellow are the most popular for a reason.",
+       "**Size**: a small crosshair is precise but can get lost in smokes and flashes; a slightly longer one is easier to find.",
+       "**Gap**: keep it small so the target's head stays visible between the lines.",
+       "**Static**: a crosshair that never moves (style 4) gives you a constant reference, which is why almost every pro uses it."
+      ]},
+      {"type": "p", "text": "The easiest way to test is our [CS2 crosshair generator](../generator.html): it shows your crosshair at real size on a CS2 map, in your resolution, and gives you the code. You can also start from any pro crosshair and tweak it."}
+     ]
+    }
+   ],
+   "faq": [
+    ["How do I import a crosshair in CS2?", "Copy the code, open Settings › Game › Crosshair, click Share or Import and paste it."],
+    ["Why don't CSGO- crosshair codes work anymore?", "Since the CS2 update of September 30, 2026, crosshair codes use a new format starting with CS, with sizes in pixels. Old CSGO- codes can no longer be imported."],
+    ["What is the most popular crosshair among CS2 pros?", "A small static crosshair: on ClutchCrosshair, most pros use a short length, a small gap and a cyan or green color, without a center dot."],
+    ["How do I make my own CS2 crosshair?", "Use the ClutchCrosshair crosshair generator: adjust color, length, thickness and gap with a real-size preview, then copy your code or console commands."]
+   ],
+   "related": ["cs2-stretched-resolution", "cs2-best-settings", "cs2-aim-training"]
+  },
+  {
+   "slug": "cs2-aim-training",
+   "category": "Aim",
+   "title": "How to Improve Your Aim in CS2: Routine and Aim Maps",
+   "seoTitle": "How to Improve Aim in CS2: Routine & Aim Maps | ClutchCrosshair",
+   "description": "A simple daily CS2 aim routine, the best workshop aim maps, a ready-to-copy practice config and the habits that make you hit more headshots.",
+   "intro": "Aim improves with regular, focused practice, not with endless hours of mindless shooting. This guide gives you a short daily routine, the kinds of workshop maps that help most, and a practice config you can paste in your own server.",
+   "commands": ["sv_cheats", "sv_infinite_ammo", "mp_buy_anywhere", "sv_showimpacts", "bot_kick", "map", "noclip"],
+   "sections": [
+    {
+     "title": "A 20-minute daily routine",
+     "blocks": [
+      {"type": "table", "head": ["Time", "Exercise", "Goal"], "rows": [
+       ["5 min", "Bots on an aim map (Aim Botz type)", "Warm up: crosshair at head height, smooth flicks"],
+       ["5 min", "Spray practice against a wall with `sv_showimpacts 1`", "Learn the AK-47 and M4 patterns"],
+       ["10 min", "Deathmatch (official or community)", "Apply it against real moving players"]
+      ]},
+      {"type": "tip", "text": "Short and regular beats long and rare: 20 focused minutes every day helps more than 3 hours once a week."}
+     ]
+    },
+    {
+     "title": "Aim maps worth trying",
+     "blocks": [
+      {"type": "p", "text": "Search the CS2 Steam Workshop for these kinds of maps and subscribe to the ones you like:"},
+      {"type": "list", "items": [
+       "**Aim Botz style maps**: rows of bots to practice flicks, tracking and headshots.",
+       "**Prefire maps**: walk through real map positions and kill bots placed where enemies usually hide.",
+       "**Recoil maps**: show spray patterns so you can learn to control them.",
+       "**Movement maps**: practice counter-strafing, so you are fully stopped when you shoot."
+      ]}
+     ]
+    },
+    {
+     "title": "Your own practice server",
+     "blocks": [
+      {"type": "p", "text": "Load a map with `map de_mirage` (or any map), open the console and paste this config. It gives you infinite ammo, lets you buy anywhere, removes the round timer and shows where your bullets land:"},
+      {"type": "config", "lines": ["sv_cheats 1", "bot_kick", "mp_warmup_end", "mp_freezetime 0", "mp_roundtime_defuse 60", "mp_ignore_round_win_conditions 1", "mp_buy_anywhere 1", "mp_buytime 9999", "mp_maxmoney 60000", "mp_startmoney 60000", "sv_infinite_ammo 1", "sv_showimpacts 1", "mp_restartgame 1"]},
+      {"type": "p", "text": "Every command is explained in our [CS2 console commands list](../commands/#practice)."}
+     ]
+    },
+    {
+     "title": "Habits that make the biggest difference",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Crosshair placement**: keep your crosshair at head height and close to where enemies will appear. Good placement means you barely need to flick.",
+       "**Counter-strafing**: tap the opposite movement key before shooting so you are fully stopped. Moving shots are inaccurate in CS2.",
+       "**Burst at range**: at long distance, shoot short bursts or single taps instead of spraying.",
+       "**Keep the same settings**: changing sensitivity or crosshair every week resets your muscle memory. Find a pro crosshair you like on [ClutchCrosshair](../) and stick with it."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["How can I improve my aim in CS2 fast?", "Practice 20 focused minutes every day: warm up on an aim map, practice sprays, then play deathmatch. Work on crosshair placement and counter-strafing."],
+    ["What is the best aim map in CS2?", "Aim Botz style maps are the classic warm-up. Add prefire maps to learn real angles and recoil maps to master sprays."],
+    ["How do I make a practice server in CS2?", "Type map followed by a map name (map de_mirage), then paste a practice config: sv_cheats 1, sv_infinite_ammo 1, mp_buy_anywhere 1, mp_roundtime_defuse 60 and mp_restartgame 1."],
+    ["Does sensitivity affect aim in CS2?", "Yes: too high makes small corrections hard, too low makes turning slow. Most pros stay between about 600 and 1200 eDPI."]
+   ],
+   "related": ["cs2-sensitivity", "cs2-crosshair-guide", "cs2-best-settings"]
+  }
+ ]
+}

@@ -1,0 +1,2905 @@
+{
+ "about": "Base de données des commandes console CS2 de ClutchCrosshair. Textes originaux (anglais). status : active = marche dans CS2 ; removed = héritée de CS:GO, ne marche plus ; check = à vérifier en jeu (pas publiée). page : true = une page dédiée commands/<name>.html. Sources des faits : liste officielle du wiki Valve (déc. 2025), commandes de crosshair de la mise à jour du 30/09/2026 (librairie csgo-sharecode 7.0.1, testées en jeu par Anto).",
+ "updated": "19/10/2026",
+ "categories": [
+  [
+   "crosshair",
+   "Crosshair"
+  ],
+  [
+   "hud",
+   "HUD & radar"
+  ],
+  [
+   "viewmodel",
+   "Viewmodel"
+  ],
+  [
+   "performance",
+   "Graphics & FPS"
+  ],
+  [
+   "network",
+   "Network"
+  ],
+  [
+   "mouse",
+   "Mouse"
+  ],
+  [
+   "audio",
+   "Audio"
+  ],
+  [
+   "practice",
+   "Practice & server"
+  ],
+  [
+   "bots",
+   "Bots"
+  ],
+  [
+   "general",
+   "General"
+  ]
+ ],
+ "commands": [
+  {
+   "name": "crosshair",
+   "category": "crosshair",
+   "summary": "Shows or hides your crosshair.",
+   "description": "Turns the crosshair on (1) or off (0). Hiding it is mostly useful for clean screenshots and videos; in a real match you always want it on.",
+   "syntax": "crosshair <0|1>",
+   "values": [
+    [
+     "1",
+     "Crosshair visible"
+    ],
+    [
+     "0",
+     "Crosshair hidden"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "crosshair 0",
+    "crosshair 1"
+   ],
+   "related": [
+    "cl_crosshairstyle",
+    "cl_draw_only_deathnotices",
+    "r_drawviewmodel"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_length",
+   "category": "crosshair",
+   "summary": "Length of each crosshair line, in pixels.",
+   "description": "Sets how long each of the four crosshair lines is. Since the CS2 update of September 30, 2026, crosshair sizes are counted in real pixels for the screen height set in cl_crosshair_screen_height, so a value of 2 means 2 pixels on that screen. Most CS2 pros play with a short length between 1 and 4.",
+   "syntax": "cl_crosshair_length <pixels>",
+   "values": [
+    [
+     "0",
+     "No lines (dot only, if cl_crosshairdot is on)"
+    ],
+    [
+     "2",
+     "Short, the most common pro value"
+    ],
+    [
+     "5+",
+     "Long, easy to see"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_length 2",
+    "cl_crosshair_length 4"
+   ],
+   "related": [
+    "cl_crosshair_thickness",
+    "cl_crosshair_gap",
+    "cl_crosshair_screen_height"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_thickness",
+   "category": "crosshair",
+   "summary": "Thickness of the crosshair lines, in pixels.",
+   "description": "Sets how thick the crosshair lines are, in pixels for the screen height set in cl_crosshair_screen_height. A thickness of 1 gives a thin, precise crosshair; 2 is easier to see on bright maps and is the most common choice among pros.",
+   "syntax": "cl_crosshair_thickness <pixels>",
+   "values": [
+    [
+     "1",
+     "Thin"
+    ],
+    [
+     "2",
+     "Most common"
+    ],
+    [
+     "3+",
+     "Thick"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_thickness 1",
+    "cl_crosshair_thickness 2"
+   ],
+   "related": [
+    "cl_crosshair_length",
+    "cl_crosshair_gap",
+    "cl_crosshairdot"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_gap",
+   "category": "crosshair",
+   "summary": "Space between the center and the crosshair lines, in pixels.",
+   "description": "Sets the empty space in the middle of the crosshair, in pixels for the screen height set in cl_crosshair_screen_height. A small gap (0 to 2) keeps the lines close to the target's head; a negative value makes the lines overlap the center. On ClutchCrosshair, most pros use a gap of 1 or 2.",
+   "syntax": "cl_crosshair_gap <pixels>",
+   "values": [
+    [
+     "-2",
+     "Lines overlap the center"
+    ],
+    [
+     "0",
+     "Lines touch the center"
+    ],
+    [
+     "2",
+     "Small gap, very common"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_gap 1",
+    "cl_crosshair_gap -1"
+   ],
+   "related": [
+    "cl_crosshair_length",
+    "cl_crosshair_thickness",
+    "cl_crosshairdot"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_screen_height",
+   "category": "crosshair",
+   "summary": "Screen height the crosshair sizes are designed for.",
+   "description": "New in the CS2 update of September 30, 2026. Crosshair length, thickness and gap are now counted in pixels for this screen height. If you play at a different resolution, CS2 scales the crosshair so it keeps the same size relative to your screen. It is saved in every CS2 crosshair share code, which is why a pro's crosshair looks right on your screen too.",
+   "syntax": "cl_crosshair_screen_height <pixels>",
+   "values": [
+    [
+     "1080",
+     "Made for a 1920×1080 screen"
+    ],
+    [
+     "960",
+     "Made for 1280×960 (4:3 stretched)"
+    ],
+    [
+     "1440",
+     "Made for a 2560×1440 screen"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_screen_height 1080",
+    "cl_crosshair_screen_height 960"
+   ],
+   "related": [
+    "cl_crosshair_length",
+    "cl_crosshair_thickness",
+    "cl_crosshair_gap"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshairstyle",
+   "category": "crosshair",
+   "summary": "Chooses a static or dynamic crosshair.",
+   "description": "Picks how the crosshair reacts when you move and shoot. Style 4 (static) never moves and is used by almost every pro. Style 2 keeps a fixed center while the outer parts react to recoil and movement. Style 5 is the legacy CS:GO-style dynamic crosshair.",
+   "syntax": "cl_crosshairstyle <2|4|5>",
+   "values": [
+    [
+     "2",
+     "Default: fixed center, outer parts show recoil and spread"
+    ],
+    [
+     "4",
+     "Static: never moves (most pros)"
+    ],
+    [
+     "5",
+     "Legacy: CS:GO-style fake recoil"
+    ]
+   ],
+   "default": "2",
+   "examples": [
+    "cl_crosshairstyle 4"
+   ],
+   "related": [
+    "cl_crosshair_recoil",
+    "cl_crosshair_dynamic_splitdist",
+    "cl_crosshair_t"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshaircolor_r",
+   "category": "crosshair",
+   "summary": "Red part of a custom crosshair color (0-255).",
+   "description": "With cl_crosshaircolor_g and cl_crosshaircolor_b, sets the exact color of your crosshair as red, green and blue values from 0 to 255. For example 0 255 255 gives cyan and 0 255 0 gives pure green, two of the most popular colors among CS2 pros.",
+   "syntax": "cl_crosshaircolor_r <0-255>",
+   "values": [
+    [
+     "0 255 0",
+     "Green (r g b)"
+    ],
+    [
+     "0 255 255",
+     "Cyan"
+    ],
+    [
+     "255 255 0",
+     "Yellow"
+    ]
+   ],
+   "examples": [
+    "cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255"
+   ],
+   "related": [
+    "cl_crosshaircolor_g",
+    "cl_crosshaircolor_b",
+    "cl_crosshaircolor_a"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshaircolor_g",
+   "category": "crosshair",
+   "summary": "Green part of a custom crosshair color (0-255).",
+   "description": "The green value of your crosshair color, from 0 to 255. Use it together with cl_crosshaircolor_r and cl_crosshaircolor_b.",
+   "syntax": "cl_crosshaircolor_g <0-255>",
+   "examples": [
+    "cl_crosshaircolor_g 255"
+   ],
+   "related": [
+    "cl_crosshaircolor_r",
+    "cl_crosshaircolor_b"
+   ]
+  },
+  {
+   "name": "cl_crosshaircolor_b",
+   "category": "crosshair",
+   "summary": "Blue part of a custom crosshair color (0-255).",
+   "description": "The blue value of your crosshair color, from 0 to 255. Use it together with cl_crosshaircolor_r and cl_crosshaircolor_g.",
+   "syntax": "cl_crosshaircolor_b <0-255>",
+   "examples": [
+    "cl_crosshaircolor_b 255"
+   ],
+   "related": [
+    "cl_crosshaircolor_r",
+    "cl_crosshaircolor_g"
+   ]
+  },
+  {
+   "name": "cl_crosshaircolor_a",
+   "category": "crosshair",
+   "summary": "Opacity of the crosshair (0-255).",
+   "description": "Sets how opaque the crosshair is, from 0 (invisible) to 255 (fully opaque). Almost all pros keep 255: a see-through crosshair is harder to find in a fight.",
+   "syntax": "cl_crosshaircolor_a <0-255>",
+   "values": [
+    [
+     "255",
+     "Fully opaque (recommended)"
+    ],
+    [
+     "200",
+     "Slightly see-through"
+    ]
+   ],
+   "examples": [
+    "cl_crosshaircolor_a 255"
+   ],
+   "related": [
+    "cl_crosshaircolor_r",
+    "cl_crosshair_drawoutline"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_drawoutline",
+   "category": "crosshair",
+   "summary": "Adds an outline around the crosshair.",
+   "description": "Draws a 1-pixel outline around the crosshair lines. It makes a thin or bright crosshair readable on light walls (sand on Dust2 or Mirage, for example). Its color is set with the cl_crosshairoutline_r, _g, _b and _a commands.",
+   "syntax": "cl_crosshair_drawoutline <0|1>",
+   "values": [
+    [
+     "0",
+     "No outline"
+    ],
+    [
+     "1",
+     "Outline on"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_drawoutline 1"
+   ],
+   "related": [
+    "cl_crosshairoutline_r",
+    "cl_crosshair_thickness",
+    "cl_crosshaircolor_a"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshairoutline_r",
+   "category": "crosshair",
+   "summary": "Red part of the outline color (0-255).",
+   "description": "With cl_crosshairoutline_g, cl_crosshairoutline_b and cl_crosshairoutline_a, sets the color and opacity of the crosshair outline (when cl_crosshair_drawoutline is 1). Black (0 0 0) is the classic choice.",
+   "syntax": "cl_crosshairoutline_r <0-255>",
+   "examples": [
+    "cl_crosshairoutline_r 0; cl_crosshairoutline_g 0; cl_crosshairoutline_b 0; cl_crosshairoutline_a 255"
+   ],
+   "related": [
+    "cl_crosshair_drawoutline",
+    "cl_crosshairoutline_a"
+   ]
+  },
+  {
+   "name": "cl_crosshairoutline_a",
+   "category": "crosshair",
+   "summary": "Opacity of the crosshair outline (0-255).",
+   "description": "Sets how opaque the crosshair outline is, from 0 to 255. Only used when cl_crosshair_drawoutline is 1.",
+   "syntax": "cl_crosshairoutline_a <0-255>",
+   "examples": [
+    "cl_crosshairoutline_a 255"
+   ],
+   "related": [
+    "cl_crosshair_drawoutline",
+    "cl_crosshairoutline_r"
+   ]
+  },
+  {
+   "name": "cl_crosshairdot",
+   "category": "crosshair",
+   "summary": "Adds a dot in the center of the crosshair.",
+   "description": "Draws a small dot in the middle of the crosshair. It helps some players aim precisely, but it can hide a far-away head. Only a minority of CS2 pros use it.",
+   "syntax": "cl_crosshairdot <0|1>",
+   "values": [
+    [
+     "0",
+     "No dot (most pros)"
+    ],
+    [
+     "1",
+     "Center dot"
+    ]
+   ],
+   "examples": [
+    "cl_crosshairdot 0",
+    "cl_crosshairdot 1"
+   ],
+   "related": [
+    "cl_crosshair_gap",
+    "cl_crosshair_thickness"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_t",
+   "category": "crosshair",
+   "summary": "T-style crosshair (removes the top line).",
+   "description": "Removes the top line of the crosshair, so it looks like an upside-down T. Some players like it because nothing covers the area above the target's head.",
+   "syntax": "cl_crosshair_t <0|1>",
+   "values": [
+    [
+     "0",
+     "Normal crosshair"
+    ],
+    [
+     "1",
+     "T-style, no top line"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_t 1"
+   ],
+   "related": [
+    "cl_crosshairstyle",
+    "cl_crosshairdot"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_recoil",
+   "category": "crosshair",
+   "summary": "Makes the crosshair follow your recoil.",
+   "description": "When on, the crosshair moves with the weapon's recoil while you spray, showing where your bullets go. Most pros turn it off and learn the spray patterns instead, but it can help beginners understand recoil.",
+   "syntax": "cl_crosshair_recoil <0|1>",
+   "values": [
+    [
+     "0",
+     "Crosshair stays in the center"
+    ],
+    [
+     "1",
+     "Crosshair follows the recoil"
+    ]
+   ],
+   "examples": [
+    "cl_crosshair_recoil 0"
+   ],
+   "related": [
+    "cl_crosshairstyle"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_dynamic_splitdist",
+   "category": "crosshair",
+   "summary": "Split distance of the dynamic crosshair (style 2).",
+   "description": "Only used with cl_crosshairstyle 2: sets how far the outer parts of the crosshair move away when they split from the fixed center while you move or shoot.",
+   "syntax": "cl_crosshair_dynamic_splitdist <value>",
+   "examples": [
+    "cl_crosshair_dynamic_splitdist 7"
+   ],
+   "related": [
+    "cl_crosshairstyle",
+    "cl_crosshair_dynamic_splitalpha_innermod"
+   ]
+  },
+  {
+   "name": "cl_crosshair_dynamic_splitalpha_innermod",
+   "category": "crosshair",
+   "summary": "Opacity of the inner part of the dynamic crosshair.",
+   "description": "With cl_crosshairstyle 2, sets the opacity of the fixed inner part of the crosshair, from 0 to 1.",
+   "syntax": "cl_crosshair_dynamic_splitalpha_innermod <0-1>",
+   "examples": [
+    "cl_crosshair_dynamic_splitalpha_innermod 1"
+   ],
+   "related": [
+    "cl_crosshair_dynamic_splitalpha_outermod",
+    "cl_crosshairstyle"
+   ]
+  },
+  {
+   "name": "cl_crosshair_dynamic_splitalpha_outermod",
+   "category": "crosshair",
+   "summary": "Opacity of the outer part of the dynamic crosshair.",
+   "description": "With cl_crosshairstyle 2, sets the opacity of the outer parts that move away while you move or shoot, from 0.3 to 1.",
+   "syntax": "cl_crosshair_dynamic_splitalpha_outermod <0.3-1>",
+   "examples": [
+    "cl_crosshair_dynamic_splitalpha_outermod 0.5"
+   ],
+   "related": [
+    "cl_crosshair_dynamic_splitalpha_innermod",
+    "cl_crosshairstyle"
+   ]
+  },
+  {
+   "name": "cl_crosshair_dynamic_maxdist_splitratio",
+   "category": "crosshair",
+   "summary": "Size ratio between the inner and outer dynamic parts.",
+   "description": "With cl_crosshairstyle 2, sets how the crosshair length is shared between the fixed inner part and the moving outer part, from 0 to 1.",
+   "syntax": "cl_crosshair_dynamic_maxdist_splitratio <0-1>",
+   "examples": [
+    "cl_crosshair_dynamic_maxdist_splitratio 0.35"
+   ],
+   "related": [
+    "cl_crosshairstyle",
+    "cl_crosshair_dynamic_splitdist"
+   ]
+  },
+  {
+   "name": "cl_ironsight_dot_scale",
+   "category": "crosshair",
+   "summary": "Size of the scope dot on the AUG and SG 553.",
+   "description": "Sets the size of the dot you see when scoping in with the AUG or the SG 553. It is saved in CS2 crosshair share codes since the September 30, 2026 update.",
+   "syntax": "cl_ironsight_dot_scale <value>",
+   "examples": [
+    "cl_ironsight_dot_scale 1"
+   ],
+   "related": [
+    "cl_ironsight_usecrosshaircolor"
+   ]
+  },
+  {
+   "name": "cl_ironsight_usecrosshaircolor",
+   "category": "crosshair",
+   "summary": "Uses your crosshair color for the AUG / SG 553 scope dot.",
+   "description": "When on, the scope dot of the AUG and SG 553 takes the color of your crosshair instead of the default red.",
+   "syntax": "cl_ironsight_usecrosshaircolor <0|1>",
+   "examples": [
+    "cl_ironsight_usecrosshaircolor 1"
+   ],
+   "related": [
+    "cl_ironsight_dot_scale",
+    "cl_crosshaircolor_r"
+   ]
+  },
+  {
+   "name": "cl_crosshair_sniper_width",
+   "category": "crosshair",
+   "summary": "Thickness of the sniper scope lines.",
+   "description": "Makes the black lines of the AWP and Scout scopes thicker. 1 keeps the thin single-pixel lines; higher values make the scope cross easier to see.",
+   "syntax": "cl_crosshair_sniper_width <1+>",
+   "values": [
+    [
+     "1",
+     "Thin hairline"
+    ],
+    [
+     "2",
+     "Thicker lines"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "cl_crosshair_sniper_width 2"
+   ],
+   "related": [
+    "cl_crosshair_thickness"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_crosshair_friendly_warning",
+   "category": "crosshair",
+   "summary": "Warning icon when you aim at a teammate.",
+   "description": "Shows a small warning on your crosshair when you aim at a teammate, to avoid team damage.",
+   "syntax": "cl_crosshair_friendly_warning <0|1>",
+   "values": [
+    [
+     "0",
+     "Off"
+    ],
+    [
+     "1",
+     "On"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "cl_crosshair_friendly_warning 0"
+   ],
+   "related": [
+    "crosshair"
+   ]
+  },
+  {
+   "name": "cl_crosshairsize",
+   "category": "crosshair",
+   "status": "active",
+   "summary": "Old crosshair length setting, still in the console.",
+   "description": "cl_crosshairsize still exists in the CS2 console, but since the update of September 30, 2026 the crosshair length is set in real pixels with cl_crosshair_length. That is the command saved in every new CS2 crosshair code, so use cl_crosshair_length for a crosshair that looks the same on every screen.",
+   "syntax": "cl_crosshairsize <value>",
+   "examples": [
+    "cl_crosshair_length 2"
+   ],
+   "replacement": "cl_crosshair_length",
+   "related": [
+    "cl_crosshair_length",
+    "cl_crosshair_screen_height",
+    "cl_crosshairthickness"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_crosshairthickness",
+   "category": "crosshair",
+   "status": "active",
+   "summary": "Old crosshair thickness setting, still in the console.",
+   "description": "cl_crosshairthickness still exists in the CS2 console, but since the update of September 30, 2026 the thickness is set in real pixels with cl_crosshair_thickness, the command saved in CS2 crosshair codes. Use cl_crosshair_thickness to copy a pro's crosshair exactly.",
+   "syntax": "cl_crosshairthickness <value>",
+   "examples": [
+    "cl_crosshair_thickness 2"
+   ],
+   "replacement": "cl_crosshair_thickness",
+   "related": [
+    "cl_crosshair_thickness",
+    "cl_crosshairsize"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_crosshairgap",
+   "category": "crosshair",
+   "status": "removed",
+   "summary": "Removed in CS2: replaced by cl_crosshair_gap.",
+   "description": "cl_crosshairgap no longer exists: typing it in the CS2 console returns Unknown command. Since the update of September 30, 2026, the gap is set in real pixels with cl_crosshair_gap (with an underscore before gap).",
+   "syntax": "cl_crosshairgap <value>",
+   "examples": [
+    "cl_crosshair_gap 1"
+   ],
+   "replacement": "cl_crosshair_gap",
+   "related": [
+    "cl_crosshair_gap",
+    "cl_crosshair_length"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_crosshair_outlinethickness",
+   "category": "crosshair",
+   "status": "removed",
+   "summary": "Removed in CS2: the outline is set with new commands.",
+   "description": "cl_crosshair_outlinethickness no longer exists in CS2. Turn the outline on or off with cl_crosshair_drawoutline, and choose its color and opacity with cl_crosshairoutline_r, _g, _b and _a.",
+   "syntax": "cl_crosshair_outlinethickness <value>",
+   "examples": [
+    "cl_crosshair_drawoutline 1"
+   ],
+   "replacement": "cl_crosshair_drawoutline",
+   "related": [
+    "cl_crosshair_drawoutline",
+    "cl_crosshairoutline_r"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_crosshaircolor",
+   "category": "crosshair",
+   "status": "removed",
+   "summary": "Removed in CS2: the preset colors are gone.",
+   "description": "cl_crosshaircolor, which picked one of five preset colors, no longer exists in CS2. Set any color you want with cl_crosshaircolor_r, cl_crosshaircolor_g and cl_crosshaircolor_b, from 0 to 255 each.",
+   "syntax": "cl_crosshaircolor <0-5>",
+   "examples": [
+    "cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255"
+   ],
+   "replacement": "cl_crosshaircolor_r",
+   "related": [
+    "cl_crosshaircolor_r",
+    "cl_crosshaircolor_g",
+    "cl_crosshaircolor_b"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_crosshairalpha",
+   "category": "crosshair",
+   "status": "active",
+   "summary": "Old crosshair opacity setting, still in the console.",
+   "description": "cl_crosshairalpha still exists in the CS2 console. The crosshair codes of the new system store the opacity in cl_crosshaircolor_a, from 0 to 255.",
+   "syntax": "cl_crosshairalpha <0-255>",
+   "examples": [
+    "cl_crosshaircolor_a 255"
+   ],
+   "replacement": "cl_crosshaircolor_a",
+   "related": [
+    "cl_crosshaircolor_a"
+   ],
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_hud_color",
+   "category": "hud",
+   "summary": "Color of the HUD (health, ammo, money...).",
+   "description": "Changes the color of your HUD: health, armor, ammo and money. Pick a color you can read easily; team color (0) changes with your side.",
+   "syntax": "cl_hud_color <0-11>",
+   "values": [
+    [
+     "0",
+     "Team color"
+    ],
+    [
+     "1",
+     "White"
+    ],
+    [
+     "2",
+     "Bright white"
+    ],
+    [
+     "3",
+     "Light blue"
+    ],
+    [
+     "4",
+     "Blue"
+    ],
+    [
+     "5",
+     "Purple"
+    ],
+    [
+     "6",
+     "Red"
+    ],
+    [
+     "7",
+     "Orange"
+    ],
+    [
+     "8",
+     "Yellow"
+    ],
+    [
+     "9",
+     "Green"
+    ],
+    [
+     "10",
+     "Aqua"
+    ],
+    [
+     "11",
+     "Pink"
+    ]
+   ],
+   "examples": [
+    "cl_hud_color 1",
+    "cl_hud_color 10"
+   ],
+   "related": [
+    "hud_scaling",
+    "cl_teammate_colors_show"
+   ],
+   "page": true
+  },
+  {
+   "name": "hud_scaling",
+   "category": "hud",
+   "summary": "Size of the HUD.",
+   "description": "Makes the whole HUD bigger or smaller. A smaller HUD leaves more of the screen visible; a bigger one is easier to read on a large monitor.",
+   "syntax": "hud_scaling <0.5-0.95>",
+   "examples": [
+    "hud_scaling 0.85"
+   ],
+   "related": [
+    "cl_hud_color",
+    "cl_hud_radar_scale",
+    "safezonex"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_hud_radar_scale",
+   "category": "hud",
+   "summary": "Size of the radar on screen.",
+   "description": "Changes how big the radar (minimap) is drawn in the top-left corner. It does not change the zoom: for that, use cl_radar_scale.",
+   "syntax": "cl_hud_radar_scale <0.8-1.3>",
+   "default": "1",
+   "examples": [
+    "cl_hud_radar_scale 1.15"
+   ],
+   "related": [
+    "cl_radar_scale",
+    "cl_radar_always_centered",
+    "cl_radar_rotate"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_radar_scale",
+   "category": "hud",
+   "summary": "Zoom level of the radar.",
+   "description": "Sets how much of the map the radar shows, from 0.25 to 1. A lower value zooms out and shows more of the map: many players use 0.3 to 0.4 to see every bombsite at once.",
+   "syntax": "cl_radar_scale <0.25-1>",
+   "default": "0.7",
+   "examples": [
+    "cl_radar_scale 0.35"
+   ],
+   "related": [
+    "cl_hud_radar_scale",
+    "cl_radar_always_centered",
+    "cl_radar_rotate"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_radar_always_centered",
+   "category": "hud",
+   "summary": "Keeps you in the center of the radar.",
+   "description": "When on (1), you always stay in the middle of the radar. When off (0), the radar uses its space better near the edges of the map, so you see more of it. Most competitive players turn it off.",
+   "syntax": "cl_radar_always_centered <0|1>",
+   "values": [
+    [
+     "0",
+     "Radar uses all its space (recommended)"
+    ],
+    [
+     "1",
+     "You stay centered"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "cl_radar_always_centered 0"
+   ],
+   "related": [
+    "cl_radar_scale",
+    "cl_radar_rotate"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_radar_rotate",
+   "category": "hud",
+   "summary": "Rotates the radar with your view.",
+   "description": "When on, the radar turns with you so the top is always where you look. When off, the map stays fixed with north up, which makes callouts easier to read.",
+   "syntax": "cl_radar_rotate <0|1>",
+   "values": [
+    [
+     "1",
+     "Radar rotates with you"
+    ],
+    [
+     "0",
+     "Fixed map"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "cl_radar_rotate 0"
+   ],
+   "related": [
+    "cl_radar_scale",
+    "cl_radar_always_centered"
+   ]
+  },
+  {
+   "name": "cl_radar_icon_scale_min",
+   "category": "hud",
+   "summary": "Minimum size of icons on the radar.",
+   "description": "Sets the smallest size of player icons on the radar, from 0.4 to 1.25. Bigger icons are easier to spot when the radar is zoomed out.",
+   "syntax": "cl_radar_icon_scale_min <0.4-1.25>",
+   "default": "0.6",
+   "examples": [
+    "cl_radar_icon_scale_min 0.8"
+   ],
+   "related": [
+    "cl_radar_scale"
+   ]
+  },
+  {
+   "name": "cl_radar_square_with_scoreboard",
+   "category": "hud",
+   "summary": "Square radar when the scoreboard is open.",
+   "description": "When on, the radar becomes a bigger square while you hold the scoreboard key (Tab), so you can check the whole map quickly.",
+   "syntax": "cl_radar_square_with_scoreboard <0|1>",
+   "default": "1",
+   "examples": [
+    "cl_radar_square_with_scoreboard 1"
+   ],
+   "related": [
+    "cl_radar_scale"
+   ]
+  },
+  {
+   "name": "cl_showfps",
+   "category": "hud",
+   "summary": "Shows your FPS on screen.",
+   "description": "Displays your frames per second at the top of the screen. Use 1 for the live value or 2 for a smoothed value that is easier to read.",
+   "syntax": "cl_showfps <0-4>",
+   "values": [
+    [
+     "0",
+     "Off"
+    ],
+    [
+     "1",
+     "FPS"
+    ],
+    [
+     "2",
+     "Smoothed FPS"
+    ],
+    [
+     "3",
+     "Server frame time"
+    ],
+    [
+     "4",
+     "FPS and log to a file"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "cl_showfps 1",
+    "cl_showfps 0"
+   ],
+   "related": [
+    "fps_max",
+    "cq_netgraph"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_showpos",
+   "category": "hud",
+   "summary": "Shows your position and view angles (cheat).",
+   "description": "Displays your exact position, angles and speed at the top of the screen. It needs sv_cheats 1, so it only works on your own server, for example to practice grenades or movement.",
+   "syntax": "cl_showpos <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; cl_showpos 1"
+   ],
+   "related": [
+    "getpos",
+    "setpos",
+    "sv_cheats"
+   ]
+  },
+  {
+   "name": "cq_netgraph",
+   "category": "hud",
+   "summary": "Shows network command queue statistics.",
+   "description": "Displays technical statistics about how your inputs are queued and sent to the server. It is a debugging tool, not a full replacement for the old net_graph.",
+   "syntax": "cq_netgraph <0|1>",
+   "default": "0",
+   "examples": [
+    "cq_netgraph 1"
+   ],
+   "related": [
+    "net_graph",
+    "cl_showfps"
+   ]
+  },
+  {
+   "name": "cl_showloadout",
+   "category": "hud",
+   "summary": "Always shows your weapons on the right of the screen.",
+   "description": "When on, your current weapons and grenades stay visible on the right side of the screen. When off, they only appear when you switch weapons.",
+   "syntax": "cl_showloadout <0|1>",
+   "examples": [
+    "cl_showloadout 1"
+   ],
+   "related": [
+    "hud_scaling"
+   ]
+  },
+  {
+   "name": "cl_draw_only_deathnotices",
+   "category": "hud",
+   "summary": "Hides the HUD except the crosshair and kill feed.",
+   "description": "Hides almost the whole HUD and keeps only the crosshair and the kill feed. It is made for clean videos and screenshots, and it works without sv_cheats.",
+   "syntax": "cl_draw_only_deathnotices <0|1>",
+   "values": [
+    [
+     "0",
+     "Normal HUD"
+    ],
+    [
+     "1",
+     "Only crosshair and kill feed"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "cl_draw_only_deathnotices 1"
+   ],
+   "related": [
+    "cl_drawhud",
+    "crosshair",
+    "r_drawviewmodel"
+   ],
+   "page": true
+  },
+  {
+   "name": "cl_drawhud",
+   "category": "hud",
+   "summary": "Hides the whole HUD (cheat).",
+   "description": "Turns the entire HUD off, crosshair included. It needs sv_cheats 1. Use it for cinematic screenshots on your own server.",
+   "syntax": "cl_drawhud <0|1>",
+   "default": "1",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; cl_drawhud 0"
+   ],
+   "related": [
+    "cl_draw_only_deathnotices",
+    "r_drawviewmodel"
+   ]
+  },
+  {
+   "name": "safezonex",
+   "category": "hud",
+   "summary": "Moves the HUD inward horizontally.",
+   "description": "Sets which part of the screen width the HUD uses. Lower values move health, ammo and the radar toward the center, which helps on very wide or curved monitors.",
+   "syntax": "safezonex <0.85-1>",
+   "examples": [
+    "safezonex 0.9"
+   ],
+   "related": [
+    "safezoney",
+    "hud_scaling"
+   ]
+  },
+  {
+   "name": "safezoney",
+   "category": "hud",
+   "summary": "Moves the HUD inward vertically.",
+   "description": "Sets which part of the screen height the HUD uses. Lower values move the HUD away from the top and bottom edges.",
+   "syntax": "safezoney <0.85-1>",
+   "examples": [
+    "safezoney 0.9"
+   ],
+   "related": [
+    "safezonex",
+    "hud_scaling"
+   ]
+  },
+  {
+   "name": "cl_teamid_overhead_mode",
+   "category": "hud",
+   "summary": "What you see above your teammates' heads.",
+   "description": "Chooses the information shown above teammates: 1 shows a simple marker, 2 also shows their name and equipment.",
+   "syntax": "cl_teamid_overhead_mode <1|2>",
+   "values": [
+    [
+     "1",
+     "Marker only"
+    ],
+    [
+     "2",
+     "Marker, name and equipment"
+    ]
+   ],
+   "default": "2",
+   "examples": [
+    "cl_teamid_overhead_mode 1"
+   ],
+   "related": [
+    "cl_teammate_colors_show"
+   ]
+  },
+  {
+   "name": "cl_teammate_colors_show",
+   "category": "hud",
+   "summary": "Teammate colors in competitive.",
+   "description": "In competitive modes, gives each teammate a color on the radar and scoreboard (1), or a color and a letter (2), which helps if you have trouble telling colors apart.",
+   "syntax": "cl_teammate_colors_show <0-2>",
+   "values": [
+    [
+     "0",
+     "Off"
+    ],
+    [
+     "1",
+     "Colors"
+    ],
+    [
+     "2",
+     "Colors and letters"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "cl_teammate_colors_show 2"
+   ],
+   "related": [
+    "cl_teamid_overhead_mode",
+    "cl_hud_color"
+   ]
+  },
+  {
+   "name": "viewmodel_fov",
+   "category": "viewmodel",
+   "summary": "How far your weapon model is from the camera.",
+   "description": "Changes the field of view of your weapon model only, from 54 to 68. A higher value pushes the gun further away and shows more of the screen; many players use the maximum, 68.",
+   "syntax": "viewmodel_fov <54-68>",
+   "default": "60",
+   "examples": [
+    "viewmodel_fov 68"
+   ],
+   "related": [
+    "viewmodel_offset_x",
+    "viewmodel_offset_y",
+    "viewmodel_offset_z",
+    "viewmodel_presetpos"
+   ],
+   "page": true
+  },
+  {
+   "name": "viewmodel_offset_x",
+   "category": "viewmodel",
+   "summary": "Moves the weapon left or right.",
+   "description": "Moves your weapon model horizontally, from -2.5 to 2.5. Higher values push the gun to the right edge of the screen.",
+   "syntax": "viewmodel_offset_x <-2.5 to 2.5>",
+   "default": "1",
+   "examples": [
+    "viewmodel_offset_x 2.5"
+   ],
+   "related": [
+    "viewmodel_offset_y",
+    "viewmodel_offset_z",
+    "viewmodel_fov"
+   ],
+   "page": true
+  },
+  {
+   "name": "viewmodel_offset_y",
+   "category": "viewmodel",
+   "summary": "Moves the weapon forward or back.",
+   "description": "Moves your weapon model toward you or away from you, from -2 to 2. Higher values push the gun forward.",
+   "syntax": "viewmodel_offset_y <-2 to 2>",
+   "default": "1",
+   "examples": [
+    "viewmodel_offset_y 0"
+   ],
+   "related": [
+    "viewmodel_offset_x",
+    "viewmodel_offset_z",
+    "viewmodel_fov"
+   ]
+  },
+  {
+   "name": "viewmodel_offset_z",
+   "category": "viewmodel",
+   "summary": "Moves the weapon up or down.",
+   "description": "Moves your weapon model vertically, from -2 to 2. Lower values put the gun lower on the screen so it hides less of the action.",
+   "syntax": "viewmodel_offset_z <-2 to 2>",
+   "default": "-1",
+   "examples": [
+    "viewmodel_offset_z -1.5"
+   ],
+   "related": [
+    "viewmodel_offset_x",
+    "viewmodel_offset_y",
+    "viewmodel_fov"
+   ]
+  },
+  {
+   "name": "viewmodel_presetpos",
+   "category": "viewmodel",
+   "summary": "Preset weapon positions.",
+   "description": "Applies one of the three preset weapon positions: 1 Desktop (default), 2 Couch (bigger, closer) and 3 Classic (the old CS:GO look).",
+   "syntax": "viewmodel_presetpos <1-3>",
+   "values": [
+    [
+     "1",
+     "Desktop"
+    ],
+    [
+     "2",
+     "Couch"
+    ],
+    [
+     "3",
+     "Classic"
+    ]
+   ],
+   "default": "1",
+   "examples": [
+    "viewmodel_presetpos 3"
+   ],
+   "related": [
+    "viewmodel_fov",
+    "viewmodel_offset_x"
+   ]
+  },
+  {
+   "name": "r_drawviewmodel",
+   "category": "viewmodel",
+   "summary": "Hides your weapon model (cheat).",
+   "description": "Hides the weapon in your hands. It needs sv_cheats 1, so it only works on your own server, for screenshots or grenade practice.",
+   "syntax": "r_drawviewmodel <0|1>",
+   "default": "1",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; r_drawviewmodel 0"
+   ],
+   "related": [
+    "cl_drawhud",
+    "cl_draw_only_deathnotices"
+   ]
+  },
+  {
+   "name": "fps_max",
+   "category": "performance",
+   "summary": "Caps your frame rate.",
+   "description": "Limits how many frames per second CS2 renders. 0 removes the limit. A cap a bit above your monitor's refresh rate (or a stable value your PC can always reach) gives smoother frame times than an unlimited frame rate that keeps jumping.",
+   "syntax": "fps_max <0|number>",
+   "values": [
+    [
+     "0",
+     "No limit"
+    ],
+    [
+     "400",
+     "Default cap"
+    ],
+    [
+     "300",
+     "Example of a stable cap"
+    ]
+   ],
+   "default": "400",
+   "examples": [
+    "fps_max 0",
+    "fps_max 300"
+   ],
+   "related": [
+    "fps_max_ui",
+    "cl_showfps",
+    "engine_low_latency_sleep_after_client_tick"
+   ],
+   "page": true
+  },
+  {
+   "name": "fps_max_ui",
+   "category": "performance",
+   "summary": "Caps your frame rate in menus.",
+   "description": "Limits the frame rate while menus are open. Keeping it low (the default is 120) saves power and keeps your PC cooler between matches.",
+   "syntax": "fps_max_ui <0|number>",
+   "default": "120",
+   "examples": [
+    "fps_max_ui 60"
+   ],
+   "related": [
+    "fps_max"
+   ]
+  },
+  {
+   "name": "r_fullscreen_gamma",
+   "category": "performance",
+   "summary": "Screen brightness in fullscreen.",
+   "description": "Adjusts the gamma (brightness) of the game in fullscreen mode only. Lower values make the image brighter. It is the CS2 replacement for the old mat_monitorgamma.",
+   "syntax": "r_fullscreen_gamma <value>",
+   "default": "2.2",
+   "examples": [
+    "r_fullscreen_gamma 2"
+   ],
+   "related": [
+    "fps_max"
+   ],
+   "page": true
+  },
+  {
+   "name": "engine_low_latency_sleep_after_client_tick",
+   "category": "performance",
+   "summary": "Low latency tweak used with NVIDIA Reflex.",
+   "description": "When low latency mode is on, moves the engine's short pause to after the client simulation on tick frames. Some players report smoother input with it on; test it yourself.",
+   "syntax": "engine_low_latency_sleep_after_client_tick <0|1>",
+   "default": "0",
+   "examples": [
+    "engine_low_latency_sleep_after_client_tick 1"
+   ],
+   "related": [
+    "fps_max"
+   ]
+  },
+  {
+   "name": "r_show_build_info",
+   "category": "performance",
+   "summary": "Shows the game version text in the corner.",
+   "description": "Shows or hides the small build information text in the corner of the screen. Valve asks to keep it on when you record bug reports.",
+   "syntax": "r_show_build_info <0|1>",
+   "default": "1",
+   "examples": [
+    "r_show_build_info 0"
+   ],
+   "related": [
+    "cl_showfps"
+   ]
+  },
+  {
+   "name": "rate",
+   "category": "network",
+   "summary": "Maximum data your connection can receive.",
+   "description": "Tells the server how many bytes per second your connection can receive. The default 786432 (about 6 Mbps) is the maximum and is right for almost every connection; only lower it on a very slow or unstable connection.",
+   "syntax": "rate <bytes per second>",
+   "default": "786432",
+   "examples": [
+    "rate 786432"
+   ],
+   "related": [
+    "mm_dedicated_search_maxping",
+    "status"
+   ],
+   "page": true
+  },
+  {
+   "name": "mm_dedicated_search_maxping",
+   "category": "network",
+   "summary": "Highest ping allowed when searching for a match.",
+   "description": "Sets the highest ping you accept for matchmaking servers, in milliseconds. A lower value finds servers closer to you, but the queue can take longer.",
+   "syntax": "mm_dedicated_search_maxping <milliseconds>",
+   "default": "150",
+   "examples": [
+    "mm_dedicated_search_maxping 60"
+   ],
+   "related": [
+    "rate",
+    "net_client_steamdatagram_enable_override"
+   ],
+   "page": true
+  },
+  {
+   "name": "net_client_steamdatagram_enable_override",
+   "category": "network",
+   "summary": "Uses or avoids Valve's relay network.",
+   "description": "Chooses how you connect to official servers: 0 lets the game decide, a positive value always uses Valve's relay network (SDR) when possible, a negative value prefers a direct connection.",
+   "syntax": "net_client_steamdatagram_enable_override <-1|0|1>",
+   "values": [
+    [
+     "0",
+     "Automatic"
+    ],
+    [
+     "1",
+     "Always use Valve's relays"
+    ],
+    [
+     "-1",
+     "Prefer a direct connection"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "net_client_steamdatagram_enable_override 1"
+   ],
+   "related": [
+    "mm_dedicated_search_maxping",
+    "rate"
+   ]
+  },
+  {
+   "name": "status",
+   "category": "network",
+   "summary": "Prints server and player information.",
+   "description": "Prints information about the server you are on and the players in it, including their ping. Useful to check your connection or report a player.",
+   "syntax": "status",
+   "examples": [
+    "status"
+   ],
+   "related": [
+    "rate",
+    "connect"
+   ]
+  },
+  {
+   "name": "cl_lagcompensation",
+   "category": "network",
+   "summary": "Server-side lag compensation.",
+   "description": "Asks the server to compensate for your ping when it checks if your shots hit. Leave it on: turning it off only makes your shots register worse.",
+   "syntax": "cl_lagcompensation <0|1>",
+   "default": "1",
+   "examples": [
+    "cl_lagcompensation 1"
+   ],
+   "related": [
+    "rate"
+   ]
+  },
+  {
+   "name": "net_graph",
+   "category": "network",
+   "status": "removed",
+   "summary": "Removed in CS2: the old CS:GO network graph.",
+   "description": "net_graph showed your FPS, ping, loss and choke in CS:GO. It does not exist in CS2. To see the same information, use cl_hud_telemetry_frametime_show 2 and cl_hud_telemetry_ping_show 2 (the Telemetry options in Settings › Game › Telemetry), or cl_showfps 1 for a quick FPS counter.",
+   "syntax": "net_graph 1",
+   "examples": [
+    "cl_hud_telemetry_frametime_show 2",
+    "cl_hud_telemetry_ping_show 2"
+   ],
+   "related": [
+    "cl_hud_telemetry_frametime_show",
+    "cl_hud_telemetry_ping_show",
+    "cl_showfps",
+    "cq_netgraph"
+   ],
+   "page": true,
+   "replacement": "cl_hud_telemetry_frametime_show"
+  },
+  {
+   "name": "sensitivity",
+   "category": "mouse",
+   "summary": "Your mouse sensitivity.",
+   "description": "Sets how fast your view turns when you move the mouse. Pros usually multiply it with their mouse DPI to compare: 400 DPI at 2.0 or 800 DPI at 1.0 both give 800 eDPI, the typical range for CS2 pros being about 600 to 1200 eDPI.",
+   "syntax": "sensitivity <value>",
+   "default": "2.5",
+   "examples": [
+    "sensitivity 1.2",
+    "sensitivity 2"
+   ],
+   "related": [
+    "zoom_sensitivity_ratio",
+    "m_yaw",
+    "m_pitch"
+   ],
+   "page": true
+  },
+  {
+   "name": "zoom_sensitivity_ratio",
+   "category": "mouse",
+   "summary": "Mouse sensitivity when scoped.",
+   "description": "Multiplies your sensitivity when you zoom in with a scoped weapon such as the AWP. 1 is the default; lower values make scoped aiming slower and more precise.",
+   "syntax": "zoom_sensitivity_ratio <value>",
+   "default": "1",
+   "examples": [
+    "zoom_sensitivity_ratio 0.9"
+   ],
+   "related": [
+    "sensitivity"
+   ],
+   "page": true
+  },
+  {
+   "name": "m_yaw",
+   "category": "mouse",
+   "summary": "Horizontal mouse speed factor.",
+   "description": "Multiplies horizontal mouse movement. The default 0.022 matches vertical speed. Players who play 4:3 stretched sometimes lower it to compensate for the wider image, but most keep the default.",
+   "syntax": "m_yaw <value>",
+   "default": "0.022",
+   "examples": [
+    "m_yaw 0.022"
+   ],
+   "related": [
+    "m_pitch",
+    "sensitivity"
+   ],
+   "page": true
+  },
+  {
+   "name": "m_pitch",
+   "category": "mouse",
+   "summary": "Vertical mouse speed factor.",
+   "description": "Multiplies vertical mouse movement. The default is 0.022, the same as m_yaw, so your mouse moves at the same speed in every direction.",
+   "syntax": "m_pitch <value>",
+   "default": "0.022",
+   "examples": [
+    "m_pitch 0.022"
+   ],
+   "related": [
+    "m_yaw",
+    "sensitivity"
+   ]
+  },
+  {
+   "name": "m_rawinput",
+   "category": "mouse",
+   "status": "removed",
+   "summary": "Removed in CS2: raw mouse input is always on.",
+   "description": "In CS:GO, m_rawinput 1 made the game read your mouse directly. CS2 always does this, so the command was removed and typing it returns Unknown command. Nothing to change: your mouse already uses raw input.",
+   "syntax": "m_rawinput 1",
+   "examples": [
+    "sensitivity 1.2"
+   ],
+   "replacement": "sensitivity",
+   "related": [
+    "sensitivity",
+    "m_yaw"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "volume",
+   "category": "audio",
+   "summary": "Main game volume.",
+   "description": "Sets the master volume of the game, from 0 to 1. Many players keep it fairly high so they can hear footsteps clearly, and lower music instead.",
+   "syntax": "volume <0-1>",
+   "examples": [
+    "volume 0.5"
+   ],
+   "related": [
+    "snd_voipvolume",
+    "snd_menumusic_volume",
+    "snd_roundstart_volume"
+   ],
+   "page": true
+  },
+  {
+   "name": "snd_voipvolume",
+   "category": "audio",
+   "summary": "Volume of your teammates' voices.",
+   "description": "Sets how loud teammates are in voice chat, from 0 to 1. It replaced the old voice_scale command from CS:GO.",
+   "syntax": "snd_voipvolume <0-1>",
+   "default": "1",
+   "examples": [
+    "snd_voipvolume 0.6"
+   ],
+   "related": [
+    "volume"
+   ],
+   "page": true
+  },
+  {
+   "name": "snd_menumusic_volume",
+   "category": "audio",
+   "summary": "Volume of the menu music.",
+   "description": "Sets the volume of the music in menus and other non-gameplay moments, from 0 to 1. Set it to 0 for silence in the menu.",
+   "syntax": "snd_menumusic_volume <0-1>",
+   "examples": [
+    "snd_menumusic_volume 0"
+   ],
+   "related": [
+    "volume",
+    "snd_roundstart_volume"
+   ]
+  },
+  {
+   "name": "snd_roundstart_volume",
+   "category": "audio",
+   "summary": "Volume of the round start music.",
+   "description": "Sets the volume of the music played when a round starts, from 0 to 1. Many players mute it to hear the first footsteps.",
+   "syntax": "snd_roundstart_volume <0-1>",
+   "examples": [
+    "snd_roundstart_volume 0"
+   ],
+   "related": [
+    "snd_mvp_volume",
+    "snd_tensecondwarning_volume"
+   ]
+  },
+  {
+   "name": "snd_mvp_volume",
+   "category": "audio",
+   "summary": "Volume of the MVP music.",
+   "description": "Sets the volume of the MVP music (and music kits) played at the end of a round, from 0 to 1.",
+   "syntax": "snd_mvp_volume <0-1>",
+   "examples": [
+    "snd_mvp_volume 0.1"
+   ],
+   "related": [
+    "snd_roundstart_volume"
+   ]
+  },
+  {
+   "name": "snd_tensecondwarning_volume",
+   "category": "audio",
+   "summary": "Volume of the 10-second bomb warning.",
+   "description": "Sets the volume of the music that warns you when 10 seconds are left before the bomb explodes, from 0 to 1. Keep it audible: it is useful information.",
+   "syntax": "snd_tensecondwarning_volume <0-1>",
+   "examples": [
+    "snd_tensecondwarning_volume 0.2"
+   ],
+   "related": [
+    "snd_roundstart_volume",
+    "snd_mapobjective_volume"
+   ]
+  },
+  {
+   "name": "snd_mapobjective_volume",
+   "category": "audio",
+   "summary": "Volume of the bomb and hostage music.",
+   "description": "Sets the volume of the music played for map objectives such as a planted bomb, from 0 to 1.",
+   "syntax": "snd_mapobjective_volume <0-1>",
+   "examples": [
+    "snd_mapobjective_volume 0.1"
+   ],
+   "related": [
+    "snd_tensecondwarning_volume"
+   ]
+  },
+  {
+   "name": "snd_deathcamera_volume",
+   "category": "audio",
+   "summary": "Volume of the death camera sound.",
+   "description": "Sets the volume of the sound played when you die and the death camera starts, from 0 to 1.",
+   "syntax": "snd_deathcamera_volume <0-1>",
+   "examples": [
+    "snd_deathcamera_volume 0"
+   ],
+   "related": [
+    "snd_mvp_volume"
+   ]
+  },
+  {
+   "name": "snd_mute_losefocus",
+   "category": "audio",
+   "summary": "Mutes the game when you alt-tab.",
+   "description": "When on, the game goes silent when its window is not focused. Turn it off if you want to hear the match start while you are in another window.",
+   "syntax": "snd_mute_losefocus <0|1>",
+   "examples": [
+    "snd_mute_losefocus 0"
+   ],
+   "related": [
+    "volume"
+   ]
+  },
+  {
+   "name": "snd_headphone_eq",
+   "category": "audio",
+   "summary": "Headphone equalizer preset.",
+   "description": "Chooses the headphone equalizer preset, the same option as the EQ profile in the audio settings. Try each one and keep the preset where footsteps sound clearest to you.",
+   "syntax": "snd_headphone_eq <preset>",
+   "default": "0",
+   "examples": [
+    "snd_headphone_eq 1"
+   ],
+   "related": [
+    "volume"
+   ]
+  },
+  {
+   "name": "sv_cheats",
+   "category": "practice",
+   "summary": "Enables cheat commands on your server.",
+   "description": "Allows commands marked as cheats (noclip, god, sv_rethrow_last_grenade, cl_showpos...). It only works on a server you host, such as a private match with bots, never in official matchmaking.",
+   "syntax": "sv_cheats <0|1>",
+   "values": [
+    [
+     "0",
+     "Cheats off"
+    ],
+    [
+     "1",
+     "Cheats on (your own server only)"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "sv_cheats 1"
+   ],
+   "related": [
+    "noclip",
+    "god",
+    "sv_infinite_ammo",
+    "sv_rethrow_last_grenade"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_infinite_ammo",
+   "category": "practice",
+   "summary": "Infinite ammo and grenades.",
+   "description": "With 1, your magazine never empties; with 2, you never run out of ammo but still have to reload. It also gives infinite grenades, which makes it the base of every grenade practice config. Needs sv_cheats 1.",
+   "syntax": "sv_infinite_ammo <0-2>",
+   "values": [
+    [
+     "0",
+     "Normal"
+    ],
+    [
+     "1",
+     "Infinite ammo, no reload"
+    ],
+    [
+     "2",
+     "Infinite ammo, with reload"
+    ]
+   ],
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; sv_infinite_ammo 1"
+   ],
+   "related": [
+    "sv_cheats",
+    "sv_grenade_trajectory_prac_pipreview",
+    "sv_rethrow_last_grenade"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_grenade_trajectory_prac_pipreview",
+   "category": "practice",
+   "summary": "Live preview of where your grenade will land.",
+   "description": "Shows a small picture-in-picture window with the path and landing spot of the grenade in your hand before you throw it. It is the fastest way to learn smokes and flashes on a practice server.",
+   "syntax": "sv_grenade_trajectory_prac_pipreview <0|1>",
+   "default": "0",
+   "examples": [
+    "sv_grenade_trajectory_prac_pipreview 1"
+   ],
+   "related": [
+    "sv_grenade_trajectory_prac_trailtime",
+    "sv_rethrow_last_grenade",
+    "sv_infinite_ammo"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_grenade_trajectory_prac_trailtime",
+   "category": "practice",
+   "summary": "Shows the path of thrown grenades.",
+   "description": "Draws the trajectory of each grenade you throw and keeps it visible for this number of seconds. Use 10 or more to compare two throws.",
+   "syntax": "sv_grenade_trajectory_prac_trailtime <seconds>",
+   "default": "0",
+   "examples": [
+    "sv_grenade_trajectory_prac_trailtime 10"
+   ],
+   "related": [
+    "sv_grenade_trajectory_prac_pipreview",
+    "sv_rethrow_last_grenade"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_rethrow_last_grenade",
+   "category": "practice",
+   "summary": "Throws your last grenade again.",
+   "description": "Throws the last grenade again from exactly the same spot, so you can watch where it lands without walking back. Needs sv_cheats 1; it is often bound to a key in practice configs.",
+   "syntax": "sv_rethrow_last_grenade",
+   "cheat": true,
+   "examples": [
+    "sv_rethrow_last_grenade",
+    "bind x sv_rethrow_last_grenade"
+   ],
+   "related": [
+    "sv_grenade_trajectory_prac_pipreview",
+    "sv_infinite_ammo",
+    "sv_cheats"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_showimpacts",
+   "category": "practice",
+   "summary": "Shows where your bullets hit.",
+   "description": "Draws a box where each bullet lands: red for what your game saw, blue for what the server saw. It is great to learn spray patterns on a wall.",
+   "syntax": "sv_showimpacts <0-3>",
+   "values": [
+    [
+     "0",
+     "Off"
+    ],
+    [
+     "1",
+     "Client and server"
+    ],
+    [
+     "2",
+     "Client only"
+    ],
+    [
+     "3",
+     "Server only"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "sv_showimpacts 1"
+   ],
+   "related": [
+    "sv_showimpacts_time",
+    "sv_infinite_ammo"
+   ],
+   "page": true
+  },
+  {
+   "name": "sv_showimpacts_time",
+   "category": "practice",
+   "summary": "How long bullet impacts stay visible.",
+   "description": "Sets how many seconds the impact boxes of sv_showimpacts stay on screen.",
+   "syntax": "sv_showimpacts_time <seconds>",
+   "default": "4",
+   "examples": [
+    "sv_showimpacts_time 10"
+   ],
+   "related": [
+    "sv_showimpacts"
+   ]
+  },
+  {
+   "name": "mp_roundtime_defuse",
+   "category": "practice",
+   "summary": "Length of a round on bomb maps, in minutes.",
+   "description": "Sets how many minutes a round lasts on bomb defusal maps. Set a high value (60) on a practice server so the round never ends while you train.",
+   "syntax": "mp_roundtime_defuse <minutes>",
+   "default": "2.25",
+   "examples": [
+    "mp_roundtime_defuse 60"
+   ],
+   "related": [
+    "mp_freezetime",
+    "mp_restartgame",
+    "mp_ignore_round_win_conditions"
+   ]
+  },
+  {
+   "name": "mp_freezetime",
+   "category": "practice",
+   "summary": "Freeze time at the start of a round, in seconds.",
+   "description": "Sets how many seconds players stay frozen at the start of each round. Use 0 on a practice server to start moving immediately.",
+   "syntax": "mp_freezetime <seconds>",
+   "default": "5",
+   "examples": [
+    "mp_freezetime 0"
+   ],
+   "related": [
+    "mp_roundtime_defuse",
+    "mp_buytime"
+   ]
+  },
+  {
+   "name": "mp_warmup_end",
+   "category": "practice",
+   "summary": "Ends the warmup immediately.",
+   "description": "Stops the warmup and starts the match right away on your server.",
+   "syntax": "mp_warmup_end",
+   "examples": [
+    "mp_warmup_end"
+   ],
+   "related": [
+    "mp_warmup_pausetimer",
+    "mp_restartgame"
+   ]
+  },
+  {
+   "name": "mp_warmup_pausetimer",
+   "category": "practice",
+   "summary": "Stays in warmup forever.",
+   "description": "With 1, the warmup timer stops and the warmup never ends, which is handy for long practice sessions. Set it back to 0 to resume the timer.",
+   "syntax": "mp_warmup_pausetimer <0|1>",
+   "default": "0",
+   "examples": [
+    "mp_warmup_pausetimer 1"
+   ],
+   "related": [
+    "mp_warmup_end"
+   ]
+  },
+  {
+   "name": "mp_restartgame",
+   "category": "practice",
+   "summary": "Restarts the match.",
+   "description": "Restarts the game after the given number of seconds. Use it after changing round settings so they apply.",
+   "syntax": "mp_restartgame <seconds>",
+   "examples": [
+    "mp_restartgame 1"
+   ],
+   "related": [
+    "mp_warmup_end",
+    "mp_roundtime_defuse"
+   ]
+  },
+  {
+   "name": "mp_buy_anywhere",
+   "category": "practice",
+   "summary": "Lets you buy anywhere on the map.",
+   "description": "Allows buying outside the buy zone: 1 for both teams, 2 for Terrorists only, 3 for Counter-Terrorists only. Perfect for grenade practice.",
+   "syntax": "mp_buy_anywhere <0-3>",
+   "values": [
+    [
+     "0",
+     "Buy zone only"
+    ],
+    [
+     "1",
+     "Both teams"
+    ],
+    [
+     "2",
+     "Terrorists"
+    ],
+    [
+     "3",
+     "Counter-Terrorists"
+    ]
+   ],
+   "default": "0",
+   "examples": [
+    "mp_buy_anywhere 1"
+   ],
+   "related": [
+    "mp_buytime",
+    "mp_maxmoney",
+    "mp_startmoney"
+   ],
+   "page": true
+  },
+  {
+   "name": "mp_buytime",
+   "category": "practice",
+   "summary": "How long you can buy after the round starts.",
+   "description": "Sets how many seconds after the start of a round you can still buy. Use a huge value on a practice server.",
+   "syntax": "mp_buytime <seconds>",
+   "default": "45",
+   "examples": [
+    "mp_buytime 9999"
+   ],
+   "related": [
+    "mp_buy_anywhere",
+    "mp_maxmoney"
+   ]
+  },
+  {
+   "name": "mp_maxmoney",
+   "category": "practice",
+   "summary": "Maximum money a player can have.",
+   "description": "Sets the maximum money a player can hold. Raise it with mp_startmoney for unlimited buys on a practice server.",
+   "syntax": "mp_maxmoney <amount>",
+   "default": "10000",
+   "examples": [
+    "mp_maxmoney 60000"
+   ],
+   "related": [
+    "mp_startmoney",
+    "mp_buy_anywhere"
+   ]
+  },
+  {
+   "name": "mp_startmoney",
+   "category": "practice",
+   "summary": "Money each player starts with.",
+   "description": "Sets how much money each player gets at the start of the half. Combine it with mp_maxmoney for practice.",
+   "syntax": "mp_startmoney <amount>",
+   "default": "1000",
+   "examples": [
+    "mp_startmoney 60000"
+   ],
+   "related": [
+    "mp_maxmoney",
+    "mp_buy_anywhere"
+   ]
+  },
+  {
+   "name": "mp_respawn_on_death_t",
+   "category": "practice",
+   "summary": "Terrorists respawn after dying.",
+   "description": "With 1, Terrorists come back to life right after dying. Use it with mp_respawn_on_death_ct for deathmatch-style practice.",
+   "syntax": "mp_respawn_on_death_t <0|1>",
+   "default": "0",
+   "examples": [
+    "mp_respawn_on_death_t 1"
+   ],
+   "related": [
+    "mp_respawn_on_death_ct"
+   ]
+  },
+  {
+   "name": "mp_respawn_on_death_ct",
+   "category": "practice",
+   "summary": "Counter-Terrorists respawn after dying.",
+   "description": "With 1, Counter-Terrorists come back to life right after dying.",
+   "syntax": "mp_respawn_on_death_ct <0|1>",
+   "default": "0",
+   "examples": [
+    "mp_respawn_on_death_ct 1"
+   ],
+   "related": [
+    "mp_respawn_on_death_t"
+   ]
+  },
+  {
+   "name": "mp_ignore_round_win_conditions",
+   "category": "practice",
+   "summary": "Rounds never end.",
+   "description": "With 1, the round keeps going even if a team is eliminated or the bomb explodes. Very useful to practice without being interrupted.",
+   "syntax": "mp_ignore_round_win_conditions <0|1>",
+   "default": "0",
+   "examples": [
+    "mp_ignore_round_win_conditions 1"
+   ],
+   "related": [
+    "mp_roundtime_defuse"
+   ]
+  },
+  {
+   "name": "mp_limitteams",
+   "category": "practice",
+   "summary": "Maximum player difference between teams.",
+   "description": "Sets how many more players one team can have than the other. 0 removes the limit, so you can be alone against many bots.",
+   "syntax": "mp_limitteams <number>",
+   "default": "2",
+   "examples": [
+    "mp_limitteams 0"
+   ],
+   "related": [
+    "mp_autoteambalance"
+   ]
+  },
+  {
+   "name": "mp_autoteambalance",
+   "category": "practice",
+   "summary": "Automatic team balance.",
+   "description": "With 1, the server moves players between teams to keep them balanced. Turn it off on a practice server.",
+   "syntax": "mp_autoteambalance <0|1>",
+   "default": "1",
+   "examples": [
+    "mp_autoteambalance 0"
+   ],
+   "related": [
+    "mp_limitteams"
+   ]
+  },
+  {
+   "name": "mp_drop_knife_enable",
+   "category": "practice",
+   "summary": "Allows dropping knives.",
+   "description": "With 1, players can drop their knife like any other weapon.",
+   "syntax": "mp_drop_knife_enable <0|1>",
+   "default": "0",
+   "examples": [
+    "mp_drop_knife_enable 1"
+   ],
+   "related": [
+    "give"
+   ]
+  },
+  {
+   "name": "ammo_grenade_limit_total",
+   "category": "practice",
+   "summary": "Maximum grenades a player can carry.",
+   "description": "Sets how many grenades a player can carry in total. Raise it on a practice server to hold every grenade at once.",
+   "syntax": "ammo_grenade_limit_total <number>",
+   "default": "4",
+   "examples": [
+    "ammo_grenade_limit_total 5"
+   ],
+   "related": [
+    "sv_infinite_ammo",
+    "give"
+   ]
+  },
+  {
+   "name": "noclip",
+   "category": "practice",
+   "summary": "Fly through walls (cheat).",
+   "description": "Lets you fly and pass through walls. Type it again to turn it off. Needs sv_cheats 1; it is perfect to move quickly across a map while practicing.",
+   "syntax": "noclip [0|1]",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; noclip"
+   ],
+   "related": [
+    "sv_cheats",
+    "god",
+    "setpos"
+   ],
+   "page": true
+  },
+  {
+   "name": "god",
+   "category": "practice",
+   "summary": "Makes you invulnerable (cheat).",
+   "description": "You stop taking damage. Type it again to turn it off. Needs sv_cheats 1.",
+   "syntax": "god [0|1]",
+   "cheat": true,
+   "examples": [
+    "sv_cheats 1; god"
+   ],
+   "related": [
+    "sv_cheats",
+    "noclip"
+   ]
+  },
+  {
+   "name": "give",
+   "category": "practice",
+   "summary": "Gives you a weapon or item.",
+   "description": "Gives you an item by its internal name, for example weapon_ak47, weapon_awp, weapon_smokegrenade or weapon_flashbang. Works on your own server.",
+   "syntax": "give <item_name>",
+   "examples": [
+    "give weapon_ak47",
+    "give weapon_smokegrenade"
+   ],
+   "related": [
+    "sv_cheats",
+    "mp_buy_anywhere",
+    "ammo_grenade_limit_total"
+   ],
+   "page": true
+  },
+  {
+   "name": "host_timescale",
+   "category": "practice",
+   "summary": "Speeds up or slows down the game (cheat).",
+   "description": "Changes the game speed: 0.5 is half speed, 2 is double speed. Useful to study a grenade in slow motion. Needs sv_cheats 1.",
+   "syntax": "host_timescale <value>",
+   "default": "1",
+   "cheat": true,
+   "examples": [
+    "host_timescale 0.5",
+    "host_timescale 1"
+   ],
+   "related": [
+    "sv_cheats"
+   ]
+  },
+  {
+   "name": "getpos",
+   "category": "practice",
+   "summary": "Prints your exact position (cheat).",
+   "description": "Prints your position and view angles in the console as a ready-to-use setpos/setang line. Copy it to come back to the same spot later, for example a grenade lineup. Needs sv_cheats 1.",
+   "syntax": "getpos",
+   "cheat": true,
+   "examples": [
+    "getpos"
+   ],
+   "related": [
+    "setpos",
+    "cl_showpos"
+   ]
+  },
+  {
+   "name": "setpos",
+   "category": "practice",
+   "summary": "Teleports you to a position (cheat).",
+   "description": "Moves you to the given x y z coordinates, usually copied from getpos. Needs sv_cheats 1.",
+   "syntax": "setpos <x> <y> <z>",
+   "cheat": true,
+   "examples": [
+    "setpos 0 0 0"
+   ],
+   "related": [
+    "getpos",
+    "noclip"
+   ]
+  },
+  {
+   "name": "bot_kick",
+   "category": "bots",
+   "summary": "Removes bots from the server.",
+   "description": "Kicks all bots, or only the bots matching a team, difficulty or name. Use it to empty your server before practice.",
+   "syntax": "bot_kick [all|t|ct] [name]",
+   "examples": [
+    "bot_kick",
+    "bot_kick t"
+   ],
+   "related": [
+    "bot_add_t",
+    "bot_add_ct",
+    "bot_quota"
+   ],
+   "page": true
+  },
+  {
+   "name": "bot_add_t",
+   "category": "bots",
+   "summary": "Adds a Terrorist bot.",
+   "description": "Adds one bot to the Terrorist team. You can add a difficulty and a name.",
+   "syntax": "bot_add_t [difficulty] [name]",
+   "examples": [
+    "bot_add_t",
+    "bot_add_t expert"
+   ],
+   "related": [
+    "bot_add_ct",
+    "bot_kick",
+    "bot_difficulty"
+   ]
+  },
+  {
+   "name": "bot_add_ct",
+   "category": "bots",
+   "summary": "Adds a Counter-Terrorist bot.",
+   "description": "Adds one bot to the Counter-Terrorist team. You can add a difficulty and a name.",
+   "syntax": "bot_add_ct [difficulty] [name]",
+   "examples": [
+    "bot_add_ct",
+    "bot_add_ct expert"
+   ],
+   "related": [
+    "bot_add_t",
+    "bot_kick",
+    "bot_difficulty"
+   ]
+  },
+  {
+   "name": "bot_quota",
+   "category": "bots",
+   "summary": "Total number of bots on the server.",
+   "description": "Sets how many bots stay on the server. Set it to 0 to keep the server free of bots.",
+   "syntax": "bot_quota <number>",
+   "default": "1",
+   "examples": [
+    "bot_quota 0",
+    "bot_quota 10"
+   ],
+   "related": [
+    "bot_kick",
+    "bot_difficulty"
+   ]
+  },
+  {
+   "name": "bot_difficulty",
+   "category": "bots",
+   "summary": "Skill level of new bots.",
+   "description": "Sets the skill of bots that join the game: 0 easy, 1 normal, 2 hard, 3 expert.",
+   "syntax": "bot_difficulty <0-3>",
+   "values": [
+    [
+     "0",
+     "Easy"
+    ],
+    [
+     "1",
+     "Normal"
+    ],
+    [
+     "2",
+     "Hard"
+    ],
+    [
+     "3",
+     "Expert"
+    ]
+   ],
+   "default": "2",
+   "examples": [
+    "bot_difficulty 3"
+   ],
+   "related": [
+    "bot_add_t",
+    "bot_quota"
+   ]
+  },
+  {
+   "name": "bot_stop",
+   "category": "bots",
+   "summary": "Freezes the bots' brains (cheat).",
+   "description": "With 1, bots stop thinking: they stand still and do nothing. Needs sv_cheats 1.",
+   "syntax": "bot_stop <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "bot_stop 1"
+   ],
+   "related": [
+    "bot_freeze",
+    "bot_dont_shoot"
+   ]
+  },
+  {
+   "name": "bot_freeze",
+   "category": "bots",
+   "summary": "Bots cannot move (cheat).",
+   "description": "With 1, bots stay in place but can still aim. Combine it with bot_dont_shoot to practice your aim on standing targets. Needs sv_cheats 1.",
+   "syntax": "bot_freeze <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "bot_freeze 1"
+   ],
+   "related": [
+    "bot_dont_shoot",
+    "bot_stop",
+    "bot_place"
+   ]
+  },
+  {
+   "name": "bot_dont_shoot",
+   "category": "bots",
+   "summary": "Bots never shoot (cheat).",
+   "description": "With 1, bots do not fire their weapons. Needs sv_cheats 1.",
+   "syntax": "bot_dont_shoot <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "bot_dont_shoot 1"
+   ],
+   "related": [
+    "bot_freeze",
+    "bot_stop"
+   ]
+  },
+  {
+   "name": "bot_place",
+   "category": "bots",
+   "summary": "Places a bot where you aim (cheat).",
+   "description": "Moves a bot to the point you are looking at. It can take a few tries. Needs sv_cheats 1.",
+   "syntax": "bot_place",
+   "cheat": true,
+   "examples": [
+    "bot_place"
+   ],
+   "related": [
+    "bot_freeze",
+    "bot_mimic"
+   ]
+  },
+  {
+   "name": "bot_mimic",
+   "category": "bots",
+   "summary": "Bots copy your movements (cheat).",
+   "description": "Bots repeat your inputs: movement, aim and actions. Useful to set up a bot exactly where and how you want. Needs sv_cheats 1.",
+   "syntax": "bot_mimic <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "bot_mimic 1"
+   ],
+   "related": [
+    "bot_place",
+    "bot_freeze"
+   ]
+  },
+  {
+   "name": "bot_crouch",
+   "category": "bots",
+   "summary": "Bots crouch (cheat).",
+   "description": "With 1, bots stay crouched. Needs sv_cheats 1.",
+   "syntax": "bot_crouch <0|1>",
+   "default": "0",
+   "cheat": true,
+   "examples": [
+    "bot_crouch 1"
+   ],
+   "related": [
+    "bot_freeze"
+   ]
+  },
+  {
+   "name": "bind",
+   "category": "general",
+   "summary": "Assigns a command to a key.",
+   "description": "Makes a key run a command when you press it, for example a buy bind or a key to throw the last grenade again. Put the key name and the command between quotes if the command has spaces.",
+   "syntax": "bind <key> \"<command>\"",
+   "examples": [
+    "bind f \"+lookatweapon\"",
+    "bind kp_end \"buy ak47; buy m4a1\""
+   ],
+   "related": [
+    "unbind",
+    "unbindall",
+    "alias",
+    "exec"
+   ],
+   "page": true
+  },
+  {
+   "name": "unbind",
+   "category": "general",
+   "summary": "Removes a key binding.",
+   "description": "Removes whatever command is assigned to a key.",
+   "syntax": "unbind <key>",
+   "examples": [
+    "unbind kp_end"
+   ],
+   "related": [
+    "bind",
+    "unbindall"
+   ]
+  },
+  {
+   "name": "unbindall",
+   "category": "general",
+   "summary": "Removes every key binding.",
+   "description": "Removes all key bindings at once, including movement. Only use it at the top of a full config file that binds everything again.",
+   "syntax": "unbindall",
+   "examples": [
+    "unbindall"
+   ],
+   "related": [
+    "bind",
+    "unbind",
+    "exec"
+   ]
+  },
+  {
+   "name": "alias",
+   "category": "general",
+   "summary": "Creates a custom command.",
+   "description": "Gives a name to a list of commands, so you can run them all at once or bind them to a key.",
+   "syntax": "alias <name> \"<commands>\"",
+   "examples": [
+    "alias prac \"sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1\""
+   ],
+   "related": [
+    "bind",
+    "exec"
+   ]
+  },
+  {
+   "name": "exec",
+   "category": "general",
+   "summary": "Runs a config file.",
+   "description": "Runs every command written in a .cfg file from the game's cfg folder, for example a practice config or your autoexec.",
+   "syntax": "exec <filename>",
+   "examples": [
+    "exec autoexec",
+    "exec practice"
+   ],
+   "related": [
+    "host_writeconfig",
+    "alias",
+    "bind"
+   ],
+   "page": true
+  },
+  {
+   "name": "host_writeconfig",
+   "category": "general",
+   "summary": "Saves your current settings.",
+   "description": "Writes your current settings and binds to your config file right away.",
+   "syntax": "host_writeconfig",
+   "examples": [
+    "host_writeconfig"
+   ],
+   "related": [
+    "exec"
+   ]
+  },
+  {
+   "name": "toggleconsole",
+   "category": "general",
+   "summary": "Opens or closes the console.",
+   "description": "Opens or closes the developer console. You can bind it to another key if your keyboard has no ~ key.",
+   "syntax": "toggleconsole",
+   "examples": [
+    "bind f10 toggleconsole"
+   ],
+   "related": [
+    "bind",
+    "clear"
+   ]
+  },
+  {
+   "name": "clear",
+   "category": "general",
+   "summary": "Clears the console.",
+   "description": "Erases all the text in the console.",
+   "syntax": "clear",
+   "examples": [
+    "clear"
+   ],
+   "related": [
+    "toggleconsole",
+    "echo"
+   ]
+  },
+  {
+   "name": "echo",
+   "category": "general",
+   "summary": "Writes text in the console.",
+   "description": "Prints a message in the console. Config files often use it to confirm they loaded.",
+   "syntax": "echo <text>",
+   "examples": [
+    "echo Practice config loaded"
+   ],
+   "related": [
+    "exec",
+    "clear"
+   ]
+  },
+  {
+   "name": "find",
+   "category": "general",
+   "summary": "Searches commands by name or description.",
+   "description": "Lists every command whose name or help text contains your search. Great to discover commands, for example find crosshair.",
+   "syntax": "find <text>",
+   "examples": [
+    "find crosshair",
+    "find radar"
+   ],
+   "related": [
+    "help"
+   ],
+   "page": true
+  },
+  {
+   "name": "help",
+   "category": "general",
+   "summary": "Explains a command.",
+   "description": "Prints the help text and current value of a command.",
+   "syntax": "help <command>",
+   "examples": [
+    "help fps_max"
+   ],
+   "related": [
+    "find"
+   ]
+  },
+  {
+   "name": "connect",
+   "category": "general",
+   "summary": "Joins a server by IP address.",
+   "description": "Connects you to a community server using its IP address and port.",
+   "syntax": "connect <ip:port>",
+   "examples": [
+    "connect 127.0.0.1:27015"
+   ],
+   "related": [
+    "disconnect",
+    "status"
+   ]
+  },
+  {
+   "name": "disconnect",
+   "category": "general",
+   "summary": "Leaves the current server.",
+   "description": "Disconnects you from the server you are playing on.",
+   "syntax": "disconnect",
+   "examples": [
+    "disconnect"
+   ],
+   "related": [
+    "connect",
+    "quit"
+   ]
+  },
+  {
+   "name": "quit",
+   "category": "general",
+   "summary": "Closes CS2.",
+   "description": "Closes the game immediately.",
+   "syntax": "quit",
+   "examples": [
+    "quit"
+   ],
+   "related": [
+    "disconnect"
+   ]
+  },
+  {
+   "name": "map",
+   "category": "general",
+   "summary": "Loads a map on your own server.",
+   "description": "Starts a local server on the map you choose, for example to practice alone. Official map names start with de_ (de_mirage, de_dust2, de_inferno...).",
+   "syntax": "map <map_name>",
+   "examples": [
+    "map de_mirage",
+    "map de_dust2"
+   ],
+   "related": [
+    "changelevel",
+    "sv_cheats",
+    "bot_kick"
+   ],
+   "page": true
+  },
+  {
+   "name": "changelevel",
+   "category": "general",
+   "summary": "Changes the map on your server.",
+   "description": "Switches the server you host to another map without closing it.",
+   "syntax": "changelevel <map_name>",
+   "examples": [
+    "changelevel de_inferno"
+   ],
+   "related": [
+    "map"
+   ]
+  },
+  {
+   "name": "kill",
+   "category": "general",
+   "summary": "Kills your player (cheat).",
+   "description": "Kills your character instantly. Needs sv_cheats 1.",
+   "syntax": "kill",
+   "cheat": true,
+   "examples": [
+    "kill"
+   ],
+   "related": [
+    "explode"
+   ]
+  },
+  {
+   "name": "explode",
+   "category": "general",
+   "summary": "Kills your player with an explosion (cheat).",
+   "description": "Kills your character with explosive damage. Needs sv_cheats 1.",
+   "syntax": "explode",
+   "cheat": true,
+   "examples": [
+    "explode"
+   ],
+   "related": [
+    "kill"
+   ]
+  },
+  {
+   "name": "record",
+   "category": "general",
+   "summary": "Records a demo of your game.",
+   "description": "Starts recording a demo file of the game you are in. Type stop to end the recording.",
+   "syntax": "record <name>",
+   "examples": [
+    "record mymatch"
+   ],
+   "related": [
+    "stop",
+    "playdemo"
+   ]
+  },
+  {
+   "name": "stop",
+   "category": "general",
+   "summary": "Stops recording a demo.",
+   "description": "Ends the demo recording started with record.",
+   "syntax": "stop",
+   "examples": [
+    "stop"
+   ],
+   "related": [
+    "record"
+   ]
+  },
+  {
+   "name": "playdemo",
+   "category": "general",
+   "summary": "Plays a demo file.",
+   "description": "Plays a recorded demo (.dem). Put the file in the csgo folder of the game and type its name. ClutchCrosshair reads pro crosshairs from official match demos the same way.",
+   "syntax": "playdemo <name>",
+   "examples": [
+    "playdemo mymatch"
+   ],
+   "related": [
+    "demoui",
+    "demo_gototick",
+    "record"
+   ],
+   "page": true
+  },
+  {
+   "name": "demoui",
+   "category": "general",
+   "summary": "Opens the demo player controls.",
+   "description": "Shows or hides the demo playback controls (pause, speed, timeline) while watching a demo.",
+   "syntax": "demoui",
+   "examples": [
+    "demoui"
+   ],
+   "related": [
+    "playdemo",
+    "demo_gototick"
+   ]
+  },
+  {
+   "name": "demo_gototick",
+   "category": "general",
+   "summary": "Jumps to a moment in a demo.",
+   "description": "Skips to a precise tick (moment) of the demo you are watching.",
+   "syntax": "demo_gototick <tick>",
+   "examples": [
+    "demo_gototick 64000"
+   ],
+   "related": [
+    "playdemo",
+    "demoui"
+   ]
+  },
+  {
+   "name": "gameinstructor_enable",
+   "category": "general",
+   "summary": "In-game tips for new players.",
+   "description": "Shows or hides the small lessons that explain the game to new players.",
+   "syntax": "gameinstructor_enable <0|1>",
+   "default": "0",
+   "examples": [
+    "gameinstructor_enable 0"
+   ],
+   "related": [
+    "cl_autohelp"
+   ]
+  },
+  {
+   "name": "cl_autohelp",
+   "category": "general",
+   "summary": "Automatic help hints.",
+   "description": "Shows or hides automatic help messages during the game.",
+   "syntax": "cl_autohelp <0|1>",
+   "examples": [
+    "cl_autohelp 0"
+   ],
+   "related": [
+    "gameinstructor_enable"
+   ]
+  },
+  {
+   "name": "cl_use_opens_buy_menu",
+   "category": "general",
+   "summary": "Use key opens the buy menu.",
+   "description": "With 1, pressing your use key (E) in the buy zone opens the buy menu. Many players turn it off to avoid opening the menu by accident.",
+   "syntax": "cl_use_opens_buy_menu <0|1>",
+   "default": "1",
+   "examples": [
+    "cl_use_opens_buy_menu 0"
+   ],
+   "related": [
+    "bind"
+   ]
+  },
+  {
+   "name": "cl_join_advertise",
+   "category": "general",
+   "summary": "Lets friends join your games.",
+   "description": "Chooses whether Steam friends can join the game you are in without an invite: 0 never, 1 on official servers, 2 on all servers.",
+   "syntax": "cl_join_advertise <0-2>",
+   "default": "1",
+   "examples": [
+    "cl_join_advertise 2"
+   ],
+   "related": [
+    "connect"
+   ]
+  },
+  {
+   "name": "cl_dm_buyrandomweapons",
+   "category": "general",
+   "summary": "Random weapons in deathmatch.",
+   "description": "With 1, you get a random weapon each time you spawn in deathmatch. Set it to 0 to always choose your own weapon.",
+   "syntax": "cl_dm_buyrandomweapons <0|1>",
+   "default": "1",
+   "examples": [
+    "cl_dm_buyrandomweapons 0"
+   ],
+   "related": [
+    "bind"
+   ]
+  },
+  {
+   "name": "cl_sniper_delay_unscope",
+   "category": "general",
+   "summary": "Delays unscoping after an AWP shot.",
+   "description": "With 1, your sniper rifle stays scoped a little longer after a shot instead of unscoping right away.",
+   "syntax": "cl_sniper_delay_unscope <0|1>",
+   "default": "0",
+   "examples": [
+    "cl_sniper_delay_unscope 1"
+   ],
+   "related": [
+    "zoom_sensitivity_ratio",
+    "cl_crosshair_sniper_width"
+   ]
+  },
+  {
+   "name": "+lookatweapon",
+   "category": "general",
+   "summary": "Inspects your weapon.",
+   "description": "Plays the inspect animation of the weapon in your hands. It is bound to F by default.",
+   "syntax": "bind <key> +lookatweapon",
+   "examples": [
+    "bind f +lookatweapon"
+   ],
+   "related": [
+    "bind"
+   ]
+  },
+  {
+   "name": "cl_interp",
+   "category": "network",
+   "status": "active",
+   "summary": "Shows the interpolation used by the game.",
+   "description": "In CS2, cl_interp mostly shows the interpolation the game uses, together with cl_interp_ratio and the server update rate (for example cl_interp = 0 with cl_updaterate=64). CS2 manages interpolation for you with its sub-tick system, so there is no need to tweak it like in CS:GO.",
+   "syntax": "cl_interp",
+   "examples": [
+    "cl_interp"
+   ],
+   "related": [
+    "cl_interp_ratio",
+    "rate",
+    "cl_updaterate"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_interp_ratio",
+   "category": "network",
+   "status": "active",
+   "summary": "Interpolation ratio, managed by CS2.",
+   "description": "cl_interp_ratio still exists in CS2, with a value of 0 by default. Unlike in CS:GO, interpolation is handled by the game's sub-tick system, so most players should leave it at its default value.",
+   "syntax": "cl_interp_ratio <value>",
+   "default": "0",
+   "examples": [
+    "cl_interp_ratio 0"
+   ],
+   "related": [
+    "cl_interp",
+    "rate"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_updaterate",
+   "category": "network",
+   "status": "removed",
+   "summary": "Removed in CS2: the update rate is fixed by the server.",
+   "description": "In CS:GO, cl_updaterate set how many updates per second you asked the server for. It no longer exists in CS2: the server rate is fixed (64 updates per second, as shown by cl_interp) and the sub-tick system makes your inputs precise anyway.",
+   "syntax": "cl_updaterate 128",
+   "examples": [
+    "cl_interp"
+   ],
+   "related": [
+    "cl_cmdrate",
+    "cl_interp",
+    "rate"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_cmdrate",
+   "category": "network",
+   "status": "removed",
+   "summary": "Removed in CS2: the command rate is fixed.",
+   "description": "In CS:GO, cl_cmdrate set how many packets per second you sent to the server. It no longer exists in CS2, where the send rate is managed by the game and sub-tick timing records the exact moment of your shots and movements.",
+   "syntax": "cl_cmdrate 128",
+   "examples": [
+    "rate 786432"
+   ],
+   "related": [
+    "cl_updaterate",
+    "rate"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "voice_scale",
+   "category": "audio",
+   "status": "removed",
+   "summary": "Removed in CS2: replaced by snd_voipvolume.",
+   "description": "voice_scale changed the volume of voice chat in CS:GO. It no longer exists in CS2: use snd_voipvolume, from 0 to 1.",
+   "syntax": "voice_scale 0.5",
+   "examples": [
+    "snd_voipvolume 0.6"
+   ],
+   "replacement": "snd_voipvolume",
+   "related": [
+    "snd_voipvolume",
+    "volume"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "mat_monitorgamma",
+   "category": "performance",
+   "status": "removed",
+   "summary": "Removed in CS2: replaced by r_fullscreen_gamma.",
+   "description": "mat_monitorgamma changed the brightness in CS:GO. It no longer exists in CS2: use r_fullscreen_gamma (fullscreen mode only), or the brightness slider in the video settings.",
+   "syntax": "mat_monitorgamma 2",
+   "examples": [
+    "r_fullscreen_gamma 2"
+   ],
+   "replacement": "r_fullscreen_gamma",
+   "related": [
+    "r_fullscreen_gamma"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "m_customaccel",
+   "category": "mouse",
+   "status": "removed",
+   "summary": "Removed in CS2: no mouse acceleration setting.",
+   "description": "m_customaccel controlled mouse acceleration in CS:GO. It no longer exists in CS2, which has no in-game mouse acceleration. If your aim feels inconsistent, check that acceleration (Enhance pointer precision) is off in Windows and in your mouse software.",
+   "syntax": "m_customaccel 0",
+   "examples": [
+    "sensitivity 1.2"
+   ],
+   "related": [
+    "sensitivity",
+    "m_rawinput"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_hud_telemetry_frametime_show",
+   "category": "hud",
+   "status": "active",
+   "summary": "Shows FPS and frame time on screen (telemetry).",
+   "description": "Displays your frame rate and frame time in the corner of the screen, the same option as Settings › Game › Telemetry. With cl_hud_telemetry_ping_show, it is the CS2 replacement for the old net_graph. Set it to 0 to hide it.",
+   "syntax": "cl_hud_telemetry_frametime_show <0-2>",
+   "examples": [
+    "cl_hud_telemetry_frametime_show 2",
+    "cl_hud_telemetry_frametime_show 0"
+   ],
+   "related": [
+    "cl_hud_telemetry_ping_show",
+    "cl_showfps",
+    "net_graph"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  },
+  {
+   "name": "cl_hud_telemetry_ping_show",
+   "category": "hud",
+   "status": "active",
+   "summary": "Shows your ping on screen (telemetry).",
+   "description": "Displays your ping (latency to the server) in the corner of the screen, the same option as Settings › Game › Telemetry. Together with cl_hud_telemetry_frametime_show, it replaces the old net_graph. Set it to 0 to hide it.",
+   "syntax": "cl_hud_telemetry_ping_show <0-2>",
+   "examples": [
+    "cl_hud_telemetry_ping_show 2",
+    "cl_hud_telemetry_ping_show 0"
+   ],
+   "related": [
+    "cl_hud_telemetry_frametime_show",
+    "net_graph",
+    "status"
+   ],
+   "page": true,
+   "note": "verified in game on 19/10/2026"
+  }
+ ]
+}

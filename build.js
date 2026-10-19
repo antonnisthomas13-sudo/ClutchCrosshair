@@ -196,6 +196,9 @@ async function main() {
 
     // ===== Morceaux communs à toutes les pages =====
 
+    // Petite maison au début du fil d'Ariane (retour à l'accueil, présent sur toutes les pages)
+    const HOME_ICON = `<svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>`;
+
     // Thème clair/sombre appliqué tout de suite (sans flash), sur <html> et <body>
     const THEME_SCRIPT = `<script>
         try {
@@ -245,19 +248,34 @@ async function main() {
     <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
     }
 
-    // En haut des pages : le logo (retour à l'accueil)
-    function pageTop(prefix) {
+    // Le menu principal, le même sur toutes les pages. Une rubrique n'apparaît que si ses pages existent
+    // (jamais de lien vers une page vide). current = la rubrique de la page (soulignée en rouge)
+    function mainNav(prefix, current) {
+        const sections = [
+            { key: "crosshairs", label: "Crosshairs", href: "" },
+            { key: "skins", label: "Pro Skins", href: "skins/", show: skinPlayers.length > 0 },
+            { key: "guides", label: "Guides", href: "guides/", show: fs.existsSync("guides.json") },
+            { key: "commands", label: "Commands", href: "commands/", show: fs.existsSync("commands.json") },
+            // Tant qu'il n'y a qu'un seul outil, le lien mène directement au générateur de crosshair
+            fs.existsSync("tools/bind-generator.html") || fs.existsSync("binds.json")
+                ? { key: "tools", label: "Tools", href: "tools/" }
+                : { key: "tools", label: "Generator", href: "generator.html" }
+        ].filter(function (s) { return s.show !== false; });
+        return `<nav class="main-nav" aria-label="Main">
+            ${sections.map(function (s) {
+                return `<a href="${(prefix + s.href) || "./"}"${s.key === current ? ' aria-current="page"' : ""}>${s.label}</a>`;
+            }).join("\n            ")}
+        </nav>`;
+    }
+
+    // En haut des pages : le logo (retour à l'accueil) + le menu principal
+    function pageTop(prefix, current) {
         return `<header class="page-top">
         <a href="${prefix}" class="logo" aria-label="ClutchCrosshair home">
             <img class="logo-img logo-dark" src="${prefix}logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
             <img class="logo-img logo-light" src="${prefix}logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
         </a>
-        <nav class="page-top-links">
-            <a href="${prefix}generator.html" class="back-link">Generator</a>
-            <a href="${prefix}skins/" class="back-link">Pro Skins</a>
-            <a href="${prefix}faq.html" class="back-link">FAQ</a>
-            <a href="${prefix}" class="back-link back-home">← All CS2 crosshairs</a>
-        </nav>
+        ${mainNav(prefix, current)}
     </header>`;
     }
 
@@ -265,12 +283,15 @@ async function main() {
         return `<footer>
         <nav class="footer-links" aria-label="Footer">
             <a href="${prefix}generator.html">Crosshair Generator</a>
+            <a href="${prefix}tools/bind-generator.html">Bind Generator</a>
             <a href="${prefix}skins/">CS2 Pro Skins</a>
+            <a href="${prefix}guides/">CS2 Guides</a>
+            <a href="${prefix}commands/">Console Commands</a>
             <a href="${prefix}faq.html">FAQ</a>
             <a href="${prefix}legal.html">Legal notice</a>
         </nav>
         <p>© 2026 ClutchCrosshair. All rights reserved.</p>
-        <p>Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with these teams.</p>
+        <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>`;
     }
 
@@ -280,10 +301,22 @@ async function main() {
             "@type": "BreadcrumbList",
             "@id": url + "#breadcrumb",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "CS2 Crosshairs", "item": SITE_URL + "/" },
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
                 { "@type": "ListItem", "position": 2, "name": name, "item": url }
             ]
         };
+    }
+
+    // Fil d'Ariane des outils pour Google : Home › Tools (› outil)
+    function toolsBreadcrumb(name, url) {
+        const list = [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
+            { "@type": "ListItem", "position": 2, "name": "CS2 Tools", "item": SITE_URL + "/tools/" }
+        ];
+        if (name) {
+            list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+        }
+        return { "@type": "BreadcrumbList", "@id": (url || SITE_URL + "/tools/") + "#breadcrumb", "itemListElement": list };
     }
 
     // Petit tableau qui décrit les réglages du crosshair (contenu unique pour chaque page)
@@ -508,10 +541,10 @@ async function main() {
 </head>
 <body class="page">
     ${THEME_SCRIPT}
-    ${pageTop("../")}
+    ${pageTop("../", "crosshairs")}
 
     <main class="player-page" style="--team: ${teamColor(player.team)}; --on-team: ${textOnColor(teamColor(player.team))}">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <span>${name}</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>${name}</span></nav>
 
         <div class="player-head">
             ${photoHtml}
@@ -551,7 +584,7 @@ async function main() {
             <li>In CS2, open <strong>Settings › Game › Crosshair</strong>.</li>
             <li>Click <strong>Share or Import</strong> and paste the code.</li>
         </ol>
-        <p>Or copy the console commands, open the CS2 console (~) and paste them. <a href="../faq.html">More questions in the FAQ ›</a></p>
+        <p>Or copy the console commands, open the CS2 console (~) and paste them.${fs.existsSync("commands.json") ? ` <a href="../commands/#crosshair">What does each crosshair command do? ›</a>` : ""} <a href="../faq.html">More questions in the FAQ ›</a></p>
         ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">Edit ${name}'s crosshair in the CS2 crosshair generator ›</a></p>` : ""}
         ${skinPlayers.some(function (s) { return s.name === player.name; }) ? `<p><a href="../skins/${slug(player.name)}.html">See ${name}'s CS2 skins &amp; inventory ›</a></p>` : ""}
 
@@ -633,19 +666,9 @@ ${insights.faq.map(function (q) {
         index = index.replace(new RegExp(`(<span class="quick-count" data-count="${key}">)[^<]*(</span>)`), "$1" + counts[key] + "$2");
     });
 
-    // Liste de tous les joueurs (en bas de page)
-    const groups = teams.map(function (t) {
-        return { title: t.name, list: players.filter(function (p) { return p.team === t.name; }) };
-    });
-    groups.push({ title: "Content creators", list: creators });
-    const directory = `<div class="directory">\n${groups.filter(function (g) {
-        return g.list.length > 0;
-    }).map(function (g) {
-        return `                    <div><h3>${esc(g.title)}</h3><p>${g.list.map(function (p) {
-            return `<a href="players/${slug(p.name)}.html">${esc(p.name)}</a>`;
-        }).join(", ")}</p></div>`;
-    }).join("\n")}\n                </div>`;
-    index = replaceBetween(index, "PLAYERS", directory, "                ");
+
+    // Le menu principal (le même que sur les autres pages)
+    index = replaceBetween(index, "MAINNAV", mainNav("", "crosshairs"), "                ");
 
     // Le générateur dans l'onglet Generator (son JavaScript ne se charge qu'au clic sur l'onglet)
     index = replaceBetween(index, "GENERATOR", generatorBlock, "                        ");
@@ -769,7 +792,7 @@ ${insights.faq.map(function (q) {
     ${THEME_SCRIPT}
     ${pageTop("./")}
     <main class="player-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">CS2 Crosshairs</a> › <span>FAQ</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>FAQ</span></nav>
         <h1>CS2 Crosshair FAQ</h1>
         <p>Everything about CS2 crosshair codes: how to import them, the new CS2 format, and what the pros use. Stats updated on ${newest ? esc(newest.split("-").reverse().join("/")) : "-"}.</p>
 ${faq.map(function (q) {
@@ -835,7 +858,7 @@ ${faq.map(function (q) {
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
             "publisher": { "@id": SITE_URL + "/#organization" }
         },
-        breadcrumb("CS2 crosshair generator", genUrl),
+        toolsBreadcrumb("CS2 crosshair generator", genUrl),
         {
             "@type": "FAQPage",
             "@id": genUrl + "#faq",
@@ -861,9 +884,9 @@ ${faq.map(function (q) {
 </head>
 <body class="page">
     ${THEME_SCRIPT}
-    ${pageTop("./")}
+    ${pageTop("./", "tools")}
     <main class="player-page gen-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">CS2 Crosshairs</a> › <span>Crosshair generator</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <a href="tools/">Tools</a> › <span>Crosshair generator</span></nav>
         <h1>CS2 Crosshair Generator</h1>
         <p>Create your own CS2 crosshair in a few seconds: choose the color, length, thickness, gap and outline, see it live at real size on a CS2 map, then copy your crosshair code or console commands. Free, no sign-up, made for the new CS2 crosshair codes.</p>
 
@@ -917,7 +940,7 @@ ${genFaq.map(function (q) {
 
     function skinBreadcrumb(name, url) {
         const list = [
-            { "@type": "ListItem", "position": 1, "name": "CS2 Crosshairs", "item": SITE_URL + "/" },
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
             { "@type": "ListItem", "position": 2, "name": "CS2 Pro Skins", "item": skinsUrl }
         ];
         if (name) {
@@ -1020,10 +1043,10 @@ ${genFaq.map(function (q) {
 </head>
 <body class="page">
     ${THEME_SCRIPT}
-    ${pageTop("../")}
+    ${pageTop("../", "skins")}
 
     <main class="player-page skins-page" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <a href="./">Pro skins</a> › <span>${name}</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Pro skins</a> › <span>${name}</span></nav>
 
         <div class="player-head">
             ${skinPhoto(p, "../", 120, 134, "player-photo", true)}
@@ -1112,10 +1135,10 @@ ${faq.map(function (q) {
 </head>
 <body class="page">
     ${THEME_SCRIPT}
-    ${pageTop("../")}
+    ${pageTop("../", "skins")}
 
     <main class="player-page skins-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <span>Pro skins</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Pro skins</span></nav>
         <h1>CS2 Pro Skins</h1>
         <p>The real CS2 inventories of the best pro players: every knife, pair of gloves and weapon skin, with its exact float and wear, read from their public Steam inventories, with the price of every skin and the total value of each inventory. Updated on ${esc(skinData.updated)}.</p>
         ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
@@ -1158,6 +1181,1177 @@ ${skinPlayers.map(function (p) {
         }
     });
 
+    // ===== 3 quater. Les commandes console CS2 : commands/index.html + une page par commande importante =====
+    // Données : commands.json (status "check" = pas encore vérifiée en jeu -> pas publiée)
+    const commandData = fs.existsSync("commands.json") ? JSON.parse(fs.readFileSync("commands.json", "utf8")) : null;
+    const guideData = fs.existsSync("guides.json") ? JSON.parse(fs.readFileSync("guides.json", "utf8")) : null;
+    // Les guides qui parlent d'une commande (liens "Learn more" sur la page de la commande)
+    function guidesFor(name) {
+        return guideData ? guideData.guides.filter(function (g) { return (g.commands || []).includes(name); }) : [];
+    }
+    const commandFiles = [];
+    const commandsUrl = `${SITE_URL}/commands/`;
+    if (commandData) {
+        if (!fs.existsSync("commands")) {
+            fs.mkdirSync("commands");
+        }
+        const published = commandData.commands.filter(function (c) { return c.status !== "check"; });
+        const byCmd = new Map(published.map(function (c) { return [c.name, c]; }));
+        const categoryName = Object.fromEntries(commandData.categories);
+        const hasPage = function (c) { return c && c.page && /^[a-z0-9_]+$/.test(c.name); };
+        const cmdFile = function (name) { return name + ".html"; };
+
+        // Lien vers une commande : sa page si elle en a une, sinon sa ligne dans la liste
+        function cmdHref(name, prefix) {
+            const c = byCmd.get(name);
+            if (!c) {
+                return "";
+            }
+            return hasPage(c) ? prefix + cmdFile(name) : prefix + "#" + encodeURIComponent(name);
+        }
+
+        // Transforme les noms de commandes cités dans un texte en liens (sauf la commande de la page)
+        // Seulement les noms techniques avec un "_" : "crosshair", "volume" ou "rate" sont aussi des mots normaux
+        const linkable = published.map(function (c) { return c.name; }).filter(function (n) { return /^[a-z0-9_]+$/.test(n) && n.includes("_"); })
+            .sort(function (a, b) { return b.length - a.length; });
+        const linkPattern = new RegExp("(?<![\\w+])(" + linkable.join("|") + ")(?![\\w])", "g");
+        function linkify(text, self, prefix) {
+            return esc(text).replace(linkPattern, function (name) {
+                return name === self ? `<code>${name}</code>` : `<a href="${cmdHref(name, prefix)}"><code>${name}</code></a>`;
+            });
+        }
+
+        function copyRow(command) {
+            return `<div class="field-row">
+                <code>${esc(command)}</code>
+                <button type="button" class="mini" data-copy>Copy</button>
+            </div>`;
+        }
+
+        function badges(c) {
+            return (c.status === "removed" ? `<span class="cmd-badge cmd-removed">Removed in CS2</span>` : "")
+                + (c.cheat ? `<span class="cmd-badge">Needs sv_cheats</span>` : "");
+        }
+
+        // Statistiques réelles des pros pour les commandes de crosshair (contenu unique)
+        const CROSSHAIR_FIELDS = {
+            cl_crosshair_length: function (c) { return c.length; },
+            cl_crosshair_thickness: function (c) { return c.thickness; },
+            cl_crosshair_gap: function (c) { return c.gap; },
+            cl_crosshair_screen_height: function (c) { return c.screenHeight; },
+            cl_crosshairstyle: function (c) { return c.style; },
+            cl_crosshairdot: function (c) { return c.centerDotEnabled ? 1 : 0; },
+            cl_crosshair_t: function (c) { return c.tStyleEnabled ? 1 : 0; },
+            cl_crosshair_drawoutline: function (c) { return c.outlineMode > 0 ? 1 : 0; },
+            cl_crosshair_recoil: function (c) { return c.followRecoil ? 1 : 0; },
+            cl_crosshaircolor_a: function (c) { return c.alpha; }
+        };
+        function proStats(c) {
+            const read = CROSSHAIR_FIELDS[c.name];
+            if (!read || !proCrosshairs.length) {
+                return "";
+            }
+            const count = {};
+            proCrosshairs.forEach(function (x) {
+                const v = read(x.c);
+                count[v] = (count[v] || 0) + 1;
+            });
+            const values = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; });
+            const top = values[0];
+            const examples = proCrosshairs.filter(function (x) { return String(read(x.c)) === top; }).slice(0, 6);
+            const rows = values.slice(0, 5).map(function (v) {
+                const share = Math.round(count[v] / proCrosshairs.length * 100);
+                return `<div><dt><code>${esc(c.name)} ${esc(v)}</code></dt><dd><span class="cmd-bar"><i style="width: ${share}%"></i></span>${share}%</dd></div>`;
+            }).join("");
+            return `<h2>What value do CS2 pros use?</h2>
+        <p>Among the ${proCrosshairs.length} pro crosshairs on ClutchCrosshair, read from official match demos, the most common value is <code>${esc(c.name)} ${esc(top)}</code> (${Math.round(count[top] / proCrosshairs.length * 100)}% of pros).</p>
+        <dl class="cmd-stats">${rows}</dl>
+        <p>Pros who use <code>${esc(c.name)} ${esc(top)}</code>:</p>
+        <ul class="related">${examples.map(function (x) {
+            return `<li><a href="../players/${slug(x.player.name)}.html">${esc(x.player.name)} crosshair</a></li>`;
+        }).join("")}</ul>`;
+        }
+
+        function cmdBreadcrumb(name, url) {
+            const list = [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
+                { "@type": "ListItem", "position": 2, "name": "CS2 Console Commands", "item": commandsUrl }
+            ];
+            if (name) {
+                list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+            }
+            return { "@type": "BreadcrumbList", "@id": (url || commandsUrl) + "#breadcrumb", "itemListElement": list };
+        }
+
+        function faqGraph(url, faq) {
+            return {
+                "@type": "FAQPage",
+                "@id": url + "#faq",
+                "mainEntity": faq.map(function (q) {
+                    return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+                })
+            };
+        }
+
+        function faqHtml(faq, title) {
+            return `<h2>${title}</h2>
+${faq.map(function (q) {
+            return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+        }).join("\n")}`;
+        }
+
+        // Petit script des pages de commandes : boutons Copy (+ recherche et filtres sur la liste)
+        const COPY_SCRIPT = `import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row").querySelector("code").textContent, button);
+            }
+        });`;
+
+        // --- Une page par commande importante ---
+        published.filter(hasPage).forEach(function (c) {
+            const url = commandsUrl + cmdFile(c.name);
+            const name = esc(c.name);
+            const removed = c.status === "removed";
+            const replacement = c.replacement && byCmd.get(c.replacement);
+            commandFiles.push(cmdFile(c.name));
+
+            const faq = [[`What does ${c.name} do in CS2?`, `${c.summary} ${c.description}`]];
+            if (removed) {
+                faq.push([`Does ${c.name} work in CS2?`, `No. ${c.name} was a CS:GO command and does not exist in CS2.${replacement ? " Use " + replacement.name + " instead." : ""}`]);
+            } else {
+                if (c.default) {
+                    faq.push([`What is the default value of ${c.name}?`, `The default value of ${c.name} in CS2 is ${c.default}.`]);
+                }
+                faq.push([`Does ${c.name} need sv_cheats?`, c.cheat
+                    ? `Yes. ${c.name} only works with sv_cheats 1, on a server you host (a private match with bots, for example), never in official matchmaking.`
+                    : `No. ${c.name} works without sv_cheats, including in official matchmaking.`]);
+            }
+
+            // Titre : le plus complet qui tient en 65 caractères (les noms de commandes peuvent être longs)
+            const titles = removed
+                ? [`${c.name} in CS2: Removed, What to Use Instead | ClutchCrosshair`, `${c.name} in CS2: Removed, Use This Instead`, `${c.name} removed in CS2`]
+                : [`${c.name} CS2 Command: Values & Examples | ClutchCrosshair`, `${c.name} CS2 Command | ClutchCrosshair`, `${c.name} CS2 Command: Values & Examples`, `${c.name} CS2 Command`];
+            const title = esc(titles.find(function (t) { return t.length <= 65; }) || titles[titles.length - 1]);
+            // Description : résumé + première phrase de l'explication + fin, tant que ça tient en 160 caractères
+            const sentences = c.description.split(/(?<=\.)\s/);
+            const descEnd = removed ? " See what to use instead." : (c.default ? ` Default ${c.default}, values and examples.` : " Values and examples.");
+            let descStart = `${c.name} in CS2: ${c.summary}`;
+            let added = 0;
+            sentences.forEach(function (s) {
+                if (added === sentences.indexOf(s) && (descStart + " " + s + descEnd).length <= 160) {
+                    descStart += " " + s;
+                    added++;
+                }
+            });
+            let description = descStart + descEnd;
+            if (!added) {
+                // Première phrase trop longue : on la coupe proprement à la fin d'un mot
+                description = (descStart + " " + sentences[0]).slice(0, 157).replace(/\s+\S*$/, "") + "…";
+            }
+            const graph = [
+                {
+                    "@type": "TechArticle",
+                    "@id": url + "#article",
+                    "headline": `${c.name} CS2 console command`,
+                    "description": description,
+                    "url": url,
+                    "inLanguage": "en",
+                    "isPartOf": { "@id": SITE_URL + "/#website" },
+                    "publisher": { "@id": SITE_URL + "/#organization" },
+                    "dateModified": isoDate(commandData.updated),
+                    "about": { "@type": "Thing", "name": "Counter-Strike 2" }
+                },
+                cmdBreadcrumb(c.name, url),
+                faqGraph(url, faq)
+            ];
+            const related = (c.related || []).map(function (n) { return byCmd.get(n); }).filter(Boolean);
+
+            fs.writeFileSync("commands/" + cmdFile(c.name), `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({ title: title, ogTitle: `${c.name} CS2 console command`, description: description, url: url, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "commands")}
+
+    <main class="player-page cmd-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Commands</a> › <span>${name}</span></nav>
+        <h1 class="cmd-title">${name}</h1>
+        <p class="cmd-meta"><a href="./#${esc(c.category)}">${esc(categoryName[c.category] || c.category)}</a>${badges(c)}</p>
+        <p class="cmd-lead">${linkify(c.summary, c.name, "")}${removed ? "" : " " + linkify(c.description, c.name, "")}</p>
+        ${removed ? "" : copyRow(c.examples && c.examples[0] ? c.examples[0] : c.syntax)}
+
+        ${removed ? `<h2>What to use instead in CS2</h2>
+        <p>${linkify(c.description, c.name, "")}</p>
+        ${replacement ? `<p>Use <a href="${cmdHref(replacement.name, "")}"><code>${esc(replacement.name)}</code></a> instead: ${esc(replacement.summary.charAt(0).toLowerCase() + replacement.summary.slice(1))}</p>
+        ${copyRow(replacement.examples && replacement.examples[0] ? replacement.examples[0] : replacement.syntax)}` : (c.examples || []).map(copyRow).join("\n        ")}` : `<h2>Syntax</h2>
+        <p><code class="cmd-syntax">${esc(c.syntax)}</code>${c.default ? ` · Default value: <code>${esc(c.default)}</code>` : ""}</p>
+        ${c.values ? `<table class="cmd-values">
+            <thead><tr><th scope="col">Value</th><th scope="col">What it does</th></tr></thead>
+            <tbody>${c.values.map(function (v) { return `<tr><td><code>${esc(v[0])}</code></td><td>${esc(v[1])}</td></tr>`; }).join("")}</tbody>
+        </table>` : ""}
+        ${c.cheat ? `<p>This command needs <a href="${cmdHref("sv_cheats", "")}"><code>sv_cheats 1</code></a>: it only works on a server you host, never in official matchmaking.</p>` : ""}
+
+        <h2>Examples</h2>
+        ${(c.examples || []).map(copyRow).join("\n        ")}
+
+        <h2>How to use ${name} in CS2</h2>
+        <ol>
+            <li>Enable the developer console in <strong>Settings › Game › Enable Developer Console</strong>.</li>
+            <li>Press <strong>~</strong> to open the console, type the command and press <strong>Enter</strong>.</li>
+            <li>To apply it every time you launch CS2, add the line to an <code>autoexec.cfg</code> file in your cfg folder.</li>
+        </ol>`}
+
+        ${proStats(c)}
+        ${c.category === "crosshair" ? `<p>Want to try a crosshair before typing commands? Use the <a href="../generator.html">CS2 crosshair generator</a> or copy a <a href="../">pro crosshair</a>: every pro page gives you the full list of console commands.</p>` : ""}
+
+        ${related.length ? `<h2>Related commands</h2>
+        <ul class="related">${related.map(function (r) {
+            return `<li><a href="${cmdHref(r.name, "")}">${esc(r.name)}</a></li>`;
+        }).join("")}</ul>` : ""}
+
+        ${guidesFor(c.name).length ? `<h2>Learn more</h2>
+        <ul class="related">${guidesFor(c.name).map(function (g) {
+            return `<li><a href="../guides/${g.slug}.html">${esc(g.title)}</a></li>`;
+        }).join("")}</ul>` : ""}
+
+        ${faqHtml(faq, `${name} FAQ`)}
+        <p><a href="./">All CS2 console commands ›</a></p>
+    </main>
+
+    ${footer("../")}
+    <script type="module">
+        ${COPY_SCRIPT}
+    </script>
+</body>
+</html>
+`);
+        });
+
+        // --- La liste de toutes les commandes : recherche instantanée + filtres par catégorie ---
+        const hubFaq = [
+            ["How do I open the console in CS2?", "Go to Settings › Game and set Enable Developer Console to Yes. Then press the ~ key (under Escape) in game to open it. If your keyboard has no ~ key, bind toggleconsole to another key."],
+            ["Do console commands work in competitive matchmaking?", "Most commands that change your own settings (crosshair, HUD, radar, mouse, audio) work everywhere. Commands marked Needs sv_cheats, and server commands starting with mp_ or bot_, only work on a server you host, for example a private match with bots."],
+            ["How do I save my console commands?", "Put them in a file named autoexec.cfg in the game's cfg folder (game/csgo/cfg) and add +exec autoexec to your launch options, or type exec autoexec in the console."],
+            ["Why does a CS:GO command not work in CS2?", "Many CS:GO commands were removed or renamed in CS2, such as net_graph. Commands marked Removed in CS2 on this page tell you what to use instead."]
+        ];
+        const hubDescription = `Every useful CS2 console command explained: crosshair, HUD, radar, FPS, network, practice and bot commands, with default values, examples and a Copy button.`;
+        const pageList = published.filter(hasPage);
+        const categoriesUsed = commandData.categories.filter(function (cat) {
+            return published.some(function (c) { return c.category === cat[0]; });
+        });
+        fs.writeFileSync("commands/index.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: "CS2 Console Commands List (2026) | ClutchCrosshair",
+        ogTitle: "CS2 Console Commands",
+        description: hubDescription,
+        url: commandsUrl,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": commandsUrl,
+                "url": commandsUrl,
+                "name": "CS2 Console Commands",
+                "description": hubDescription,
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": commandsUrl + "#breadcrumb" },
+                "dateModified": isoDate(commandData.updated),
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "numberOfItems": pageList.length,
+                    "itemListElement": pageList.map(function (c, i) {
+                        return { "@type": "ListItem", "position": i + 1, "name": c.name, "url": commandsUrl + cmdFile(c.name) };
+                    })
+                }
+            },
+            cmdBreadcrumb(null, null),
+            faqGraph(commandsUrl, hubFaq)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "commands")}
+
+    <main class="player-page cmd-hub">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Commands</span></nav>
+        <h1>CS2 Console Commands</h1>
+        <p>${published.length} useful CS2 console commands explained in plain English: what each one does, its values, its default and ready-to-copy examples. Commands from CS:GO that no longer work are marked <strong>Removed in CS2</strong>. Updated ${esc(commandData.updated)}.</p>
+
+        <div class="cmd-tools">
+            <div class="hero-search cmd-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+                <input type="search" id="cmd-search" placeholder="Search a command, e.g. crosshair, fps, radar..." aria-label="Search a CS2 console command" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="cmd-filters" role="group" aria-label="Filter by category">
+                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">All <span>${published.length}</span></button>
+                ${categoriesUsed.map(function (cat) {
+                    return `<button type="button" class="cmd-filter" data-cat="${cat[0]}" aria-pressed="false">${esc(cat[1])} <span>${published.filter(function (c) { return c.category === cat[0]; }).length}</span></button>`;
+                }).join("\n                ")}
+            </div>
+        </div>
+        <p class="cmd-empty hidden" id="cmd-empty">No command found. Try another word, or type <code>find</code> followed by a word in the CS2 console.</p>
+
+${categoriesUsed.map(function (cat) {
+        return `        <section class="cmd-section" id="${cat[0]}" data-cat="${cat[0]}" aria-labelledby="${cat[0]}-title">
+            <h2 id="${cat[0]}-title">${esc(cat[1])} commands</h2>
+            <div class="cmd-grid">
+            ${published.filter(function (c) { return c.category === cat[0]; }).map(function (c) {
+                const search = [c.name, c.summary, c.description, cat[1]].join(" ").toLowerCase();
+                const example = c.status === "removed" ? (byCmd.get(c.replacement) ? byCmd.get(c.replacement).examples[0] : null) : (c.examples && c.examples[0]) || c.syntax;
+                return `<article class="cmd${c.status === "removed" ? " cmd-is-removed" : ""}" id="${esc(c.name)}" data-cat="${cat[0]}" data-search="${esc(search)}">
+                <h3 class="cmd-name">${hasPage(c) ? `<a href="${cmdFile(c.name)}">${esc(c.name)}</a>` : esc(c.name)}${badges(c)}</h3>
+                <p>${esc(c.summary)}${c.default ? ` <span class="cmd-default">Default: <code>${esc(c.default)}</code></span>` : ""}</p>
+                ${example ? copyRow(example) : ""}
+            </article>`;
+            }).join("\n            ")}
+            </div>
+        </section>`;
+    }).join("\n")}
+
+        ${faqHtml(hubFaq, "CS2 console FAQ")}
+    </main>
+
+    ${footer("../")}
+    <script type="module">
+        ${COPY_SCRIPT}
+
+        // Recherche instantanée + filtres par catégorie (#crosshair dans l'adresse = filtre direct)
+        const input = document.getElementById("cmd-search");
+        const filters = Array.from(document.querySelectorAll(".cmd-filter"));
+        const items = Array.from(document.querySelectorAll(".cmd"));
+        const sections = Array.from(document.querySelectorAll(".cmd-section"));
+        const empty = document.getElementById("cmd-empty");
+        let category = "";
+
+        function apply() {
+            const words = input.value.toLowerCase().trim().split(/\\s+/).filter(Boolean);
+            items.forEach(function (item) {
+                const show = (!category || item.dataset.cat === category) && words.every(function (w) { return item.dataset.search.includes(w); });
+                item.classList.toggle("hidden", !show);
+            });
+            let any = false;
+            sections.forEach(function (section) {
+                const visible = section.querySelector(".cmd:not(.hidden)") !== null;
+                section.classList.toggle("hidden", !visible);
+                any = any || visible;
+            });
+            empty.classList.toggle("hidden", any);
+        }
+
+        function setCategory(value) {
+            category = value;
+            filters.forEach(function (f) { f.setAttribute("aria-pressed", f.dataset.cat === value ? "true" : "false"); });
+            apply();
+        }
+
+        let frame = 0;
+        input.addEventListener("input", function () {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(apply);
+        });
+        filters.forEach(function (f) {
+            f.addEventListener("click", function () { setCategory(f.dataset.cat); });
+        });
+        function categoryFromAddress() {
+            const fromAddress = decodeURIComponent(location.hash.slice(1));
+            if (fromAddress && filters.some(function (f) { return f.dataset.cat === fromAddress; })) {
+                setCategory(fromAddress);
+            }
+        }
+        categoryFromAddress();
+        window.addEventListener("hashchange", categoryFromAddress);
+    </script>
+</body>
+</html>
+`);
+        commandFiles.push("index.html");
+
+        // Supprimer les pages de commandes qui n'existent plus
+        fs.readdirSync("commands").forEach(function (f) {
+            if (f.endsWith(".html") && !commandFiles.includes(f)) {
+                fs.unlinkSync("commands/" + f);
+            }
+        });
+        console.log((commandFiles.length - 1) + " pages de commandes + commands/index.html (" + published.length + " commandes publiées, " + (commandData.commands.length - published.length) + " à vérifier)");
+    }
+
+    // ===== 3 quinquies. Les guides CS2 : guides/index.html + une page par guide (données : guides.json) =====
+    const guideFiles = [];
+    const guidesUrl = `${SITE_URL}/guides/`;
+    if (guideData) {
+        if (!fs.existsSync("guides")) {
+            fs.mkdirSync("guides");
+        }
+        // Commandes qui ont leur propre page (pour les liens automatiques)
+        const commandPages = new Set(commandData ? commandData.commands.filter(function (c) {
+            return c.status !== "check" && c.page && /^[a-z0-9_]+$/.test(c.name);
+        }).map(function (c) { return c.name; }) : []);
+
+        function anchor(text) {
+            return slug(text).slice(0, 60);
+        }
+
+        // Mise en forme simple des textes : `code` (lien si la commande a une page), **gras**, [texte](lien)
+        function fmt(text) {
+            return esc(text)
+                .replace(/`([^`]+)`/g, function (all, code) {
+                    return commandPages.has(code) ? `<a href="../commands/${code}.html"><code>${code}</code></a>` : `<code>${code}</code>`;
+                })
+                .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (all, label, href) {
+                    return `<a href="${href.replace(/&amp;/g, "&")}">${label}</a>`;
+                });
+        }
+
+        function plainText(text) {
+            return String(text).replace(/`([^`]+)`/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+        }
+
+        // Statistiques réelles des crosshairs des pros (blocs calculés)
+        function share(test) {
+            return Math.round(proCrosshairs.filter(test).length / proCrosshairs.length * 100);
+        }
+        function mostCommonValue(read) {
+            const count = {};
+            proCrosshairs.forEach(function (x) {
+                const v = read(x.c);
+                count[v] = (count[v] || 0) + 1;
+            });
+            const top = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; })[0];
+            return { value: top, share: Math.round(count[top] / proCrosshairs.length * 100) };
+        }
+        function statsTable(rows) {
+            return `<table class="cmd-values">
+            <thead><tr><th scope="col">Setting</th><th scope="col">What pros use</th><th scope="col">Share of pros</th></tr></thead>
+            <tbody>${rows.map(function (r) { return `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`; }).join("")}</tbody>
+        </table>`;
+        }
+
+        function block(b) {
+            if (b.type === "p") {
+                return `<p>${fmt(b.text)}</p>`;
+            }
+            if (b.type === "tip") {
+                return `<p class="guide-tip">${fmt(b.text)}</p>`;
+            }
+            if (b.type === "list") {
+                return `<ul>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ul>`;
+            }
+            if (b.type === "steps") {
+                return `<ol>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ol>`;
+            }
+            if (b.type === "table") {
+                return `<div class="table-wrap"><table class="cmd-values">
+            <thead><tr>${b.head.map(function (h) { return `<th scope="col">${fmt(h)}</th>`; }).join("")}</tr></thead>
+            <tbody>${b.rows.map(function (r) { return `<tr>${r.map(function (cell) { return `<td>${fmt(cell)}</td>`; }).join("")}</tr>`; }).join("")}</tbody>
+        </table></div>`;
+            }
+            if (b.type === "copy") {
+                return b.items.map(function (line) {
+                    return `<div class="field-row"><code>${esc(line)}</code><button type="button" class="mini" data-copy>Copy</button></div>`;
+                }).join("\n        ");
+            }
+            if (b.type === "config") {
+                return `<div class="code-block"><pre><code>${b.lines.map(esc).join("\n")}</code></pre><button type="button" class="mini" data-copy>Copy</button></div>`;
+            }
+            if (b.type === "pro-crosshair-stats" && proCrosshairs.length) {
+                const colors = mostCommonValue(colorName);
+                const length = mostCommonValue(function (c) { return c.length; });
+                const thick = mostCommonValue(function (c) { return c.thickness; });
+                const gap = mostCommonValue(function (c) { return c.gap; });
+                return statsTable([
+                    ["Color", esc(colors.value), colors.share + "%"],
+                    ["Style", "Static (<code>cl_crosshairstyle 4</code>)", share(function (x) { return x.c.style === 4; }) + "%"],
+                    ["Length", "<code>cl_crosshair_length " + esc(length.value) + "</code>", length.share + "%"],
+                    ["Thickness", "<code>cl_crosshair_thickness " + esc(thick.value) + "</code>", thick.share + "%"],
+                    ["Gap", "<code>cl_crosshair_gap " + esc(gap.value) + "</code>", gap.share + "%"],
+                    ["Center dot", "No dot", share(function (x) { return !x.c.centerDotEnabled; }) + "%"],
+                    ["Outline", "No outline", share(function (x) { return !(x.c.outlineMode > 0); }) + "%"],
+                    ["T-style", "Normal (with top line)", share(function (x) { return !x.c.tStyleEnabled; }) + "%"]
+                ]) + `\n        <p class="guide-note">Based on ${proCrosshairs.length} pro crosshairs read from official match demos. Browse them all on the <a href="../">CS2 pro crosshairs page</a>.</p>`;
+            }
+            if (b.type === "pro-resolution-stats" && proCrosshairs.length) {
+                const count = {};
+                proCrosshairs.forEach(function (x) { count[x.c.screenHeight] = (count[x.c.screenHeight] || 0) + 1; });
+                const heights = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; }).slice(0, 5);
+                const label = { 960: "1280×960 (4:3)", 1080: "1920×1080 (16:9) or 1440×1080 (4:3)", 768: "1024×768 (4:3)", 1024: "1280×1024 (5:4)", 864: "1152×864 (4:3)", 1050: "1680×1050 (16:10)", 800: "1280×800 (16:10)", 1440: "2560×1440 (16:9)" };
+                return `<div class="table-wrap"><table class="cmd-values">
+            <thead><tr><th scope="col">Screen height in the code</th><th scope="col">Usual resolution</th><th scope="col">Pros</th></tr></thead>
+            <tbody>${heights.map(function (h) {
+                return `<tr><td><code>${esc(h)} px</code></td><td>${esc(label[h] || "-")}</td><td>${count[h]} (${Math.round(count[h] / proCrosshairs.length * 100)}%)</td></tr>`;
+            }).join("")}</tbody>
+        </table></div>`;
+            }
+            if (b.type === "sens-calc") {
+                return `<form class="sens-calc" id="sens-calc" onsubmit="return false">
+            <label>Mouse DPI <input type="number" id="calc-dpi" value="800" min="100" max="32000" step="50" inputmode="numeric"></label>
+            <label>CS2 sensitivity <input type="number" id="calc-sens" value="1" min="0.01" max="20" step="0.01" inputmode="decimal"></label>
+            <p class="sens-out" aria-live="polite">eDPI <strong id="out-edpi">800</strong> · <strong id="out-cm">52.0</strong> cm/360 · <strong id="out-in">20.5</strong> in/360</p>
+            <label>Valorant sensitivity (optional) <input type="number" id="calc-val" min="0.01" max="10" step="0.001" inputmode="decimal" placeholder="e.g. 0.4"></label>
+            <p class="sens-out" aria-live="polite">Same speed in CS2: <strong id="out-val">-</strong></p>
+        </form>`;
+            }
+            return "";
+        }
+
+        const CALC_SCRIPT = `
+        // Calculatrice de sensibilité : eDPI = DPI × sensibilité ; cm/360 = 2,54 × 360 / (DPI × sensibilité × 0,022)
+        const dpi = document.getElementById("calc-dpi");
+        const sens = document.getElementById("calc-sens");
+        const val = document.getElementById("calc-val");
+        function update() {
+            const d = Number(dpi.value), s = Number(sens.value);
+            const ok = d > 0 && s > 0;
+            document.getElementById("out-edpi").textContent = ok ? Math.round(d * s) : "-";
+            document.getElementById("out-cm").textContent = ok ? (2.54 * 360 / (d * s * 0.022)).toFixed(1) : "-";
+            document.getElementById("out-in").textContent = ok ? (360 / (d * s * 0.022)).toFixed(1) : "-";
+            const v = Number(val.value);
+            document.getElementById("out-val").textContent = v > 0 ? (v * 0.07 / 0.022).toFixed(3) : "-";
+        }
+        [dpi, sens, val].forEach(function (input) { input.addEventListener("input", update); });
+        update();`;
+
+        const GUIDE_COPY_SCRIPT = `import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row, .code-block").querySelector("code").textContent, button);
+            }
+        });`;
+
+        function guideBreadcrumb(name, url) {
+            const list = [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
+                { "@type": "ListItem", "position": 2, "name": "CS2 Guides", "item": guidesUrl }
+            ];
+            if (name) {
+                list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+            }
+            return { "@type": "BreadcrumbList", "@id": (url || guidesUrl) + "#breadcrumb", "itemListElement": list };
+        }
+
+        const bySlug = new Map(guideData.guides.map(function (g) { return [g.slug, g]; }));
+
+        guideData.guides.forEach(function (g) {
+            const file = g.slug + ".html";
+            const url = guidesUrl + file;
+            guideFiles.push(file);
+            const body = g.sections.map(function (s) {
+                return `        <section aria-labelledby="${anchor(s.title)}">
+            <h2 id="${anchor(s.title)}">${fmt(s.title)}</h2>
+            ${s.blocks.map(block).join("\n            ")}
+        </section>`;
+            }).join("\n");
+            const words = (g.intro + " " + body.replace(/<[^>]+>/g, " ")).split(/\s+/).filter(Boolean).length;
+            const minutes = Math.max(2, Math.round(words / 220));
+            const related = (g.related || []).map(function (s) { return bySlug.get(s); }).filter(Boolean);
+            const commands = (g.commands || []).filter(function (n) { return commandPages.has(n); });
+            const graph = [
+                {
+                    "@type": "Article",
+                    "@id": url + "#article",
+                    "headline": g.title,
+                    "description": g.description,
+                    "url": url,
+                    "inLanguage": "en",
+                    "isPartOf": { "@id": SITE_URL + "/#website" },
+                    "author": { "@id": SITE_URL + "/#organization" },
+                    "publisher": { "@id": SITE_URL + "/#organization" },
+                    "dateModified": isoDate(guideData.updated),
+                    "image": SITE_URL + "/og-image.jpg",
+                    "about": { "@type": "Thing", "name": "Counter-Strike 2" }
+                },
+                guideBreadcrumb(g.title, url),
+                {
+                    "@type": "FAQPage",
+                    "@id": url + "#faq",
+                    "mainEntity": g.faq.map(function (q) {
+                        return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+                    })
+                }
+            ];
+            const hasCalc = g.sections.some(function (s) { return s.blocks.some(function (b) { return b.type === "sens-calc"; }); });
+
+            fs.writeFileSync("guides/" + file, `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({ title: esc(g.seoTitle), ogTitle: esc(g.title), description: g.description, url: url, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "guides")}
+
+    <main class="player-page guide-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Guides</a> › <span>${esc(g.title)}</span></nav>
+        <h1 class="guide-title">${esc(g.title)}</h1>
+        <p class="guide-meta">${esc(g.category)} · Updated <time datetime="${isoDate(guideData.updated)}">${esc(guideData.updated)}</time> · ${minutes} min read</p>
+        <p class="guide-lead">${fmt(g.intro)}</p>
+
+        <nav class="guide-toc" aria-label="On this page">
+            <p class="guide-toc-title">On this page</p>
+            <ol>${g.sections.map(function (s) { return `<li><a href="#${anchor(s.title)}">${esc(plainText(s.title))}</a></li>`; }).join("")}<li><a href="#faq">FAQ</a></li></ol>
+        </nav>
+
+${body}
+
+        ${commands.length ? `<h2>Commands in this guide</h2>
+        <ul class="related">${commands.map(function (n) { return `<li><a href="../commands/${n}.html">${esc(n)}</a></li>`; }).join("")}</ul>` : ""}
+
+        <h2 id="faq">${esc(g.title.replace(/\s*\(\d{4}\)\s*/, " ").replace(/:.*$/, "").trim())} FAQ</h2>
+${g.faq.map(function (q) {
+        return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+    }).join("\n")}
+
+        ${related.length ? `<h2>More CS2 guides</h2>
+        <ul class="related">${related.map(function (r) { return `<li><a href="${r.slug}.html">${esc(r.title)}</a></li>`; }).join("")}</ul>` : ""}
+        <p><a href="./">All CS2 guides ›</a></p>
+    </main>
+
+    ${footer("../")}
+    <script type="module">
+        ${GUIDE_COPY_SCRIPT}${hasCalc ? CALC_SCRIPT : ""}
+    </script>
+</body>
+</html>
+`);
+        });
+
+        // La page d'accueil des guides
+        const hubDescription = "Practical CS2 guides for every player: best settings, launch options, stretched resolution, sensitivity, FPS boost, crosshairs and aim training.";
+        const categories = [...new Set(guideData.guides.map(function (g) { return g.category; }))];
+        fs.writeFileSync("guides/index.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: "CS2 Guides: Settings, Aim &amp; Crosshair (2026) | ClutchCrosshair",
+        ogTitle: "CS2 Guides",
+        description: hubDescription,
+        url: guidesUrl,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": guidesUrl,
+                "url": guidesUrl,
+                "name": "CS2 Guides",
+                "description": hubDescription,
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": guidesUrl + "#breadcrumb" },
+                "dateModified": isoDate(guideData.updated),
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": guideData.guides.map(function (g, i) {
+                        return { "@type": "ListItem", "position": i + 1, "name": g.title, "url": guidesUrl + g.slug + ".html" };
+                    })
+                }
+            },
+            guideBreadcrumb(null, null)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "guides")}
+
+    <main class="player-page guide-hub">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Guides</span></nav>
+        <h1>CS2 Guides</h1>
+        <p>Clear, practical guides to set up CS2 and play better: the settings that matter, the myths to forget, and what the pros really use. Updated ${esc(guideData.updated)}.</p>
+${categories.map(function (cat) {
+        return `        <section aria-labelledby="cat-${slug(cat)}">
+            <h2 id="cat-${slug(cat)}">${esc(cat)}</h2>
+            <div class="guide-cards">
+            ${guideData.guides.filter(function (g) { return g.category === cat; }).map(function (g) {
+                return `<a class="guide-card" href="${g.slug}.html"><span class="guide-card-title">${esc(g.title)}</span><span class="guide-card-desc">${esc(g.description)}</span></a>`;
+            }).join("\n            ")}
+            </div>
+        </section>`;
+    }).join("\n")}
+        <h2>More tools</h2>
+        <ul class="related">
+            <li><a href="../commands/">CS2 console commands</a></li>
+            <li><a href="../generator.html">CS2 crosshair generator</a></li>
+            <li><a href="../">CS2 pro crosshairs</a></li>
+        </ul>
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+        guideFiles.push("index.html");
+        fs.readdirSync("guides").forEach(function (f) {
+            if (f.endsWith(".html") && !guideFiles.includes(f)) {
+                fs.unlinkSync("guides/" + f);
+            }
+        });
+        console.log((guideFiles.length - 1) + " guides + guides/index.html");
+    }
+
+    // ===== 3 sexies. Les outils : tools/index.html + tools/bind-generator.html (données : binds.json) =====
+    const bindData = fs.existsSync("binds.json") ? JSON.parse(fs.readFileSync("binds.json", "utf8")) : null;
+    const toolsUrl = `${SITE_URL}/tools/`;
+    const bindUrl = toolsUrl + "bind-generator.html";
+    if (bindData) {
+        if (!fs.existsSync("tools")) {
+            fs.mkdirSync("tools");
+        }
+        const bq = function (key, cmd) { return `bind "${key}" "${cmd}"`; };
+        const bindFaq = [
+            ["How do I make a bind in CS2?", "Open the console (~) and type bind followed by the key and the command between quotes, for example bind \"kp_end\" \"buy ak47; buy m4a1\". The ClutchCrosshair bind generator writes the line for you."],
+            ["Do buy binds still work in CS2?", "Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped."],
+            ["How do I remove a bind in CS2?", "Type unbind followed by the key in the console, for example unbind kp_end."],
+            ["How do I save my CS2 binds?", "Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."],
+            ["What is a jump throw bind?", "A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."]
+        ];
+        const bindDescription = "Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.";
+        const allBuy = bindData.buy.flatMap(function (g) { return g[1]; });
+        const bindGraph = [
+            {
+                "@type": "WebPage",
+                "@id": bindUrl,
+                "url": bindUrl,
+                "name": "CS2 Bind Generator",
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": bindUrl + "#breadcrumb" },
+                "mainEntity": { "@id": bindUrl + "#app" },
+                "dateModified": isoDate(bindData.updated)
+            },
+            {
+                "@type": "WebApplication",
+                "@id": bindUrl + "#app",
+                "name": "CS2 Bind Generator",
+                "url": bindUrl,
+                "description": bindDescription,
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Any",
+                "browserRequirements": "Requires JavaScript",
+                "isAccessibleForFree": true,
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@id": SITE_URL + "/#organization" }
+            },
+            toolsBreadcrumb("CS2 bind generator", bindUrl),
+            {
+                "@type": "FAQPage",
+                "@id": bindUrl + "#faq",
+                "mainEntity": bindFaq.map(function (q) {
+                    return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+                })
+            }
+        ];
+        const options = function (list) {
+            return list.map(function (o) { return `<option value="${esc(o[o.length === 3 ? 2 : 0])}">${esc(o[1])}</option>`; }).join("");
+        };
+        const copyRowHtml = function (command) {
+            return `<div class="field-row"><code>${esc(command)}</code><button type="button" class="mini" data-copy>Copy</button></div>`;
+        };
+
+        fs.writeFileSync("tools/bind-generator.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({ title: "CS2 Bind Generator: Buy Binds &amp; Jump Throw | ClutchCrosshair", ogTitle: "CS2 Bind Generator", description: bindDescription, url: bindUrl, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": bindGraph } })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "tools")}
+
+    <main class="player-page bind-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Tools</a> › <span>Bind generator</span></nav>
+        <h1>CS2 Bind Generator</h1>
+        <p>Create CS2 binds in a few clicks: choose a key, choose what it does (buy your weapons, jump throw, toggle the radar zoom...), then copy the command or download a ready-made autoexec.cfg. Free, no sign-up.</p>
+
+        <div class="bind" id="bind-tool">
+            <div class="bind-controls">
+                <fieldset class="gen-group">
+                    <legend>1. Choose a key</legend>
+                    <div class="bind-key">
+                        <select id="bind-key" aria-label="Key">
+                            ${bindData.keys.map(function (g) {
+                                return `<optgroup label="${esc(g[0])}">${g[1].map(function (k) { return `<option value="${esc(k[0])}">${esc(k[1])}</option>`; }).join("")}</optgroup>`;
+                            }).join("")}
+                        </select>
+                        <button type="button" class="bind-capture" id="bind-capture">Press a key…</button>
+                    </div>
+                    <p class="gen-status" id="bind-key-status" aria-live="polite"></p>
+                </fieldset>
+
+                <fieldset class="gen-group">
+                    <legend>2. Choose an action</legend>
+                    <div class="bind-actions" role="group" aria-label="Action">
+                        <button type="button" data-action="buy" aria-pressed="true">Buy</button>
+                        <button type="button" data-action="jumpthrow" aria-pressed="false">Jump throw</button>
+                        <button type="button" data-action="toggle" aria-pressed="false">Toggle</button>
+                        <button type="button" data-action="volume" aria-pressed="false">Volume</button>
+                        <button type="button" data-action="grenade" aria-pressed="false">Grenade</button>
+                        <button type="button" data-action="other" aria-pressed="false">Other</button>
+                        <button type="button" data-action="custom" aria-pressed="false">Custom</button>
+                    </div>
+
+                    <div class="bind-panel" data-panel="buy">
+                        ${bindData.buy.map(function (g) {
+                            return `<div class="bind-buy-group"><p class="gen-label">${esc(g[0])}</p><div class="bind-checks">${g[1].map(function (it) {
+                                return `<label class="gen-toggle"><input type="checkbox" value="${esc(it[0])}" data-buy><span>${esc(it[1])}</span></label>`;
+                            }).join("")}</div></div>`;
+                        }).join("\n                        ")}
+                    </div>
+                    <div class="bind-panel hidden" data-panel="jumpthrow">
+                        <p class="gen-hint">Hold your grenade with the attack button pressed, then press this key: you jump and throw at the same moment, for perfectly repeatable lineups.</p>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="toggle">
+                        <label class="gen-label" for="bind-toggle">Setting to switch</label>
+                        <select id="bind-toggle">${options(bindData.toggles)}</select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="volume">
+                        <label class="gen-label" for="bind-volume">Direction</label>
+                        <select id="bind-volume">${options(bindData.volume)}</select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="grenade">
+                        <label class="gen-label" for="bind-grenade">Grenade to select</label>
+                        <select id="bind-grenade">${options(bindData.grenades)}</select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="other">
+                        <label class="gen-label" for="bind-other">Action</label>
+                        <select id="bind-other">${options(bindData.other)}</select>
+                    </div>
+                    <div class="bind-panel hidden" data-panel="custom">
+                        <label class="gen-label" for="bind-custom">Any console command (separate several with ;)</label>
+                        <input type="text" id="bind-custom" placeholder="e.g. say gg; disconnect" autocomplete="off" spellcheck="false">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="bind-result">
+                <div class="bind-now">
+                    <div class="field-label">Your bind <span><i class="sep">· </i>Paste it in the CS2 console (~)</span></div>
+                    <div class="code-block"><pre><code id="bind-output">${esc(bq("kp_end", "buy ak47"))}</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
+                    <button type="button" class="bind-add" id="bind-add">Add to my binds</button>
+                </div>
+
+                <div class="bind-mine">
+                    <div class="field-label">My binds <span id="bind-count"></span></div>
+                    <ul class="bind-list" id="bind-list"></ul>
+                    <p class="gen-hint" id="bind-empty">Your binds will appear here. Add as many as you want, then copy them all or download your autoexec.cfg.</p>
+                    <div class="bind-buttons">
+                        <button type="button" class="mini" id="bind-copy-all">Copy all</button>
+                        <button type="button" class="mini btn-secondary" id="bind-download">Download autoexec.cfg</button>
+                        <button type="button" class="mini btn-secondary" id="bind-clear">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the bind generator.</p></noscript>
+        </div>
+
+        <h2>How to use your CS2 binds</h2>
+        <ol>
+            <li>Build your bind above, then click <strong>Copy</strong>.</li>
+            <li>In CS2, open the console with <strong>~</strong> (enable it in Settings › Game if needed), paste and press <strong>Enter</strong>.</li>
+            <li>To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href="../guides/cs2-launch-options.html">launch options</a>.</li>
+        </ol>
+
+        <h2>Popular CS2 binds</h2>
+        <p>Ready-to-copy binds most players use. Change the key name if you want another key.</p>
+        ${bindData.presets.map(function (p) {
+            return `<h3>${esc(p[0])}</h3>
+        ${copyRowHtml(bq(p[1], p[2]))}`;
+        }).join("\n        ")}
+
+        <h2>CS2 jump throw bind</h2>
+        <p>A jump throw bind makes you jump and release the grenade at the exact same moment, so your smokes and flashes land in the same place every time. Paste these three lines (change the key in the last line):</p>
+        <div class="code-block"><pre><code>alias "+jumpthrow" "+jump;-attack;-attack2"
+alias "-jumpthrow" "-jump"
+bind "v" "+jumpthrow"</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
+
+        <h2>CS2 buy commands list</h2>
+        <p>Every buy command works in a bind, alone or several at once separated by <code>;</code>. Buy commands give you the weapon equipped in that slot of your loadout.</p>
+        <div class="table-wrap"><table class="cmd-values">
+            <thead><tr><th scope="col">Item</th><th scope="col">Buy command</th></tr></thead>
+            <tbody>${allBuy.map(function (it) { return `<tr><td>${esc(it[1])}</td><td><code>buy ${esc(it[0])}</code></td></tr>`; }).join("")}</tbody>
+        </table></div>
+
+        <h2>CS2 bind generator FAQ</h2>
+${bindFaq.map(function (q) {
+        return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+    }).join("\n")}
+
+        <h2>Related</h2>
+        <ul class="related">
+            <li><a href="../commands/bind.html">bind command</a></li>
+            <li><a href="../commands/alias.html">alias command</a></li>
+            <li><a href="../commands/exec.html">exec command</a></li>
+            <li><a href="../generator.html">CS2 crosshair generator</a></li>
+            <li><a href="../guides/cs2-launch-options.html">CS2 launch options</a></li>
+        </ul>
+    </main>
+
+    ${footer("../")}
+    <script type="application/json" id="bind-data">${JSON.stringify({ toggles: bindData.toggles, volume: bindData.volume, grenades: bindData.grenades, other: bindData.other }).replace(/</g, "\\u003c")}</script>
+    <script type="module">
+        import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+
+        // Boutons Copy (lignes simples et blocs de plusieurs lignes)
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row, .code-block").querySelector("code").textContent, button);
+            }
+        });
+
+        const $ = function (id) { return document.getElementById(id); };
+        const keySelect = $("bind-key");
+        const output = $("bind-output");
+        let action = "buy";
+
+        // Le texte du bind selon la touche et l'action choisies
+        function lines() {
+            const key = keySelect.value;
+            const bind = function (cmd) { return ["bind \\"" + key + "\\" \\"" + cmd + "\\""]; };
+            if (action === "buy") {
+                const items = Array.from(document.querySelectorAll("[data-buy]:checked")).map(function (c) { return "buy " + c.value; });
+                return items.length ? bind(items.join("; ")) : [];
+            }
+            if (action === "jumpthrow") {
+                return ["alias \\"+jumpthrow\\" \\"+jump;-attack;-attack2\\"", "alias \\"-jumpthrow\\" \\"-jump\\"", "bind \\"" + key + "\\" \\"+jumpthrow\\""];
+            }
+            if (action === "custom") {
+                const cmd = $("bind-custom").value.replace(/"/g, "").trim();
+                return cmd ? bind(cmd) : [];
+            }
+            return bind($("bind-" + action).value);
+        }
+
+        function render() {
+            const l = lines();
+            output.textContent = l.length ? l.join("\\n") : (action === "buy" ? "Tick what to buy" : "Type a command");
+            $("bind-add").disabled = !l.length;
+        }
+
+        // Choix de l'action
+        document.querySelectorAll("[data-action]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                action = button.dataset.action;
+                document.querySelectorAll("[data-action]").forEach(function (b) { b.setAttribute("aria-pressed", b === button ? "true" : "false"); });
+                document.querySelectorAll("[data-panel]").forEach(function (p) { p.classList.toggle("hidden", p.dataset.panel !== action); });
+                render();
+            });
+        });
+        document.getElementById("bind-tool").addEventListener("input", render);
+        document.getElementById("bind-tool").addEventListener("change", render);
+
+        // "Press a key" : on lit la prochaine touche (ou bouton de souris) et on la traduit en nom CS2
+        const CODES = { Space: "space", Tab: "tab", CapsLock: "capslock", ShiftLeft: "shift", ShiftRight: "rshift", ControlLeft: "ctrl", ControlRight: "rctrl", AltLeft: "alt", AltRight: "ralt",
+            Insert: "ins", Delete: "del", Home: "home", End: "end", PageUp: "pgup", PageDown: "pgdn", ArrowUp: "uparrow", ArrowDown: "downarrow", ArrowLeft: "leftarrow", ArrowRight: "rightarrow",
+            Numpad0: "kp_ins", Numpad1: "kp_end", Numpad2: "kp_downarrow", Numpad3: "kp_pgdn", Numpad4: "kp_leftarrow", Numpad5: "kp_5", Numpad6: "kp_rightarrow", Numpad7: "kp_home",
+            Numpad8: "kp_uparrow", Numpad9: "kp_pgup", NumpadDecimal: "kp_del", NumpadDivide: "kp_slash", NumpadMultiply: "kp_multiply", NumpadSubtract: "kp_minus", NumpadAdd: "kp_plus", NumpadEnter: "kp_enter",
+            Backquote: "\`", Minus: "-", Equal: "=", BracketLeft: "[", BracketRight: "]", Semicolon: "semicolon", Quote: "'", Comma: ",", Period: ".", Slash: "/", Backslash: "\\\\", Enter: "enter", Backspace: "backspace" };
+        const DEFAULT_KEYS = ["w", "a", "s", "d", "space", "ctrl", "shift", "e", "r", "q", "b", "tab", "mouse1", "mouse2", "1", "2", "3", "4", "5"];
+        const status = $("bind-key-status");
+        const capture = $("bind-capture");
+        let listening = false;
+
+        function setKey(name, label) {
+            let option = Array.from(keySelect.options).find(function (o) { return o.value === name; });
+            if (!option) {
+                option = new Option(label || name.toUpperCase(), name);
+                keySelect.add(option);
+            }
+            keySelect.value = name;
+            status.textContent = DEFAULT_KEYS.includes(name) ? "Careful: " + name + " already has an important default action in CS2." : "Key set: " + name;
+            status.classList.toggle("gen-status-error", DEFAULT_KEYS.includes(name));
+            render();
+        }
+
+        function stopListening() {
+            listening = false;
+            capture.textContent = "Press a key…";
+            capture.setAttribute("aria-pressed", "false");
+        }
+
+        capture.addEventListener("click", function () {
+            listening = true;
+            capture.textContent = "Waiting for a key…";
+            capture.setAttribute("aria-pressed", "true");
+            status.textContent = "Press the key you want to use (Escape to cancel).";
+            status.classList.remove("gen-status-error");
+        });
+        document.addEventListener("keydown", function (event) {
+            if (!listening) {
+                return;
+            }
+            event.preventDefault();
+            stopListening();
+            if (event.code === "Escape") {
+                status.textContent = "";
+                return;
+            }
+            let name = CODES[event.code];
+            if (!name && /^Key[A-Z]$/.test(event.code)) {
+                name = event.code.slice(3).toLowerCase();
+            } else if (!name && /^Digit\\d$/.test(event.code)) {
+                name = event.code.slice(5);
+            } else if (!name && /^F\\d{1,2}$/.test(event.code)) {
+                name = event.code.toLowerCase();
+            }
+            if (name) {
+                setKey(name);
+            } else {
+                status.textContent = "This key is not supported, choose one in the list.";
+            }
+        });
+        document.addEventListener("mousedown", function (event) {
+            const mouse = { 1: "mouse3", 3: "mouse4", 4: "mouse5" }[event.button];
+            if (listening && mouse && event.target !== capture) {
+                event.preventDefault();
+                stopListening();
+                setKey(mouse);
+            }
+        });
+
+        // Ma liste de binds (gardée dans ce navigateur)
+        let mine = [];
+        try { mine = JSON.parse(localStorage.getItem("cc-binds") || "[]"); } catch (error) { mine = []; }
+        function save() {
+            try { localStorage.setItem("cc-binds", JSON.stringify(mine)); } catch (error) {}
+        }
+        function allText() {
+            const out = [];
+            mine.forEach(function (b) { b.lines.forEach(function (l) { if (!out.includes(l)) { out.push(l); } }); });
+            return out.join("\\n");
+        }
+        function renderList() {
+            const list = $("bind-list");
+            list.textContent = "";
+            mine.forEach(function (b, i) {
+                const li = document.createElement("li");
+                const code = document.createElement("code");
+                code.textContent = b.lines[b.lines.length - 1];
+                const remove = document.createElement("button");
+                remove.type = "button";
+                remove.className = "bind-remove";
+                remove.textContent = "Remove";
+                remove.setAttribute("aria-label", "Remove the bind on " + b.key);
+                remove.addEventListener("click", function () {
+                    mine.splice(i, 1);
+                    save();
+                    renderList();
+                });
+                li.append(code, remove);
+                list.appendChild(li);
+            });
+            $("bind-empty").classList.toggle("hidden", mine.length > 0);
+            $("bind-count").textContent = mine.length ? "· " + mine.length : "";
+            ["bind-copy-all", "bind-download", "bind-clear"].forEach(function (id) { $(id).disabled = !mine.length; });
+        }
+        $("bind-add").addEventListener("click", function () {
+            const l = lines();
+            if (!l.length) {
+                return;
+            }
+            // Une seule action par touche : un nouveau bind sur la même touche remplace l'ancien
+            mine = mine.filter(function (b) { return b.key !== keySelect.value; });
+            mine.push({ key: keySelect.value, lines: l });
+            save();
+            renderList();
+        });
+        $("bind-copy-all").addEventListener("click", function (event) {
+            copyText(allText(), event.currentTarget);
+        });
+        $("bind-download").addEventListener("click", function () {
+            const text = "// CS2 binds made with ClutchCrosshair bind generator\\n" + allText() + "\\n";
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
+            link.download = "autoexec.cfg";
+            document.body.appendChild(link);
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(link.href); link.remove(); }, 1000);
+        });
+        $("bind-clear").addEventListener("click", function () {
+            mine = [];
+            save();
+            renderList();
+        });
+
+        // Départ : AK-47 coché pour montrer un exemple
+        const ak = document.querySelector("[data-buy][value=ak47]");
+        if (ak && !document.querySelector("[data-buy]:checked")) {
+            ak.checked = true;
+        }
+        render();
+        renderList();
+    </script>
+</body>
+</html>
+`);
+
+        // La page d'accueil des outils
+        const toolsDescription = "Free CS2 tools: a crosshair generator with real-size preview and a bind generator for buy binds, jump throw and more.";
+        fs.writeFileSync("tools/index.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: "Free CS2 Tools: Crosshair &amp; Bind Generator | ClutchCrosshair",
+        ogTitle: "CS2 Tools",
+        description: toolsDescription,
+        url: toolsUrl,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": toolsUrl,
+                "url": toolsUrl,
+                "name": "CS2 Tools",
+                "description": toolsDescription,
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": toolsUrl + "#breadcrumb" },
+                "mainEntity": { "@type": "ItemList", "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "CS2 Crosshair Generator", "url": `${SITE_URL}/generator.html` },
+                    { "@type": "ListItem", "position": 2, "name": "CS2 Bind Generator", "url": bindUrl }
+                ] }
+            },
+            toolsBreadcrumb(null, null)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "tools")}
+
+    <main class="player-page guide-hub">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Tools</span></nav>
+        <h1>CS2 Tools</h1>
+        <p>Free tools to set up CS2 faster. Everything runs in your browser, with no sign-up.</p>
+        <div class="guide-cards">
+            <a class="guide-card" href="../generator.html"><span class="guide-card-title">CS2 Crosshair Generator</span><span class="guide-card-desc">Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.</span></a>
+            <a class="guide-card" href="bind-generator.html"><span class="guide-card-title">CS2 Bind Generator</span><span class="guide-card-desc">Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.</span></a>
+        </div>
+        <h2>More resources</h2>
+        <ul class="related">
+            <li><a href="../commands/">CS2 console commands</a></li>
+            <li><a href="../guides/">CS2 guides</a></li>
+            <li><a href="../">CS2 pro crosshairs</a></li>
+        </ul>
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+        console.log("tools/index.html + tools/bind-generator.html");
+    }
+
     // ===== 4. legal.html : mentions légales (obligatoires en France) =====
     fs.writeFileSync("legal.html", `<!DOCTYPE html>
 <html lang="en">
@@ -1173,7 +2367,7 @@ ${skinPlayers.map(function (p) {
     ${THEME_SCRIPT}
     ${pageTop("./")}
     <main class="player-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">CS2 Crosshairs</a> › <span>Legal notice</span></nav>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>Legal notice</span></nav>
         <h1>Legal notice</h1>
 
         <h2>Publisher</h2>
@@ -1186,7 +2380,7 @@ ${skinPlayers.map(function (p) {
 
         <h2>Intellectual property</h2>
         <p>Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>
-        <p>Crosshair codes are game settings read from public match demos. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
+        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
 
         <h2>Privacy</h2>
         <p>ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode choice is only stored in your own browser (localStorage). Everything, fonts included, is served from this site: your browser does not contact any third-party server.</p>
@@ -1194,7 +2388,7 @@ ${skinPlayers.map(function (p) {
         <h2>Mentions légales (français)</h2>
         <p>Éditeur et directeur de la publication : ${esc(PUBLISHER_NAME)}, particulier (France). Contact : ${esc(PUBLISHER_EMAIL)}.<br>
         Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
-        Counter-Strike et CS2 sont des marques de Valve Corporation. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
+        Counter-Strike et CS2 sont des marques de Valve Corporation ; les noms et images des skins appartiennent à Valve, les inventaires viennent de Steam et les prix de CSFloat. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
     </main>
     ${footer("")}
 </body>
@@ -1204,6 +2398,20 @@ ${skinPlayers.map(function (p) {
     // ===== 5. Le sitemap : toutes les pages, leur date de mise à jour et la photo des joueurs (Google Images) =====
     let urls = `    <url><loc>${SITE_URL}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     urls += `    <url><loc>${genUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
+    if (bindData) {
+        urls += `    <url><loc>${toolsUrl}</loc><lastmod>${isoDate(bindData.updated)}</lastmod></url>\n`;
+        urls += `    <url><loc>${bindUrl}</loc><lastmod>${isoDate(bindData.updated)}</lastmod></url>\n`;
+    }
+    if (guideData) {
+        guideFiles.forEach(function (f) {
+            urls += `    <url><loc>${guidesUrl}${f === "index.html" ? "" : f}</loc><lastmod>${isoDate(guideData.updated)}</lastmod></url>\n`;
+        });
+    }
+    if (commandData) {
+        commandFiles.forEach(function (f) {
+            urls += `    <url><loc>${commandsUrl}${f === "index.html" ? "" : f}</loc><lastmod>${isoDate(commandData.updated)}</lastmod></url>\n`;
+        });
+    }
     urls += `    <url><loc>${faqUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     if (skinPlayers.length) {
         urls += `    <url><loc>${skinsUrl}</loc>${isoDate(skinData.updated) ? `<lastmod>${isoDate(skinData.updated)}</lastmod>` : ""}</url>\n`;
