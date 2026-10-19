@@ -2,7 +2,7 @@
 // Tout le contenu (cartes, menu des équipes, onglet Trending, compteurs) est déjà écrit dans index.html par build.js :
 // ce fichier ajoute seulement les interactions. Rien de plus à télécharger (pas de players.json).
 // crosshair.js : l'aperçu du crosshair + le bouton Copy (partagé avec les pages joueurs)
-import { copyText, drawCrosshair } from "./crosshair.js?v=35c7499c7d";
+import { copyText, drawCrosshair } from "./crosshair.js?v=66de5554f9";
 
 const layout = document.querySelector(".layout");
 const main = document.getElementById("main");
@@ -140,6 +140,8 @@ function showTab(name) {
         tab.setAttribute("aria-selected", active ? "true" : "false");
         tab.tabIndex = active ? 0 : -1;
     });
+    // Le tri ne sert qu'aux listes de joueurs (Pros, Creators) : caché ailleurs
+    sortSelect.closest(".sort").classList.toggle("hidden", name !== "home" && name !== "creators");
     if (name === "generator") {
         loadGenerator();
     }
@@ -150,7 +152,7 @@ let generatorLoading = null;
 
 function loadGenerator() {
     if (!generatorLoading) {
-        generatorLoading = import("./generator.js?v=4372d1c5c7").then(function (module) {
+        generatorLoading = import("./generator.js?v=0c7aae34e4").then(function (module) {
             module.initGenerator(document.getElementById("gen"));
         }).catch(function () {
             generatorLoading = null; // connexion coupée : on réessaiera au prochain clic

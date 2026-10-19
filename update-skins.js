@@ -142,12 +142,17 @@ function readSkins(inventory) {
 
 // Prix : la liste de prix de CSFloat (UNE seule demande pour tous les objets CS2 : prix le plus bas en vente)
 // La clé API est dans csfloat-key.txt (fichier secret, jamais envoyé sur GitHub)
+// Sur GitHub (mise à jour automatique), la clé vient du coffre-fort de GitHub (secret CSFLOAT_KEY)
 async function fetchPrices() {
-    if (!fs.existsSync("csfloat-key.txt")) {
-        console.log("Pas de clé CSFloat (csfloat-key.txt) : prix non mis à jour");
+    let key = process.env.CSFLOAT_KEY || "";
+    if (!key && fs.existsSync("csfloat-key.txt")) {
+        key = fs.readFileSync("csfloat-key.txt", "utf8");
+    }
+    key = key.trim();
+    if (!key) {
+        console.log("Pas de clé CSFloat (csfloat-key.txt ou secret CSFLOAT_KEY) : prix non mis à jour");
         return null;
     }
-    const key = fs.readFileSync("csfloat-key.txt", "utf8").trim();
     const response = await fetch("https://csfloat.com/api/v1/listings/price-list", { headers: { Authorization: key } });
     if (!response.ok) {
         throw new Error("CSFloat a répondu " + response.status);
@@ -176,7 +181,8 @@ async function downloadImages(items) {
     const missing = [];
     const seen = new Set();
     items.forEach(function (item) {
-        if (!seen.has(item.image) && !fs.existsSync("skins/src/" + item.image + ".png")) {
+        // On ne télécharge que les images vraiment nouvelles (ni l'originale ni la version du site n'existent)
+        if (!seen.has(item.image) && !fs.existsSync("skins/src/" + item.image + ".png") && !fs.existsSync("skins/img/" + item.image + ".webp")) {
             seen.add(item.image);
             missing.push(item);
         }
@@ -214,7 +220,12 @@ async function main() {
         }
         try {
             const inventory = await fetchInventory(steamid);
-            if (!inventory) {
+            if (!inventory && old && old.status === "public" && old.items.length) {
+                // Inventaire public hier, refusé aujourd'hui : souvent Steam qui bloque un moment (surtout depuis GitHub).
+                // Par sécurité on garde les données d'hier (sinon sa page serait supprimée)
+                console.log(entry.name + " : accès refusé par Steam, données d'hier gardées (vérifier s'il est passé en privé)");
+                Object.assign(player, old);
+            } else if (!inventory) {
                 player.status = "private";
                 console.log(entry.name + " : INVENTAIRE PRIVÉ (à remplacer par un autre joueur)");
             } else {

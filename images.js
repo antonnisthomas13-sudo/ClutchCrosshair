@@ -35,8 +35,13 @@ function findChrome() {
 }
 
 // true si "out" n'existe pas ou est plus ancien que "src"
+// Sur GitHub (mise à jour automatique, variable CI) les dates des fichiers ne veulent rien dire :
+// on ne fabrique alors que les images qui manquent
 function isStale(src, out) {
-    return !fs.existsSync(out) || fs.statSync(out).mtimeMs < fs.statSync(src).mtimeMs;
+    if (!fs.existsSync(out)) {
+        return true;
+    }
+    return !process.env.CI && fs.statSync(out).mtimeMs < fs.statSync(src).mtimeMs;
 }
 
 function mimeOf(file) {
@@ -135,8 +140,11 @@ html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; backgrou
 h1 { margin: 40px 0 20px; font: 700 96px/0.95 "Barlow Condensed", sans-serif; letter-spacing: 0.005em; }
 p { margin: 0; font-size: 27px; line-height: 1.4; color: #9DA2AA; }
 .shot { position: absolute; right: 0; top: 0; width: 520px; height: 630px; overflow: hidden; background: #08090A; }
-.shot img { position: absolute; height: 820px; left: -300px; top: -120px; filter: brightness(0.55) saturate(0.8); }
-.halo { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.65), rgba(0,0,0,0) 55%); }
+/* Capture Dust2 (1920×1080) : la tête du terroriste (pixel 943, 517) au centre du panneau */
+.shot img { position: absolute; height: 820px; left: -456px; top: -77px; filter: brightness(0.85); }
+.halo { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.35), rgba(0,0,0,0) 45%); }
+.tags { margin-top: 28px; font-size: 22px; font-weight: 600; color: #ECEDEF; letter-spacing: 0.02em; }
+.tags b { color: #D7262F; padding: 0 8px; }
 .chip { position: absolute; top: 28px; left: 28px; padding: 6px 12px; background: rgba(8,9,10,0.8); color: #C9CCD1; font-size: 17px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 .x { position: absolute; left: 50%; top: 50%; }
 .x i { position: absolute; background: #00FF91; }
@@ -146,6 +154,7 @@ p { margin: 0; font-size: 27px; line-height: 1.4; color: #9DA2AA; }
     <img class="logo" src="${dataUrl("logo-horizontal-dark.svg")}" alt="">
     <h1>Find your perfect CS2 crosshair</h1>
     <p>Pro player crosshair codes, read from official match demos. One click to copy.</p>
+    <p class="tags">Pro crosshairs<b>/</b>Generator<b>/</b>Pro skins</p>
 </div>
 <div class="shot">
     <img src="${dataUrl("preview-bg.jpg")}" alt="">
@@ -189,6 +198,8 @@ function optimizeImages() {
         }
     });
     add({ src: "preview-bg.jpg", out: "preview-bg.webp", w: 1920, h: 1080, fit: "cover", position: "center", type: "image/webp", quality: 0.9 });
+    // Version légère pour les petites cartes (assombries) de l'accueil : ~3× plus légère
+    add({ src: "preview-bg.jpg", out: "preview-bg-sm.webp", w: 1440, h: 810, fit: "cover", position: "center", type: "image/webp", quality: 0.72 });
     // Images des skins (téléchargées par update-skins.js dans skins/src/) -> skins/img/<id>.webp, fond transparent
     if (fs.existsSync("skins/src")) {
         fs.readdirSync("skins/src").forEach(function (f) {

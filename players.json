@@ -6,7 +6,8 @@
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
         "updated": "17/10/2026",
         "trending": true,
-        "steamid": "76561198386265483"
+        "steamid": "76561198386265483",
+        "liquipedia": "Donk"
     },
     {
         "name": "ZywOo",
@@ -15,7 +16,8 @@
         "code": "CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H",
         "updated": "17/10/2026",
         "trending": true,
-        "steamid": "76561198113666193"
+        "steamid": "76561198113666193",
+        "liquipedia": "ZywOo"
     },
     {
         "name": "m0NESY",
@@ -24,13 +26,13 @@
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "17/10/2026",
         "trending": false,
-        "steamid": "76561198074762801"
+        "steamid": "76561198074762801",
+        "liquipedia": "M0NESY"
     },
     {
         "name": "Maj3r",
         "team": "Creator",
         "category": "creator",
-        "country": "tr",
         "code": "CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD",
         "updated": "08/10/2026",
         "trending": true
@@ -42,7 +44,8 @@
         "category": "pro",
         "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Mezii"
     },
     {
         "name": "flameZ",
@@ -51,7 +54,8 @@
         "category": "pro",
         "code": "CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "FlameZ"
     },
     {
         "name": "apEX",
@@ -60,7 +64,8 @@
         "category": "pro",
         "code": "CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "ApEX"
     },
     {
         "name": "ropz",
@@ -69,7 +74,8 @@
         "category": "pro",
         "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Ropz"
     },
     {
         "name": "Spinx",
@@ -78,7 +84,8 @@
         "category": "pro",
         "code": "CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Spinx"
     },
     {
         "name": "xertioN",
@@ -87,7 +94,8 @@
         "category": "pro",
         "code": "CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "XertioN"
     },
     {
         "name": "PR",
@@ -96,7 +104,8 @@
         "category": "pro",
         "code": "CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "PR"
     },
     {
         "name": "torzsi",
@@ -105,7 +114,8 @@
         "category": "pro",
         "code": "CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Torzsi"
     },
     {
         "name": "xelex",
@@ -114,7 +124,8 @@
         "category": "pro",
         "code": "CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Xelex"
     },
     {
         "name": "XANTARES",
@@ -123,7 +134,8 @@
         "category": "pro",
         "code": "CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "XANTARES"
     },
     {
         "name": "kyxsan",
@@ -132,7 +144,8 @@
         "category": "pro",
         "code": "CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Kyxsan"
     },
     {
         "name": "sh1ro",
@@ -141,7 +154,8 @@
         "category": "pro",
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Sh1ro"
     },
     {
         "name": "woxic",
@@ -150,7 +164,8 @@
         "category": "pro",
         "code": "CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Woxic"
     },
     {
         "name": "Wicadia",
@@ -159,7 +174,8 @@
         "category": "pro",
         "code": "CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Wicadia"
     },
     {
         "name": "Jimpphat",
@@ -168,7 +184,8 @@
         "category": "pro",
         "code": "CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Jimpphat"
     },
     {
         "name": "tN1R",
@@ -177,7 +194,8 @@
         "category": "pro",
         "code": "CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "TN1R"
     },
     {
         "name": "zont1x",
@@ -186,7 +204,8 @@
         "category": "pro",
         "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Zont1x"
     },
     {
         "name": "magixx",
@@ -195,7 +214,8 @@
         "category": "pro",
         "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Magixx"
     },
     {
         "name": "FalleN",
@@ -204,7 +224,8 @@
         "category": "pro",
         "code": "CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "FalleN"
     },
     {
         "name": "KSCERATO",
@@ -213,7 +234,8 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "KSCERATO"
     },
     {
         "name": "YEKINDAR",
@@ -222,7 +244,8 @@
         "category": "pro",
         "code": "CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "YEKINDAR"
     },
     {
         "name": "yuurih",
@@ -231,7 +254,8 @@
         "category": "pro",
         "code": "CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Yuurih"
     },
     {
         "name": "molodoy",
@@ -240,7 +264,8 @@
         "category": "pro",
         "code": "CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Molodoy"
     },
     {
         "name": "karrigan",
@@ -249,7 +274,8 @@
         "category": "pro",
         "code": "CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Karrigan"
     },
     {
         "name": "TeSeS",
@@ -258,7 +284,8 @@
         "category": "pro",
         "code": "CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "TeSeS"
     },
     {
         "name": "NiKo",
@@ -267,7 +294,8 @@
         "category": "pro",
         "code": "CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "NiKo"
     },
     {
         "name": "zorte",
@@ -276,7 +304,8 @@
         "category": "pro",
         "code": "CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Zorte"
     },
     {
         "name": "Boombl4",
@@ -285,7 +314,8 @@
         "category": "pro",
         "code": "CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Boombl4"
     },
     {
         "name": "S1ren",
@@ -294,7 +324,8 @@
         "category": "pro",
         "code": "CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "S1ren"
     },
     {
         "name": "Magnojez",
@@ -303,7 +334,8 @@
         "category": "pro",
         "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Magnojez"
     },
     {
         "name": "d1Ledez",
@@ -312,7 +344,8 @@
         "category": "pro",
         "code": "CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "D1Ledez"
     },
     {
         "name": "kyousuke",
@@ -321,7 +354,8 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "17/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Kyousuke"
     },
     {
         "name": "art",
@@ -330,7 +364,8 @@
         "category": "pro",
         "code": "CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "hltv": "https://www.hltv.org/player/12521/art"
     },
     {
         "name": "n1ssim",
@@ -339,7 +374,8 @@
         "category": "pro",
         "code": "CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "N1ssim"
     },
     {
         "name": "dumau",
@@ -348,7 +384,8 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Dumau"
     },
     {
         "name": "try",
@@ -357,7 +394,8 @@
         "category": "pro",
         "code": "CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Try"
     },
     {
         "name": "latto",
@@ -366,7 +404,8 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Latto"
     },
     {
         "name": "FL1T",
@@ -375,7 +414,8 @@
         "category": "pro",
         "code": "CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "FL1T"
     },
     {
         "name": "huNter-",
@@ -384,7 +424,8 @@
         "category": "pro",
         "code": "CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie",
         "updated": "06/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "HuNter-"
     },
     {
         "name": "Hobbit",
@@ -393,7 +434,8 @@
         "category": "pro",
         "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "HObbit"
     },
     {
         "name": "Jame",
@@ -402,7 +444,8 @@
         "category": "pro",
         "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Jame"
     },
     {
         "name": "NertZ",
@@ -411,7 +454,8 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "06/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "NertZ"
     },
     {
         "name": "HeavyGod",
@@ -420,7 +464,8 @@
         "category": "pro",
         "code": "CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA",
         "updated": "06/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "HeavyGod"
     },
     {
         "name": "xiELO",
@@ -429,7 +474,8 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "XiELO"
     },
     {
         "name": "zweih",
@@ -438,7 +484,8 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Zweih"
     },
     {
         "name": "r1nkle",
@@ -447,7 +494,8 @@
         "category": "pro",
         "code": "CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC",
         "updated": "06/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "R1nkle"
     },
     {
         "name": "MATYS",
@@ -465,7 +513,8 @@
         "category": "pro",
         "code": "CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Aleksib"
     },
     {
         "name": "iM",
@@ -474,7 +523,8 @@
         "category": "pro",
         "code": "CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "IM"
     },
     {
         "name": "b1t",
@@ -483,7 +533,8 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "B1t"
     },
     {
         "name": "w0nderful",
@@ -492,7 +543,8 @@
         "category": "pro",
         "code": "CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "W0nderful"
     },
     {
         "name": "makazze",
@@ -501,7 +553,8 @@
         "category": "pro",
         "code": "CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn",
         "updated": "07/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Makazze"
     },
     {
         "name": "JBOEN",
@@ -510,7 +563,8 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "10/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "JBOEN"
     },
     {
         "name": "Twistzz",
@@ -519,7 +573,8 @@
         "category": "pro",
         "code": "CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL",
         "updated": "10/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Twistzz"
     },
     {
         "name": "frozen",
@@ -528,7 +583,8 @@
         "category": "pro",
         "code": "CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG",
         "updated": "10/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Frozen"
     },
     {
         "name": "jcobbb",
@@ -537,7 +593,8 @@
         "category": "pro",
         "code": "CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS",
         "updated": "10/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Jcobbb"
     },
     {
         "name": "Neityu",
@@ -546,7 +603,8 @@
         "category": "pro",
         "code": "CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B",
         "updated": "10/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Neityu"
     },
     {
         "name": "Staehr",
@@ -555,7 +613,8 @@
         "category": "pro",
         "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Staehr"
     },
     {
         "name": "insani",
@@ -564,7 +623,8 @@
         "category": "pro",
         "code": "CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Insani"
     },
     {
         "name": "LNZ",
@@ -573,7 +633,8 @@
         "category": "pro",
         "code": "CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "LNZ"
     },
     {
         "name": "siuhy",
@@ -582,7 +643,8 @@
         "category": "pro",
         "code": "CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Siuhy"
     },
     {
         "name": "ryu",
@@ -600,7 +662,8 @@
         "category": "pro",
         "code": "CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Venomzera"
     },
     {
         "name": "nqz",
@@ -609,7 +672,8 @@
         "category": "pro",
         "code": "CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Nqz"
     },
     {
         "name": "phzy",
@@ -618,7 +682,8 @@
         "category": "pro",
         "code": "CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Phzy"
     },
     {
         "name": "tomaszin",
@@ -627,7 +692,8 @@
         "category": "pro",
         "code": "CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Tomaszin"
     },
     {
         "name": "cmtry",
@@ -636,6 +702,7 @@
         "category": "pro",
         "code": "CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM",
         "updated": "16/10/2026",
-        "trending": false
+        "trending": false,
+        "liquipedia": "Cmtry"
     }
 ]

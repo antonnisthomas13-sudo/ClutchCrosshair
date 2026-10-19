@@ -191,7 +191,7 @@ button {
     transition: background-color 0.18s var(--ease), color 0.18s var(--ease), transform 0.18s var(--ease);
 }
 
-/* Survol et appui : seulement les boutons d'action ambre (Copy) */
+/* Survol et appui : seulement les boutons d'action rouges (Copy) */
 .mini:not(.btn-secondary):hover {
     background-color: var(--accent-hover);
 }
@@ -422,6 +422,40 @@ body.light .logo-light {
 
 #search:focus {
     border-color: var(--accent-line);
+}
+
+/* Menu principal (à gauche de la barre du haut) : la rubrique actuelle est soulignée en rouge */
+.main-nav {
+    display: flex;
+    align-self: stretch;
+    gap: 24px;
+}
+
+.main-nav a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--muted);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.18s var(--ease);
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    color: var(--text);
+}
+
+.main-nav a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: var(--accent-line);
 }
 
 /* Choix du jeu : CS2 actif, Valorant bientôt */
@@ -1177,6 +1211,14 @@ body.page {
     color: var(--text);
 }
 
+/* Questions des FAQ (pages joueurs, générateur, skins) */
+.player-page > h3 {
+    margin: 12px 0 0;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
+}
+
 .breadcrumb {
     font-size: var(--fs-sm);
     color: var(--muted);
@@ -1599,13 +1641,6 @@ body.light .team-badge img[src*="fut"] {
     max-width: 1120px;
 }
 
-.gen-page h3 {
-    margin: 12px 0 0;
-    font-size: var(--fs-body);
-    font-weight: var(--fw-semibold);
-    line-height: var(--lh-ui);
-}
-
 .gen-intro {
     margin: 10px 0 0;
     max-width: 75ch;
@@ -1993,13 +2028,6 @@ body.light .team-badge img[src*="fut"] {
    trait de rareté en bas, état, barre d'usure (float) et prix (bientôt). */
 .skins-page {
     max-width: 1120px;
-}
-
-.skins-page > h3 {
-    margin: 12px 0 0;
-    font-size: var(--fs-body);
-    font-weight: var(--fw-semibold);
-    line-height: var(--lh-ui);
 }
 
 .skin-grid {
@@ -2453,6 +2481,19 @@ body.light .team-badge img[src*="fut"] {
 
     .game-switch {
         margin-left: 0;
+    }
+
+    /* Menu principal : sur sa propre ligne, au-dessus des boutons */
+    .main-nav {
+        flex: 1 1 100%;
+        gap: 20px;
+        min-height: 32px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .main-nav a[aria-current="page"]::after {
+        bottom: 0;
     }
 
     .game:disabled {

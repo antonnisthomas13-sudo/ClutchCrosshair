@@ -1,0 +1,54 @@
+# Mise à jour automatique des skins des pros et de leurs prix, chaque jour, sur les serveurs de GitHub
+# (le PC d'Anto n'a pas besoin d'être allumé).
+#   1. node update-skins.js : inventaires Steam + prix CSFloat (clé dans le secret CSFLOAT_KEY) + euros (BCE)
+#   2. node build.js        : refabrique les pages du site
+#   3. sauvegarde (commit + push) seulement si quelque chose a changé -> GitHub Pages met le site à jour
+# Lancer à la main : onglet "Actions" du dépôt > "Update pro skins and prices" > "Run workflow".
+
+name: Update pro skins and prices
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # tous les jours à 5 h UTC (6 h en France l'hiver, 7 h l'été)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-skins
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Récupérer le site
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Inventaires Steam et prix CSFloat
+        env:
+          CSFLOAT_KEY: ${{ secrets.CSFLOAT_KEY }}
+        run: node update-skins.js
+
+      - name: Fabriquer les pages
+        run: node build.js
+
+      - name: Sauvegarder (seulement s'il y a du nouveau)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Rien de nouveau aujourd'hui"
+            exit 0
+          fi
+          git commit -m "Mise à jour automatique des skins et des prix"
+          git pull --rebase
+          git push

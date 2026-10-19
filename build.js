@@ -310,6 +310,107 @@ async function main() {
         }).join("")}</dl>`;
     }
 
+    // ===== Textes uniques pour chaque page joueur (calculés à partir de son vrai crosshair) =====
+    const COLOR_NAMES = [["green", 0, 255, 0], ["yellow", 255, 255, 0], ["cyan", 0, 255, 255], ["red", 255, 0, 0], ["pink", 255, 0, 255],
+        ["white", 255, 255, 255], ["blue", 0, 0, 255], ["light blue", 100, 190, 255], ["orange", 255, 140, 0], ["purple", 150, 60, 255],
+        ["lime", 170, 255, 0], ["teal", 0, 200, 150]];
+
+    // La couleur la plus proche parmi des noms simples (ex. 0,255,255 -> "cyan")
+    function colorName(c) {
+        let best = "";
+        let distance = Infinity;
+        COLOR_NAMES.forEach(function (n) {
+            const d = (c.red - n[1]) ** 2 + (c.green - n[2]) ** 2 + (c.blue - n[3]) ** 2;
+            if (d < distance) {
+                distance = d;
+                best = n[0];
+            }
+        });
+        return best;
+    }
+
+    function listText(items) {
+        return items.length > 1 ? items.slice(0, -1).join(", ") + " and " + items[items.length - 1] : items.join("");
+    }
+
+    // Les crosshairs CS2 valides des pros, pour les comparaisons
+    const proCrosshairs = players.filter(function (p) {
+        return p.category === "pro";
+    }).map(function (p) {
+        return { player: p, c: decode(p.code) };
+    }).filter(function (x) {
+        return x.c && x.c.format !== "legacy-v1";
+    });
+
+    function percentOfPros(test) {
+        return Math.round(proCrosshairs.filter(test).length / proCrosshairs.length * 100);
+    }
+
+    function proLinks(list) {
+        return `<ul class="related">${list.map(function (x) {
+            return `<li><a href="${slug(x.player.name)}.html">${esc(x.player.name)} crosshair</a></li>`;
+        }).join("")}</ul>`;
+    }
+
+    // Description des réglages en phrases + comparaison avec les pros + pros au crosshair identique ou proche + FAQ
+    function crosshairInsights(player) {
+        const c = decode(player.code);
+        if (!c || c.format === "legacy-v1") {
+            return null;
+        }
+        const color = colorName(c);
+        const size = c.length <= 2 ? "very short" : c.length <= 4 ? "short" : c.length <= 7 ? "medium" : "long";
+        const parts = [c.length + " px long", c.thickness + " px thick", "a gap of " + c.gap, c.outlineMode > 0 ? "an outline" : "no outline", c.centerDotEnabled ? "a center dot" : "no center dot"];
+        if (c.tStyleEnabled) {
+            parts.push("the T-style (no top line)");
+        }
+        if (c.alpha < 255) {
+            parts.push(Math.round(c.alpha / 255 * 100) + "% opacity");
+        }
+        const settings = `${player.name} uses a ${size} ${color}${c.style === 4 ? " static" : ""} crosshair: ${listText(parts)}, set for a ${c.screenHeight}p screen height.`;
+        const longer = percentOfPros(function (x) { return x.c.length > c.length; });
+        const sameColor = percentOfPros(function (x) { return colorName(x.c) === color; });
+        const comparison = `${longer}% of the ${proCrosshairs.length} pros on ClutchCrosshair use a longer crosshair, and ${sameColor}% play with a ${color} one.`;
+        const same = proCrosshairs.filter(function (x) {
+            return x.player !== player && x.player.code === player.code;
+        });
+        const similar = proCrosshairs.filter(function (x) {
+            return x.player !== player && x.player.code !== player.code && colorName(x.c) === color && x.c.thickness === c.thickness
+                && Math.abs(x.c.length - c.length) <= 1 && Math.abs(x.c.gap - c.gap) <= 1;
+        }).slice(0, 8);
+        const name = esc(player.name);
+        const html = `<p>${esc(settings)} ${esc(comparison)}</p>
+        ${same.length ? `<h2>Pros with the same crosshair as ${name}</h2>
+        <p>${listText(same.map(function (x) { return esc(x.player.name); }))} use${same.length === 1 ? "s" : ""} exactly the same CS2 crosshair code as ${name}.</p>
+        ${proLinks(same)}` : ""}
+        ${similar.length ? `<h2>Crosshairs similar to ${name}'s</h2>
+        <p>These pros also play with a ${esc(color)} crosshair of almost the same size and gap.</p>
+        ${proLinks(similar)}` : ""}`;
+        const faq = [
+            [`What is ${player.name}'s CS2 crosshair code?`, `${player.name}'s CS2 crosshair code is ${player.code}. It was read from ${player.category === "pro" ? "an official match demo" : "a match"} on ${player.updated}.`],
+            [`What crosshair settings does ${player.name} use?`, settings]
+        ];
+        if (same.length) {
+            faq.push([`Which pros use the same crosshair as ${player.name}?`, `${listText(same.map(function (x) { return x.player.name; }))} use${same.length === 1 ? "s" : ""} exactly the same CS2 crosshair code as ${player.name}.`]);
+        }
+        return { html: html, faq: faq };
+    }
+
+    // Profils officiels du joueur pour Google (sameAs) : son compte Steam (lu dans les démos) et sa page Liquipedia (vérifiée)
+    function profileLinks(player) {
+        const links = [];
+        if (player && player.steamid) {
+            links.push("https://steamcommunity.com/profiles/" + player.steamid);
+        }
+        if (player && player.liquipedia) {
+            links.push("https://liquipedia.net/counterstrike/" + encodeURIComponent(player.liquipedia).replace(/%2F/g, "/"));
+        }
+        if (player && player.hltv) {
+            links.push(player.hltv); // page HLTV donnée à la main (ex. art, dont la page Liquipedia est celle d'un homonyme)
+        }
+        return links;
+    }
+
     // ===== 1. Une page par joueur =====
     if (!fs.existsSync("players")) {
         fs.mkdirSync("players");
@@ -343,6 +444,7 @@ async function main() {
             }).join("")}</ul>`
             : "";
 
+        const insights = crosshairInsights(player);
         const intro = isPro
             ? `${name} plays for ${team}. This is the exact CS2 crosshair ${name} used in an official match on ${esc(player.updated)}, read directly from the match demo.`
             : `${name} is a CS2 content creator. This is ${name}'s CS2 crosshair, last checked on ${esc(player.updated)}.`;
@@ -379,6 +481,9 @@ async function main() {
         if (photo.original) {
             person.image = `${SITE_URL}/${photo.original}`;
         }
+        if (profileLinks(player).length) {
+            person.sameAs = profileLinks(player);
+        }
 
         const page = `<!DOCTYPE html>
 <html lang="en">
@@ -386,11 +491,19 @@ async function main() {
     ${head({
         title: `${name} CS2 Crosshair Code (2026) | ClutchCrosshair`,
         ogTitle: `${name} CS2 Crosshair Code`,
-        description: `Copy ${player.name}'s CS2 crosshair code (${player.team}), with a live preview and console commands. Updated ${player.updated}.`,
+        description: isPro
+            ? `Copy ${player.name}'s CS2 crosshair code (${player.team}) in one click: real-size preview, console commands and settings. From a match on ${player.updated}.`
+            : `Copy ${player.name}'s CS2 crosshair code in one click: real-size preview, console commands and full settings. Updated ${player.updated}.`,
         url: url,
         prefix: "../",
         crosshair: true,
-        jsonLd: { "@context": "https://schema.org", "@graph": [webPage, breadcrumb(player.name + " crosshair", url), person] }
+        jsonLd: { "@context": "https://schema.org", "@graph": [webPage, breadcrumb(player.name + " crosshair", url), person].concat(insights ? [{
+            "@type": "FAQPage",
+            "@id": url + "#faq",
+            "mainEntity": insights.faq.map(function (q) {
+                return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+            })
+        }] : []) }
     })}
 </head>
 <body class="page">
@@ -430,6 +543,7 @@ async function main() {
         <h2>About ${name}'s crosshair</h2>
         <p>${intro}</p>
         ${crosshairDetails(player.code)}
+        ${insights ? insights.html : ""}
 
         <h2>How to use ${name}'s crosshair in CS2</h2>
         <ol>
@@ -440,6 +554,12 @@ async function main() {
         <p>Or copy the console commands, open the CS2 console (~) and paste them. <a href="../faq.html">More questions in the FAQ ›</a></p>
         ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">Edit ${name}'s crosshair in the CS2 crosshair generator ›</a></p>` : ""}
         ${skinPlayers.some(function (s) { return s.name === player.name; }) ? `<p><a href="../skins/${slug(player.name)}.html">See ${name}'s CS2 skins &amp; inventory ›</a></p>` : ""}
+
+        ${insights ? `<h2>${name} crosshair FAQ</h2>
+${insights.faq.map(function (q) {
+            return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+        }).join("\n")}` : ""}
 
         ${matesHtml}
     </main>
@@ -507,6 +627,8 @@ async function main() {
         trending: trending.length + " trending now",
         skins: plural(skinPlayers.length, "inventory", "inventories")
     };
+    // Le nombre de pros dans la description Google de l'accueil
+    index = index.replace(/(NiKo and )\d+( pros in one click)/, "$1" + pros.length + "$2");
     Object.keys(counts).forEach(function (key) {
         index = index.replace(new RegExp(`(<span class="quick-count" data-count="${key}">)[^<]*(</span>)`), "$1" + counts[key] + "$2");
     });
@@ -635,7 +757,7 @@ async function main() {
 <html lang="en">
 <head>
     ${head({
-        title: "CS2 Crosshair FAQ: Codes, Import, Pro Stats (2026) | ClutchCrosshair",
+        title: "CS2 Crosshair FAQ: Import Codes &amp; Pro Stats | ClutchCrosshair",
         ogTitle: "CS2 Crosshair FAQ",
         description: "How to import a CS2 crosshair code, why old CSGO- codes don't work anymore, and which crosshair CS2 pros use the most, with live stats.",
         url: faqUrl,
@@ -727,7 +849,7 @@ ${faq.map(function (q) {
 <html lang="en">
 <head>
     ${head({
-        title: "CS2 Crosshair Generator: Create &amp; Copy Your Code | ClutchCrosshair",
+        title: "CS2 Crosshair Generator: Create Your Code | ClutchCrosshair",
         ogTitle: "CS2 Crosshair Generator",
         description: "Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.",
         url: genUrl,
@@ -833,9 +955,12 @@ ${genFaq.map(function (q) {
         faq.push([`Are these skin floats exact?`,
             `Yes. Every float on this page is the exact wear value of the item, read from ${p.name}'s public Steam inventory.`]);
 
-        const description = p.hasPrices
-            ? `${p.name}'s CS2 inventory is worth about ${money(p.value, "USD")}: ${p.items.length} skins incl. ${top.map(function (g) { return g.item.name; }).join(" and ")}. Prices, exact floats and wear.`
-            : `${p.name}'s CS2 inventory: ${p.items.length} skins${top.length ? " incl. " + top.map(function (g) { return g.item.name; }).join(" and ") : ""}. Exact floats, wear and rarity, updated ${p.updated}.`;
+        // Description Google : 160 caractères maximum (la fin n'est ajoutée que s'il reste de la place)
+        const descriptionStart = p.hasPrices
+            ? `${p.name}'s CS2 inventory is worth about ${money(p.value, "USD")}: ${p.items.length} skins incl. ${top.map(function (g) { return g.item.name; }).join(" and ")}.`
+            : `${p.name}'s CS2 inventory: ${p.items.length} skins${top.length ? " incl. " + top.map(function (g) { return g.item.name; }).join(" and ") : ""}.`;
+        const descriptionEnd = p.hasPrices ? " Prices, exact floats and wear." : ` Exact floats and wear, updated ${p.updated}.`;
+        const description = descriptionStart + ((descriptionStart + descriptionEnd).length <= 160 ? descriptionEnd : "");
         const graph = [
             {
                 "@type": "CollectionPage",
@@ -873,6 +998,9 @@ ${genFaq.map(function (q) {
                 })
             }
         ];
+        if (profileLinks(known).length) {
+            graph[2].sameAs = profileLinks(known);
+        }
         if (p.team) {
             graph[2].memberOf = { "@type": "SportsTeam", "name": p.team, "sport": "Counter-Strike 2" };
         }
@@ -882,7 +1010,7 @@ ${genFaq.map(function (q) {
 <html lang="en">
 <head>
     ${head({
-        title: `${name} CS2 Skins &amp; Inventory: Knife, Gloves, Floats (2026) | ClutchCrosshair`,
+        title: `${name} CS2 Skins &amp; Inventory${p.hasPrices ? " Value" : ""} (2026) | ClutchCrosshair`,
         ogTitle: `${name} CS2 Skins & Inventory`,
         description: description,
         url: url,
@@ -955,7 +1083,7 @@ ${faq.map(function (q) {
 <html lang="en">
 <head>
     ${head({
-        title: `CS2 Pro Skins &amp; Inventories: ${skinPlayers.map(function (p) { return esc(p.name); }).join(", ")} (2026) | ClutchCrosshair`,
+        title: "CS2 Pro Skins &amp; Inventories (2026) | ClutchCrosshair",
         ogTitle: "CS2 Pro Skins & Inventories",
         description: hubDescription,
         url: skinsUrl,
@@ -1036,7 +1164,7 @@ ${skinPlayers.map(function (p) {
 <head>
     ${head({
         title: "Legal notice | ClutchCrosshair",
-        description: "Legal notice and privacy information of ClutchCrosshair.",
+        description: "Legal notice of ClutchCrosshair: publisher, hosting, trademarks and privacy. No ads, no tracking cookies and no personal data collected.",
         url: `${SITE_URL}/legal.html`,
         prefix: ""
     })}

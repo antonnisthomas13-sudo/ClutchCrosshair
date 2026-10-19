@@ -85,21 +85,33 @@ function screenPixelsHigh() {
     return height > 0 ? height : 1080; // ex. 1080 sur un écran Full HD, 1440 sur un écran 2K...
 }
 
-// Image de fond : une vraie capture d'écran de CS2 en plein écran (preview-bg.webp, à côté de ce fichier)
-// Elle est chargée une seule fois ; quand elle arrive, on redessine les aperçus déjà affichés
-const bgImage = new Image();
-bgImage.decoding = "async";
-bgImage.src = new URL("preview-bg.webp", import.meta.url).href;
-bgImage.onload = function () {
-    backgrounds.clear();
-    document.querySelectorAll("canvas[data-painted]").forEach(paint);
-};
+// Image de fond : une vraie capture d'écran de CS2 en plein écran, en deux versions (à côté de ce fichier) :
+//   preview-bg-sm.webp (légère, ~95 Ko) pour les petites cartes assombries de l'accueil
+//   preview-bg.webp (nette, pixel pour pixel en 1080p) pour la fiche, les pages joueurs et le générateur
+// Chaque version n'est téléchargée qu'au premier aperçu qui en a besoin ; quand elle arrive, on redessine.
+const images = {};
+
+function backgroundImage(small) {
+    const file = small ? "preview-bg-sm.webp" : "preview-bg.webp";
+    if (!images[file]) {
+        const img = new Image();
+        img.decoding = "async";
+        img.onload = function () {
+            backgrounds.clear();
+            document.querySelectorAll("canvas[data-painted]").forEach(paint);
+        };
+        img.src = new URL(file, import.meta.url).href;
+        images[file] = img;
+    }
+    return images[file];
+}
 
 // Le fond (photo recadrée + filtre + halo) est préparé UNE fois par taille, puis réutilisé :
 // toutes les cartes ont la même taille, donc un seul calcul pour 70 aperçus.
 const backgrounds = new Map();
 
 function background(w, h, look) {
+    const bgImage = backgroundImage(look.dim);
     const ready = bgImage.complete && bgImage.naturalWidth > 0;
     const key = [w + "x" + h, look.dim, look.raw, look.zoom, look.focus, look.res ? look.res.stretch : 1, ready, screenPixelsHigh()].join(":");
     let layer = backgrounds.get(key);
@@ -107,7 +119,7 @@ function background(w, h, look) {
         layer = document.createElement("canvas");
         layer.width = w;
         layer.height = h;
-        drawBackground(layer.getContext("2d"), w, h, ready, look);
+        drawBackground(layer.getContext("2d"), w, h, ready ? bgImage : null, look);
         backgrounds.set(key, layer);
     }
     return layer;
@@ -119,8 +131,9 @@ function background(w, h, look) {
 // look.raw = true (data-bg="raw", générateur) : la photo telle quelle, ni assombrie ni halo, comme en jeu
 // look.zoom = 1 : taille réelle ; 3 : tout est agrandi 3 fois (décor ET crosshair, les proportions restent celles du jeu)
 // look.focus = "x,y" : le point de la photo placé derrière le crosshair (0 = bord gauche/haut, 1 = bord droit/bas)
-function drawBackground(ctx, w, h, ready, look) {
-    if (ready) {
+// bgImage = la capture à utiliser (null tant qu'elle n'est pas arrivée)
+function drawBackground(ctx, w, h, bgImage, look) {
+    if (bgImage) {
         // La capture représente tout l'écran : on l'affiche à la hauteur de l'écran du visiteur (en vrais pixels)
         const scale = screenPixelsHigh() * look.zoom / bgImage.naturalHeight;
         const iw = bgImage.naturalWidth * scale * (look.res ? look.res.stretch : 1); // étirée en largeur en 4:3 « stretched »

@@ -1,5 +1,6 @@
-// ===== render.js : fabrique le HTML des cartes joueurs =====
-// Utilisé par build.js, qui écrit les cartes directement dans index.html (lisibles par Google, rien à calculer dans le navigateur).
+// ===== render.js : fabrique des morceaux de HTML =====
+// Utilisé par build.js (dans Node, pas dans le navigateur) : cartes des joueurs, générateur de crosshair,
+// cartes de skins. build.js les écrit directement dans les pages (lisibles par Google, rien à calculer dans le navigateur).
 // Ce fichier ne touche pas à la page : il ne fait que renvoyer du texte HTML.
 
 import { decodeCrosshairShareCode, crosshairToConVars } from "./lib/csgo-sharecode.js";
