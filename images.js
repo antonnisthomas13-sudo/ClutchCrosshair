@@ -5,6 +5,7 @@
 //                         ->  photos/md/<pseudo>.webp  (256×288, fiche + page joueur)
 //   logos/<équipe>.png    ->  logos/sm/<équipe>.webp   (48×48, menu et cartes)
 //   preview-bg.jpg        ->  preview-bg.webp          (fond des aperçus, ~3× plus léger)
+//   skins/src/<id>.png    ->  skins/img/<id>.webp      (256×192, images des skins des pros)
 //   favicon.svg           ->  apple-touch-icon.png (180) + icon-512.png (512)
 //   og-image.png          ->  image d'aperçu de lien 1200×630 (Discord, X, WhatsApp...) — supprimer le fichier pour la refaire
 //
@@ -188,6 +189,14 @@ function optimizeImages() {
         }
     });
     add({ src: "preview-bg.jpg", out: "preview-bg.webp", w: 1920, h: 1080, fit: "cover", position: "center", type: "image/webp", quality: 0.9 });
+    // Images des skins (téléchargées par update-skins.js dans skins/src/) -> skins/img/<id>.webp, fond transparent
+    if (fs.existsSync("skins/src")) {
+        fs.readdirSync("skins/src").forEach(function (f) {
+            if (f.endsWith(".png")) {
+                add({ src: "skins/src/" + f, out: "skins/img/" + f.replace(/\.png$/, ".webp"), w: 256, h: 192, fit: "contain", position: "center", type: "image/webp", quality: 0.82 });
+            }
+        });
+    }
     add({ src: "favicon.svg", out: "apple-touch-icon.png", w: 180, h: 180, fit: "contain", position: "center", type: "image/png", background: "#111214", scale: 0.84 });
     add({ src: "favicon.svg", out: "icon-512.png", w: 512, h: 512, fit: "contain", position: "center", type: "image/png", background: "#111214", scale: 0.84 });
 
@@ -205,7 +214,12 @@ function optimizeImages() {
         }
     }
     if (jobs.length) {
-        console.log(runCanvasJobs(chrome, jobs) + " image(s) optimisée(s)");
+        // Par paquets de 80 : Chrome reste léger même avec des centaines d'images de skins
+        let done = 0;
+        for (let i = 0; i < jobs.length; i += 80) {
+            done += runCanvasJobs(chrome, jobs.slice(i, i + 80));
+        }
+        console.log(done + " image(s) optimisée(s)");
     }
     if (ogTmp && fs.existsSync(ogTmp)) {
         fs.unlinkSync(ogTmp);

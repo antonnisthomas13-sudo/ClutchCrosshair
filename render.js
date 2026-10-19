@@ -252,6 +252,87 @@ export function generatorHTML(defaultCode, groups) {
     </div>`;
 }
 
+// ===== Skins des pros (skins.json, rempli par update-skins.js) =====
+export const SKIN_CATEGORIES = [
+    ["knives", "Knives"],
+    ["gloves", "Gloves"],
+    ["rifles", "Rifles"],
+    ["snipers", "Sniper rifles"],
+    ["pistols", "Pistols"],
+    ["smgs", "SMGs"],
+    ["heavy", "Shotguns & machine guns"]
+];
+const RARITY_RANK = { "Contraband": 8, "Extraordinary": 7, "Covert": 6, "Classified": 5, "Restricted": 4, "Mil-Spec Grade": 3, "Industrial Grade": 2, "Consumer Grade": 1 };
+
+// "★ StatTrak™ Karambit | Doppler" -> { weapon: "★ Karambit", finish: "Doppler" }
+export function skinParts(name) {
+    const parts = String(name).replace("StatTrak™ ", "").replace(/^Souvenir /, "").split(" | ");
+    return { weapon: parts[0], finish: parts[1] || "Vanilla" };
+}
+
+// Regroupe les exemplaires d'un même skin (même nom + même état) : on montre le meilleur float et "×N"
+// Tri : couteaux et gants d'abord, puis par rareté, puis par nom
+export function groupSkins(items) {
+    const groups = new Map();
+    items.forEach(function (item) {
+        const group = groups.get(item.marketName);
+        if (!group) {
+            groups.set(item.marketName, { item: item, count: 1 });
+            return;
+        }
+        group.count++;
+        if (item.float !== null && (group.item.float === null || item.float < group.item.float)) {
+            group.item = item;
+        }
+    });
+    const order = SKIN_CATEGORIES.map(function (c) { return c[0]; });
+    return Array.from(groups.values()).sort(function (a, b) {
+        return order.indexOf(a.item.category) - order.indexOf(b.item.category) || byValue(a, b);
+    });
+}
+
+// Du plus cher au moins cher (quand les prix sont connus), sinon par rareté, puis par nom
+function byValue(a, b) {
+    return (b.item.price ?? -1) - (a.item.price ?? -1)
+        || (RARITY_RANK[b.item.rarity] || 0) - (RARITY_RANK[a.item.rarity] || 0)
+        || Number(b.item.statTrak) - Number(a.item.statTrak)
+        || a.item.name.localeCompare(b.item.name);
+}
+
+// Tous les skins d'un joueur, du plus cher au moins cher (toutes catégories mélangées)
+export function byPrice(groups) {
+    return groups.slice().sort(byValue);
+}
+
+// 1234.5 -> "$1,234.50"
+export function formatPrice(value, currency) {
+    return new Intl.NumberFormat("en-US", { style: "currency", currency: currency || "USD" }).format(value);
+}
+
+// Une carte de skin. prefix = chemin vers la racine du site ("" ou "../")
+export function skinCardHTML(group, playerName, prefix, eager) {
+    const item = group.item;
+    const parts = skinParts(item.name);
+    const label = `${item.name}${item.exterior !== "Vanilla" ? " (" + item.exterior + ")" : ""}`;
+    const badges = (item.statTrak ? `<span class="skin-badge">StatTrak™</span>` : "") + (item.souvenir ? `<span class="skin-badge">Souvenir</span>` : "");
+    const float = item.float !== null
+        ? `<div class="skin-wear" title="Exact float: ${item.float}"><span class="wear-bar"><i style="left: ${Math.min(100, item.float * 100).toFixed(2)}%"></i></span></div>`
+        : "";
+    return `<article class="skin" style="--rarity: ${esc(item.rarityColor || "#9DA2AA")}">
+            <div class="skin-img"><img src="${prefix}skins/img/${esc(item.image)}.webp" alt="${esc(playerName)}'s ${esc(label)} CS2 skin" width="256" height="192" loading="${eager ? "eager" : "lazy"}" decoding="async"></div>
+            <div class="skin-body">
+                <p class="skin-weapon">${esc(parts.weapon)}${badges}</p>
+                <h3 class="skin-name">${esc(parts.finish)}${group.count > 1 ? ` <span class="skin-count" title="${group.count} copies">×${group.count}</span>` : ""}</h3>
+                <p class="skin-ext"><span class="skin-rarity">${esc(item.rarity)}</span> · ${esc(item.exterior)}</p>
+                ${float}
+                <dl class="skin-meta">
+                    <div><dt>Float</dt><dd class="skin-float">${item.float !== null ? esc(String(item.float)) : "—"}</dd></div>
+                    <div><dt>Price</dt><dd class="skin-price" data-market="${esc(item.marketName)}"${item.price != null ? "" : ` title="No price available"`}>${item.price != null ? `${esc(formatPrice(item.price, "USD"))}${item.priceEur != null ? ` <span class="skin-eur">${esc(formatPrice(item.priceEur, "EUR"))}</span>` : ""}` : "—"}</dd></div>
+                </dl>
+            </div>
+        </article>`;
+}
+
 // Ordre par défaut des cartes : par équipe (ordre de teams.js), puis par nom
 export function byTeamThenName(a, b) {
     const ia = teams.findIndex(function (t) { return t.name === a.team; });

@@ -349,6 +349,48 @@ body.light .logo-light {
     box-shadow: inset 1px 0 0 var(--accent-line);
 }
 
+/* Inventaires des pros (sous les équipes) : nom + miniature de leur plus beau couteau */
+.side-skins {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.side-skin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 2px 6px 2px 10px;
+    border-radius: 2px;
+    color: var(--text);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+}
+
+.side-skin:hover {
+    background-color: var(--panel);
+}
+
+.side-skin img {
+    width: 48px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.side-skins-all {
+    padding: 6px 10px;
+    color: var(--link);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+}
+
+.side-skins-all:hover {
+    text-decoration: underline;
+}
+
 /* ===== Barre du haut ===== */
 .topbar {
     display: flex;
@@ -524,7 +566,7 @@ body.light .logo-light {
 /* Trois accès rapides : Pros, Creators, Trending */
 .quick {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width: 640px;
     margin-top: 12px;
@@ -1168,6 +1210,11 @@ body.page {
 .player-head .player-date {
     color: inherit;
     opacity: 0.85;
+}
+
+/* Valeur de l'inventaire en gras : même couleur que le bandeau (lisible sur toutes les équipes) */
+.player-head strong {
+    color: inherit;
 }
 
 .player-photo {
@@ -1941,6 +1988,356 @@ body.light .team-badge img[src*="fut"] {
     color: var(--text);
 }
 
+/* ===== Skins des pros (onglet Pro Skins + pages skins/) =====
+   Carte de skin : image sur un léger halo de la couleur de rareté (couleur officielle Steam, donnée par skins.json),
+   trait de rareté en bas, état, barre d'usure (float) et prix (bientôt). */
+.skins-page {
+    max-width: 1120px;
+}
+
+.skins-page > h3 {
+    margin: 12px 0 0;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
+}
+
+.skin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 12px;
+}
+
+.skin {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-bottom: 3px solid var(--rarity);
+    border-radius: 2px;
+    background-color: var(--panel);
+    content-visibility: auto;
+    contain-intrinsic-size: auto 330px;
+}
+
+.skin-img {
+    aspect-ratio: 4 / 3;
+    padding: 8px;
+    background: radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--rarity) 30%, transparent), transparent 70%), var(--panel2);
+}
+
+.skin-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.skin-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px 12px;
+    line-height: var(--lh-ui);
+}
+
+.skin .skin-weapon {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--muted);
+}
+
+.skin-badge {
+    padding: 0 5px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-size: var(--fs-2xs);
+    color: var(--text);
+}
+
+.skin .skin-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--track-display);
+    line-height: var(--lh-heading);
+}
+
+.skin-count {
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--muted);
+}
+
+.skin .skin-ext {
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+}
+
+/* Petit carré de la couleur de rareté devant son nom (le texte reste lisible dans les deux modes) */
+.skin-rarity::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 1px;
+    background-color: var(--rarity);
+}
+
+/* Barre d'usure : de Factory New (gauche) à Battle-Scarred (droite), avec les limites des états */
+.skin-wear {
+    padding: 6px 0 2px;
+}
+
+.wear-bar {
+    position: relative;
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    background:
+        linear-gradient(90deg, transparent calc(7% - 1px), var(--panel) 7%, transparent calc(7% + 1px)),
+        linear-gradient(90deg, transparent calc(15% - 1px), var(--panel) 15%, transparent calc(15% + 1px)),
+        linear-gradient(90deg, transparent calc(38% - 1px), var(--panel) 38%, transparent calc(38% + 1px)),
+        linear-gradient(90deg, transparent calc(45% - 1px), var(--panel) 45%, transparent calc(45% + 1px)),
+        var(--line);
+}
+
+.wear-bar i {
+    position: absolute;
+    top: -3px;
+    width: 3px;
+    height: 10px;
+    margin-left: -1px;
+    border-radius: 1px;
+    background-color: var(--text);
+}
+
+.skin-meta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    margin: 4px 0 0;
+}
+
+/* Float et prix : libellé à gauche, valeur à droite */
+.skin-meta div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 8px;
+}
+
+/* Le float exact est long : toujours sous son libellé (toutes les cartes alignées pareil) */
+.skin-meta div:first-child {
+    display: block;
+}
+
+.skin-meta dt {
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.skin-meta dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--text);
+    overflow-wrap: anywhere;
+}
+
+/* Prix : dollars en avant, euros juste en dessous */
+.skin-meta .skin-price {
+    font-weight: var(--fw-semibold);
+    text-align: right;
+}
+
+.skin-eur {
+    display: block;
+    font-weight: var(--fw-regular);
+    color: var(--muted);
+}
+
+/* Source des prix (transparence) */
+.skin-note {
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--muted);
+}
+
+.ps .skin-note {
+    margin-top: 6px;
+}
+
+/* Raccourcis vers les rubriques (Knives, Gloves, Rifles...) */
+.skin-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skin-jump a {
+    padding: 7px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.skin-jump a:hover {
+    border-color: var(--accent-line);
+}
+
+.skin-jump span {
+    margin-left: 4px;
+    color: var(--muted);
+}
+
+.skin-section {
+    scroll-margin-top: 16px;
+}
+
+.skin-section h2 {
+    margin-bottom: 12px;
+}
+
+.skin-section > p {
+    margin-top: 12px;
+}
+
+/* Onglet Pro Skins de l'accueil : choix du joueur */
+.ps {
+    margin-top: 16px;
+}
+
+.ps-players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ps-player,
+.ps-tile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px 6px 6px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+    color: var(--text);
+    text-align: left;
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease), background-color 0.18s var(--ease);
+}
+
+.ps-player:hover,
+.ps-tile:hover {
+    border-color: var(--accent-line);
+}
+
+/* Joueur choisi : couleurs inversées, comme l'onglet actif */
+.ps-player[aria-pressed="true"] {
+    border-color: var(--text);
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.ps-player[aria-pressed="true"] .ps-info {
+    color: inherit;
+    opacity: 0.75;
+}
+
+.ps-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 45px;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--team, var(--panel2));
+    color: var(--on-team, var(--text));
+    font-family: var(--font-display);
+    font-weight: var(--fw-bold);
+    object-fit: cover;
+    object-position: center top;
+}
+
+.ps-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ps-name {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-ui);
+}
+
+.ps-info {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-medium);
+    color: var(--muted);
+}
+
+.ps-panel {
+    margin-top: 16px;
+}
+
+.ps-summary,
+.ps-more {
+    margin: 0 0 12px;
+    max-width: 75ch;
+    font-size: var(--fs-ui);
+    color: var(--muted);
+}
+
+.ps-more {
+    margin: 16px 0 0;
+}
+
+/* Page skins/ : une tuile par joueur */
+.ps-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.ps-tile .ps-photo {
+    width: 56px;
+    height: 63px;
+    border-radius: 28px 28px 0 0;
+}
+
+.ps-tile .ps-text {
+    flex: 1;
+}
+
+.ps-tile-skin {
+    flex-shrink: 0;
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+}
+
 /* ===== Moins d'animations pour ceux qui le demandent ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -2100,6 +2497,11 @@ body.light .team-badge img[src*="fut"] {
         white-space: nowrap;
     }
 
+    /* Plus de place : le logo et le fil d'Ariane ramènent déjà à l'accueil */
+    .back-home {
+        display: none;
+    }
+
     /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */
     .top-link span {
         display: none;
@@ -2118,7 +2520,27 @@ body.light .team-badge img[src*="fut"] {
     }
 
     .quick {
+        grid-template-columns: repeat(2, 1fr);
         gap: 6px;
+    }
+
+    /* Inventaires des pros : en bas de page sur téléphone, juste avant les réseaux sociaux */
+    .side-skins {
+        order: 4;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 12px 16px;
+        border-top: 1px solid var(--line);
+        background-color: var(--sidebar);
+    }
+
+    .side-skins .side-title,
+    .side-skins-all {
+        grid-column: 1 / -1;
+    }
+
+    .side-skins .side-title {
+        margin: 0 0 6px 10px;
     }
 
     .quick-btn {
@@ -2203,5 +2625,25 @@ body.light .team-badge img[src*="fut"] {
     .gen-slider {
         grid-template-columns: 72px minmax(0, 1fr) 56px;
         gap: 10px;
+    }
+
+    /* Skins : 2 cartes par ligne sur téléphone */
+    .skin-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .skin-body {
+        padding: 8px 10px 10px;
+    }
+
+    .ps-players {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .ps-player {
+        flex-shrink: 0;
     }
 }

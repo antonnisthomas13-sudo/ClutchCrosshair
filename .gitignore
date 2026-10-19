@@ -12,3 +12,9 @@ __pycache__/
 
 # Captures d'origine (Dust2, Nuke) : seulement sur le PC
 captures/
+
+# Images de skins d'origine (Steam) : seulement sur le PC, le site utilise skins/img/
+skins/src/
+
+# Clé API CSFloat (secrète) : jamais sur GitHub
+csfloat-key.txt

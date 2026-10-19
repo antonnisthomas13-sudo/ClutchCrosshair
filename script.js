@@ -174,6 +174,23 @@ tabs.forEach(function (tab, i) {
     });
 });
 
+// Onglet Pro Skins : un clic sur un joueur affiche ses skins (tout est déjà dans la page, écrit par build.js)
+const proSkins = document.querySelector(".ps");
+if (proSkins) {
+    proSkins.addEventListener("click", function (event) {
+        const button = event.target.closest(".ps-player");
+        if (!button) {
+            return;
+        }
+        proSkins.querySelectorAll(".ps-player").forEach(function (b) {
+            b.setAttribute("aria-pressed", b === button ? "true" : "false");
+        });
+        proSkins.querySelectorAll(".ps-panel").forEach(function (panel) {
+            panel.classList.toggle("hidden", panel.dataset.psPanel !== button.dataset.ps);
+        });
+    });
+}
+
 // Accès rapides de l'en-tête : ouvrent l'onglet et descendent jusqu'aux cartes
 document.querySelectorAll("[data-goto]").forEach(function (button) {
     button.addEventListener("click", function () {

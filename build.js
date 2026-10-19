@@ -65,9 +65,26 @@ async function main() {
     const sharecode = await import("./lib/csgo-sharecode.js");
     const { teams } = await import("./teams.js");
     const render = await import("./render.js");
-    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName, generatorHTML } = render;
+    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName, generatorHTML, SKIN_CATEGORIES, groupSkins, byPrice, formatPrice, skinCardHTML, skinParts } = render;
 
     const players = JSON.parse(fs.readFileSync("players.json", "utf8"));
+
+    // Skins des pros (rempli par update-skins.js) : seulement les inventaires publics qui contiennent des skins
+    const skinData = fs.existsSync("skins.json") ? JSON.parse(fs.readFileSync("skins.json", "utf8")) : { players: [] };
+    const skinPlayers = skinData.players.filter(function (p) {
+        return p.status === "public" && p.items.length > 0;
+    }).map(function (p) {
+        const groups = groupSkins(p.items);
+        const hasPrices = p.items.some(function (i) { return i.price != null; });
+        // best = les plus chers d'abord (quand les prix sont branchés), sinon couteaux, gants... par rareté
+        // Valeur de l'inventaire (somme des prix de tous les exemplaires)
+        const value = p.items.reduce(function (n, i) { return n + (i.price || 0); }, 0);
+        const valueEur = p.items.reduce(function (n, i) { return n + (i.priceEur || 0); }, 0);
+        return Object.assign({}, p, { slug: slug(p.name), groups: groups, hasPrices: hasPrices, best: hasPrices ? byPrice(groups) : groups, value: value, valueEur: valueEur });
+    });
+    skinData.players.filter(function (p) { return p.status === "private"; }).forEach(function (p) {
+        console.log("Attention : l'inventaire de " + p.name + " est privé (pas de page skins)");
+    });
 
     // Empreintes des fichiers CSS / JS (voir tout en haut)
     // Ordre important : crosshair.js -> generator.js (qui l'importe) -> script.js (qui importe les deux)
@@ -120,6 +137,44 @@ async function main() {
         const md = "photos/md/" + base + ".webp";
         return { original: original, sm: fs.existsSync(sm) ? sm : original, md: fs.existsSync(md) ? md : original };
     }
+
+    // Photo d'un joueur des skins (petite pour les boutons, moyenne pour l'en-tête de sa page), sinon ses initiales
+    function skinPhoto(p, prefix, w, h, className, eager) {
+        const known = players.find(function (x) { return x.name === p.name; });
+        const photo = known ? photoFiles(known) : { sm: "", md: "" };
+        const file = w > 60 ? photo.md : photo.sm;
+        const cls = className || "ps-photo";
+        return file
+            ? `<img class="${cls}" src="${prefix}${esc(file)}" alt="${esc(p.name)}" width="${w}" height="${h}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
+            : `<span class="${cls}" aria-hidden="true">${esc(p.name.slice(0, 2).toUpperCase())}</span>`;
+    }
+
+    // "ZywOo (Team Vitality) owns 631 CS2 skins, including 4 knife skins and 3 pairs of gloves."
+    function skinSummary(p) {
+        const count = function (category) {
+            return p.items.filter(function (i) { return i.category === category; }).length;
+        };
+        const knives = count("knives");
+        const gloves = count("gloves");
+        const extras = [];
+        if (knives) {
+            extras.push(knives + " knife skin" + (knives === 1 ? "" : "s"));
+        }
+        if (gloves) {
+            extras.push(gloves + (gloves === 1 ? " pair" : " pairs") + " of gloves");
+        }
+        return `${p.name}${p.team ? " (" + p.team + ")" : ""} owns ${p.items.length} CS2 skins${extras.length ? ", including " + extras.join(" and ") : ""}${p.hasPrices ? ", for a total value of about " + money(p.value, "USD") + " (" + money(p.valueEur, "EUR") + ")" : ""}.`;
+    }
+
+    // Montant arrondi : 8551.4 -> "$8,551" / "€7,599"
+    function money(value, currency) {
+        return new Intl.NumberFormat("en-US", { style: "currency", currency: currency, maximumFractionDigits: 0 }).format(value);
+    }
+
+    // D'où viennent les prix (affiché sous les skins : transparence)
+    const PRICE_NOTE = skinData.prices
+        ? `Prices: lowest listing on <a href="https://csfloat.com" rel="nofollow noopener" target="_blank">CSFloat</a> in US dollars, euros at the ECB exchange rate, updated ${esc(skinData.prices.updated)}. Doppler phases are not priced separately.`
+        : "";
 
     // Logo optimisé de l'équipe (logos/sm/...) s'il existe, sinon le logo d'origine
     function logoFor(teamName) {
@@ -199,8 +254,9 @@ async function main() {
         </a>
         <nav class="page-top-links">
             <a href="${prefix}generator.html" class="back-link">Generator</a>
+            <a href="${prefix}skins/" class="back-link">Pro Skins</a>
             <a href="${prefix}faq.html" class="back-link">FAQ</a>
-            <a href="${prefix}" class="back-link">← All CS2 crosshairs</a>
+            <a href="${prefix}" class="back-link back-home">← All CS2 crosshairs</a>
         </nav>
     </header>`;
     }
@@ -209,6 +265,7 @@ async function main() {
         return `<footer>
         <nav class="footer-links" aria-label="Footer">
             <a href="${prefix}generator.html">Crosshair Generator</a>
+            <a href="${prefix}skins/">CS2 Pro Skins</a>
             <a href="${prefix}faq.html">FAQ</a>
             <a href="${prefix}legal.html">Legal notice</a>
         </nav>
@@ -382,6 +439,7 @@ async function main() {
         </ol>
         <p>Or copy the console commands, open the CS2 console (~) and paste them. <a href="../faq.html">More questions in the FAQ ›</a></p>
         ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">Edit ${name}'s crosshair in the CS2 crosshair generator ›</a></p>` : ""}
+        ${skinPlayers.some(function (s) { return s.name === player.name; }) ? `<p><a href="../skins/${slug(player.name)}.html">See ${name}'s CS2 skins &amp; inventory ›</a></p>` : ""}
 
         ${matesHtml}
     </main>
@@ -446,7 +504,8 @@ async function main() {
     const counts = {
         pros: plural(pros.length, "pro player", "pro players"),
         creators: plural(creators.length, "creator", "creators"),
-        trending: trending.length + " trending now"
+        trending: trending.length + " trending now",
+        skins: plural(skinPlayers.length, "inventory", "inventories")
     };
     Object.keys(counts).forEach(function (key) {
         index = index.replace(new RegExp(`(<span class="quick-count" data-count="${key}">)[^<]*(</span>)`), "$1" + counts[key] + "$2");
@@ -468,6 +527,35 @@ async function main() {
 
     // Le générateur dans l'onglet Generator (son JavaScript ne se charge qu'au clic sur l'onglet)
     index = replaceBetween(index, "GENERATOR", generatorBlock, "                        ");
+
+    // Menu de gauche, sous les équipes : les inventaires des pros, avec leur plus beau couteau (lien vers leur page)
+    index = replaceBetween(index, "SKINSIDE", skinPlayers.length ? `<nav class="side-skins" aria-label="Pro inventories">
+                <p class="side-title">Pro inventories</p>
+                ${skinPlayers.map(function (p) {
+                    const star = p.best.find(function (g) { return g.item.category === "knives"; }) || p.best[0];
+                    return `<a class="side-skin" href="skins/${p.slug}.html" title="${esc(p.name)}'s CS2 skins"><span>${esc(p.name)}</span><img src="skins/img/${esc(star.item.image)}.webp" alt="${esc(p.name)}'s ${esc(star.item.name)}" width="48" height="36" loading="lazy" decoding="async"></a>`;
+                }).join("\n                ")}
+                <a class="side-skins-all" href="skins/">All pro skins ›</a>
+            </nav>` : "", "            ");
+
+    // L'onglet Pro Skins : un bouton par joueur + ses 12 plus beaux skins (la page complète est dans skins/)
+    index = replaceBetween(index, "PROSKINS", skinPlayers.length ? `<div class="ps">
+                            <div class="ps-players" role="group" aria-label="Choose a pro player">
+                                ${skinPlayers.map(function (p, i) {
+                                    return `<button type="button" class="ps-player" data-ps="${p.slug}" aria-pressed="${i === 0}" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">${skinPhoto(p, "", 40, 45)}<span class="ps-text"><span class="ps-name">${esc(p.name)}</span><span class="ps-info">${p.items.length} skins${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span></button>`;
+                                }).join("\n                                ")}
+                            </div>
+                            ${skinPlayers.map(function (p, i) {
+                                return `<div class="ps-panel${i === 0 ? "" : " hidden"}" data-ps-panel="${p.slug}">
+                                <p class="ps-summary">${esc(skinSummary(p))} <a href="skins/${p.slug}.html">See all ${p.items.length} skins of ${esc(p.name)} ›</a></p>
+                                <div class="skin-grid">
+                                ${p.best.slice(0, 12).map(function (g) { return skinCardHTML(g, p.name, "", false); }).join("\n                                ")}
+                                </div>
+                            </div>`;
+                            }).join("\n                            ")}
+                            <p class="ps-more"><a href="skins/">All CS2 pro inventories ›</a> · Updated ${esc(skinData.updated || "")}</p>
+                            ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+                        </div>` : `<p class="empty">The weapon skins, knives and gloves of CS2 pro players. Coming soon!</p>`, "                        ");
 
     // Empreintes des fichiers CSS/JS dans index.html
     index = index
@@ -690,6 +778,258 @@ ${genFaq.map(function (q) {
 </html>
 `);
 
+    // ===== 3 ter. Les skins des pros : skins/index.html + une page par joueur (skins/<pseudo>.html) =====
+    if (!fs.existsSync("skins")) {
+        fs.mkdirSync("skins");
+    }
+    const skinFiles = ["index.html"];
+    const skinsUrl = `${SITE_URL}/skins/`;
+    const categoryLabel = Object.fromEntries(SKIN_CATEGORIES);
+
+    function skinList(groups, max) {
+        const names = groups.slice(0, max).map(function (g) {
+            return g.item.name + (g.item.exterior !== "Vanilla" ? " (" + g.item.exterior + ")" : "");
+        });
+        return names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names.join("");
+    }
+
+    function skinBreadcrumb(name, url) {
+        const list = [
+            { "@type": "ListItem", "position": 1, "name": "CS2 Crosshairs", "item": SITE_URL + "/" },
+            { "@type": "ListItem", "position": 2, "name": "CS2 Pro Skins", "item": skinsUrl }
+        ];
+        if (name) {
+            list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+        }
+        return { "@type": "BreadcrumbList", "@id": (url || skinsUrl) + "#breadcrumb", "itemListElement": list };
+    }
+
+    skinPlayers.forEach(function (p) {
+        const name = esc(p.name);
+        const file = p.slug + ".html";
+        const url = skinsUrl + file;
+        const known = players.find(function (x) { return x.name === p.name; });
+        const byCategory = SKIN_CATEGORIES.map(function (c) {
+            return { key: c[0], label: c[1], groups: p.groups.filter(function (g) { return g.item.category === c[0]; }) };
+        }).filter(function (c) { return c.groups.length > 0; });
+        const knives = p.groups.filter(function (g) { return g.item.category === "knives"; });
+        const gloves = p.groups.filter(function (g) { return g.item.category === "gloves"; });
+        const top = p.best.slice(0, 2);
+        skinFiles.push(file);
+
+        const faq = [];
+        faq.push([`How many CS2 skins does ${p.name} have?`,
+            `${p.name}'s public Steam inventory has ${p.items.length} CS2 weapon skins (${p.groups.length} different), including ${knives.length} knife skin${knives.length === 1 ? "" : "s"} and ${gloves.length} pair${gloves.length === 1 ? "" : "s"} of gloves. Updated on ${p.updated}.`]);
+        if (knives.length) {
+            faq.push([`What knife does ${p.name} have in CS2?`, `${p.name} owns ${skinList(knives, 6)}.`]);
+        }
+        if (gloves.length) {
+            faq.push([`What gloves does ${p.name} have in CS2?`, `${p.name} owns ${skinList(gloves, 6)}.`]);
+        }
+        if (p.hasPrices) {
+            faq.unshift([`How much is ${p.name}'s CS2 inventory worth?`,
+                `${p.name}'s CS2 skins are worth about ${money(p.value, "USD")} (${money(p.valueEur, "EUR")}), based on the lowest CSFloat listing of each skin on ${skinData.prices.updated}. The most expensive one is ${p.best[0].item.marketName} at ${formatPrice(p.best[0].item.price, "USD")}.`]);
+        }
+        faq.push([`Are these skin floats exact?`,
+            `Yes. Every float on this page is the exact wear value of the item, read from ${p.name}'s public Steam inventory.`]);
+
+        const description = p.hasPrices
+            ? `${p.name}'s CS2 inventory is worth about ${money(p.value, "USD")}: ${p.items.length} skins incl. ${top.map(function (g) { return g.item.name; }).join(" and ")}. Prices, exact floats and wear.`
+            : `${p.name}'s CS2 inventory: ${p.items.length} skins${top.length ? " incl. " + top.map(function (g) { return g.item.name; }).join(" and ") : ""}. Exact floats, wear and rarity, updated ${p.updated}.`;
+        const graph = [
+            {
+                "@type": "CollectionPage",
+                "@id": url,
+                "url": url,
+                "name": `${p.name} CS2 Skins & Inventory`,
+                "description": description,
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "about": { "@id": url + "#person" },
+                "breadcrumb": { "@id": url + "#breadcrumb" },
+                "dateModified": isoDate(p.updated),
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "name": `${p.name}'s CS2 skins`,
+                    "numberOfItems": p.groups.length,
+                    "itemListElement": p.groups.slice(0, 30).map(function (g, i) {
+                        return { "@type": "ListItem", "position": i + 1, "name": g.item.marketName, "image": `${SITE_URL}/skins/img/${g.item.image}.webp` };
+                    })
+                }
+            },
+            skinBreadcrumb(p.name + " skins", url),
+            {
+                "@type": "Person",
+                "@id": url + "#person",
+                "name": p.name,
+                "description": `${p.name} is a CS2 pro player${p.team ? " for " + p.team : ""}.`,
+                "url": known ? `${SITE_URL}/players/${slug(known.name)}.html` : url
+            },
+            {
+                "@type": "FAQPage",
+                "@id": url + "#faq",
+                "mainEntity": faq.map(function (q) {
+                    return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+                })
+            }
+        ];
+        if (p.team) {
+            graph[2].memberOf = { "@type": "SportsTeam", "name": p.team, "sport": "Counter-Strike 2" };
+        }
+        const others = skinPlayers.filter(function (o) { return o !== p; });
+
+        fs.writeFileSync("skins/" + file, `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: `${name} CS2 Skins &amp; Inventory: Knife, Gloves, Floats (2026) | ClutchCrosshair`,
+        ogTitle: `${name} CS2 Skins & Inventory`,
+        description: description,
+        url: url,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": graph }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../")}
+
+    <main class="player-page skins-page" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <a href="./">Pro skins</a> › <span>${name}</span></nav>
+
+        <div class="player-head">
+            ${skinPhoto(p, "../", 120, 134, "player-photo", true)}
+            <div>
+                <h1>${name} CS2 Skins</h1>
+                ${p.team ? `<p class="player-team">${logoFor(p.team) ? `<img class="player-team-logo" src="../${logoFor(p.team)}" alt="" width="20" height="20">` : ""}${esc(p.team)}</p>` : ""}
+                <p class="player-date">${p.items.length} skins${p.hasPrices ? ` · <strong>${money(p.value, "USD")}</strong> / ${money(p.valueEur, "EUR")}` : ""} · Updated <time datetime="${isoDate(p.updated)}">${esc(p.updated)}</time></p>
+            </div>
+        </div>
+
+        <p>${esc(skinSummary(p))} ${top.length ? `${name}'s ${p.hasPrices ? "most expensive" : "rarest"} items are ${esc(skinList(top, 2))}.` : ""} Every float is the exact wear value read from ${name}'s public Steam inventory.${known ? ` Looking for ${name}'s crosshair? <a href="../players/${slug(known.name)}.html">Copy ${name}'s CS2 crosshair ›</a>` : ""}</p>
+
+        <nav class="skin-jump" aria-label="Skin categories">
+            ${byCategory.map(function (c) {
+                return `<a href="#${c.key}">${c.label} <span>${c.groups.reduce(function (n, g) { return n + g.count; }, 0)}</span></a>`;
+            }).join("\n            ")}
+        </nav>
+        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+
+${p.hasPrices ? `        <section class="skin-section" id="most-expensive" aria-labelledby="most-expensive-title">
+            <h2 id="most-expensive-title">${name}'s most expensive skins</h2>
+            <div class="skin-grid">
+            ${p.best.slice(0, 8).map(function (g, i) { return skinCardHTML(g, p.name, "../", i < 4); }).join("\n            ")}
+            </div>
+        </section>
+` : ""}${byCategory.map(function (c, ci) {
+        return `        <section class="skin-section" id="${c.key}" aria-labelledby="${c.key}-title">
+            <h2 id="${c.key}-title">${name}'s ${c.label.toLowerCase()}</h2>
+            <div class="skin-grid">
+            ${c.groups.map(function (g, i) { return skinCardHTML(g, p.name, "../", ci === 0 && i < 4); }).join("\n            ")}
+            </div>
+        </section>`;
+    }).join("\n")}
+
+        <h2>${name} skins FAQ</h2>
+${faq.map(function (q) {
+        return `        <h3>${esc(q[0])}</h3>
+        <p>${esc(q[1])}</p>`;
+    }).join("\n")}
+
+        ${others.length ? `<h2>Other CS2 pro inventories</h2>
+        <ul class="related">${others.map(function (o) {
+            return `<li><a href="${o.slug}.html">${esc(o.name)} skins</a></li>`;
+        }).join("")}</ul>` : ""}
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+    });
+
+    // La page d'accueil des skins : tous les pros + leurs couteaux et gants
+    if (skinPlayers.length) {
+        const hubDescription = `CS2 pro skins and inventories: the knives, gloves and weapon skins of ${skinPlayers.map(function (p) { return p.name; }).join(", ")}, with exact floats. Updated ${skinData.updated}.`;
+        fs.writeFileSync("skins/index.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({
+        title: `CS2 Pro Skins &amp; Inventories: ${skinPlayers.map(function (p) { return esc(p.name); }).join(", ")} (2026) | ClutchCrosshair`,
+        ogTitle: "CS2 Pro Skins & Inventories",
+        description: hubDescription,
+        url: skinsUrl,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": skinsUrl,
+                "url": skinsUrl,
+                "name": "CS2 Pro Skins & Inventories",
+                "description": hubDescription,
+                "inLanguage": "en",
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": skinsUrl + "#breadcrumb" },
+                "dateModified": isoDate(skinData.updated),
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": skinPlayers.map(function (p, i) {
+                        return { "@type": "ListItem", "position": i + 1, "name": p.name + " CS2 skins", "url": skinsUrl + p.slug + ".html" };
+                    })
+                }
+            },
+            skinBreadcrumb(null, null)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../")}
+
+    <main class="player-page skins-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">CS2 Crosshairs</a> › <span>Pro skins</span></nav>
+        <h1>CS2 Pro Skins</h1>
+        <p>The real CS2 inventories of the best pro players: every knife, pair of gloves and weapon skin, with its exact float and wear, read from their public Steam inventories, with the price of every skin and the total value of each inventory. Updated on ${esc(skinData.updated)}.</p>
+        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+
+        <div class="ps-tiles">
+            ${skinPlayers.map(function (p) {
+                const best = p.best[0];
+                return `<a class="ps-tile" href="${p.slug}.html" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
+                ${skinPhoto(p, "../", 56, 63)}
+                <span class="ps-text"><span class="ps-name">${esc(p.name)}</span>${p.team ? `<span class="ps-info">${esc(p.team)}</span>` : ""}<span class="ps-info">${p.items.length} skins${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span>
+                <img class="ps-tile-skin" src="img/${esc(best.item.image)}.webp" alt="${esc(p.name)}'s ${esc(best.item.name)}" width="80" height="60" loading="lazy" decoding="async">
+            </a>`;
+            }).join("\n            ")}
+        </div>
+
+${skinPlayers.map(function (p) {
+        const special = p.groups.filter(function (g) { return g.item.category === "knives" || g.item.category === "gloves"; });
+        const shown = (special.length ? special : p.groups).slice(0, 8);
+        return `        <section class="skin-section" aria-labelledby="hub-${p.slug}">
+            <h2 id="hub-${p.slug}">${esc(p.name)}'s ${special.length ? "knives &amp; gloves" : "best skins"}</h2>
+            <div class="skin-grid">
+            ${shown.map(function (g) { return skinCardHTML(g, p.name, "../", false); }).join("\n            ")}
+            </div>
+            <p><a href="${p.slug}.html">See all ${p.items.length} skins of ${esc(p.name)} ›</a></p>
+        </section>`;
+    }).join("\n")}
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+    }
+
+    // Supprimer les pages de skins des joueurs retirés (ou devenus privés)
+    fs.readdirSync("skins").forEach(function (f) {
+        if (f.endsWith(".html") && !skinFiles.includes(f)) {
+            fs.unlinkSync("skins/" + f);
+            console.log("Page supprimée : skins/" + f);
+        }
+    });
+
     // ===== 4. legal.html : mentions légales (obligatoires en France) =====
     fs.writeFileSync("legal.html", `<!DOCTYPE html>
 <html lang="en">
@@ -737,6 +1077,16 @@ ${genFaq.map(function (q) {
     let urls = `    <url><loc>${SITE_URL}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     urls += `    <url><loc>${genUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
     urls += `    <url><loc>${faqUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
+    if (skinPlayers.length) {
+        urls += `    <url><loc>${skinsUrl}</loc>${isoDate(skinData.updated) ? `<lastmod>${isoDate(skinData.updated)}</lastmod>` : ""}</url>\n`;
+    }
+    skinPlayers.forEach(function (p) {
+        // Les 10 plus beaux skins de la page dans le sitemap (Google Images : "ZywOo knife"...)
+        const images = p.groups.slice(0, 10).map(function (g) {
+            return `<image:image><image:loc>${SITE_URL}/skins/img/${g.item.image}.webp</image:loc></image:image>`;
+        }).join("");
+        urls += `    <url><loc>${skinsUrl}${p.slug}.html</loc>${isoDate(p.updated) ? `<lastmod>${isoDate(p.updated)}</lastmod>` : ""}${images}</url>\n`;
+    });
     players.forEach(function (player) {
         const lastmod = isoDate(player.updated);
         const photo = photoFiles(player).original;
@@ -772,6 +1122,7 @@ ${urls}</urlset>
 </html>
 `);
 
+    console.log(skinPlayers.length + " pages skins + skins/index.html");
     console.log(players.length + " pages joueurs + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
 }
 
