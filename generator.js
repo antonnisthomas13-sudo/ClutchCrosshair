@@ -3,7 +3,7 @@
 // Le HTML du générateur (curseurs, boutons...) est écrit par build.js (generatorHTML dans render.js) :
 // ce fichier ne fait que le rendre vivant. Chaque réglage fabrique un VRAI code CS2 (format CS...).
 import { encodeCrosshair, decodeCrosshairShareCode, crosshairToConVars } from "./lib/csgo-sharecode.js";
-import { copyText, drawCrosshair } from "./crosshair.js?v=bfe149dd28";
+import { copyText, drawCrosshair } from "./crosshair.js?v=148d2337c4";
 
 // Couleur (r, g, b) -> "#00FF00"
 function toHex(c) {
