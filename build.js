@@ -400,7 +400,7 @@ async function main() {
         if (c.alpha < 255) {
             parts.push(Math.round(c.alpha / 255 * 100) + "% opacity");
         }
-        const settings = `${player.name} uses a ${size} ${color}${c.style === 4 ? " static" : ""} crosshair: ${listText(parts)}, set for a ${c.screenHeight}p screen height.`;
+        const settings = `${player.name} uses a ${size} ${color}${c.style === 4 ? " static" : c.style === 9 ? " X-shaped (rotated 45°)" : ""} crosshair: ${listText(parts)}, set for a ${c.screenHeight}p screen height.`;
         const longer = percentOfPros(function (x) { return x.c.length > c.length; });
         const sameColor = percentOfPros(function (x) { return colorName(x.c) === color; });
         const comparison = `${longer}% of the ${proCrosshairs.length} pros on ClutchCrosshair use a longer crosshair, and ${sameColor}% play with a ${color} one.`;

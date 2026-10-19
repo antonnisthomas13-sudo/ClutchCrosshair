@@ -93,6 +93,7 @@ Depuis la mise à jour CS2 du 30/09/2026, les codes sont au nouveau format **`CS
 Les anciens `CSGO-xxxxx-...` ne s'importent plus dans le jeu → **ne jamais mettre de code `CSGO-` sur le site**, et ne pas lire de démo d'avant le 30/09.
 Les listes de codes trouvées sur Internet sont presque toutes encore en `CSGO-` : inutilisables.
 `csgo-sharecode` 7.0.1 décode les deux (champ `format` : `cs2-v1`, `legacy-v1`…). Dans le nouveau format, les tailles sont en pixels pour `screenHeight`.
+**`cl_crosshairstyle 9` = crosshair en X** (4 traits en diagonale + point droit), vu en jeu par Anto sur shox le 19/10/2026 : dessiné à part dans `drawCrosshair` (crosshair.js), réglé au pixel sur sa capture en 1280×960 (4 petits carrés de côté = épaisseur arrondie vers le bas). Les autres styles (3, 4, 5) sont dessinés en « + » classique.
 Plusieurs pros ont exactement le même code (ex. petit crosshair cyan ou vert) : c'est normal, vérifié en décodant (peu de réglages possibles en pixels).
 
 ## Le robot read_demo.py

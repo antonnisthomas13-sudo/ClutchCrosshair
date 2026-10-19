@@ -292,6 +292,10 @@ function drawBars(ctx, code, w, h, look) {
     const startX = Math.ceil(thickX / 2) + Math.round(gap * unitX); // distance entre le centre et le début de chaque trait
     const startY = Math.ceil(thickY / 2) + Math.round(gap * unitY);
 
+    // Style 9 (codes CS2) : crosshair en X. Mesuré au pixel sur une capture en jeu (shox, 1280×960, 19/10/2026) :
+    // 4 petits carrés (côté = l'épaisseur arrondie vers le bas) en diagonale, à la même distance du centre que les traits normaux ; le point reste droit.
+    const rotated = c.format !== "legacy-v1" && c.style === 9;
+
     const bars = [
         [cx + startX, cy - halfY, lengthX, thickY],           // droite
         [cx - startX - lengthX, cy - halfY, lengthX, thickY], // gauche
@@ -300,20 +304,44 @@ function drawBars(ctx, code, w, h, look) {
     if (!c.tStyleEnabled) {
         bars.push([cx - halfX, cy - startY - lengthY, thickX, lengthY]); // haut (absent en style "T")
     }
-    if (c.centerDotEnabled) {
-        bars.push([cx - halfX, cy - halfY, thickX, thickY]);
-    }
+    const dot = c.centerDotEnabled ? [[cx - halfX, cy - halfY, thickX, thickY]] : [];
+    const color = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
 
-    if (outline > 0) {
-        ctx.fillStyle = outlineColor;
-        bars.forEach(function (b) {
-            ctx.fillRect(b[0] - outlineX, b[1] - outlineY, b[2] + outlineX * 2, b[3] + outlineY * 2);
+    // Dessine des rectangles : d'abord le contour (plus grand, derrière), puis la couleur
+    function paint(list) {
+        if (outline > 0) {
+            ctx.fillStyle = outlineColor;
+            list.forEach(function (b) {
+                ctx.fillRect(b[0] - outlineX, b[1] - outlineY, b[2] + outlineX * 2, b[3] + outlineY * 2);
+            });
+        }
+        ctx.fillStyle = color;
+        list.forEach(function (b) {
+            ctx.fillRect(b[0], b[1], b[2], b[3]);
         });
     }
-    ctx.fillStyle = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
-    bars.forEach(function (b) {
-        ctx.fillRect(b[0], b[1], b[2], b[3]);
-    });
+
+    if (rotated) {
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(Math.PI / 4);
+        ctx.translate(-cx, -cy);
+        // Épaisseur arrondie vers le bas pour ce style (comme en jeu)
+        const sqX = Math.max(1, Math.floor(thick * unitX));
+        const sqY = Math.max(1, Math.floor(thick * unitY));
+        const fromX = Math.ceil(sqX / 2) + Math.round(gap * unitX);
+        const fromY = Math.ceil(sqY / 2) + Math.round(gap * unitY);
+        paint([
+            [cx + fromX, cy - Math.floor(sqY / 2), sqX, sqY],
+            [cx - fromX - sqX, cy - Math.floor(sqY / 2), sqX, sqY],
+            [cx - Math.floor(sqX / 2), cy + fromY, sqX, sqY],
+            [cx - Math.floor(sqX / 2), cy - fromY - sqY, sqX, sqY]
+        ]);
+        ctx.restore();
+        paint(dot);
+    } else {
+        paint(bars.concat(dot));
+    }
 }
 
 // Taille du canvas en vrais pixels (= sa taille à l'écran × densité) : image nette, ni agrandie ni rétrécie
