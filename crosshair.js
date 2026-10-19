@@ -35,6 +35,37 @@ function legacyCopy(text) {
     area.remove();
 }
 
+// Petit "HEADSHOT" façon killfeed de CS2 au-dessus du bouton Copy, pendant environ 1 seconde
+// (posé sur la page, il ne cache rien et ne bloque aucun clic ; crâne en SVG, aucune image de Valve)
+const SKULL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7 2 3.5 5.6 3.5 10.2c0 2.6 1.2 4.6 3 5.9V19a1 1 0 0 0 1 1H9v-2h1.5v2h3v-2H15v2h1.5a1 1 0 0 0 1-1v-2.9c1.8-1.3 3-3.3 3-5.9C20.5 5.6 17 2 12 2Zm-3.5 9.6a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm7 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/></svg>';
+
+function showHeadshot(button) {
+    if (button.headshot) {
+        button.headshot.remove(); // clics répétés : on remplace l'étiquette au lieu d'en empiler
+    }
+    const tag = document.createElement("span");
+    tag.className = "headshot";
+    tag.setAttribute("aria-hidden", "true");
+    tag.innerHTML = SKULL + "HEADSHOT";
+    document.body.appendChild(tag);
+    const box = button.getBoundingClientRect();
+    tag.style.left = Math.max(8, box.right - tag.offsetWidth) + "px";
+    tag.style.top = Math.max(8, box.top - tag.offsetHeight - 6) + "px";
+    button.headshot = tag;
+    const remove = function () {
+        tag.remove();
+        if (button.headshot === tag) {
+            button.headshot = null;
+        }
+    };
+    // Avec "moins d'animations", pas de mouvement : l'étiquette reste 1 seconde puis disparaît
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setTimeout(remove, 1000);
+    } else {
+        tag.addEventListener("animationend", remove);
+    }
+}
+
 // Copier un texte et afficher "Copied!" 1,5 seconde sur le bouton
 export function copyText(text, button) {
     if (navigator.clipboard && window.isSecureContext) {
@@ -51,6 +82,7 @@ export function copyText(text, button) {
         button.dataset.label = button.textContent;
     }
     button.textContent = "Copied!";
+    showHeadshot(button);
 
     // Geste signature : une barre rouge "COPIED" balaie la ligne du code (voir .field-row.copied dans style.css)
     const row = button.closest(".field-row");

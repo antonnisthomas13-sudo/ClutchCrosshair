@@ -2,7 +2,7 @@
 // Tout le contenu (cartes, menu des équipes, onglet Trending, compteurs) est déjà écrit dans index.html par build.js :
 // ce fichier ajoute seulement les interactions. Rien de plus à télécharger (pas de players.json).
 // crosshair.js : l'aperçu du crosshair + le bouton Copy (partagé avec les pages joueurs)
-import { copyText, drawCrosshair } from "./crosshair.js?v=66de5554f9";
+import { copyText, drawCrosshair } from "./crosshair.js?v=ae8050a5cd";
 
 const layout = document.querySelector(".layout");
 const main = document.getElementById("main");
@@ -73,8 +73,158 @@ search.addEventListener("input", function () {
         filterCards(function (card) {
             return card.dataset.name.includes(text) || card.dataset.team.toLowerCase().includes(text);
         }, false);
+        easterEggs(text);
     });
 });
+
+// Easter eggs cachés dans la recherche (une seule fois par saisie, pas à chaque lettre)
+const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let lastEgg = "";
+
+function easterEggs(text) {
+    const egg = /^rush\s*b!*$/.test(text) ? "rushb" : (text === "7355608" ? "bomb" : "");
+    if (egg && egg !== lastEgg) {
+        if (egg === "rushb") {
+            rushB();
+        } else {
+            plantBomb();
+        }
+    }
+    lastEgg = egg;
+}
+
+// "7355608" (le code de la bombe) : la C4 est posée, bips visuels qui accélèrent, petite explosion cartoon,
+// "Terrorists win". Pas de son, pas de flash, 4 secondes maximum, un clic n'importe où (ou Échap) ferme tout.
+function plantBomb() {
+    if (document.querySelector(".c4")) {
+        return;
+    }
+    const overlay = document.createElement("div");
+    overlay.className = "c4";
+    overlay.setAttribute("role", "status");
+    overlay.innerHTML = '<div class="c4-scene" aria-hidden="true">'
+        + '<svg class="c4-bomb" viewBox="0 0 240 150">'
+        + '<rect class="c4-block" x="20" y="44" width="200" height="28" rx="6"/>'
+        + '<rect class="c4-block" x="20" y="76" width="200" height="28" rx="6"/>'
+        + '<rect class="c4-block" x="20" y="108" width="200" height="28" rx="6"/>'
+        + '<rect class="c4-tape" x="44" y="40" width="16" height="100" rx="2"/>'
+        + '<rect class="c4-tape" x="182" y="40" width="16" height="100" rx="2"/>'
+        + '<path class="c4-wire" d="M86 96 C 60 100, 58 120, 40 122"/>'
+        + '<path class="c4-wire c4-wire-b" d="M156 96 C 180 104, 186 122, 204 124"/>'
+        + '<rect class="c4-box" x="80" y="18" width="80" height="86" rx="4"/>'
+        + '<rect class="c4-screen" x="88" y="26" width="64" height="18" rx="2"/>'
+        + '<text class="c4-digits" x="120" y="40" text-anchor="middle"></text>'
+        + [0, 1, 2, 3].map(function (row) {
+            return [0, 1, 2].map(function (col) {
+                return '<rect class="c4-key" x="' + (91 + col * 20) + '" y="' + (51 + row * 12) + '" width="16" height="8" rx="1.5"/>';
+            }).join("");
+        }).join("")
+        + '<circle class="c4-led" cx="152" cy="14" r="5"/>'
+        + '</svg>'
+        + '<div class="c4-boom"><i></i><i></i><i></i><b>BOOM!</b></div>'
+        + '</div>'
+        + '<p class="c4-title">Bomb has been planted</p>'
+        + '<p class="c4-sub">Click anywhere to close</p>';
+    document.body.appendChild(overlay);
+
+    const digits = overlay.querySelector(".c4-digits");
+    const led = overlay.querySelector(".c4-led");
+    const title = overlay.querySelector(".c4-title");
+    const sub = overlay.querySelector(".c4-sub");
+    const timers = [];
+    const later = function (ms, fn) {
+        timers.push(setTimeout(fn, ms));
+    };
+    function close() {
+        timers.forEach(clearTimeout);
+        overlay.remove();
+        document.removeEventListener("keydown", onKey);
+    }
+    function onKey(event) {
+        if (event.key === "Escape") {
+            close();
+        }
+    }
+    overlay.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+
+    function ending() {
+        title.textContent = "Terrorists win";
+        sub.textContent = "You should've defused it.";
+        overlay.classList.add("c4-ended");
+    }
+
+    if (calm) {
+        // Moins d'animations : pas d'explosion, juste le texte qui change
+        digits.textContent = "7355608";
+        later(1500, ending);
+        later(3200, close);
+        return;
+    }
+
+    // Le code se tape chiffre par chiffre sur l'écran
+    "7355608".split("").forEach(function (d, i) {
+        later(80 + i * 85, function () {
+            digits.textContent += d;
+        });
+    });
+    // Bips visuels de plus en plus rapides (la LED et une onde), de 0,7 s à 2,7 s
+    let t = 700;
+    let gap = 380;
+    while (t < 2650) {
+        later(t, function () {
+            led.classList.remove("c4-beep");
+            void led.getBoundingClientRect();
+            led.classList.add("c4-beep");
+            overlay.classList.remove("c4-pulse");
+            void overlay.offsetWidth;
+            overlay.classList.add("c4-pulse");
+        });
+        t += gap;
+        gap = Math.max(70, gap * 0.78);
+    }
+    later(2700, function () {
+        overlay.classList.remove("c4-pulse");
+        overlay.classList.add("c4-exploded");
+    });
+    later(3150, ending);
+    later(4000, close);
+}
+
+// "rush b" : un petit bonhomme traverse l'écran en courant ("Rush B, don't stop!"), puis disparaît
+function rushB() {
+    if (document.querySelector(".rushb")) {
+        return;
+    }
+    const runner = document.createElement("div");
+    runner.className = "rushb";
+    runner.setAttribute("aria-hidden", "true");
+    runner.innerHTML = '<span class="rushb-bubble">Rush B, don\'t stop!</span>'
+        + '<svg class="rushb-guy" viewBox="0 0 64 80">'
+        + '<g class="rushb-lean">'
+        + '<line class="rushb-limb rushb-leg-a" x1="30" y1="48" x2="22" y2="74"/>'
+        + '<line class="rushb-limb rushb-leg-b" x1="30" y1="48" x2="38" y2="74"/>'
+        + '<line class="rushb-limb rushb-torso" x1="33" y1="26" x2="30" y2="48"/>'
+        + '<line class="rushb-limb rushb-arm-a" x1="33" y1="30" x2="22" y2="42"/>'
+        + '<line class="rushb-limb rushb-arm-b" x1="33" y1="30" x2="45" y2="40"/>'
+        + '<circle class="rushb-head" cx="35" cy="15" r="9"/>'
+        + '<path class="rushb-band" d="M26 12 h18 v4 h-18 Z M26 13 l-8 -4 l2 7 Z"/>'
+        + '</g></svg>';
+    document.body.appendChild(runner);
+    const remove = function () {
+        runner.remove();
+    };
+    if (calm) {
+        setTimeout(remove, 1600);
+    } else {
+        runner.addEventListener("animationend", function (event) {
+            if (event.target === runner) {
+                remove();
+            }
+        });
+        setTimeout(remove, 5000); // sécurité
+    }
+}
 
 // 5. Menu de gauche : les équipes (boutons déjà écrits par build.js)
 const teamsMenu = document.getElementById("teams");
@@ -152,7 +302,7 @@ let generatorLoading = null;
 
 function loadGenerator() {
     if (!generatorLoading) {
-        generatorLoading = import("./generator.js?v=0c7aae34e4").then(function (module) {
+        generatorLoading = import("./generator.js?v=badbe7a98f").then(function (module) {
             module.initGenerator(document.getElementById("gen"));
         }).catch(function () {
             generatorLoading = null; // connexion coupée : on réessaiera au prochain clic
@@ -288,6 +438,10 @@ function showPlayer(card) {
     document.getElementById("modal-code").textContent = code;
     document.getElementById("modal-console").textContent = card.querySelector(".console").textContent;
     document.getElementById("modal-page").href = card.querySelector("h3 a").getAttribute("href");
+    const faceit = document.getElementById("modal-faceit");
+    faceit.hidden = !card.dataset.faceit; // bouton seulement pour les créateurs qui ont un profil FACEIT
+    faceit.href = card.dataset.faceit || "#";
+    faceit.setAttribute("aria-label", name + " FACEIT profile (opens in a new tab)");
 
     const wasHidden = modal.classList.contains("hidden");
     modal.classList.remove("hidden");

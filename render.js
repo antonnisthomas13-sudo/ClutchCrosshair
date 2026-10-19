@@ -89,7 +89,7 @@ export function cardHTML(player, options) {
     const name = esc(player.name);
     const team = esc(player.team);
     const color = teamColor(player.team);
-    const photoAttr = o.photoMd ? ` data-photo="${esc(o.photoMd)}"` : "";
+    const photoAttr = (o.photoMd ? ` data-photo="${esc(o.photoMd)}"` : "") + (player.faceit ? ` data-faceit="${esc(player.faceit)}"` : "");
     return `<article class="card" data-slug="${slug(player.name)}" data-team="${team}" data-name="${esc(player.name.toLowerCase())}" data-updated="${sortableDate(player.updated)}" data-date="${esc(player.updated)}"${photoAttr} style="--team: ${color}; --on-team: ${textOnColor(color)}">
             <div class="card-top">
                 <h3><a href="players/${slug(player.name)}.html">${name}</a></h3>

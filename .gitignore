@@ -18,3 +18,7 @@ skins/src/
 
 # Clé API CSFloat (secrète) : jamais sur GitHub
 csfloat-key.txt
+
+# Clés secrètes (FACEIT...) : jamais sur GitHub
+.env
+faceit-test/

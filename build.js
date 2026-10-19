@@ -19,7 +19,7 @@ const SITE_URL = "https://antonnisthomas13-sudo.github.io/ClutchCrosshair";
 
 // Mentions légales : À REMPLIR avant de publier
 const PUBLISHER_NAME = "Anto";
-const PUBLISHER_EMAIL = "[À REMPLIR : ton e-mail de contact]";
+const PUBLISHER_EMAIL = "clutchcrosshair@gmail.com";
 
 // Nombre de cartes dont la photo est chargée tout de suite (la première rangée, visible sans défiler)
 const EAGER_CARDS = 4;
@@ -441,6 +441,9 @@ async function main() {
         if (player && player.hltv) {
             links.push(player.hltv); // page HLTV donnée à la main (ex. art, dont la page Liquipedia est celle d'un homonyme)
         }
+        if (player && player.faceit) {
+            links.push(player.faceit); // profil FACEIT des créateurs (creators.csv, via import-creators.js)
+        }
         return links;
     }
 
@@ -552,6 +555,7 @@ async function main() {
                 <h1>${name} CS2 Crosshair</h1>
                 <p class="player-team">${badge}${team}</p>
                 <p class="player-date">Last update: <time datetime="${isoDate(player.updated)}">${esc(player.updated)}</time></p>
+                ${player.faceit ? `<a class="faceit-btn" href="${esc(player.faceit)}" target="_blank" rel="external noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.4l-6.3 6.3-1.4-1.4L9.6 5H5z"/></svg>${name} FACEIT profile</a>` : ""}
             </div>
         </div>
 
@@ -758,7 +762,7 @@ ${insights.faq.map(function (q) {
         ["How do I share my own CS2 crosshair?",
             "In CS2, open Settings › Game › Crosshair and click Share or Import, then copy your code. Anyone can import it with the same button."],
         ["A crosshair is wrong or missing. How can I report it?",
-            "Use the Contact us button on the home page. We check every report against the latest official match demos."]
+            "Email us at clutchcrosshair@gmail.com or use the Contact us button on the home page. We check every report against the latest official match demos."]
     ];
 
     const faqUrl = `${SITE_URL}/faq.html`;
@@ -2352,6 +2356,111 @@ ${bindFaq.map(function (q) {
         console.log("tools/index.html + tools/bind-generator.html");
     }
 
+    // ===== 3 septies. valorant.html : page "Coming soon" façon Killjoy (noindex, pas dans le sitemap) =====
+    // Tourelle 100 % SVG/CSS (aucune image de Riot), barre bloquée à 87 %, phrases drôles qui changent
+    const VALORANT_JOKES = [
+        "Spike planted. Valorant crosshairs defusing in progress.",
+        "Our Jett dashed away with the code. We're chasing her.",
+        "Sage is reviving this page. Cooldown: a few weeks.",
+        "Cypher already knows the release date. He won't tell us.",
+        "Killjoy's turret found a bug. It shot it."
+    ];
+    fs.writeFileSync("valorant.html", `<!DOCTYPE html>
+<html lang="en">
+<head>
+    ${head({ title: "Valorant Crosshairs: Coming Soon | ClutchCrosshair", description: "Valorant pro crosshairs are coming soon to ClutchCrosshair. Meanwhile, copy the CS2 crosshairs of the best pro players.", url: SITE_URL + "/valorant.html", prefix: "", noindex: true })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("./")}
+
+    <main class="player-page vk-page">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>Valorant</span></nav>
+
+        <div class="vk-stage" aria-hidden="true">
+            <svg class="vk-turret" viewBox="0 0 240 220">
+                <ellipse class="vk-shadow" cx="120" cy="204" rx="70" ry="7"/>
+                <g class="vk-legs">
+                    <path d="M120 150 L62 200"/>
+                    <path d="M120 150 L178 200"/>
+                    <path d="M120 150 L120 204"/>
+                </g>
+                <g class="vk-body">
+                    <rect x="78" y="96" width="84" height="58" rx="6"/>
+                    <rect class="vk-panel" x="90" y="108" width="28" height="8" rx="2"/>
+                    <rect class="vk-panel" x="90" y="122" width="18" height="8" rx="2"/>
+                </g>
+                <g class="vk-barrel">
+                    <rect x="160" y="114" width="54" height="12" rx="3"/>
+                    <rect class="vk-panel" x="206" y="111" width="10" height="18" rx="2"/>
+                </g>
+                <g class="vk-head">
+                    <rect x="92" y="58" width="56" height="42" rx="8"/>
+                    <circle class="vk-eye-socket" cx="120" cy="79" r="13"/>
+                    <circle class="vk-eye" cx="120" cy="79" r="6"/>
+                    <path class="vk-antenna" d="M136 58 L144 38"/>
+                    <circle class="vk-antenna-tip" cx="144" cy="36" r="3.5"/>
+                </g>
+                <g class="vk-sparks">
+                    <circle cx="160" cy="120" r="2.5"/>
+                    <circle cx="167" cy="110" r="1.8"/>
+                    <circle cx="154" cy="108" r="1.6"/>
+                </g>
+            </svg>
+        </div>
+
+        <h1 class="vk-title">Valorant crosshairs: coming soon</h1>
+        <p class="vk-lead">Killjoy is still building this page...</p>
+
+        <div class="vk-progress" role="progressbar" aria-label="Page construction" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
+            <div class="vk-bar"><i></i></div>
+            <span class="vk-percent" id="vk-percent">87%</span>
+        </div>
+        <p class="vk-eta">ETA: next patch. Maybe.</p>
+
+        <p class="vk-joke" id="vk-joke" aria-live="polite">${esc(VALORANT_JOKES[0])}</p>
+
+        <p class="vk-actions">
+            <a class="vk-back" href="./">Back to CS2 crosshairs</a>
+            <a class="vk-alt" href="generator.html">Meanwhile, build a CS2 crosshair ›</a>
+        </p>
+    </main>
+
+    ${footer("")}
+    <script type="module">
+        // Compteur qui monte jusqu'à 87 % en même temps que la barre (directement 87 % si moins d'animations)
+        const percent = document.getElementById("vk-percent");
+        const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const start = performance.now();
+        function count(now) {
+            const t = Math.min(1, (now - start) / 3200);
+            percent.textContent = Math.round(87 * (1 - Math.pow(1 - t, 3))) + "%";
+            if (t < 1) {
+                requestAnimationFrame(count);
+            }
+        }
+        if (!calm) {
+            percent.textContent = "0%";
+            requestAnimationFrame(count);
+        }
+
+        // Une phrase drôle toutes les 3,5 secondes, avec un petit fondu
+        const jokes = ${JSON.stringify(VALORANT_JOKES)};
+        const joke = document.getElementById("vk-joke");
+        let i = 0;
+        setInterval(function () {
+            joke.classList.add("vk-fade");
+            setTimeout(function () {
+                i = (i + 1) % jokes.length;
+                joke.textContent = jokes[i];
+                joke.classList.remove("vk-fade");
+            }, calm ? 0 : 250);
+        }, 3500);
+    </script>
+</body>
+</html>
+`);
+
     // ===== 4. legal.html : mentions légales (obligatoires en France) =====
     fs.writeFileSync("legal.html", `<!DOCTYPE html>
 <html lang="en">
@@ -2372,7 +2481,7 @@ ${bindFaq.map(function (q) {
 
         <h2>Publisher</h2>
         <p>ClutchCrosshair is published by ${esc(PUBLISHER_NAME)}, private individual (France).<br>
-        Contact: ${esc(PUBLISHER_EMAIL)}<br>
+        Contact: <a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a><br>
         Publication director: ${esc(PUBLISHER_NAME)}.</p>
 
         <h2>Hosting</h2>
@@ -2386,7 +2495,7 @@ ${bindFaq.map(function (q) {
         <p>ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode choice is only stored in your own browser (localStorage). Everything, fonts included, is served from this site: your browser does not contact any third-party server.</p>
 
         <h2>Mentions légales (français)</h2>
-        <p>Éditeur et directeur de la publication : ${esc(PUBLISHER_NAME)}, particulier (France). Contact : ${esc(PUBLISHER_EMAIL)}.<br>
+        <p>Éditeur et directeur de la publication : ${esc(PUBLISHER_NAME)}, particulier (France). Contact : <a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>.<br>
         Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
         Counter-Strike et CS2 sont des marques de Valve Corporation ; les noms et images des skins appartiennent à Valve, les inventaires viennent de Steam et les prix de CSFloat. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
     </main>

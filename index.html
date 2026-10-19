@@ -33,8 +33,8 @@
          (les ?v= sont des empreintes calculées par build.js : ne pas les modifier à la main) -->
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=1113e18f22">
-    <link rel="modulepreload" href="crosshair.js?v=66de5554f9">
+    <link rel="stylesheet" href="style.css?v=27e42e57df">
+    <link rel="modulepreload" href="crosshair.js?v=ae8050a5cd">
     <link rel="modulepreload" href="lib/csgo-sharecode.js">
     <link rel="preload" href="preview-bg-sm.webp" as="image" type="image/webp" fetchpriority="low">
 
@@ -57,7 +57,9 @@
                 "@id": "https://antonnisthomas13-sudo.github.io/ClutchCrosshair/#organization",
                 "name": "ClutchCrosshair",
                 "url": "https://antonnisthomas13-sudo.github.io/ClutchCrosshair/",
-                "logo": { "@type": "ImageObject", "url": "https://antonnisthomas13-sudo.github.io/ClutchCrosshair/icon-512.png", "width": 512, "height": 512 }
+                "logo": { "@type": "ImageObject", "url": "https://antonnisthomas13-sudo.github.io/ClutchCrosshair/icon-512.png", "width": 512, "height": 512 },
+                "email": "clutchcrosshair@gmail.com",
+                "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "clutchcrosshair@gmail.com", "availableLanguage": ["English", "French"] }
             }
         ]
     }
@@ -139,7 +141,7 @@
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.1.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                     </a>
                 </div>
-                <a class="contact-btn" href="#">Contact us</a>
+                <a class="contact-btn" href="mailto:clutchcrosshair@gmail.com?subject=ClutchCrosshair">Contact us</a>
                 <p class="side-note">Partnerships &amp; sponsorships</p>
             </div>
         </aside>
@@ -161,7 +163,7 @@
                 <!-- Choix du jeu : CS2 pour l'instant, Valorant arrivera plus tard -->
                 <div class="game-switch" role="group" aria-label="Game">
                     <button type="button" class="game active" aria-pressed="true">CS2</button>
-                    <button type="button" class="game" disabled title="Valorant crosshairs are coming soon">Valorant <small>soon</small></button>
+                    <a class="game game-soon" href="valorant.html" title="Valorant crosshairs are coming soon">Valorant <small>soon</small></a>
                 </div>
                 <!-- Langues : seulement l'anglais pour l'instant, les autres arriveront plus tard -->
                 <a class="top-link" href="faq.html" title="CS2 crosshair FAQ">
@@ -198,7 +200,7 @@
                     <button type="button" class="quick-btn" data-goto="creators">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 10c4.4 0 8 2.2 8 5v3H4v-3c0-2.8 3.6-5 8-5Z"/></svg>
                         <span class="quick-name">Creators</span>
-                        <span class="quick-count" data-count="creators">1 creator</span>
+                        <span class="quick-count" data-count="creators">14 creators</span>
                     </button>
                     <button type="button" class="quick-btn" data-goto="trending">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.6 9.3 11.3l4 4L19.6 9H15V7h8v8h-2v-4.6l-7.7 7.7-4-4L4.4 19 3 17.6Z"/></svg>
@@ -2207,14 +2209,238 @@
                     <section id="creators">
                         <h2>CS2 Content Creator Crosshairs</h2>
                         <!-- CARDS:creators:START (cartes écrites automatiquement par build.js, ne pas modifier à la main) -->
-                        <article class="card" data-slug="maj3r" data-team="Creator" data-name="maj3r" data-updated="20261008" data-date="08/10/2026" style="--team: #A78BFA; --on-team: #111214">
+                        <article class="card" data-slug="chopper" data-team="Creator" data-name="chopper" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/Chopperis" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/chopper.html">Chopper</a></h3>
+                <div class="card-photo">CH</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="Chopper CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSsnVC5U2XHFdudX6FRMHjK3HqsfArhNu2xhWeDp7n53WK</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.5&quot;; cl_crosshair_dynamic_splitdist &quot;7&quot;; cl_crosshair_dynamic_spread_limit &quot;186&quot;; cl_crosshair_gap &quot;0&quot;; cl_crosshair_length &quot;3&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1050&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;2&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;5&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;5&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="dima" data-team="Creator" data-name="dima" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/eblan666__" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/dima.html">Dima</a></h3>
+                <div class="card-photo">DI</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="Dima CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CStQMLXKSkuapWiMdbSN8eyAFq6kp4NbTPfwUV4SqJhOAe</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;3&quot;; cl_crosshair_dynamic_spread_limit &quot;191&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;4&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1080&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;3&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;1&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="f0rest" data-team="Creator" data-name="f0rest" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/f0rest" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/f0rest.html">f0rest</a></h3>
+                <div class="card-photo">F0</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="f0rest CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSE5OKECjoEpVDjfZeECKjtGUpR323uMAYCG2s8Zk5bq9f</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.35&quot;; cl_crosshair_dynamic_splitdist &quot;7&quot;; cl_crosshair_dynamic_spread_limit &quot;191&quot;; cl_crosshair_gap &quot;3&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1080&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="fl0m" data-team="Creator" data-name="fl0m" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/fl0m" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/fl0m.html">fl0m</a></h3>
+                <div class="card-photo">FL</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="fl0m CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSTOE8kOHC6GtS2s6vt7VYCzdxEYBOUNCoMc57BirKsKNQ</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.3&quot;; cl_crosshair_dynamic_splitdist &quot;9&quot;; cl_crosshair_dynamic_spread_limit &quot;0&quot;; cl_crosshair_gap &quot;2&quot;; cl_crosshair_length &quot;3&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1440&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;3&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;0&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;2&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="freakazoid" data-team="Creator" data-name="freakazoid" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/freakazoid" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/freakazoid.html">Freakazoid</a></h3>
+                <div class="card-photo">FR</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="Freakazoid CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSuvQMzJS4YN7qsqQFmjrAL5A7DK37WOCnv2Ej2jmpATyF</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.3&quot;; cl_crosshair_dynamic_splitdist &quot;6&quot;; cl_crosshair_dynamic_spread_limit &quot;171&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;255&quot;; cl_crosshairdot &quot;1&quot;; cl_crosshairoutline_a &quot;225&quot;; cl_crosshairoutline_b &quot;255&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="get-right" data-team="Creator" data-name="get_right" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/GeT_RiGhT" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/get-right.html">GeT_RiGhT</a></h3>
+                <div class="card-photo">GE</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="GeT_RiGhT CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSs6Wdrtq7847F95MJJFyQRiAx4iCJTczb8XxEhLeo3sRd</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.5&quot;; cl_crosshair_dynamic_splitdist &quot;6&quot;; cl_crosshair_dynamic_spread_limit &quot;233&quot;; cl_crosshair_gap &quot;0&quot;; cl_crosshair_length &quot;6&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;3&quot;; cl_crosshaircolor_a &quot;250&quot;; cl_crosshaircolor_b &quot;50&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;73&quot;; cl_crosshairdot &quot;1&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="izak" data-team="Creator" data-name="izak" data-updated="20261019" data-date="19/10/2026" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/izak.html">Izak</a></h3>
+                <div class="card-photo">IZ</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="Izak CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSrAvmLsG9dTORpb99Rh7OCNZ2UOjdCkRhuyacGaNNHseL</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;2&quot;; cl_crosshair_dynamic_spread_limit &quot;242&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1024&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;212&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="kennys" data-team="Creator" data-name="kennys" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/kennyS" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/kennys.html">kennyS</a></h3>
+                <div class="card-photo">KE</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="kennyS CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSG3sDcP6epzYRqPawHj7NRksb5MKQrzvcqFwAjLPHDfVP</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.35&quot;; cl_crosshair_dynamic_splitdist &quot;6&quot;; cl_crosshair_dynamic_spread_limit &quot;181&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;768&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;1&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;17&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="maj3r" data-team="Creator" data-name="maj3r" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/Maj3r" style="--team: #A78BFA; --on-team: #111214">
             <div class="card-top">
                 <h3><a href="players/maj3r.html">Maj3r</a></h3>
                 <div class="card-photo">MA</div>
             </div>
             <div class="card-meta">
                 <span class="team">Creator</span>
-                <span class="date">Updated 08/10/2026</span>
+                <span class="date">Updated 19/10/2026</span>
             </div>
             <div class="stat">
                 <span class="stat-label">Crosshair</span>
@@ -2223,14 +2449,154 @@
             <div class="field">
                 <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
                 <div class="field-row">
-                    <code class="code">CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD</code>
+                    <code class="code">CSYpPMe3jLTZufV8VpXmi79Lbrp9dJ9eoRMyYem8byXdxJ</code>
                     <button class="copy-code mini">Copy</button>
                 </div>
             </div>
             <div class="field">
                 <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
                 <div class="field-row">
-                    <code class="console">Invalid crosshair code</code>
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.5&quot;; cl_crosshair_dynamic_splitdist &quot;7&quot;; cl_crosshair_dynamic_spread_limit &quot;227&quot;; cl_crosshair_gap &quot;-2&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;235&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;255&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;1&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="pashabiceps" data-team="Creator" data-name="pashabiceps" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/paszaBiceps" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/pashabiceps.html">pashaBiceps</a></h3>
+                <div class="card-photo">PA</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="pashaBiceps CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSV3Pik9RFSEQ2ZGcvFsctrwK7NTJ89P77QAwdf4dePunP</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;4&quot;; cl_crosshair_dynamic_spread_limit &quot;227&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;1&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;14&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="s1mple" data-team="Creator" data-name="s1mple" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/s1mplecsgod" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/s1mple.html">s1mple</a></h3>
+                <div class="card-photo">S1</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="s1mple CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;3&quot;; cl_crosshair_dynamic_spread_limit &quot;227&quot;; cl_crosshair_gap &quot;2&quot;; cl_crosshair_length &quot;4&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;1&quot;; cl_crosshaircolor_a &quot;229&quot;; cl_crosshaircolor_b &quot;0&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;46&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="scream" data-team="Creator" data-name="scream" data-updated="20261019" data-date="19/10/2026" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/scream.html">ScreaM</a></h3>
+                <div class="card-photo">SC</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="ScreaM CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CShnzRUUQL8RSSG69TBoUvAm6LzBO7DmYdOpPBGsCHqJKb</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;2&quot;; cl_crosshair_dynamic_spread_limit &quot;181&quot;; cl_crosshair_gap &quot;3&quot;; cl_crosshair_length &quot;0&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;768&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;0&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;1&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="shox" data-team="Creator" data-name="shox" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/shox" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/shox.html">shox</a></h3>
+                <div class="card-photo">SH</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="shox CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CS69Qj4dwkDH7GZtvFdhn99CsHe5LJBycqnWU23TyEKRhk</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.2&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;7&quot;; cl_crosshair_dynamic_spread_limit &quot;0&quot;; cl_crosshair_gap &quot;4&quot;; cl_crosshair_length &quot;4&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;768&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;233&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;1&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;9&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;1&quot;</code>
+                    <button class="copy-console mini btn-secondary">Copy</button>
+                </div>
+            </div>
+        </article>
+                        <article class="card" data-slug="strogo" data-team="Creator" data-name="strogo" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/StRoGo" style="--team: #A78BFA; --on-team: #111214">
+            <div class="card-top">
+                <h3><a href="players/strogo.html">StRoGo</a></h3>
+                <div class="card-photo">ST</div>
+            </div>
+            <div class="card-meta">
+                <span class="team">Creator</span>
+                <span class="date">Updated 19/10/2026</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Crosshair</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="StRoGo CS2 crosshair preview"></canvas>
+            </div>
+            <div class="field">
+                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-row">
+                    <code class="code">CSt7PvFkUto4omVGTAU2e9RiPrs7niZzhbkCjT7JORKure</code>
+                    <button class="copy-code mini">Copy</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-row">
+                    <code class="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0.1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;3&quot;; cl_crosshair_dynamic_spread_limit &quot;255&quot;; cl_crosshair_gap &quot;1&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1080&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;13&quot;; cl_crosshaircolor_r &quot;3&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
                     <button class="copy-console mini btn-secondary">Copy</button>
                 </div>
             </div>
@@ -2299,14 +2665,14 @@
                 </div>
             </div>
         </article>
-                        <article class="card" data-slug="maj3r" data-team="Creator" data-name="maj3r" data-updated="20261008" data-date="08/10/2026" style="--team: #A78BFA; --on-team: #111214">
+                        <article class="card" data-slug="maj3r" data-team="Creator" data-name="maj3r" data-updated="20261019" data-date="19/10/2026" data-faceit="https://www.faceit.com/en/players/Maj3r" style="--team: #A78BFA; --on-team: #111214">
             <div class="card-top">
                 <h3><a href="players/maj3r.html">Maj3r</a></h3>
                 <div class="card-photo">MA</div>
             </div>
             <div class="card-meta">
                 <span class="team">Creator</span>
-                <span class="date">Updated 08/10/2026</span>
+                <span class="date">Updated 19/10/2026</span>
             </div>
             <div class="stat">
                 <span class="stat-label">Crosshair</span>
@@ -2315,14 +2681,14 @@
             <div class="field">
                 <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
                 <div class="field-row">
-                    <code class="code">CSGO-DDDDD-DDDDD-DDDDD-DDDDD-DDDDD</code>
+                    <code class="code">CSYpPMe3jLTZufV8VpXmi79Lbrp9dJ9eoRMyYem8byXdxJ</code>
                     <button class="copy-code mini">Copy</button>
                 </div>
             </div>
             <div class="field">
                 <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
                 <div class="field-row">
-                    <code class="console">Invalid crosshair code</code>
+                    <code class="console">cl_crosshair_drawoutline &quot;1&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;0.3&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;1&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;0.5&quot;; cl_crosshair_dynamic_splitdist &quot;7&quot;; cl_crosshair_dynamic_spread_limit &quot;227&quot;; cl_crosshair_gap &quot;-2&quot;; cl_crosshair_length &quot;2&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;960&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;235&quot;; cl_crosshaircolor_b &quot;255&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;255&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;1&quot;</code>
                     <button class="copy-console mini btn-secondary">Copy</button>
                 </div>
             </div>
@@ -3310,10 +3676,13 @@
                 </div>
             </div>
 
-            <a id="modal-page" class="modal-page-link" href="#">Open the full crosshair page ›</a>
+            <div class="modal-links">
+                <a id="modal-faceit" class="faceit-btn" href="#" target="_blank" rel="external noopener" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.4l-6.3 6.3-1.4-1.4L9.6 5H5z"/></svg>FACEIT profile</a>
+                <a id="modal-page" class="modal-page-link" href="#">Open the full crosshair page ›</a>
+            </div>
         </div>
     </div>
 
-    <script type="module" src="script.js?v=e901e8e7ee"></script>
+    <script type="module" src="script.js?v=0683021234"></script>
 </body>
 </html>
