@@ -107,6 +107,8 @@
     --fs-xl: 24px;
     --fs-2xl: 32px;
     --fs-3xl: 48px;
+    --fs-name: 28px;            /* pseudos des joueurs (cartes, fiche), en vraie casse : « ZywOo », « kennyS » */
+    --fs-name-lg: 40px;         /* pseudo dans le titre des pages joueurs */
 
     /* Graisses */
     --fw-regular: 400;
@@ -832,15 +834,15 @@ main h2::before {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
 }
 
+/* Pseudo en vraie casse (« ZywOo », « m0NESY ») : style n°1 choisi par Anto le 19/10/2026 */
 .card h3 {
     margin: 0;
     min-width: 0;
     font-family: var(--font-display);
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-name);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    letter-spacing: var(--track-display);
-    text-transform: uppercase;
+    letter-spacing: normal;
     overflow-wrap: anywhere;
 }
 
@@ -1090,11 +1092,10 @@ footer p {
     margin: -64px 0 24px;
     color: var(--on-team, #FFFFFF);
     font-family: var(--font-display);
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-name);
     font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    letter-spacing: var(--track-display);
-    text-transform: uppercase;
+    letter-spacing: normal;
 }
 
 .modal-team,
@@ -1320,6 +1321,9 @@ body.page {
 
 .player-head h1 {
     color: inherit;
+    font-size: var(--fs-name-lg);
+    letter-spacing: normal;
+    text-transform: none; /* pseudo en vraie casse, comme sur les cartes */
 }
 
 .player-head .player-team,
