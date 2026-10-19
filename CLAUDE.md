@@ -13,7 +13,8 @@ Site **ClutchCrosshair.com** : les codes de crosshair CS2 des joueurs pros et de
 Pour chaque joueur : photo, équipe, aperçu du crosshair, code de partage + commandes console, bouton Copy.
 Objectifs : très fluide et ergonomique, design 2026, bon référencement Google (mot-clé « CS2 »), monétisation plus tard. Valorant plus tard.
 
-Hébergement : GitHub Pages — https://antonnisthomas13-sudo.github.io/ClutchCrosshair
+Hébergement : **Cloudflare Pages — https://clutchcrosshair.com** (depuis le 19/10/2026 ; adresse officielle SANS www ; le code reste sur GitHub, chaque push est mis en ligne par Cloudflare). Ancienne adresse GitHub Pages (https://antonnisthomas13-sudo.github.io/ClutchCrosshair) à désactiver.
+**Cloudflare sert les pages sans « .html »** (/players/zywoo.html → redirection 308 vers /players/zywoo, /tools/index.html → /tools/) : build.js retire donc « .html » de toutes les adresses ABSOLUES (canonical, sitemap, og:url, JSON-LD) à la fin du build (`absoluteHtml`). Les liens internes relatifs gardent « .html » (Live Server). `SITE_URL` = https://clutchcrosshair.com en haut de build.js. Fichier **`_headers`** (Cloudflare) : `noindex` sur l'adresse technique *.pages.dev.
 Je sauvegarde avec VS Code > Contrôle de code source > Valider puis Synchroniser.
 
 ## Les fichiers
@@ -94,7 +95,7 @@ Les anciens `CSGO-xxxxx-...` ne s'importent plus dans le jeu → **ne jamais met
 Les listes de codes trouvées sur Internet sont presque toutes encore en `CSGO-` : inutilisables.
 `csgo-sharecode` 7.0.1 décode les deux (champ `format` : `cs2-v1`, `legacy-v1`…). Dans le nouveau format, les tailles sont en pixels pour `screenHeight`.
 **`cl_crosshairstyle 9` = crosshair en X** (4 traits en diagonale + point droit), vu en jeu par Anto sur shox le 19/10/2026 : dessiné à part dans `drawCrosshair` (crosshair.js), réglé au pixel sur sa capture en 1280×960 (4 petits carrés de côté = épaisseur arrondie vers le bas). Les autres styles (3, 4, 5) sont dessinés en « + » classique.
-Plusieurs pros ont exactement le même code (ex. petit crosshair cyan ou vert) : c'est normal, vérifié en décodant (peu de réglages possibles en pixels).
+Plusieurs pros ont exactement le même code (ex. petit crosshair cyan ou vert) : c'est normal, vérifié en décodant (peu de réglages possibles en pixels) et **revérifié le 19/10/2026 en relisant les 8 démos** (chaque joueur garde un seul code par match, le site a bien le plus récent ; 60 codes différents pour 70 pros, 50 pros ont une longueur 2). Petite ligne grise **« Same crosshair as … »** sous l'aperçu (`.same-xhair`) : pages joueurs (vrais liens, fonction `twins()` dans build.js) et fiche (`data-twins` sur la carte, liens `#pseudo` qui ouvrent la fiche de l'autre joueur, `#modal-same` dans script.js) ; absente si le code est unique.
 
 ## Le robot read_demo.py
 - Lit une démo CS2 (.dem) avec `demoparser2` (`pip install demoparser2`, déjà installé).
@@ -119,6 +120,6 @@ Structure du site, design rouge/noir, mode clair/sombre (retenu), recherche, men
 4. Traductions FR/RU/ES/TR : pour le SEO, il faudra de vraies pages par langue (`/fr/`…) + balises `hreflang`, pas une traduction en JavaScript.
 5. Menu de gauche sous les équipes : « Latest updates » (5 derniers crosshairs modifiés) + place pour une pub plus tard.
 6. Mentions légales : `PUBLISHER_NAME` = « Anto » (fait) ; e-mail clutchcrosshair@gmail.com (fait le 19/10/2026). Photos HLTV : risque droits d'auteur (décision à prendre). Liens réseaux sociaux `#` à remplacer ou cacher. (Fait le 18/10 : image d'aperçu 1200×630, polices hébergées sur le site.)
-7. Nom de domaine clutchcrosshair.com + Google Search Console (envoyer le sitemap) ; mettre à jour `SITE_URL` (build.js), les URL de `index.html` (canonical, og:, JSON-LD) et `robots.txt`, puis `node build.js`.
+7. ~~Nom de domaine~~ fait le 19/10/2026 (adresses changées partout). Reste : redirection www → sans www (règle Cloudflare), désactiver GitHub Pages, Google Search Console (sitemap + indexation de l'accueil).
 8. FUT : ajouter quand ils rejouent un match (aucun match depuis le 30/09).
 9. Plus tard : `update.py` (lire tout le dossier `demos/`, archives comprises, de la plus ancienne à la plus récente, refuser les codes `CSGO-`), stats des pros, générateur de crosshair, 100 % automatique (pistes : API FACEIT, GRID Open Access), onglet « skins des pros » (`parse_skins` de demoparser2), sondage (Firebase), Valorant.

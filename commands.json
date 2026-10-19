@@ -2363,15 +2363,20 @@
    "name": "alias",
    "category": "general",
    "summary": "Creates a custom command.",
-   "description": "Gives a name to a list of commands, so you can run them all at once or bind them to a key.",
+   "description": "Gives a name to a list of commands, so you can run them all at once or bind them to a key. An alias whose name starts with + runs when you press the key, and the matching - alias runs when you release it: this is how the jump throw bind works. Put it in your autoexec.cfg so it loads every time you start CS2.",
    "syntax": "alias <name> \"<commands>\"",
    "examples": [
-    "alias prac \"sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1\""
+    "alias prac \"sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1\"",
+    "alias \"+jumpthrow\" \"+jump;-attack;-attack2\"",
+    "alias \"-jumpthrow\" \"-jump\"",
+    "bind alt \"+jumpthrow\""
    ],
    "related": [
     "bind",
-    "exec"
-   ]
+    "exec",
+    "sv_cheats"
+   ],
+   "page": true
   },
   {
    "name": "exec",

@@ -15,7 +15,7 @@ const fs = require("fs");
 const crypto = require("crypto");
 const { optimizeImages } = require("./images.js");
 
-const SITE_URL = "https://antonnisthomas13-sudo.github.io/ClutchCrosshair";
+const SITE_URL = "https://clutchcrosshair.com";
 
 // Mentions légales : À REMPLIR avant de publier
 const PUBLISHER_NAME = "Anto";
@@ -429,6 +429,11 @@ async function main() {
         return { html: html, faq: faq };
     }
 
+    // Les autres joueurs (pros et créateurs) qui ont EXACTEMENT le même code : petite ligne « Same crosshair as … »
+    function twins(player) {
+        return players.filter(function (p) { return p !== player && p.code === player.code; });
+    }
+
     // Profils officiels du joueur pour Google (sameAs) : son compte Steam (lu dans les démos) et sa page Liquipedia (vérifiée)
     function profileLinks(player) {
         const links = [];
@@ -560,6 +565,7 @@ async function main() {
         </div>
 
         <canvas id="preview" class="preview player-preview" width="760" height="300" role="img" aria-label="${name} CS2 crosshair preview"></canvas>
+        ${twins(player).length ? `<p class="same-xhair">Same crosshair as ${listText(twins(player).map(function (p) { return `<a href="${slug(p.name)}.html">${esc(p.name)}</a>`; }))}</p>` : ""}
 
         <div class="field">
             <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
@@ -635,7 +641,7 @@ ${insights.faq.map(function (q) {
     function cardsFor(list) {
         return list.slice().sort(byTeamThenName).map(function (p, i) {
             const photo = photoFiles(p);
-            return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: i < EAGER_CARDS, logo: logoFor(p.team) });
+            return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: i < EAGER_CARDS, logo: logoFor(p.team), twins: twins(p) });
         }).join("\n                        ");
     }
     const pros = players.filter(function (p) { return p.category === "pro"; });
@@ -645,7 +651,7 @@ ${insights.faq.map(function (q) {
     index = replaceBetween(index, "CARDS:creators", cardsFor(creators), "                        ");
     index = replaceBetween(index, "CARDS:trending", trending.slice().sort(byTeamThenName).map(function (p) {
         const photo = photoFiles(p);
-        return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: false, logo: logoFor(p.team) });
+        return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: false, logo: logoFor(p.team), twins: twins(p) });
     }).join("\n                        "), "                        ");
 
     // Menu des équipes (à gauche)
@@ -1919,7 +1925,7 @@ ${categories.map(function (cat) {
             ["How do I save my CS2 binds?", "Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."],
             ["What is a jump throw bind?", "A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."]
         ];
-        const bindDescription = "Free CS2 bind generator: pick a key, choose what to buy or what to do, copy your bind command or download a ready-made autoexec.cfg. Buy binds, jump throw and more.";
+        const bindDescription = "Free CS2 bind generator: pick a key and an action, copy your bind or download a ready-made autoexec.cfg. Buy binds, jump throw and more.";
         const allBuy = bindData.buy.flatMap(function (g) { return g[1]; });
         const bindGraph = [
             {
@@ -2336,7 +2342,9 @@ ${bindFaq.map(function (q) {
     <main class="player-page guide-hub">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Tools</span></nav>
         <h1>CS2 Tools</h1>
-        <p>Free tools to set up CS2 faster. Everything runs in your browser, with no sign-up.</p>
+        <p>Free tools to set up CS2 faster. Everything runs in your browser, with no sign-up, no download and no ads.</p>
+        <p>The crosshair generator shows your crosshair at its real size on a CS2 map, exactly as it looks in game, even in 4:3 stretched. Start from the crosshair of a pro player like ZywOo or donk, change the length, gap, thickness and color, then copy the share code or the console commands.</p>
+        <p>The bind generator writes the console command for you: buy binds for a full buy in one key, a jump throw bind for repeatable smokes, a key to toggle the radar zoom or the volume. Keep all your binds in one list and download them as a ready-made autoexec.cfg.</p>
         <div class="guide-cards">
             <a class="guide-card" href="../generator.html"><span class="guide-card-title">CS2 Crosshair Generator</span><span class="guide-card-desc">Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.</span></a>
             <a class="guide-card" href="bind-generator.html"><span class="guide-card-title">CS2 Bind Generator</span><span class="guide-card-desc">Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.</span></a>
@@ -2469,7 +2477,8 @@ ${bindFaq.map(function (q) {
         title: "Legal notice | ClutchCrosshair",
         description: "Legal notice of ClutchCrosshair: publisher, hosting, trademarks and privacy. No ads, no tracking cookies and no personal data collected.",
         url: `${SITE_URL}/legal.html`,
-        prefix: ""
+        prefix: "",
+        noindex: true // page obligatoire mais sans intérêt dans Google (et absente du sitemap)
     })}
 </head>
 <body class="page">
@@ -2568,6 +2577,25 @@ ${urls}</urlset>
 `);
 
     console.log(skinPlayers.length + " pages skins + skins/index.html");
+    // ===== Adresses officielles sans « .html » =====
+    // Cloudflare Pages sert chaque page sans son extension (/players/zywoo.html redirige vers /players/zywoo,
+    // /tools/index.html vers /tools/). Les adresses données à Google (canonical, sitemap, og:url, JSON-LD)
+    // doivent être celles qui répondent directement, sans redirection. Les liens internes relatifs gardent
+    // « .html » : ils marchent avec Live Server, et Cloudflare les redirige tout seul.
+    const absoluteHtml = new RegExp(SITE_URL.split(".").join("\\.") + "/([^\"'<>\\s#?]*?)(?:index)?\\.html", "g");
+    ["index.html", "404.html", "faq.html", "generator.html", "legal.html", "valorant.html", "sitemap.xml"]
+        .concat(["players", "commands", "guides", "skins", "tools"].flatMap(function (dir) {
+            return fs.existsSync(dir) ? fs.readdirSync(dir).filter(function (f) { return f.endsWith(".html"); }).map(function (f) { return dir + "/" + f; }) : [];
+        }))
+        .filter(function (file) { return fs.existsSync(file); })
+        .forEach(function (file) {
+            const text = fs.readFileSync(file, "utf8");
+            const cleaned = text.replace(absoluteHtml, SITE_URL + "/$1");
+            if (cleaned !== text) {
+                fs.writeFileSync(file, cleaned);
+            }
+        });
+
     console.log(players.length + " pages joueurs + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
 }
 

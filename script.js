@@ -438,6 +438,25 @@ function showPlayer(card) {
     document.getElementById("modal-code").textContent = code;
     document.getElementById("modal-console").textContent = card.querySelector(".console").textContent;
     document.getElementById("modal-page").href = card.querySelector("h3 a").getAttribute("href");
+    // « Same crosshair as … » : liens vers les fiches des joueurs qui ont exactement le même code
+    const same = document.getElementById("modal-same");
+    const twins = card.dataset.twins ? card.dataset.twins.split(",") : [];
+    same.hidden = !twins.length;
+    same.replaceChildren();
+    if (twins.length) {
+        same.append("Same crosshair as ");
+        twins.forEach(function (twin, i) {
+            const sep = twin.indexOf(":");
+            const link = document.createElement("a");
+            link.href = "#" + twin.slice(0, sep);
+            link.textContent = twin.slice(sep + 1);
+            if (i > 0) {
+                same.append(i === twins.length - 1 ? " and " : ", ");
+            }
+            same.append(link);
+        });
+    }
+
     const faceit = document.getElementById("modal-faceit");
     faceit.hidden = !card.dataset.faceit; // bouton seulement pour les créateurs qui ont un profil FACEIT
     faceit.href = card.dataset.faceit || "#";

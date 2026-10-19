@@ -1,0 +1,8 @@
+# Réglages lus par Cloudflare Pages (en-têtes envoyés avec les pages)
+# L'adresse technique <projet>.pages.dev montre le même site que clutchcrosshair.com :
+# on demande à Google de ne pas l'indexer (sinon il verrait deux sites identiques).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

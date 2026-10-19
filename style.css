@@ -3757,6 +3757,30 @@ body.light .team-badge img[src*="fut"] {
 }
 
 /* ===== Téléphone (TOUJOURS EN DERNIER) ===== */
+/* « Same crosshair as … » : petite ligne discrète sous l'aperçu (fiche + pages joueurs) */
+.same-xhair {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+}
+
+.same-xhair[hidden] {
+    display: none;
+}
+
+.same-xhair a {
+    color: var(--text-body);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+}
+
+.same-xhair a:hover,
+.same-xhair a:focus-visible {
+    color: var(--link);
+    text-decoration: underline;
+}
+
 @media (max-width: 800px) {
     .layout {
         flex-direction: column;

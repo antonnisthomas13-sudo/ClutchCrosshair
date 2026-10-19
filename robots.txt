@@ -7,4 +7,4 @@ Disallow: /*.yml$
 Disallow: /.impeccable/
 Disallow: /.github/
 
-Sitemap: https://antonnisthomas13-sudo.github.io/ClutchCrosshair/sitemap.xml
+Sitemap: https://clutchcrosshair.com/sitemap.xml
