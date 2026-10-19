@@ -13,7 +13,7 @@ Site **ClutchCrosshair.com** : les codes de crosshair CS2 des joueurs pros et de
 Pour chaque joueur : photo, équipe, aperçu du crosshair, code de partage + commandes console, bouton Copy.
 Objectifs : très fluide et ergonomique, design 2026, bon référencement Google (mot-clé « CS2 »), monétisation plus tard. Valorant plus tard.
 
-Hébergement : **Cloudflare Pages — https://clutchcrosshair.com** (depuis le 19/10/2026 ; adresse officielle SANS www ; le code reste sur GitHub, chaque push est mis en ligne par Cloudflare). Ancienne adresse GitHub Pages (https://antonnisthomas13-sudo.github.io/ClutchCrosshair) à désactiver.
+Hébergement : **Cloudflare Pages — https://clutchcrosshair.com** (depuis le 19/10/2026 ; adresse officielle SANS www ; le code reste sur GitHub, chaque push est mis en ligne par Cloudflare). Ancienne adresse GitHub Pages **désactivée le 19/10/2026** (404). www → sans www : règle de redirection Cloudflare 301 (modèle « Redirect from WWW to root »), vérifiée.
 **Cloudflare sert les pages sans « .html »** (/players/zywoo.html → redirection 308 vers /players/zywoo, /tools/index.html → /tools/) : build.js retire donc « .html » de toutes les adresses ABSOLUES (canonical, sitemap, og:url, JSON-LD) à la fin du build (`absoluteHtml`). Les liens internes relatifs gardent « .html » (Live Server). `SITE_URL` = https://clutchcrosshair.com en haut de build.js. Fichier **`_headers`** (Cloudflare) : `noindex` sur l'adresse technique *.pages.dev.
 Je sauvegarde avec VS Code > Contrôle de code source > Valider puis Synchroniser.
 
@@ -120,6 +120,6 @@ Structure du site, design rouge/noir, mode clair/sombre (retenu), recherche, men
 4. Traductions FR/RU/ES/TR : pour le SEO, il faudra de vraies pages par langue (`/fr/`…) + balises `hreflang`, pas une traduction en JavaScript.
 5. Menu de gauche sous les équipes : « Latest updates » (5 derniers crosshairs modifiés) + place pour une pub plus tard.
 6. Mentions légales : `PUBLISHER_NAME` = « Anto » (fait) ; e-mail clutchcrosshair@gmail.com (fait le 19/10/2026). Photos HLTV : risque droits d'auteur (décision à prendre). Liens réseaux sociaux `#` à remplacer ou cacher. (Fait le 18/10 : image d'aperçu 1200×630, polices hébergées sur le site.)
-7. ~~Nom de domaine~~ fait le 19/10/2026 (adresses changées partout). Reste : redirection www → sans www (règle Cloudflare), désactiver GitHub Pages, Google Search Console (sitemap + indexation de l'accueil).
+7. ~~Nom de domaine~~ fait le 19/10/2026 (adresses changées partout). Redirection www et désactivation de GitHub Pages faites. Reste : Google Search Console (propriété « Domaine », sitemap + indexation de l'accueil).
 8. FUT : ajouter quand ils rejouent un match (aucun match depuis le 30/09).
 9. Plus tard : `update.py` (lire tout le dossier `demos/`, archives comprises, de la plus ancienne à la plus récente, refuser les codes `CSGO-`), stats des pros, générateur de crosshair, 100 % automatique (pistes : API FACEIT, GRID Open Access), onglet « skins des pros » (`parse_skins` de demoparser2), sondage (Firebase), Valorant.
