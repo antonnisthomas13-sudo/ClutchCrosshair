@@ -6,6 +6,7 @@
 - Avant de modifier, dis-moi en 1-2 phrases ce que tu vas faire. Après, explique ce qui a changé et pourquoi.
 - Fais des changements petits et sûrs, un sujet à la fois. Demande-moi avant les gros changements.
 - Ne fais pas de commit / push sans que je le demande.
+- **Ne lis pas les fichiers du dossier `players/` ni `sitemap.xml`** : ils sont générés automatiquement par build.js. Pour les changer, modifie build.js (et relance `node build.js`).
 - Je suis sur Windows, avec VS Code et Live Server (http://127.0.0.1:5500). Python se lance avec `py` (pas `python`).
 
 ## Le projet
