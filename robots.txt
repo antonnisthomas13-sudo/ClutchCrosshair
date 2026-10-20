@@ -7,4 +7,23 @@ Disallow: /*.yml$
 Disallow: /.impeccable/
 Disallow: /.github/
 
+# Moteurs de recherche et assistants IA : autorisés explicitement (mêmes règles que ci-dessus)
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+Allow: /
+Disallow: /*.md$
+Disallow: /*.py$
+Disallow: /*.yml$
+Disallow: /.impeccable/
+Disallow: /.github/
+
 Sitemap: https://clutchcrosshair.com/sitemap.xml

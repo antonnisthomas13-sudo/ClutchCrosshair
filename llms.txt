@@ -1,0 +1,115 @@
+# ClutchCrosshair
+
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 14 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+
+Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at https://clutchcrosshair.com/fr/.
+
+## Main pages
+
+- [CS2 pro crosshairs](https://clutchcrosshair.com/): all pro and creator crosshair codes, searchable, grouped by team
+- [CS2 crosshair generator](https://clutchcrosshair.com/generator): build a crosshair and get a working CS2 share code
+- [CS2 crosshair FAQ](https://clutchcrosshair.com/faq): importing codes, CSGO- codes, pro crosshair statistics
+- [All crosshair codes as plain text](https://clutchcrosshair.com/llms-full.txt): every player with full share code and console commands
+- [CS2 pro skins](https://clutchcrosshair.com/skins/): public Steam inventories of pro players with exact floats and prices
+- [CS2 console commands](https://clutchcrosshair.com/commands/): what each console command does, with values and examples
+- [CS2 tools](https://clutchcrosshair.com/tools/): crosshair generator and bind generator
+
+## Pro players (CS2)
+
+- [cmtry](https://clutchcrosshair.com/players/cmtry): Astralis, CS2 crosshair code updated 2026-10-16
+- [phzy](https://clutchcrosshair.com/players/phzy): Astralis, CS2 crosshair code updated 2026-10-16
+- [ryu](https://clutchcrosshair.com/players/ryu): Astralis, CS2 crosshair code updated 2026-10-16
+- [siuhy](https://clutchcrosshair.com/players/siuhy): Astralis, CS2 crosshair code updated 2026-10-16
+- [Staehr](https://clutchcrosshair.com/players/staehr): Astralis, CS2 crosshair code updated 2026-10-16
+- [Jimpphat](https://clutchcrosshair.com/players/jimpphat): Aurora, CS2 crosshair code updated 2026-10-17
+- [kyxsan](https://clutchcrosshair.com/players/kyxsan): Aurora, CS2 crosshair code updated 2026-10-17
+- [Wicadia](https://clutchcrosshair.com/players/wicadia): Aurora, CS2 crosshair code updated 2026-10-17
+- [woxic](https://clutchcrosshair.com/players/woxic): Aurora, CS2 crosshair code updated 2026-10-17
+- [XANTARES](https://clutchcrosshair.com/players/xantares): Aurora, CS2 crosshair code updated 2026-10-17
+- [Boombl4](https://clutchcrosshair.com/players/boombl4): BetBoom, CS2 crosshair code updated 2026-10-17
+- [d1Ledez](https://clutchcrosshair.com/players/d1ledez): BetBoom, CS2 crosshair code updated 2026-10-17
+- [Magnojez](https://clutchcrosshair.com/players/magnojez): BetBoom, CS2 crosshair code updated 2026-10-17
+- [S1ren](https://clutchcrosshair.com/players/s1ren): BetBoom, CS2 crosshair code updated 2026-10-17
+- [zorte](https://clutchcrosshair.com/players/zorte): BetBoom, CS2 crosshair code updated 2026-10-17
+- [karrigan](https://clutchcrosshair.com/players/karrigan): Falcons, CS2 crosshair code updated 2026-10-17
+- [kyousuke](https://clutchcrosshair.com/players/kyousuke): Falcons, CS2 crosshair code updated 2026-10-17
+- [m0NESY](https://clutchcrosshair.com/players/m0nesy): Falcons, CS2 crosshair code updated 2026-10-17
+- [NiKo](https://clutchcrosshair.com/players/niko): Falcons, CS2 crosshair code updated 2026-10-17
+- [TeSeS](https://clutchcrosshair.com/players/teses): Falcons, CS2 crosshair code updated 2026-10-17
+- [frozen](https://clutchcrosshair.com/players/frozen): FaZe Clan, CS2 crosshair code updated 2026-10-10
+- [JBOEN](https://clutchcrosshair.com/players/jboen): FaZe Clan, CS2 crosshair code updated 2026-10-10
+- [jcobbb](https://clutchcrosshair.com/players/jcobbb): FaZe Clan, CS2 crosshair code updated 2026-10-10
+- [Neityu](https://clutchcrosshair.com/players/neityu): FaZe Clan, CS2 crosshair code updated 2026-10-10
+- [Twistzz](https://clutchcrosshair.com/players/twistzz): FaZe Clan, CS2 crosshair code updated 2026-10-10
+- [FalleN](https://clutchcrosshair.com/players/fallen): FURIA, CS2 crosshair code updated 2026-10-17
+- [KSCERATO](https://clutchcrosshair.com/players/kscerato): FURIA, CS2 crosshair code updated 2026-10-17
+- [molodoy](https://clutchcrosshair.com/players/molodoy): FURIA, CS2 crosshair code updated 2026-10-17
+- [YEKINDAR](https://clutchcrosshair.com/players/yekindar): FURIA, CS2 crosshair code updated 2026-10-17
+- [yuurih](https://clutchcrosshair.com/players/yuurih): FURIA, CS2 crosshair code updated 2026-10-17
+- [HeavyGod](https://clutchcrosshair.com/players/heavygod): G2 Esports, CS2 crosshair code updated 2026-10-06
+- [huNter-](https://clutchcrosshair.com/players/hunter): G2 Esports, CS2 crosshair code updated 2026-10-06
+- [MATYS](https://clutchcrosshair.com/players/matys): G2 Esports, CS2 crosshair code updated 2026-10-06
+- [NertZ](https://clutchcrosshair.com/players/nertz): G2 Esports, CS2 crosshair code updated 2026-10-06
+- [r1nkle](https://clutchcrosshair.com/players/r1nkle): G2 Esports, CS2 crosshair code updated 2026-10-06
+- [art](https://clutchcrosshair.com/players/art): Legacy, CS2 crosshair code updated 2026-10-16
+- [dumau](https://clutchcrosshair.com/players/dumau): Legacy, CS2 crosshair code updated 2026-10-16
+- [latto](https://clutchcrosshair.com/players/latto): Legacy, CS2 crosshair code updated 2026-10-16
+- [n1ssim](https://clutchcrosshair.com/players/n1ssim): Legacy, CS2 crosshair code updated 2026-10-16
+- [try](https://clutchcrosshair.com/players/try): Legacy, CS2 crosshair code updated 2026-10-16
+- [insani](https://clutchcrosshair.com/players/insani): MIBR, CS2 crosshair code updated 2026-10-16
+- [LNZ](https://clutchcrosshair.com/players/lnz): MIBR, CS2 crosshair code updated 2026-10-16
+- [nqz](https://clutchcrosshair.com/players/nqz): MIBR, CS2 crosshair code updated 2026-10-16
+- [tomaszin](https://clutchcrosshair.com/players/tomaszin): MIBR, CS2 crosshair code updated 2026-10-16
+- [venomzera](https://clutchcrosshair.com/players/venomzera): MIBR, CS2 crosshair code updated 2026-10-16
+- [PR](https://clutchcrosshair.com/players/pr): MOUZ, CS2 crosshair code updated 2026-10-17
+- [Spinx](https://clutchcrosshair.com/players/spinx): MOUZ, CS2 crosshair code updated 2026-10-17
+- [torzsi](https://clutchcrosshair.com/players/torzsi): MOUZ, CS2 crosshair code updated 2026-10-17
+- [xelex](https://clutchcrosshair.com/players/xelex): MOUZ, CS2 crosshair code updated 2026-10-17
+- [xertioN](https://clutchcrosshair.com/players/xertion): MOUZ, CS2 crosshair code updated 2026-10-17
+- [Aleksib](https://clutchcrosshair.com/players/aleksib): Natus Vincere, CS2 crosshair code updated 2026-10-07
+- [b1t](https://clutchcrosshair.com/players/b1t): Natus Vincere, CS2 crosshair code updated 2026-10-07
+- [iM](https://clutchcrosshair.com/players/im): Natus Vincere, CS2 crosshair code updated 2026-10-07
+- [makazze](https://clutchcrosshair.com/players/makazze): Natus Vincere, CS2 crosshair code updated 2026-10-07
+- [w0nderful](https://clutchcrosshair.com/players/w0nderful): Natus Vincere, CS2 crosshair code updated 2026-10-07
+- [FL1T](https://clutchcrosshair.com/players/fl1t): PARIVISION, CS2 crosshair code updated 2026-10-07
+- [Hobbit](https://clutchcrosshair.com/players/hobbit): PARIVISION, CS2 crosshair code updated 2026-10-07
+- [Jame](https://clutchcrosshair.com/players/jame): PARIVISION, CS2 crosshair code updated 2026-10-07
+- [xiELO](https://clutchcrosshair.com/players/xielo): PARIVISION, CS2 crosshair code updated 2026-10-07
+- [zweih](https://clutchcrosshair.com/players/zweih): PARIVISION, CS2 crosshair code updated 2026-10-07
+- [donk](https://clutchcrosshair.com/players/donk): Team Spirit, CS2 crosshair code updated 2026-10-17
+- [magixx](https://clutchcrosshair.com/players/magixx): Team Spirit, CS2 crosshair code updated 2026-10-17
+- [sh1ro](https://clutchcrosshair.com/players/sh1ro): Team Spirit, CS2 crosshair code updated 2026-10-17
+- [tN1R](https://clutchcrosshair.com/players/tn1r): Team Spirit, CS2 crosshair code updated 2026-10-17
+- [zont1x](https://clutchcrosshair.com/players/zont1x): Team Spirit, CS2 crosshair code updated 2026-10-17
+- [apEX](https://clutchcrosshair.com/players/apex): Team Vitality, CS2 crosshair code updated 2026-10-17
+- [flameZ](https://clutchcrosshair.com/players/flamez): Team Vitality, CS2 crosshair code updated 2026-10-17
+- [mezii](https://clutchcrosshair.com/players/mezii): Team Vitality, CS2 crosshair code updated 2026-10-17
+- [ropz](https://clutchcrosshair.com/players/ropz): Team Vitality, CS2 crosshair code updated 2026-10-17
+- [ZywOo](https://clutchcrosshair.com/players/zywoo): Team Vitality, CS2 crosshair code updated 2026-10-17
+
+## Content creators (CS2)
+
+- [Chopper](https://clutchcrosshair.com/players/chopper): content creator, CS2 crosshair code updated 2026-10-19
+- [Dima](https://clutchcrosshair.com/players/dima): content creator, CS2 crosshair code updated 2026-10-19
+- [f0rest](https://clutchcrosshair.com/players/f0rest): content creator, CS2 crosshair code updated 2026-10-19
+- [fl0m](https://clutchcrosshair.com/players/fl0m): content creator, CS2 crosshair code updated 2026-10-19
+- [Freakazoid](https://clutchcrosshair.com/players/freakazoid): content creator, CS2 crosshair code updated 2026-10-19
+- [GeT_RiGhT](https://clutchcrosshair.com/players/get-right): content creator, CS2 crosshair code updated 2026-10-19
+- [Izak](https://clutchcrosshair.com/players/izak): content creator, CS2 crosshair code updated 2026-10-19
+- [kennyS](https://clutchcrosshair.com/players/kennys): content creator, CS2 crosshair code updated 2026-10-19
+- [Maj3r](https://clutchcrosshair.com/players/maj3r): content creator, CS2 crosshair code updated 2026-10-19
+- [pashaBiceps](https://clutchcrosshair.com/players/pashabiceps): content creator, CS2 crosshair code updated 2026-10-19
+- [s1mple](https://clutchcrosshair.com/players/s1mple): content creator, CS2 crosshair code updated 2026-10-19
+- [ScreaM](https://clutchcrosshair.com/players/scream): content creator, CS2 crosshair code updated 2026-10-19
+- [shox](https://clutchcrosshair.com/players/shox): content creator, CS2 crosshair code updated 2026-10-19
+- [StRoGo](https://clutchcrosshair.com/players/strogo): content creator, CS2 crosshair code updated 2026-10-19
+
+## Guides
+
+- [Best CS2 Launch Options (2026)](https://clutchcrosshair.com/guides/cs2-launch-options): The CS2 launch options that still work in 2026, how to add them in Steam, and the old CS:GO launch options that do nothing anymore.
+- [Best CS2 Settings (2026): Video, Game and Audio](https://clutchcrosshair.com/guides/cs2-best-settings): The best CS2 settings for visibility and FPS: video options to change, game and radar settings, and audio settings to hear footsteps clearly.
+- [CS2 Stretched Resolution: 4:3 vs 16:9 (2026)](https://clutchcrosshair.com/guides/cs2-stretched-resolution): Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.
+- [CS2 Sensitivity Guide: eDPI, cm/360 and Calculator](https://clutchcrosshair.com/guides/cs2-sensitivity): Find your best CS2 sensitivity: what eDPI and cm/360 mean, typical pro ranges, a free eDPI calculator and how to convert your Valorant sensitivity.
+- [How to Boost FPS in CS2 (2026)](https://clutchcrosshair.com/guides/cs2-fps-boost): Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.
+- [CS2 Crosshair Guide: Codes, Commands and Pro Stats](https://clutchcrosshair.com/guides/cs2-crosshair-guide): Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.
+- [How to Improve Your Aim in CS2: Routine and Aim Maps](https://clutchcrosshair.com/guides/cs2-aim-training): A simple daily CS2 aim routine, the best workshop aim maps, a ready-to-copy practice config and the habits that make you hit more headshots.

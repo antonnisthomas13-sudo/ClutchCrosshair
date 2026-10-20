@@ -1,0 +1,767 @@
+# ClutchCrosshair
+
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 14 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+
+Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at https://clutchcrosshair.com/fr/.
+
+Most recent crosshair update: 2026-10-19.
+
+## Pro players (CS2)
+
+### cmtry
+
+- Game: CS2
+- Team: Astralis
+- Crosshair share code: CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "5"; cl_crosshair_dynamic_spread_limit "204"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "864"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "3"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/cmtry
+
+### phzy
+
+- Game: CS2
+- Team: Astralis
+- Crosshair share code: CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "3"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/phzy
+
+### ryu
+
+- Game: CS2
+- Team: Astralis
+- Crosshair share code: CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "246"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/ryu
+
+### siuhy
+
+- Game: CS2
+- Team: Astralis
+- Crosshair share code: CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "181"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "233"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/siuhy
+
+### Staehr
+
+- Game: CS2
+- Team: Astralis
+- Crosshair share code: CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "255"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/staehr
+
+### Jimpphat
+
+- Game: CS2
+- Team: Aurora
+- Crosshair share code: CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "246"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/jimpphat
+
+### kyxsan
+
+- Game: CS2
+- Team: Aurora
+- Crosshair share code: CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "220"; cl_crosshaircolor_r "176"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/kyxsan
+
+### Wicadia
+
+- Game: CS2
+- Team: Aurora
+- Crosshair share code: CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "53"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/wicadia
+
+### woxic
+
+- Game: CS2
+- Team: Aurora
+- Crosshair share code: CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "4"; cl_crosshair_length "6"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "129"; cl_crosshaircolor_g "50"; cl_crosshaircolor_r "255"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/woxic
+
+### XANTARES
+
+- Game: CS2
+- Team: Aurora
+- Crosshair share code: CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "182"; cl_crosshair_gap "5"; cl_crosshair_length "5"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "50"; cl_crosshaircolor_g "250"; cl_crosshaircolor_r "50"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/xantares
+
+### Boombl4
+
+- Game: CS2
+- Team: BetBoom
+- Crosshair share code: CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/boombl4
+
+### d1Ledez
+
+- Game: CS2
+- Team: BetBoom
+- Crosshair share code: CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/d1ledez
+
+### Magnojez
+
+- Game: CS2
+- Team: BetBoom
+- Crosshair share code: CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "2"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/magnojez
+
+### S1ren
+
+- Game: CS2
+- Team: BetBoom
+- Crosshair share code: CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "182"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/s1ren
+
+### zorte
+
+- Game: CS2
+- Team: BetBoom
+- Crosshair share code: CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "5"; cl_crosshair_dynamic_spread_limit "204"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "864"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/zorte
+
+### karrigan
+
+- Game: CS2
+- Team: Falcons
+- Crosshair share code: CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "3"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "49"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/karrigan
+
+### kyousuke
+
+- Game: CS2
+- Team: Falcons
+- Crosshair share code: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/kyousuke
+
+### m0NESY
+
+- Game: CS2
+- Team: Falcons
+- Crosshair share code: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/m0nesy
+
+### NiKo
+
+- Game: CS2
+- Team: Falcons
+- Crosshair share code: CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "6"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "145"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "140"; cl_crosshairoutline_g "249"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/niko
+
+### TeSeS
+
+- Game: CS2
+- Team: Falcons
+- Crosshair share code: CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "3"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/teses
+
+### frozen
+
+- Game: CS2
+- Team: FaZe Clan
+- Crosshair share code: CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "6"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-10 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/frozen
+
+### JBOEN
+
+- Game: CS2
+- Team: FaZe Clan
+- Crosshair share code: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-10 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/jboen
+
+### jcobbb
+
+- Game: CS2
+- Team: FaZe Clan
+- Crosshair share code: CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS
+- Console commands: cl_crosshair_drawoutline "2"; cl_crosshair_dynamic_maxdist_splitratio "0.35"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "5"; cl_crosshair_dynamic_spread_limit "0"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1020"; cl_crosshair_t "0"; cl_crosshair_thickness "4"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "235"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "50"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "0.7"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-10 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/jcobbb
+
+### Neityu
+
+- Game: CS2
+- Team: FaZe Clan
+- Crosshair share code: CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "135"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "1"
+- Last update: 2026-10-10 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/neityu
+
+### Twistzz
+
+- Game: CS2
+- Team: FaZe Clan
+- Crosshair share code: CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "3"; cl_crosshair_length "8"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "3"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "135"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-10 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/twistzz
+
+### FalleN
+
+- Game: CS2
+- Team: FURIA
+- Crosshair share code: CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "95"; cl_crosshaircolor_g "243"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/fallen
+
+### KSCERATO
+
+- Game: CS2
+- Team: FURIA
+- Crosshair share code: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/kscerato
+
+### molodoy
+
+- Game: CS2
+- Team: FURIA
+- Crosshair share code: CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "182"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "221"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "3"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/molodoy
+
+### YEKINDAR
+
+- Game: CS2
+- Team: FURIA
+- Crosshair share code: CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "248"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1050"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "6"; cl_crosshaircolor_g "245"; cl_crosshaircolor_r "55"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/yekindar
+
+### yuurih
+
+- Game: CS2
+- Team: FURIA
+- Crosshair share code: CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "20"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/yuurih
+
+### HeavyGod
+
+- Game: CS2
+- Team: G2 Esports
+- Crosshair share code: CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "247"; cl_crosshaircolor_r "0"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "3"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-06 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/heavygod
+
+### huNter-
+
+- Game: CS2
+- Team: G2 Esports
+- Crosshair share code: CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-06 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/hunter
+
+### MATYS
+
+- Game: CS2
+- Team: G2 Esports
+- Crosshair share code: CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "3"; cl_crosshair_length "10"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-06 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/matys
+
+### NertZ
+
+- Game: CS2
+- Team: G2 Esports
+- Crosshair share code: CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "246"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-06 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/nertz
+
+### r1nkle
+
+- Game: CS2
+- Team: G2 Esports
+- Crosshair share code: CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "0"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "20"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-06 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/r1nkle
+
+### art
+
+- Game: CS2
+- Team: Legacy
+- Crosshair share code: CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/art
+
+### dumau
+
+- Game: CS2
+- Team: Legacy
+- Crosshair share code: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/dumau
+
+### latto
+
+- Game: CS2
+- Team: Legacy
+- Crosshair share code: CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/latto
+
+### n1ssim
+
+- Game: CS2
+- Team: Legacy
+- Crosshair share code: CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "4"; cl_crosshair_dynamic_spread_limit "191"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/n1ssim
+
+### try
+
+- Game: CS2
+- Team: Legacy
+- Crosshair share code: CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "255"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "5"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/try
+
+### insani
+
+- Game: CS2
+- Team: MIBR
+- Crosshair share code: CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "2"; cl_crosshair_length "1"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/insani
+
+### LNZ
+
+- Game: CS2
+- Team: MIBR
+- Crosshair share code: CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "146"; cl_crosshaircolor_g "247"; cl_crosshaircolor_r "146"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/lnz
+
+### nqz
+
+- Game: CS2
+- Team: MIBR
+- Crosshair share code: CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "59"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "72"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "85"; cl_crosshairoutline_g "207"; cl_crosshairoutline_r "230"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "1"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/nqz
+
+### tomaszin
+
+- Game: CS2
+- Team: MIBR
+- Crosshair share code: CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "5"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "252"; cl_crosshaircolor_b "253"; cl_crosshaircolor_g "246"; cl_crosshaircolor_r "36"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/tomaszin
+
+### venomzera
+
+- Game: CS2
+- Team: MIBR
+- Crosshair share code: CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "179"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "15"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-16 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/venomzera
+
+### PR
+
+- Game: CS2
+- Team: MOUZ
+- Crosshair share code: CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "201"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "161"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/pr
+
+### Spinx
+
+- Game: CS2
+- Team: MOUZ
+- Crosshair share code: CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "14"; cl_crosshaircolor_g "235"; cl_crosshaircolor_r "84"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/spinx
+
+### torzsi
+
+- Game: CS2
+- Team: MOUZ
+- Crosshair share code: CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/torzsi
+
+### xelex
+
+- Game: CS2
+- Team: MOUZ
+- Crosshair share code: CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "251"; cl_crosshaircolor_g "251"; cl_crosshaircolor_r "251"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/xelex
+
+### xertioN
+
+- Game: CS2
+- Team: MOUZ
+- Crosshair share code: CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "4"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "3"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/xertion
+
+### Aleksib
+
+- Game: CS2
+- Team: Natus Vincere
+- Crosshair share code: CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "50"; cl_crosshaircolor_g "250"; cl_crosshaircolor_r "50"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/aleksib
+
+### b1t
+
+- Game: CS2
+- Team: Natus Vincere
+- Crosshair share code: CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/b1t
+
+### iM
+
+- Game: CS2
+- Team: Natus Vincere
+- Crosshair share code: CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "3"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "20"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/im
+
+### makazze
+
+- Game: CS2
+- Team: Natus Vincere
+- Crosshair share code: CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "215"; cl_crosshaircolor_r "255"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/makazze
+
+### w0nderful
+
+- Game: CS2
+- Team: Natus Vincere
+- Crosshair share code: CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "160"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/w0nderful
+
+### FL1T
+
+- Game: CS2
+- Team: PARIVISION
+- Crosshair share code: CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "189"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "800"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "165"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/fl1t
+
+### Hobbit
+
+- Game: CS2
+- Team: PARIVISION
+- Crosshair share code: CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "250"; cl_crosshaircolor_g "250"; cl_crosshaircolor_r "250"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/hobbit
+
+### Jame
+
+- Game: CS2
+- Team: PARIVISION
+- Crosshair share code: CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "250"; cl_crosshaircolor_g "250"; cl_crosshaircolor_r "250"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/jame
+
+### xiELO
+
+- Game: CS2
+- Team: PARIVISION
+- Crosshair share code: CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "246"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/xielo
+
+### zweih
+
+- Game: CS2
+- Team: PARIVISION
+- Crosshair share code: CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-07 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/zweih
+
+### donk
+
+- Game: CS2
+- Team: Team Spirit
+- Crosshair share code: CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "11"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/donk
+
+### magixx
+
+- Game: CS2
+- Team: Team Spirit
+- Crosshair share code: CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "247"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/magixx
+
+### sh1ro
+
+- Game: CS2
+- Team: Team Spirit
+- Crosshair share code: CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "11"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/sh1ro
+
+### tN1R
+
+- Game: CS2
+- Team: Team Spirit
+- Crosshair share code: CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "0"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "11"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/tn1r
+
+### zont1x
+
+- Game: CS2
+- Team: Team Spirit
+- Crosshair share code: CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "181"; cl_crosshair_gap "2"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "255"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/zont1x
+
+### apEX
+
+- Game: CS2
+- Team: Team Vitality
+- Crosshair share code: CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "197"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "244"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/apex
+
+### flameZ
+
+- Game: CS2
+- Team: Team Vitality
+- Crosshair share code: CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.45"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "229"; cl_crosshaircolor_r "0"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "5"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/flamez
+
+### mezii
+
+- Game: CS2
+- Team: Team Vitality
+- Crosshair share code: CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "238"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/mezii
+
+### ropz
+
+- Game: CS2
+- Team: Team Vitality
+- Crosshair share code: CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/ropz
+
+### ZywOo
+
+- Game: CS2
+- Team: Team Vitality
+- Crosshair share code: CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "181"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-17 (date of the official match the crosshair was read from)
+- Page: https://clutchcrosshair.com/players/zywoo
+
+## Content creators (CS2)
+
+### Chopper
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSsnVC5U2XHFdudX6FRMHjK3HqsfArhNu2xhWeDp7n53WK
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "186"; cl_crosshair_gap "0"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1050"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "2"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "5"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "5"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/chopper
+
+### Dima
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CStQMLXKSkuapWiMdbSN8eyAFq6kp4NbTPfwUV4SqJhOAe
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "191"; cl_crosshair_gap "1"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "3"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "1"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/dima
+
+### f0rest
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSE5OKECjoEpVDjfZeECKjtGUpR323uMAYCG2s8Zk5bq9f
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.35"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "191"; cl_crosshair_gap "3"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/f0rest
+
+### fl0m
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSTOE8kOHC6GtS2s6vt7VYCzdxEYBOUNCoMc57BirKsKNQ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "9"; cl_crosshair_dynamic_spread_limit "0"; cl_crosshair_gap "2"; cl_crosshair_length "3"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1440"; cl_crosshair_t "0"; cl_crosshair_thickness "3"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "2"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/fl0m
+
+### Freakazoid
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSuvQMzJS4YN7qsqQFmjrAL5A7DK37WOCnv2Ej2jmpATyF
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.3"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "171"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "255"; cl_crosshairdot "1"; cl_crosshairoutline_a "225"; cl_crosshairoutline_b "255"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/freakazoid
+
+### GeT_RiGhT
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSs6Wdrtq7847F95MJJFyQRiAx4iCJTczb8XxEhLeo3sRd
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "233"; cl_crosshair_gap "0"; cl_crosshair_length "6"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "3"; cl_crosshaircolor_a "250"; cl_crosshaircolor_b "50"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "73"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/get-right
+
+### Izak
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSrAvmLsG9dTORpb99Rh7OCNZ2UOjdCkRhuyacGaNNHseL
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "212"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/izak
+
+### kennyS
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSG3sDcP6epzYRqPawHj7NRksb5MKQrzvcqFwAjLPHDfVP
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.35"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "181"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "17"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/kennys
+
+### Maj3r
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSYpPMe3jLTZufV8VpXmi79Lbrp9dJ9eoRMyYem8byXdxJ
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "-2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "235"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "255"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "1"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/maj3r
+
+### pashaBiceps
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSV3Pik9RFSEQ2ZGcvFsctrwK7NTJ89P77QAwdf4dePunP
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "4"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "14"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/pashabiceps
+
+### s1mple
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "229"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "46"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/s1mple
+
+### ScreaM
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CShnzRUUQL8RSSG69TBoUvAm6LzBO7DmYdOpPBGsCHqJKb
+- Console commands: cl_crosshair_drawoutline "1"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "181"; cl_crosshair_gap "3"; cl_crosshair_length "0"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "0"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/scream
+
+### shox
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CS69Qj4dwkDH7GZtvFdhn99CsHe5LJBycqnWU23TyEKRhk
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.2"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "7"; cl_crosshair_dynamic_spread_limit "0"; cl_crosshair_gap "4"; cl_crosshair_length "4"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "768"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "233"; cl_crosshaircolor_r "0"; cl_crosshairdot "1"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "9"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "1"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/shox
+
+### StRoGo
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSt7PvFkUto4omVGTAU2e9RiPrs7niZzhbkCjT7JORKure
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0.1"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "3"; cl_crosshair_dynamic_spread_limit "255"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1080"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "255"; cl_crosshaircolor_g "13"; cl_crosshaircolor_r "3"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-19
+- Page: https://clutchcrosshair.com/players/strogo

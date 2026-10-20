@@ -2681,6 +2681,66 @@ ${HTML_OPEN}
 ${urls}</urlset>
 `);
 
+    // ===== llms.txt et llms-full.txt (format llmstxt.org) : un résumé du site en texte simple pour les assistants IA =====
+    // llms.txt = sommaire avec des liens (une ligne par joueur) ; llms-full.txt = tous les joueurs avec leur code complet.
+    // Fabriqués depuis players.json à chaque build : ils restent à jour tout seuls. Contenu factuel uniquement.
+    const pagesUrl = function (rel) { return SITE_URL + "/" + rel.replace(/(?:index)?\.html$/, ""); };
+    const sortedPlayers = players.slice().sort(function (a, b) {
+        return a.team.localeCompare(b.team) || a.name.localeCompare(b.name, "en", { sensitivity: "base" });
+    });
+    const llmsPros = sortedPlayers.filter(function (p) { return p.category === "pro"; });
+    const llmsCreators = sortedPlayers.filter(function (p) { return p.category !== "pro"; });
+    const guideList = fs.existsSync("guides.json") ? JSON.parse(fs.readFileSync("guides.json", "utf8")).guides : [];
+    const llmsIntro = `# ClutchCrosshair
+
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of ${llmsPros.length} pro players and ${llmsCreators.length} content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+
+Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at ${SITE_URL}/fr/.
+`;
+    const llmsLine = function (p) {
+        return `- [${p.name}](${pagesUrl("players/" + slug(p.name) + ".html")}): ${p.category === "creator" ? "content creator" : p.team}, CS2 crosshair code updated ${isoDate(p.updated)}`;
+    };
+    fs.writeFileSync("llms.txt", `${llmsIntro}
+## Main pages
+
+- [CS2 pro crosshairs](${SITE_URL}/): all pro and creator crosshair codes, searchable, grouped by team
+- [CS2 crosshair generator](${pagesUrl("generator.html")}): build a crosshair and get a working CS2 share code
+- [CS2 crosshair FAQ](${pagesUrl("faq.html")}): importing codes, CSGO- codes, pro crosshair statistics
+- [All crosshair codes as plain text](${SITE_URL}/llms-full.txt): every player with full share code and console commands
+${fs.existsSync("skins/index.html") ? `- [CS2 pro skins](${pagesUrl("skins/index.html")}): public Steam inventories of pro players with exact floats and prices\n` : ""}${fs.existsSync("commands/index.html") ? `- [CS2 console commands](${pagesUrl("commands/index.html")}): what each console command does, with values and examples\n` : ""}${fs.existsSync("tools/index.html") ? `- [CS2 tools](${pagesUrl("tools/index.html")}): crosshair generator and bind generator\n` : ""}
+## Pro players (CS2)
+
+${llmsPros.map(llmsLine).join("\n")}
+
+## Content creators (CS2)
+
+${llmsCreators.map(llmsLine).join("\n")}
+${guideList.length ? `
+## Guides
+
+${guideList.map(function (g) { return `- [${g.title}](${pagesUrl("guides/" + g.slug + ".html")}): ${g.description}`; }).join("\n")}
+` : ""}`);
+    const llmsPlayer = function (p) {
+        return `### ${p.name}
+
+- Game: CS2
+- ${p.category === "creator" ? "Category: content creator" : "Team: " + p.team}
+- Crosshair share code: ${p.code}
+- Console commands: ${consoleCommands(p.code)}
+- Last update: ${isoDate(p.updated)}${p.category === "creator" ? "" : " (date of the official match the crosshair was read from)"}
+- Page: ${pagesUrl("players/" + slug(p.name) + ".html")}
+`;
+    };
+    fs.writeFileSync("llms-full.txt", `${llmsIntro}
+Most recent crosshair update: ${newest}.
+
+## Pro players (CS2)
+
+${llmsPros.map(llmsPlayer).join("\n")}
+## Content creators (CS2)
+
+${llmsCreators.map(llmsPlayer).join("\n")}`);
+
     // ===== Adresses officielles sans « .html » =====
     // Cloudflare Pages sert chaque page sans son extension (/players/zywoo.html redirige vers /players/zywoo,
     // /tools/index.html vers /tools/). Les adresses données à Google (canonical, sitemap, og:url, JSON-LD, hreflang)
