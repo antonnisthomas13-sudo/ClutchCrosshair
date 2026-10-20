@@ -117,14 +117,17 @@ function screenPixelsHigh() {
     return height > 0 ? height : 1080; // ex. 1080 sur un écran Full HD, 1440 sur un écran 2K...
 }
 
-// Image de fond : une vraie capture d'écran de CS2 en plein écran, en deux versions (à côté de ce fichier) :
-//   preview-bg-sm.webp (légère, ~95 Ko) pour les petites cartes assombries de l'accueil
-//   preview-bg.webp (nette, pixel pour pixel en 1080p) pour la fiche, les pages joueurs et le générateur
+// Image de fond : une vraie capture d'écran de CS2 en plein écran (1920×1080), en deux versions (à côté de ce fichier) :
+//   preview-bg-crop.webp (légère) : seulement la zone autour du viseur, en vraie résolution, pour les petites cartes de l'accueil
+//   preview-bg.webp (nette, pixel pour pixel en 1080p) : l'écran entier, pour la fiche, les pages joueurs et le générateur
 // Chaque version n'est téléchargée qu'au premier aperçu qui en a besoin ; quand elle arrive, on redessine.
+const FRAME = { w: 1920, h: 1080 };
+// Zone de la capture contenue dans preview-bg-crop.webp (mêmes nombres que dans images.js)
+const CARD_CROP = { x: 383, y: 317, w: 1120, h: 400 };
 const images = {};
 
-function backgroundImage(small) {
-    const file = small ? "preview-bg-sm.webp" : "preview-bg.webp";
+function backgroundImage(cropped) {
+    const file = cropped ? "preview-bg-crop.webp?v=7a822fab8c" : "preview-bg.webp?v=282ecb7043";
     if (!images[file]) {
         const img = new Image();
         img.decoding = "async";
@@ -142,16 +145,44 @@ function backgroundImage(small) {
 // toutes les cartes ont la même taille, donc un seul calcul pour 70 aperçus.
 const backgrounds = new Map();
 
+// Où se trouve la capture (entière) dans l'aperçu : échelle et position, au pixel près
+function framePlacement(w, h, look) {
+    // La capture représente tout l'écran : on l'affiche à la hauteur de l'écran du visiteur (en vrais pixels)
+    const scale = screenPixelsHigh() * look.zoom / FRAME.h;
+    const stretch = look.res ? look.res.stretch : 1; // étirée en largeur en 4:3 « stretched »
+    const iw = FRAME.w * scale * stretch;
+    const ih = FRAME.h * scale;
+    const focus = look.focus.split(",").map(Number);
+    // On décale la photo, sans jamais laisser de bord vide ; position arrondie au pixel près :
+    // sur un écran de la même hauteur que la capture, l'image est copiée pixel pour pixel (parfaitement nette)
+    const x = Math.round(Math.min(0, Math.max(w - iw, w / 2 - focus[0] * iw)));
+    const y = Math.round(Math.min(0, Math.max(h - ih, h / 2 - focus[1] * ih)));
+    return { scale: scale, sx: scale * stretch, iw: iw, ih: ih, x: x, y: y };
+}
+
+// La zone recadrée suffit-elle pour cet aperçu ? (sinon : image entière, pour ne jamais montrer de bord vide)
+function cropFits(w, h, look) {
+    if (!look.dim || look.raw || look.zoom !== 1 || look.res) {
+        return false;
+    }
+    const p = framePlacement(w, h, look);
+    const left = -p.x / p.sx;
+    const top = -p.y / p.scale;
+    return left >= CARD_CROP.x && top >= CARD_CROP.y
+        && left + w / p.sx <= CARD_CROP.x + CARD_CROP.w && top + h / p.scale <= CARD_CROP.y + CARD_CROP.h;
+}
+
 function background(w, h, look) {
-    const bgImage = backgroundImage(look.dim);
+    const cropped = cropFits(w, h, look);
+    const bgImage = backgroundImage(cropped);
     const ready = bgImage.complete && bgImage.naturalWidth > 0;
-    const key = [w + "x" + h, look.dim, look.raw, look.zoom, look.focus, look.res ? look.res.stretch : 1, ready, screenPixelsHigh()].join(":");
+    const key = [w + "x" + h, cropped, look.dim, look.raw, look.zoom, look.focus, look.res ? look.res.stretch : 1, ready, screenPixelsHigh()].join(":");
     let layer = backgrounds.get(key);
     if (!layer) {
         layer = document.createElement("canvas");
         layer.width = w;
         layer.height = h;
-        drawBackground(layer.getContext("2d"), w, h, ready ? bgImage : null, look);
+        drawBackground(layer.getContext("2d"), w, h, ready ? bgImage : null, look, cropped);
         backgrounds.set(key, layer);
     }
     return layer;
@@ -164,26 +195,22 @@ function background(w, h, look) {
 // look.zoom = 1 : taille réelle ; 3 : tout est agrandi 3 fois (décor ET crosshair, les proportions restent celles du jeu)
 // look.focus = "x,y" : le point de la photo placé derrière le crosshair (0 = bord gauche/haut, 1 = bord droit/bas)
 // bgImage = la capture à utiliser (null tant qu'elle n'est pas arrivée)
-function drawBackground(ctx, w, h, bgImage, look) {
+// cropped = true : bgImage est la zone recadrée (CARD_CROP), posée exactement à sa place dans l'écran entier
+function drawBackground(ctx, w, h, bgImage, look, cropped) {
     if (bgImage) {
-        // La capture représente tout l'écran : on l'affiche à la hauteur de l'écran du visiteur (en vrais pixels)
-        const scale = screenPixelsHigh() * look.zoom / bgImage.naturalHeight;
-        const iw = bgImage.naturalWidth * scale * (look.res ? look.res.stretch : 1); // étirée en largeur en 4:3 « stretched »
-        const ih = bgImage.naturalHeight * scale;
-        const focus = look.focus.split(",").map(Number);
-        // On décale la photo, sans jamais laisser de bord vide ; position arrondie au pixel près :
-        // sur un écran de la même hauteur que la capture, l'image est copiée pixel pour pixel (parfaitement nette)
-        const x = Math.round(Math.min(0, Math.max(w - iw, w / 2 - focus[0] * iw)));
-        const y = Math.round(Math.min(0, Math.max(h - ih, h / 2 - focus[1] * ih)));
+        const p = framePlacement(w, h, look);
+        const place = cropped
+            ? [p.x + CARD_CROP.x * p.sx, p.y + CARD_CROP.y * p.scale, CARD_CROP.w * p.sx, CARD_CROP.h * p.scale]
+            : [p.x, p.y, p.iw, p.ih];
         // Zoom : on agrandit les pixels tels quels (net, comme une capture zoomée) au lieu de les flouter
         ctx.imageSmoothingEnabled = look.zoom < 2;
         ctx.imageSmoothingQuality = "high";
         if (look.raw) {
-            ctx.drawImage(bgImage, x, y, iw, ih);
+            ctx.drawImage(bgImage, place[0], place[1], place[2], place[3]);
             return;
         }
         ctx.filter = look.dim ? "brightness(0.85)" : "brightness(0.8)";
-        ctx.drawImage(bgImage, x, y, iw, ih);
+        ctx.drawImage(bgImage, place[0], place[1], place[2], place[3]);
         ctx.filter = "none";
         const dim = look.dim;
 

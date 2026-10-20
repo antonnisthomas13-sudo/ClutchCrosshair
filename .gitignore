@@ -22,3 +22,6 @@ csfloat-key.txt
 # Clés secrètes (FACEIT...) : jamais sur GitHub
 .env
 faceit-test/
+
+# Outils installes par npm (esbuild) : se reinstallent avec "npm ci", jamais sur GitHub
+node_modules/

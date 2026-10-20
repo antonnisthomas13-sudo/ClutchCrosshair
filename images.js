@@ -61,7 +61,7 @@ function fileUrl(file) {
 // job = { src, out, w, h, fit: "cover"|"contain", position: "top"|"center", type: "image/webp"|"image/png", quality, background, scale }
 function runCanvasJobs(chrome, jobs) {
     const settings = jobs.map(function (j) {
-        return { w: j.w, h: j.h, fit: j.fit, position: j.position, type: j.type, quality: j.quality, background: j.background || null, scale: j.scale || 1, svg: j.src.endsWith(".svg") };
+        return { w: j.w, h: j.h, fit: j.fit, position: j.position, type: j.type, quality: j.quality, background: j.background || null, scale: j.scale || 1, svg: j.src.endsWith(".svg"), crop: j.crop || null };
     });
     // Les images sont dans la page ; la conversion se fait à l'événement "load" (toutes les images sont alors chargées),
     // de façon synchrone : Chrome écrit le résultat (--dump-dom) juste après.
@@ -87,6 +87,9 @@ window.addEventListener("load", function () {
                 // SVG : on le dessine dans un carré centré (il n'a pas de taille "naturelle" fiable)
                 const s = Math.min(j.w, j.h) * j.scale;
                 ctx.drawImage(img, (j.w - s) / 2, (j.h - s) / 2, s, s);
+            } else if (j.crop) {
+                // Recadrage : on copie une zone [x, y, largeur, hauteur] de l'image d'origine, sans la réduire
+                ctx.drawImage(img, j.crop[0], j.crop[1], j.crop[2], j.crop[3], 0, 0, j.w, j.h);
             } else {
                 const iw = img.naturalWidth, ih = img.naturalHeight;
                 const k = (j.fit === "cover" ? Math.max(j.w / iw, j.h / ih) : Math.min(j.w / iw, j.h / ih)) * j.scale;
@@ -199,7 +202,9 @@ function optimizeImages() {
     });
     add({ src: "preview-bg.jpg", out: "preview-bg.webp", w: 1920, h: 1080, fit: "cover", position: "center", type: "image/webp", quality: 0.9 });
     // Version légère pour les petites cartes (assombries) de l'accueil : ~3× plus légère
-    add({ src: "preview-bg.jpg", out: "preview-bg-sm.webp", w: 1440, h: 810, fit: "cover", position: "center", type: "image/webp", quality: 0.72 });
+    // Cartes de l'accueil : seulement la zone autour du viseur (pixel (943, 517) de la capture 1920×1080), en vraie résolution.
+    // Ces nombres doivent rester les mêmes que CARD_CROP dans crosshair.js.
+    add({ src: "preview-bg.jpg", out: "preview-bg-crop.webp", w: 1120, h: 400, crop: [383, 317, 1120, 400], type: "image/webp", quality: 0.6 });
     // Images des skins (téléchargées par update-skins.js dans skins/src/) -> skins/img/<id>.webp, fond transparent
     if (fs.existsSync("skins/src")) {
         fs.readdirSync("skins/src").forEach(function (f) {
@@ -237,4 +242,4 @@ function optimizeImages() {
     }
 }
 
-module.exports = { optimizeImages };
+module.exports = { optimizeImages, findChrome };

@@ -13,7 +13,8 @@
 
 const fs = require("fs");
 const crypto = require("crypto");
-const { optimizeImages } = require("./images.js");
+const { optimizeImages, findChrome } = require("./images.js");
+const { extractCritical } = require("./critical.js");
 
 const SITE_URL = "https://clutchcrosshair.com";
 
@@ -86,22 +87,59 @@ async function main() {
         console.log("Attention : l'inventaire de " + p.name + " est privé (pas de page skins)");
     });
 
-    // Empreintes des fichiers CSS / JS (voir tout en haut)
-    // Ordre important : crosshair.js -> generator.js (qui l'importe) -> script.js (qui importe les deux)
-    function setImportVersion(file, imported, hash) {
-        const text = fs.readFileSync(file, "utf8");
-        const updated = text.replace(new RegExp("(\\./" + imported.replace(".", "\\.") + "\\?v=)[^\"']*", "g"), "$1" + hash);
-        if (updated !== text) {
-            fs.writeFileSync(file, updated);
+    // Empreintes des fichiers CSS / JS / images (voir tout en haut)
+    // Ordre important : fonds -> crosshair.js -> generator.js (qui l'importe) -> script.js (qui importe les deux)
+    // Images qui gardent leur nom quand on les remplace (photos, logos, fonds des aperçus) : elles reçoivent aussi
+    // une empreinte ?v=, car _headers demande aux navigateurs de les garder 1 an (la nouvelle version a une autre adresse)
+    const versions = new Map();
+    function versioned(file) {
+        if (file && !versions.has(file)) {
+            versions.set(file, fs.existsSync(file) ? file + "?v=" + fingerprint(file) : file);
         }
+        return file ? versions.get(file) : file;
     }
-    const CSS_HASH = fingerprint("style.css");
-    const CROSSHAIR_HASH = fingerprint("crosshair.js");
-    setImportVersion("generator.js", "crosshair.js", CROSSHAIR_HASH);
-    setImportVersion("script.js", "crosshair.js", CROSSHAIR_HASH);
-    const GENERATOR_HASH = fingerprint("generator.js");
-    setImportVersion("script.js", "generator.js", GENERATOR_HASH);
-    const SCRIPT_HASH = fingerprint("script.js");
+    const BG_HASH = fs.existsSync("preview-bg.webp") ? fingerprint("preview-bg.webp") : "";
+    const BG_CROP_HASH = fs.existsSync("preview-bg-crop.webp") ? fingerprint("preview-bg-crop.webp") : "";
+    // crosshair.js charge les fonds : on y écrit leurs empreintes (avant de calculer celle de crosshair.js)
+    (function () {
+        const text = fs.readFileSync("crosshair.js", "utf8");
+        const updated = text
+            .replace(/(["'])preview-bg\.webp(\?v=[^"']*)?(["'])/, "$1preview-bg.webp?v=" + BG_HASH + "$3")
+            .replace(/(["'])preview-bg-crop\.webp(\?v=[^"']*)?(["'])/, "$1preview-bg-crop.webp?v=" + BG_CROP_HASH + "$3");
+        if (updated !== text) {
+            fs.writeFileSync("crosshair.js", updated);
+        }
+    })();
+    // Versions « minifiées » (sans espaces ni commentaires) pour le site en ligne, fabriquées par esbuild (npm ci) :
+    // style.min.css, crosshair.min.js, generator.min.js, script.min.js. Les sources restent lisibles et ne sont pas
+    // appelées par les pages. Dans les .min.js, les imports pointent vers les autres .min.js avec leur empreinte ?v=.
+    // Fins de ligne uniformisées : le PC (Windows) et GitHub fabriquent exactement les mêmes fichiers (mêmes empreintes).
+    let esbuild = null;
+    try {
+        esbuild = require("esbuild");
+    } catch (error) {
+        console.log("Attention : esbuild n'est pas installé (lancer « npm ci ») : les fichiers .min sont copiés sans être minifiés");
+    }
+    function minify(source, out, loader, imports) {
+        let code = fs.readFileSync(source, "utf8").replace(/\r\n/g, "\n");
+        (imports || []).forEach(function (imp) {
+            code = code.replace(new RegExp("([\"'])\\./" + imp.from.replace(".", "\\.") + "(\\?v=[^\"']*)?([\"'])", "g"), "$1./" + imp.to + "?v=" + imp.hash + "$3");
+        });
+        if (esbuild) {
+            code = esbuild.transformSync(code, { loader: loader, minify: true, legalComments: "none" }).code;
+        }
+        if (!fs.existsSync(out) || fs.readFileSync(out, "utf8") !== code) {
+            fs.writeFileSync(out, code);
+        }
+        return fingerprint(out);
+    }
+    const CSS_HASH = minify("style.css", "style.min.css", "css");
+    const CROSSHAIR_HASH = minify("crosshair.js", "crosshair.min.js", "js");
+    const GENERATOR_HASH = minify("generator.js", "generator.min.js", "js", [{ from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH }]);
+    const SCRIPT_HASH = minify("script.js", "script.min.js", "js", [
+        { from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH },
+        { from: "generator.js", to: "generator.min.js", hash: GENERATOR_HASH }
+    ]);
 
     // Le générateur : code de départ + liste des pros (codes CS2 valides seulement), par équipe
     const generatorCode = sharecode.encodeCrosshair(GENERATOR_DEFAULT);
@@ -135,7 +173,7 @@ async function main() {
         const base = original.replace(/^photos\//, "").replace(/\.\w+$/, "");
         const sm = "photos/sm/" + base + ".webp";
         const md = "photos/md/" + base + ".webp";
-        return { original: original, sm: fs.existsSync(sm) ? sm : original, md: fs.existsSync(md) ? md : original };
+        return { original: original, sm: versioned(fs.existsSync(sm) ? sm : original), md: versioned(fs.existsSync(md) ? md : original) };
     }
 
     // Photo d'un joueur des skins (petite pour les boutons, moyenne pour l'en-tête de sa page), sinon ses initiales
@@ -183,7 +221,7 @@ async function main() {
             return "";
         }
         const small = team.logo.replace(/^logos\//, "logos/sm/").replace(/\.\w+$/, ".webp");
-        return fs.existsSync(small) ? small : team.logo;
+        return versioned(fs.existsSync(small) ? small : team.logo);
     }
 
     function decode(code) {
@@ -240,11 +278,11 @@ async function main() {
     <meta name="twitter:image" content="${SITE_URL}/og-image.jpg">
     <link rel="preload" href="${p}fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="${p}fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="${p}style.css?v=${CSS_HASH}">${o.crosshair ? `
-    <link rel="modulepreload" href="${p}crosshair.js?v=${CROSSHAIR_HASH}">
+    <link rel="stylesheet" href="${p}style.min.css?v=${CSS_HASH}">${o.crosshair ? `
+    <link rel="modulepreload" href="${p}crosshair.min.js?v=${CROSSHAIR_HASH}">
     <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
-    <link rel="preload" href="${p}preview-bg.webp" as="image" type="image/webp">` : ""}${o.generator ? `
-    <link rel="modulepreload" href="${p}generator.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
+    <link rel="preload" href="${p}preview-bg.webp?v=${BG_HASH}" as="image" type="image/webp">` : ""}${o.generator ? `
+    <link rel="modulepreload" href="${p}generator.min.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
     <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
     }
 
@@ -610,7 +648,7 @@ ${insights.faq.map(function (q) {
     ${footer("../")}
 
     <script type="module">
-        import { copyText, drawCrosshair } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        import { copyText, drawCrosshair } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
 
         drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
 
@@ -714,9 +752,10 @@ ${insights.faq.map(function (q) {
 
     // Empreintes des fichiers CSS/JS dans index.html
     index = index
-        .replace(/(href="style\.css\?v=)[^"]*/, "$1" + CSS_HASH)
-        .replace(/(href="crosshair\.js\?v=)[^"]*/, "$1" + CROSSHAIR_HASH)
-        .replace(/(src="script\.js\?v=)[^"]*/, "$1" + SCRIPT_HASH);
+        .replace(/href="style(\.min)?\.css\?v=[^"]*"/, 'href="style.min.css?v=' + CSS_HASH + '"')
+        .replace(/href="crosshair(\.min)?\.js\?v=[^"]*"/, 'href="crosshair.min.js?v=' + CROSSHAIR_HASH + '"')
+        .replace(/src="script(\.min)?\.js\?v=[^"]*"/, 'src="script.min.js?v=' + SCRIPT_HASH + '"')
+        .replace(/(href="preview-bg-crop\.webp)(\?v=[^"]*)?"/, "$1?v=" + BG_CROP_HASH + "\"");
     fs.writeFileSync("index.html", index);
 
     // ===== 3. faq.html : la FAQ complète, avec des statistiques calculées sur les pros =====
@@ -926,7 +965,7 @@ ${genFaq.map(function (q) {
     ${footer("")}
 
     <script type="module">
-        import { initGenerator } from "./generator.js?v=${GENERATOR_HASH}";
+        import { initGenerator } from "./generator.min.js?v=${GENERATOR_HASH}";
         initGenerator(document.getElementById("gen"), { syncHash: true });
     </script>
 </body>
@@ -1312,7 +1351,7 @@ ${faq.map(function (q) {
         }
 
         // Petit script des pages de commandes : boutons Copy (+ recherche et filtres sur la liste)
-        const COPY_SCRIPT = `import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        const COPY_SCRIPT = `import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {
@@ -1730,7 +1769,7 @@ ${categoriesUsed.map(function (cat) {
         [dpi, sens, val].forEach(function (input) { input.addEventListener("input", update); });
         update();`;
 
-        const GUIDE_COPY_SCRIPT = `import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        const GUIDE_COPY_SCRIPT = `import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {
@@ -2109,7 +2148,7 @@ ${bindFaq.map(function (q) {
     ${footer("../")}
     <script type="application/json" id="bind-data">${JSON.stringify({ toggles: bindData.toggles, volume: bindData.volume, grenades: bindData.grenades, other: bindData.other }).replace(/</g, "\\u003c")}</script>
     <script type="module">
-        import { copyText } from "../crosshair.js?v=${CROSSHAIR_HASH}";
+        import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
 
         // Boutons Copy (lignes simples et blocs de plusieurs lignes)
         document.addEventListener("click", function (event) {
@@ -2595,6 +2634,43 @@ ${urls}</urlset>
                 fs.writeFileSync(file, cleaned);
             }
         });
+
+    // ===== CSS critique de l'accueil (voir critical.js) =====
+    // Le CSS du haut de page est écrit dans index.html (affichage immédiat), style.min.css se charge ensuite sans bloquer.
+    // Gardé dans critical.css avec l'empreinte de style.min.css : recalculé seulement si le CSS change
+    // (ou « node build.js --critical »). Sans Chrome ou en cas d'erreur : feuille de style normale (rien ne casse).
+    await (async function () {
+        const blocking = `<link rel="stylesheet" href="style.min.css?v=${CSS_HASH}">`;
+        let home = fs.readFileSync("index.html", "utf8");
+        const header = "/* style.min.css " + CSS_HASH + " */\n";
+        const saved = fs.existsSync("critical.css") ? fs.readFileSync("critical.css", "utf8").replace(/\r\n/g, "\n") : "";
+        let critical = "";
+        if (saved.startsWith(header) && !process.argv.includes("--critical")) {
+            critical = saved.slice(header.length).trim();
+        } else {
+            const chrome = findChrome();
+            if (!chrome) {
+                console.log("Attention : Chrome introuvable, pas de CSS critique (feuille de style normale)");
+            } else {
+                try {
+                    const raw = await extractCritical(chrome, replaceBetween(home, "CSS", blocking, "    "));
+                    critical = esbuild ? esbuild.transformSync(raw, { loader: "css", minify: true, legalComments: "none" }).code.trim() : raw;
+                    fs.writeFileSync("critical.css", header + critical + "\n");
+                    console.log("CSS critique recalculé : " + (critical.length / 1024).toFixed(1) + " Ko");
+                } catch (error) {
+                    critical = "";
+                    console.log("Attention : CSS critique impossible (" + error.message + "), feuille de style normale");
+                }
+            }
+        }
+        const block = critical
+            ? `<style>${critical}</style>
+    <link rel="preload" href="style.min.css?v=${CSS_HASH}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>${blocking}</noscript>`
+            : blocking;
+        home = replaceBetween(home, "CSS", block, "    ");
+        fs.writeFileSync("index.html", home);
+    })();
 
     console.log(players.length + " pages joueurs + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
 }

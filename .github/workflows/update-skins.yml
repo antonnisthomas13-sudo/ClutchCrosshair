@@ -32,6 +32,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Installer esbuild (minification du CSS/JS)
+        run: npm ci
+
       - name: Inventaires Steam et prix CSFloat
         env:
           CSFLOAT_KEY: ${{ secrets.CSFLOAT_KEY }}
