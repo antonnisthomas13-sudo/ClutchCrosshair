@@ -328,6 +328,7 @@ async function main() {
             <a href="${prefix}faq.html">FAQ</a>
             <a href="${prefix}legal.html">Legal notice</a>
         </nav>
+        <p class="footer-contact">Business &amp; partnerships: <a href="mailto:${PUBLISHER_EMAIL}?subject=Business%20-%20ClutchCrosshair">${PUBLISHER_EMAIL}</a></p>
         <p>© 2026 ClutchCrosshair. All rights reserved.</p>
         <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>`;

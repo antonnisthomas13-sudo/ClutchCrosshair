@@ -85,7 +85,7 @@
     --c4-red: #FF5C63;
 
     /* --- Couleurs officielles des réseaux sociaux --- */
-    --brand-discord: #5865F2;
+    --brand-gmail: #EA4335;     /* icône email (couleur de Gmail) */
     --brand-tiktok: #FFFFFF;
     --brand-tiktok-cyan: #25F4EE;
     --brand-tiktok-pink: #FE2C55;
@@ -1652,12 +1652,12 @@ body.light .team-badge img[src*="fut"] {
 }
 
 /* Les logos gardent les couleurs officielles des marques, en permanence */
-.social-discord {
-    color: var(--brand-discord);
+.social-mail {
+    color: var(--brand-gmail);
 }
 
-.social-discord:hover {
-    border-color: var(--brand-discord);
+.social-mail:hover {
+    border-color: var(--brand-gmail);
 }
 
 /* TikTok : logo blanc (noir en mode clair) avec son décalage cyan / rose */
@@ -1711,6 +1711,16 @@ body.light .team-badge img[src*="fut"] {
     font-size: var(--fs-2xs);
     color: var(--text-body);
     text-align: center;
+}
+
+/* L'adresse email sous « Contact us » : copiable et cliquable */
+.side-mail {
+    display: block;
+    margin: 4px 10px 0;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    text-align: center;
+    overflow-wrap: anywhere;
 }
 
 /* ===== Générateur de crosshair (generator.html + onglet Generator) =====
@@ -3829,6 +3839,7 @@ body.light .team-badge img[src*="fut"] {
     .side-footer {
         order: 4;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         gap: 8px;
         margin: 0;
@@ -3837,9 +3848,19 @@ body.light .team-badge img[src*="fut"] {
         background-color: var(--sidebar);
     }
 
-    .side-footer .side-title,
-    .side-note {
+    .side-footer .side-title {
         display: none;
+    }
+
+    /* Phrase « Business... » et adresse email : chacune sur sa ligne, sous les icônes */
+    .side-note,
+    .side-mail {
+        flex-basis: 100%;
+        margin: 0;
+    }
+
+    .side-note {
+        margin-top: 4px;
     }
 
     .socials {
