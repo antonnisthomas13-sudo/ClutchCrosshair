@@ -93,10 +93,10 @@
 </head>
 <body>
     <script>
-        // Mode clair/sombre : le choix du visiteur, sinon celui de son ordinateur (appliqué tout de suite, sans flash)
+        // Mode clair/sombre : sombre par défaut (même 1re visite), clair seulement si le visiteur l'a choisi (appliqué tout de suite, sans flash)
         try {
             const saved = localStorage.getItem("theme");
-            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            if (saved === "light") {
                 document.documentElement.classList.add("light");
                 document.body.classList.add("light");
             }

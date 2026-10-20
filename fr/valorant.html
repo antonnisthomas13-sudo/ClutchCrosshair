@@ -51,7 +51,7 @@
     <script>
         try {
             const saved = localStorage.getItem("theme");
-            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            if (saved === "light") {
                 document.documentElement.classList.add("light");
                 document.body.classList.add("light");
             }

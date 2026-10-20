@@ -362,11 +362,11 @@ async function main() {
         // Petite maison au début du fil d'Ariane (retour à l'accueil, présent sur toutes les pages)
         const HOME_ICON = `<svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>`;
 
-        // Thème clair/sombre appliqué tout de suite (sans flash), sur <html> et <body>
+        // Thème : sombre par défaut (même 1re visite), clair seulement si le visiteur l'a choisi ; appliqué tout de suite (sans flash), sur <html> et <body>
         const THEME_SCRIPT = `<script>
         try {
             const saved = localStorage.getItem("theme");
-            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+            if (saved === "light") {
                 document.documentElement.classList.add("light");
                 document.body.classList.add("light");
             }
