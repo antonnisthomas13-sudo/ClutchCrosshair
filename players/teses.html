@@ -7,6 +7,25 @@
     <meta name="description" content="Copy TeSeS&#39;s CS2 crosshair code (Falcons) in one click: real-size preview, console commands and settings. From a match on 17/10/2026.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://clutchcrosshair.com/players/teses">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/players/teses">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/players/teses">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/teses">
+    <script>(function () {
+        var A = {"en":"../players/teses.html","fr":"../fr/players/teses.html"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -15,6 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="TeSeS CS2 Crosshair Code">
     <meta property="og:description" content="Copy TeSeS&#39;s CS2 crosshair code (Falcons) in one click: real-size preview, console commands and settings. From a match on 17/10/2026.">
     <meta property="og:url" content="https://clutchcrosshair.com/players/teses">
@@ -28,8 +48,8 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=cfb0e51442">
-    <link rel="modulepreload" href="../crosshair.min.js?v=f7020cc41a">
+    <link rel="stylesheet" href="../style.min.css?v=6bb7a38f4c">
+    <link rel="modulepreload" href="../crosshair.min.js?v=fe84164f66">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/players/teses","url":"https://clutchcrosshair.com/players/teses","name":"TeSeS CS2 Crosshair Code","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/players/teses#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/players/teses#breadcrumb"},"dateModified":"2026-10-17"},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/players/teses#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"TeSeS crosshair","item":"https://clutchcrosshair.com/players/teses"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/players/teses#person","name":"TeSeS","description":"TeSeS is a CS2 pro player for Falcons. CS2 crosshair code read from an official match demo.","url":"https://clutchcrosshair.com/players/teses","memberOf":{"@type":"SportsTeam","name":"Falcons","sport":"Counter-Strike 2"},"sameAs":["https://steamcommunity.com/profiles/76561197996678278","https://liquipedia.net/counterstrike/TeSeS"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/players/teses#faq","mainEntity":[{"@type":"Question","name":"What is TeSeS's CS2 crosshair code?","acceptedAnswer":{"@type":"Answer","text":"TeSeS's CS2 crosshair code is CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX. It was read from an official match demo on 17/10/2026."}},{"@type":"Question","name":"What crosshair settings does TeSeS use?","acceptedAnswer":{"@type":"Answer","text":"TeSeS uses a very short green static crosshair: 2 px long, 3 px thick, a gap of 2, no outline and no center dot, set for a 1080p screen height."}}]}]}</script>
@@ -56,6 +76,13 @@
             <a href="../commands/">Commands</a>
             <a href="../tools/">Tools</a>
         </nav>
+        <select id="lang" class="lang" aria-label="Language">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="ru" disabled>RU · Русский (soon)</option>
+                    <option value="es" disabled>ES · Español (soon)</option>
+                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                </select>
     </header>
 
     <main class="player-page" style="--team: #2ECC71; --on-team: #111214">
@@ -133,7 +160,7 @@
     </footer>
 
     <script type="module">
-        import { copyText, drawCrosshair } from "../crosshair.min.js?v=f7020cc41a";
+        import { copyText, drawCrosshair } from "../crosshair.min.js?v=fe84164f66";
 
         drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
 

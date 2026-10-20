@@ -24,6 +24,15 @@ Hébergement : **Cloudflare Pages — https://clutchcrosshair.com** (depuis le 1
 - **Fond des cartes** : `preview-bg-crop.webp` (33 Ko, avant `preview-bg-sm.webp` 95 Ko) = seulement la zone autour du viseur, en vraie résolution (`CARD_CROP` dans crosshair.js = `crop` dans images.js, les garder identiques) ; si une carte est plus grande que cette zone, l'aperçu prend automatiquement `preview-bg.webp` (`cropFits`).
 Je sauvegarde avec VS Code > Contrôle de code source > Valider puis Synchroniser.
 
+**Site multilingue (20/10/2026, EN + FR ; ES/RU/TR plus tard)** — tout est fabriqué par build.js, aucune librairie dans le navigateur.
+- Adresses : anglais à la racine (inchangé), français dans **`fr/`** avec les mêmes noms de pages (`fr/players/zywoo.html`, `fr/guides/…`). Dossier `fr/` généré : ne pas le modifier à la main.
+- **`i18n.js`** : liste des langues (`LANGS`, `SOON` = « soon » dans le sélecteur), `makeI18n(lang)` → `t("cle", {var})` (pluriels `{one, other}`, repli sur l'anglais). **`i18n/en.json`** et **`i18n/fr.json`** = tous les textes de l'interface. **Tout nouveau texte : l'ajouter dans les DEUX fichiers** (une clé absente de en.json arrête le build). Contenus traduits : `i18n/fr/commands.json`, `i18n/fr/guides.json`, `i18n/fr/binds.json` (même structure que les originaux : changer un guide/une commande = changer les deux). On ne traduit pas pseudos, équipes, codes.
+- **`index.template.html`** = la vraie source de l'accueil (`{{cle}}` = texte traduit, `{{@nom}}` = valeur calculée). **`index.html` et `fr/index.html` sont fabriqués : modifier le modèle, pas index.html.**
+- Textes affichés par le JavaScript : `tr(cle, "texte anglais")` (exporté par crosshair.js) ; les pages FR contiennent un petit dictionnaire `<script id="i18n">` (section `js` de fr.json). « Copied » de la barre rouge = variable CSS `--copied`.
+- Sélecteur de langue (`#lang`) sur toutes les pages ; choix gardé dans `localStorage.lang`. 1ʳᵉ visite sans choix sur une page anglaise : redirection vers la langue du navigateur si elle existe. SEO : `hreflang` en/fr/x-default, canonical et og:locale par langue, sitemap avec les deux langues.
+- `critical.js` ouvre Chrome en anglais (sinon il serait redirigé). Polices : espace fine française (U+202F) ajoutée. Pour RU/TR il faudra ajouter le cyrillique et ğ ş İ dans `fonts/subset_fonts.py`.
+- **À vérifier par Anto dans CS2 en français** : noms des menus (« Paramètres › Jeu › Réticule », « Activer la console développeur », options vidéo).
+
 ## Les fichiers
 - `index.html` — la page d'accueil. Lien CSS `style.css?v=<empreinte>` et script `script.js?v=<empreinte>`.
   **Les `?v=` sont automatiques** : `node build.js` calcule une « empreinte » (hash SHA-256, 10 caractères) de style.css, crosshair.js, generator.js et script.js et la réécrit dans index.html, les pages et les `import` de generator.js et script.js. Il suffit de relancer `node build.js` après avoir modifié un CSS/JS (plus de numéro à augmenter à la main).
@@ -124,7 +133,7 @@ Structure du site, design rouge/noir, mode clair/sombre (retenu), recherche, men
 1. **Photos** des ~55 autres joueurs (je télécharge en vrac, tu renommes).
 2. **Créateurs** (V1) : liste de ~20 créateurs à valider (proposée : ohnePixel, fl0m, Anomaly, Stewie2K, Trilluxe, Mauisnake, s1mple ?, Buster, Evelone, Recrent, StRoGo, ceh9, Gaules, Maj3r, Wtcn, Izak, Pasha Biceps, kennyS, shox, f0rest). Codes via **démos FACEIT téléchargées à la main** (matchs après le 30/09) ou commande `!crosshair` sur Twitch. **Fait le 19/10/2026** : 14 créateurs importés depuis creators.csv (StRoGo, Dima, fl0m, f0rest, GeT_RiGhT, s1mple, Chopper, Freakazoid, ScreaM, kennyS, shox, Izak, pashaBiceps + Maj3r avec son vrai code). Reste : code CS2 récent de **Recrent** (le sien est en `CSGO-`), photos des créateurs.
 3. ~~Crosshair Generator~~ : fait le 19/10/2026 (generator.html + onglet ; Lighthouse 99/100/100/100).
-4. Traductions FR/RU/ES/TR : pour le SEO, il faudra de vraies pages par langue (`/fr/`…) + balises `hreflang`, pas une traduction en JavaScript.
+4. Traductions : **FR fait le 20/10/2026** (voir « Site multilingue »). Reste ES, RU, TR (après les tests d'Anto).
 5. Menu de gauche sous les équipes : « Latest updates » (5 derniers crosshairs modifiés) + place pour une pub plus tard.
 6. Mentions légales : `PUBLISHER_NAME` = « Anto » (fait) ; e-mail clutchcrosshair@gmail.com (fait le 19/10/2026). Photos HLTV : risque droits d'auteur (décision à prendre). Liens réseaux sociaux `#` à remplacer ou cacher. (Fait le 18/10 : image d'aperçu 1200×630, polices hébergées sur le site.)
 7. ~~Nom de domaine~~ fait le 19/10/2026 (adresses changées partout). Redirection www et désactivation de GitHub Pages faites. Reste : Google Search Console (propriété « Domaine », sitemap + indexation de l'accueil).

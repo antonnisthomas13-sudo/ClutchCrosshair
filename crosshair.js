@@ -4,6 +4,26 @@
 // Librairie qui décode les codes de partage CS2 (copie locale dans lib/)
 import { decodeCrosshairShareCode } from "./lib/csgo-sharecode.js";
 
+// ===== Langue =====
+// Les pages dans une autre langue que l'anglais contiennent leurs textes traduits (<script id="i18n">, écrit par build.js
+// à partir de la section "js" de i18n/<langue>.json). tr("clé", "texte anglais") renvoie la traduction, sinon l'anglais.
+const TEXTS = (function () {
+    try {
+        const el = document.getElementById("i18n");
+        return el ? JSON.parse(el.textContent) : {};
+    } catch (error) {
+        return {};
+    }
+})();
+
+export function tr(key, english, vars) {
+    let text = TEXTS[key] || english;
+    Object.keys(vars || {}).forEach(function (name) {
+        text = text.split("{" + name + "}").join(vars[name]);
+    });
+    return text;
+}
+
 // ===== Copier =====
 
 // Annonce un message aux lecteurs d'écran (zone invisible "aria-live")
@@ -75,13 +95,13 @@ export function copyText(text, button) {
     } else {
         legacyCopy(text);
     }
-    announce("Copied to clipboard");
+    announce(tr("copiedAnnounce", "Copied to clipboard"));
 
     // On garde le texte d'origine du bouton (même si on clique plusieurs fois)
     if (!button.dataset.label) {
         button.dataset.label = button.textContent;
     }
-    button.textContent = "Copied!";
+    button.textContent = tr("copied", "Copied!");
     showHeadshot(button);
 
     // Geste signature : une barre rouge "COPIED" balaie la ligne du code (voir .field-row.copied dans style.css)
@@ -260,7 +280,7 @@ function drawBars(ctx, code, w, h, look) {
         ctx.font = "600 " + Math.round(14 * (window.devicePixelRatio || 1)) + "px sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("No preview", w / 2, h / 2);
+        ctx.fillText(tr("noPreview", "No preview"), w / 2, h / 2);
         return;
     }
 

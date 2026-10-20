@@ -7,6 +7,25 @@
     <meta name="description" content="Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
+    <script>(function () {
+        var A = {"en":"../guides/cs2-crosshair-guide.html","fr":"../fr/guides/cs2-crosshair-guide.html"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -15,6 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="CS2 Crosshair Guide: Codes, Commands and Pro Stats">
     <meta property="og:description" content="Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.">
     <meta property="og:url" content="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
@@ -28,7 +48,7 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=cfb0e51442">
+    <link rel="stylesheet" href="../style.min.css?v=6bb7a38f4c">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#article","headline":"CS2 Crosshair Guide: Codes, Commands and Pro Stats","description":"Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.","url":"https://clutchcrosshair.com/guides/cs2-crosshair-guide","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Guides","item":"https://clutchcrosshair.com/guides/"},{"@type":"ListItem","position":3,"name":"CS2 Crosshair Guide: Codes, Commands and Pro Stats","item":"https://clutchcrosshair.com/guides/cs2-crosshair-guide"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#faq","mainEntity":[{"@type":"Question","name":"How do I import a crosshair in CS2?","acceptedAnswer":{"@type":"Answer","text":"Copy the code, open Settings › Game › Crosshair, click Share or Import and paste it."}},{"@type":"Question","name":"Why don't CSGO- crosshair codes work anymore?","acceptedAnswer":{"@type":"Answer","text":"Since the CS2 update of September 30, 2026, crosshair codes use a new format starting with CS, with sizes in pixels. Old CSGO- codes can no longer be imported."}},{"@type":"Question","name":"What is the most popular crosshair among CS2 pros?","acceptedAnswer":{"@type":"Answer","text":"A small static crosshair: on ClutchCrosshair, most pros use a short length, a small gap and a cyan or green color, without a center dot."}},{"@type":"Question","name":"How do I make my own CS2 crosshair?","acceptedAnswer":{"@type":"Answer","text":"Use the ClutchCrosshair crosshair generator: adjust color, length, thickness and gap with a real-size preview, then copy your code or console commands."}}]}]}</script>
 </head>
 <body class="page">
@@ -53,6 +73,13 @@
             <a href="../commands/">Commands</a>
             <a href="../tools/">Tools</a>
         </nav>
+        <select id="lang" class="lang" aria-label="Language">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="ru" disabled>RU · Русский (soon)</option>
+                    <option value="es" disabled>ES · Español (soon)</option>
+                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                </select>
     </header>
 
     <main class="player-page guide-page">
@@ -137,7 +164,7 @@ cl_crosshaircolor_a 255</code></pre><button type="button" class="mini" data-copy
         <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>
     <script type="module">
-        import { copyText } from "../crosshair.min.js?v=f7020cc41a";
+        import { copyText } from "../crosshair.min.js?v=fe84164f66";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {

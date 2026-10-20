@@ -7,6 +7,25 @@
     <meta name="description" content="Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-stretched-resolution">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
+    <script>(function () {
+        var A = {"en":"../guides/cs2-stretched-resolution.html","fr":"../fr/guides/cs2-stretched-resolution.html"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -15,6 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="CS2 Stretched Resolution: 4:3 vs 16:9 (2026)">
     <meta property="og:description" content="Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.">
     <meta property="og:url" content="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
@@ -28,7 +48,7 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=cfb0e51442">
+    <link rel="stylesheet" href="../style.min.css?v=6bb7a38f4c">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/guides/cs2-stretched-resolution#article","headline":"CS2 Stretched Resolution: 4:3 vs 16:9 (2026)","description":"Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.","url":"https://clutchcrosshair.com/guides/cs2-stretched-resolution","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/guides/cs2-stretched-resolution#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Guides","item":"https://clutchcrosshair.com/guides/"},{"@type":"ListItem","position":3,"name":"CS2 Stretched Resolution: 4:3 vs 16:9 (2026)","item":"https://clutchcrosshair.com/guides/cs2-stretched-resolution"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/guides/cs2-stretched-resolution#faq","mainEntity":[{"@type":"Question","name":"Is 4:3 stretched better in CS2?","acceptedAnswer":{"@type":"Answer","text":"Not objectively. Models look wider and FPS is slightly higher, but you see less on the sides and the image is less sharp. Try both for a few days and keep what feels best."}},{"@type":"Question","name":"What is the most common CS2 pro resolution?","acceptedAnswer":{"@type":"Answer","text":"1280×960 stretched is still very common among pros: most pro crosshair codes on ClutchCrosshair are made for a 960 px screen height."}},{"@type":"Question","name":"Why do I have black bars in 4:3?","acceptedAnswer":{"@type":"Answer","text":"Your graphics card is not set to stretch the image. Set Full-screen scaling performed by the GPU in the NVIDIA Control Panel, or GPU Scaling with Full Panel in AMD Software."}},{"@type":"Question","name":"Does stretched make hitboxes bigger in CS2?","acceptedAnswer":{"@type":"Answer","text":"No. Hitboxes stay the same; the models only look wider because the image is stretched horizontally."}}]}]}</script>
 </head>
 <body class="page">
@@ -53,6 +73,13 @@
             <a href="../commands/">Commands</a>
             <a href="../tools/">Tools</a>
         </nav>
+        <select id="lang" class="lang" aria-label="Language">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="ru" disabled>RU · Русский (soon)</option>
+                    <option value="es" disabled>ES · Español (soon)</option>
+                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                </select>
     </header>
 
     <main class="player-page guide-page">
@@ -125,7 +152,7 @@
         <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>
     <script type="module">
-        import { copyText } from "../crosshair.min.js?v=f7020cc41a";
+        import { copyText } from "../crosshair.min.js?v=fe84164f66";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {

@@ -1228,6 +1228,11 @@ body.page {
     bottom: -3px;
 }
 
+/* Sélecteur de langue des pages : à droite de l'en-tête (le même que sur l'accueil) */
+.page-top .lang {
+    margin-left: auto;
+}
+
 .player-page {
     width: 100%;
     max-width: 760px;
@@ -1522,7 +1527,7 @@ body.page {
 
 /* Geste signature : la barre rouge « COPIED » balaie la ligne du code */
 .field-row::after {
-    content: "Copied";
+    content: var(--copied, "Copied");
     position: absolute;
     inset: 0;
     display: flex;
@@ -3974,6 +3979,15 @@ body.light .team-badge img[src*="fut"] {
 
     .page-top .logo {
         flex: 0 0 auto;
+    }
+
+    /* Téléphone : le sélecteur de langue reste en haut à droite, à côté du logo ; le menu passe en dessous */
+    .page-top .lang {
+        order: 2;
+    }
+
+    .page-top .main-nav {
+        order: 3;
     }
 
     /* Sur téléphone, le bouton FAQ n'affiche que l'icône "?" */

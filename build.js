@@ -1,20 +1,22 @@
-// build.js : génère tout ce qui sert au référencement Google (SEO) et à la vitesse du site
+// build.js : génère tout ce qui sert au référencement Google (SEO) et à la vitesse du site, dans chaque langue
 //   - les images optimisées (vignettes des photos, logos, fond des aperçus, icônes, aperçu de lien) : voir images.js
-//   - dans index.html : les cartes des joueurs (Pros, Creators, Trending), le menu des équipes, les compteurs
-//     et la liste de tous les joueurs — lisibles par Google sans JavaScript
+//   - index.html (à partir du modèle index.template.html) : les cartes des joueurs (Pros, Creators, Trending),
+//     le menu des équipes, les compteurs — lisibles par Google sans JavaScript
 //   - une page complète par joueur (players/<slug>.html) — et supprime les pages des joueurs qui n'existent plus
-//   - faq.html (FAQ complète, avec des statistiques calculées sur les crosshairs des pros)
-//   - generator.html (générateur de crosshair CS2) — le même générateur est aussi écrit dans l'onglet Generator de l'accueil
-//   - legal.html (mentions légales)
-//   - sitemap.xml (avec la date de mise à jour et la photo de chaque page) et 404.html
-//   - les "empreintes" ?v=... des fichiers CSS/JS : changent toutes seules quand le fichier change
-//     (le navigateur recharge alors la nouvelle version) — plus besoin de les modifier à la main
-// Lancer avec : node build.js   (à relancer après chaque changement de players.json, des photos, du CSS ou du JS)
+//   - faq.html, generator.html, skins/, commands/, guides/, tools/, valorant.html, legal.html, 404.html
+//   - sitemap.xml (toutes les langues, avec les liens hreflang entre les versions)
+//   - les "empreintes" ?v=... des fichiers CSS/JS/images : changent toutes seules quand le fichier change
+// LANGUES (voir i18n.js) : l'anglais à la racine (/players/zywoo), le français dans fr/ (/fr/players/zywoo).
+//   Tous les textes sont dans i18n/en.json, i18n/fr.json (+ i18n/fr/guides.json, commands.json, binds.json).
+//   Ne pas écrire de texte en dur ici : ajouter une clé dans i18n/en.json (et sa traduction dans i18n/fr.json).
+// Lancer avec : node build.js   (à relancer après chaque changement de players.json, des photos, du CSS, du JS ou des textes)
 
 const fs = require("fs");
+const path = require("path");
 const crypto = require("crypto");
 const { optimizeImages, findChrome } = require("./images.js");
 const { extractCritical } = require("./critical.js");
+const { LANGS, SOON, NAMES, makeI18n } = require("./i18n.js");
 
 const SITE_URL = "https://clutchcrosshair.com";
 
@@ -58,6 +60,12 @@ function replaceBetween(text, name, content, indent) {
     return text.slice(0, startLineEnd) + "\n" + indent + content + "\n" + indent + text.slice(end);
 }
 
+// Écrit un fichier en créant son dossier si besoin (fr/players/... par exemple)
+function write(file, text) {
+    fs.mkdirSync(path.dirname(file) || ".", { recursive: true });
+    fs.writeFileSync(file, text);
+}
+
 async function main() {
     // 0. Images optimisées (ne refait que ce qui manque ou a changé)
     optimizeImages();
@@ -66,7 +74,7 @@ async function main() {
     const sharecode = await import("./lib/csgo-sharecode.js");
     const { teams } = await import("./teams.js");
     const render = await import("./render.js");
-    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName, generatorHTML, SKIN_CATEGORIES, groupSkins, byPrice, formatPrice, skinCardHTML, skinParts } = render;
+    const { slug, esc, consoleCommands, teamInfo, teamColor, textOnColor, teamBadge, cardHTML, byTeamThenName, generatorHTML, SKIN_CATEGORIES, groupSkins, byPrice, formatPrice, skinCardHTML } = render;
 
     const players = JSON.parse(fs.readFileSync("players.json", "utf8"));
 
@@ -153,7 +161,6 @@ async function main() {
     }).filter(function (g) {
         return g.players.length > 0;
     });
-    const generatorBlock = generatorHTML(generatorCode, generatorGroups);
 
     // Photo d'origine, vignette (cartes) et photo moyenne (fiche, page joueur) d'un joueur
     function photoFiles(player) {
@@ -176,44 +183,6 @@ async function main() {
         return { original: original, sm: versioned(fs.existsSync(sm) ? sm : original), md: versioned(fs.existsSync(md) ? md : original) };
     }
 
-    // Photo d'un joueur des skins (petite pour les boutons, moyenne pour l'en-tête de sa page), sinon ses initiales
-    function skinPhoto(p, prefix, w, h, className, eager) {
-        const known = players.find(function (x) { return x.name === p.name; });
-        const photo = known ? photoFiles(known) : { sm: "", md: "" };
-        const file = w > 60 ? photo.md : photo.sm;
-        const cls = className || "ps-photo";
-        return file
-            ? `<img class="${cls}" src="${prefix}${esc(file)}" alt="${esc(p.name)}" width="${w}" height="${h}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
-            : `<span class="${cls}" aria-hidden="true">${esc(p.name.slice(0, 2).toUpperCase())}</span>`;
-    }
-
-    // "ZywOo (Team Vitality) owns 631 CS2 skins, including 4 knife skins and 3 pairs of gloves."
-    function skinSummary(p) {
-        const count = function (category) {
-            return p.items.filter(function (i) { return i.category === category; }).length;
-        };
-        const knives = count("knives");
-        const gloves = count("gloves");
-        const extras = [];
-        if (knives) {
-            extras.push(knives + " knife skin" + (knives === 1 ? "" : "s"));
-        }
-        if (gloves) {
-            extras.push(gloves + (gloves === 1 ? " pair" : " pairs") + " of gloves");
-        }
-        return `${p.name}${p.team ? " (" + p.team + ")" : ""} owns ${p.items.length} CS2 skins${extras.length ? ", including " + extras.join(" and ") : ""}${p.hasPrices ? ", for a total value of about " + money(p.value, "USD") + " (" + money(p.valueEur, "EUR") + ")" : ""}.`;
-    }
-
-    // Montant arrondi : 8551.4 -> "$8,551" / "€7,599"
-    function money(value, currency) {
-        return new Intl.NumberFormat("en-US", { style: "currency", currency: currency, maximumFractionDigits: 0 }).format(value);
-    }
-
-    // D'où viennent les prix (affiché sous les skins : transparence)
-    const PRICE_NOTE = skinData.prices
-        ? `Prices: lowest listing on <a href="https://csfloat.com" rel="nofollow noopener" target="_blank">CSFloat</a> in US dollars, euros at the ECB exchange rate, updated ${esc(skinData.prices.updated)}. Doppler phases are not priced separately.`
-        : "";
-
     // Logo optimisé de l'équipe (logos/sm/...) s'il existe, sinon le logo d'origine
     function logoFor(teamName) {
         const team = teamInfo(teamName);
@@ -232,162 +201,12 @@ async function main() {
         }
     }
 
-    // ===== Morceaux communs à toutes les pages =====
-
-    // Petite maison au début du fil d'Ariane (retour à l'accueil, présent sur toutes les pages)
-    const HOME_ICON = `<svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>`;
-
-    // Thème clair/sombre appliqué tout de suite (sans flash), sur <html> et <body>
-    const THEME_SCRIPT = `<script>
-        try {
-            const saved = localStorage.getItem("theme");
-            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-                document.documentElement.classList.add("light");
-                document.body.classList.add("light");
-            }
-        } catch (error) {}
-    </script>`;
-
-    // Le <head> d'une page (titre, description, adresse officielle, aperçu de lien, chargement rapide)
-    function head(o) {
-        const p = o.prefix;
-        return `<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${o.title}</title>
-    <meta name="description" content="${esc(o.description)}">
-    ${o.noindex ? '<meta name="robots" content="noindex">' : `<meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="${o.url}">`}
-    <link rel="icon" href="${p}favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="${p}apple-touch-icon.png">
-    <link rel="manifest" href="${p}site.webmanifest">
-    <meta name="theme-color" content="#111214">
-    <meta name="color-scheme" content="dark light">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="ClutchCrosshair">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="${o.ogTitle || o.title}">
-    <meta property="og:description" content="${esc(o.description)}">
-    <meta property="og:url" content="${o.url}">
-    <meta property="og:image" content="${SITE_URL}/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="ClutchCrosshair: find your perfect CS2 crosshair">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${o.ogTitle || o.title}">
-    <meta name="twitter:description" content="${esc(o.description)}">
-    <meta name="twitter:image" content="${SITE_URL}/og-image.jpg">
-    <link rel="preload" href="${p}fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="${p}fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="${p}style.min.css?v=${CSS_HASH}">${o.crosshair ? `
-    <link rel="modulepreload" href="${p}crosshair.min.js?v=${CROSSHAIR_HASH}">
-    <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
-    <link rel="preload" href="${p}preview-bg.webp?v=${BG_HASH}" as="image" type="image/webp">` : ""}${o.generator ? `
-    <link rel="modulepreload" href="${p}generator.min.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
-    <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
-    }
-
-    // Le menu principal, le même sur toutes les pages. Une rubrique n'apparaît que si ses pages existent
-    // (jamais de lien vers une page vide). current = la rubrique de la page (soulignée en rouge)
-    function mainNav(prefix, current) {
-        const sections = [
-            { key: "crosshairs", label: "Crosshairs", href: "" },
-            { key: "skins", label: "Pro Skins", href: "skins/", show: skinPlayers.length > 0 },
-            { key: "guides", label: "Guides", href: "guides/", show: fs.existsSync("guides.json") },
-            { key: "commands", label: "Commands", href: "commands/", show: fs.existsSync("commands.json") },
-            // Tant qu'il n'y a qu'un seul outil, le lien mène directement au générateur de crosshair
-            fs.existsSync("tools/bind-generator.html") || fs.existsSync("binds.json")
-                ? { key: "tools", label: "Tools", href: "tools/" }
-                : { key: "tools", label: "Generator", href: "generator.html" }
-        ].filter(function (s) { return s.show !== false; });
-        return `<nav class="main-nav" aria-label="Main">
-            ${sections.map(function (s) {
-                return `<a href="${(prefix + s.href) || "./"}"${s.key === current ? ' aria-current="page"' : ""}>${s.label}</a>`;
-            }).join("\n            ")}
-        </nav>`;
-    }
-
-    // En haut des pages : le logo (retour à l'accueil) + le menu principal
-    function pageTop(prefix, current) {
-        return `<header class="page-top">
-        <a href="${prefix}" class="logo" aria-label="ClutchCrosshair home">
-            <img class="logo-img logo-dark" src="${prefix}logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
-            <img class="logo-img logo-light" src="${prefix}logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
-        </a>
-        ${mainNav(prefix, current)}
-    </header>`;
-    }
-
-    function footer(prefix) {
-        return `<footer>
-        <nav class="footer-links" aria-label="Footer">
-            <a href="${prefix}generator.html">Crosshair Generator</a>
-            <a href="${prefix}tools/bind-generator.html">Bind Generator</a>
-            <a href="${prefix}skins/">CS2 Pro Skins</a>
-            <a href="${prefix}guides/">CS2 Guides</a>
-            <a href="${prefix}commands/">Console Commands</a>
-            <a href="${prefix}faq.html">FAQ</a>
-            <a href="${prefix}legal.html">Legal notice</a>
-        </nav>
-        <p class="footer-contact">Business &amp; partnerships: <a href="mailto:${PUBLISHER_EMAIL}?subject=Business%20-%20ClutchCrosshair">${PUBLISHER_EMAIL}</a></p>
-        <p>© 2026 ClutchCrosshair. All rights reserved.</p>
-        <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
-    </footer>`;
-    }
-
-    // Fil d'Ariane (Accueil › page) pour Google
-    function breadcrumb(name, url) {
-        return {
-            "@type": "BreadcrumbList",
-            "@id": url + "#breadcrumb",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
-                { "@type": "ListItem", "position": 2, "name": name, "item": url }
-            ]
-        };
-    }
-
-    // Fil d'Ariane des outils pour Google : Home › Tools (› outil)
-    function toolsBreadcrumb(name, url) {
-        const list = [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
-            { "@type": "ListItem", "position": 2, "name": "CS2 Tools", "item": SITE_URL + "/tools/" }
-        ];
-        if (name) {
-            list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
-        }
-        return { "@type": "BreadcrumbList", "@id": (url || SITE_URL + "/tools/") + "#breadcrumb", "itemListElement": list };
-    }
-
-    // Petit tableau qui décrit les réglages du crosshair (contenu unique pour chaque page)
-    function crosshairDetails(code) {
-        const c = decode(code);
-        if (!c) {
-            return "";
-        }
-        const hex = "#" + [c.red, c.green, c.blue].map(function (v) {
-            return Number(v).toString(16).padStart(2, "0");
-        }).join("").toUpperCase();
-        const rows = [
-            ["Color", `<span class="swatch" style="background:${hex}"></span>${hex}`],
-            ["Length", c.length],
-            ["Thickness", c.thickness],
-            ["Gap", c.gap],
-            ["Center dot", c.centerDotEnabled ? "Yes" : "No"],
-            ["Outline", c.outlineMode > 0 ? "Yes" : "No"],
-            ["T-style", c.tStyleEnabled ? "Yes" : "No"],
-            ["Opacity", Math.round((c.alpha / 255) * 100) + "%"]
-        ];
-        return `<dl class="specs">${rows.map(function (r) {
-            return `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`;
-        }).join("")}</dl>`;
-    }
-
-    // ===== Textes uniques pour chaque page joueur (calculés à partir de son vrai crosshair) =====
+    // ===== Données communes à toutes les langues =====
     const COLOR_NAMES = [["green", 0, 255, 0], ["yellow", 255, 255, 0], ["cyan", 0, 255, 255], ["red", 255, 0, 0], ["pink", 255, 0, 255],
-        ["white", 255, 255, 255], ["blue", 0, 0, 255], ["light blue", 100, 190, 255], ["orange", 255, 140, 0], ["purple", 150, 60, 255],
+        ["white", 255, 255, 255], ["blue", 0, 0, 255], ["lightBlue", 100, 190, 255], ["orange", 255, 140, 0], ["purple", 150, 60, 255],
         ["lime", 170, 255, 0], ["teal", 0, 200, 150]];
 
-    // La couleur la plus proche parmi des noms simples (ex. 0,255,255 -> "cyan")
+    // La couleur la plus proche parmi des noms simples (ex. 0,255,255 -> "cyan") : renvoie la clé (traduite avec t("colors.<clé>"))
     function colorName(c) {
         let best = "";
         let distance = Infinity;
@@ -401,10 +220,6 @@ async function main() {
         return best;
     }
 
-    function listText(items) {
-        return items.length > 1 ? items.slice(0, -1).join(", ") + " and " + items[items.length - 1] : items.join("");
-    }
-
     // Les crosshairs CS2 valides des pros, pour les comparaisons
     const proCrosshairs = players.filter(function (p) {
         return p.category === "pro";
@@ -416,56 +231,6 @@ async function main() {
 
     function percentOfPros(test) {
         return Math.round(proCrosshairs.filter(test).length / proCrosshairs.length * 100);
-    }
-
-    function proLinks(list) {
-        return `<ul class="related">${list.map(function (x) {
-            return `<li><a href="${slug(x.player.name)}.html">${esc(x.player.name)} crosshair</a></li>`;
-        }).join("")}</ul>`;
-    }
-
-    // Description des réglages en phrases + comparaison avec les pros + pros au crosshair identique ou proche + FAQ
-    function crosshairInsights(player) {
-        const c = decode(player.code);
-        if (!c || c.format === "legacy-v1") {
-            return null;
-        }
-        const color = colorName(c);
-        const size = c.length <= 2 ? "very short" : c.length <= 4 ? "short" : c.length <= 7 ? "medium" : "long";
-        const parts = [c.length + " px long", c.thickness + " px thick", "a gap of " + c.gap, c.outlineMode > 0 ? "an outline" : "no outline", c.centerDotEnabled ? "a center dot" : "no center dot"];
-        if (c.tStyleEnabled) {
-            parts.push("the T-style (no top line)");
-        }
-        if (c.alpha < 255) {
-            parts.push(Math.round(c.alpha / 255 * 100) + "% opacity");
-        }
-        const settings = `${player.name} uses a ${size} ${color}${c.style === 4 ? " static" : c.style === 9 ? " X-shaped (rotated 45°)" : ""} crosshair: ${listText(parts)}, set for a ${c.screenHeight}p screen height.`;
-        const longer = percentOfPros(function (x) { return x.c.length > c.length; });
-        const sameColor = percentOfPros(function (x) { return colorName(x.c) === color; });
-        const comparison = `${longer}% of the ${proCrosshairs.length} pros on ClutchCrosshair use a longer crosshair, and ${sameColor}% play with a ${color} one.`;
-        const same = proCrosshairs.filter(function (x) {
-            return x.player !== player && x.player.code === player.code;
-        });
-        const similar = proCrosshairs.filter(function (x) {
-            return x.player !== player && x.player.code !== player.code && colorName(x.c) === color && x.c.thickness === c.thickness
-                && Math.abs(x.c.length - c.length) <= 1 && Math.abs(x.c.gap - c.gap) <= 1;
-        }).slice(0, 8);
-        const name = esc(player.name);
-        const html = `<p>${esc(settings)} ${esc(comparison)}</p>
-        ${same.length ? `<h2>Pros with the same crosshair as ${name}</h2>
-        <p>${listText(same.map(function (x) { return esc(x.player.name); }))} use${same.length === 1 ? "s" : ""} exactly the same CS2 crosshair code as ${name}.</p>
-        ${proLinks(same)}` : ""}
-        ${similar.length ? `<h2>Crosshairs similar to ${name}'s</h2>
-        <p>These pros also play with a ${esc(color)} crosshair of almost the same size and gap.</p>
-        ${proLinks(similar)}` : ""}`;
-        const faq = [
-            [`What is ${player.name}'s CS2 crosshair code?`, `${player.name}'s CS2 crosshair code is ${player.code}. It was read from ${player.category === "pro" ? "an official match demo" : "a match"} on ${player.updated}.`],
-            [`What crosshair settings does ${player.name} use?`, settings]
-        ];
-        if (same.length) {
-            faq.push([`Which pros use the same crosshair as ${player.name}?`, `${listText(same.map(function (x) { return x.player.name; }))} use${same.length === 1 ? "s" : ""} exactly the same CS2 crosshair code as ${player.name}.`]);
-        }
-        return { html: html, faq: faq };
     }
 
     // Les autres joueurs (pros et créateurs) qui ont EXACTEMENT le même code : petite ligne « Same crosshair as … »
@@ -491,275 +256,11 @@ async function main() {
         return links;
     }
 
-    // ===== 1. Une page par joueur =====
-    if (!fs.existsSync("players")) {
-        fs.mkdirSync("players");
-    }
-    const pageFiles = [];
-
-    players.forEach(function (player) {
-        const name = esc(player.name);
-        const team = esc(player.team);
-        const isPro = player.category === "pro";
-        const file = slug(player.name) + ".html";
-        const url = `${SITE_URL}/players/${file}`;
-        const photo = photoFiles(player);
-        const logo = logoFor(player.team);
-        pageFiles.push(file);
-
-        // Photo moyenne, chargée en priorité (c'est le plus gros élément en haut de la page)
-        const photoHtml = photo.md
-            ? `<img class="player-photo" src="../${esc(photo.md)}" alt="${name}, ${team}" width="120" height="134" fetchpriority="high" decoding="async">`
-            : `<div class="player-photo">${esc(player.name.slice(0, 2).toUpperCase())}</div>`;
-        const badge = logo ? `<img class="player-team-logo" src="../${logo}" alt="" width="20" height="20">` : "";
-
-        // Coéquipiers (ou autres créateurs) : liens internes, bons pour Google et pour les visiteurs
-        const mates = players.filter(function (p) {
-            return p !== player && p.team === player.team;
-        });
-        const matesHtml = mates.length
-            ? `<h2>${isPro ? `Other ${team} crosshairs` : "Other creator crosshairs"}</h2>
-        <ul class="related">${mates.map(function (p) {
-                return `<li><a href="${slug(p.name)}.html">${esc(p.name)} crosshair</a></li>`;
-            }).join("")}</ul>`
-            : "";
-
-        const insights = crosshairInsights(player);
-        const intro = isPro
-            ? `${name} plays for ${team}. This is the exact CS2 crosshair ${name} used in an official match on ${esc(player.updated)}, read directly from the match demo.`
-            : `${name} is a CS2 content creator. This is ${name}'s CS2 crosshair, last checked on ${esc(player.updated)}.`;
-
-        // Données structurées reliées entre elles : la page, son fil d'Ariane et le joueur (membre de son équipe)
-        const webPage = {
-            "@type": "WebPage",
-            "@id": url,
-            "url": url,
-            "name": `${player.name} CS2 Crosshair Code`,
-            "inLanguage": "en",
-            "isPartOf": { "@id": SITE_URL + "/#website" },
-            "about": { "@id": url + "#person" },
-            "breadcrumb": { "@id": url + "#breadcrumb" }
-        };
-        if (isoDate(player.updated)) {
-            webPage.dateModified = isoDate(player.updated);
-        }
-        if (photo.original) {
-            webPage.primaryImageOfPage = { "@type": "ImageObject", "url": `${SITE_URL}/${photo.original}` };
-        }
-        const person = {
-            "@type": "Person",
-            "@id": url + "#person",
-            "name": player.name,
-            "description": isPro
-                ? `${player.name} is a CS2 pro player for ${player.team}. CS2 crosshair code read from an official match demo.`
-                : `${player.name} is a CS2 content creator.`,
-            "url": url
-        };
-        if (isPro) {
-            person.memberOf = { "@type": "SportsTeam", "name": player.team, "sport": "Counter-Strike 2" };
-        }
-        if (photo.original) {
-            person.image = `${SITE_URL}/${photo.original}`;
-        }
-        if (profileLinks(player).length) {
-            person.sameAs = profileLinks(player);
-        }
-
-        const page = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    ${head({
-        title: `${name} CS2 Crosshair Code (2026) | ClutchCrosshair`,
-        ogTitle: `${name} CS2 Crosshair Code`,
-        description: isPro
-            ? `Copy ${player.name}'s CS2 crosshair code (${player.team}) in one click: real-size preview, console commands and settings. From a match on ${player.updated}.`
-            : `Copy ${player.name}'s CS2 crosshair code in one click: real-size preview, console commands and full settings. Updated ${player.updated}.`,
-        url: url,
-        prefix: "../",
-        crosshair: true,
-        jsonLd: { "@context": "https://schema.org", "@graph": [webPage, breadcrumb(player.name + " crosshair", url), person].concat(insights ? [{
-            "@type": "FAQPage",
-            "@id": url + "#faq",
-            "mainEntity": insights.faq.map(function (q) {
-                return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-            })
-        }] : []) }
-    })}
-</head>
-<body class="page">
-    ${THEME_SCRIPT}
-    ${pageTop("../", "crosshairs")}
-
-    <main class="player-page" style="--team: ${teamColor(player.team)}; --on-team: ${textOnColor(teamColor(player.team))}">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>${name}</span></nav>
-
-        <div class="player-head">
-            ${photoHtml}
-            <div>
-                <h1>${name} CS2 Crosshair</h1>
-                <p class="player-team">${badge}${team}</p>
-                <p class="player-date">Last update: <time datetime="${isoDate(player.updated)}">${esc(player.updated)}</time></p>
-                ${player.faceit ? `<a class="faceit-btn" href="${esc(player.faceit)}" target="_blank" rel="external noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.4l-6.3 6.3-1.4-1.4L9.6 5H5z"/></svg>${name} FACEIT profile</a>` : ""}
-            </div>
-        </div>
-
-        <canvas id="preview" class="preview player-preview" width="760" height="300" role="img" aria-label="${name} CS2 crosshair preview"></canvas>
-        ${twins(player).length ? `<p class="same-xhair">Same crosshair as ${listText(twins(player).map(function (p) { return `<a href="${slug(p.name)}.html">${esc(p.name)}</a>`; }))}</p>` : ""}
-
-        <div class="field">
-            <div class="field-label">Share code <span>· Settings › Crosshair › Import</span></div>
-            <div class="field-row">
-                <code id="code" class="code">${esc(player.code)}</code>
-                <button type="button" id="copy" class="mini">Copy</button>
-            </div>
-        </div>
-
-        <div class="field">
-            <div class="field-label">Console <span>· Paste in the CS2 console (~)</span></div>
-            <div class="field-row">
-                <code id="console" class="console">${esc(consoleCommands(player.code))}</code>
-                <button type="button" id="copy-console" class="mini btn-secondary">Copy</button>
-            </div>
-        </div>
-
-        <h2>About ${name}'s crosshair</h2>
-        <p>${intro}</p>
-        ${crosshairDetails(player.code)}
-        ${insights ? insights.html : ""}
-
-        <h2>How to use ${name}'s crosshair in CS2</h2>
-        <ol>
-            <li>Click <strong>Copy</strong> next to the share code.</li>
-            <li>In CS2, open <strong>Settings › Game › Crosshair</strong>.</li>
-            <li>Click <strong>Share or Import</strong> and paste the code.</li>
-        </ol>
-        <p>Or copy the console commands, open the CS2 console (~) and paste them.${fs.existsSync("commands.json") ? ` <a href="../commands/#crosshair">What does each crosshair command do? ›</a>` : ""} <a href="../faq.html">More questions in the FAQ ›</a></p>
-        ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">Edit ${name}'s crosshair in the CS2 crosshair generator ›</a></p>` : ""}
-        ${skinPlayers.some(function (s) { return s.name === player.name; }) ? `<p><a href="../skins/${slug(player.name)}.html">See ${name}'s CS2 skins &amp; inventory ›</a></p>` : ""}
-
-        ${insights ? `<h2>${name} crosshair FAQ</h2>
-${insights.faq.map(function (q) {
-            return `        <h3>${esc(q[0])}</h3>
-        <p>${esc(q[1])}</p>`;
-        }).join("\n")}` : ""}
-
-        ${matesHtml}
-    </main>
-
-    ${footer("../")}
-
-    <script type="module">
-        import { copyText, drawCrosshair } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
-
-        drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
-
-        document.getElementById("copy").addEventListener("click", function (event) {
-            copyText(document.getElementById("code").textContent, event.currentTarget);
-        });
-        document.getElementById("copy-console").addEventListener("click", function (event) {
-            copyText(document.getElementById("console").textContent, event.currentTarget);
-        });
-    </script>
-</body>
-</html>
-`;
-        fs.writeFileSync("players/" + file, page);
-    });
-
-    // Supprimer les pages des joueurs qui ne sont plus dans players.json (ex. ancien nom)
-    fs.readdirSync("players").forEach(function (f) {
-        if (f.endsWith(".html") && !pageFiles.includes(f)) {
-            fs.unlinkSync("players/" + f);
-            console.log("Page supprimée (joueur absent de players.json) : players/" + f);
-        }
-    });
-
-    // ===== 2. index.html : tout le contenu écrit d'avance (lisible par Google, rien à télécharger en plus) =====
-    let index = fs.readFileSync("index.html", "utf8");
-
-    function cardsFor(list) {
-        return list.slice().sort(byTeamThenName).map(function (p, i) {
-            const photo = photoFiles(p);
-            return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: i < EAGER_CARDS, logo: logoFor(p.team), twins: twins(p) });
-        }).join("\n                        ");
-    }
     const pros = players.filter(function (p) { return p.category === "pro"; });
     const creators = players.filter(function (p) { return p.category !== "pro"; });
     const trending = players.filter(function (p) { return p.trending; });
-    index = replaceBetween(index, "CARDS:pros", cardsFor(pros), "                        ");
-    index = replaceBetween(index, "CARDS:creators", cardsFor(creators), "                        ");
-    index = replaceBetween(index, "CARDS:trending", trending.slice().sort(byTeamThenName).map(function (p) {
-        const photo = photoFiles(p);
-        return cardHTML(p, { photo: photo.sm, photoMd: photo.md, eager: false, logo: logoFor(p.team), twins: twins(p) });
-    }).join("\n                        "), "                        ");
 
-    // Menu des équipes (à gauche)
-    const teamButtons = [`<button type="button" class="side-btn active" data-team="" aria-pressed="true">All crosshairs</button>`].concat(teams.map(function (t) {
-        return `<button type="button" class="side-btn" data-team="${esc(t.name)}" aria-pressed="false">${teamBadge(t.name, logoFor(t.name), 22)}${esc(t.name)}</button>`;
-    })).join("\n                ");
-    index = replaceBetween(index, "TEAMS", teamButtons, "                ");
-
-    // Compteurs des accès rapides ("70 pro players", "1 creator"...)
-    function plural(n, one, many) {
-        return n + " " + (n === 1 ? one : many);
-    }
-    const counts = {
-        pros: plural(pros.length, "pro player", "pro players"),
-        creators: plural(creators.length, "creator", "creators"),
-        trending: trending.length + " trending now",
-        skins: plural(skinPlayers.length, "inventory", "inventories")
-    };
-    // Le nombre de pros dans la description Google de l'accueil
-    index = index.replace(/(NiKo and )\d+( pros in one click)/, "$1" + pros.length + "$2");
-    Object.keys(counts).forEach(function (key) {
-        index = index.replace(new RegExp(`(<span class="quick-count" data-count="${key}">)[^<]*(</span>)`), "$1" + counts[key] + "$2");
-    });
-
-
-    // Le menu principal (le même que sur les autres pages)
-    index = replaceBetween(index, "MAINNAV", mainNav("", "crosshairs"), "                ");
-
-    // Le générateur dans l'onglet Generator (son JavaScript ne se charge qu'au clic sur l'onglet)
-    index = replaceBetween(index, "GENERATOR", generatorBlock, "                        ");
-
-    // Menu de gauche, sous les équipes : les inventaires des pros, avec leur plus beau couteau (lien vers leur page)
-    index = replaceBetween(index, "SKINSIDE", skinPlayers.length ? `<nav class="side-skins" aria-label="Pro inventories">
-                <p class="side-title">Pro inventories</p>
-                ${skinPlayers.map(function (p) {
-                    const star = p.best.find(function (g) { return g.item.category === "knives"; }) || p.best[0];
-                    return `<a class="side-skin" href="skins/${p.slug}.html" title="${esc(p.name)}'s CS2 skins"><span>${esc(p.name)}</span><img src="skins/img/${esc(star.item.image)}.webp" alt="${esc(p.name)}'s ${esc(star.item.name)}" width="48" height="36" loading="lazy" decoding="async"></a>`;
-                }).join("\n                ")}
-                <a class="side-skins-all" href="skins/">All pro skins ›</a>
-            </nav>` : "", "            ");
-
-    // L'onglet Pro Skins : un bouton par joueur + ses 12 plus beaux skins (la page complète est dans skins/)
-    index = replaceBetween(index, "PROSKINS", skinPlayers.length ? `<div class="ps">
-                            <div class="ps-players" role="group" aria-label="Choose a pro player">
-                                ${skinPlayers.map(function (p, i) {
-                                    return `<button type="button" class="ps-player" data-ps="${p.slug}" aria-pressed="${i === 0}" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">${skinPhoto(p, "", 40, 45)}<span class="ps-text"><span class="ps-name">${esc(p.name)}</span><span class="ps-info">${p.items.length} skins${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span></button>`;
-                                }).join("\n                                ")}
-                            </div>
-                            ${skinPlayers.map(function (p, i) {
-                                return `<div class="ps-panel${i === 0 ? "" : " hidden"}" data-ps-panel="${p.slug}">
-                                <p class="ps-summary">${esc(skinSummary(p))} <a href="skins/${p.slug}.html">See all ${p.items.length} skins of ${esc(p.name)} ›</a></p>
-                                <div class="skin-grid">
-                                ${p.best.slice(0, 12).map(function (g) { return skinCardHTML(g, p.name, "", false); }).join("\n                                ")}
-                                </div>
-                            </div>`;
-                            }).join("\n                            ")}
-                            <p class="ps-more"><a href="skins/">All CS2 pro inventories ›</a> · Updated ${esc(skinData.updated || "")}</p>
-                            ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
-                        </div>` : `<p class="empty">The weapon skins, knives and gloves of CS2 pro players. Coming soon!</p>`, "                        ");
-
-    // Empreintes des fichiers CSS/JS dans index.html
-    index = index
-        .replace(/href="style(\.min)?\.css\?v=[^"]*"/, 'href="style.min.css?v=' + CSS_HASH + '"')
-        .replace(/href="crosshair(\.min)?\.js\?v=[^"]*"/, 'href="crosshair.min.js?v=' + CROSSHAIR_HASH + '"')
-        .replace(/src="script(\.min)?\.js\?v=[^"]*"/, 'src="script.min.js?v=' + SCRIPT_HASH + '"')
-        .replace(/(href="preview-bg-crop\.webp)(\?v=[^"]*)?"/, "$1?v=" + BG_CROP_HASH + "\"");
-    fs.writeFileSync("index.html", index);
-
-    // ===== 3. faq.html : la FAQ complète, avec des statistiques calculées sur les pros =====
+    // Statistiques des crosshairs des pros (FAQ, générateur)
     const decoded = pros.map(function (p) { return decode(p.code); }).filter(Boolean);
     const total = decoded.length;
     function percent(count) {
@@ -771,92 +272,20 @@ ${insights.faq.map(function (q) {
         if (g > 180 && b > 180 && r < 120) return "cyan";
         if (r > 180 && g > 180 && b < 120) return "yellow";
         if (g > 150 && r < 160 && b < 160) return "green";
-        return "other colors";
+        return "other";
     }
     const families = {};
     decoded.forEach(function (c) {
         const f = colorFamily(c);
         families[f] = (families[f] || 0) + 1;
     });
-    const familyText = Object.keys(families).sort(function (a, b) {
+    const familyOrder = Object.keys(families).sort(function (a, b) {
         return families[b] - families[a];
-    }).map(function (f) {
-        return `${f} (${percent(families[f])})`;
-    }).join(", ");
+    });
     const withDot = decoded.filter(function (c) { return c.centerDotEnabled; }).length;
     const withOutline = decoded.filter(function (c) { return c.outlineMode > 0; }).length;
     const smallGap = decoded.filter(function (c) { return c.gap <= 1; }).length;
     const newest = players.map(function (p) { return isoDate(p.updated); }).filter(Boolean).sort().pop() || "";
-
-    const faq = [
-        ["How do I import a crosshair code in CS2?",
-            "Copy the share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. The crosshair is applied right away."],
-        ["How do I use console commands instead of a share code?",
-            "Open the CS2 console with the ~ key (enable the developer console in Settings › Game if needed), paste the console commands copied from ClutchCrosshair and press Enter."],
-        ["Why don't old CSGO- crosshair codes work anymore?",
-            "Since the CS2 update of September 30, 2026, crosshair share codes use a new format starting with CS (without dashes), and sizes are stored in pixels. Old CSGO-xxxxx codes can no longer be imported. Every code on ClutchCrosshair uses the new CS2 format."],
-        ["Where do these pro crosshair codes come from?",
-            "They are read directly from official CS2 match demos. Each code is the exact crosshair the player used in that match, and the date shown is the date of the match."],
-        ["How often are the crosshairs updated?",
-            "Every time we read a new official match demo of a team, the crosshairs of its players are checked and updated. The \"Last update\" date shows the most recent match where the crosshair was confirmed."],
-        ["What is the most used crosshair by CS2 pros?",
-            `Based on the ${total} pro crosshairs on ClutchCrosshair, the most used colors are ${familyText}. ${percent(smallGap)} of pros use a gap of 1 or less, ${percent(withDot)} use a center dot and ${percent(withOutline)} use an outline. Most pros play with a small static crosshair.`],
-        ["What is the best CS2 crosshair?",
-            "There is no single best crosshair: it should be easy to see on every map and not hide the enemy's head. A good start is to copy the crosshair of a pro you like, then adjust the color and the size to your screen."],
-        ["Why does a crosshair look different in my game?",
-            "In CS2, crosshair sizes are in pixels for a given screen height. If you play in a different resolution (for example 4:3 stretched) the crosshair can look slightly bigger or smaller than for the pro."],
-        ["How do I share my own CS2 crosshair?",
-            "In CS2, open Settings › Game › Crosshair and click Share or Import, then copy your code. Anyone can import it with the same button."],
-        ["A crosshair is wrong or missing. How can I report it?",
-            "Email us at clutchcrosshair@gmail.com or use the Contact us button on the home page. We check every report against the latest official match demos."]
-    ];
-
-    const faqUrl = `${SITE_URL}/faq.html`;
-    const faqPage = {
-        "@type": "FAQPage",
-        "@id": faqUrl,
-        "url": faqUrl,
-        "isPartOf": { "@id": SITE_URL + "/#website" },
-        "breadcrumb": { "@id": faqUrl + "#breadcrumb" },
-        "mainEntity": faq.map(function (q) {
-            return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-        })
-    };
-    if (newest) {
-        faqPage.dateModified = newest;
-    }
-
-    fs.writeFileSync("faq.html", `<!DOCTYPE html>
-<html lang="en">
-<head>
-    ${head({
-        title: "CS2 Crosshair FAQ: Import Codes &amp; Pro Stats | ClutchCrosshair",
-        ogTitle: "CS2 Crosshair FAQ",
-        description: "How to import a CS2 crosshair code, why old CSGO- codes don't work anymore, and which crosshair CS2 pros use the most, with live stats.",
-        url: faqUrl,
-        prefix: "",
-        jsonLd: { "@context": "https://schema.org", "@graph": [breadcrumb("CS2 crosshair FAQ", faqUrl), faqPage] }
-    })}
-</head>
-<body class="page">
-    ${THEME_SCRIPT}
-    ${pageTop("./")}
-    <main class="player-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>FAQ</span></nav>
-        <h1>CS2 Crosshair FAQ</h1>
-        <p>Everything about CS2 crosshair codes: how to import them, the new CS2 format, and what the pros use. Stats updated on ${newest ? esc(newest.split("-").reverse().join("/")) : "-"}.</p>
-${faq.map(function (q) {
-        return `        <h2>${esc(q[0])}</h2>
-        <p>${esc(q[1])}</p>`;
-    }).join("\n")}
-        <p><a href="./">Browse all CS2 pro crosshairs ›</a></p>
-    </main>
-    ${footer("")}
-</body>
-</html>
-`);
-
-    // ===== 3 bis. generator.html : le générateur de crosshair CS2 (cible la recherche « CS2 crosshair generator ») =====
     function mostCommon(values) {
         const count = {};
         values.forEach(function (v) {
@@ -870,467 +299,240 @@ ${faq.map(function (q) {
         return pros.find(function (p) { return p.name === n; });
     }).filter(Boolean);
 
-    const genFaq = [
-        ["Is this CS2 crosshair generator free?",
-            "Yes. It is free, with no sign-up and no download. Everything runs in your browser."],
-        ["How do I put my new crosshair in CS2?",
-            "Click Copy next to your share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. You can also copy the console commands and paste them in the CS2 console (~)."],
-        ["Why does my crosshair look different in 4:3 stretched?",
-            "In 4:3 stretched (1280×960, 1024×768...) or 5:4 stretched (1280×1024), the game image is stretched to fill a 16:9 screen, so the crosshair gets wider: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview (16:9, 4:3, 16:10 or 5:4) to see exactly how your crosshair will look in game. Your crosshair code stays the same."],
-        ["Can I start from a pro player's crosshair?",
-            "Yes. Pick a pro in the Start from list, or paste any CS2 crosshair code, then change the color, size or gap. The new code updates instantly."],
-        ["Does it work with old CSGO- crosshair codes?",
-            "No. Since the CS2 update of September 30, 2026, only the new codes starting with CS can be imported in the game. The generator only creates new CS2 codes."]
-    ];
-
-    const genUrl = `${SITE_URL}/generator.html`;
-    const genGraph = [
-        {
-            "@type": "WebPage",
-            "@id": genUrl,
-            "url": genUrl,
-            "name": "CS2 Crosshair Generator",
-            "inLanguage": "en",
-            "isPartOf": { "@id": SITE_URL + "/#website" },
-            "breadcrumb": { "@id": genUrl + "#breadcrumb" },
-            "mainEntity": { "@id": genUrl + "#app" }
-        },
-        {
-            "@type": "WebApplication",
-            "@id": genUrl + "#app",
-            "name": "CS2 Crosshair Generator",
-            "url": genUrl,
-            "description": "Free online CS2 crosshair generator: choose the color, length, thickness, gap and outline, see a real-size preview, then copy your CS2 crosshair code or console commands.",
-            "applicationCategory": "GameApplication",
-            "operatingSystem": "Any",
-            "browserRequirements": "Requires JavaScript",
-            "isAccessibleForFree": true,
-            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-            "publisher": { "@id": SITE_URL + "/#organization" }
-        },
-        toolsBreadcrumb("CS2 crosshair generator", genUrl),
-        {
-            "@type": "FAQPage",
-            "@id": genUrl + "#faq",
-            "mainEntity": genFaq.map(function (q) {
-                return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-            })
-        }
-    ];
-
-    fs.writeFileSync("generator.html", `<!DOCTYPE html>
-<html lang="en">
-<head>
-    ${head({
-        title: "CS2 Crosshair Generator: Create Your Code | ClutchCrosshair",
-        ogTitle: "CS2 Crosshair Generator",
-        description: "Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.",
-        url: genUrl,
-        prefix: "",
-        crosshair: true,
-        generator: true,
-        jsonLd: { "@context": "https://schema.org", "@graph": genGraph }
-    })}
-</head>
-<body class="page">
-    ${THEME_SCRIPT}
-    ${pageTop("./", "tools")}
-    <main class="player-page gen-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <a href="tools/">Tools</a> › <span>Crosshair generator</span></nav>
-        <h1>CS2 Crosshair Generator</h1>
-        <p>Create your own CS2 crosshair in a few seconds: choose the color, length, thickness, gap and outline, see it live at real size on a CS2 map, then copy your crosshair code or console commands. Free, no sign-up, made for the new CS2 crosshair codes.</p>
-
-        ${generatorBlock}
-
-        <h2>How to use the CS2 crosshair generator</h2>
-        <ol>
-            <li>Start from scratch, from a <strong>pro crosshair</strong>, or paste your own code.</li>
-            <li>Choose the <strong>color</strong>, then adjust the <strong>length</strong>, <strong>thickness</strong> and <strong>gap</strong>. The preview updates live.</li>
-            <li>Pick <strong>your CS2 resolution</strong> under the preview to see the crosshair exactly as in game (4:3 stretched included).</li>
-            <li>Click <strong>Copy</strong>, then in CS2 open <strong>Settings › Game › Crosshair › Share or Import</strong> and paste the code.</li>
-        </ol>
-
-        <h2>What crosshair do CS2 pros use?</h2>
-        <p>Based on the ${total} pro crosshairs on ClutchCrosshair, the most used colors are ${esc(familyText)}. The most common settings are a length of ${mostCommon(decoded.map(function (c) { return c.length; }))}, a thickness of ${mostCommon(decoded.map(function (c) { return c.thickness; }))} and a gap of ${mostCommon(decoded.map(function (c) { return c.gap; }))} pixels; ${percent(withDot)} use a center dot and ${percent(withOutline)} an outline. <a href="faq.html">More stats in the FAQ ›</a></p>
-        ${famous.length ? `<ul class="related">${famous.map(function (p) {
-            return `<li><a href="players/${slug(p.name)}.html">${esc(p.name)} crosshair</a></li>`;
-        }).join("")}</ul>` : ""}
-
-        <h2>Crosshair generator FAQ</h2>
-${genFaq.map(function (q) {
-        return `        <h3>${esc(q[0])}</h3>
-        <p>${esc(q[1])}</p>`;
-    }).join("\n")}
-        <p><a href="./">Browse all CS2 pro crosshairs ›</a></p>
-    </main>
-    ${footer("")}
-
-    <script type="module">
-        import { initGenerator } from "./generator.min.js?v=${GENERATOR_HASH}";
-        initGenerator(document.getElementById("gen"), { syncHash: true });
-    </script>
-</body>
-</html>
-`);
-
-    // ===== 3 ter. Les skins des pros : skins/index.html + une page par joueur (skins/<pseudo>.html) =====
-    if (!fs.existsSync("skins")) {
-        fs.mkdirSync("skins");
-    }
-    const skinFiles = ["index.html"];
-    const skinsUrl = `${SITE_URL}/skins/`;
-    const categoryLabel = Object.fromEntries(SKIN_CATEGORIES);
-
-    function skinList(groups, max) {
-        const names = groups.slice(0, max).map(function (g) {
-            return g.item.name + (g.item.exterior !== "Vanilla" ? " (" + g.item.exterior + ")" : "");
-        });
-        return names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names.join("");
-    }
-
-    function skinBreadcrumb(name, url) {
-        const list = [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
-            { "@type": "ListItem", "position": 2, "name": "CS2 Pro Skins", "item": skinsUrl }
-        ];
-        if (name) {
-            list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
-        }
-        return { "@type": "BreadcrumbList", "@id": (url || skinsUrl) + "#breadcrumb", "itemListElement": list };
-    }
-
-    skinPlayers.forEach(function (p) {
-        const name = esc(p.name);
-        const file = p.slug + ".html";
-        const url = skinsUrl + file;
-        const known = players.find(function (x) { return x.name === p.name; });
-        const byCategory = SKIN_CATEGORIES.map(function (c) {
-            return { key: c[0], label: c[1], groups: p.groups.filter(function (g) { return g.item.category === c[0]; }) };
-        }).filter(function (c) { return c.groups.length > 0; });
-        const knives = p.groups.filter(function (g) { return g.item.category === "knives"; });
-        const gloves = p.groups.filter(function (g) { return g.item.category === "gloves"; });
-        const top = p.best.slice(0, 2);
-        skinFiles.push(file);
-
-        const faq = [];
-        faq.push([`How many CS2 skins does ${p.name} have?`,
-            `${p.name}'s public Steam inventory has ${p.items.length} CS2 weapon skins (${p.groups.length} different), including ${knives.length} knife skin${knives.length === 1 ? "" : "s"} and ${gloves.length} pair${gloves.length === 1 ? "" : "s"} of gloves. Updated on ${p.updated}.`]);
-        if (knives.length) {
-            faq.push([`What knife does ${p.name} have in CS2?`, `${p.name} owns ${skinList(knives, 6)}.`]);
-        }
-        if (gloves.length) {
-            faq.push([`What gloves does ${p.name} have in CS2?`, `${p.name} owns ${skinList(gloves, 6)}.`]);
-        }
-        if (p.hasPrices) {
-            faq.unshift([`How much is ${p.name}'s CS2 inventory worth?`,
-                `${p.name}'s CS2 skins are worth about ${money(p.value, "USD")} (${money(p.valueEur, "EUR")}), based on the lowest CSFloat listing of each skin on ${skinData.prices.updated}. The most expensive one is ${p.best[0].item.marketName} at ${formatPrice(p.best[0].item.price, "USD")}.`]);
-        }
-        faq.push([`Are these skin floats exact?`,
-            `Yes. Every float on this page is the exact wear value of the item, read from ${p.name}'s public Steam inventory.`]);
-
-        // Description Google : 160 caractères maximum (la fin n'est ajoutée que s'il reste de la place)
-        const descriptionStart = p.hasPrices
-            ? `${p.name}'s CS2 inventory is worth about ${money(p.value, "USD")}: ${p.items.length} skins incl. ${top.map(function (g) { return g.item.name; }).join(" and ")}.`
-            : `${p.name}'s CS2 inventory: ${p.items.length} skins${top.length ? " incl. " + top.map(function (g) { return g.item.name; }).join(" and ") : ""}.`;
-        const descriptionEnd = p.hasPrices ? " Prices, exact floats and wear." : ` Exact floats and wear, updated ${p.updated}.`;
-        const description = descriptionStart + ((descriptionStart + descriptionEnd).length <= 160 ? descriptionEnd : "");
-        const graph = [
-            {
-                "@type": "CollectionPage",
-                "@id": url,
-                "url": url,
-                "name": `${p.name} CS2 Skins & Inventory`,
-                "description": description,
-                "inLanguage": "en",
-                "isPartOf": { "@id": SITE_URL + "/#website" },
-                "about": { "@id": url + "#person" },
-                "breadcrumb": { "@id": url + "#breadcrumb" },
-                "dateModified": isoDate(p.updated),
-                "mainEntity": {
-                    "@type": "ItemList",
-                    "name": `${p.name}'s CS2 skins`,
-                    "numberOfItems": p.groups.length,
-                    "itemListElement": p.groups.slice(0, 30).map(function (g, i) {
-                        return { "@type": "ListItem", "position": i + 1, "name": g.item.marketName, "image": `${SITE_URL}/skins/img/${g.item.image}.webp` };
-                    })
-                }
-            },
-            skinBreadcrumb(p.name + " skins", url),
-            {
-                "@type": "Person",
-                "@id": url + "#person",
-                "name": p.name,
-                "description": `${p.name} is a CS2 pro player${p.team ? " for " + p.team : ""}.`,
-                "url": known ? `${SITE_URL}/players/${slug(known.name)}.html` : url
-            },
-            {
-                "@type": "FAQPage",
-                "@id": url + "#faq",
-                "mainEntity": faq.map(function (q) {
-                    return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-                })
-            }
-        ];
-        if (profileLinks(known).length) {
-            graph[2].sameAs = profileLinks(known);
-        }
-        if (p.team) {
-            graph[2].memberOf = { "@type": "SportsTeam", "name": p.team, "sport": "Counter-Strike 2" };
-        }
-        const others = skinPlayers.filter(function (o) { return o !== p; });
-
-        fs.writeFileSync("skins/" + file, `<!DOCTYPE html>
-<html lang="en">
-<head>
-    ${head({
-        title: `${name} CS2 Skins &amp; Inventory${p.hasPrices ? " Value" : ""} (2026) | ClutchCrosshair`,
-        ogTitle: `${name} CS2 Skins & Inventory`,
-        description: description,
-        url: url,
-        prefix: "../",
-        jsonLd: { "@context": "https://schema.org", "@graph": graph }
-    })}
-</head>
-<body class="page">
-    ${THEME_SCRIPT}
-    ${pageTop("../", "skins")}
-
-    <main class="player-page skins-page" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Pro skins</a> › <span>${name}</span></nav>
-
-        <div class="player-head">
-            ${skinPhoto(p, "../", 120, 134, "player-photo", true)}
-            <div>
-                <h1>${name} CS2 Skins</h1>
-                ${p.team ? `<p class="player-team">${logoFor(p.team) ? `<img class="player-team-logo" src="../${logoFor(p.team)}" alt="" width="20" height="20">` : ""}${esc(p.team)}</p>` : ""}
-                <p class="player-date">${p.items.length} skins${p.hasPrices ? ` · <strong>${money(p.value, "USD")}</strong> / ${money(p.valueEur, "EUR")}` : ""} · Updated <time datetime="${isoDate(p.updated)}">${esc(p.updated)}</time></p>
-            </div>
-        </div>
-
-        <p>${esc(skinSummary(p))} ${top.length ? `${name}'s ${p.hasPrices ? "most expensive" : "rarest"} items are ${esc(skinList(top, 2))}.` : ""} Every float is the exact wear value read from ${name}'s public Steam inventory.${known ? ` Looking for ${name}'s crosshair? <a href="../players/${slug(known.name)}.html">Copy ${name}'s CS2 crosshair ›</a>` : ""}</p>
-
-        <nav class="skin-jump" aria-label="Skin categories">
-            ${byCategory.map(function (c) {
-                return `<a href="#${c.key}">${c.label} <span>${c.groups.reduce(function (n, g) { return n + g.count; }, 0)}</span></a>`;
-            }).join("\n            ")}
-        </nav>
-        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
-
-${p.hasPrices ? `        <section class="skin-section" id="most-expensive" aria-labelledby="most-expensive-title">
-            <h2 id="most-expensive-title">${name}'s most expensive skins</h2>
-            <div class="skin-grid">
-            ${p.best.slice(0, 8).map(function (g, i) { return skinCardHTML(g, p.name, "../", i < 4); }).join("\n            ")}
-            </div>
-        </section>
-` : ""}${byCategory.map(function (c, ci) {
-        return `        <section class="skin-section" id="${c.key}" aria-labelledby="${c.key}-title">
-            <h2 id="${c.key}-title">${name}'s ${c.label.toLowerCase()}</h2>
-            <div class="skin-grid">
-            ${c.groups.map(function (g, i) { return skinCardHTML(g, p.name, "../", ci === 0 && i < 4); }).join("\n            ")}
-            </div>
-        </section>`;
-    }).join("\n")}
-
-        <h2>${name} skins FAQ</h2>
-${faq.map(function (q) {
-        return `        <h3>${esc(q[0])}</h3>
-        <p>${esc(q[1])}</p>`;
-    }).join("\n")}
-
-        ${others.length ? `<h2>Other CS2 pro inventories</h2>
-        <ul class="related">${others.map(function (o) {
-            return `<li><a href="${o.slug}.html">${esc(o.name)} skins</a></li>`;
-        }).join("")}</ul>` : ""}
-    </main>
-
-    ${footer("../")}
-</body>
-</html>
-`);
-    });
-
-    // La page d'accueil des skins : tous les pros + leurs couteaux et gants
-    if (skinPlayers.length) {
-        const hubDescription = `CS2 pro skins and inventories: the knives, gloves and weapon skins of ${skinPlayers.map(function (p) { return p.name; }).join(", ")}, with exact floats. Updated ${skinData.updated}.`;
-        fs.writeFileSync("skins/index.html", `<!DOCTYPE html>
-<html lang="en">
-<head>
-    ${head({
-        title: "CS2 Pro Skins &amp; Inventories (2026) | ClutchCrosshair",
-        ogTitle: "CS2 Pro Skins & Inventories",
-        description: hubDescription,
-        url: skinsUrl,
-        prefix: "../",
-        jsonLd: { "@context": "https://schema.org", "@graph": [
-            {
-                "@type": "CollectionPage",
-                "@id": skinsUrl,
-                "url": skinsUrl,
-                "name": "CS2 Pro Skins & Inventories",
-                "description": hubDescription,
-                "inLanguage": "en",
-                "isPartOf": { "@id": SITE_URL + "/#website" },
-                "breadcrumb": { "@id": skinsUrl + "#breadcrumb" },
-                "dateModified": isoDate(skinData.updated),
-                "mainEntity": {
-                    "@type": "ItemList",
-                    "itemListElement": skinPlayers.map(function (p, i) {
-                        return { "@type": "ListItem", "position": i + 1, "name": p.name + " CS2 skins", "url": skinsUrl + p.slug + ".html" };
-                    })
-                }
-            },
-            skinBreadcrumb(null, null)
-        ] }
-    })}
-</head>
-<body class="page">
-    ${THEME_SCRIPT}
-    ${pageTop("../", "skins")}
-
-    <main class="player-page skins-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Pro skins</span></nav>
-        <h1>CS2 Pro Skins</h1>
-        <p>The real CS2 inventories of the best pro players: every knife, pair of gloves and weapon skin, with its exact float and wear, read from their public Steam inventories, with the price of every skin and the total value of each inventory. Updated on ${esc(skinData.updated)}.</p>
-        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
-
-        <div class="ps-tiles">
-            ${skinPlayers.map(function (p) {
-                const best = p.best[0];
-                return `<a class="ps-tile" href="${p.slug}.html" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
-                ${skinPhoto(p, "../", 56, 63)}
-                <span class="ps-text"><span class="ps-name">${esc(p.name)}</span>${p.team ? `<span class="ps-info">${esc(p.team)}</span>` : ""}<span class="ps-info">${p.items.length} skins${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span>
-                <img class="ps-tile-skin" src="img/${esc(best.item.image)}.webp" alt="${esc(p.name)}'s ${esc(best.item.name)}" width="80" height="60" loading="lazy" decoding="async">
-            </a>`;
-            }).join("\n            ")}
-        </div>
-
-${skinPlayers.map(function (p) {
-        const special = p.groups.filter(function (g) { return g.item.category === "knives" || g.item.category === "gloves"; });
-        const shown = (special.length ? special : p.groups).slice(0, 8);
-        return `        <section class="skin-section" aria-labelledby="hub-${p.slug}">
-            <h2 id="hub-${p.slug}">${esc(p.name)}'s ${special.length ? "knives &amp; gloves" : "best skins"}</h2>
-            <div class="skin-grid">
-            ${shown.map(function (g) { return skinCardHTML(g, p.name, "../", false); }).join("\n            ")}
-            </div>
-            <p><a href="${p.slug}.html">See all ${p.items.length} skins of ${esc(p.name)} ›</a></p>
-        </section>`;
-    }).join("\n")}
-    </main>
-
-    ${footer("../")}
-</body>
-</html>
-`);
-    }
-
-    // Supprimer les pages de skins des joueurs retirés (ou devenus privés)
-    fs.readdirSync("skins").forEach(function (f) {
-        if (f.endsWith(".html") && !skinFiles.includes(f)) {
-            fs.unlinkSync("skins/" + f);
-            console.log("Page supprimée : skins/" + f);
-        }
-    });
-
-    // ===== 3 quater. Les commandes console CS2 : commands/index.html + une page par commande importante =====
-    // Données : commands.json (status "check" = pas encore vérifiée en jeu -> pas publiée)
+    // Données des guides, des commandes et des outils (en anglais ; les traductions sont dans i18n/<langue>/)
     const commandData = fs.existsSync("commands.json") ? JSON.parse(fs.readFileSync("commands.json", "utf8")) : null;
     const guideData = fs.existsSync("guides.json") ? JSON.parse(fs.readFileSync("guides.json", "utf8")) : null;
-    // Les guides qui parlent d'une commande (liens "Learn more" sur la page de la commande)
-    function guidesFor(name) {
-        return guideData ? guideData.guides.filter(function (g) { return (g.commands || []).includes(name); }) : [];
+    const bindData = fs.existsSync("binds.json") ? JSON.parse(fs.readFileSync("binds.json", "utf8")) : null;
+
+    // Les pages publiées, pour le sitemap : { path, lastmod, images } (adresse sans la langue, ex. "players/zywoo.html")
+    const sitemapPages = [];
+
+    // ===== Toutes les pages, dans chaque langue =====
+    for (const lang of LANGS) {
+        buildSite(lang);
     }
-    const commandFiles = [];
-    const commandsUrl = `${SITE_URL}/commands/`;
-    if (commandData) {
-        if (!fs.existsSync("commands")) {
-            fs.mkdirSync("commands");
-        }
-        const published = commandData.commands.filter(function (c) { return c.status !== "check"; });
-        const byCmd = new Map(published.map(function (c) { return [c.name, c]; }));
-        const categoryName = Object.fromEntries(commandData.categories);
-        const hasPage = function (c) { return c && c.page && /^[a-z0-9_]+$/.test(c.name); };
-        const cmdFile = function (name) { return name + ".html"; };
 
-        // Lien vers une commande : sa page si elle en a une, sinon sa ligne dans la liste
-        function cmdHref(name, prefix) {
-            const c = byCmd.get(name);
-            if (!c) {
-                return "";
+    function buildSite(lang) {
+        const I = makeI18n(lang);
+        const t = I.t;
+        const tList = I.tList;
+        const LD = I.dir; // "" pour l'anglais, "fr/" pour le français
+        const EN = lang === "en";
+
+        // Chemin vers la racine du site (fichiers CSS/JS/images) depuis une page : prefix = chemin vers la racine de la langue
+        function ap(prefix) {
+            if (/^https?:/.test(prefix)) {
+                return SITE_URL + "/";
             }
-            return hasPage(c) ? prefix + cmdFile(name) : prefix + "#" + encodeURIComponent(name);
-        }
-
-        // Transforme les noms de commandes cités dans un texte en liens (sauf la commande de la page)
-        // Seulement les noms techniques avec un "_" : "crosshair", "volume" ou "rate" sont aussi des mots normaux
-        const linkable = published.map(function (c) { return c.name; }).filter(function (n) { return /^[a-z0-9_]+$/.test(n) && n.includes("_"); })
-            .sort(function (a, b) { return b.length - a.length; });
-        const linkPattern = new RegExp("(?<![\\w+])(" + linkable.join("|") + ")(?![\\w])", "g");
-        function linkify(text, self, prefix) {
-            return esc(text).replace(linkPattern, function (name) {
-                return name === self ? `<code>${name}</code>` : `<a href="${cmdHref(name, prefix)}"><code>${name}</code></a>`;
-            });
-        }
-
-        function copyRow(command) {
-            return `<div class="field-row">
-                <code>${esc(command)}</code>
-                <button type="button" class="mini" data-copy>Copy</button>
-            </div>`;
-        }
-
-        function badges(c) {
-            return (c.status === "removed" ? `<span class="cmd-badge cmd-removed">Removed in CS2</span>` : "")
-                + (c.cheat ? `<span class="cmd-badge">Needs sv_cheats</span>` : "");
-        }
-
-        // Statistiques réelles des pros pour les commandes de crosshair (contenu unique)
-        const CROSSHAIR_FIELDS = {
-            cl_crosshair_length: function (c) { return c.length; },
-            cl_crosshair_thickness: function (c) { return c.thickness; },
-            cl_crosshair_gap: function (c) { return c.gap; },
-            cl_crosshair_screen_height: function (c) { return c.screenHeight; },
-            cl_crosshairstyle: function (c) { return c.style; },
-            cl_crosshairdot: function (c) { return c.centerDotEnabled ? 1 : 0; },
-            cl_crosshair_t: function (c) { return c.tStyleEnabled ? 1 : 0; },
-            cl_crosshair_drawoutline: function (c) { return c.outlineMode > 0 ? 1 : 0; },
-            cl_crosshair_recoil: function (c) { return c.followRecoil ? 1 : 0; },
-            cl_crosshaircolor_a: function (c) { return c.alpha; }
-        };
-        function proStats(c) {
-            const read = CROSSHAIR_FIELDS[c.name];
-            if (!read || !proCrosshairs.length) {
-                return "";
+            if (EN) {
+                return prefix;
             }
-            const count = {};
-            proCrosshairs.forEach(function (x) {
-                const v = read(x.c);
-                count[v] = (count[v] || 0) + 1;
-            });
-            const values = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; });
-            const top = values[0];
-            const examples = proCrosshairs.filter(function (x) { return String(read(x.c)) === top; }).slice(0, 6);
-            const rows = values.slice(0, 5).map(function (v) {
-                const share = Math.round(count[v] / proCrosshairs.length * 100);
-                return `<div><dt><code>${esc(c.name)} ${esc(v)}</code></dt><dd><span class="cmd-bar"><i style="width: ${share}%"></i></span>${share}%</dd></div>`;
-            }).join("");
-            return `<h2>What value do CS2 pros use?</h2>
-        <p>Among the ${proCrosshairs.length} pro crosshairs on ClutchCrosshair, read from official match demos, the most common value is <code>${esc(c.name)} ${esc(top)}</code> (${Math.round(count[top] / proCrosshairs.length * 100)}% of pros).</p>
-        <dl class="cmd-stats">${rows}</dl>
-        <p>Pros who use <code>${esc(c.name)} ${esc(top)}</code>:</p>
-        <ul class="related">${examples.map(function (x) {
-            return `<li><a href="../players/${slug(x.player.name)}.html">${esc(x.player.name)} crosshair</a></li>`;
-        }).join("")}</ul>`;
+            return (prefix === "./" ? "" : prefix) + "../";
+        }
+        // Adresse complète d'une page dans cette langue
+        function langUrl(rel) {
+            return SITE_URL + "/" + LD + rel;
+        }
+        // Adresse relative de la même page dans une autre langue (pour le sélecteur)
+        function altHref(prefix, target, rel) {
+            const href = ap(prefix) + (target === "en" ? "" : target + "/") + rel;
+            return href || "./";
+        }
+        // Le nom affiché de l'équipe ("Creator" est traduit, les vraies équipes jamais)
+        function teamLabel(team) {
+            return team === "Creator" ? t("common.creator") : team;
+        }
+        function listText(items) {
+            return items.length > 1 ? items.slice(0, -1).join(", ") + " " + t("common.and") + " " + items[items.length - 1] : items.join("");
+        }
+        // Montant arrondi : 8551.4 -> "$8,551" / "€7,599" (en français : "8 551 $US" / "7 599 €")
+        function money(value, currency) {
+            return new Intl.NumberFormat(I.locale, { style: "currency", currency: currency, maximumFractionDigits: 0 }).format(value);
+        }
+        function price(value, currency) {
+            return formatPrice(value, currency, I.locale);
+        }
+        // Texte traduit s'il existe, sinon la valeur d'origine (noms d'usure et de rareté des skins...)
+        function opt(key, fallback) {
+            return I.has(key) ? t(key) : fallback;
         }
 
-        function cmdBreadcrumb(name, url) {
-            const list = [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
-                { "@type": "ListItem", "position": 2, "name": "CS2 Console Commands", "item": commandsUrl }
-            ];
-            if (name) {
-                list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+        // ===== Morceaux communs à toutes les pages =====
+
+        // Petite maison au début du fil d'Ariane (retour à l'accueil, présent sur toutes les pages)
+        const HOME_ICON = `<svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>`;
+
+        // Thème clair/sombre appliqué tout de suite (sans flash), sur <html> et <body>
+        const THEME_SCRIPT = `<script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light" || (!saved && window.matchMedia("(prefers-color-scheme: light)").matches)) {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
             }
-            return { "@type": "BreadcrumbList", "@id": (url || commandsUrl) + "#breadcrumb", "itemListElement": list };
+        } catch (error) {}
+    </script>`;
+
+        // <html lang="..."> (+ le mot « Copied » de la barre rouge, traduit, lu par le CSS)
+        const HTML_OPEN = `<html lang="${lang}"${EN ? "" : ` style="--copied: '${t("js.copiedBar")}'"`}>`;
+
+        // Textes du JavaScript (crosshair.js, script.js, generator.js) : seulement dans les langues autres que l'anglais
+        const CLIENT_I18N = EN ? "" : `
+    <script type="application/json" id="i18n">${JSON.stringify(tList("js")).replace(/</g, "\\u003c")}</script>`;
+
+        // Langues : liens hreflang pour Google + petit script (1re visite : langue du navigateur ; sélecteur : change de page)
+        function langHead(prefix, rel, withLinks) {
+            const alts = {};
+            LANGS.forEach(function (l) { alts[l] = altHref(prefix, l, rel); });
+            const links = !withLinks ? "" : LANGS.map(function (l) {
+                return `
+    <link rel="alternate" hreflang="${l}" href="${SITE_URL}/${l === "en" ? "" : l + "/"}${rel}">`;
+            }).join("") + `
+    <link rel="alternate" hreflang="x-default" href="${SITE_URL}/${rel}">`;
+            return `${links}
+    <script>(function () {
+        var A = ${JSON.stringify(alts)};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>${CLIENT_I18N}`;
+        }
+
+        // Le sélecteur de langue (le même partout) : les langues publiées + celles qui arrivent bientôt
+        function langSelect() {
+            return `<select id="lang" class="lang" aria-label="${t("nav.language")}">
+                    ${LANGS.map(function (l) {
+                        return `<option value="${l}"${l === lang ? " selected" : ""}>${l === lang ? l.toUpperCase() : l.toUpperCase() + " · " + NAMES[l]}</option>`;
+                    }).join("\n                    ")}
+                    ${SOON.map(function (l) {
+                        return `<option value="${l}" disabled>${l.toUpperCase()} · ${NAMES[l]} (${t("nav.soon")})</option>`;
+                    }).join("\n                    ")}
+                </select>`;
+        }
+
+        // Le <head> d'une page (titre, description, adresse officielle, aperçu de lien, langues, chargement rapide)
+        // o.path = adresse de la page sans la langue (ex. "players/zywoo.html", "" pour l'accueil)
+        function head(o) {
+            const p = ap(o.prefix);
+            return `<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${o.title}</title>
+    <meta name="description" content="${esc(o.description)}">
+    ${o.noindex ? '<meta name="robots" content="noindex">' : `<meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="${o.url}">`}${langHead(o.prefix, o.path, !o.noindex)}
+    <link rel="icon" href="${p}favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="${p}apple-touch-icon.png">
+    <link rel="manifest" href="${p}site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="${I.ogLocale}">${LANGS.filter(function (l) { return l !== lang; }).map(function (l) {
+        return `
+    <meta property="og:locale:alternate" content="${makeI18n(l).ogLocale}">`;
+    }).join("")}
+    <meta property="og:title" content="${o.ogTitle || o.title}">
+    <meta property="og:description" content="${esc(o.description)}">
+    <meta property="og:url" content="${o.url}">
+    <meta property="og:image" content="${SITE_URL}/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${t("meta.ogImageAlt")}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${o.ogTitle || o.title}">
+    <meta name="twitter:description" content="${esc(o.description)}">
+    <meta name="twitter:image" content="${SITE_URL}/og-image.jpg">
+    <link rel="preload" href="${p}fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="${p}fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="${p}style.min.css?v=${CSS_HASH}">${o.crosshair ? `
+    <link rel="modulepreload" href="${p}crosshair.min.js?v=${CROSSHAIR_HASH}">
+    <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
+    <link rel="preload" href="${p}preview-bg.webp?v=${BG_HASH}" as="image" type="image/webp">` : ""}${o.generator ? `
+    <link rel="modulepreload" href="${p}generator.min.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
+    <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
+        }
+
+        // Le menu principal, le même sur toutes les pages. Une rubrique n'apparaît que si ses pages existent
+        // (jamais de lien vers une page vide). current = la rubrique de la page (soulignée en rouge)
+        function mainNav(prefix, current) {
+            const sections = [
+                { key: "crosshairs", label: t("nav.crosshairs"), href: "" },
+                { key: "skins", label: t("nav.skins"), href: "skins/", show: skinPlayers.length > 0 },
+                { key: "guides", label: t("nav.guides"), href: "guides/", show: Boolean(guideData) },
+                { key: "commands", label: t("nav.commands"), href: "commands/", show: Boolean(commandData) },
+                // Tant qu'il n'y a qu'un seul outil, le lien mène directement au générateur de crosshair
+                bindData
+                    ? { key: "tools", label: t("nav.tools"), href: "tools/" }
+                    : { key: "tools", label: t("nav.generator"), href: "generator.html" }
+            ].filter(function (s) { return s.show !== false; });
+            return `<nav class="main-nav" aria-label="${t("nav.mainAria")}">
+            ${sections.map(function (s) {
+                return `<a href="${(prefix + s.href) || "./"}"${s.key === current ? ' aria-current="page"' : ""}>${s.label}</a>`;
+            }).join("\n            ")}
+        </nav>`;
+        }
+
+        // En haut des pages : le logo (retour à l'accueil) + le menu principal + le sélecteur de langue
+        function pageTop(prefix, current) {
+            const a = ap(prefix);
+            return `<header class="page-top">
+        <a href="${prefix}" class="logo" aria-label="${t("nav.homeAria")}">
+            <img class="logo-img logo-dark" src="${a}logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="${a}logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        ${mainNav(prefix, current)}
+        ${langSelect()}
+    </header>`;
+        }
+
+        function footer(prefix) {
+            return `<footer>
+        <nav class="footer-links" aria-label="${t("nav.footerAria")}">
+            <a href="${prefix}generator.html">${t("footer.generator")}</a>
+            <a href="${prefix}tools/bind-generator.html">${t("footer.bind")}</a>
+            <a href="${prefix}skins/">${t("footer.skins")}</a>
+            <a href="${prefix}guides/">${t("footer.guides")}</a>
+            <a href="${prefix}commands/">${t("footer.commands")}</a>
+            <a href="${prefix}faq.html">${t("footer.faq")}</a>
+            <a href="${prefix}legal.html">${t("footer.legal")}</a>
+        </nav>
+        <p class="footer-contact">${t("footer.business")} <a href="mailto:${PUBLISHER_EMAIL}?subject=Business%20-%20ClutchCrosshair">${PUBLISHER_EMAIL}</a></p>
+        <p>${t("footer.rights")}</p>
+        <p>${t("footer.trademarks")}</p>
+    </footer>`;
+        }
+
+        // Fil d'Ariane visible : 🏠 Home › ...
+        function crumbs(prefix, items) {
+            return `<nav class="breadcrumb" aria-label="${t("nav.breadcrumbAria")}"><a href="${prefix}" class="crumb-home">${HOME_ICON}${t("nav.home")}</a> › ${items}</nav>`;
+        }
+
+        // Fil d'Ariane pour Google : Home › (section) › page
+        function breadcrumbList(id, steps) {
+            return {
+                "@type": "BreadcrumbList",
+                "@id": id + "#breadcrumb",
+                "itemListElement": [{ "@type": "ListItem", "position": 1, "name": t("nav.home"), "item": SITE_URL + "/" + LD }].concat(steps.map(function (s, i) {
+                    return { "@type": "ListItem", "position": i + 2, "name": s[0], "item": s[1] };
+                }))
+            };
+        }
+        function breadcrumb(name, url) {
+            return breadcrumbList(url, [[name, url]]);
+        }
+        // Home › section (› page)
+        function sectionBreadcrumb(sectionName, sectionUrl, name, url) {
+            return breadcrumbList(url || sectionUrl, name ? [[sectionName, sectionUrl], [name, url]] : [[sectionName, sectionUrl]]);
         }
 
         function faqGraph(url, faq) {
@@ -1342,17 +544,918 @@ ${skinPlayers.map(function (p) {
                 })
             };
         }
-
-        function faqHtml(faq, title) {
-            return `<h2>${title}</h2>
-${faq.map(function (q) {
-            return `        <h3>${esc(q[0])}</h3>
+        function faqItems(faq, tag) {
+            return faq.map(function (q) {
+                return `        <${tag}>${esc(q[0])}</${tag}>
         <p>${esc(q[1])}</p>`;
-        }).join("\n")}`;
+            }).join("\n");
         }
 
-        // Petit script des pages de commandes : boutons Copy (+ recherche et filtres sur la liste)
-        const COPY_SCRIPT = `import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
+        // Petit tableau qui décrit les réglages du crosshair (contenu unique pour chaque page)
+        function crosshairDetails(code) {
+            const c = decode(code);
+            if (!c) {
+                return "";
+            }
+            const hex = "#" + [c.red, c.green, c.blue].map(function (v) {
+                return Number(v).toString(16).padStart(2, "0");
+            }).join("").toUpperCase();
+            const yes = t("common.yes"), no = t("common.no");
+            const rows = [
+                [t("specs.color"), `<span class="swatch" style="background:${hex}"></span>${hex}`],
+                [t("specs.length"), c.length],
+                [t("specs.thickness"), c.thickness],
+                [t("specs.gap"), c.gap],
+                [t("specs.dot"), c.centerDotEnabled ? yes : no],
+                [t("specs.outline"), c.outlineMode > 0 ? yes : no],
+                [t("specs.tStyle"), c.tStyleEnabled ? yes : no],
+                [t("specs.opacity"), Math.round((c.alpha / 255) * 100) + "%"]
+            ];
+            return `<dl class="specs">${rows.map(function (r) {
+                return `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`;
+            }).join("")}</dl>`;
+        }
+
+        function proLinks(list) {
+            return `<ul class="related">${list.map(function (x) {
+                return `<li><a href="${slug(x.player.name)}.html">${t("common.crosshairOf", { name: esc(x.player.name) })}</a></li>`;
+            }).join("")}</ul>`;
+        }
+
+        // Description des réglages en phrases + comparaison avec les pros + pros au crosshair identique ou proche + FAQ
+        function crosshairInsights(player) {
+            const c = decode(player.code);
+            if (!c || c.format === "legacy-v1") {
+                return null;
+            }
+            const colorKey = colorName(c);
+            const color = t("colors." + colorKey);
+            const size = t("sizes." + (c.length <= 2 ? "veryShort" : c.length <= 4 ? "short" : c.length <= 7 ? "medium" : "long"));
+            const parts = [t("insights.length", { n: c.length }), t("insights.thickness", { n: c.thickness }), t("insights.gap", { n: c.gap }),
+                t(c.outlineMode > 0 ? "insights.outline" : "insights.noOutline"), t(c.centerDotEnabled ? "insights.dot" : "insights.noDot")];
+            if (c.tStyleEnabled) {
+                parts.push(t("insights.tStyle"));
+            }
+            if (c.alpha < 255) {
+                parts.push(t("insights.opacity", { n: Math.round(c.alpha / 255 * 100) }));
+            }
+            const style = c.style === 4 ? t("insights.styleStatic") : c.style === 9 ? t("insights.styleX") : "";
+            const settings = t("insights.settings", { name: player.name, size: size, color: color, style: style, parts: listText(parts), height: c.screenHeight });
+            const longer = percentOfPros(function (x) { return x.c.length > c.length; });
+            const sameColor = percentOfPros(function (x) { return colorName(x.c) === colorKey; });
+            const comparison = t("insights.comparison", { longer: longer, total: proCrosshairs.length, same: sameColor, color: color });
+            const same = proCrosshairs.filter(function (x) {
+                return x.player !== player && x.player.code === player.code;
+            });
+            const similar = proCrosshairs.filter(function (x) {
+                return x.player !== player && x.player.code !== player.code && colorName(x.c) === colorKey && x.c.thickness === c.thickness
+                    && Math.abs(x.c.length - c.length) <= 1 && Math.abs(x.c.gap - c.gap) <= 1;
+            }).slice(0, 8);
+            const name = esc(player.name);
+            const html = `<p>${esc(settings)} ${esc(comparison)}</p>
+        ${same.length ? `<h2>${t("insights.sameTitle", { name: name })}</h2>
+        <p>${t("insights.sameText", { list: listText(same.map(function (x) { return esc(x.player.name); })), name: name, count: same.length })}</p>
+        ${proLinks(same)}` : ""}
+        ${similar.length ? `<h2>${t("insights.similarTitle", { name: name })}</h2>
+        <p>${t("insights.similarText", { color: esc(color) })}</p>
+        ${proLinks(similar)}` : ""}`;
+            const faq = [
+                [t("insights.faqCodeQ", { name: player.name }), t("insights.faqCodeA", { name: player.name, code: player.code, source: t(player.category === "pro" ? "insights.sourcePro" : "insights.sourceCreator"), date: player.updated })],
+                [t("insights.faqSettingsQ", { name: player.name }), settings]
+            ];
+            if (same.length) {
+                faq.push([t("insights.faqSameQ", { name: player.name }), t("insights.sameText", { list: listText(same.map(function (x) { return x.player.name; })), name: player.name, count: same.length })]);
+            }
+            return { html: html, faq: faq };
+        }
+
+        // ===== 1. Une page par joueur =====
+        const pageFiles = [];
+
+        players.forEach(function (player) {
+            const name = esc(player.name);
+            const team = esc(teamLabel(player.team));
+            const isPro = player.category === "pro";
+            const file = slug(player.name) + ".html";
+            const rel = "players/" + file;
+            const url = langUrl(rel);
+            const photo = photoFiles(player);
+            const logo = logoFor(player.team);
+            const a = ap("../");
+            pageFiles.push(file);
+            if (EN) {
+                sitemapPages.push({ path: rel, lastmod: isoDate(player.updated), images: photo.original ? [SITE_URL + "/" + photo.original] : [] });
+            }
+
+            // Photo moyenne, chargée en priorité (c'est le plus gros élément en haut de la page)
+            const photoHtml = photo.md
+                ? `<img class="player-photo" src="${a}${esc(photo.md)}" alt="${name}, ${team}" width="120" height="134" fetchpriority="high" decoding="async">`
+                : `<div class="player-photo">${esc(player.name.slice(0, 2).toUpperCase())}</div>`;
+            const badge = logo ? `<img class="player-team-logo" src="${a}${logo}" alt="" width="20" height="20">` : "";
+
+            // Coéquipiers (ou autres créateurs) : liens internes, bons pour Google et pour les visiteurs
+            const mates = players.filter(function (p) {
+                return p !== player && p.team === player.team;
+            });
+            const matesHtml = mates.length
+                ? `<h2>${isPro ? t("player.matesTeam", { team: team }) : t("player.matesCreator")}</h2>
+        <ul class="related">${mates.map(function (p) {
+                    return `<li><a href="${slug(p.name)}.html">${t("common.crosshairOf", { name: esc(p.name) })}</a></li>`;
+                }).join("")}</ul>`
+                : "";
+
+            const insights = crosshairInsights(player);
+            const intro = isPro
+                ? t("player.introPro", { name: name, team: team, date: esc(player.updated) })
+                : t("player.introCreator", { name: name, date: esc(player.updated) });
+
+            // Données structurées reliées entre elles : la page, son fil d'Ariane et le joueur (membre de son équipe)
+            const webPage = {
+                "@type": "WebPage",
+                "@id": url,
+                "url": url,
+                "name": t("player.webPageName", { name: player.name }),
+                "inLanguage": lang,
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "about": { "@id": url + "#person" },
+                "breadcrumb": { "@id": url + "#breadcrumb" }
+            };
+            if (isoDate(player.updated)) {
+                webPage.dateModified = isoDate(player.updated);
+            }
+            if (photo.original) {
+                webPage.primaryImageOfPage = { "@type": "ImageObject", "url": `${SITE_URL}/${photo.original}` };
+            }
+            const person = {
+                "@type": "Person",
+                "@id": url + "#person",
+                "name": player.name,
+                "description": isPro
+                    ? t("player.personPro", { name: player.name, team: player.team })
+                    : t("player.personCreator", { name: player.name }),
+                "url": url
+            };
+            if (isPro) {
+                person.memberOf = { "@type": "SportsTeam", "name": player.team, "sport": "Counter-Strike 2" };
+            }
+            if (photo.original) {
+                person.image = `${SITE_URL}/${photo.original}`;
+            }
+            if (profileLinks(player).length) {
+                person.sameAs = profileLinks(player);
+            }
+
+            const page = `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: t("player.title", { name: name }),
+        ogTitle: t("player.ogTitle", { name: name }),
+        description: isPro
+            ? t("player.descriptionPro", { name: player.name, team: player.team, date: player.updated })
+            : t("player.descriptionCreator", { name: player.name, date: player.updated }),
+        url: url,
+        path: rel,
+        prefix: "../",
+        crosshair: true,
+        jsonLd: { "@context": "https://schema.org", "@graph": [webPage, breadcrumb(t("player.breadcrumb", { name: player.name }), url), person].concat(insights ? [faqGraph(url, insights.faq)] : []) }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "crosshairs")}
+
+    <main class="player-page" style="--team: ${teamColor(player.team)}; --on-team: ${textOnColor(teamColor(player.team))}">
+        ${crumbs("../", `<span>${name}</span>`)}
+
+        <div class="player-head">
+            ${photoHtml}
+            <div>
+                <h1>${t("player.h1", { name: name })}</h1>
+                <p class="player-team">${badge}${team}</p>
+                <p class="player-date">${t("player.lastUpdate")} <time datetime="${isoDate(player.updated)}">${esc(player.updated)}</time></p>
+                ${player.faceit ? `<a class="faceit-btn" href="${esc(player.faceit)}" target="_blank" rel="external noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3h8v8h-2V6.4l-6.3 6.3-1.4-1.4L9.6 5H5z"/></svg>${t("player.faceit", { name: name })}</a>` : ""}
+            </div>
+        </div>
+
+        <canvas id="preview" class="preview player-preview" width="760" height="300" role="img" aria-label="${t("card.previewAria", { name: name })}"></canvas>
+        ${twins(player).length ? `<p class="same-xhair">${t("player.same", { list: listText(twins(player).map(function (p) { return `<a href="${slug(p.name)}.html">${esc(p.name)}</a>`; })) })}</p>` : ""}
+
+        <div class="field">
+            <div class="field-label">${t("field.shareCode")} <span>· ${t("field.shareHelp")}</span></div>
+            <div class="field-row">
+                <code id="code" class="code">${esc(player.code)}</code>
+                <button type="button" id="copy" class="mini">${t("common.copy")}</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">${t("field.console")} <span>· ${t("field.consoleHelp")}</span></div>
+            <div class="field-row">
+                <code id="console" class="console">${esc(consoleCommands(player.code))}</code>
+                <button type="button" id="copy-console" class="mini btn-secondary">${t("common.copy")}</button>
+            </div>
+        </div>
+
+        <h2>${t("player.about", { name: name })}</h2>
+        <p>${intro}</p>
+        ${crosshairDetails(player.code)}
+        ${insights ? insights.html : ""}
+
+        <h2>${t("player.howTitle", { name: name })}</h2>
+        <ol>
+            <li>${t("player.how1")}</li>
+            <li>${t("player.how2")}</li>
+            <li>${t("player.how3")}</li>
+        </ol>
+        <p>${t("player.orConsole")}${commandData ? ` <a href="../commands/#crosshair">${t("player.commandsLink")}</a>` : ""} <a href="../faq.html">${t("player.faqLink")}</a></p>
+        ${/^CS(?!GO-)/.test(player.code) ? `<p><a href="../generator.html#${esc(player.code)}">${t("player.editLink", { name: name })}</a></p>` : ""}
+        ${skinPlayers.some(function (s) { return s.name === player.name; }) ? `<p><a href="../skins/${slug(player.name)}.html">${t("player.skinsLink", { name: name })}</a></p>` : ""}
+
+        ${insights ? `<h2>${t("player.faqTitle", { name: name })}</h2>
+${faqItems(insights.faq, "h3")}` : ""}
+
+        ${matesHtml}
+    </main>
+
+    ${footer("../")}
+
+    <script type="module">
+        import { copyText, drawCrosshair } from "${a}crosshair.min.js?v=${CROSSHAIR_HASH}";
+
+        drawCrosshair(document.getElementById("preview"), document.getElementById("code").textContent);
+
+        document.getElementById("copy").addEventListener("click", function (event) {
+            copyText(document.getElementById("code").textContent, event.currentTarget);
+        });
+        document.getElementById("copy-console").addEventListener("click", function (event) {
+            copyText(document.getElementById("console").textContent, event.currentTarget);
+        });
+    </script>
+</body>
+</html>
+`;
+            write(LD + "players/" + file, page);
+        });
+
+        // Supprimer les pages des joueurs qui ne sont plus dans players.json (ex. ancien nom)
+        fs.readdirSync(LD + "players").forEach(function (f) {
+            if (f.endsWith(".html") && !pageFiles.includes(f)) {
+                fs.unlinkSync(LD + "players/" + f);
+                console.log("Page supprimée (joueur absent de players.json) : " + LD + "players/" + f);
+            }
+        });
+
+        // ===== Skins : résumé, liste, note sur les prix (accueil + pages skins) =====
+        const PRICE_NOTE = skinData.prices ? t("skins.priceNote", { date: esc(skinData.prices.updated) }) : "";
+        const categoryLabel = function (key) { return t("skins.categories." + key); };
+
+        // "ZywOo (Team Vitality) owns 631 CS2 skins, including 4 knife skins and 3 pairs of gloves."
+        function skinSummary(p) {
+            const count = function (category) {
+                return p.items.filter(function (i) { return i.category === category; }).length;
+            };
+            const knives = count("knives");
+            const gloves = count("gloves");
+            const extras = [];
+            if (knives) {
+                extras.push(t("skins.knifeCount", { count: knives }));
+            }
+            if (gloves) {
+                extras.push(t("skins.gloveCount", { count: gloves }));
+            }
+            return t("skins.summary", {
+                name: p.name,
+                team: p.team ? t("skins.summaryTeam", { team: p.team }) : "",
+                count: p.items.length,
+                extras: extras.length ? t("skins.summaryExtras", { list: extras.join(" " + t("common.and") + " ") }) : "",
+                value: p.hasPrices ? t("skins.summaryValue", { usd: money(p.value, "USD"), eur: money(p.valueEur, "EUR") }) : ""
+            });
+        }
+
+        // Photo d'un joueur des skins (petite pour les boutons, moyenne pour l'en-tête de sa page), sinon ses initiales
+        // assets = chemin vers la racine du site (photos)
+        function skinPhoto(p, assets, w, h, className, eager) {
+            const known = players.find(function (x) { return x.name === p.name; });
+            const photo = known ? photoFiles(known) : { sm: "", md: "" };
+            const file = w > 60 ? photo.md : photo.sm;
+            const cls = className || "ps-photo";
+            return file
+                ? `<img class="${cls}" src="${assets}${esc(file)}" alt="${esc(p.name)}" width="${w}" height="${h}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`
+                : `<span class="${cls}" aria-hidden="true">${esc(p.name.slice(0, 2).toUpperCase())}</span>`;
+        }
+
+        function skinCard(g, playerName, assets, eager) {
+            return skinCardHTML(g, playerName, assets, eager, t, I.locale);
+        }
+
+        // ===== 2. index.html : tout le contenu écrit d'avance (lisible par Google, rien à télécharger en plus) =====
+        // Modèle : index.template.html ({{clé}} = texte traduit, {{@...}} = valeurs calculées ici)
+        const A = ap("");
+        function cardsFor(list) {
+            return list.slice().sort(byTeamThenName).map(function (p, i) {
+                const photo = photoFiles(p);
+                return cardHTML(p, { photo: photo.sm && A + photo.sm, photoMd: photo.md && A + photo.md, eager: i < EAGER_CARDS, logo: logoFor(p.team) && A + logoFor(p.team), twins: twins(p), t: t, teamLabel: teamLabel(p.team) });
+            }).join("\n                        ");
+        }
+        const homeVars = { count: pros.length };
+        const homeSpecial = {
+            lang: lang,
+            A: A,
+            url: SITE_URL + "/" + LD,
+            ogLocale: I.ogLocale,
+            ogAlternates: LANGS.filter(function (l) { return l !== lang; }).map(function (l) { return `
+    <meta property="og:locale:alternate" content="${makeI18n(l).ogLocale}">`; }).join(""),
+            langHead: langHead("", "", true),
+            langSelect: langSelect(),
+            htmlStyle: EN ? "" : ` style="--copied: '${t("js.copiedBar")}'"`
+        };
+        let index = fs.readFileSync("index.template.html", "utf8").replace(/^<!-- MODÈLE[\s\S]*?-->\r?\n/, "")
+            .replace(/\{\{@(\w+)\}\}/g, function (all, key) {
+                if (!(key in homeSpecial)) {
+                    throw new Error("index.template.html : valeur inconnue {{@" + key + "}}");
+                }
+                return homeSpecial[key];
+            })
+            .replace(/\{\{([\w.]+)\}\}/g, function (all, key) {
+                return t(key, homeVars);
+            });
+
+        index = replaceBetween(index, "CARDS:pros", cardsFor(pros), "                        ");
+        index = replaceBetween(index, "CARDS:creators", cardsFor(creators), "                        ");
+        index = replaceBetween(index, "CARDS:trending", trending.slice().sort(byTeamThenName).map(function (p) {
+            const photo = photoFiles(p);
+            return cardHTML(p, { photo: photo.sm && A + photo.sm, photoMd: photo.md && A + photo.md, eager: false, logo: logoFor(p.team) && A + logoFor(p.team), twins: twins(p), t: t, teamLabel: teamLabel(p.team) });
+        }).join("\n                        "), "                        ");
+
+        // Menu des équipes (à gauche)
+        const teamButtons = [`<button type="button" class="side-btn active" data-team="" aria-pressed="true">${t("home.allCrosshairs")}</button>`].concat(teams.map(function (tm) {
+            return `<button type="button" class="side-btn" data-team="${esc(tm.name)}" aria-pressed="false">${teamBadge(tm.name, logoFor(tm.name) && A + logoFor(tm.name), 22)}${esc(tm.name)}</button>`;
+        })).join("\n                ");
+        index = replaceBetween(index, "TEAMS", teamButtons, "                ");
+
+        // Compteurs des accès rapides ("70 pro players", "1 creator"...)
+        const counts = {
+            pros: t("home.countPros", { count: pros.length }),
+            creators: t("home.countCreators", { count: creators.length }),
+            trending: t("home.countTrending", { count: trending.length }),
+            skins: t("home.countSkins", { count: skinPlayers.length })
+        };
+        Object.keys(counts).forEach(function (key) {
+            index = index.replace(new RegExp(`(<span class="quick-count" data-count="${key}">)[^<]*(</span>)`), "$1" + counts[key] + "$2");
+        });
+
+        // Le menu principal (le même que sur les autres pages)
+        index = replaceBetween(index, "MAINNAV", mainNav("", "crosshairs"), "                ");
+
+        // Le générateur dans l'onglet Generator (son JavaScript ne se charge qu'au clic sur l'onglet)
+        const generatorBlock = generatorHTML(generatorCode, generatorGroups, t);
+        index = replaceBetween(index, "GENERATOR", generatorBlock, "                        ");
+
+        // Menu de gauche, sous les équipes : les inventaires des pros, avec leur plus beau couteau (lien vers leur page)
+        index = replaceBetween(index, "SKINSIDE", skinPlayers.length ? `<nav class="side-skins" aria-label="${t("home.inventoriesTitle")}">
+                <p class="side-title">${t("home.inventoriesTitle")}</p>
+                ${skinPlayers.map(function (p) {
+                    const star = p.best.find(function (g) { return g.item.category === "knives"; }) || p.best[0];
+                    return `<a class="side-skin" href="skins/${p.slug}.html" title="${t("home.sideSkinTitle", { name: esc(p.name) })}"><span>${esc(p.name)}</span><img src="${A}skins/img/${esc(star.item.image)}.webp" alt="${t("skins.altShort", { name: esc(p.name), skin: esc(star.item.name) })}" width="48" height="36" loading="lazy" decoding="async"></a>`;
+                }).join("\n                ")}
+                <a class="side-skins-all" href="skins/">${t("home.allSkins")}</a>
+            </nav>` : "", "            ");
+
+        // L'onglet Pro Skins : un bouton par joueur + ses 12 plus beaux skins (la page complète est dans skins/)
+        index = replaceBetween(index, "PROSKINS", skinPlayers.length ? `<div class="ps">
+                            <div class="ps-players" role="group" aria-label="${t("home.choosePro")}">
+                                ${skinPlayers.map(function (p, i) {
+                                    return `<button type="button" class="ps-player" data-ps="${p.slug}" aria-pressed="${i === 0}" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">${skinPhoto(p, A, 40, 45)}<span class="ps-text"><span class="ps-name">${esc(p.name)}</span><span class="ps-info">${t("skins.count", { count: p.items.length })}${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span></button>`;
+                                }).join("\n                                ")}
+                            </div>
+                            ${skinPlayers.map(function (p, i) {
+                                return `<div class="ps-panel${i === 0 ? "" : " hidden"}" data-ps-panel="${p.slug}">
+                                <p class="ps-summary">${esc(skinSummary(p))} <a href="skins/${p.slug}.html">${t("skins.seeAll", { count: p.items.length, name: esc(p.name) })}</a></p>
+                                <div class="skin-grid">
+                                ${p.best.slice(0, 12).map(function (g) { return skinCard(g, p.name, A, false); }).join("\n                                ")}
+                                </div>
+                            </div>`;
+                            }).join("\n                            ")}
+                            <p class="ps-more"><a href="skins/">${t("home.allInventories")}</a> · ${t("common.updated", { date: esc(skinData.updated || "") })}</p>
+                            ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+                        </div>` : `<p class="empty">${t("home.skinsSoon")}</p>`, "                        ");
+
+        // Empreintes des fichiers CSS/JS/images dans l'accueil
+        index = index
+            .replace(/href="((?:\.\.\/)?)crosshair(\.min)?\.js\?v=[^"]*"/, 'href="$1crosshair.min.js?v=' + CROSSHAIR_HASH + '"')
+            .replace(/src="((?:\.\.\/)?)script(\.min)?\.js\?v=[^"]*"/, 'src="$1script.min.js?v=' + SCRIPT_HASH + '"')
+            .replace(/(href="(?:\.\.\/)?preview-bg-crop\.webp)(\?v=[^"]*)?"/, "$1?v=" + BG_CROP_HASH + "\"");
+        write(LD + "index.html", index);
+
+        // ===== 3. faq.html : la FAQ complète, avec des statistiques calculées sur les pros =====
+        const familyText = familyOrder.map(function (f) {
+            return `${t("colorFamily." + f)} (${percent(families[f])})`;
+        }).join(", ");
+        const faq = tList("faq.items", {
+            total: total,
+            families: familyText,
+            smallGap: percent(smallGap),
+            dot: percent(withDot),
+            outline: percent(withOutline),
+            email: PUBLISHER_EMAIL
+        });
+
+        const faqUrl = langUrl("faq.html");
+        const faqPage = {
+            "@type": "FAQPage",
+            "@id": faqUrl,
+            "url": faqUrl,
+            "isPartOf": { "@id": SITE_URL + "/#website" },
+            "breadcrumb": { "@id": faqUrl + "#breadcrumb" },
+            "mainEntity": faq.map(function (q) {
+                return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
+            })
+        };
+        if (newest) {
+            faqPage.dateModified = newest;
+        }
+        if (EN) {
+            sitemapPages.push({ path: "faq.html", lastmod: newest });
+        }
+
+        write(LD + "faq.html", `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: t("faq.title"),
+        ogTitle: t("faq.ogTitle"),
+        description: t("faq.description"),
+        url: faqUrl,
+        path: "faq.html",
+        prefix: "",
+        jsonLd: { "@context": "https://schema.org", "@graph": [breadcrumb(t("faq.breadcrumb"), faqUrl), faqPage] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("./")}
+    <main class="player-page">
+        ${crumbs("./", `<span>${t("faq.crumb")}</span>`)}
+        <h1>${t("faq.h1")}</h1>
+        <p>${t("faq.intro", { date: newest ? esc(newest.split("-").reverse().join("/")) : "-" })}</p>
+${faqItems(faq, "h2")}
+        <p><a href="./">${t("common.browseAll")}</a></p>
+    </main>
+    ${footer("")}
+</body>
+</html>
+`);
+
+        // ===== 3 bis. generator.html : le générateur de crosshair CS2 (cible la recherche « CS2 crosshair generator ») =====
+        const genFaq = tList("generator.faq");
+        const genUrl = langUrl("generator.html");
+        const toolsUrl = langUrl("tools/");
+        const genGraph = [
+            {
+                "@type": "WebPage",
+                "@id": genUrl,
+                "url": genUrl,
+                "name": t("generator.name"),
+                "inLanguage": lang,
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": genUrl + "#breadcrumb" },
+                "mainEntity": { "@id": genUrl + "#app" }
+            },
+            {
+                "@type": "WebApplication",
+                "@id": genUrl + "#app",
+                "name": t("generator.name"),
+                "url": genUrl,
+                "description": t("generator.appDescription"),
+                "applicationCategory": "GameApplication",
+                "operatingSystem": "Any",
+                "browserRequirements": "Requires JavaScript",
+                "isAccessibleForFree": true,
+                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                "publisher": { "@id": SITE_URL + "/#organization" }
+            },
+            sectionBreadcrumb(t("tools.breadcrumb"), toolsUrl, t("generator.breadcrumb"), genUrl),
+            faqGraph(genUrl, genFaq)
+        ];
+        if (EN) {
+            sitemapPages.push({ path: "generator.html", lastmod: newest });
+        }
+
+        write(LD + "generator.html", `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: t("generator.title"),
+        ogTitle: t("generator.ogTitle"),
+        description: t("generator.description"),
+        url: genUrl,
+        path: "generator.html",
+        prefix: "",
+        crosshair: true,
+        generator: true,
+        jsonLd: { "@context": "https://schema.org", "@graph": genGraph }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("./", "tools")}
+    <main class="player-page gen-page">
+        ${crumbs("./", `<a href="tools/">${t("tools.crumb")}</a> › <span>${t("generator.crumb")}</span>`)}
+        <h1>${t("generator.h1")}</h1>
+        <p>${t("generator.intro")}</p>
+
+        ${generatorBlock}
+
+        <h2>${t("generator.howTitle")}</h2>
+        <ol>
+            <li>${t("generator.how1")}</li>
+            <li>${t("generator.how2")}</li>
+            <li>${t("generator.how3")}</li>
+            <li>${t("generator.how4")}</li>
+        </ol>
+
+        <h2>${t("generator.prosTitle")}</h2>
+        <p>${t("generator.prosText", { total: total, families: esc(familyText), length: mostCommon(decoded.map(function (c) { return c.length; })), thickness: mostCommon(decoded.map(function (c) { return c.thickness; })), gap: mostCommon(decoded.map(function (c) { return c.gap; })), dot: percent(withDot), outline: percent(withOutline) })} <a href="faq.html">${t("generator.statsLink")}</a></p>
+        ${famous.length ? `<ul class="related">${famous.map(function (p) {
+            return `<li><a href="players/${slug(p.name)}.html">${t("common.crosshairOf", { name: esc(p.name) })}</a></li>`;
+        }).join("")}</ul>` : ""}
+
+        <h2>${t("generator.faqTitle")}</h2>
+${faqItems(genFaq, "h3")}
+        <p><a href="./">${t("common.browseAll")}</a></p>
+    </main>
+    ${footer("")}
+
+    <script type="module">
+        import { initGenerator } from "${ap("./")}generator.min.js?v=${GENERATOR_HASH}";
+        initGenerator(document.getElementById("gen"), { syncHash: true });
+    </script>
+</body>
+</html>
+`);
+
+        // ===== 3 ter. Les skins des pros : skins/index.html + une page par joueur (skins/<pseudo>.html) =====
+        const skinFiles = ["index.html"];
+        const skinsUrl = langUrl("skins/");
+        const sa = ap("../"); // racine du site depuis skins/
+
+        function skinList(groups, max) {
+            const names = groups.slice(0, max).map(function (g) {
+                return g.item.name + (g.item.exterior !== "Vanilla" ? " (" + opt("skins.exteriors." + g.item.exterior, g.item.exterior) + ")" : "");
+            });
+            return names.length > 1 ? names.slice(0, -1).join(", ") + " " + t("common.and") + " " + names[names.length - 1] : names.join("");
+        }
+
+        skinPlayers.forEach(function (p) {
+            const name = esc(p.name);
+            const file = p.slug + ".html";
+            const rel = "skins/" + file;
+            const url = langUrl(rel);
+            const known = players.find(function (x) { return x.name === p.name; });
+            const byCategory = SKIN_CATEGORIES.map(function (key) {
+                return { key: key, label: categoryLabel(key), groups: p.groups.filter(function (g) { return g.item.category === key; }) };
+            }).filter(function (c) { return c.groups.length > 0; });
+            const knives = p.groups.filter(function (g) { return g.item.category === "knives"; });
+            const gloves = p.groups.filter(function (g) { return g.item.category === "gloves"; });
+            const top = p.best.slice(0, 2);
+            skinFiles.push(file);
+            if (EN) {
+                sitemapPages.push({ path: rel, lastmod: isoDate(p.updated), images: p.groups.slice(0, 10).map(function (g) { return `${SITE_URL}/skins/img/${g.item.image}.webp`; }) });
+            }
+
+            const faq = [];
+            faq.push([t("skins.faqCountQ", { name: p.name }),
+                t("skins.faqCountA", { name: p.name, count: p.items.length, different: p.groups.length, knives: t("skins.knifeCount", { count: knives.length }), gloves: t("skins.gloveCount", { count: gloves.length }), date: p.updated })]);
+            if (knives.length) {
+                faq.push([t("skins.faqKnifeQ", { name: p.name }), t("skins.faqOwns", { name: p.name, list: skinList(knives, 6) })]);
+            }
+            if (gloves.length) {
+                faq.push([t("skins.faqGlovesQ", { name: p.name }), t("skins.faqOwns", { name: p.name, list: skinList(gloves, 6) })]);
+            }
+            if (p.hasPrices) {
+                faq.unshift([t("skins.faqWorthQ", { name: p.name }),
+                    t("skins.faqWorthA", { name: p.name, usd: money(p.value, "USD"), eur: money(p.valueEur, "EUR"), date: skinData.prices.updated, item: p.best[0].item.marketName, price: price(p.best[0].item.price, "USD") })]);
+            }
+            faq.push([t("skins.faqFloatQ"), t("skins.faqFloatA", { name: p.name })]);
+
+            // Description Google : 160 caractères maximum (la fin n'est ajoutée que s'il reste de la place)
+            const topNames = top.map(function (g) { return g.item.name; }).join(" " + t("common.and") + " ");
+            const descriptionStart = p.hasPrices
+                ? t("skins.descStartPrice", { name: p.name, usd: money(p.value, "USD"), count: p.items.length, top: topNames })
+                : (top.length ? t("skins.descStartTop", { name: p.name, count: p.items.length, top: topNames }) : t("skins.descStart", { name: p.name, count: p.items.length }));
+            const descriptionEnd = p.hasPrices ? t("skins.descEndPrice") : t("skins.descEnd", { date: p.updated });
+            const description = descriptionStart + ((descriptionStart + descriptionEnd).length <= 160 ? descriptionEnd : "");
+            const graph = [
+                {
+                    "@type": "CollectionPage",
+                    "@id": url,
+                    "url": url,
+                    "name": t("skins.pageName", { name: p.name }),
+                    "description": description,
+                    "inLanguage": lang,
+                    "isPartOf": { "@id": SITE_URL + "/#website" },
+                    "about": { "@id": url + "#person" },
+                    "breadcrumb": { "@id": url + "#breadcrumb" },
+                    "dateModified": isoDate(p.updated),
+                    "mainEntity": {
+                        "@type": "ItemList",
+                        "name": t("skins.listName", { name: p.name }),
+                        "numberOfItems": p.groups.length,
+                        "itemListElement": p.groups.slice(0, 30).map(function (g, i) {
+                            return { "@type": "ListItem", "position": i + 1, "name": g.item.marketName, "image": `${SITE_URL}/skins/img/${g.item.image}.webp` };
+                        })
+                    }
+                },
+                sectionBreadcrumb(t("skins.breadcrumb"), skinsUrl, t("skins.playerBreadcrumb", { name: p.name }), url),
+                {
+                    "@type": "Person",
+                    "@id": url + "#person",
+                    "name": p.name,
+                    "description": p.team ? t("skins.personTeam", { name: p.name, team: p.team }) : t("skins.person", { name: p.name }),
+                    "url": known ? langUrl(`players/${slug(known.name)}.html`) : url
+                },
+                faqGraph(url, faq)
+            ];
+            if (profileLinks(known).length) {
+                graph[2].sameAs = profileLinks(known);
+            }
+            if (p.team) {
+                graph[2].memberOf = { "@type": "SportsTeam", "name": p.team, "sport": "Counter-Strike 2" };
+            }
+            const others = skinPlayers.filter(function (o) { return o !== p; });
+
+            write(LD + "skins/" + file, `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: p.hasPrices ? t("skins.titleValue", { name: name }) : t("skins.title", { name: name }),
+        ogTitle: t("skins.ogTitle", { name: name }),
+        description: description,
+        url: url,
+        path: rel,
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": graph }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "skins")}
+
+    <main class="player-page skins-page" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
+        ${crumbs("../", `<a href="./">${t("skins.crumb")}</a> › <span>${name}</span>`)}
+
+        <div class="player-head">
+            ${skinPhoto(p, sa, 120, 134, "player-photo", true)}
+            <div>
+                <h1>${t("skins.h1", { name: name })}</h1>
+                ${p.team ? `<p class="player-team">${logoFor(p.team) ? `<img class="player-team-logo" src="${sa}${logoFor(p.team)}" alt="" width="20" height="20">` : ""}${esc(p.team)}</p>` : ""}
+                <p class="player-date">${t("skins.count", { count: p.items.length })}${p.hasPrices ? ` · <strong>${money(p.value, "USD")}</strong> / ${money(p.valueEur, "EUR")}` : ""} · ${t("skins.updatedLabel")} <time datetime="${isoDate(p.updated)}">${esc(p.updated)}</time></p>
+            </div>
+        </div>
+
+        <p>${esc(skinSummary(p))} ${top.length ? t(p.hasPrices ? "skins.topExpensive" : "skins.topRarest", { name: name, list: esc(skinList(top, 2)) }) : ""} ${t("skins.floatNote", { name: name })}${known ? ` ${t("skins.crosshairQuestion", { name: name })} <a href="../players/${slug(known.name)}.html">${t("skins.crosshairLink", { name: name })}</a>` : ""}</p>
+
+        <nav class="skin-jump" aria-label="${t("skins.jumpAria")}">
+            ${byCategory.map(function (c) {
+                return `<a href="#${c.key}">${c.label} <span>${c.groups.reduce(function (n, g) { return n + g.count; }, 0)}</span></a>`;
+            }).join("\n            ")}
+        </nav>
+        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+
+${p.hasPrices ? `        <section class="skin-section" id="most-expensive" aria-labelledby="most-expensive-title">
+            <h2 id="most-expensive-title">${t("skins.mostExpensive", { name: name })}</h2>
+            <div class="skin-grid">
+            ${p.best.slice(0, 8).map(function (g, i) { return skinCard(g, p.name, sa, i < 4); }).join("\n            ")}
+            </div>
+        </section>
+` : ""}${byCategory.map(function (c, ci) {
+        return `        <section class="skin-section" id="${c.key}" aria-labelledby="${c.key}-title">
+            <h2 id="${c.key}-title">${t("skins.sectionTitle", { name: name, label: c.label.toLowerCase() })}</h2>
+            <div class="skin-grid">
+            ${c.groups.map(function (g, i) { return skinCard(g, p.name, sa, ci === 0 && i < 4); }).join("\n            ")}
+            </div>
+        </section>`;
+    }).join("\n")}
+
+        <h2>${t("skins.faqTitle", { name: name })}</h2>
+${faqItems(faq, "h3")}
+
+        ${others.length ? `<h2>${t("skins.othersTitle")}</h2>
+        <ul class="related">${others.map(function (o) {
+            return `<li><a href="${o.slug}.html">${t("skins.othersLink", { name: esc(o.name) })}</a></li>`;
+        }).join("")}</ul>` : ""}
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+        });
+
+        // La page d'accueil des skins : tous les pros + leurs couteaux et gants
+        if (skinPlayers.length) {
+            const hubDescription = t("skins.hubDescription", { names: skinPlayers.map(function (p) { return p.name; }).join(", "), date: skinData.updated });
+            if (EN) {
+                sitemapPages.push({ path: "skins/", lastmod: isoDate(skinData.updated) });
+            }
+            write(LD + "skins/index.html", `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: t("skins.hubTitle"),
+        ogTitle: t("skins.hubOgTitle"),
+        description: hubDescription,
+        url: skinsUrl,
+        path: "skins/",
+        prefix: "../",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": skinsUrl,
+                "url": skinsUrl,
+                "name": t("skins.hubOgTitle"),
+                "description": hubDescription,
+                "inLanguage": lang,
+                "isPartOf": { "@id": SITE_URL + "/#website" },
+                "breadcrumb": { "@id": skinsUrl + "#breadcrumb" },
+                "dateModified": isoDate(skinData.updated),
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": skinPlayers.map(function (p, i) {
+                        return { "@type": "ListItem", "position": i + 1, "name": t("skins.hubListItem", { name: p.name }), "url": skinsUrl + p.slug + ".html" };
+                    })
+                }
+            },
+            sectionBreadcrumb(t("skins.breadcrumb"), skinsUrl)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("../", "skins")}
+
+    <main class="player-page skins-page">
+        ${crumbs("../", `<span>${t("skins.crumb")}</span>`)}
+        <h1>${t("skins.hubH1")}</h1>
+        <p>${t("skins.hubIntro", { date: esc(skinData.updated) })}</p>
+        ${PRICE_NOTE ? `<p class="skin-note">${PRICE_NOTE}</p>` : ""}
+
+        <div class="ps-tiles">
+            ${skinPlayers.map(function (p) {
+                const best = p.best[0];
+                return `<a class="ps-tile" href="${p.slug}.html" style="--team: ${teamColor(p.team)}; --on-team: ${textOnColor(teamColor(p.team))}">
+                ${skinPhoto(p, sa, 56, 63)}
+                <span class="ps-text"><span class="ps-name">${esc(p.name)}</span>${p.team ? `<span class="ps-info">${esc(p.team)}</span>` : ""}<span class="ps-info">${t("skins.count", { count: p.items.length })}${p.hasPrices ? " · " + money(p.value, "USD") : ""}</span></span>
+                <img class="ps-tile-skin" src="${EN ? "" : sa + "skins/"}img/${esc(best.item.image)}.webp" alt="${t("skins.altShort", { name: esc(p.name), skin: esc(best.item.name) })}" width="80" height="60" loading="lazy" decoding="async">
+            </a>`;
+            }).join("\n            ")}
+        </div>
+
+${skinPlayers.map(function (p) {
+        const special = p.groups.filter(function (g) { return g.item.category === "knives" || g.item.category === "gloves"; });
+        const shown = (special.length ? special : p.groups).slice(0, 8);
+        return `        <section class="skin-section" aria-labelledby="hub-${p.slug}">
+            <h2 id="hub-${p.slug}">${t(special.length ? "skins.hubKnivesGloves" : "skins.hubBest", { name: esc(p.name) })}</h2>
+            <div class="skin-grid">
+            ${shown.map(function (g) { return skinCard(g, p.name, sa, false); }).join("\n            ")}
+            </div>
+            <p><a href="${p.slug}.html">${t("skins.seeAll", { count: p.items.length, name: esc(p.name) })}</a></p>
+        </section>`;
+    }).join("\n")}
+    </main>
+
+    ${footer("../")}
+</body>
+</html>
+`);
+        }
+
+        // Supprimer les pages de skins des joueurs retirés (ou devenus privés)
+        if (fs.existsSync(LD + "skins")) {
+            fs.readdirSync(LD + "skins").forEach(function (f) {
+                if (f.endsWith(".html") && !skinFiles.includes(f)) {
+                    fs.unlinkSync(LD + "skins/" + f);
+                    console.log("Page supprimée : " + LD + "skins/" + f);
+                }
+            });
+        }
+
+        // ===== 3 quater. Les commandes console CS2 : commands/index.html + une page par commande importante =====
+        // Données : commands.json (status "check" = pas encore vérifiée en jeu -> pas publiée)
+        // Traductions : i18n/<langue>/commands.json (catégories + summary / description / valeurs de chaque commande)
+        const cmdTr = I.content("commands") || {};
+        const guideTr = I.content("guides") || {};
+        // Les guides dans cette langue (la traduction remplace le guide anglais du même slug, s'il existe)
+        const guides = guideData ? guideData.guides.map(function (g) {
+            return (guideTr.guides || []).find(function (x) { return x.slug === g.slug; }) || g;
+        }) : [];
+        // Les guides qui parlent d'une commande (liens "Learn more" sur la page de la commande)
+        function guidesFor(name) {
+            return guides.filter(function (g) { return (g.commands || []).includes(name); });
+        }
+        const commandFiles = [];
+        const commandsUrl = langUrl("commands/");
+        if (commandData) {
+            const published = commandData.commands.filter(function (c) { return c.status !== "check"; }).map(function (c) {
+                const tr = (cmdTr.commands || {})[c.name];
+                if (!tr) {
+                    return c;
+                }
+                const merged = Object.assign({}, c, { summary: tr.summary || c.summary, description: tr.description || c.description });
+                if (c.values && tr.values) {
+                    merged.values = c.values.map(function (v, i) { return [v[0], tr.values[i] || v[1]]; });
+                }
+                return merged;
+            });
+            const byCmd = new Map(published.map(function (c) { return [c.name, c]; }));
+            const categoryNames = commandData.categories.map(function (cat) { return [cat[0], (cmdTr.categories || {})[cat[0]] || cat[1]]; });
+            const categoryName = Object.fromEntries(categoryNames);
+            const hasPage = function (c) { return c && c.page && /^[a-z0-9_]+$/.test(c.name); };
+            const cmdFile = function (name) { return name + ".html"; };
+
+            // Lien vers une commande : sa page si elle en a une, sinon sa ligne dans la liste
+            function cmdHref(name, prefix) {
+                const c = byCmd.get(name);
+                if (!c) {
+                    return "";
+                }
+                return hasPage(c) ? prefix + cmdFile(name) : prefix + "#" + encodeURIComponent(name);
+            }
+
+            // Transforme les noms de commandes cités dans un texte en liens (sauf la commande de la page)
+            // Seulement les noms techniques avec un "_" : "crosshair", "volume" ou "rate" sont aussi des mots normaux
+            const linkable = published.map(function (c) { return c.name; }).filter(function (n) { return /^[a-z0-9_]+$/.test(n) && n.includes("_"); })
+                .sort(function (a, b) { return b.length - a.length; });
+            const linkPattern = new RegExp("(?<![\\w+])(" + linkable.join("|") + ")(?![\\w])", "g");
+            function linkify(text, self, prefix) {
+                return esc(text).replace(linkPattern, function (name) {
+                    return name === self ? `<code>${name}</code>` : `<a href="${cmdHref(name, prefix)}"><code>${name}</code></a>`;
+                });
+            }
+
+            function copyRow(command) {
+                return `<div class="field-row">
+                <code>${esc(command)}</code>
+                <button type="button" class="mini" data-copy>${t("common.copy")}</button>
+            </div>`;
+            }
+
+            function badges(c) {
+                return (c.status === "removed" ? `<span class="cmd-badge cmd-removed">${t("commands.removedBadge")}</span>` : "")
+                    + (c.cheat ? `<span class="cmd-badge">${t("commands.cheatBadge")}</span>` : "");
+            }
+
+            // Statistiques réelles des pros pour les commandes de crosshair (contenu unique)
+            const CROSSHAIR_FIELDS = {
+                cl_crosshair_length: function (c) { return c.length; },
+                cl_crosshair_thickness: function (c) { return c.thickness; },
+                cl_crosshair_gap: function (c) { return c.gap; },
+                cl_crosshair_screen_height: function (c) { return c.screenHeight; },
+                cl_crosshairstyle: function (c) { return c.style; },
+                cl_crosshairdot: function (c) { return c.centerDotEnabled ? 1 : 0; },
+                cl_crosshair_t: function (c) { return c.tStyleEnabled ? 1 : 0; },
+                cl_crosshair_drawoutline: function (c) { return c.outlineMode > 0 ? 1 : 0; },
+                cl_crosshair_recoil: function (c) { return c.followRecoil ? 1 : 0; },
+                cl_crosshaircolor_a: function (c) { return c.alpha; }
+            };
+            function proStats(c) {
+                const read = CROSSHAIR_FIELDS[c.name];
+                if (!read || !proCrosshairs.length) {
+                    return "";
+                }
+                const count = {};
+                proCrosshairs.forEach(function (x) {
+                    const v = read(x.c);
+                    count[v] = (count[v] || 0) + 1;
+                });
+                const values = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; });
+                const top = values[0];
+                const examples = proCrosshairs.filter(function (x) { return String(read(x.c)) === top; }).slice(0, 6);
+                const rows = values.slice(0, 5).map(function (v) {
+                    const share = Math.round(count[v] / proCrosshairs.length * 100);
+                    return `<div><dt><code>${esc(c.name)} ${esc(v)}</code></dt><dd><span class="cmd-bar"><i style="width: ${share}%"></i></span>${share}%</dd></div>`;
+                }).join("");
+                return `<h2>${t("commands.prosTitle")}</h2>
+        <p>${t("commands.prosText", { total: proCrosshairs.length, value: `<code>${esc(c.name)} ${esc(top)}</code>`, share: Math.round(count[top] / proCrosshairs.length * 100) })}</p>
+        <dl class="cmd-stats">${rows}</dl>
+        <p>${t("commands.prosWho", { value: `<code>${esc(c.name)} ${esc(top)}</code>` })}</p>
+        <ul class="related">${examples.map(function (x) {
+            return `<li><a href="../players/${slug(x.player.name)}.html">${t("common.crosshairOf", { name: esc(x.player.name) })}</a></li>`;
+        }).join("")}</ul>`;
+            }
+
+            function cmdBreadcrumb(name, url) {
+                return sectionBreadcrumb(t("commands.breadcrumb"), commandsUrl, name, url);
+            }
+
+            function faqHtml(faq, title) {
+                return `<h2>${title}</h2>
+${faqItems(faq, "h3")}`;
+            }
+
+            // Petit script des pages de commandes : boutons Copy (+ recherche et filtres sur la liste)
+            const COPY_SCRIPT = `import { copyText } from "${ap("../")}crosshair.min.js?v=${CROSSHAIR_HASH}";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {
@@ -1360,117 +1463,119 @@ ${faq.map(function (q) {
             }
         });`;
 
-        // --- Une page par commande importante ---
-        published.filter(hasPage).forEach(function (c) {
-            const url = commandsUrl + cmdFile(c.name);
-            const name = esc(c.name);
-            const removed = c.status === "removed";
-            const replacement = c.replacement && byCmd.get(c.replacement);
-            commandFiles.push(cmdFile(c.name));
-
-            const faq = [[`What does ${c.name} do in CS2?`, `${c.summary} ${c.description}`]];
-            if (removed) {
-                faq.push([`Does ${c.name} work in CS2?`, `No. ${c.name} was a CS:GO command and does not exist in CS2.${replacement ? " Use " + replacement.name + " instead." : ""}`]);
-            } else {
-                if (c.default) {
-                    faq.push([`What is the default value of ${c.name}?`, `The default value of ${c.name} in CS2 is ${c.default}.`]);
+            // --- Une page par commande importante ---
+            published.filter(hasPage).forEach(function (c) {
+                const rel = "commands/" + cmdFile(c.name);
+                const url = langUrl(rel);
+                const name = esc(c.name);
+                const removed = c.status === "removed";
+                const replacement = c.replacement && byCmd.get(c.replacement);
+                commandFiles.push(cmdFile(c.name));
+                if (EN) {
+                    sitemapPages.push({ path: rel, lastmod: isoDate(commandData.updated) });
                 }
-                faq.push([`Does ${c.name} need sv_cheats?`, c.cheat
-                    ? `Yes. ${c.name} only works with sv_cheats 1, on a server you host (a private match with bots, for example), never in official matchmaking.`
-                    : `No. ${c.name} works without sv_cheats, including in official matchmaking.`]);
-            }
 
-            // Titre : le plus complet qui tient en 65 caractères (les noms de commandes peuvent être longs)
-            const titles = removed
-                ? [`${c.name} in CS2: Removed, What to Use Instead | ClutchCrosshair`, `${c.name} in CS2: Removed, Use This Instead`, `${c.name} removed in CS2`]
-                : [`${c.name} CS2 Command: Values & Examples | ClutchCrosshair`, `${c.name} CS2 Command | ClutchCrosshair`, `${c.name} CS2 Command: Values & Examples`, `${c.name} CS2 Command`];
-            const title = esc(titles.find(function (t) { return t.length <= 65; }) || titles[titles.length - 1]);
-            // Description : résumé + première phrase de l'explication + fin, tant que ça tient en 160 caractères
-            const sentences = c.description.split(/(?<=\.)\s/);
-            const descEnd = removed ? " See what to use instead." : (c.default ? ` Default ${c.default}, values and examples.` : " Values and examples.");
-            let descStart = `${c.name} in CS2: ${c.summary}`;
-            let added = 0;
-            sentences.forEach(function (s) {
-                if (added === sentences.indexOf(s) && (descStart + " " + s + descEnd).length <= 160) {
-                    descStart += " " + s;
-                    added++;
+                const faq = [[t("commands.faqWhatQ", { name: c.name }), `${c.summary} ${c.description}`]];
+                if (removed) {
+                    faq.push([t("commands.faqWorkQ", { name: c.name }), t("commands.faqWorkA", { name: c.name }) + (replacement ? t("commands.faqWorkInstead", { name: replacement.name }) : "")]);
+                } else {
+                    if (c.default) {
+                        faq.push([t("commands.faqDefaultQ", { name: c.name }), t("commands.faqDefaultA", { name: c.name, value: c.default })]);
+                    }
+                    faq.push([t("commands.faqCheatsQ", { name: c.name }), c.cheat
+                        ? t("commands.faqCheatsYes", { name: c.name })
+                        : t("commands.faqCheatsNo", { name: c.name })]);
                 }
-            });
-            let description = descStart + descEnd;
-            if (!added) {
-                // Première phrase trop longue : on la coupe proprement à la fin d'un mot
-                description = (descStart + " " + sentences[0]).slice(0, 157).replace(/\s+\S*$/, "") + "…";
-            }
-            const graph = [
-                {
-                    "@type": "TechArticle",
-                    "@id": url + "#article",
-                    "headline": `${c.name} CS2 console command`,
-                    "description": description,
-                    "url": url,
-                    "inLanguage": "en",
-                    "isPartOf": { "@id": SITE_URL + "/#website" },
-                    "publisher": { "@id": SITE_URL + "/#organization" },
-                    "dateModified": isoDate(commandData.updated),
-                    "about": { "@type": "Thing", "name": "Counter-Strike 2" }
-                },
-                cmdBreadcrumb(c.name, url),
-                faqGraph(url, faq)
-            ];
-            const related = (c.related || []).map(function (n) { return byCmd.get(n); }).filter(Boolean);
 
-            fs.writeFileSync("commands/" + cmdFile(c.name), `<!DOCTYPE html>
-<html lang="en">
+                // Titre : le plus complet qui tient en 65 caractères (les noms de commandes peuvent être longs)
+                const titles = tList(removed ? "commands.titlesRemoved" : "commands.titles", { name: c.name });
+                const title = esc(titles.find(function (x) { return x.length <= 65; }) || titles[titles.length - 1]);
+                // Description : résumé + première phrase de l'explication + fin, tant que ça tient en 160 caractères
+                const sentences = c.description.split(/(?<=\.)\s/);
+                const descEnd = removed ? t("commands.descEndRemoved") : (c.default ? t("commands.descEndDefault", { value: c.default }) : t("commands.descEnd"));
+                let descStart = t("commands.descStart", { name: c.name, summary: c.summary });
+                let added = 0;
+                sentences.forEach(function (s) {
+                    if (added === sentences.indexOf(s) && (descStart + " " + s + descEnd).length <= 160) {
+                        descStart += " " + s;
+                        added++;
+                    }
+                });
+                let description = descStart + descEnd;
+                if (!added) {
+                    // Première phrase trop longue : on la coupe proprement à la fin d'un mot
+                    description = (descStart + " " + sentences[0]).slice(0, 157).replace(/\s+\S*$/, "") + "…";
+                }
+                const graph = [
+                    {
+                        "@type": "TechArticle",
+                        "@id": url + "#article",
+                        "headline": t("commands.headline", { name: c.name }),
+                        "description": description,
+                        "url": url,
+                        "inLanguage": lang,
+                        "isPartOf": { "@id": SITE_URL + "/#website" },
+                        "publisher": { "@id": SITE_URL + "/#organization" },
+                        "dateModified": isoDate(commandData.updated),
+                        "about": { "@type": "Thing", "name": "Counter-Strike 2" }
+                    },
+                    cmdBreadcrumb(c.name, url),
+                    faqGraph(url, faq)
+                ];
+                const related = (c.related || []).map(function (n) { return byCmd.get(n); }).filter(Boolean);
+
+                write(LD + "commands/" + cmdFile(c.name), `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
-    ${head({ title: title, ogTitle: `${c.name} CS2 console command`, description: description, url: url, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
+    ${head({ title: title, ogTitle: t("commands.headline", { name: c.name }), description: description, url: url, path: rel, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
 </head>
 <body class="page">
     ${THEME_SCRIPT}
     ${pageTop("../", "commands")}
 
     <main class="player-page cmd-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Commands</a> › <span>${name}</span></nav>
+        ${crumbs("../", `<a href="./">${t("commands.crumb")}</a> › <span>${name}</span>`)}
         <h1 class="cmd-title">${name}</h1>
         <p class="cmd-meta"><a href="./#${esc(c.category)}">${esc(categoryName[c.category] || c.category)}</a>${badges(c)}</p>
         <p class="cmd-lead">${linkify(c.summary, c.name, "")}${removed ? "" : " " + linkify(c.description, c.name, "")}</p>
         ${removed ? "" : copyRow(c.examples && c.examples[0] ? c.examples[0] : c.syntax)}
 
-        ${removed ? `<h2>What to use instead in CS2</h2>
+        ${removed ? `<h2>${t("commands.insteadTitle")}</h2>
         <p>${linkify(c.description, c.name, "")}</p>
-        ${replacement ? `<p>Use <a href="${cmdHref(replacement.name, "")}"><code>${esc(replacement.name)}</code></a> instead: ${esc(replacement.summary.charAt(0).toLowerCase() + replacement.summary.slice(1))}</p>
-        ${copyRow(replacement.examples && replacement.examples[0] ? replacement.examples[0] : replacement.syntax)}` : (c.examples || []).map(copyRow).join("\n        ")}` : `<h2>Syntax</h2>
-        <p><code class="cmd-syntax">${esc(c.syntax)}</code>${c.default ? ` · Default value: <code>${esc(c.default)}</code>` : ""}</p>
+        ${replacement ? `<p>${t("commands.useInstead", { command: `<a href="${cmdHref(replacement.name, "")}"><code>${esc(replacement.name)}</code></a>`, summary: esc(replacement.summary.charAt(0).toLowerCase() + replacement.summary.slice(1)) })}</p>
+        ${copyRow(replacement.examples && replacement.examples[0] ? replacement.examples[0] : replacement.syntax)}` : (c.examples || []).map(copyRow).join("\n        ")}` : `<h2>${t("commands.syntax")}</h2>
+        <p><code class="cmd-syntax">${esc(c.syntax)}</code>${c.default ? ` · ${t("commands.defaultValue")} <code>${esc(c.default)}</code>` : ""}</p>
         ${c.values ? `<table class="cmd-values">
-            <thead><tr><th scope="col">Value</th><th scope="col">What it does</th></tr></thead>
+            <thead><tr><th scope="col">${t("commands.value")}</th><th scope="col">${t("commands.whatItDoes")}</th></tr></thead>
             <tbody>${c.values.map(function (v) { return `<tr><td><code>${esc(v[0])}</code></td><td>${esc(v[1])}</td></tr>`; }).join("")}</tbody>
         </table>` : ""}
-        ${c.cheat ? `<p>This command needs <a href="${cmdHref("sv_cheats", "")}"><code>sv_cheats 1</code></a>: it only works on a server you host, never in official matchmaking.</p>` : ""}
+        ${c.cheat ? `<p>${t("commands.cheatNote", { link: `<a href="${cmdHref("sv_cheats", "")}"><code>sv_cheats 1</code></a>` })}</p>` : ""}
 
-        <h2>Examples</h2>
+        <h2>${t("commands.examples")}</h2>
         ${(c.examples || []).map(copyRow).join("\n        ")}
 
-        <h2>How to use ${name} in CS2</h2>
+        <h2>${t("commands.howTitle", { name: name })}</h2>
         <ol>
-            <li>Enable the developer console in <strong>Settings › Game › Enable Developer Console</strong>.</li>
-            <li>Press <strong>~</strong> to open the console, type the command and press <strong>Enter</strong>.</li>
-            <li>To apply it every time you launch CS2, add the line to an <code>autoexec.cfg</code> file in your cfg folder.</li>
+            <li>${t("commands.how1")}</li>
+            <li>${t("commands.how2")}</li>
+            <li>${t("commands.how3")}</li>
         </ol>`}
 
         ${proStats(c)}
-        ${c.category === "crosshair" ? `<p>Want to try a crosshair before typing commands? Use the <a href="../generator.html">CS2 crosshair generator</a> or copy a <a href="../">pro crosshair</a>: every pro page gives you the full list of console commands.</p>` : ""}
+        ${c.category === "crosshair" ? `<p>${t("commands.tryGenerator")}</p>` : ""}
 
-        ${related.length ? `<h2>Related commands</h2>
+        ${related.length ? `<h2>${t("commands.related")}</h2>
         <ul class="related">${related.map(function (r) {
             return `<li><a href="${cmdHref(r.name, "")}">${esc(r.name)}</a></li>`;
         }).join("")}</ul>` : ""}
 
-        ${guidesFor(c.name).length ? `<h2>Learn more</h2>
+        ${guidesFor(c.name).length ? `<h2>${t("commands.learnMore")}</h2>
         <ul class="related">${guidesFor(c.name).map(function (g) {
             return `<li><a href="../guides/${g.slug}.html">${esc(g.title)}</a></li>`;
         }).join("")}</ul>` : ""}
 
-        ${faqHtml(faq, `${name} FAQ`)}
-        <p><a href="./">All CS2 console commands ›</a></p>
+        ${faqHtml(faq, t("commands.faqTitle", { name: name }))}
+        <p><a href="./">${t("commands.allLink")}</a></p>
     </main>
 
     ${footer("../")}
@@ -1480,37 +1585,36 @@ ${faq.map(function (q) {
 </body>
 </html>
 `);
-        });
+            });
 
-        // --- La liste de toutes les commandes : recherche instantanée + filtres par catégorie ---
-        const hubFaq = [
-            ["How do I open the console in CS2?", "Go to Settings › Game and set Enable Developer Console to Yes. Then press the ~ key (under Escape) in game to open it. If your keyboard has no ~ key, bind toggleconsole to another key."],
-            ["Do console commands work in competitive matchmaking?", "Most commands that change your own settings (crosshair, HUD, radar, mouse, audio) work everywhere. Commands marked Needs sv_cheats, and server commands starting with mp_ or bot_, only work on a server you host, for example a private match with bots."],
-            ["How do I save my console commands?", "Put them in a file named autoexec.cfg in the game's cfg folder (game/csgo/cfg) and add +exec autoexec to your launch options, or type exec autoexec in the console."],
-            ["Why does a CS:GO command not work in CS2?", "Many CS:GO commands were removed or renamed in CS2, such as net_graph. Commands marked Removed in CS2 on this page tell you what to use instead."]
-        ];
-        const hubDescription = `Every useful CS2 console command explained: crosshair, HUD, radar, FPS, network, practice and bot commands, with default values, examples and a Copy button.`;
-        const pageList = published.filter(hasPage);
-        const categoriesUsed = commandData.categories.filter(function (cat) {
-            return published.some(function (c) { return c.category === cat[0]; });
-        });
-        fs.writeFileSync("commands/index.html", `<!DOCTYPE html>
-<html lang="en">
+            // --- La liste de toutes les commandes : recherche instantanée + filtres par catégorie ---
+            const hubFaq = tList("commands.hubFaq");
+            const hubDescription = t("commands.hubDescription");
+            const pageList = published.filter(hasPage);
+            const categoriesUsed = categoryNames.filter(function (cat) {
+                return published.some(function (c) { return c.category === cat[0]; });
+            });
+            if (EN) {
+                sitemapPages.push({ path: "commands/", lastmod: isoDate(commandData.updated) });
+            }
+            write(LD + "commands/index.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
     ${head({
-        title: "CS2 Console Commands List (2026) | ClutchCrosshair",
-        ogTitle: "CS2 Console Commands",
+        title: t("commands.hubTitle"),
+        ogTitle: t("commands.hubOgTitle"),
         description: hubDescription,
         url: commandsUrl,
+        path: "commands/",
         prefix: "../",
         jsonLd: { "@context": "https://schema.org", "@graph": [
             {
                 "@type": "CollectionPage",
                 "@id": commandsUrl,
                 "url": commandsUrl,
-                "name": "CS2 Console Commands",
+                "name": t("commands.hubOgTitle"),
                 "description": hubDescription,
-                "inLanguage": "en",
+                "inLanguage": lang,
                 "isPartOf": { "@id": SITE_URL + "/#website" },
                 "breadcrumb": { "@id": commandsUrl + "#breadcrumb" },
                 "dateModified": isoDate(commandData.updated),
@@ -1532,34 +1636,34 @@ ${faq.map(function (q) {
     ${pageTop("../", "commands")}
 
     <main class="player-page cmd-hub">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Commands</span></nav>
-        <h1>CS2 Console Commands</h1>
-        <p>${published.length} useful CS2 console commands explained in plain English: what each one does, its values, its default and ready-to-copy examples. Commands from CS:GO that no longer work are marked <strong>Removed in CS2</strong>. Updated ${esc(commandData.updated)}.</p>
+        ${crumbs("../", `<span>${t("commands.crumb")}</span>`)}
+        <h1>${t("commands.hubH1")}</h1>
+        <p>${t("commands.hubIntro", { count: published.length, date: esc(commandData.updated) })}</p>
 
         <div class="cmd-tools">
             <div class="hero-search cmd-search">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
-                <input type="search" id="cmd-search" placeholder="Search a command, e.g. crosshair, fps, radar..." aria-label="Search a CS2 console command" autocomplete="off" spellcheck="false">
+                <input type="search" id="cmd-search" placeholder="${t("commands.searchPlaceholder")}" aria-label="${t("commands.searchAria")}" autocomplete="off" spellcheck="false">
             </div>
-            <div class="cmd-filters" role="group" aria-label="Filter by category">
-                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">All <span>${published.length}</span></button>
+            <div class="cmd-filters" role="group" aria-label="${t("commands.filterAria")}">
+                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">${t("commands.all")} <span>${published.length}</span></button>
                 ${categoriesUsed.map(function (cat) {
                     return `<button type="button" class="cmd-filter" data-cat="${cat[0]}" aria-pressed="false">${esc(cat[1])} <span>${published.filter(function (c) { return c.category === cat[0]; }).length}</span></button>`;
                 }).join("\n                ")}
             </div>
         </div>
-        <p class="cmd-empty hidden" id="cmd-empty">No command found. Try another word, or type <code>find</code> followed by a word in the CS2 console.</p>
+        <p class="cmd-empty hidden" id="cmd-empty">${t("commands.empty")}</p>
 
 ${categoriesUsed.map(function (cat) {
         return `        <section class="cmd-section" id="${cat[0]}" data-cat="${cat[0]}" aria-labelledby="${cat[0]}-title">
-            <h2 id="${cat[0]}-title">${esc(cat[1])} commands</h2>
+            <h2 id="${cat[0]}-title">${t("commands.sectionTitle", { category: esc(cat[1]) })}</h2>
             <div class="cmd-grid">
             ${published.filter(function (c) { return c.category === cat[0]; }).map(function (c) {
                 const search = [c.name, c.summary, c.description, cat[1]].join(" ").toLowerCase();
                 const example = c.status === "removed" ? (byCmd.get(c.replacement) ? byCmd.get(c.replacement).examples[0] : null) : (c.examples && c.examples[0]) || c.syntax;
                 return `<article class="cmd${c.status === "removed" ? " cmd-is-removed" : ""}" id="${esc(c.name)}" data-cat="${cat[0]}" data-search="${esc(search)}">
                 <h3 class="cmd-name">${hasPage(c) ? `<a href="${cmdFile(c.name)}">${esc(c.name)}</a>` : esc(c.name)}${badges(c)}</h3>
-                <p>${esc(c.summary)}${c.default ? ` <span class="cmd-default">Default: <code>${esc(c.default)}</code></span>` : ""}</p>
+                <p>${esc(c.summary)}${c.default ? ` <span class="cmd-default">${t("commands.default")} <code>${esc(c.default)}</code></span>` : ""}</p>
                 ${example ? copyRow(example) : ""}
             </article>`;
             }).join("\n            ")}
@@ -1567,7 +1671,7 @@ ${categoriesUsed.map(function (cat) {
         </section>`;
     }).join("\n")}
 
-        ${faqHtml(hubFaq, "CS2 console FAQ")}
+        ${faqHtml(hubFaq, t("commands.hubFaqTitle"))}
     </main>
 
     ${footer("../")}
@@ -1623,137 +1727,137 @@ ${categoriesUsed.map(function (cat) {
 </body>
 </html>
 `);
-        commandFiles.push("index.html");
+            commandFiles.push("index.html");
 
-        // Supprimer les pages de commandes qui n'existent plus
-        fs.readdirSync("commands").forEach(function (f) {
-            if (f.endsWith(".html") && !commandFiles.includes(f)) {
-                fs.unlinkSync("commands/" + f);
-            }
-        });
-        console.log((commandFiles.length - 1) + " pages de commandes + commands/index.html (" + published.length + " commandes publiées, " + (commandData.commands.length - published.length) + " à vérifier)");
-    }
-
-    // ===== 3 quinquies. Les guides CS2 : guides/index.html + une page par guide (données : guides.json) =====
-    const guideFiles = [];
-    const guidesUrl = `${SITE_URL}/guides/`;
-    if (guideData) {
-        if (!fs.existsSync("guides")) {
-            fs.mkdirSync("guides");
-        }
-        // Commandes qui ont leur propre page (pour les liens automatiques)
-        const commandPages = new Set(commandData ? commandData.commands.filter(function (c) {
-            return c.status !== "check" && c.page && /^[a-z0-9_]+$/.test(c.name);
-        }).map(function (c) { return c.name; }) : []);
-
-        function anchor(text) {
-            return slug(text).slice(0, 60);
-        }
-
-        // Mise en forme simple des textes : `code` (lien si la commande a une page), **gras**, [texte](lien)
-        function fmt(text) {
-            return esc(text)
-                .replace(/`([^`]+)`/g, function (all, code) {
-                    return commandPages.has(code) ? `<a href="../commands/${code}.html"><code>${code}</code></a>` : `<code>${code}</code>`;
-                })
-                .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (all, label, href) {
-                    return `<a href="${href.replace(/&amp;/g, "&")}">${label}</a>`;
-                });
-        }
-
-        function plainText(text) {
-            return String(text).replace(/`([^`]+)`/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
-        }
-
-        // Statistiques réelles des crosshairs des pros (blocs calculés)
-        function share(test) {
-            return Math.round(proCrosshairs.filter(test).length / proCrosshairs.length * 100);
-        }
-        function mostCommonValue(read) {
-            const count = {};
-            proCrosshairs.forEach(function (x) {
-                const v = read(x.c);
-                count[v] = (count[v] || 0) + 1;
+            // Supprimer les pages de commandes qui n'existent plus
+            fs.readdirSync(LD + "commands").forEach(function (f) {
+                if (f.endsWith(".html") && !commandFiles.includes(f)) {
+                    fs.unlinkSync(LD + "commands/" + f);
+                }
             });
-            const top = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; })[0];
-            return { value: top, share: Math.round(count[top] / proCrosshairs.length * 100) };
+            if (EN) {
+                console.log((commandFiles.length - 1) + " pages de commandes + commands/index.html (" + published.length + " commandes publiées, " + (commandData.commands.length - published.length) + " à vérifier)");
+            }
         }
-        function statsTable(rows) {
-            return `<table class="cmd-values">
-            <thead><tr><th scope="col">Setting</th><th scope="col">What pros use</th><th scope="col">Share of pros</th></tr></thead>
+
+        // ===== 3 quinquies. Les guides CS2 : guides/index.html + une page par guide (données : guides.json) =====
+        const guideFiles = [];
+        const guidesUrl = langUrl("guides/");
+        if (guideData) {
+            // Commandes qui ont leur propre page (pour les liens automatiques)
+            const commandPages = new Set(commandData ? commandData.commands.filter(function (c) {
+                return c.status !== "check" && c.page && /^[a-z0-9_]+$/.test(c.name);
+            }).map(function (c) { return c.name; }) : []);
+            const guidesUpdated = guideTr.updated || guideData.updated;
+
+            function anchor(text) {
+                return slug(String(text).normalize("NFD").replace(/[\u0300-\u036f]/g, "")).slice(0, 60); // sans accents (« Réglages » -> reglages)
+            }
+
+            // Mise en forme simple des textes : `code` (lien si la commande a une page), **gras**, [texte](lien)
+            function fmt(text) {
+                return esc(text)
+                    .replace(/`([^`]+)`/g, function (all, code) {
+                        return commandPages.has(code) ? `<a href="../commands/${code}.html"><code>${code}</code></a>` : `<code>${code}</code>`;
+                    })
+                    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (all, label, href) {
+                        return `<a href="${href.replace(/&amp;/g, "&")}">${label}</a>`;
+                    });
+            }
+
+            function plainText(text) {
+                return String(text).replace(/`([^`]+)`/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+            }
+
+            // Statistiques réelles des crosshairs des pros (blocs calculés)
+            function share(test) {
+                return Math.round(proCrosshairs.filter(test).length / proCrosshairs.length * 100);
+            }
+            function mostCommonValue(read) {
+                const count = {};
+                proCrosshairs.forEach(function (x) {
+                    const v = read(x.c);
+                    count[v] = (count[v] || 0) + 1;
+                });
+                const top = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; })[0];
+                return { value: top, share: Math.round(count[top] / proCrosshairs.length * 100) };
+            }
+            function statsTable(rows) {
+                return `<table class="cmd-values">
+            <thead><tr><th scope="col">${t("guides.statsSetting")}</th><th scope="col">${t("guides.statsWhat")}</th><th scope="col">${t("guides.statsShare")}</th></tr></thead>
             <tbody>${rows.map(function (r) { return `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`; }).join("")}</tbody>
         </table>`;
-        }
+            }
 
-        function block(b) {
-            if (b.type === "p") {
-                return `<p>${fmt(b.text)}</p>`;
-            }
-            if (b.type === "tip") {
-                return `<p class="guide-tip">${fmt(b.text)}</p>`;
-            }
-            if (b.type === "list") {
-                return `<ul>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ul>`;
-            }
-            if (b.type === "steps") {
-                return `<ol>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ol>`;
-            }
-            if (b.type === "table") {
-                return `<div class="table-wrap"><table class="cmd-values">
+            function block(b) {
+                if (b.type === "p") {
+                    return `<p>${fmt(b.text)}</p>`;
+                }
+                if (b.type === "tip") {
+                    return `<p class="guide-tip">${fmt(b.text)}</p>`;
+                }
+                if (b.type === "list") {
+                    return `<ul>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ul>`;
+                }
+                if (b.type === "steps") {
+                    return `<ol>${b.items.map(function (i) { return `<li>${fmt(i)}</li>`; }).join("")}</ol>`;
+                }
+                if (b.type === "table") {
+                    return `<div class="table-wrap"><table class="cmd-values">
             <thead><tr>${b.head.map(function (h) { return `<th scope="col">${fmt(h)}</th>`; }).join("")}</tr></thead>
             <tbody>${b.rows.map(function (r) { return `<tr>${r.map(function (cell) { return `<td>${fmt(cell)}</td>`; }).join("")}</tr>`; }).join("")}</tbody>
         </table></div>`;
-            }
-            if (b.type === "copy") {
-                return b.items.map(function (line) {
-                    return `<div class="field-row"><code>${esc(line)}</code><button type="button" class="mini" data-copy>Copy</button></div>`;
-                }).join("\n        ");
-            }
-            if (b.type === "config") {
-                return `<div class="code-block"><pre><code>${b.lines.map(esc).join("\n")}</code></pre><button type="button" class="mini" data-copy>Copy</button></div>`;
-            }
-            if (b.type === "pro-crosshair-stats" && proCrosshairs.length) {
-                const colors = mostCommonValue(colorName);
-                const length = mostCommonValue(function (c) { return c.length; });
-                const thick = mostCommonValue(function (c) { return c.thickness; });
-                const gap = mostCommonValue(function (c) { return c.gap; });
-                return statsTable([
-                    ["Color", esc(colors.value), colors.share + "%"],
-                    ["Style", "Static (<code>cl_crosshairstyle 4</code>)", share(function (x) { return x.c.style === 4; }) + "%"],
-                    ["Length", "<code>cl_crosshair_length " + esc(length.value) + "</code>", length.share + "%"],
-                    ["Thickness", "<code>cl_crosshair_thickness " + esc(thick.value) + "</code>", thick.share + "%"],
-                    ["Gap", "<code>cl_crosshair_gap " + esc(gap.value) + "</code>", gap.share + "%"],
-                    ["Center dot", "No dot", share(function (x) { return !x.c.centerDotEnabled; }) + "%"],
-                    ["Outline", "No outline", share(function (x) { return !(x.c.outlineMode > 0); }) + "%"],
-                    ["T-style", "Normal (with top line)", share(function (x) { return !x.c.tStyleEnabled; }) + "%"]
-                ]) + `\n        <p class="guide-note">Based on ${proCrosshairs.length} pro crosshairs read from official match demos. Browse them all on the <a href="../">CS2 pro crosshairs page</a>.</p>`;
-            }
-            if (b.type === "pro-resolution-stats" && proCrosshairs.length) {
-                const count = {};
-                proCrosshairs.forEach(function (x) { count[x.c.screenHeight] = (count[x.c.screenHeight] || 0) + 1; });
-                const heights = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; }).slice(0, 5);
-                const label = { 960: "1280×960 (4:3)", 1080: "1920×1080 (16:9) or 1440×1080 (4:3)", 768: "1024×768 (4:3)", 1024: "1280×1024 (5:4)", 864: "1152×864 (4:3)", 1050: "1680×1050 (16:10)", 800: "1280×800 (16:10)", 1440: "2560×1440 (16:9)" };
-                return `<div class="table-wrap"><table class="cmd-values">
-            <thead><tr><th scope="col">Screen height in the code</th><th scope="col">Usual resolution</th><th scope="col">Pros</th></tr></thead>
+                }
+                if (b.type === "copy") {
+                    return b.items.map(function (line) {
+                        return `<div class="field-row"><code>${esc(line)}</code><button type="button" class="mini" data-copy>${t("common.copy")}</button></div>`;
+                    }).join("\n        ");
+                }
+                if (b.type === "config") {
+                    return `<div class="code-block"><pre><code>${b.lines.map(esc).join("\n")}</code></pre><button type="button" class="mini" data-copy>${t("common.copy")}</button></div>`;
+                }
+                if (b.type === "pro-crosshair-stats" && proCrosshairs.length) {
+                    const colors = mostCommonValue(colorName);
+                    const length = mostCommonValue(function (c) { return c.length; });
+                    const thick = mostCommonValue(function (c) { return c.thickness; });
+                    const gap = mostCommonValue(function (c) { return c.gap; });
+                    return statsTable([
+                        [t("specs.color"), esc(t("colors." + colors.value)), colors.share + "%"],
+                        [t("guides.statsStyle"), t("guides.statsStatic") + " (<code>cl_crosshairstyle 4</code>)", share(function (x) { return x.c.style === 4; }) + "%"],
+                        [t("specs.length"), "<code>cl_crosshair_length " + esc(length.value) + "</code>", length.share + "%"],
+                        [t("specs.thickness"), "<code>cl_crosshair_thickness " + esc(thick.value) + "</code>", thick.share + "%"],
+                        [t("specs.gap"), "<code>cl_crosshair_gap " + esc(gap.value) + "</code>", gap.share + "%"],
+                        [t("specs.dot"), t("guides.statsNoDot"), share(function (x) { return !x.c.centerDotEnabled; }) + "%"],
+                        [t("specs.outline"), t("guides.statsNoOutline"), share(function (x) { return !(x.c.outlineMode > 0); }) + "%"],
+                        [t("specs.tStyle"), t("guides.statsNormal"), share(function (x) { return !x.c.tStyleEnabled; }) + "%"]
+                    ]) + `\n        <p class="guide-note">${t("guides.statsNote", { total: proCrosshairs.length })}</p>`;
+                }
+                if (b.type === "pro-resolution-stats" && proCrosshairs.length) {
+                    const count = {};
+                    proCrosshairs.forEach(function (x) { count[x.c.screenHeight] = (count[x.c.screenHeight] || 0) + 1; });
+                    const heights = Object.keys(count).sort(function (a, b) { return count[b] - count[a]; }).slice(0, 5);
+                    const label = tList("guides.resolutions");
+                    return `<div class="table-wrap"><table class="cmd-values">
+            <thead><tr><th scope="col">${t("guides.resHeight")}</th><th scope="col">${t("guides.resUsual")}</th><th scope="col">${t("guides.resPros")}</th></tr></thead>
             <tbody>${heights.map(function (h) {
                 return `<tr><td><code>${esc(h)} px</code></td><td>${esc(label[h] || "-")}</td><td>${count[h]} (${Math.round(count[h] / proCrosshairs.length * 100)}%)</td></tr>`;
             }).join("")}</tbody>
         </table></div>`;
-            }
-            if (b.type === "sens-calc") {
-                return `<form class="sens-calc" id="sens-calc" onsubmit="return false">
-            <label>Mouse DPI <input type="number" id="calc-dpi" value="800" min="100" max="32000" step="50" inputmode="numeric"></label>
-            <label>CS2 sensitivity <input type="number" id="calc-sens" value="1" min="0.01" max="20" step="0.01" inputmode="decimal"></label>
+                }
+                if (b.type === "sens-calc") {
+                    return `<form class="sens-calc" id="sens-calc" onsubmit="return false">
+            <label>${t("guides.calcDpi")} <input type="number" id="calc-dpi" value="800" min="100" max="32000" step="50" inputmode="numeric"></label>
+            <label>${t("guides.calcSens")} <input type="number" id="calc-sens" value="1" min="0.01" max="20" step="0.01" inputmode="decimal"></label>
             <p class="sens-out" aria-live="polite">eDPI <strong id="out-edpi">800</strong> · <strong id="out-cm">52.0</strong> cm/360 · <strong id="out-in">20.5</strong> in/360</p>
-            <label>Valorant sensitivity (optional) <input type="number" id="calc-val" min="0.01" max="10" step="0.001" inputmode="decimal" placeholder="e.g. 0.4"></label>
-            <p class="sens-out" aria-live="polite">Same speed in CS2: <strong id="out-val">-</strong></p>
+            <label>${t("guides.calcValorant")} <input type="number" id="calc-val" min="0.01" max="10" step="0.001" inputmode="decimal" placeholder="${t("guides.calcExample")}"></label>
+            <p class="sens-out" aria-live="polite">${t("guides.calcSame")} <strong id="out-val">-</strong></p>
         </form>`;
+                }
+                return "";
             }
-            return "";
-        }
 
-        const CALC_SCRIPT = `
+            const CALC_SCRIPT = `
         // Calculatrice de sensibilité : eDPI = DPI × sensibilité ; cm/360 = 2,54 × 360 / (DPI × sensibilité × 0,022)
         const dpi = document.getElementById("calc-dpi");
         const sens = document.getElementById("calc-sens");
@@ -1770,7 +1874,7 @@ ${categoriesUsed.map(function (cat) {
         [dpi, sens, val].forEach(function (input) { input.addEventListener("input", update); });
         update();`;
 
-        const GUIDE_COPY_SCRIPT = `import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
+            const GUIDE_COPY_SCRIPT = `import { copyText } from "${ap("../")}crosshair.min.js?v=${CROSSHAIR_HASH}";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {
@@ -1778,93 +1882,81 @@ ${categoriesUsed.map(function (cat) {
             }
         });`;
 
-        function guideBreadcrumb(name, url) {
-            const list = [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL + "/" },
-                { "@type": "ListItem", "position": 2, "name": "CS2 Guides", "item": guidesUrl }
-            ];
-            if (name) {
-                list.push({ "@type": "ListItem", "position": 3, "name": name, "item": url });
+            function guideBreadcrumb(name, url) {
+                return sectionBreadcrumb(t("guides.breadcrumb"), guidesUrl, name, url);
             }
-            return { "@type": "BreadcrumbList", "@id": (url || guidesUrl) + "#breadcrumb", "itemListElement": list };
-        }
 
-        const bySlug = new Map(guideData.guides.map(function (g) { return [g.slug, g]; }));
+            const bySlug = new Map(guides.map(function (g) { return [g.slug, g]; }));
 
-        guideData.guides.forEach(function (g) {
-            const file = g.slug + ".html";
-            const url = guidesUrl + file;
-            guideFiles.push(file);
-            const body = g.sections.map(function (s) {
-                return `        <section aria-labelledby="${anchor(s.title)}">
+            guides.forEach(function (g) {
+                const file = g.slug + ".html";
+                const rel = "guides/" + file;
+                const url = langUrl(rel);
+                guideFiles.push(file);
+                if (EN) {
+                    sitemapPages.push({ path: rel, lastmod: isoDate(guideData.updated) });
+                }
+                const body = g.sections.map(function (s) {
+                    return `        <section aria-labelledby="${anchor(s.title)}">
             <h2 id="${anchor(s.title)}">${fmt(s.title)}</h2>
             ${s.blocks.map(block).join("\n            ")}
         </section>`;
-            }).join("\n");
-            const words = (g.intro + " " + body.replace(/<[^>]+>/g, " ")).split(/\s+/).filter(Boolean).length;
-            const minutes = Math.max(2, Math.round(words / 220));
-            const related = (g.related || []).map(function (s) { return bySlug.get(s); }).filter(Boolean);
-            const commands = (g.commands || []).filter(function (n) { return commandPages.has(n); });
-            const graph = [
-                {
-                    "@type": "Article",
-                    "@id": url + "#article",
-                    "headline": g.title,
-                    "description": g.description,
-                    "url": url,
-                    "inLanguage": "en",
-                    "isPartOf": { "@id": SITE_URL + "/#website" },
-                    "author": { "@id": SITE_URL + "/#organization" },
-                    "publisher": { "@id": SITE_URL + "/#organization" },
-                    "dateModified": isoDate(guideData.updated),
-                    "image": SITE_URL + "/og-image.jpg",
-                    "about": { "@type": "Thing", "name": "Counter-Strike 2" }
-                },
-                guideBreadcrumb(g.title, url),
-                {
-                    "@type": "FAQPage",
-                    "@id": url + "#faq",
-                    "mainEntity": g.faq.map(function (q) {
-                        return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-                    })
-                }
-            ];
-            const hasCalc = g.sections.some(function (s) { return s.blocks.some(function (b) { return b.type === "sens-calc"; }); });
+                }).join("\n");
+                const words = (g.intro + " " + body.replace(/<[^>]+>/g, " ")).split(/\s+/).filter(Boolean).length;
+                const minutes = Math.max(2, Math.round(words / 220));
+                const related = (g.related || []).map(function (s) { return bySlug.get(s); }).filter(Boolean);
+                const commands = (g.commands || []).filter(function (n) { return commandPages.has(n); });
+                const graph = [
+                    {
+                        "@type": "Article",
+                        "@id": url + "#article",
+                        "headline": g.title,
+                        "description": g.description,
+                        "url": url,
+                        "inLanguage": lang,
+                        "isPartOf": { "@id": SITE_URL + "/#website" },
+                        "author": { "@id": SITE_URL + "/#organization" },
+                        "publisher": { "@id": SITE_URL + "/#organization" },
+                        "dateModified": isoDate(guidesUpdated),
+                        "image": SITE_URL + "/og-image.jpg",
+                        "about": { "@type": "Thing", "name": "Counter-Strike 2" }
+                    },
+                    guideBreadcrumb(g.title, url),
+                    faqGraph(url, g.faq)
+                ];
+                const hasCalc = g.sections.some(function (s) { return s.blocks.some(function (b) { return b.type === "sens-calc"; }); });
 
-            fs.writeFileSync("guides/" + file, `<!DOCTYPE html>
-<html lang="en">
+                write(LD + "guides/" + file, `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
-    ${head({ title: esc(g.seoTitle), ogTitle: esc(g.title), description: g.description, url: url, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
+    ${head({ title: esc(g.seoTitle), ogTitle: esc(g.title), description: g.description, url: url, path: rel, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": graph } })}
 </head>
 <body class="page">
     ${THEME_SCRIPT}
     ${pageTop("../", "guides")}
 
     <main class="player-page guide-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Guides</a> › <span>${esc(g.title)}</span></nav>
+        ${crumbs("../", `<a href="./">${t("guides.crumb")}</a> › <span>${esc(g.title)}</span>`)}
         <h1 class="guide-title">${esc(g.title)}</h1>
-        <p class="guide-meta">${esc(g.category)} · Updated <time datetime="${isoDate(guideData.updated)}">${esc(guideData.updated)}</time> · ${minutes} min read</p>
+        <p class="guide-meta">${esc(g.category)} · ${t("guides.updated")} <time datetime="${isoDate(guidesUpdated)}">${esc(guidesUpdated)}</time> · ${t("guides.minutes", { count: minutes })}</p>
         <p class="guide-lead">${fmt(g.intro)}</p>
 
-        <nav class="guide-toc" aria-label="On this page">
-            <p class="guide-toc-title">On this page</p>
-            <ol>${g.sections.map(function (s) { return `<li><a href="#${anchor(s.title)}">${esc(plainText(s.title))}</a></li>`; }).join("")}<li><a href="#faq">FAQ</a></li></ol>
+        <nav class="guide-toc" aria-label="${t("guides.toc")}">
+            <p class="guide-toc-title">${t("guides.toc")}</p>
+            <ol>${g.sections.map(function (s) { return `<li><a href="#${anchor(s.title)}">${esc(plainText(s.title))}</a></li>`; }).join("")}<li><a href="#faq">${t("common.faq")}</a></li></ol>
         </nav>
 
 ${body}
 
-        ${commands.length ? `<h2>Commands in this guide</h2>
+        ${commands.length ? `<h2>${t("guides.commandsTitle")}</h2>
         <ul class="related">${commands.map(function (n) { return `<li><a href="../commands/${n}.html">${esc(n)}</a></li>`; }).join("")}</ul>` : ""}
 
-        <h2 id="faq">${esc(g.title.replace(/\s*\(\d{4}\)\s*/, " ").replace(/:.*$/, "").trim())} FAQ</h2>
-${g.faq.map(function (q) {
-        return `        <h3>${esc(q[0])}</h3>
-        <p>${esc(q[1])}</p>`;
-    }).join("\n")}
+        <h2 id="faq">${t("guides.faqTitle", { title: esc(g.title.replace(/\s*\(\d{4}\)\s*/, " ").replace(/:.*$/, "").trim()) })}</h2>
+${faqItems(g.faq, "h3")}
 
-        ${related.length ? `<h2>More CS2 guides</h2>
+        ${related.length ? `<h2>${t("guides.moreTitle")}</h2>
         <ul class="related">${related.map(function (r) { return `<li><a href="${r.slug}.html">${esc(r.title)}</a></li>`; }).join("")}</ul>` : ""}
-        <p><a href="./">All CS2 guides ›</a></p>
+        <p><a href="./">${t("guides.allLink")}</a></p>
     </main>
 
     ${footer("../")}
@@ -1874,34 +1966,38 @@ ${g.faq.map(function (q) {
 </body>
 </html>
 `);
-        });
+            });
 
-        // La page d'accueil des guides
-        const hubDescription = "Practical CS2 guides for every player: best settings, launch options, stretched resolution, sensitivity, FPS boost, crosshairs and aim training.";
-        const categories = [...new Set(guideData.guides.map(function (g) { return g.category; }))];
-        fs.writeFileSync("guides/index.html", `<!DOCTYPE html>
-<html lang="en">
+            // La page d'accueil des guides
+            const hubDescription = t("guides.hubDescription");
+            const categories = [...new Set(guides.map(function (g) { return g.category; }))];
+            if (EN) {
+                sitemapPages.push({ path: "guides/", lastmod: isoDate(guideData.updated) });
+            }
+            write(LD + "guides/index.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
     ${head({
-        title: "CS2 Guides: Settings, Aim &amp; Crosshair (2026) | ClutchCrosshair",
-        ogTitle: "CS2 Guides",
+        title: t("guides.hubTitle"),
+        ogTitle: t("guides.hubOgTitle"),
         description: hubDescription,
         url: guidesUrl,
+        path: "guides/",
         prefix: "../",
         jsonLd: { "@context": "https://schema.org", "@graph": [
             {
                 "@type": "CollectionPage",
                 "@id": guidesUrl,
                 "url": guidesUrl,
-                "name": "CS2 Guides",
+                "name": t("guides.hubOgTitle"),
                 "description": hubDescription,
-                "inLanguage": "en",
+                "inLanguage": lang,
                 "isPartOf": { "@id": SITE_URL + "/#website" },
                 "breadcrumb": { "@id": guidesUrl + "#breadcrumb" },
-                "dateModified": isoDate(guideData.updated),
+                "dateModified": isoDate(guidesUpdated),
                 "mainEntity": {
                     "@type": "ItemList",
-                    "itemListElement": guideData.guides.map(function (g, i) {
+                    "itemListElement": guides.map(function (g, i) {
                         return { "@type": "ListItem", "position": i + 1, "name": g.title, "url": guidesUrl + g.slug + ".html" };
                     })
                 }
@@ -1915,24 +2011,24 @@ ${g.faq.map(function (q) {
     ${pageTop("../", "guides")}
 
     <main class="player-page guide-hub">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Guides</span></nav>
-        <h1>CS2 Guides</h1>
-        <p>Clear, practical guides to set up CS2 and play better: the settings that matter, the myths to forget, and what the pros really use. Updated ${esc(guideData.updated)}.</p>
+        ${crumbs("../", `<span>${t("guides.crumb")}</span>`)}
+        <h1>${t("guides.hubH1")}</h1>
+        <p>${t("guides.hubIntro", { date: esc(guidesUpdated) })}</p>
 ${categories.map(function (cat) {
         return `        <section aria-labelledby="cat-${slug(cat)}">
             <h2 id="cat-${slug(cat)}">${esc(cat)}</h2>
             <div class="guide-cards">
-            ${guideData.guides.filter(function (g) { return g.category === cat; }).map(function (g) {
+            ${guides.filter(function (g) { return g.category === cat; }).map(function (g) {
                 return `<a class="guide-card" href="${g.slug}.html"><span class="guide-card-title">${esc(g.title)}</span><span class="guide-card-desc">${esc(g.description)}</span></a>`;
             }).join("\n            ")}
             </div>
         </section>`;
     }).join("\n")}
-        <h2>More tools</h2>
+        <h2>${t("guides.moreTools")}</h2>
         <ul class="related">
-            <li><a href="../commands/">CS2 console commands</a></li>
-            <li><a href="../generator.html">CS2 crosshair generator</a></li>
-            <li><a href="../">CS2 pro crosshairs</a></li>
+            <li><a href="../commands/">${t("links.commands")}</a></li>
+            <li><a href="../generator.html">${t("links.generator")}</a></li>
+            <li><a href="../">${t("links.pros")}</a></li>
         </ul>
     </main>
 
@@ -1940,216 +2036,211 @@ ${categories.map(function (cat) {
 </body>
 </html>
 `);
-        guideFiles.push("index.html");
-        fs.readdirSync("guides").forEach(function (f) {
-            if (f.endsWith(".html") && !guideFiles.includes(f)) {
-                fs.unlinkSync("guides/" + f);
+            guideFiles.push("index.html");
+            fs.readdirSync(LD + "guides").forEach(function (f) {
+                if (f.endsWith(".html") && !guideFiles.includes(f)) {
+                    fs.unlinkSync(LD + "guides/" + f);
+                }
+            });
+            if (EN) {
+                console.log((guideFiles.length - 1) + " guides + guides/index.html");
             }
-        });
-        console.log((guideFiles.length - 1) + " guides + guides/index.html");
-    }
-
-    // ===== 3 sexies. Les outils : tools/index.html + tools/bind-generator.html (données : binds.json) =====
-    const bindData = fs.existsSync("binds.json") ? JSON.parse(fs.readFileSync("binds.json", "utf8")) : null;
-    const toolsUrl = `${SITE_URL}/tools/`;
-    const bindUrl = toolsUrl + "bind-generator.html";
-    if (bindData) {
-        if (!fs.existsSync("tools")) {
-            fs.mkdirSync("tools");
         }
-        const bq = function (key, cmd) { return `bind "${key}" "${cmd}"`; };
-        const bindFaq = [
-            ["How do I make a bind in CS2?", "Open the console (~) and type bind followed by the key and the command between quotes, for example bind \"kp_end\" \"buy ak47; buy m4a1\". The ClutchCrosshair bind generator writes the line for you."],
-            ["Do buy binds still work in CS2?", "Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped."],
-            ["How do I remove a bind in CS2?", "Type unbind followed by the key in the console, for example unbind kp_end."],
-            ["How do I save my CS2 binds?", "Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."],
-            ["What is a jump throw bind?", "A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."]
-        ];
-        const bindDescription = "Free CS2 bind generator: pick a key and an action, copy your bind or download a ready-made autoexec.cfg. Buy binds, jump throw and more.";
-        const allBuy = bindData.buy.flatMap(function (g) { return g[1]; });
-        const bindGraph = [
-            {
-                "@type": "WebPage",
-                "@id": bindUrl,
-                "url": bindUrl,
-                "name": "CS2 Bind Generator",
-                "inLanguage": "en",
-                "isPartOf": { "@id": SITE_URL + "/#website" },
-                "breadcrumb": { "@id": bindUrl + "#breadcrumb" },
-                "mainEntity": { "@id": bindUrl + "#app" },
-                "dateModified": isoDate(bindData.updated)
-            },
-            {
-                "@type": "WebApplication",
-                "@id": bindUrl + "#app",
-                "name": "CS2 Bind Generator",
-                "url": bindUrl,
-                "description": bindDescription,
-                "applicationCategory": "GameApplication",
-                "operatingSystem": "Any",
-                "browserRequirements": "Requires JavaScript",
-                "isAccessibleForFree": true,
-                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-                "publisher": { "@id": SITE_URL + "/#organization" }
-            },
-            toolsBreadcrumb("CS2 bind generator", bindUrl),
-            {
-                "@type": "FAQPage",
-                "@id": bindUrl + "#faq",
-                "mainEntity": bindFaq.map(function (q) {
-                    return { "@type": "Question", "name": q[0], "acceptedAnswer": { "@type": "Answer", "text": q[1] } };
-                })
-            }
-        ];
-        const options = function (list) {
-            return list.map(function (o) { return `<option value="${esc(o[o.length === 3 ? 2 : 0])}">${esc(o[1])}</option>`; }).join("");
-        };
-        const copyRowHtml = function (command) {
-            return `<div class="field-row"><code>${esc(command)}</code><button type="button" class="mini" data-copy>Copy</button></div>`;
-        };
 
-        fs.writeFileSync("tools/bind-generator.html", `<!DOCTYPE html>
-<html lang="en">
+        // ===== 3 sexies. Les outils : tools/index.html + tools/bind-generator.html (données : binds.json) =====
+        const bindUrl = toolsUrl + "bind-generator.html";
+        if (bindData) {
+            // Libellés traduits (i18n/<langue>/binds.json : même structure que binds.json, mêmes commandes)
+            const binds = I.content("binds") || bindData;
+            const bq = function (key, cmd) { return `bind "${key}" "${cmd}"`; };
+            const bindFaq = tList("bind.faq");
+            const bindDescription = t("bind.description");
+            const allBuy = binds.buy.flatMap(function (g) { return g[1]; });
+            if (EN) {
+                sitemapPages.push({ path: "tools/", lastmod: isoDate(bindData.updated) });
+                sitemapPages.push({ path: "tools/bind-generator.html", lastmod: isoDate(bindData.updated) });
+            }
+            const bindGraph = [
+                {
+                    "@type": "WebPage",
+                    "@id": bindUrl,
+                    "url": bindUrl,
+                    "name": t("bind.name"),
+                    "inLanguage": lang,
+                    "isPartOf": { "@id": SITE_URL + "/#website" },
+                    "breadcrumb": { "@id": bindUrl + "#breadcrumb" },
+                    "mainEntity": { "@id": bindUrl + "#app" },
+                    "dateModified": isoDate(bindData.updated)
+                },
+                {
+                    "@type": "WebApplication",
+                    "@id": bindUrl + "#app",
+                    "name": t("bind.name"),
+                    "url": bindUrl,
+                    "description": bindDescription,
+                    "applicationCategory": "GameApplication",
+                    "operatingSystem": "Any",
+                    "browserRequirements": "Requires JavaScript",
+                    "isAccessibleForFree": true,
+                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                    "publisher": { "@id": SITE_URL + "/#organization" }
+                },
+                sectionBreadcrumb(t("tools.breadcrumb"), toolsUrl, t("bind.breadcrumb"), bindUrl),
+                faqGraph(bindUrl, bindFaq)
+            ];
+            const options = function (list) {
+                return list.map(function (o) { return `<option value="${esc(o[o.length === 3 ? 2 : 0])}">${esc(o[1])}</option>`; }).join("");
+            };
+            const copyRowHtml = function (command) {
+                return `<div class="field-row"><code>${esc(command)}</code><button type="button" class="mini" data-copy>${t("common.copy")}</button></div>`;
+            };
+            // Textes du petit programme de la page (traduits ici, directement dans le script)
+            const BJ = JSON.stringify({
+                tick: t("bind.js.tick"), type: t("bind.js.type"), careful: t("bind.js.careful"), keySet: t("bind.js.keySet"),
+                press: t("bind.capture"), waiting: t("bind.js.waiting"), pressNow: t("bind.js.pressNow"), unsupported: t("bind.js.unsupported"),
+                remove: t("bind.js.remove"), removeAria: t("bind.js.removeAria")
+            }).replace(/</g, "\\u003c");
+
+            write(LD + "tools/bind-generator.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
-    ${head({ title: "CS2 Bind Generator: Buy Binds &amp; Jump Throw | ClutchCrosshair", ogTitle: "CS2 Bind Generator", description: bindDescription, url: bindUrl, prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": bindGraph } })}
+    ${head({ title: t("bind.title"), ogTitle: t("bind.name"), description: bindDescription, url: bindUrl, path: "tools/bind-generator.html", prefix: "../", jsonLd: { "@context": "https://schema.org", "@graph": bindGraph } })}
 </head>
 <body class="page">
     ${THEME_SCRIPT}
     ${pageTop("../", "tools")}
 
     <main class="player-page bind-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <a href="./">Tools</a> › <span>Bind generator</span></nav>
-        <h1>CS2 Bind Generator</h1>
-        <p>Create CS2 binds in a few clicks: choose a key, choose what it does (buy your weapons, jump throw, toggle the radar zoom...), then copy the command or download a ready-made autoexec.cfg. Free, no sign-up.</p>
+        ${crumbs("../", `<a href="./">${t("tools.crumb")}</a> › <span>${t("bind.crumb")}</span>`)}
+        <h1>${t("bind.h1")}</h1>
+        <p>${t("bind.intro")}</p>
 
         <div class="bind" id="bind-tool">
             <div class="bind-controls">
                 <fieldset class="gen-group">
-                    <legend>1. Choose a key</legend>
+                    <legend>${t("bind.step1")}</legend>
                     <div class="bind-key">
-                        <select id="bind-key" aria-label="Key">
-                            ${bindData.keys.map(function (g) {
+                        <select id="bind-key" aria-label="${t("bind.keyAria")}">
+                            ${binds.keys.map(function (g) {
                                 return `<optgroup label="${esc(g[0])}">${g[1].map(function (k) { return `<option value="${esc(k[0])}">${esc(k[1])}</option>`; }).join("")}</optgroup>`;
                             }).join("")}
                         </select>
-                        <button type="button" class="bind-capture" id="bind-capture">Press a key…</button>
+                        <button type="button" class="bind-capture" id="bind-capture">${t("bind.capture")}</button>
                     </div>
                     <p class="gen-status" id="bind-key-status" aria-live="polite"></p>
                 </fieldset>
 
                 <fieldset class="gen-group">
-                    <legend>2. Choose an action</legend>
-                    <div class="bind-actions" role="group" aria-label="Action">
-                        <button type="button" data-action="buy" aria-pressed="true">Buy</button>
-                        <button type="button" data-action="jumpthrow" aria-pressed="false">Jump throw</button>
-                        <button type="button" data-action="toggle" aria-pressed="false">Toggle</button>
-                        <button type="button" data-action="volume" aria-pressed="false">Volume</button>
-                        <button type="button" data-action="grenade" aria-pressed="false">Grenade</button>
-                        <button type="button" data-action="other" aria-pressed="false">Other</button>
-                        <button type="button" data-action="custom" aria-pressed="false">Custom</button>
+                    <legend>${t("bind.step2")}</legend>
+                    <div class="bind-actions" role="group" aria-label="${t("bind.actionAria")}">
+                        <button type="button" data-action="buy" aria-pressed="true">${t("bind.actions.buy")}</button>
+                        <button type="button" data-action="jumpthrow" aria-pressed="false">${t("bind.actions.jumpthrow")}</button>
+                        <button type="button" data-action="toggle" aria-pressed="false">${t("bind.actions.toggle")}</button>
+                        <button type="button" data-action="volume" aria-pressed="false">${t("bind.actions.volume")}</button>
+                        <button type="button" data-action="grenade" aria-pressed="false">${t("bind.actions.grenade")}</button>
+                        <button type="button" data-action="other" aria-pressed="false">${t("bind.actions.other")}</button>
+                        <button type="button" data-action="custom" aria-pressed="false">${t("bind.actions.custom")}</button>
                     </div>
 
                     <div class="bind-panel" data-panel="buy">
-                        ${bindData.buy.map(function (g) {
+                        ${binds.buy.map(function (g) {
                             return `<div class="bind-buy-group"><p class="gen-label">${esc(g[0])}</p><div class="bind-checks">${g[1].map(function (it) {
                                 return `<label class="gen-toggle"><input type="checkbox" value="${esc(it[0])}" data-buy><span>${esc(it[1])}</span></label>`;
                             }).join("")}</div></div>`;
                         }).join("\n                        ")}
                     </div>
                     <div class="bind-panel hidden" data-panel="jumpthrow">
-                        <p class="gen-hint">Hold your grenade with the attack button pressed, then press this key: you jump and throw at the same moment, for perfectly repeatable lineups.</p>
+                        <p class="gen-hint">${t("bind.jumpthrowHint")}</p>
                     </div>
                     <div class="bind-panel hidden" data-panel="toggle">
-                        <label class="gen-label" for="bind-toggle">Setting to switch</label>
-                        <select id="bind-toggle">${options(bindData.toggles)}</select>
+                        <label class="gen-label" for="bind-toggle">${t("bind.toggleLabel")}</label>
+                        <select id="bind-toggle">${options(binds.toggles)}</select>
                     </div>
                     <div class="bind-panel hidden" data-panel="volume">
-                        <label class="gen-label" for="bind-volume">Direction</label>
-                        <select id="bind-volume">${options(bindData.volume)}</select>
+                        <label class="gen-label" for="bind-volume">${t("bind.volumeLabel")}</label>
+                        <select id="bind-volume">${options(binds.volume)}</select>
                     </div>
                     <div class="bind-panel hidden" data-panel="grenade">
-                        <label class="gen-label" for="bind-grenade">Grenade to select</label>
-                        <select id="bind-grenade">${options(bindData.grenades)}</select>
+                        <label class="gen-label" for="bind-grenade">${t("bind.grenadeLabel")}</label>
+                        <select id="bind-grenade">${options(binds.grenades)}</select>
                     </div>
                     <div class="bind-panel hidden" data-panel="other">
-                        <label class="gen-label" for="bind-other">Action</label>
-                        <select id="bind-other">${options(bindData.other)}</select>
+                        <label class="gen-label" for="bind-other">${t("bind.otherLabel")}</label>
+                        <select id="bind-other">${options(binds.other)}</select>
                     </div>
                     <div class="bind-panel hidden" data-panel="custom">
-                        <label class="gen-label" for="bind-custom">Any console command (separate several with ;)</label>
-                        <input type="text" id="bind-custom" placeholder="e.g. say gg; disconnect" autocomplete="off" spellcheck="false">
+                        <label class="gen-label" for="bind-custom">${t("bind.customLabel")}</label>
+                        <input type="text" id="bind-custom" placeholder="${t("bind.customPlaceholder")}" autocomplete="off" spellcheck="false">
                     </div>
                 </fieldset>
             </div>
 
             <div class="bind-result">
                 <div class="bind-now">
-                    <div class="field-label">Your bind <span><i class="sep">· </i>Paste it in the CS2 console (~)</span></div>
-                    <div class="code-block"><pre><code id="bind-output">${esc(bq("kp_end", "buy ak47"))}</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
-                    <button type="button" class="bind-add" id="bind-add">Add to my binds</button>
+                    <div class="field-label">${t("bind.yourBind")} <span><i class="sep">· </i>${t("bind.consoleHelp")}</span></div>
+                    <div class="code-block"><pre><code id="bind-output">${esc(bq("kp_end", "buy ak47"))}</code></pre><button type="button" class="mini" data-copy>${t("common.copy")}</button></div>
+                    <button type="button" class="bind-add" id="bind-add">${t("bind.add")}</button>
                 </div>
 
                 <div class="bind-mine">
-                    <div class="field-label">My binds <span id="bind-count"></span></div>
+                    <div class="field-label">${t("bind.mine")} <span id="bind-count"></span></div>
                     <ul class="bind-list" id="bind-list"></ul>
-                    <p class="gen-hint" id="bind-empty">Your binds will appear here. Add as many as you want, then copy them all or download your autoexec.cfg.</p>
+                    <p class="gen-hint" id="bind-empty">${t("bind.empty")}</p>
                     <div class="bind-buttons">
-                        <button type="button" class="mini" id="bind-copy-all">Copy all</button>
-                        <button type="button" class="mini btn-secondary" id="bind-download">Download autoexec.cfg</button>
-                        <button type="button" class="mini btn-secondary" id="bind-clear">Clear</button>
+                        <button type="button" class="mini" id="bind-copy-all">${t("bind.copyAll")}</button>
+                        <button type="button" class="mini btn-secondary" id="bind-download">${t("bind.download")}</button>
+                        <button type="button" class="mini btn-secondary" id="bind-clear">${t("bind.clear")}</button>
                     </div>
                 </div>
             </div>
-            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the bind generator.</p></noscript>
+            <noscript><p class="gen-status gen-status-error">${t("bind.noscript")}</p></noscript>
         </div>
 
-        <h2>How to use your CS2 binds</h2>
+        <h2>${t("bind.howTitle")}</h2>
         <ol>
-            <li>Build your bind above, then click <strong>Copy</strong>.</li>
-            <li>In CS2, open the console with <strong>~</strong> (enable it in Settings › Game if needed), paste and press <strong>Enter</strong>.</li>
-            <li>To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href="../guides/cs2-launch-options.html">launch options</a>.</li>
+            <li>${t("bind.how1")}</li>
+            <li>${t("bind.how2")}</li>
+            <li>${t("bind.how3")}</li>
         </ol>
 
-        <h2>Popular CS2 binds</h2>
-        <p>Ready-to-copy binds most players use. Change the key name if you want another key.</p>
-        ${bindData.presets.map(function (p) {
+        <h2>${t("bind.popularTitle")}</h2>
+        <p>${t("bind.popularIntro")}</p>
+        ${binds.presets.map(function (p) {
             return `<h3>${esc(p[0])}</h3>
         ${copyRowHtml(bq(p[1], p[2]))}`;
         }).join("\n        ")}
 
-        <h2>CS2 jump throw bind</h2>
-        <p>A jump throw bind makes you jump and release the grenade at the exact same moment, so your smokes and flashes land in the same place every time. Paste these three lines (change the key in the last line):</p>
+        <h2>${t("bind.jumpTitle")}</h2>
+        <p>${t("bind.jumpText")}</p>
         <div class="code-block"><pre><code>alias "+jumpthrow" "+jump;-attack;-attack2"
 alias "-jumpthrow" "-jump"
-bind "v" "+jumpthrow"</code></pre><button type="button" class="mini" data-copy>Copy</button></div>
+bind "v" "+jumpthrow"</code></pre><button type="button" class="mini" data-copy>${t("common.copy")}</button></div>
 
-        <h2>CS2 buy commands list</h2>
-        <p>Every buy command works in a bind, alone or several at once separated by <code>;</code>. Buy commands give you the weapon equipped in that slot of your loadout.</p>
+        <h2>${t("bind.buyTitle")}</h2>
+        <p>${t("bind.buyIntro")}</p>
         <div class="table-wrap"><table class="cmd-values">
-            <thead><tr><th scope="col">Item</th><th scope="col">Buy command</th></tr></thead>
+            <thead><tr><th scope="col">${t("bind.buyItem")}</th><th scope="col">${t("bind.buyCommand")}</th></tr></thead>
             <tbody>${allBuy.map(function (it) { return `<tr><td>${esc(it[1])}</td><td><code>buy ${esc(it[0])}</code></td></tr>`; }).join("")}</tbody>
         </table></div>
 
-        <h2>CS2 bind generator FAQ</h2>
-${bindFaq.map(function (q) {
-        return `        <h3>${esc(q[0])}</h3>
-        <p>${esc(q[1])}</p>`;
-    }).join("\n")}
+        <h2>${t("bind.faqTitle")}</h2>
+${faqItems(bindFaq, "h3")}
 
-        <h2>Related</h2>
+        <h2>${t("bind.relatedTitle")}</h2>
         <ul class="related">
-            <li><a href="../commands/bind.html">bind command</a></li>
-            <li><a href="../commands/alias.html">alias command</a></li>
-            <li><a href="../commands/exec.html">exec command</a></li>
-            <li><a href="../generator.html">CS2 crosshair generator</a></li>
-            <li><a href="../guides/cs2-launch-options.html">CS2 launch options</a></li>
+            <li><a href="../commands/bind.html">${t("bind.relatedBind")}</a></li>
+            <li><a href="../commands/alias.html">${t("bind.relatedAlias")}</a></li>
+            <li><a href="../commands/exec.html">${t("bind.relatedExec")}</a></li>
+            <li><a href="../generator.html">${t("links.generator")}</a></li>
+            <li><a href="../guides/cs2-launch-options.html">${t("bind.relatedLaunch")}</a></li>
         </ul>
     </main>
 
     ${footer("../")}
-    <script type="application/json" id="bind-data">${JSON.stringify({ toggles: bindData.toggles, volume: bindData.volume, grenades: bindData.grenades, other: bindData.other }).replace(/</g, "\\u003c")}</script>
+    <script type="application/json" id="bind-data">${JSON.stringify({ toggles: binds.toggles, volume: binds.volume, grenades: binds.grenades, other: binds.other }).replace(/</g, "\\u003c")}</script>
     <script type="module">
-        import { copyText } from "../crosshair.min.js?v=${CROSSHAIR_HASH}";
+        import { copyText } from "${ap("../")}crosshair.min.js?v=${CROSSHAIR_HASH}";
+        const TX = ${BJ};
 
         // Boutons Copy (lignes simples et blocs de plusieurs lignes)
         document.addEventListener("click", function (event) {
@@ -2184,7 +2275,7 @@ ${bindFaq.map(function (q) {
 
         function render() {
             const l = lines();
-            output.textContent = l.length ? l.join("\\n") : (action === "buy" ? "Tick what to buy" : "Type a command");
+            output.textContent = l.length ? l.join("\\n") : (action === "buy" ? TX.tick : TX.type);
             $("bind-add").disabled = !l.length;
         }
 
@@ -2218,22 +2309,22 @@ ${bindFaq.map(function (q) {
                 keySelect.add(option);
             }
             keySelect.value = name;
-            status.textContent = DEFAULT_KEYS.includes(name) ? "Careful: " + name + " already has an important default action in CS2." : "Key set: " + name;
+            status.textContent = DEFAULT_KEYS.includes(name) ? TX.careful.replace("{key}", name) : TX.keySet.replace("{key}", name);
             status.classList.toggle("gen-status-error", DEFAULT_KEYS.includes(name));
             render();
         }
 
         function stopListening() {
             listening = false;
-            capture.textContent = "Press a key…";
+            capture.textContent = TX.press;
             capture.setAttribute("aria-pressed", "false");
         }
 
         capture.addEventListener("click", function () {
             listening = true;
-            capture.textContent = "Waiting for a key…";
+            capture.textContent = TX.waiting;
             capture.setAttribute("aria-pressed", "true");
-            status.textContent = "Press the key you want to use (Escape to cancel).";
+            status.textContent = TX.pressNow;
             status.classList.remove("gen-status-error");
         });
         document.addEventListener("keydown", function (event) {
@@ -2257,7 +2348,7 @@ ${bindFaq.map(function (q) {
             if (name) {
                 setKey(name);
             } else {
-                status.textContent = "This key is not supported, choose one in the list.";
+                status.textContent = TX.unsupported;
             }
         });
         document.addEventListener("mousedown", function (event) {
@@ -2290,8 +2381,8 @@ ${bindFaq.map(function (q) {
                 const remove = document.createElement("button");
                 remove.type = "button";
                 remove.className = "bind-remove";
-                remove.textContent = "Remove";
-                remove.setAttribute("aria-label", "Remove the bind on " + b.key);
+                remove.textContent = TX.remove;
+                remove.setAttribute("aria-label", TX.removeAria.replace("{key}", b.key));
                 remove.addEventListener("click", function () {
                     mine.splice(i, 1);
                     save();
@@ -2345,33 +2436,34 @@ ${bindFaq.map(function (q) {
 </html>
 `);
 
-        // La page d'accueil des outils
-        const toolsDescription = "Free CS2 tools: a crosshair generator with real-size preview and a bind generator for buy binds, jump throw and more.";
-        fs.writeFileSync("tools/index.html", `<!DOCTYPE html>
-<html lang="en">
+            // La page d'accueil des outils
+            const toolsDescription = t("tools.description");
+            write(LD + "tools/index.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
     ${head({
-        title: "Free CS2 Tools: Crosshair &amp; Bind Generator | ClutchCrosshair",
-        ogTitle: "CS2 Tools",
+        title: t("tools.title"),
+        ogTitle: t("tools.ogTitle"),
         description: toolsDescription,
         url: toolsUrl,
+        path: "tools/",
         prefix: "../",
         jsonLd: { "@context": "https://schema.org", "@graph": [
             {
                 "@type": "CollectionPage",
                 "@id": toolsUrl,
                 "url": toolsUrl,
-                "name": "CS2 Tools",
+                "name": t("tools.ogTitle"),
                 "description": toolsDescription,
-                "inLanguage": "en",
+                "inLanguage": lang,
                 "isPartOf": { "@id": SITE_URL + "/#website" },
                 "breadcrumb": { "@id": toolsUrl + "#breadcrumb" },
                 "mainEntity": { "@type": "ItemList", "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "CS2 Crosshair Generator", "url": `${SITE_URL}/generator.html` },
-                    { "@type": "ListItem", "position": 2, "name": "CS2 Bind Generator", "url": bindUrl }
+                    { "@type": "ListItem", "position": 1, "name": t("generator.name"), "url": genUrl },
+                    { "@type": "ListItem", "position": 2, "name": t("bind.name"), "url": bindUrl }
                 ] }
             },
-            toolsBreadcrumb(null, null)
+            sectionBreadcrumb(t("tools.breadcrumb"), toolsUrl)
         ] }
     })}
 </head>
@@ -2380,20 +2472,20 @@ ${bindFaq.map(function (q) {
     ${pageTop("../", "tools")}
 
     <main class="player-page guide-hub">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home">${HOME_ICON}Home</a> › <span>Tools</span></nav>
-        <h1>CS2 Tools</h1>
-        <p>Free tools to set up CS2 faster. Everything runs in your browser, with no sign-up, no download and no ads.</p>
-        <p>The crosshair generator shows your crosshair at its real size on a CS2 map, exactly as it looks in game, even in 4:3 stretched. Start from the crosshair of a pro player like ZywOo or donk, change the length, gap, thickness and color, then copy the share code or the console commands.</p>
-        <p>The bind generator writes the console command for you: buy binds for a full buy in one key, a jump throw bind for repeatable smokes, a key to toggle the radar zoom or the volume. Keep all your binds in one list and download them as a ready-made autoexec.cfg.</p>
+        ${crumbs("../", `<span>${t("tools.crumb")}</span>`)}
+        <h1>${t("tools.h1")}</h1>
+        <p>${t("tools.intro1")}</p>
+        <p>${t("tools.intro2")}</p>
+        <p>${t("tools.intro3")}</p>
         <div class="guide-cards">
-            <a class="guide-card" href="../generator.html"><span class="guide-card-title">CS2 Crosshair Generator</span><span class="guide-card-desc">Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.</span></a>
-            <a class="guide-card" href="bind-generator.html"><span class="guide-card-title">CS2 Bind Generator</span><span class="guide-card-desc">Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.</span></a>
+            <a class="guide-card" href="../generator.html"><span class="guide-card-title">${t("generator.name")}</span><span class="guide-card-desc">${t("tools.cardGenerator")}</span></a>
+            <a class="guide-card" href="bind-generator.html"><span class="guide-card-title">${t("bind.name")}</span><span class="guide-card-desc">${t("tools.cardBind")}</span></a>
         </div>
-        <h2>More resources</h2>
+        <h2>${t("tools.moreTitle")}</h2>
         <ul class="related">
-            <li><a href="../commands/">CS2 console commands</a></li>
-            <li><a href="../guides/">CS2 guides</a></li>
-            <li><a href="../">CS2 pro crosshairs</a></li>
+            <li><a href="../commands/">${t("links.commands")}</a></li>
+            <li><a href="../guides/">${t("links.guides")}</a></li>
+            <li><a href="../">${t("links.pros")}</a></li>
         </ul>
     </main>
 
@@ -2401,29 +2493,25 @@ ${bindFaq.map(function (q) {
 </body>
 </html>
 `);
-        console.log("tools/index.html + tools/bind-generator.html");
-    }
+            if (EN) {
+                console.log("tools/index.html + tools/bind-generator.html");
+            }
+        }
 
-    // ===== 3 septies. valorant.html : page "Coming soon" façon Killjoy (noindex, pas dans le sitemap) =====
-    // Tourelle 100 % SVG/CSS (aucune image de Riot), barre bloquée à 87 %, phrases drôles qui changent
-    const VALORANT_JOKES = [
-        "Spike planted. Valorant crosshairs defusing in progress.",
-        "Our Jett dashed away with the code. We're chasing her.",
-        "Sage is reviving this page. Cooldown: a few weeks.",
-        "Cypher already knows the release date. He won't tell us.",
-        "Killjoy's turret found a bug. It shot it."
-    ];
-    fs.writeFileSync("valorant.html", `<!DOCTYPE html>
-<html lang="en">
+        // ===== 3 septies. valorant.html : page "Coming soon" façon Killjoy (noindex, pas dans le sitemap) =====
+        // Tourelle 100 % SVG/CSS (aucune image de Riot), barre bloquée à 87 %, phrases drôles qui changent
+        const VALORANT_JOKES = tList("valorant.jokes");
+        write(LD + "valorant.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
-    ${head({ title: "Valorant Crosshairs: Coming Soon | ClutchCrosshair", description: "Valorant pro crosshairs are coming soon to ClutchCrosshair. Meanwhile, copy the CS2 crosshairs of the best pro players.", url: SITE_URL + "/valorant.html", prefix: "", noindex: true })}
+    ${head({ title: t("valorant.title"), description: t("valorant.description"), url: langUrl("valorant.html"), path: "valorant.html", prefix: "", noindex: true })}
 </head>
 <body class="page">
     ${THEME_SCRIPT}
     ${pageTop("./")}
 
     <main class="player-page vk-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>Valorant</span></nav>
+        ${crumbs("./", "<span>Valorant</span>")}
 
         <div class="vk-stage" aria-hidden="true">
             <svg class="vk-turret" viewBox="0 0 240 220">
@@ -2457,20 +2545,20 @@ ${bindFaq.map(function (q) {
             </svg>
         </div>
 
-        <h1 class="vk-title">Valorant crosshairs: coming soon</h1>
-        <p class="vk-lead">Killjoy is still building this page...</p>
+        <h1 class="vk-title">${t("valorant.h1")}</h1>
+        <p class="vk-lead">${t("valorant.lead")}</p>
 
-        <div class="vk-progress" role="progressbar" aria-label="Page construction" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
+        <div class="vk-progress" role="progressbar" aria-label="${t("valorant.progressAria")}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="87">
             <div class="vk-bar"><i></i></div>
             <span class="vk-percent" id="vk-percent">87%</span>
         </div>
-        <p class="vk-eta">ETA: next patch. Maybe.</p>
+        <p class="vk-eta">${t("valorant.eta")}</p>
 
         <p class="vk-joke" id="vk-joke" aria-live="polite">${esc(VALORANT_JOKES[0])}</p>
 
         <p class="vk-actions">
-            <a class="vk-back" href="./">Back to CS2 crosshairs</a>
-            <a class="vk-alt" href="generator.html">Meanwhile, build a CS2 crosshair ›</a>
+            <a class="vk-back" href="./">${t("valorant.back")}</a>
+            <a class="vk-alt" href="generator.html">${t("valorant.alt")}</a>
         </p>
     </main>
 
@@ -2509,14 +2597,15 @@ ${bindFaq.map(function (q) {
 </html>
 `);
 
-    // ===== 4. legal.html : mentions légales (obligatoires en France) =====
-    fs.writeFileSync("legal.html", `<!DOCTYPE html>
-<html lang="en">
+        // ===== 4. legal.html : mentions légales (obligatoires en France) =====
+        write(LD + "legal.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
     ${head({
-        title: "Legal notice | ClutchCrosshair",
-        description: "Legal notice of ClutchCrosshair: publisher, hosting, trademarks and privacy. No ads, no tracking cookies and no personal data collected.",
-        url: `${SITE_URL}/legal.html`,
+        title: t("legal.title"),
+        description: t("legal.description"),
+        url: langUrl("legal.html"),
+        path: "legal.html",
         prefix: "",
         noindex: true // page obligatoire mais sans intérêt dans Google (et absente du sitemap)
     })}
@@ -2525,124 +2614,103 @@ ${bindFaq.map(function (q) {
     ${THEME_SCRIPT}
     ${pageTop("./")}
     <main class="player-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./" class="crumb-home">${HOME_ICON}Home</a> › <span>Legal notice</span></nav>
-        <h1>Legal notice</h1>
-
-        <h2>Publisher</h2>
-        <p>ClutchCrosshair is published by ${esc(PUBLISHER_NAME)}, private individual (France).<br>
-        Contact: <a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a><br>
-        Publication director: ${esc(PUBLISHER_NAME)}.</p>
-
-        <h2>Hosting</h2>
-        <p>GitHub Pages, GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States (pages.github.com).</p>
-
-        <h2>Intellectual property</h2>
-        <p>Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>
-        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
-
-        <h2>Privacy</h2>
-        <p>ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode choice is only stored in your own browser (localStorage). Everything, fonts included, is served from this site: your browser does not contact any third-party server.</p>
-
-        <h2>Mentions légales (français)</h2>
-        <p>Éditeur et directeur de la publication : ${esc(PUBLISHER_NAME)}, particulier (France). Contact : <a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>.<br>
-        Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>
-        Counter-Strike et CS2 sont des marques de Valve Corporation ; les noms et images des skins appartiennent à Valve, les inventaires viennent de Steam et les prix de CSFloat. Les noms et logos des équipes et les photos des joueurs appartiennent à leurs propriétaires respectifs. Le site n'utilise pas de cookies publicitaires ni de suivi, et ne contacte aucun serveur tiers.</p>
+        ${crumbs("./", `<span>${t("legal.h1")}</span>`)}
+        <h1>${t("legal.h1")}</h1>
+${tList("legal.sections", { name: esc(PUBLISHER_NAME), email: `<a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>` }).map(function (s) {
+        return `
+        <h2>${s[0]}</h2>
+        <p>${s[1]}</p>`;
+    }).join("\n")}
     </main>
     ${footer("")}
 </body>
 </html>
 `);
 
-    // ===== 5. Le sitemap : toutes les pages, leur date de mise à jour et la photo des joueurs (Google Images) =====
-    let urls = `    <url><loc>${SITE_URL}/</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
-    urls += `    <url><loc>${genUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
-    if (bindData) {
-        urls += `    <url><loc>${toolsUrl}</loc><lastmod>${isoDate(bindData.updated)}</lastmod></url>\n`;
-        urls += `    <url><loc>${bindUrl}</loc><lastmod>${isoDate(bindData.updated)}</lastmod></url>\n`;
-    }
-    if (guideData) {
-        guideFiles.forEach(function (f) {
-            urls += `    <url><loc>${guidesUrl}${f === "index.html" ? "" : f}</loc><lastmod>${isoDate(guideData.updated)}</lastmod></url>\n`;
-        });
-    }
-    if (commandData) {
-        commandFiles.forEach(function (f) {
-            urls += `    <url><loc>${commandsUrl}${f === "index.html" ? "" : f}</loc><lastmod>${isoDate(commandData.updated)}</lastmod></url>\n`;
-        });
-    }
-    urls += `    <url><loc>${faqUrl}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ""}</url>\n`;
-    if (skinPlayers.length) {
-        urls += `    <url><loc>${skinsUrl}</loc>${isoDate(skinData.updated) ? `<lastmod>${isoDate(skinData.updated)}</lastmod>` : ""}</url>\n`;
-    }
-    skinPlayers.forEach(function (p) {
-        // Les 10 plus beaux skins de la page dans le sitemap (Google Images : "ZywOo knife"...)
-        const images = p.groups.slice(0, 10).map(function (g) {
-            return `<image:image><image:loc>${SITE_URL}/skins/img/${g.item.image}.webp</image:loc></image:image>`;
-        }).join("");
-        urls += `    <url><loc>${skinsUrl}${p.slug}.html</loc>${isoDate(p.updated) ? `<lastmod>${isoDate(p.updated)}</lastmod>` : ""}${images}</url>\n`;
-    });
-    players.forEach(function (player) {
-        const lastmod = isoDate(player.updated);
-        const photo = photoFiles(player).original;
-        urls += `    <url><loc>${SITE_URL}/players/${slug(player.name)}.html</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}${photo ? `<image:image><image:loc>${SITE_URL}/${esc(photo)}</image:loc></image:image>` : ""}</url>\n`;
-    });
-    fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${urls}</urlset>
-`);
-
-    // ===== 6. La page 404 (adresses absolues : elle peut s'afficher à n'importe quelle adresse) =====
-    fs.writeFileSync("404.html", `<!DOCTYPE html>
-<html lang="en">
+        // ===== 6. La page 404 (adresses absolues : elle peut s'afficher à n'importe quelle adresse) =====
+        const abs = SITE_URL + "/" + LD;
+        write(LD + "404.html", `<!DOCTYPE html>
+${HTML_OPEN}
 <head>
     ${head({
-        title: "Page not found | ClutchCrosshair",
-        description: "This page doesn't exist.",
-        url: SITE_URL + "/",
-        prefix: SITE_URL + "/",
+        title: t("notFound.title"),
+        description: t("notFound.description"),
+        url: abs,
+        path: "",
+        prefix: abs,
         noindex: true
     })}
 </head>
 <body class="page">
     ${THEME_SCRIPT}
-    ${pageTop(SITE_URL + "/")}
+    ${pageTop(abs)}
     <main class="player-page not-found">
-        <h1>404 · Page not found</h1>
-        <p>This page doesn't exist (or a player changed their name). Find every CS2 pro crosshair on the home page.</p>
-        <p><a class="contact-btn" href="${SITE_URL}/">Back to all CS2 crosshairs</a></p>
+        <h1>${t("notFound.h1")}</h1>
+        <p>${t("notFound.text")}</p>
+        <p><a class="contact-btn" href="${abs}">${t("notFound.back")}</a></p>
     </main>
-    ${footer(SITE_URL + "/")}
+    ${footer(abs)}
 </body>
 </html>
 `);
 
-    console.log(skinPlayers.length + " pages skins + skins/index.html");
+        if (EN) {
+            console.log(skinPlayers.length + " pages skins + skins/index.html");
+        }
+    }
+
+    // ===== 5. Le sitemap : toutes les pages dans toutes les langues, leur date de mise à jour, les photos (Google Images)
+    //          et les liens entre les versions (hreflang) =====
+    function pageUrl(lang, rel) {
+        return SITE_URL + "/" + (lang === "en" ? "" : lang + "/") + rel;
+    }
+    let urls = "";
+    [{ path: "", lastmod: newest }].concat(sitemapPages).forEach(function (page) {
+        const alternates = LANGS.map(function (l) {
+            return `<xhtml:link rel="alternate" hreflang="${l}" href="${pageUrl(l, page.path)}"/>`;
+        }).join("") + `<xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl("en", page.path)}"/>`;
+        const images = (page.images || []).map(function (src) {
+            return `<image:image><image:loc>${esc(src)}</image:loc></image:image>`;
+        }).join("");
+        LANGS.forEach(function (l) {
+            urls += `    <url><loc>${pageUrl(l, page.path)}</loc>${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ""}${alternates}${images}</url>\n`;
+        });
+    });
+    fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls}</urlset>
+`);
+
     // ===== Adresses officielles sans « .html » =====
     // Cloudflare Pages sert chaque page sans son extension (/players/zywoo.html redirige vers /players/zywoo,
-    // /tools/index.html vers /tools/). Les adresses données à Google (canonical, sitemap, og:url, JSON-LD)
+    // /tools/index.html vers /tools/). Les adresses données à Google (canonical, sitemap, og:url, JSON-LD, hreflang)
     // doivent être celles qui répondent directement, sans redirection. Les liens internes relatifs gardent
     // « .html » : ils marchent avec Live Server, et Cloudflare les redirige tout seul.
     const absoluteHtml = new RegExp(SITE_URL.split(".").join("\\.") + "/([^\"'<>\\s#?]*?)(?:index)?\\.html", "g");
-    ["index.html", "404.html", "faq.html", "generator.html", "legal.html", "valorant.html", "sitemap.xml"]
-        .concat(["players", "commands", "guides", "skins", "tools"].flatMap(function (dir) {
-            return fs.existsSync(dir) ? fs.readdirSync(dir).filter(function (f) { return f.endsWith(".html"); }).map(function (f) { return dir + "/" + f; }) : [];
-        }))
-        .filter(function (file) { return fs.existsSync(file); })
-        .forEach(function (file) {
-            const text = fs.readFileSync(file, "utf8");
-            const cleaned = text.replace(absoluteHtml, SITE_URL + "/$1");
-            if (cleaned !== text) {
-                fs.writeFileSync(file, cleaned);
+    const generated = ["sitemap.xml"];
+    LANGS.forEach(function (lang) {
+        const dir = lang === "en" ? "" : lang + "/";
+        ["index.html", "404.html", "faq.html", "generator.html", "legal.html", "valorant.html"].forEach(function (f) { generated.push(dir + f); });
+        ["players", "commands", "guides", "skins", "tools"].forEach(function (sub) {
+            if (fs.existsSync(dir + sub)) {
+                fs.readdirSync(dir + sub).filter(function (f) { return f.endsWith(".html"); }).forEach(function (f) { generated.push(dir + sub + "/" + f); });
             }
         });
+    });
+    generated.filter(function (file) { return fs.existsSync(file); }).forEach(function (file) {
+        const text = fs.readFileSync(file, "utf8");
+        const cleaned = text.replace(absoluteHtml, SITE_URL + "/$1");
+        if (cleaned !== text) {
+            fs.writeFileSync(file, cleaned);
+        }
+    });
 
     // ===== CSS critique de l'accueil (voir critical.js) =====
     // Le CSS du haut de page est écrit dans index.html (affichage immédiat), style.min.css se charge ensuite sans bloquer.
     // Gardé dans critical.css avec l'empreinte de style.min.css : recalculé seulement si le CSS change
     // (ou « node build.js --critical »). Sans Chrome ou en cas d'erreur : feuille de style normale (rien ne casse).
+    // Le même CSS sert à l'accueil de chaque langue (même mise en page).
     await (async function () {
-        const blocking = `<link rel="stylesheet" href="style.min.css?v=${CSS_HASH}">`;
-        let home = fs.readFileSync("index.html", "utf8");
         const header = "/* style.min.css " + CSS_HASH + " */\n";
         const saved = fs.existsSync("critical.css") ? fs.readFileSync("critical.css", "utf8").replace(/\r\n/g, "\n") : "";
         let critical = "";
@@ -2654,7 +2722,8 @@ ${urls}</urlset>
                 console.log("Attention : Chrome introuvable, pas de CSS critique (feuille de style normale)");
             } else {
                 try {
-                    const raw = await extractCritical(chrome, replaceBetween(home, "CSS", blocking, "    "));
+                    const home = fs.readFileSync("index.html", "utf8");
+                    const raw = await extractCritical(chrome, replaceBetween(home, "CSS", `<link rel="stylesheet" href="style.min.css?v=${CSS_HASH}">`, "    "));
                     critical = esbuild ? esbuild.transformSync(raw, { loader: "css", minify: true, legalComments: "none" }).code.trim() : raw;
                     fs.writeFileSync("critical.css", header + critical + "\n");
                     console.log("CSS critique recalculé : " + (critical.length / 1024).toFixed(1) + " Ko");
@@ -2664,16 +2733,22 @@ ${urls}</urlset>
                 }
             }
         }
-        const block = critical
-            ? `<style>${critical}</style>
-    <link rel="preload" href="style.min.css?v=${CSS_HASH}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        LANGS.forEach(function (lang) {
+            const dir = lang === "en" ? "" : lang + "/";
+            const up = lang === "en" ? "" : "../"; // depuis fr/ : les fichiers sont un dossier plus haut
+            const blocking = `<link rel="stylesheet" href="${up}style.min.css?v=${CSS_HASH}">`;
+            const css = up ? critical.replace(/url\((["']?)(?!data:|https?:|\/)/g, "url($1" + up) : critical;
+            const block = critical
+                ? `<style>${css}</style>
+    <link rel="preload" href="${up}style.min.css?v=${CSS_HASH}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>${blocking}</noscript>`
-            : blocking;
-        home = replaceBetween(home, "CSS", block, "    ");
-        fs.writeFileSync("index.html", home);
+                : blocking;
+            const file = dir + "index.html";
+            fs.writeFileSync(file, replaceBetween(fs.readFileSync(file, "utf8"), "CSS", block, "    "));
+        });
     })();
 
-    console.log(players.length + " pages joueurs + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
+    console.log(players.length + " pages joueurs × " + LANGS.length + " langues (" + LANGS.join(", ") + ") + accueil + generator.html + faq.html + legal.html + sitemap.xml + 404.html (css " + CSS_HASH + ", js " + SCRIPT_HASH + ")");
 }
 
 main();

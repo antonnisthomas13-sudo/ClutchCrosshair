@@ -3,7 +3,7 @@
 // Le HTML du générateur (curseurs, boutons...) est écrit par build.js (generatorHTML dans render.js) :
 // ce fichier ne fait que le rendre vivant. Chaque réglage fabrique un VRAI code CS2 (format CS...).
 import { encodeCrosshair, decodeCrosshairShareCode, crosshairToConVars } from "./lib/csgo-sharecode.js";
-import { copyText, drawCrosshair } from "./crosshair.js";
+import { copyText, drawCrosshair, tr } from "./crosshair.js";
 
 // Couleur (r, g, b) -> "#00FF00"
 function toHex(c) {
@@ -191,16 +191,16 @@ export function initGenerator(root, options) {
             return;
         }
         if (/^CSGO-/i.test(text)) {
-            showStatus("Old CSGO- codes no longer work in CS2. Paste a code starting with CS.", false);
+            showStatus(tr("genOldCode", "Old CSGO- codes no longer work in CS2. Paste a code starting with CS."), false);
             return;
         }
         const crosshair = readCode(text);
         if (crosshair) {
             load(crosshair);
             proSelect.value = "";
-            showStatus("Code imported. Adjust it as you like.", true);
+            showStatus(tr("genImported", "Code imported. Adjust it as you like."), true);
         } else {
-            showStatus("This is not a valid CS2 crosshair code.", false);
+            showStatus(tr("genInvalid", "This is not a valid CS2 crosshair code."), false);
         }
     });
 
@@ -245,6 +245,6 @@ export function initGenerator(root, options) {
     const fromAddress = syncHash ? readCode(decodeURIComponent(location.hash.slice(1))) : null;
     load(fromAddress || defaults);
     if (fromAddress) {
-        showStatus("Crosshair loaded from the link. Adjust it as you like.", true);
+        showStatus(tr("genFromLink", "Crosshair loaded from the link. Adjust it as you like."), true);
     }
 }

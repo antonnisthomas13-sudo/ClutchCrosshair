@@ -132,7 +132,7 @@ async function extractCritical(chrome, indexHtml) {
     const base = "http://127.0.0.1:" + server.address().port + "/";
     const profile = fs.mkdtempSync(path.join(require("os").tmpdir(), "cc-critical-"));
     const port = 9400 + Math.floor(Math.random() * 400);
-    const browser = spawn(chrome, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--remote-debugging-port=" + port, "--user-data-dir=" + profile, "about:blank"], { stdio: "ignore" });
+    const browser = spawn(chrome, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check", "--lang=en-US", "--remote-debugging-port=" + port, "--user-data-dir=" + profile, "about:blank"], { stdio: "ignore" });
     const sleep = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
     try {
         let target = null;
@@ -174,7 +174,7 @@ async function extractCritical(chrome, indexHtml) {
                 await send("Emulation.setDeviceMetricsOverride", vp);
                 await send("Page.navigate", { url: base });
                 await sleep(300);
-                await evaluate(function (t) { try { localStorage.setItem("theme", t); } catch (e) { /* rien */ } return 1; }, theme);
+                await evaluate(function (t) { try { localStorage.setItem("theme", t); localStorage.setItem("lang", "en"); } catch (e) { /* rien */ } return 1; }, theme); // lang : pas de redirection vers une autre langue
                 await send("Page.navigate", { url: base + "?" + theme + vp.width });
                 await sleep(1500);
                 await evaluate(function () { return document.fonts.ready.then(function () { return 1; }); });

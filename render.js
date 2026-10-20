@@ -83,11 +83,14 @@ export function photoHTML(player, className, file, eager) {
 
 // La carte complète d'un joueur, façon "fiche joueur" de retransmission :
 // bandeau couleur d'équipe (nom + photo), ligne équipe/date, boîte "Crosshair" (aperçu taille réelle), code, console
-// options : photo (vignette), photoMd (photo moyenne pour la fiche), eager (charger tout de suite), logo (logo optimisé)
+// options : photo (vignette), photoMd (photo moyenne pour la fiche), eager (charger tout de suite), logo (logo optimisé),
+//           t (traduction, voir i18n.js), teamLabel (nom affiché de l'équipe : "Creator" est traduit)
 export function cardHTML(player, options) {
     const o = options || {};
+    const t = o.t;
     const name = esc(player.name);
     const team = esc(player.team);
+    const teamText = esc(o.teamLabel || player.team);
     const color = teamColor(player.team);
     const photoAttr = (o.photoMd ? ` data-photo="${esc(o.photoMd)}"` : "") + (player.faceit ? ` data-faceit="${esc(player.faceit)}"` : "")
         + (o.twins && o.twins.length ? ` data-twins="${esc(o.twins.map(function (p) { return slug(p.name) + ":" + p.name; }).join(","))}"` : ""); // joueurs au code identique
@@ -97,25 +100,25 @@ export function cardHTML(player, options) {
                 ${photoHTML(player, "card-photo", o.photo, o.eager)}
             </div>
             <div class="card-meta">
-                <span class="team">${teamBadge(player.team, o.logo, 16)}${team}</span>
-                <span class="date">Updated ${esc(player.updated)}</span>
+                <span class="team">${teamBadge(player.team, o.logo, 16)}${teamText}</span>
+                <span class="date">${t("common.updated", { date: esc(player.updated) })}</span>
             </div>
             <div class="stat">
-                <span class="stat-label">Crosshair</span>
-                <canvas class="preview" width="560" height="160" role="img" aria-label="${name} CS2 crosshair preview"></canvas>
+                <span class="stat-label">${t("card.crosshair")}</span>
+                <canvas class="preview" width="560" height="160" role="img" aria-label="${t("card.previewAria", { name: name })}"></canvas>
             </div>
             <div class="field">
-                <div class="field-label">Share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-label">${t("field.shareCode")} <span><i class="sep">· </i>${t("field.shareHelp")}</span></div>
                 <div class="field-row">
                     <code class="code">${esc(player.code)}</code>
-                    <button class="copy-code mini">Copy</button>
+                    <button class="copy-code mini">${t("common.copy")}</button>
                 </div>
             </div>
             <div class="field">
-                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-label">${t("field.console")} <span><i class="sep">· </i>${t("field.consoleHelp")}</span></div>
                 <div class="field-row">
                     <code class="console">${esc(consoleCommands(player.code))}</code>
-                    <button class="copy-console mini btn-secondary">Copy</button>
+                    <button class="copy-console mini btn-secondary">${t("common.copy")}</button>
                 </div>
             </div>
         </article>`;
@@ -124,15 +127,15 @@ export function cardHTML(player, options) {
 // ===== Le générateur de crosshair (generator.html + onglet Generator de l'accueil) =====
 // defaultCode : le crosshair de départ ; groups : [{ title: "Team Spirit", players: [{ name, code }] }]
 // Rendu vivant par generator.js. Les réglages en pixels suivent le format CS2 (sizes in pixels for a screen height).
-const GEN_COLORS = [["Green", "#00FF00"], ["Yellow", "#FFFF00"], ["Cyan", "#00FFFF"], ["Red", "#FF0000"], ["Pink", "#FF00FF"], ["White", "#FFFFFF"]];
+const GEN_COLORS = [["green", "#00FF00"], ["yellow", "#FFFF00"], ["cyan", "#00FFFF"], ["red", "#FF0000"], ["pink", "#FF00FF"], ["white", "#FFFFFF"]];
 // Résolutions utilisées sur CS2, par format d'écran. Elles ne changent PAS le code : elles servent à l'aperçu,
 // pour voir le crosshair comme en jeu dans cette résolution. Les formats "stretched" (4:3, 5:4) sont étirés
 // en largeur sur un écran 16:9 : stretch = (16/9) / (largeur/hauteur)
 const GEN_RESOLUTIONS = [
     ["16:9", false, ["1920x1080", "2560x1440", "1600x900", "1280x720", "3840x2160"]],
-    ["4:3 stretched", true, ["1280x960", "1024x768", "1440x1080", "1152x864"]],
+    ["4:3", true, ["1280x960", "1024x768", "1440x1080", "1152x864"]],
     ["16:10", false, ["1680x1050", "1440x900", "1280x800", "1920x1200"]],
-    ["5:4 stretched", true, ["1280x1024"]]
+    ["5:4", true, ["1280x1024"]]
 ];
 
 function stretchOf(resolution, stretched) {
@@ -152,7 +155,8 @@ function genToggle(field, label, checked) {
     return `<label class="gen-toggle"><input type="checkbox" data-field="${field}"${checked ? " checked" : ""}><span>${label}</span></label>`;
 }
 
-export function generatorHTML(defaultCode, groups) {
+// t = traduction (voir i18n.js)
+export function generatorHTML(defaultCode, groups, t) {
     const c = decodeCrosshairShareCode(defaultCode);
     const hex = "#" + [c.red, c.green, c.blue].map(function (v) {
         return v.toString(16).padStart(2, "0");
@@ -167,103 +171,96 @@ export function generatorHTML(defaultCode, groups) {
     return `<div class="gen" id="gen">
         <div class="gen-view">
             <div class="gen-stage">
-                <canvas class="preview gen-preview" data-gen="preview" data-bg="raw" data-res="1920x1080" data-stretch="1" width="760" height="320" role="img" aria-label="Live preview of your CS2 crosshair"></canvas>
-                <div class="gen-zoom" role="group" aria-label="Preview size">
-                    <button type="button" data-zoom="1" aria-pressed="true">Real size</button>
+                <canvas class="preview gen-preview" data-gen="preview" data-bg="raw" data-res="1920x1080" data-stretch="1" width="760" height="320" role="img" aria-label="${t("gen.previewAria")}"></canvas>
+                <div class="gen-zoom" role="group" aria-label="${t("gen.zoomAria")}">
+                    <button type="button" data-zoom="1" aria-pressed="true">${t("gen.realSize")}</button>
                     <button type="button" data-zoom="3" aria-pressed="false">Zoom ×3</button>
                 </div>
             </div>
             <div class="gen-res">
-                <label class="gen-label" for="gen-res">Preview in your CS2 resolution</label>
+                <label class="gen-label" for="gen-res">${t("gen.resolution")}</label>
                 <select id="gen-res" data-gen="res">
                     ${GEN_RESOLUTIONS.map(function (group) {
-                        return `<optgroup label="${group[0]}">${group[2].map(function (res) {
-                            return `<option value="${res}" data-stretch="${stretchOf(res, group[1])}"${res === "1920x1080" ? " selected" : ""}>${res.replace("x", " × ")}${group[1] ? " stretched" : ""}</option>`;
+                        return `<optgroup label="${group[0]}${group[1] ? " " + t("gen.stretched") : ""}">${group[2].map(function (res) {
+                            return `<option value="${res}" data-stretch="${stretchOf(res, group[1])}"${res === "1920x1080" ? " selected" : ""}>${res.replace("x", " × ")}${group[1] ? " " + t("gen.stretched") : ""}</option>`;
                         }).join("")}</optgroup>`;
                     }).join("")}
                 </select>
-                <p class="gen-hint">Preview only: your crosshair code stays the same.</p>
+                <p class="gen-hint">${t("gen.resolutionHint")}</p>
             </div>
             <div class="field">
-                <div class="field-label">Your share code <span><i class="sep">· </i>Settings › Crosshair › Import</span></div>
+                <div class="field-label">${t("gen.yourCode")} <span><i class="sep">· </i>${t("field.shareHelp")}</span></div>
                 <div class="field-row">
                     <code class="code" data-gen="code">${esc(defaultCode)}</code>
-                    <button type="button" class="mini" data-copy="code">Copy</button>
+                    <button type="button" class="mini" data-copy="code">${t("common.copy")}</button>
                 </div>
             </div>
             <div class="field">
-                <div class="field-label">Console <span><i class="sep">· </i>Paste in the CS2 console (~)</span></div>
+                <div class="field-label">${t("field.console")} <span><i class="sep">· </i>${t("field.consoleHelp")}</span></div>
                 <div class="field-row">
                     <code class="console" data-gen="console">${esc(consoleCommands(defaultCode))}</code>
-                    <button type="button" class="mini btn-secondary" data-copy="console">Copy</button>
+                    <button type="button" class="mini btn-secondary" data-copy="console">${t("common.copy")}</button>
                 </div>
             </div>
-            <noscript><p class="gen-status gen-status-error">Turn on JavaScript to use the crosshair generator.</p></noscript>
+            <noscript><p class="gen-status gen-status-error">${t("gen.noscript")}</p></noscript>
         </div>
 
         <div class="gen-controls">
             <fieldset class="gen-group">
-                <legend>Start from</legend>
+                <legend>${t("gen.startFrom")}</legend>
                 <div class="gen-start">
-                    <label class="gen-label" for="gen-pro">A pro crosshair</label>
+                    <label class="gen-label" for="gen-pro">${t("gen.proCrosshair")}</label>
                     <select id="gen-pro" data-gen="pro">
-                        <option value="">Choose a pro player…</option>
+                        <option value="">${t("gen.choosePro")}</option>
                         ${proOptions}
                     </select>
-                    <label class="gen-label" for="gen-import">Or paste a code</label>
+                    <label class="gen-label" for="gen-import">${t("gen.pasteCode")}</label>
                     <input type="text" id="gen-import" data-gen="import" placeholder="CS…" autocomplete="off" spellcheck="false">
                 </div>
                 <p class="gen-status" data-gen="status" aria-live="polite"></p>
             </fieldset>
 
             <fieldset class="gen-group">
-                <legend>Color</legend>
+                <legend>${t("specs.color")}</legend>
                 <div class="gen-swatches">
                     ${GEN_COLORS.map(function (color) {
-                        return `<button type="button" class="gen-swatch" data-color="${color[1]}" style="--swatch: ${color[1]}" aria-pressed="${color[1] === hex}" aria-label="${color[0]}" title="${color[0]}"></button>`;
+                        return `<button type="button" class="gen-swatch" data-color="${color[1]}" style="--swatch: ${color[1]}" aria-pressed="${color[1] === hex}" aria-label="${t("gen.colors." + color[0])}" title="${t("gen.colors." + color[0])}"></button>`;
                     }).join("\n                    ")}
                     <label class="gen-custom">
                         <input type="color" data-gen="color" value="${hex.toLowerCase()}">
-                        <span>Custom</span>
+                        <span>${t("gen.custom")}</span>
                     </label>
                 </div>
                 <div class="gen-slider">
-                    <label for="gen-alpha">Opacity</label>
+                    <label for="gen-alpha">${t("specs.opacity")}</label>
                     <input type="range" id="gen-alpha" data-field="alpha" min="50" max="255" step="1" value="${c.alpha}" style="--fill: ${Math.round((c.alpha - 50) / 205 * 100)}%">
                     <output class="gen-out" data-gen="alpha-out" for="gen-alpha">${Math.round((c.alpha / 255) * 100)}%</output>
                 </div>
             </fieldset>
 
             <fieldset class="gen-group">
-                <legend>Size <span>in pixels</span></legend>
-                ${genSlider("length", "Length", 0, 20, c.length, "pixels")}
-                ${genSlider("thickness", "Thickness", 1, 10, c.thickness, "pixels")}
-                ${genSlider("gap", "Gap", -5, 10, c.gap, "pixels")}
+                <legend>${t("gen.size")} <span>${t("gen.inPixels")}</span></legend>
+                ${genSlider("length", t("specs.length"), 0, 20, c.length, t("gen.pixels"))}
+                ${genSlider("thickness", t("specs.thickness"), 1, 10, c.thickness, t("gen.pixels"))}
+                ${genSlider("gap", t("specs.gap"), -5, 10, c.gap, t("gen.pixels"))}
             </fieldset>
 
             <fieldset class="gen-group">
-                <legend>Style</legend>
+                <legend>${t("gen.style")}</legend>
                 <div class="gen-toggles">
-                    ${genToggle("outlineMode", "Outline", c.outlineMode > 0)}
-                    ${genToggle("centerDotEnabled", "Center dot", c.centerDotEnabled)}
-                    ${genToggle("tStyleEnabled", "T-style", c.tStyleEnabled)}
+                    ${genToggle("outlineMode", t("specs.outline"), c.outlineMode > 0)}
+                    ${genToggle("centerDotEnabled", t("specs.dot"), c.centerDotEnabled)}
+                    ${genToggle("tStyleEnabled", t("specs.tStyle"), c.tStyleEnabled)}
                 </div>
-                <button type="button" class="gen-reset" data-gen="reset">Reset</button>
+                <button type="button" class="gen-reset" data-gen="reset">${t("gen.reset")}</button>
             </fieldset>
         </div>
     </div>`;
 }
 
 // ===== Skins des pros (skins.json, rempli par update-skins.js) =====
-export const SKIN_CATEGORIES = [
-    ["knives", "Knives"],
-    ["gloves", "Gloves"],
-    ["rifles", "Rifles"],
-    ["snipers", "Sniper rifles"],
-    ["pistols", "Pistols"],
-    ["smgs", "SMGs"],
-    ["heavy", "Shotguns & machine guns"]
-];
+// Catégories, dans l'ordre d'affichage (noms traduits : skins.categories.<clé> dans i18n/*.json)
+export const SKIN_CATEGORIES = ["knives", "gloves", "rifles", "snipers", "pistols", "smgs", "heavy"];
 const RARITY_RANK = { "Contraband": 8, "Extraordinary": 7, "Covert": 6, "Classified": 5, "Restricted": 4, "Mil-Spec Grade": 3, "Industrial Grade": 2, "Consumer Grade": 1 };
 
 // "★ StatTrak™ Karambit | Doppler" -> { weapon: "★ Karambit", finish: "Doppler" }
@@ -287,7 +284,7 @@ export function groupSkins(items) {
             group.item = item;
         }
     });
-    const order = SKIN_CATEGORIES.map(function (c) { return c[0]; });
+    const order = SKIN_CATEGORIES;
     return Array.from(groups.values()).sort(function (a, b) {
         return order.indexOf(a.item.category) - order.indexOf(b.item.category) || byValue(a, b);
     });
@@ -306,30 +303,36 @@ export function byPrice(groups) {
     return groups.slice().sort(byValue);
 }
 
-// 1234.5 -> "$1,234.50"
-export function formatPrice(value, currency) {
-    return new Intl.NumberFormat("en-US", { style: "currency", currency: currency || "USD" }).format(value);
+// 1234.5 -> "$1,234.50" (locale = format des nombres de la langue, ex. "fr-FR" -> "1 234,50 $US")
+export function formatPrice(value, currency, locale) {
+    return new Intl.NumberFormat(locale || "en-US", { style: "currency", currency: currency || "USD" }).format(value);
 }
 
-// Une carte de skin. prefix = chemin vers la racine du site ("" ou "../")
-export function skinCardHTML(group, playerName, prefix, eager) {
+// Une carte de skin. prefix = chemin vers la racine du site ("" ou "../") ; t = traduction ; locale = format des prix
+// Les noms des skins ne sont jamais traduits ; l'usure (Factory New...) et la rareté le sont s'il existe une traduction
+export function skinCardHTML(group, playerName, prefix, eager, t, locale) {
     const item = group.item;
     const parts = skinParts(item.name);
-    const label = `${item.name}${item.exterior !== "Vanilla" ? " (" + item.exterior + ")" : ""}`;
+    const opt = function (key, fallback) {
+        try { return t(key); } catch (error) { return fallback; }
+    };
+    const exterior = opt("skins.exteriors." + item.exterior, item.exterior);
+    const rarity = opt("skins.rarities." + item.rarity, item.rarity);
+    const label = `${item.name}${item.exterior !== "Vanilla" ? " (" + exterior + ")" : ""}`;
     const badges = (item.statTrak ? `<span class="skin-badge">StatTrak™</span>` : "") + (item.souvenir ? `<span class="skin-badge">Souvenir</span>` : "");
     const float = item.float !== null
-        ? `<div class="skin-wear" title="Exact float: ${item.float}"><span class="wear-bar"><i style="left: ${Math.min(100, item.float * 100).toFixed(2)}%"></i></span></div>`
+        ? `<div class="skin-wear" title="${t("skins.exactFloat")} ${item.float}"><span class="wear-bar"><i style="left: ${Math.min(100, item.float * 100).toFixed(2)}%"></i></span></div>`
         : "";
     return `<article class="skin" style="--rarity: ${esc(item.rarityColor || "#9DA2AA")}">
-            <div class="skin-img"><img src="${prefix}skins/img/${esc(item.image)}.webp" alt="${esc(playerName)}'s ${esc(label)} CS2 skin" width="256" height="192" loading="${eager ? "eager" : "lazy"}" decoding="async"></div>
+            <div class="skin-img"><img src="${prefix}skins/img/${esc(item.image)}.webp" alt="${t("skins.alt", { name: esc(playerName), skin: esc(label) })}" width="256" height="192" loading="${eager ? "eager" : "lazy"}" decoding="async"></div>
             <div class="skin-body">
                 <p class="skin-weapon">${esc(parts.weapon)}${badges}</p>
-                <h3 class="skin-name">${esc(parts.finish)}${group.count > 1 ? ` <span class="skin-count" title="${group.count} copies">×${group.count}</span>` : ""}</h3>
-                <p class="skin-ext"><span class="skin-rarity">${esc(item.rarity)}</span> · ${esc(item.exterior)}</p>
+                <h3 class="skin-name">${esc(parts.finish)}${group.count > 1 ? ` <span class="skin-count" title="${t("skins.copies", { count: group.count })}">×${group.count}</span>` : ""}</h3>
+                <p class="skin-ext"><span class="skin-rarity">${esc(rarity)}</span> · ${esc(exterior)}</p>
                 ${float}
                 <dl class="skin-meta">
-                    <div><dt>Float</dt><dd class="skin-float">${item.float !== null ? esc(String(item.float)) : "—"}</dd></div>
-                    <div><dt>Price</dt><dd class="skin-price" data-market="${esc(item.marketName)}"${item.price != null ? "" : ` title="No price available"`}>${item.price != null ? `${esc(formatPrice(item.price, "USD"))}${item.priceEur != null ? ` <span class="skin-eur">${esc(formatPrice(item.priceEur, "EUR"))}</span>` : ""}` : "—"}</dd></div>
+                    <div><dt>${t("skins.float")}</dt><dd class="skin-float">${item.float !== null ? esc(String(item.float)) : "—"}</dd></div>
+                    <div><dt>${t("skins.price")}</dt><dd class="skin-price" data-market="${esc(item.marketName)}"${item.price != null ? "" : ` title="${t("skins.noPrice")}"`}>${item.price != null ? `${esc(formatPrice(item.price, "USD", locale))}${item.priceEur != null ? ` <span class="skin-eur">${esc(formatPrice(item.priceEur, "EUR", locale))}</span>` : ""}` : "—"}</dd></div>
                 </dl>
             </div>
         </article>`;

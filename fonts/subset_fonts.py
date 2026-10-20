@@ -1,6 +1,7 @@
 # subset_fonts.py : fabrique les polices allégées du site à partir des originales (fonts/src/)
 # Lancer avec : py fonts/subset_fonts.py   (il faut : py -m pip install fonttools brotli)
-# - Garde seulement les caractères utilisés par le site : latin de base, accents (Latin-1, œ), ponctuation (— … › « » ’ “ ”), € ™ ×
+# - Garde seulement les caractères utilisés par le site : latin de base, accents (Latin-1, œ, ²), ponctuation (— … › « » ’ “ ”), € ™ ×,
+#   et l'espace fine insécable (U+202F) des nombres en français (« 8 551 $US »)
 #   (le cyrillique du menu des langues n'était déjà pas dans ces polices : le navigateur prend une police de secours)
 # - Inter : seulement les graisses 400 à 600 (les seules utilisées : --fw-regular, --fw-medium, --fw-semibold)
 # Licence : polices SIL Open Font License (fonts/LICENSE.txt), qui autorise ces versions allégées.
@@ -13,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 UNICODES = (
     list(range(0x20, 0x7F)) + list(range(0xA0, 0x100))
     + [0x131, 0x152, 0x153, 0x2C6, 0x2DA, 0x2DC, 0x2013, 0x2014, 0x2018, 0x2019, 0x201A, 0x201C, 0x201D, 0x201E,
-       0x2022, 0x2026, 0x2032, 0x2033, 0x2039, 0x203A, 0x2044, 0x20AC, 0x2122, 0x2190, 0x2191, 0x2192, 0x2193, 0x2212, 0xFEFF]
+       0x2022, 0x2026, 0x2032, 0x2033, 0x2039, 0x203A, 0x2044, 0x202F, 0x20AC, 0x2122, 0x2190, 0x2191, 0x2192, 0x2193, 0x2212, 0xFEFF]
 )
 
 FONTS = [

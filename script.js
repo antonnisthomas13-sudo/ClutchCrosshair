@@ -2,7 +2,7 @@
 // Tout le contenu (cartes, menu des équipes, onglet Trending, compteurs) est déjà écrit dans index.html par build.js :
 // ce fichier ajoute seulement les interactions. Rien de plus à télécharger (pas de players.json).
 // crosshair.js : l'aperçu du crosshair + le bouton Copy (partagé avec les pages joueurs)
-import { copyText, drawCrosshair } from "./crosshair.js";
+import { copyText, drawCrosshair, tr } from "./crosshair.js";
 
 const layout = document.querySelector(".layout");
 const main = document.getElementById("main");
@@ -149,8 +149,8 @@ function plantBomb() {
     document.addEventListener("keydown", onKey);
 
     function ending() {
-        title.textContent = "Terrorists win";
-        sub.textContent = "You should've defused it.";
+        title.textContent = tr("terroristsWin", "Terrorists win");
+        sub.textContent = tr("defuse", "You should've defused it.");
         overlay.classList.add("c4-ended");
     }
 
@@ -199,7 +199,7 @@ function rushB() {
     const runner = document.createElement("div");
     runner.className = "rushb";
     runner.setAttribute("aria-hidden", "true");
-    runner.innerHTML = '<span class="rushb-bubble">Rush B, don\'t stop!</span>'
+    runner.innerHTML = '<span class="rushb-bubble"></span>'
         + '<svg class="rushb-guy" viewBox="0 0 64 80">'
         + '<g class="rushb-lean">'
         + '<line class="rushb-limb rushb-leg-a" x1="30" y1="48" x2="22" y2="74"/>'
@@ -210,6 +210,7 @@ function rushB() {
         + '<circle class="rushb-head" cx="35" cy="15" r="9"/>'
         + '<path class="rushb-band" d="M26 12 h18 v4 h-18 Z M26 13 l-8 -4 l2 7 Z"/>'
         + '</g></svg>';
+    runner.querySelector(".rushb-bubble").textContent = tr("rushB", "Rush B, don't stop!");
     document.body.appendChild(runner);
     const remove = function () {
         runner.remove();
@@ -356,7 +357,7 @@ document.querySelectorAll("[data-goto]").forEach(function (button) {
 const themeButton = document.getElementById("theme-toggle");
 
 function updateThemeButton() {
-    themeButton.textContent = document.body.classList.contains("light") ? "Dark mode" : "Light mode";
+    themeButton.textContent = document.body.classList.contains("light") ? tr("darkMode", "Dark mode") : tr("lightMode", "Light mode");
 }
 
 themeButton.addEventListener("click", function () {
@@ -434,7 +435,7 @@ function showPlayer(card) {
 
     document.getElementById("modal-name").textContent = name;
     document.getElementById("modal-team").textContent = card.dataset.team;
-    document.getElementById("modal-date").textContent = "Last update: " + card.dataset.date;
+    document.getElementById("modal-date").textContent = tr("lastUpdate", "Last update: ") + card.dataset.date;
     document.getElementById("modal-code").textContent = code;
     document.getElementById("modal-console").textContent = card.querySelector(".console").textContent;
     document.getElementById("modal-page").href = card.querySelector("h3 a").getAttribute("href");
@@ -444,14 +445,14 @@ function showPlayer(card) {
     same.hidden = !twins.length;
     same.replaceChildren();
     if (twins.length) {
-        same.append("Same crosshair as ");
+        same.append(tr("sameAs", "Same crosshair as "));
         twins.forEach(function (twin, i) {
             const sep = twin.indexOf(":");
             const link = document.createElement("a");
             link.href = "#" + twin.slice(0, sep);
             link.textContent = twin.slice(sep + 1);
             if (i > 0) {
-                same.append(i === twins.length - 1 ? " and " : ", ");
+                same.append(i === twins.length - 1 ? tr("and", " and ") : ", ");
             }
             same.append(link);
         });
@@ -460,14 +461,14 @@ function showPlayer(card) {
     const faceit = document.getElementById("modal-faceit");
     faceit.hidden = !card.dataset.faceit; // bouton seulement pour les créateurs qui ont un profil FACEIT
     faceit.href = card.dataset.faceit || "#";
-    faceit.setAttribute("aria-label", name + " FACEIT profile (opens in a new tab)");
+    faceit.setAttribute("aria-label", tr("faceitAria", "{name} FACEIT profile (opens in a new tab)", { name: name }));
 
     const wasHidden = modal.classList.contains("hidden");
     modal.classList.remove("hidden");
     layout.inert = true; // le reste de la page n'est plus atteignable au clavier tant que la fiche est ouverte
 
     const preview = document.getElementById("modal-preview");
-    preview.setAttribute("aria-label", name + " CS2 crosshair preview");
+    preview.setAttribute("aria-label", tr("previewAria", "{name} CS2 crosshair preview", { name: name }));
     drawCrosshair(preview, code);
 
     if (wasHidden) {

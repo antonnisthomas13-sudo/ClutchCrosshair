@@ -7,6 +7,25 @@
     <meta name="description" content="Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://clutchcrosshair.com/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-fps-boost">
+    <script>(function () {
+        var A = {"en":"../guides/cs2-fps-boost.html","fr":"../fr/guides/cs2-fps-boost.html"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -15,6 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="How to Boost FPS in CS2 (2026)">
     <meta property="og:description" content="Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.">
     <meta property="og:url" content="https://clutchcrosshair.com/guides/cs2-fps-boost">
@@ -28,7 +48,7 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=cfb0e51442">
+    <link rel="stylesheet" href="../style.min.css?v=6bb7a38f4c">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/guides/cs2-fps-boost#article","headline":"How to Boost FPS in CS2 (2026)","description":"Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.","url":"https://clutchcrosshair.com/guides/cs2-fps-boost","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/guides/cs2-fps-boost#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Guides","item":"https://clutchcrosshair.com/guides/"},{"@type":"ListItem","position":3,"name":"How to Boost FPS in CS2 (2026)","item":"https://clutchcrosshair.com/guides/cs2-fps-boost"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/guides/cs2-fps-boost#faq","mainEntity":[{"@type":"Question","name":"How can I get more FPS in CS2?","acceptedAnswer":{"@type":"Answer","text":"Disable Ambient Occlusion, lower Shader, Particle and Model/Texture Detail, set HDR to Performance, update your graphics driver and close heavy background programs."}},{"@type":"Question","name":"Should I uncap my FPS in CS2?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. A cap with fps_max that your PC can hold steadily often feels smoother than an unlimited frame rate that keeps jumping."}},{"@type":"Question","name":"How do I show FPS in CS2?","acceptedAnswer":{"@type":"Answer","text":"Type cl_hud_telemetry_frametime_show 2 or cl_showfps 1 in the console, or enable the Telemetry options in Settings › Game."}},{"@type":"Question","name":"Do launch options increase FPS in CS2?","acceptedAnswer":{"@type":"Answer","text":"Barely. Most FPS launch options were made for CS:GO; in-game video settings matter far more."}}]}]}</script>
 </head>
 <body class="page">
@@ -53,6 +73,13 @@
             <a href="../commands/">Commands</a>
             <a href="../tools/">Tools</a>
         </nav>
+        <select id="lang" class="lang" aria-label="Language">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="ru" disabled>RU · Русский (soon)</option>
+                    <option value="es" disabled>ES · Español (soon)</option>
+                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                </select>
     </header>
 
     <main class="player-page guide-page">
@@ -127,7 +154,7 @@
         <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>
     <script type="module">
-        import { copyText } from "../crosshair.min.js?v=f7020cc41a";
+        import { copyText } from "../crosshair.min.js?v=fe84164f66";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {

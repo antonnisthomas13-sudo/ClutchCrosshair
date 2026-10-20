@@ -1,0 +1,55 @@
+{
+ "about": "Traduction française de binds.json : même structure et mêmes commandes, seuls les libellés affichés sont traduits. Si binds.json change (nouvelle touche, nouvel achat...), mettre ce fichier à jour aussi.",
+ "updated": "19/10/2026",
+ "keys": [
+  ["Pavé numérique", [["kp_end", "Pavé num. 1"], ["kp_downarrow", "Pavé num. 2"], ["kp_pgdn", "Pavé num. 3"], ["kp_leftarrow", "Pavé num. 4"], ["kp_5", "Pavé num. 5"], ["kp_rightarrow", "Pavé num. 6"], ["kp_home", "Pavé num. 7"], ["kp_uparrow", "Pavé num. 8"], ["kp_pgup", "Pavé num. 9"], ["kp_ins", "Pavé num. 0"], ["kp_del", "Pavé num. ."], ["kp_slash", "Pavé num. /"], ["kp_multiply", "Pavé num. *"], ["kp_minus", "Pavé num. -"], ["kp_plus", "Pavé num. +"], ["kp_enter", "Pavé num. Entrée"]]],
+  ["Touches de fonction", [["f1", "F1"], ["f2", "F2"], ["f3", "F3"], ["f4", "F4"], ["f5", "F5"], ["f6", "F6"], ["f7", "F7"], ["f8", "F8"], ["f9", "F9"], ["f10", "F10"], ["f11", "F11"], ["f12", "F12"]]],
+  ["Souris", [["mouse3", "Clic molette"], ["mouse4", "Souris 4 (côté)"], ["mouse5", "Souris 5 (côté)"], ["mwheelup", "Molette vers le haut"], ["mwheeldown", "Molette vers le bas"]]],
+  ["Lettres", [["c", "C"], ["f", "F"], ["g", "G"], ["h", "H"], ["j", "J"], ["k", "K"], ["l", "L"], ["n", "N"], ["t", "T"], ["v", "V"], ["x", "X"], ["z", "Z"]]],
+  ["Chiffres", [["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["0", "0"]]],
+  ["Autres", [["space", "Espace"], ["alt", "Alt"], ["capslock", "Verr. Maj"], ["ins", "Inser"], ["del", "Suppr"], ["home", "Début"], ["end", "Fin"], ["pgup", "Page préc."], ["pgdn", "Page suiv."], ["uparrow", "Flèche haut"], ["downarrow", "Flèche bas"], ["leftarrow", "Flèche gauche"], ["rightarrow", "Flèche droite"]]]
+ ],
+ "buy": [
+  ["Fusils", [["ak47", "AK-47"], ["m4a1", "M4A4 / M4A1-S (selon ton inventaire)"], ["galilar", "Galil AR"], ["famas", "FAMAS"], ["sg556", "SG 553"], ["aug", "AUG"]]],
+  ["Fusils de précision", [["awp", "AWP"], ["ssg08", "SSG 08 (Scout)"], ["g3sg1", "G3SG1"], ["scar20", "SCAR-20"]]],
+  ["Pistolets", [["deagle", "Desert Eagle / R8"], ["p250", "P250"], ["tec9", "Tec-9 / CZ75 (T)"], ["fiveseven", "Five-SeveN / CZ75 (CT)"], ["elite", "Dual Berettas"], ["cz75a", "CZ75-Auto"]]],
+  ["Pistolets-mitrailleurs", [["mac10", "MAC-10"], ["mp9", "MP9"], ["mp7", "MP7 / MP5-SD"], ["ump45", "UMP-45"], ["p90", "P90"], ["bizon", "PP-Bizon"]]],
+  ["Armes lourdes", [["nova", "Nova"], ["xm1014", "XM1014"], ["mag7", "MAG-7"], ["sawedoff", "Sawed-Off"], ["m249", "M249"], ["negev", "Negev"]]],
+  ["Équipement", [["vesthelm", "Kevlar + casque"], ["vest", "Kevlar"], ["defuser", "Kit de désamorçage"], ["taser", "Zeus x27"]]],
+  ["Grenades", [["smokegrenade", "Fumigène (smoke)"], ["flashbang", "Flashbang"], ["hegrenade", "Grenade HE"], ["molotov", "Molotov / Incendiaire"], ["decoy", "Leurre (decoy)"]]]
+ ],
+ "toggles": [
+  ["radar", "Zoom du radar (dézoomé / normal)", "toggle cl_radar_scale 0.3 0.7"],
+  ["crosshair", "Crosshair affiché / caché", "toggle crosshair 0 1"],
+  ["hud", "Écran épuré (seulement le crosshair et le kill feed)", "toggle cl_draw_only_deathnotices 1 0"],
+  ["voice", "Couper / remettre le chat vocal", "toggle snd_voipvolume 0 1"],
+  ["fps", "Compteur de FPS affiché / caché", "toggle cl_showfps 1 0"]
+ ],
+ "volume": [
+  ["up", "Monter le volume", "incrementvar volume 0 1 0.05"],
+  ["down", "Baisser le volume", "incrementvar volume 0 1 -0.05"]
+ ],
+ "grenades": [
+  ["slot6", "Grenade HE"],
+  ["slot7", "Flashbang"],
+  ["slot8", "Fumigène (smoke)"],
+  ["slot9", "Leurre (decoy)"],
+  ["slot10", "Molotov / Incendiaire"]
+ ],
+ "other": [
+  ["lastinv", "Revenir vite à ta dernière arme"],
+  ["player_ping", "Ping là où tu vises (prévenir ton équipe)"],
+  ["+spray_menu", "Ouvrir la roue des graffitis"],
+  ["sv_rethrow_last_grenade", "Relancer ta dernière grenade (serveur d'entraînement, sv_cheats 1)"],
+  ["noclip", "Voler à travers les murs (serveur d'entraînement, sv_cheats 1)"]
+ ],
+ "presets": [
+  ["Acheter AK-47 ou M4 + armure", "kp_end", "buy ak47; buy m4a1; buy vesthelm"],
+  ["Acheter AWP + armure", "kp_downarrow", "buy awp; buy vesthelm"],
+  ["Acheter toutes les grenades", "kp_pgdn", "buy smokegrenade; buy flashbang; buy hegrenade; buy molotov"],
+  ["Acheter armure + kit de désamorçage", "kp_leftarrow", "buy vesthelm; buy defuser"],
+  ["Changer le zoom du radar", "kp_plus", "toggle cl_radar_scale 0.3 0.7"],
+  ["Monter / baisser le volume", "kp_uparrow", "incrementvar volume 0 1 0.05"],
+  ["Relancer la dernière grenade (entraînement)", "x", "sv_rethrow_last_grenade"]
+ ]
+}

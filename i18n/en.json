@@ -1,0 +1,736 @@
+{
+    "_about": "Textes du site en anglais (langue par défaut). Chaque clé est utilisée par build.js, render.js, index.template.html ou le JavaScript (section js). {nom} = valeur remplacée par build.js ; { \"one\", \"other\" } = singulier / pluriel. Ne pas traduire les pseudos, les équipes, les codes ni les commandes console.",
+    "common": {
+        "and": "and",
+        "copy": "Copy",
+        "yes": "Yes",
+        "no": "No",
+        "creator": "Creator",
+        "crosshairOf": "{name} crosshair",
+        "browseAll": "Browse all CS2 pro crosshairs ›",
+        "updated": "Updated {date}",
+        "faq": "FAQ"
+    },
+    "nav": {
+        "crosshairs": "Crosshairs",
+        "skins": "Pro Skins",
+        "guides": "Guides",
+        "commands": "Commands",
+        "tools": "Tools",
+        "generator": "Generator",
+        "homeAria": "ClutchCrosshair home",
+        "mainAria": "Main",
+        "footerAria": "Footer",
+        "breadcrumbAria": "Breadcrumb",
+        "home": "Home",
+        "language": "Language",
+        "soon": "soon"
+    },
+    "footer": {
+        "generator": "Crosshair Generator",
+        "bind": "Bind Generator",
+        "skins": "CS2 Pro Skins",
+        "guides": "CS2 Guides",
+        "commands": "Console Commands",
+        "faq": "FAQ",
+        "legal": "Legal notice",
+        "business": "Business &amp; partnerships:",
+        "rights": "© 2026 ClutchCrosshair. All rights reserved.",
+        "trademarks": "Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams."
+    },
+    "meta": {
+        "ogImageAlt": "ClutchCrosshair: find your perfect CS2 crosshair"
+    },
+    "links": {
+        "commands": "CS2 console commands",
+        "generator": "CS2 crosshair generator",
+        "pros": "CS2 pro crosshairs",
+        "guides": "CS2 guides"
+    },
+    "field": {
+        "shareCode": "Share code",
+        "shareHelp": "Settings › Crosshair › Import",
+        "console": "Console",
+        "consoleHelp": "Paste in the CS2 console (~)"
+    },
+    "card": {
+        "crosshair": "Crosshair",
+        "previewAria": "{name} CS2 crosshair preview"
+    },
+    "specs": {
+        "color": "Color",
+        "length": "Length",
+        "thickness": "Thickness",
+        "gap": "Gap",
+        "dot": "Center dot",
+        "outline": "Outline",
+        "tStyle": "T-style",
+        "opacity": "Opacity"
+    },
+    "colors": {
+        "green": "green",
+        "yellow": "yellow",
+        "cyan": "cyan",
+        "red": "red",
+        "pink": "pink",
+        "white": "white",
+        "blue": "blue",
+        "lightBlue": "light blue",
+        "orange": "orange",
+        "purple": "purple",
+        "lime": "lime",
+        "teal": "teal"
+    },
+    "colorFamily": {
+        "white": "white",
+        "cyan": "cyan",
+        "yellow": "yellow",
+        "green": "green",
+        "other": "other colors"
+    },
+    "sizes": {
+        "veryShort": "very short",
+        "short": "short",
+        "medium": "medium",
+        "long": "long"
+    },
+    "insights": {
+        "length": "{n} px long",
+        "thickness": "{n} px thick",
+        "gap": "a gap of {n}",
+        "outline": "an outline",
+        "noOutline": "no outline",
+        "dot": "a center dot",
+        "noDot": "no center dot",
+        "tStyle": "the T-style (no top line)",
+        "opacity": "{n}% opacity",
+        "styleStatic": " static",
+        "styleX": " X-shaped (rotated 45°)",
+        "settings": "{name} uses a {size} {color}{style} crosshair: {parts}, set for a {height}p screen height.",
+        "comparison": "{longer}% of the {total} pros on ClutchCrosshair use a longer crosshair, and {same}% play with a {color} one.",
+        "sameTitle": "Pros with the same crosshair as {name}",
+        "sameText": {
+            "one": "{list} uses exactly the same CS2 crosshair code as {name}.",
+            "other": "{list} use exactly the same CS2 crosshair code as {name}."
+        },
+        "similarTitle": "Crosshairs similar to {name}'s",
+        "similarText": "These pros also play with a {color} crosshair of almost the same size and gap.",
+        "faqCodeQ": "What is {name}'s CS2 crosshair code?",
+        "faqCodeA": "{name}'s CS2 crosshair code is {code}. It was read from {source} on {date}.",
+        "sourcePro": "an official match demo",
+        "sourceCreator": "a match",
+        "faqSettingsQ": "What crosshair settings does {name} use?",
+        "faqSameQ": "Which pros use the same crosshair as {name}?"
+    },
+    "player": {
+        "title": "{name} CS2 Crosshair Code (2026) | ClutchCrosshair",
+        "ogTitle": "{name} CS2 Crosshair Code",
+        "descriptionPro": "Copy {name}'s CS2 crosshair code ({team}) in one click: real-size preview, console commands and settings. From a match on {date}.",
+        "descriptionCreator": "Copy {name}'s CS2 crosshair code in one click: real-size preview, console commands and full settings. Updated {date}.",
+        "webPageName": "{name} CS2 Crosshair Code",
+        "personPro": "{name} is a CS2 pro player for {team}. CS2 crosshair code read from an official match demo.",
+        "personCreator": "{name} is a CS2 content creator.",
+        "breadcrumb": "{name} crosshair",
+        "h1": "{name} CS2 Crosshair",
+        "lastUpdate": "Last update:",
+        "faceit": "{name} FACEIT profile",
+        "same": "Same crosshair as {list}",
+        "about": "About {name}'s crosshair",
+        "introPro": "{name} plays for {team}. This is the exact CS2 crosshair {name} used in an official match on {date}, read directly from the match demo.",
+        "introCreator": "{name} is a CS2 content creator. This is {name}'s CS2 crosshair, last checked on {date}.",
+        "howTitle": "How to use {name}'s crosshair in CS2",
+        "how1": "Click <strong>Copy</strong> next to the share code.",
+        "how2": "In CS2, open <strong>Settings › Game › Crosshair</strong>.",
+        "how3": "Click <strong>Share or Import</strong> and paste the code.",
+        "orConsole": "Or copy the console commands, open the CS2 console (~) and paste them.",
+        "commandsLink": "What does each crosshair command do? ›",
+        "faqLink": "More questions in the FAQ ›",
+        "editLink": "Edit {name}'s crosshair in the CS2 crosshair generator ›",
+        "skinsLink": "See {name}'s CS2 skins &amp; inventory ›",
+        "faqTitle": "{name} crosshair FAQ",
+        "matesTeam": "Other {team} crosshairs",
+        "matesCreator": "Other creator crosshairs"
+    },
+    "home": {
+        "title": "CS2 Crosshair Codes of Pro Players (2026) | ClutchCrosshair",
+        "metaDescription": "Copy the CS2 crosshair codes of donk, ZywOo, m0NESY, NiKo and {count} pros in one click, with a real-size preview and console commands. Read from match demos.",
+        "ogTitle": "CS2 Crosshair Codes of Pro Players & Creators",
+        "ogDescription": "Copy the latest CS2 crosshair codes of pro players and creators in one click. donk, ZywOo, m0NESY and more.",
+        "twitterDescription": "Copy the latest CS2 crosshair codes of pro players and creators in one click.",
+        "siteDescription": "CS2 crosshair codes of pro players and content creators, updated from official match demos.",
+        "skip": "Skip to crosshairs",
+        "proTeams": "Pro teams",
+        "followUs": "Follow us",
+        "xAria": "ClutchCrosshair on X (Twitter)",
+        "xTitle": "ClutchCrosshair on X",
+        "mailAria": "Email ClutchCrosshair (clutchcrosshair@gmail.com)",
+        "contactUs": "Contact us",
+        "sideNote": "Business, partnerships, sponsorships: we're open to everything.",
+        "gameAria": "Game",
+        "valorantTitle": "Valorant crosshairs are coming soon",
+        "faqTitle": "CS2 crosshair FAQ",
+        "themeLight": "Light mode",
+        "h1": "Find your perfect CS2 crosshair",
+        "lead": "The latest crosshairs of CS2 pro players and creators. One click to copy.",
+        "searchPlaceholder": "Search a CS2 player, team or creator...",
+        "searchAria": "Search a CS2 player, team or creator",
+        "quickAria": "Quick access",
+        "quickPros": "Pros",
+        "quickCreators": "Creators",
+        "quickTrending": "Trending",
+        "quickSkins": "Pro Skins",
+        "tablistAria": "Crosshair lists",
+        "tabPros": "Pros",
+        "tabCreators": "Creators",
+        "tabTrending": "Trending",
+        "tabGenerator": "Generator",
+        "tabSkins": "Pro Skins",
+        "sortBy": "Sort by",
+        "sortTeam": "Team",
+        "sortRecent": "Recently updated",
+        "sortName": "Name (A-Z)",
+        "prosTitle": "CS2 Pro Crosshairs",
+        "empty": "No crosshair here yet. More players coming soon!",
+        "creatorsTitle": "CS2 Content Creator Crosshairs",
+        "trendingTitle": "Trending CS2 Crosshairs",
+        "generatorTitle": "CS2 Crosshair Generator",
+        "generatorIntro": "Create your own CS2 crosshair: pick the color, size, gap and outline, see it live at real size, then copy your code.",
+        "generatorLink": "Open the generator page ›",
+        "skinsTitle": "CS2 Pro Skins &amp; Inventories",
+        "aboutTitle": "Find the best CS2 crosshair",
+        "aboutText": "ClutchCrosshair lists the CS2 crosshair codes used by the best Counter-Strike 2 pro players and content creators. Every code is read from official match demos, so you get the exact crosshair each pro used in a recent match, in the new CS2 format. Copy the share code and import it in CS2 (Settings › Game › Crosshair › Share or Import), or paste the console commands in the CS2 console. Want your own? Make it with the <a href=\"generator.html\">CS2 crosshair generator</a>. Questions? Read the <a href=\"faq.html\">CS2 crosshair FAQ</a>.",
+        "modalClose": "Close",
+        "modalPreview": "Crosshair preview",
+        "faceitProfile": "FACEIT profile",
+        "openPage": "Open the full crosshair page ›",
+        "allCrosshairs": "All crosshairs",
+        "countPros": {
+            "one": "{count} pro player",
+            "other": "{count} pro players"
+        },
+        "countCreators": {
+            "one": "{count} creator",
+            "other": "{count} creators"
+        },
+        "countTrending": "{count} trending now",
+        "countSkins": {
+            "one": "{count} inventory",
+            "other": "{count} inventories"
+        },
+        "inventoriesTitle": "Pro inventories",
+        "sideSkinTitle": "{name}'s CS2 skins",
+        "allSkins": "All pro skins ›",
+        "choosePro": "Choose a pro player",
+        "allInventories": "All CS2 pro inventories ›",
+        "skinsSoon": "The weapon skins, knives and gloves of CS2 pro players. Coming soon!"
+    },
+    "faq": {
+        "title": "CS2 Crosshair FAQ: Import Codes &amp; Pro Stats | ClutchCrosshair",
+        "ogTitle": "CS2 Crosshair FAQ",
+        "description": "How to import a CS2 crosshair code, why old CSGO- codes don't work anymore, and which crosshair CS2 pros use the most, with live stats.",
+        "breadcrumb": "CS2 crosshair FAQ",
+        "crumb": "FAQ",
+        "h1": "CS2 Crosshair FAQ",
+        "intro": "Everything about CS2 crosshair codes: how to import them, the new CS2 format, and what the pros use. Stats updated on {date}.",
+        "items": [
+            [
+                "How do I import a crosshair code in CS2?",
+                "Copy the share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. The crosshair is applied right away."
+            ],
+            [
+                "How do I use console commands instead of a share code?",
+                "Open the CS2 console with the ~ key (enable the developer console in Settings › Game if needed), paste the console commands copied from ClutchCrosshair and press Enter."
+            ],
+            [
+                "Why don't old CSGO- crosshair codes work anymore?",
+                "Since the CS2 update of September 30, 2026, crosshair share codes use a new format starting with CS (without dashes), and sizes are stored in pixels. Old CSGO-xxxxx codes can no longer be imported. Every code on ClutchCrosshair uses the new CS2 format."
+            ],
+            [
+                "Where do these pro crosshair codes come from?",
+                "They are read directly from official CS2 match demos. Each code is the exact crosshair the player used in that match, and the date shown is the date of the match."
+            ],
+            [
+                "How often are the crosshairs updated?",
+                "Every time we read a new official match demo of a team, the crosshairs of its players are checked and updated. The \"Last update\" date shows the most recent match where the crosshair was confirmed."
+            ],
+            [
+                "What is the most used crosshair by CS2 pros?",
+                "Based on the {total} pro crosshairs on ClutchCrosshair, the most used colors are {families}. {smallGap} of pros use a gap of 1 or less, {dot} use a center dot and {outline} use an outline. Most pros play with a small static crosshair."
+            ],
+            [
+                "What is the best CS2 crosshair?",
+                "There is no single best crosshair: it should be easy to see on every map and not hide the enemy's head. A good start is to copy the crosshair of a pro you like, then adjust the color and the size to your screen."
+            ],
+            [
+                "Why does a crosshair look different in my game?",
+                "In CS2, crosshair sizes are in pixels for a given screen height. If you play in a different resolution (for example 4:3 stretched) the crosshair can look slightly bigger or smaller than for the pro."
+            ],
+            [
+                "How do I share my own CS2 crosshair?",
+                "In CS2, open Settings › Game › Crosshair and click Share or Import, then copy your code. Anyone can import it with the same button."
+            ],
+            [
+                "A crosshair is wrong or missing. How can I report it?",
+                "Email us at {email} or use the Contact us button on the home page. We check every report against the latest official match demos."
+            ]
+        ]
+    },
+    "generator": {
+        "name": "CS2 Crosshair Generator",
+        "appDescription": "Free online CS2 crosshair generator: choose the color, length, thickness, gap and outline, see a real-size preview, then copy your CS2 crosshair code or console commands.",
+        "breadcrumb": "CS2 crosshair generator",
+        "title": "CS2 Crosshair Generator: Create Your Code | ClutchCrosshair",
+        "ogTitle": "CS2 Crosshair Generator",
+        "description": "Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.",
+        "crumb": "Crosshair generator",
+        "h1": "CS2 Crosshair Generator",
+        "intro": "Create your own CS2 crosshair in a few seconds: choose the color, length, thickness, gap and outline, see it live at real size on a CS2 map, then copy your crosshair code or console commands. Free, no sign-up, made for the new CS2 crosshair codes.",
+        "howTitle": "How to use the CS2 crosshair generator",
+        "how1": "Start from scratch, from a <strong>pro crosshair</strong>, or paste your own code.",
+        "how2": "Choose the <strong>color</strong>, then adjust the <strong>length</strong>, <strong>thickness</strong> and <strong>gap</strong>. The preview updates live.",
+        "how3": "Pick <strong>your CS2 resolution</strong> under the preview to see the crosshair exactly as in game (4:3 stretched included).",
+        "how4": "Click <strong>Copy</strong>, then in CS2 open <strong>Settings › Game › Crosshair › Share or Import</strong> and paste the code.",
+        "prosTitle": "What crosshair do CS2 pros use?",
+        "prosText": "Based on the {total} pro crosshairs on ClutchCrosshair, the most used colors are {families}. The most common settings are a length of {length}, a thickness of {thickness} and a gap of {gap} pixels; {dot} use a center dot and {outline} an outline.",
+        "statsLink": "More stats in the FAQ ›",
+        "faqTitle": "Crosshair generator FAQ",
+        "faq": [
+            [
+                "Is this CS2 crosshair generator free?",
+                "Yes. It is free, with no sign-up and no download. Everything runs in your browser."
+            ],
+            [
+                "How do I put my new crosshair in CS2?",
+                "Click Copy next to your share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. You can also copy the console commands and paste them in the CS2 console (~)."
+            ],
+            [
+                "Why does my crosshair look different in 4:3 stretched?",
+                "In 4:3 stretched (1280×960, 1024×768...) or 5:4 stretched (1280×1024), the game image is stretched to fill a 16:9 screen, so the crosshair gets wider: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview (16:9, 4:3, 16:10 or 5:4) to see exactly how your crosshair will look in game. Your crosshair code stays the same."
+            ],
+            [
+                "Can I start from a pro player's crosshair?",
+                "Yes. Pick a pro in the Start from list, or paste any CS2 crosshair code, then change the color, size or gap. The new code updates instantly."
+            ],
+            [
+                "Does it work with old CSGO- crosshair codes?",
+                "No. Since the CS2 update of September 30, 2026, only the new codes starting with CS can be imported in the game. The generator only creates new CS2 codes."
+            ]
+        ]
+    },
+    "gen": {
+        "previewAria": "Live preview of your CS2 crosshair",
+        "zoomAria": "Preview size",
+        "realSize": "Real size",
+        "resolution": "Preview in your CS2 resolution",
+        "stretched": "stretched",
+        "resolutionHint": "Preview only: your crosshair code stays the same.",
+        "yourCode": "Your share code",
+        "noscript": "Turn on JavaScript to use the crosshair generator.",
+        "startFrom": "Start from",
+        "proCrosshair": "A pro crosshair",
+        "choosePro": "Choose a pro player…",
+        "pasteCode": "Or paste a code",
+        "colors": {
+            "green": "Green",
+            "yellow": "Yellow",
+            "cyan": "Cyan",
+            "red": "Red",
+            "pink": "Pink",
+            "white": "White"
+        },
+        "custom": "Custom",
+        "size": "Size",
+        "inPixels": "in pixels",
+        "pixels": "pixels",
+        "style": "Style",
+        "reset": "Reset"
+    },
+    "skins": {
+        "priceNote": "Prices: lowest listing on <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> in US dollars, euros at the ECB exchange rate, updated {date}. Doppler phases are not priced separately.",
+        "categories": {
+            "knives": "Knives",
+            "gloves": "Gloves",
+            "rifles": "Rifles",
+            "snipers": "Sniper rifles",
+            "pistols": "Pistols",
+            "smgs": "SMGs",
+            "heavy": "Shotguns & machine guns"
+        },
+        "knifeCount": {
+            "one": "{count} knife skin",
+            "other": "{count} knife skins"
+        },
+        "gloveCount": {
+            "one": "{count} pair of gloves",
+            "other": "{count} pairs of gloves"
+        },
+        "summary": "{name}{team} owns {count} CS2 skins{extras}{value}.",
+        "summaryTeam": " ({team})",
+        "summaryExtras": ", including {list}",
+        "summaryValue": ", for a total value of about {usd} ({eur})",
+        "count": {
+            "one": "{count} skin",
+            "other": "{count} skins"
+        },
+        "seeAll": "See all {count} skins of {name} ›",
+        "faqCountQ": "How many CS2 skins does {name} have?",
+        "faqCountA": "{name}'s public Steam inventory has {count} CS2 weapon skins ({different} different), including {knives} and {gloves}. Updated on {date}.",
+        "faqKnifeQ": "What knife does {name} have in CS2?",
+        "faqGlovesQ": "What gloves does {name} have in CS2?",
+        "faqOwns": "{name} owns {list}.",
+        "faqWorthQ": "How much is {name}'s CS2 inventory worth?",
+        "faqWorthA": "{name}'s CS2 skins are worth about {usd} ({eur}), based on the lowest CSFloat listing of each skin on {date}. The most expensive one is {item} at {price}.",
+        "faqFloatQ": "Are these skin floats exact?",
+        "faqFloatA": "Yes. Every float on this page is the exact wear value of the item, read from {name}'s public Steam inventory.",
+        "descStartPrice": "{name}'s CS2 inventory is worth about {usd}: {count} skins incl. {top}.",
+        "descStartTop": "{name}'s CS2 inventory: {count} skins incl. {top}.",
+        "descStart": "{name}'s CS2 inventory: {count} skins.",
+        "descEndPrice": " Prices, exact floats and wear.",
+        "descEnd": " Exact floats and wear, updated {date}.",
+        "pageName": "{name} CS2 Skins & Inventory",
+        "listName": "{name}'s CS2 skins",
+        "breadcrumb": "CS2 Pro Skins",
+        "playerBreadcrumb": "{name} skins",
+        "personTeam": "{name} is a CS2 pro player for {team}.",
+        "person": "{name} is a CS2 pro player.",
+        "titleValue": "{name} CS2 Skins &amp; Inventory Value (2026) | ClutchCrosshair",
+        "title": "{name} CS2 Skins &amp; Inventory (2026) | ClutchCrosshair",
+        "ogTitle": "{name} CS2 Skins & Inventory",
+        "crumb": "Pro skins",
+        "h1": "{name} CS2 Skins",
+        "updatedLabel": "Updated",
+        "topExpensive": "{name}'s most expensive items are {list}.",
+        "topRarest": "{name}'s rarest items are {list}.",
+        "floatNote": "Every float is the exact wear value read from {name}'s public Steam inventory.",
+        "crosshairQuestion": "Looking for {name}'s crosshair?",
+        "crosshairLink": "Copy {name}'s CS2 crosshair ›",
+        "jumpAria": "Skin categories",
+        "mostExpensive": "{name}'s most expensive skins",
+        "sectionTitle": "{name}'s {label}",
+        "faqTitle": "{name} skins FAQ",
+        "othersTitle": "Other CS2 pro inventories",
+        "othersLink": "{name} skins",
+        "hubDescription": "CS2 pro skins and inventories: the knives, gloves and weapon skins of {names}, with exact floats. Updated {date}.",
+        "hubTitle": "CS2 Pro Skins &amp; Inventories (2026) | ClutchCrosshair",
+        "hubOgTitle": "CS2 Pro Skins & Inventories",
+        "hubListItem": "{name} CS2 skins",
+        "hubH1": "CS2 Pro Skins",
+        "hubIntro": "The real CS2 inventories of the best pro players: every knife, pair of gloves and weapon skin, with its exact float and wear, read from their public Steam inventories, with the price of every skin and the total value of each inventory. Updated on {date}.",
+        "hubKnivesGloves": "{name}'s knives &amp; gloves",
+        "hubBest": "{name}'s best skins",
+        "exactFloat": "Exact float:",
+        "alt": "{name}'s {skin} CS2 skin",
+        "altShort": "{name}'s {skin}",
+        "copies": {
+            "one": "{count} copy",
+            "other": "{count} copies"
+        },
+        "float": "Float",
+        "price": "Price",
+        "noPrice": "No price available"
+    },
+    "commands": {
+        "removedBadge": "Removed in CS2",
+        "cheatBadge": "Needs sv_cheats",
+        "prosTitle": "What value do CS2 pros use?",
+        "prosText": "Among the {total} pro crosshairs on ClutchCrosshair, read from official match demos, the most common value is {value} ({share}% of pros).",
+        "prosWho": "Pros who use {value}:",
+        "breadcrumb": "CS2 Console Commands",
+        "faqWhatQ": "What does {name} do in CS2?",
+        "faqWorkQ": "Does {name} work in CS2?",
+        "faqWorkA": "No. {name} was a CS:GO command and does not exist in CS2.",
+        "faqWorkInstead": " Use {name} instead.",
+        "faqDefaultQ": "What is the default value of {name}?",
+        "faqDefaultA": "The default value of {name} in CS2 is {value}.",
+        "faqCheatsQ": "Does {name} need sv_cheats?",
+        "faqCheatsYes": "Yes. {name} only works with sv_cheats 1, on a server you host (a private match with bots, for example), never in official matchmaking.",
+        "faqCheatsNo": "No. {name} works without sv_cheats, including in official matchmaking.",
+        "titlesRemoved": [
+            "{name} in CS2: Removed, What to Use Instead | ClutchCrosshair",
+            "{name} in CS2: Removed, Use This Instead",
+            "{name} removed in CS2"
+        ],
+        "titles": [
+            "{name} CS2 Command: Values & Examples | ClutchCrosshair",
+            "{name} CS2 Command | ClutchCrosshair",
+            "{name} CS2 Command: Values & Examples",
+            "{name} CS2 Command"
+        ],
+        "descEndRemoved": " See what to use instead.",
+        "descEndDefault": " Default {value}, values and examples.",
+        "descEnd": " Values and examples.",
+        "descStart": "{name} in CS2: {summary}",
+        "headline": "{name} CS2 console command",
+        "crumb": "Commands",
+        "insteadTitle": "What to use instead in CS2",
+        "useInstead": "Use {command} instead: {summary}",
+        "syntax": "Syntax",
+        "defaultValue": "Default value:",
+        "value": "Value",
+        "whatItDoes": "What it does",
+        "cheatNote": "This command needs {link}: it only works on a server you host, never in official matchmaking.",
+        "examples": "Examples",
+        "howTitle": "How to use {name} in CS2",
+        "how1": "Enable the developer console in <strong>Settings › Game › Enable Developer Console</strong>.",
+        "how2": "Press <strong>~</strong> to open the console, type the command and press <strong>Enter</strong>.",
+        "how3": "To apply it every time you launch CS2, add the line to an <code>autoexec.cfg</code> file in your cfg folder.",
+        "tryGenerator": "Want to try a crosshair before typing commands? Use the <a href=\"../generator.html\">CS2 crosshair generator</a> or copy a <a href=\"../\">pro crosshair</a>: every pro page gives you the full list of console commands.",
+        "related": "Related commands",
+        "learnMore": "Learn more",
+        "faqTitle": "{name} FAQ",
+        "allLink": "All CS2 console commands ›",
+        "hubFaq": [
+            [
+                "How do I open the console in CS2?",
+                "Go to Settings › Game and set Enable Developer Console to Yes. Then press the ~ key (under Escape) in game to open it. If your keyboard has no ~ key, bind toggleconsole to another key."
+            ],
+            [
+                "Do console commands work in competitive matchmaking?",
+                "Most commands that change your own settings (crosshair, HUD, radar, mouse, audio) work everywhere. Commands marked Needs sv_cheats, and server commands starting with mp_ or bot_, only work on a server you host, for example a private match with bots."
+            ],
+            [
+                "How do I save my console commands?",
+                "Put them in a file named autoexec.cfg in the game's cfg folder (game/csgo/cfg) and add +exec autoexec to your launch options, or type exec autoexec in the console."
+            ],
+            [
+                "Why does a CS:GO command not work in CS2?",
+                "Many CS:GO commands were removed or renamed in CS2, such as net_graph. Commands marked Removed in CS2 on this page tell you what to use instead."
+            ]
+        ],
+        "hubDescription": "Every useful CS2 console command explained: crosshair, HUD, radar, FPS, network, practice and bot commands, with default values, examples and a Copy button.",
+        "hubTitle": "CS2 Console Commands List (2026) | ClutchCrosshair",
+        "hubOgTitle": "CS2 Console Commands",
+        "hubH1": "CS2 Console Commands",
+        "hubIntro": "{count} useful CS2 console commands explained in plain English: what each one does, its values, its default and ready-to-copy examples. Commands from CS:GO that no longer work are marked <strong>Removed in CS2</strong>. Updated {date}.",
+        "searchPlaceholder": "Search a command, e.g. crosshair, fps, radar...",
+        "searchAria": "Search a CS2 console command",
+        "filterAria": "Filter by category",
+        "all": "All",
+        "empty": "No command found. Try another word, or type <code>find</code> followed by a word in the CS2 console.",
+        "sectionTitle": "{category} commands",
+        "default": "Default:",
+        "hubFaqTitle": "CS2 console FAQ"
+    },
+    "guides": {
+        "statsSetting": "Setting",
+        "statsWhat": "What pros use",
+        "statsShare": "Share of pros",
+        "statsStyle": "Style",
+        "statsStatic": "Static",
+        "statsNoDot": "No dot",
+        "statsNoOutline": "No outline",
+        "statsNormal": "Normal (with top line)",
+        "statsNote": "Based on {total} pro crosshairs read from official match demos. Browse them all on the <a href=\"../\">CS2 pro crosshairs page</a>.",
+        "resolutions": {
+            "768": "1024×768 (4:3)",
+            "800": "1280×800 (16:10)",
+            "864": "1152×864 (4:3)",
+            "960": "1280×960 (4:3)",
+            "1024": "1280×1024 (5:4)",
+            "1050": "1680×1050 (16:10)",
+            "1080": "1920×1080 (16:9) or 1440×1080 (4:3)",
+            "1440": "2560×1440 (16:9)"
+        },
+        "resHeight": "Screen height in the code",
+        "resUsual": "Usual resolution",
+        "resPros": "Pros",
+        "calcDpi": "Mouse DPI",
+        "calcSens": "CS2 sensitivity",
+        "calcValorant": "Valorant sensitivity (optional)",
+        "calcExample": "e.g. 0.4",
+        "calcSame": "Same speed in CS2:",
+        "breadcrumb": "CS2 Guides",
+        "crumb": "Guides",
+        "updated": "Updated",
+        "minutes": {
+            "one": "{count} min read",
+            "other": "{count} min read"
+        },
+        "toc": "On this page",
+        "commandsTitle": "Commands in this guide",
+        "faqTitle": "{title} FAQ",
+        "moreTitle": "More CS2 guides",
+        "allLink": "All CS2 guides ›",
+        "hubDescription": "Practical CS2 guides for every player: best settings, launch options, stretched resolution, sensitivity, FPS boost, crosshairs and aim training.",
+        "hubTitle": "CS2 Guides: Settings, Aim &amp; Crosshair (2026) | ClutchCrosshair",
+        "hubOgTitle": "CS2 Guides",
+        "hubH1": "CS2 Guides",
+        "hubIntro": "Clear, practical guides to set up CS2 and play better: the settings that matter, the myths to forget, and what the pros really use. Updated {date}.",
+        "moreTools": "More tools"
+    },
+    "tools": {
+        "breadcrumb": "CS2 Tools",
+        "crumb": "Tools",
+        "description": "Free CS2 tools: a crosshair generator with real-size preview and a bind generator for buy binds, jump throw and more.",
+        "title": "Free CS2 Tools: Crosshair &amp; Bind Generator | ClutchCrosshair",
+        "ogTitle": "CS2 Tools",
+        "h1": "CS2 Tools",
+        "intro1": "Free tools to set up CS2 faster. Everything runs in your browser, with no sign-up, no download and no ads.",
+        "intro2": "The crosshair generator shows your crosshair at its real size on a CS2 map, exactly as it looks in game, even in 4:3 stretched. Start from the crosshair of a pro player like ZywOo or donk, change the length, gap, thickness and color, then copy the share code or the console commands.",
+        "intro3": "The bind generator writes the console command for you: buy binds for a full buy in one key, a jump throw bind for repeatable smokes, a key to toggle the radar zoom or the volume. Keep all your binds in one list and download them as a ready-made autoexec.cfg.",
+        "cardGenerator": "Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.",
+        "cardBind": "Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.",
+        "moreTitle": "More resources"
+    },
+    "bind": {
+        "consoleHelp": "Paste it in the CS2 console (~)",
+        "name": "CS2 Bind Generator",
+        "breadcrumb": "CS2 bind generator",
+        "description": "Free CS2 bind generator: pick a key and an action, copy your bind or download a ready-made autoexec.cfg. Buy binds, jump throw and more.",
+        "title": "CS2 Bind Generator: Buy Binds &amp; Jump Throw | ClutchCrosshair",
+        "crumb": "Bind generator",
+        "h1": "CS2 Bind Generator",
+        "intro": "Create CS2 binds in a few clicks: choose a key, choose what it does (buy your weapons, jump throw, toggle the radar zoom...), then copy the command or download a ready-made autoexec.cfg. Free, no sign-up.",
+        "step1": "1. Choose a key",
+        "keyAria": "Key",
+        "capture": "Press a key…",
+        "step2": "2. Choose an action",
+        "actionAria": "Action",
+        "actions": {
+            "buy": "Buy",
+            "jumpthrow": "Jump throw",
+            "toggle": "Toggle",
+            "volume": "Volume",
+            "grenade": "Grenade",
+            "other": "Other",
+            "custom": "Custom"
+        },
+        "jumpthrowHint": "Hold your grenade with the attack button pressed, then press this key: you jump and throw at the same moment, for perfectly repeatable lineups.",
+        "toggleLabel": "Setting to switch",
+        "volumeLabel": "Direction",
+        "grenadeLabel": "Grenade to select",
+        "otherLabel": "Action",
+        "customLabel": "Any console command (separate several with ;)",
+        "customPlaceholder": "e.g. say gg; disconnect",
+        "yourBind": "Your bind",
+        "add": "Add to my binds",
+        "mine": "My binds",
+        "empty": "Your binds will appear here. Add as many as you want, then copy them all or download your autoexec.cfg.",
+        "copyAll": "Copy all",
+        "download": "Download autoexec.cfg",
+        "clear": "Clear",
+        "noscript": "Turn on JavaScript to use the bind generator.",
+        "howTitle": "How to use your CS2 binds",
+        "how1": "Build your bind above, then click <strong>Copy</strong>.",
+        "how2": "In CS2, open the console with <strong>~</strong> (enable it in Settings › Game if needed), paste and press <strong>Enter</strong>.",
+        "how3": "To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href=\"../guides/cs2-launch-options.html\">launch options</a>.",
+        "popularTitle": "Popular CS2 binds",
+        "popularIntro": "Ready-to-copy binds most players use. Change the key name if you want another key.",
+        "jumpTitle": "CS2 jump throw bind",
+        "jumpText": "A jump throw bind makes you jump and release the grenade at the exact same moment, so your smokes and flashes land in the same place every time. Paste these three lines (change the key in the last line):",
+        "buyTitle": "CS2 buy commands list",
+        "buyIntro": "Every buy command works in a bind, alone or several at once separated by <code>;</code>. Buy commands give you the weapon equipped in that slot of your loadout.",
+        "buyItem": "Item",
+        "buyCommand": "Buy command",
+        "faqTitle": "CS2 bind generator FAQ",
+        "relatedTitle": "Related",
+        "relatedBind": "bind command",
+        "relatedAlias": "alias command",
+        "relatedExec": "exec command",
+        "relatedLaunch": "CS2 launch options",
+        "faq": [
+            [
+                "How do I make a bind in CS2?",
+                "Open the console (~) and type bind followed by the key and the command between quotes, for example bind \"kp_end\" \"buy ak47; buy m4a1\". The ClutchCrosshair bind generator writes the line for you."
+            ],
+            [
+                "Do buy binds still work in CS2?",
+                "Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped."
+            ],
+            [
+                "How do I remove a bind in CS2?",
+                "Type unbind followed by the key in the console, for example unbind kp_end."
+            ],
+            [
+                "How do I save my CS2 binds?",
+                "Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."
+            ],
+            [
+                "What is a jump throw bind?",
+                "A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."
+            ]
+        ],
+        "js": {
+            "tick": "Tick what to buy",
+            "type": "Type a command",
+            "careful": "Careful: {key} already has an important default action in CS2.",
+            "keySet": "Key set: {key}",
+            "waiting": "Waiting for a key…",
+            "pressNow": "Press the key you want to use (Escape to cancel).",
+            "unsupported": "This key is not supported, choose one in the list.",
+            "remove": "Remove",
+            "removeAria": "Remove the bind on {key}"
+        }
+    },
+    "valorant": {
+        "title": "Valorant Crosshairs: Coming Soon | ClutchCrosshair",
+        "description": "Valorant pro crosshairs are coming soon to ClutchCrosshair. Meanwhile, copy the CS2 crosshairs of the best pro players.",
+        "h1": "Valorant crosshairs: coming soon",
+        "lead": "Killjoy is still building this page...",
+        "progressAria": "Page construction",
+        "eta": "ETA: next patch. Maybe.",
+        "back": "Back to CS2 crosshairs",
+        "alt": "Meanwhile, build a CS2 crosshair ›",
+        "jokes": [
+            "Spike planted. Valorant crosshairs defusing in progress.",
+            "Our Jett dashed away with the code. We're chasing her.",
+            "Sage is reviving this page. Cooldown: a few weeks.",
+            "Cypher already knows the release date. He won't tell us.",
+            "Killjoy's turret found a bug. It shot it."
+        ]
+    },
+    "legal": {
+        "title": "Legal notice | ClutchCrosshair",
+        "description": "Legal notice of ClutchCrosshair: publisher, hosting, trademarks and privacy. No ads, no tracking cookies and no personal data collected.",
+        "h1": "Legal notice",
+        "sections": [
+            [
+                "Publisher",
+                "ClutchCrosshair is published by {name}, private individual (France).<br>\n        Contact: {email}<br>\n        Publication director: {name}."
+            ],
+            [
+                "Hosting",
+                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, United States (cloudflare.com)."
+            ],
+            [
+                "Intellectual property",
+                "Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>\n        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License."
+            ],
+            [
+                "Privacy",
+                "ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode and language choices are only stored in your own browser (localStorage). Visits are counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites."
+            ],
+            [
+                "Français",
+                "Les mentions légales sont aussi disponibles en français : <a href=\"fr/legal.html\">version française</a>."
+            ]
+        ]
+    },
+    "notFound": {
+        "title": "Page not found | ClutchCrosshair",
+        "description": "This page doesn't exist.",
+        "h1": "404 · Page not found",
+        "text": "This page doesn't exist (or a player changed their name). Find every CS2 pro crosshair on the home page.",
+        "back": "Back to all CS2 crosshairs"
+    },
+    "js": {
+        "copied": "Copied!",
+        "copiedAnnounce": "Copied to clipboard",
+        "copiedBar": "Copied",
+        "noPreview": "No preview",
+        "lightMode": "Light mode",
+        "darkMode": "Dark mode",
+        "lastUpdate": "Last update: ",
+        "sameAs": "Same crosshair as ",
+        "and": " and ",
+        "faceitAria": "{name} FACEIT profile (opens in a new tab)",
+        "previewAria": "{name} CS2 crosshair preview",
+        "terroristsWin": "Terrorists win",
+        "defuse": "You should've defused it.",
+        "rushB": "Rush B, don't stop!",
+        "genOldCode": "Old CSGO- codes no longer work in CS2. Paste a code starting with CS.",
+        "genImported": "Code imported. Adjust it as you like.",
+        "genInvalid": "This is not a valid CS2 crosshair code.",
+        "genFromLink": "Crosshair loaded from the link. Adjust it as you like."
+    }
+}

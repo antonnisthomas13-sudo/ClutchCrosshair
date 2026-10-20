@@ -7,6 +7,25 @@
     <meta name="description" content="r_fullscreen_gamma in CS2: Screen brightness in fullscreen. Adjusts the gamma (brightness) of the game in fullscreen mode…">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://clutchcrosshair.com/commands/r_fullscreen_gamma">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/r_fullscreen_gamma">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/r_fullscreen_gamma">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/r_fullscreen_gamma">
+    <script>(function () {
+        var A = {"en":"../commands/r_fullscreen_gamma.html","fr":"../fr/commands/r_fullscreen_gamma.html"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -15,6 +34,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
     <meta property="og:title" content="r_fullscreen_gamma CS2 console command">
     <meta property="og:description" content="r_fullscreen_gamma in CS2: Screen brightness in fullscreen. Adjusts the gamma (brightness) of the game in fullscreen mode…">
     <meta property="og:url" content="https://clutchcrosshair.com/commands/r_fullscreen_gamma">
@@ -28,7 +48,7 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=cfb0e51442">
+    <link rel="stylesheet" href="../style.min.css?v=6bb7a38f4c">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/r_fullscreen_gamma#article","headline":"r_fullscreen_gamma CS2 console command","description":"r_fullscreen_gamma in CS2: Screen brightness in fullscreen. Adjusts the gamma (brightness) of the game in fullscreen mode…","url":"https://clutchcrosshair.com/commands/r_fullscreen_gamma","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/r_fullscreen_gamma#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"r_fullscreen_gamma","item":"https://clutchcrosshair.com/commands/r_fullscreen_gamma"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/r_fullscreen_gamma#faq","mainEntity":[{"@type":"Question","name":"What does r_fullscreen_gamma do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Screen brightness in fullscreen. Adjusts the gamma (brightness) of the game in fullscreen mode only. Lower values make the image brighter. It is the CS2 replacement for the old mat_monitorgamma."}},{"@type":"Question","name":"What is the default value of r_fullscreen_gamma?","acceptedAnswer":{"@type":"Answer","text":"The default value of r_fullscreen_gamma in CS2 is 2.2."}},{"@type":"Question","name":"Does r_fullscreen_gamma need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. r_fullscreen_gamma works without sv_cheats, including in official matchmaking."}}]}]}</script>
 </head>
 <body class="page">
@@ -53,6 +73,13 @@
             <a href="../commands/" aria-current="page">Commands</a>
             <a href="../tools/">Tools</a>
         </nav>
+        <select id="lang" class="lang" aria-label="Language">
+                    <option value="en" selected>EN</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="ru" disabled>RU · Русский (soon)</option>
+                    <option value="es" disabled>ES · Español (soon)</option>
+                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                </select>
     </header>
 
     <main class="player-page cmd-page">
@@ -116,7 +143,7 @@
         <p>Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.</p>
     </footer>
     <script type="module">
-        import { copyText } from "../crosshair.min.js?v=f7020cc41a";
+        import { copyText } from "../crosshair.min.js?v=fe84164f66";
         document.addEventListener("click", function (event) {
             const button = event.target.closest("[data-copy]");
             if (button) {
