@@ -1021,6 +1021,86 @@ footer p {
     color: var(--link);
 }
 
+/* Lien « Cookies » (rouvre le bandeau) : un bouton qui ressemble aux autres liens */
+.footer-links .footer-cookies,
+.link-btn {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+}
+
+.link-btn {
+    color: var(--link);
+    font-size: inherit;
+    text-decoration: underline;
+}
+
+.footer-links .footer-cookies:hover,
+.link-btn:hover {
+    color: var(--link);
+}
+
+/* ===== Bandeau cookies (consent.js) =====
+   « Accepter » et « Refuser » : même classe, donc exactement la même taille, couleur et importance (CNIL). */
+.consent {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: min(760px, calc(100% - 32px));
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel);
+    box-shadow: var(--shadow-modal);
+    transform: translateX(-50%);
+}
+
+.consent-text {
+    flex: 1;
+    margin: 0;
+    color: var(--text-body);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+}
+
+.consent-text a {
+    color: var(--link);
+}
+
+.consent-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.consent-btn {
+    min-width: 110px;
+    padding: 10px 18px;
+    border: 1px solid var(--text);
+    border-radius: 2px;
+    background-color: var(--text);
+    color: var(--bg);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+}
+
+.consent-btn:hover {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-text);
+}
+
 /* ===== Fiche joueur (fenêtre) ===== */
 .modal {
     position: fixed;
@@ -4113,6 +4193,21 @@ body.light .team-badge img[src*="fut"] {
     .gen-slider {
         grid-template-columns: 72px minmax(0, 1fr) 56px;
         gap: 10px;
+    }
+
+    /* Bandeau cookies : texte au-dessus, les deux boutons côte à côte, de même largeur */
+    .consent {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        bottom: 8px;
+        width: calc(100% - 16px);
+        padding: 14px 16px;
+    }
+
+    .consent-btn {
+        flex: 1;
+        min-width: 0;
     }
 
     /* Skins : 2 cartes par ligne sur téléphone */

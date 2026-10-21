@@ -36,7 +36,8 @@
         "legal": "Mentions légales",
         "business": "Business &amp; partenariats :",
         "rights": "© 2026 ClutchCrosshair. Tous droits réservés.",
-        "trademarks": "Counter-Strike 2 et les skins CS2 sont des marques de Valve Corporation. Les logos des équipes appartiennent à leurs propriétaires respectifs. ClutchCrosshair n'est affilié ni à Valve ni aux équipes."
+        "trademarks": "Counter-Strike 2 et les skins CS2 sont des marques de Valve Corporation. Les logos des équipes appartiennent à leurs propriétaires respectifs. ClutchCrosshair n'est affilié ni à Valve ni aux équipes.",
+        "cookies": "Cookies"
     },
     "meta": {
         "ogImageAlt": "ClutchCrosshair : trouve ton crosshair CS2 parfait"
@@ -698,7 +699,7 @@
     },
     "legal": {
         "title": "Mentions légales | ClutchCrosshair",
-        "description": "Mentions légales de ClutchCrosshair : éditeur, hébergeur, marques et vie privée. Pas de pub, pas de cookies de suivi, aucune donnée personnelle collectée.",
+        "description": "Mentions légales de ClutchCrosshair : éditeur, hébergeur, marques, vie privée et cookies. Pas de pub ; Google Analytics seulement avec votre accord.",
         "h1": "Mentions légales",
         "sections": [
             [
@@ -715,7 +716,12 @@
             ],
             [
                 "Vie privée",
-                "ClutchCrosshair n'utilise ni publicité ni cookies de suivi et ne collecte aucune donnée personnelle. Vos choix de mode clair/sombre et de langue sont seulement enregistrés dans votre propre navigateur (localStorage). Les visites sont comptées avec Cloudflare Web Analytics, qui n'utilise pas de cookies et ne vous suit pas d'un site à l'autre."
+                "ClutchCrosshair n'utilise pas de cookies publicitaires. Vos choix de mode clair/sombre, de langue et de cookies sont seulement enregistrés dans votre propre navigateur (localStorage). Les visites sont aussi comptées avec Cloudflare Web Analytics, qui n'utilise pas de cookies et ne vous suit pas d'un site à l'autre."
+            ],
+            [
+                "Cookies et Google Analytics",
+                "Seulement avec votre accord, nous mesurons notre audience avec Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande) : nombre de visites, pages vues, pays approximatif et type d'appareil. Il dépose les cookies <code>_ga</code> et <code>_ga_195B8EZ9BP</code>, conservés 13 mois au maximum. Google peut transférer ces données hors de l'Union européenne ; voir la <a href=\"https://policies.google.com/privacy?hl=fr\" rel=\"external noopener\" target=\"_blank\">politique de confidentialité de Google</a>.</p>\n        <p>Si vous cliquez sur <strong>Refuser</strong>, Google Analytics n'est pas chargé et aucun cookie n'est déposé ; le site fonctionne exactement pareil. Votre choix est conservé 6 mois dans votre navigateur, puis le bandeau vous le redemande. Vous pouvez changer d'avis à tout moment avec le lien <button type=\"button\" class=\"link-btn\" data-consent-open>Cookies</button> en bas de chaque page. Vous pouvez aussi nous demander d'effacer vos données : {email}.",
+                "cookies"
             ],
             [
                 "English",
@@ -748,6 +754,11 @@
         "genOldCode": "Les anciens codes CSGO- ne marchent plus dans CS2. Colle un code qui commence par CS.",
         "genImported": "Code importé. Modifie-le comme tu veux.",
         "genInvalid": "Ce n'est pas un code crosshair CS2 valide.",
-        "genFromLink": "Crosshair chargé depuis le lien. Modifie-le comme tu veux."
+        "genFromLink": "Crosshair chargé depuis le lien. Modifie-le comme tu veux.",
+        "consentAria": "Consentement aux cookies",
+        "consentText": "Nous aimerions mesurer notre audience avec Google Analytics. Il ne dépose de cookies que si tu acceptes. Refuser ne change rien au site.",
+        "consentMore": "En savoir plus",
+        "consentRefuse": "Refuser",
+        "consentAccept": "Accepter"
     }
 }

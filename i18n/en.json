@@ -36,7 +36,8 @@
         "legal": "Legal notice",
         "business": "Business &amp; partnerships:",
         "rights": "© 2026 ClutchCrosshair. All rights reserved.",
-        "trademarks": "Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams."
+        "trademarks": "Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.",
+        "cookies": "Cookies"
     },
     "meta": {
         "ogImageAlt": "ClutchCrosshair: find your perfect CS2 crosshair"
@@ -681,7 +682,7 @@
     },
     "legal": {
         "title": "Legal notice | ClutchCrosshair",
-        "description": "Legal notice of ClutchCrosshair: publisher, hosting, trademarks and privacy. No ads, no tracking cookies and no personal data collected.",
+        "description": "Legal notice of ClutchCrosshair: publisher, hosting, trademarks, privacy and cookies. No ads; Google Analytics only with your consent.",
         "h1": "Legal notice",
         "sections": [
             [
@@ -698,7 +699,12 @@
             ],
             [
                 "Privacy",
-                "ClutchCrosshair does not use advertising or tracking cookies and does not collect personal data. Your light/dark mode and language choices are only stored in your own browser (localStorage). Visits are counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites."
+                "ClutchCrosshair does not use advertising cookies. Your light/dark mode, language and cookie choices are only stored in your own browser (localStorage). Visits are also counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites."
+            ],
+            [
+                "Cookies and Google Analytics",
+                "With your consent only, we measure our audience with Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland): number of visits, pages viewed, approximate country and type of device. It sets the cookies <code>_ga</code> and <code>_ga_195B8EZ9BP</code>, kept for 13 months at most. Google may transfer this data outside the European Union; see <a href=\"https://policies.google.com/privacy\" rel=\"external noopener\" target=\"_blank\">Google's privacy policy</a>.</p>\n        <p>If you click <strong>Refuse</strong>, Google Analytics is not loaded and no cookie is set; the site works exactly the same. Your choice is kept for 6 months in your browser, then the banner asks again. You can change your mind at any time with the <button type=\"button\" class=\"link-btn\" data-consent-open>Cookies</button> link at the bottom of every page. You can also ask us to delete your data: {email}.",
+                "cookies"
             ],
             [
                 "Français",
@@ -731,6 +737,11 @@
         "genOldCode": "Old CSGO- codes no longer work in CS2. Paste a code starting with CS.",
         "genImported": "Code imported. Adjust it as you like.",
         "genInvalid": "This is not a valid CS2 crosshair code.",
-        "genFromLink": "Crosshair loaded from the link. Adjust it as you like."
+        "genFromLink": "Crosshair loaded from the link. Adjust it as you like.",
+        "consentAria": "Cookie consent",
+        "consentText": "We would like to measure our audience with Google Analytics. It sets cookies only if you accept. Refusing has no effect on the site.",
+        "consentMore": "Learn more",
+        "consentRefuse": "Refuse",
+        "consentAccept": "Accept"
     }
 }

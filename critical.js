@@ -174,7 +174,7 @@ async function extractCritical(chrome, indexHtml) {
                 await send("Emulation.setDeviceMetricsOverride", vp);
                 await send("Page.navigate", { url: base });
                 await sleep(300);
-                await evaluate(function (t) { try { localStorage.setItem("theme", t); localStorage.setItem("lang", "en"); } catch (e) { /* rien */ } return 1; }, theme); // lang : pas de redirection vers une autre langue
+                await evaluate(function (t) { try { localStorage.setItem("theme", t); localStorage.setItem("lang", "en"); localStorage.setItem("consent", JSON.stringify({ choice: "refused", date: Date.now() })); } catch (e) { /* rien */ } return 1; }, theme); // lang : pas de redirection vers une autre langue
                 await send("Page.navigate", { url: base + "?" + theme + vp.width });
                 await sleep(1500);
                 await evaluate(function () { return document.fonts.ready.then(function () { return 1; }); });

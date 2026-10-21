@@ -18,6 +18,8 @@ https://:version.:project.pages.dev/*
   Cache-Control: public, max-age=31536000, immutable
 /generator.js
   Cache-Control: public, max-age=31536000, immutable
+/consent.js
+  Cache-Control: public, max-age=31536000, immutable
 # Versions minifiées (celles que les pages chargent vraiment)
 /style.min.css
   Cache-Control: public, max-age=31536000, immutable
@@ -26,6 +28,8 @@ https://:version.:project.pages.dev/*
 /script.min.js
   Cache-Control: public, max-age=31536000, immutable
 /generator.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/consent.min.js
   Cache-Control: public, max-age=31536000, immutable
 
 # Polices : ne changent jamais -> 1 an

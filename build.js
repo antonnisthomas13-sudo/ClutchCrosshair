@@ -144,6 +144,7 @@ async function main() {
     const CSS_HASH = minify("style.css", "style.min.css", "css");
     const CROSSHAIR_HASH = minify("crosshair.js", "crosshair.min.js", "js");
     const GENERATOR_HASH = minify("generator.js", "generator.min.js", "js", [{ from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH }]);
+    const CONSENT_HASH = minify("consent.js", "consent.min.js", "js");
     const SCRIPT_HASH = minify("script.js", "script.min.js", "js", [
         { from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH },
         { from: "generator.js", to: "generator.min.js", hash: GENERATOR_HASH }
@@ -459,7 +460,13 @@ async function main() {
     <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
     <link rel="preload" href="${p}preview-bg.webp?v=${BG_HASH}" as="image" type="image/webp">` : ""}${o.generator ? `
     <link rel="modulepreload" href="${p}generator.min.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
-    <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}`;
+    <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}
+    ${consentScript(o.prefix)}`;
+        }
+
+        // Bandeau cookies (CNIL) + Google Analytics après accord : sur toutes les pages (voir consent.js)
+        function consentScript(prefix) {
+            return `<script src="${ap(prefix)}consent.min.js?v=${CONSENT_HASH}" data-legal="${prefix}legal.html" defer></script>`;
         }
 
         // Le menu principal, le même sur toutes les pages. Une rubrique n'apparaît que si ses pages existent
@@ -505,6 +512,7 @@ async function main() {
             <a href="${prefix}commands/">${t("footer.commands")}</a>
             <a href="${prefix}faq.html">${t("footer.faq")}</a>
             <a href="${prefix}legal.html">${t("footer.legal")}</a>
+            <button type="button" class="footer-cookies" data-consent-open>${t("footer.cookies")}</button>
         </nav>
         <p class="footer-contact">${t("footer.business")} <a href="mailto:${PUBLISHER_EMAIL}?subject=Business%20-%20ClutchCrosshair">${PUBLISHER_EMAIL}</a></p>
         <p>${t("footer.rights")}</p>
@@ -868,6 +876,7 @@ ${faqItems(insights.faq, "h3")}` : ""}
     <meta property="og:locale:alternate" content="${makeI18n(l).ogLocale}">`; }).join(""),
             langHead: langHead("", "", true),
             langSelect: langSelect(),
+            consent: consentScript(""),
             htmlStyle: EN ? "" : ` style="--copied: '${t("js.copiedBar")}'"`
         };
         let index = fs.readFileSync("index.template.html", "utf8").replace(/^<!-- MODÈLE[\s\S]*?-->\r?\n/, "")
@@ -2618,7 +2627,7 @@ ${HTML_OPEN}
         <h1>${t("legal.h1")}</h1>
 ${tList("legal.sections", { name: esc(PUBLISHER_NAME), email: `<a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>` }).map(function (s) {
         return `
-        <h2>${s[0]}</h2>
+        <h2${s[2] ? ` id="${s[2]}"` : ""}>${s[0]}</h2>
         <p>${s[1]}</p>`;
     }).join("\n")}
     </main>
