@@ -1747,7 +1747,6 @@ body.page {
 /* Logos noirs : en blanc en mode sombre */
 body:not(.light) .team-badge img[src*="furia"],
 body:not(.light) .team-badge img[src*="spirit"],
-body:not(.light) .team-badge img[src*="mibr"],
 body:not(.light) .team-badge img[src*="g2"] {
     filter: invert(1);
 }

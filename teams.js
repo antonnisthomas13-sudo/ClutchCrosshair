@@ -13,7 +13,7 @@ export const teams = [
     { name: "FaZe Clan", color: "#E2394A", logo: "logos/faze.png" },
     { name: "Astralis", color: "#FF4655", logo: "logos/astralis.png" },
     { name: "Legacy", color: "#4FA3FF", logo: "logos/legacy.png" },
-    { name: "MIBR", color: "#3D7BFF", logo: "logos/mibr.png" },
+    { name: "BC.Game", color: "#23EE88", logo: "logos/bcgame.png" },
     { name: "FUT Esports", color: "#9AE66E", logo: "logos/fut.png" },
     { name: "PARIVISION", color: "#C084FC", logo: "logos/parivision.png" },
     { name: "BetBoom", color: "#FF8A3D", logo: "logos/betboom.png" }

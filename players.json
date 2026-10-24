@@ -618,26 +618,6 @@
         "liquipedia": "Staehr"
     },
     {
-        "name": "insani",
-        "steamid": "76561198061423730",
-        "team": "MIBR",
-        "category": "pro",
-        "code": "CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU",
-        "updated": "16/10/2026",
-        "trending": false,
-        "liquipedia": "Insani"
-    },
-    {
-        "name": "LNZ",
-        "steamid": "76561198104626893",
-        "team": "MIBR",
-        "category": "pro",
-        "code": "CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW",
-        "updated": "16/10/2026",
-        "trending": false,
-        "liquipedia": "LNZ"
-    },
-    {
         "name": "siuhy",
         "steamid": "76561198150673360",
         "team": "Astralis",
@@ -657,26 +637,6 @@
         "trending": false
     },
     {
-        "name": "venomzera",
-        "steamid": "76561198218265253",
-        "team": "MIBR",
-        "category": "pro",
-        "code": "CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ",
-        "updated": "16/10/2026",
-        "trending": false,
-        "liquipedia": "Venomzera"
-    },
-    {
-        "name": "nqz",
-        "steamid": "76561198350342505",
-        "team": "MIBR",
-        "category": "pro",
-        "code": "CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT",
-        "updated": "16/10/2026",
-        "trending": false,
-        "liquipedia": "Nqz"
-    },
-    {
         "name": "phzy",
         "steamid": "76561198408199043",
         "team": "Astralis",
@@ -685,16 +645,6 @@
         "updated": "16/10/2026",
         "trending": false,
         "liquipedia": "Phzy"
-    },
-    {
-        "name": "tomaszin",
-        "steamid": "76561198422434044",
-        "team": "MIBR",
-        "category": "pro",
-        "code": "CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J",
-        "updated": "16/10/2026",
-        "trending": false,
-        "liquipedia": "Tomaszin"
     },
     {
         "name": "cmtry",
@@ -753,12 +703,13 @@
     },
     {
         "name": "s1mple",
-        "team": "Creator",
-        "category": "creator",
-        "code": "CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ",
-        "updated": "19/10/2026",
+        "team": "BC.Game",
+        "category": "pro",
+        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+        "updated": "22/10/2026",
         "trending": true,
-        "faceit": "https://www.faceit.com/en/players/s1mplecsgod"
+        "faceit": "https://www.faceit.com/en/players/s1mplecsgod",
+        "steamid": "76561198034202275"
     },
     {
         "name": "Chopper",
@@ -820,5 +771,41 @@
         "updated": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/paszaBiceps"
+    },
+    {
+        "name": "Magisk",
+        "steamid": "76561197983956651",
+        "team": "BC.Game",
+        "category": "pro",
+        "code": "CSRCRjZsXkOUOtdxNpZoNdMOazXLoHFeFOF769MTkpATyF",
+        "updated": "22/10/2026",
+        "trending": false
+    },
+    {
+        "name": "asap",
+        "steamid": "76561198028656944",
+        "team": "BC.Game",
+        "category": "pro",
+        "code": "CSJkoyVGhj7VxpjQTU8PW8KsByeNysCTBTYYGRRWGDtRZf",
+        "updated": "22/10/2026",
+        "trending": false
+    },
+    {
+        "name": "mzinho",
+        "steamid": "76561198838822582",
+        "team": "BC.Game",
+        "category": "pro",
+        "code": "CStvcohLq9Nh4k2S95d4rwv7tdjzOKXGzYSt7ivrvF5c3Y",
+        "updated": "22/10/2026",
+        "trending": false
+    },
+    {
+        "name": "Senzu",
+        "steamid": "76561198920720017",
+        "team": "BC.Game",
+        "category": "pro",
+        "code": "CSJkoyVGhj7VxpjQTU8PW8KsByeNysCTBTYYGRRWGDtRZf",
+        "updated": "22/10/2026",
+        "trending": false
     }
 ]

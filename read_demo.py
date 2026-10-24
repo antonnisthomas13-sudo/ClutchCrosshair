@@ -26,7 +26,7 @@ CS2_NEW_CODES = date(2026, 9, 30)
 SITE_TEAMS = [
     "Team Spirit", "Team Vitality", "MOUZ", "FURIA", "Falcons", "Aurora",
     "Natus Vincere", "G2 Esports", "FaZe Clan", "Astralis", "Legacy",
-    "MIBR", "FUT Esports", "PARIVISION", "BetBoom"
+    "BC.Game", "FUT Esports", "PARIVISION", "BetBoom"
 ]
 
 # Noms qu'on peut trouver dans les démos -> nom utilisé sur le site
@@ -42,6 +42,9 @@ TEAM_ALIASES = {
     "betboom team": "BetBoom",
     "team falcons": "Falcons",
     "aurora gaming": "Aurora",
+    "bc.game esports": "BC.Game",
+    "bc game": "BC.Game",
+    "bcgame": "BC.Game",
 }
 
 

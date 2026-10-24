@@ -19,7 +19,7 @@ const PANEL = 520;          // largeur du panneau de droite (capture + crosshair
 const ZOOM = 5;             // décor ET crosshair agrandis 5 fois (taille réelle = illisible en petit sur X / Discord)
 const FOCUS = [943, 517];   // tête du terroriste dans la capture 1920×1080 (même point que partout sur le site)
 const PER_SHOT = 12;        // captures converties en JPEG par passage de Chrome
-const DARK_LOGOS = ["furia", "spirit", "mibr", "g2"]; // logos noirs : passés en blanc sur le fond sombre (comme dans style.css)
+const DARK_LOGOS = ["furia", "spirit", "g2"]; // logos noirs : passés en blanc sur le fond sombre (comme dans style.css)
 
 // Rectangles du crosshair autour du centre (0, 0), en pixels de l'image : [x, y, largeur, hauteur]
 // Même logique que drawBars dans crosshair.js (codes CS2), avec unit = pixels de l'image pour 1 pixel de crosshair

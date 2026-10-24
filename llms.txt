@@ -1,6 +1,6 @@
 # ClutchCrosshair
 
-> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 14 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 13 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
 
 Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at https://clutchcrosshair.com/fr/.
 
@@ -26,6 +26,11 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [Wicadia](https://clutchcrosshair.com/players/wicadia): Aurora, CS2 crosshair code updated 2026-10-17
 - [woxic](https://clutchcrosshair.com/players/woxic): Aurora, CS2 crosshair code updated 2026-10-17
 - [XANTARES](https://clutchcrosshair.com/players/xantares): Aurora, CS2 crosshair code updated 2026-10-17
+- [asap](https://clutchcrosshair.com/players/asap): BC.Game, CS2 crosshair code updated 2026-10-22
+- [Magisk](https://clutchcrosshair.com/players/magisk): BC.Game, CS2 crosshair code updated 2026-10-22
+- [mzinho](https://clutchcrosshair.com/players/mzinho): BC.Game, CS2 crosshair code updated 2026-10-22
+- [s1mple](https://clutchcrosshair.com/players/s1mple): BC.Game, CS2 crosshair code updated 2026-10-22
+- [Senzu](https://clutchcrosshair.com/players/senzu): BC.Game, CS2 crosshair code updated 2026-10-22
 - [Boombl4](https://clutchcrosshair.com/players/boombl4): BetBoom, CS2 crosshair code updated 2026-10-17
 - [d1Ledez](https://clutchcrosshair.com/players/d1ledez): BetBoom, CS2 crosshair code updated 2026-10-17
 - [Magnojez](https://clutchcrosshair.com/players/magnojez): BetBoom, CS2 crosshair code updated 2026-10-17
@@ -56,11 +61,6 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [latto](https://clutchcrosshair.com/players/latto): Legacy, CS2 crosshair code updated 2026-10-16
 - [n1ssim](https://clutchcrosshair.com/players/n1ssim): Legacy, CS2 crosshair code updated 2026-10-16
 - [try](https://clutchcrosshair.com/players/try): Legacy, CS2 crosshair code updated 2026-10-16
-- [insani](https://clutchcrosshair.com/players/insani): MIBR, CS2 crosshair code updated 2026-10-16
-- [LNZ](https://clutchcrosshair.com/players/lnz): MIBR, CS2 crosshair code updated 2026-10-16
-- [nqz](https://clutchcrosshair.com/players/nqz): MIBR, CS2 crosshair code updated 2026-10-16
-- [tomaszin](https://clutchcrosshair.com/players/tomaszin): MIBR, CS2 crosshair code updated 2026-10-16
-- [venomzera](https://clutchcrosshair.com/players/venomzera): MIBR, CS2 crosshair code updated 2026-10-16
 - [PR](https://clutchcrosshair.com/players/pr): MOUZ, CS2 crosshair code updated 2026-10-17
 - [Spinx](https://clutchcrosshair.com/players/spinx): MOUZ, CS2 crosshair code updated 2026-10-17
 - [torzsi](https://clutchcrosshair.com/players/torzsi): MOUZ, CS2 crosshair code updated 2026-10-17
@@ -99,7 +99,6 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [kennyS](https://clutchcrosshair.com/players/kennys): content creator, CS2 crosshair code updated 2026-10-19
 - [Maj3r](https://clutchcrosshair.com/players/maj3r): content creator, CS2 crosshair code updated 2026-10-19
 - [pashaBiceps](https://clutchcrosshair.com/players/pashabiceps): content creator, CS2 crosshair code updated 2026-10-19
-- [s1mple](https://clutchcrosshair.com/players/s1mple): content creator, CS2 crosshair code updated 2026-10-19
 - [ScreaM](https://clutchcrosshair.com/players/scream): content creator, CS2 crosshair code updated 2026-10-19
 - [shox](https://clutchcrosshair.com/players/shox): content creator, CS2 crosshair code updated 2026-10-19
 - [StRoGo](https://clutchcrosshair.com/players/strogo): content creator, CS2 crosshair code updated 2026-10-19
