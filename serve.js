@@ -14,6 +14,12 @@ const http = require("http");
 
 const PORT = 5500;
 const ROOT = __dirname;
+// Sécurité : le dossier du projet contient des secrets (clé CSFloat, .env, .git) qui ne doivent jamais sortir.
+// Seules les demandes adressées à cette adresse sont servies : une page web malveillante qui se ferait passer
+// pour 127.0.0.1 (« DNS rebinding ») envoie son propre nom de site et reçoit un refus.
+const HOSTS = ["127.0.0.1:" + PORT, "localhost:" + PORT];
+// Jamais servis : fichiers et dossiers cachés (.env, .git, .claude…) et fichiers secrets ignorés par Git
+const SECRET = /(^|\/)\.|(^|\/)(csfloat-key\.txt|faceit-test)(\/|$)/i;
 const TYPES = {
     ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json",
     ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".ico": "image/x-icon",
@@ -36,10 +42,21 @@ function redirect(res, location) {
 }
 
 const server = http.createServer(function (req, res) {
+    if (!HOSTS.includes(String(req.headers.host || "").toLowerCase())) {
+        res.writeHead(403);
+        return res.end();
+    }
     const url = new URL(req.url, "http://localhost");
-    const p = decodeURIComponent(url.pathname);
+    let p;
+    try {
+        p = decodeURIComponent(url.pathname);
+    } catch (error) {
+        res.writeHead(400);
+        return res.end();
+    }
     const file = path.join(ROOT, p);
-    if (!file.startsWith(ROOT)) {
+    const inside = path.relative(ROOT, file).split(path.sep).join("/");
+    if (inside.startsWith("..") || path.isAbsolute(inside) || SECRET.test(inside)) {
         res.writeHead(403);
         return res.end();
     }

@@ -474,7 +474,7 @@ async function main() {
     <link rel="modulepreload" href="${p}lib/csgo-sharecode.js">
     <link rel="preload" href="${p}preview-bg.webp?v=${BG_HASH}" as="image" type="image/webp">` : ""}${o.generator ? `
     <link rel="modulepreload" href="${p}generator.min.js?v=${GENERATOR_HASH}">` : ""}${o.jsonLd ? `
-    <script type="application/ld+json">${JSON.stringify(o.jsonLd)}</script>` : ""}
+    <script type="application/ld+json">${JSON.stringify(o.jsonLd).replace(/</g, "\\u003c")}</script>` : ""}
     ${consentScript(o.prefix)}`;
         }
 
