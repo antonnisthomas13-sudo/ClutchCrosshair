@@ -430,11 +430,18 @@ async function main() {
 
         // Le <head> d'une page (titre, description, adresse officielle, aperçu de lien, langues, chargement rapide)
         // o.path = adresse de la page sans la langue (ex. "players/zywoo.html", "" pour l'accueil)
+        // Titre affiché par Google : au-delà de ~60 caractères il est coupé. On retire alors la fin « | ClutchCrosshair »
+        // (le nom du site est déjà affiché par Google au-dessus du résultat)
+        function seoTitle(title) {
+            const plain = String(title).replace(/&amp;/g, "&");
+            return plain.length > 60 && / \| ClutchCrosshair$/.test(title) ? title.replace(/ \| ClutchCrosshair$/, "") : title;
+        }
+
         function head(o) {
             const p = ap(o.prefix);
             return `<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${o.title}</title>
+    <title>${seoTitle(o.title)}</title>
     <meta name="description" content="${esc(o.description)}">
     ${o.noindex ? '<meta name="robots" content="noindex">' : `<meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="${o.url}">`}${langHead(o.prefix, o.path, !o.noindex)}
@@ -518,6 +525,7 @@ async function main() {
             <a href="${prefix}guides/">${t("footer.guides")}</a>
             <a href="${prefix}commands/">${t("footer.commands")}</a>
             <a href="${prefix}faq.html">${t("footer.faq")}</a>
+            <a href="${prefix}methodology.html">${t("footer.method")}</a>
             <a href="${prefix}legal.html">${t("footer.legal")}</a>
             <button type="button" class="footer-cookies" data-consent-open>${t("footer.cookies")}</button>
         </nav>
@@ -1504,9 +1512,9 @@ ${faqItems(faq, "h3")}`;
                         : t("commands.faqCheatsNo", { name: c.name })]);
                 }
 
-                // Titre : le plus complet qui tient en 65 caractères (les noms de commandes peuvent être longs)
+                // Titre : le plus complet qui tient en 60 caractères (au-delà, Google le coupe ; les noms de commandes peuvent être longs)
                 const titles = tList(removed ? "commands.titlesRemoved" : "commands.titles", { name: c.name });
-                const title = esc(titles.find(function (x) { return x.length <= 65; }) || titles[titles.length - 1]);
+                const title = esc(titles.find(function (x) { return x.length <= 60; }) || titles[titles.length - 1]);
                 // Description : résumé + première phrase de l'explication + fin, tant que ça tient en 160 caractères
                 const sentences = c.description.split(/(?<=\.)\s/);
                 const descEnd = removed ? t("commands.descEndRemoved") : (c.default ? t("commands.descEndDefault", { value: c.default }) : t("commands.descEnd"));
@@ -2648,6 +2656,54 @@ ${tList("legal.sections", { name: esc(PUBLISHER_NAME), email: `<a href="mailto:$
 </html>
 `);
 
+        // ===== 5. methodology.html : d'où viennent les codes (confiance / E-E-A-T pour Google) =====
+        // Chiffres recalculés à chaque build ; dernier match = la date la plus récente d'un pro (date d'un match officiel)
+        const methodUrl = langUrl("methodology.html");
+        const lastMatch = pros.map(function (p) { return p.updated; }).sort(function (a, b) { return isoDate(a) < isoDate(b) ? -1 : 1; }).pop() || "";
+        const methodVars = {
+            pros: pros.length,
+            teams: new Set(pros.map(function (p) { return p.team; })).size,
+            creators: creators.length,
+            date: lastMatch,
+            email: `<a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>`
+        };
+        if (EN) {
+            sitemapPages.push({ path: "methodology.html", lastmod: isoDate(lastMatch) });
+        }
+        write(LD + "methodology.html", `<!DOCTYPE html>
+${HTML_OPEN}
+<head>
+    ${head({
+        title: t("method.title"),
+        ogTitle: t("method.h1"),
+        description: t("method.description"),
+        url: methodUrl,
+        path: "methodology.html",
+        prefix: "",
+        jsonLd: { "@context": "https://schema.org", "@graph": [
+            { "@type": "AboutPage", "@id": methodUrl, "url": methodUrl, "name": t("method.h1"), "description": t("method.description"), "inLanguage": lang, "isPartOf": { "@id": SITE_URL + "/#website" }, "publisher": { "@id": SITE_URL + "/#organization" }, "dateModified": isoDate(lastMatch), "breadcrumb": { "@id": methodUrl + "#breadcrumb" } },
+            breadcrumb(t("method.h1"), methodUrl)
+        ] }
+    })}
+</head>
+<body class="page">
+    ${THEME_SCRIPT}
+    ${pageTop("./")}
+    <main class="player-page">
+        ${crumbs("./", `<span>${t("method.h1")}</span>`)}
+        <h1>${t("method.h1")}</h1>
+        <p>${t("method.intro", methodVars)}</p>
+${tList("method.sections", methodVars).map(function (s) {
+        return `
+        <h2>${s[0]}</h2>
+        <p>${s[1]}</p>`;
+    }).join("\n")}
+    </main>
+    ${footer("")}
+</body>
+</html>
+`);
+
         // ===== 6. La page 404 (adresses absolues : elle peut s'afficher à n'importe quelle adresse) =====
         const abs = SITE_URL + "/" + LD;
         write(LD + "404.html", `<!DOCTYPE html>
@@ -2716,7 +2772,7 @@ ${urls}</urlset>
 
 > ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of ${llmsPros.length} pro players and ${llmsCreators.length} content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
 
-Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at ${SITE_URL}/fr/.
+Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in ${LANGS.filter(function (l) { return l !== "en"; }).map(function (l) { return NAMES[l] + " (" + SITE_URL + "/" + l + "/)"; }).join(", ")}.
 `;
     const llmsLine = function (p) {
         return `- [${p.name}](${pagesUrl("players/" + slug(p.name) + ".html")}): ${p.category === "creator" ? "content creator" : p.team}, CS2 crosshair code updated ${isoDate(p.updated)}`;
@@ -2727,6 +2783,7 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [CS2 pro crosshairs](${SITE_URL}/): all pro and creator crosshair codes, searchable, grouped by team
 - [CS2 crosshair generator](${pagesUrl("generator.html")}): build a crosshair and get a working CS2 share code
 - [CS2 crosshair FAQ](${pagesUrl("faq.html")}): importing codes, CSGO- codes, pro crosshair statistics
+- [How the codes are collected](${pagesUrl("methodology.html")}): pro codes read from official match demos, match dates, checks, skin prices
 - [All crosshair codes as plain text](${SITE_URL}/llms-full.txt): every player with full share code and console commands
 ${fs.existsSync("skins/index.html") ? `- [CS2 pro skins](${pagesUrl("skins/index.html")}): public Steam inventories of pro players with exact floats and prices\n` : ""}${fs.existsSync("commands/index.html") ? `- [CS2 console commands](${pagesUrl("commands/index.html")}): what each console command does, with values and examples\n` : ""}${fs.existsSync("tools/index.html") ? `- [CS2 tools](${pagesUrl("tools/index.html")}): crosshair generator and bind generator\n` : ""}
 ## Pro players (CS2)
@@ -2779,7 +2836,7 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
     const generated = ["sitemap.xml"];
     LANGS.forEach(function (lang) {
         const dir = lang === "en" ? "" : lang + "/";
-        ["index.html", "404.html", "faq.html", "generator.html", "legal.html", "valorant.html"].forEach(function (f) { generated.push(dir + f); });
+        ["index.html", "404.html", "faq.html", "methodology.html", "generator.html", "legal.html", "valorant.html"].forEach(function (f) { generated.push(dir + f); });
         ["players", "commands", "guides", "skins", "tools"].forEach(function (sub) {
             if (fs.existsSync(dir + sub)) {
                 fs.readdirSync(dir + sub).filter(function (f) { return f.endsWith(".html"); }).forEach(function (f) { generated.push(dir + sub + "/" + f); });

@@ -1,0 +1,15 @@
+---
+paths:
+  - "update-skins.js"
+  - "skins.json"
+  - "skins/**"
+  - "render.js"
+  - ".github/workflows/**"
+---
+
+# Skins des pros
+(déplacé de CLAUDE.md le 24/10/2026 : chargé seulement quand on touche à ces fichiers)
+
+- **Skins des pros** (fait le 19/10/2026) : `update-skins.js` récupère l'inventaire CS2 **public** de chaque pro sur Steam (`steamcommunity.com/inventory/<steamid>/730/2`, une demande toutes les 4 s) et écrit **`skins.json`** (armes, couteaux, gants ; pas les caisses/stickers/graffitis/armes de base). Steam donne gratuitement le nom, l'état, la rareté, l'image et le **float exact** (« Wear Rating » dans `asset_properties`) + le pattern. **Prix : pas encore** (champ `price: null`, affiché « — », emplacement `.skin-price[data-market]` prêt ; à brancher avec un service de prix). Liste des joueurs : `SKIN_PLAYERS` en haut de update-skins.js (ZywOo, donk, m0NESY, NiKo, molodoy ; s1mple retiré car inventaire privé). Tri : du plus cher au moins cher dès que les prix existent (`byPrice` dans render.js ; rubrique « most expensive skins » en haut de chaque page), sinon couteaux, gants puis rareté. Mise en avant (choisie par Anto le 19/10/2026) : 4ᵉ tuile « Pro Skins » dans l'en-tête de l'accueil (`data-goto="skins"`) + bloc « Pro inventories » dans le menu de gauche sous les équipes (entre `SKINSIDE:START/END`, en bas de page sur téléphone).
+  **Prix (branchés le 19/10/2026) : CSFloat**, `https://csfloat.com/api/v1/listings/price-list` = UNE seule demande pour ~28 000 objets (prix le plus bas en vente, en centimes de $). Clé API dans `csfloat-key.txt` (ignoré par Git, ne jamais la publier ni l'afficher). Euros = dollars ÷ taux du jour de la BCE (`eurofxref-daily.xml`). Affichés en **$ et €** sur chaque skin, **valeur totale de l'inventaire** (en-tête, résumé, FAQ « How much is X's inventory worth? », description Google). Limites, indiquées sur le site : prix le plus bas en vente, phases Doppler non séparées. Images téléchargées dans `skins/src/` (ignoré par Git) → `skins/img/<id>.webp` par images.js.
+  Mise à jour : `node update-skins.js` puis `node build.js`. build.js fabrique **`skins/index.html`** (page « CS2 Pro Skins ») + **`skins/<pseudo>.html`** par joueur (titre/description/FAQ/JSON-LD CollectionPage + ItemList + Person + FAQPage, alt sur chaque image, sitemap avec images) et l'**onglet Pro Skins** de l'accueil (entre `PROSKINS:START/END` : un bouton par joueur, ses 12 plus beaux skins, lien vers la page complète). Un même skin possédé plusieurs fois est regroupé (« ×N », meilleur float). Rendu des cartes : `skinCardHTML` / `groupSkins` dans render.js.

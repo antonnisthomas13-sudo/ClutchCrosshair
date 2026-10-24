@@ -33,6 +33,7 @@
         "guides": "Guides CS2",
         "commands": "Commandes console",
         "faq": "FAQ",
+        "method": "D'où viennent les codes",
         "legal": "Mentions légales",
         "business": "Business &amp; partenariats :",
         "rights": "© 2026 ClutchCrosshair. Tous droits réservés.",
@@ -154,7 +155,7 @@
         "matesCreator": "Crosshairs d'autres créateurs"
     },
     "home": {
-        "title": "Codes crosshair CS2 des joueurs pros (2026) | ClutchCrosshair",
+        "title": "Codes crosshair CS2 des pros (2026) | ClutchCrosshair",
         "metaDescription": "Copie les codes crosshair CS2 de donk, ZywOo, m0NESY, NiKo et {count} pros en un clic, avec aperçu taille réelle et commandes console. Lus dans les démos.",
         "ogTitle": "Codes crosshair CS2 des pros et des créateurs",
         "ogDescription": "Copie en un clic les derniers codes crosshair CS2 des joueurs pros et des créateurs. donk, ZywOo, m0NESY et bien d'autres.",
@@ -727,6 +728,42 @@
             [
                 "Autres langues",
                 "{languages}"
+            ]
+        ]
+    },
+    "method": {
+        "title": "D'où viennent les codes crosshair CS2 des pros | ClutchCrosshair",
+        "description": "Chaque code crosshair de pro sur ClutchCrosshair est lu dans une démo de match officiel CS2, jamais tapé à la main. Voici comment on les obtient et les vérifie.",
+        "h1": "D'où viennent les codes crosshair",
+        "intro": "ClutchCrosshair réunit les crosshairs CS2 de {pros} joueurs pros de {teams} équipes et de {creators} créateurs de contenu. Dernier match lu : {date}. Voici exactement d'où vient chaque code.",
+        "sections": [
+            [
+                "Joueurs pros : lus dans les démos de matchs officiels",
+                "Chaque crosshair de pro vient de la démo (le fichier de replay) d'un match officiel, téléchargée sur HLTV. Une démo enregistre les réglages de chaque joueur, dont le code de partage exact de son crosshair. On la lit avec un petit programme : aucun code n'est jamais tapé à la main. Une seule map suffit, car un joueur garde le même crosshair pendant tout le match."
+            ],
+            [
+                "La date est celle du match",
+                "La date affichée à côté de chaque pro est celle du match dans lequel le code a été lu. Quand un match plus récent montre le même code, la date avance : le crosshair est confirmé. Une démo plus ancienne ne remplace jamais un code plus récent. Les joueurs sont suivis grâce à leur identifiant Steam : un transfert dans une autre équipe est repéré automatiquement."
+            ],
+            [
+                "Uniquement des codes CS2",
+                "Depuis la mise à jour CS2 du 30 septembre 2026, les codes de partage utilisent le nouveau format <code>CS…</code>, et les anciens codes <code>CSGO-</code> ne s'importent plus dans le jeu. C'est pour ça que seules les démos jouées après cette date sont lues, et qu'aucun code <code>CSGO-</code> n'est publié."
+            ],
+            [
+                "Créateurs de contenu",
+                "Les codes des créateurs de contenu viennent de leurs matchs FACEIT récents (le bouton Copier de la page du match) et sont vérifiés environ une fois par mois. Leur date est celle de la dernière vérification."
+            ],
+            [
+                "Chaque code est vérifié",
+                "Avant d'être publié, chaque code est décodé pour s'assurer que c'est un vrai code crosshair CS2. Les commandes console et l'aperçu taille réelle sont fabriqués à partir de ce code décodé, pas écrits à la main. Plusieurs pros ont exactement le même code : c'est normal, car un crosshair a peu de réglages possibles en pixels, et chaque page indique les pros qui le partagent."
+            ],
+            [
+                "Skins des pros et prix",
+                "Les skins viennent de l'inventaire Steam public de chaque pro, mis à jour chaque jour. Les prix sont le prix le plus bas actuellement en vente sur CSFloat, convertis en euros avec le taux du jour de la Banque centrale européenne. Les phases Doppler n'ont pas de prix séparé."
+            ],
+            [
+                "Un code est faux ?",
+                "Écris-nous à {email}. Chaque signalement est vérifié avec les dernières démos de matchs officiels."
             ]
         ]
     },

@@ -33,6 +33,7 @@
         "guides": "Guías de CS2",
         "commands": "Comandos de consola",
         "faq": "FAQ",
+        "method": "De dónde salen los códigos",
         "legal": "Aviso legal",
         "business": "Negocios y colaboraciones:",
         "rights": "© 2026 ClutchCrosshair. Todos los derechos reservados.",
@@ -710,6 +711,42 @@
             [
                 "Otros idiomas",
                 "{languages}"
+            ]
+        ]
+    },
+    "method": {
+        "title": "De dónde salen los códigos de crosshair de CS2 | ClutchCrosshair",
+        "description": "Cada código de crosshair de pro en ClutchCrosshair se lee de una demo de un partido oficial de CS2, nunca se escribe a mano. Así se obtienen y se comprueban.",
+        "h1": "De dónde salen los códigos de crosshair",
+        "intro": "ClutchCrosshair reúne los crosshairs de CS2 de {pros} jugadores pro de {teams} equipos y de {creators} creadores de contenido. Último partido leído: {date}. Aquí tienes exactamente de dónde sale cada código.",
+        "sections": [
+            [
+                "Jugadores pro: leídos de demos de partidos oficiales",
+                "Cada crosshair de pro sale de la demo (el archivo de repetición) de un partido oficial, descargada de HLTV. Una demo guarda los ajustes de cada jugador, incluido el código exacto de su crosshair. La leemos con un pequeño programa: ningún código se escribe a mano. Basta con un mapa, porque un jugador mantiene el mismo crosshair durante todo el partido."
+            ],
+            [
+                "La fecha es la del partido",
+                "La fecha que aparece junto a cada pro es la del partido del que se leyó el código. Cuando un partido más reciente muestra el mismo código, la fecha avanza: el crosshair queda confirmado. Una demo más antigua nunca sustituye a un código más reciente. Seguimos a los jugadores por su ID de Steam, así que un fichaje por otro equipo se detecta automáticamente."
+            ],
+            [
+                "Solo códigos de CS2",
+                "Desde la actualización de CS2 del 30 de septiembre de 2026, los códigos usan el nuevo formato <code>CS…</code>, y los antiguos códigos <code>CSGO-</code> ya no se pueden importar en el juego. Por eso solo se leen demos jugadas después de esa fecha y nunca se publica un código <code>CSGO-</code>."
+            ],
+            [
+                "Creadores de contenido",
+                "Los códigos de los creadores de contenido salen de sus partidas recientes de FACEIT (el botón de copiar de la página de la partida) y se revisan más o menos una vez al mes. Su fecha es la de la última revisión."
+            ],
+            [
+                "Cada código se comprueba",
+                "Antes de publicarse, cada código se decodifica para asegurarse de que es un código de crosshair de CS2 válido. Los comandos de consola y la vista previa a tamaño real se generan a partir de ese código decodificado, no se escriben a mano. Varios pros tienen exactamente el mismo código: es normal, porque un crosshair tiene pocos ajustes posibles en píxeles, y cada página indica qué pros lo comparten."
+            ],
+            [
+                "Skins de los pros y precios",
+                "Las skins salen del inventario público de Steam de cada pro y se actualizan cada día. Los precios son el precio más bajo en venta en CSFloat en ese momento, convertidos a euros con el tipo de cambio diario del Banco Central Europeo. Las fases Doppler no tienen precio aparte."
+            ],
+            [
+                "¿Has visto un código incorrecto?",
+                "Escríbenos a {email}. Revisamos cada aviso con las demos oficiales más recientes."
             ]
         ]
     },

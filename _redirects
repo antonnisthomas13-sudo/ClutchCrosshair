@@ -1,0 +1,42 @@
+# Réglage lu par Cloudflare Pages (pas par serve.js en local)
+# Le site est publié depuis la racine du dépôt : sans ce fichier, les fichiers de travail (notes, données brutes,
+# outils de fabrication) seraient lisibles par n'importe qui. Les redirections passent AVANT les fichiers
+# (doc Cloudflare : « Redirects are always followed, regardless of whether or not an asset matches »),
+# donc ces adresses renvoient vers l'accueil. Une redirection ne peut pas répondre « 404 » sur Cloudflare Pages.
+# Le site lui-même n'utilise aucun de ces fichiers dans le navigateur (il charge les .min.js, lib/, les images).
+# Nouveau fichier de travail à la racine : l'ajouter ici.
+
+# Notes
+/CLAUDE.md / 301
+/DESIGN.md / 301
+/PRODUCT.md / 301
+
+# Données brutes (le site est déjà fabriqué à partir d'elles)
+/players.json / 301
+/skins.json / 301
+/commands.json / 301
+/guides.json / 301
+/binds.json / 301
+/creators.csv / 301
+/i18n/* / 301
+/og/keys.json / 301
+
+# Outils de fabrication (Node / Python)
+/build.js / 301
+/render.js / 301
+/i18n.js / 301
+/images.js / 301
+/og.js / 301
+/critical.js / 301
+/critical.css / 301
+/serve.js / 301
+/teams.js / 301
+/update-skins.js / 301
+/import-creators.js / 301
+/faceit-test.js / 301
+/read_demo.py / 301
+/fonts/subset_fonts.py / 301
+/fonts/src/* / 301
+/package.json / 301
+/package-lock.json / 301
+/index.template.html / 301

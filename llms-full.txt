@@ -2,7 +2,7 @@
 
 > ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 13 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
 
-Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in French at https://clutchcrosshair.com/fr/.
+Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in Français (https://clutchcrosshair.com/fr/), Español (https://clutchcrosshair.com/es/), Русский (https://clutchcrosshair.com/ru/), Türkçe (https://clutchcrosshair.com/tr/).
 
 Most recent crosshair update: 2026-10-22.
 

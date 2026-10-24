@@ -1,11 +1,13 @@
 User-agent: *
 Allow: /
 # Fichiers de travail du site (notes, scripts, données brutes) : pas à indexer
+# /cdn-cgi/ : adresses techniques de Cloudflare (protection de l’adresse email contre le spam), pas des pages
 Disallow: /*.md$
 Disallow: /*.py$
 Disallow: /*.yml$
 Disallow: /.impeccable/
 Disallow: /.github/
+Disallow: /cdn-cgi/
 
 # Moteurs de recherche et assistants IA : autorisés explicitement (mêmes règles que ci-dessus)
 User-agent: Googlebot
@@ -25,5 +27,6 @@ Disallow: /*.py$
 Disallow: /*.yml$
 Disallow: /.impeccable/
 Disallow: /.github/
+Disallow: /cdn-cgi/
 
 Sitemap: https://clutchcrosshair.com/sitemap.xml

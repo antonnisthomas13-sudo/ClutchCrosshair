@@ -33,6 +33,7 @@
         "guides": "CS2 Guides",
         "commands": "Console Commands",
         "faq": "FAQ",
+        "method": "How we get the codes",
         "legal": "Legal notice",
         "business": "Business &amp; partnerships:",
         "rights": "© 2026 ClutchCrosshair. All rights reserved.",
@@ -710,6 +711,42 @@
             [
                 "Other languages",
                 "{languages}"
+            ]
+        ]
+    },
+    "method": {
+        "title": "How We Get CS2 Pro Crosshair Codes | ClutchCrosshair",
+        "description": "Every pro crosshair code on ClutchCrosshair is read from an official CS2 match demo, never typed by hand. Here is how codes are collected, dated and checked.",
+        "h1": "How we get the crosshair codes",
+        "intro": "ClutchCrosshair lists the CS2 crosshairs of {pros} pro players from {teams} teams and {creators} content creators. Most recent match read: {date}. Here is exactly where every code comes from.",
+        "sections": [
+            [
+                "Pro players: read from official match demos",
+                "Every pro crosshair comes from the demo (the replay file) of an official match, downloaded from HLTV. A demo records the settings of every player, including the exact crosshair share code. We read it with a small program: no code is ever typed by hand. One map is enough, because a player keeps the same crosshair for the whole match."
+            ],
+            [
+                "The date is the date of the match",
+                "The date shown next to each pro is the date of the match the code was read from. When a newer match shows the same code, the date moves forward: the crosshair is confirmed. An older demo never replaces a more recent code. Players are followed by their Steam ID, so a transfer to another team is picked up automatically."
+            ],
+            [
+                "Only CS2 codes",
+                "Since the CS2 update of 30 September 2026, crosshair share codes use the new <code>CS…</code> format, and old <code>CSGO-</code> codes can no longer be imported in the game. That is why only demos played after that date are read, and no <code>CSGO-</code> code is ever published."
+            ],
+            [
+                "Content creators",
+                "Content creators' codes come from their recent FACEIT matches (the copy button on the match page) and are checked about once a month. Their date is the date of the last check."
+            ],
+            [
+                "Every code is checked",
+                "Before it is published, each code is decoded to make sure it is a valid CS2 crosshair code. The console commands and the real-size preview are generated from that decoded code, not written by hand. Several pros share exactly the same code: that is normal, because a crosshair has few possible settings in pixels, and each page lists the pros who share it."
+            ],
+            [
+                "Pro skins and prices",
+                "Skins come from the public Steam inventory of each pro, refreshed every day. Prices are the lowest current listing on CSFloat, converted to euros with the daily rate of the European Central Bank. Doppler phases are not priced separately."
+            ],
+            [
+                "Found a wrong code?",
+                "Email us at {email}. Every report is checked against the latest official match demos."
             ]
         ]
     },
