@@ -325,6 +325,58 @@ function drawBars(ctx, code, w, h, look) {
     function px(value, unit) {
         return Math.max(1, Math.round(value * unit));
     }
+
+    // Codes CS2 : placement mesuré au pixel sur 5 captures en jeu d'Anto (1280×960, 24/10/2026) :
+    // chaque trait commence à « écart » pixels du CENTRE de l'écran (l'épaisseur ne change pas sa place)
+    // et mesure « longueur − 1 » pixels (longueur 5 → 4 px ; longueur 1 → plus de trait du tout).
+    // On calcule d'abord les pixels du jeu (écran de hauteur gameH), puis on les agrandit jusqu'au canvas.
+    if (c.format !== "legacy-v1" && c.style !== 9) {
+        const codeHeight = c.screenHeight || 1080;
+        const gameH = look.res ? look.res.height : screenPixelsHigh();
+        const k = gameH / codeHeight;
+        const t = Math.max(1, Math.round(c.thickness * k));        // épaisseur en pixels du jeu
+        const len = Math.max(0, Math.round((c.length - 1) * k));   // longueur en pixels du jeu
+        const g = Math.round(c.gap * k);                           // écart en pixels du jeu
+        const o = c.outlineMode > 0 ? 1 : 0;                       // contour : 1 pixel du jeu
+        const sy = screenPixelsHigh() * zoom / gameH;              // pixels du canvas pour 1 pixel du jeu
+        const sx = sy * (look.res ? look.res.stretch : 1);         // (plus large en 4:3 « stretched »)
+        const C = { x: Math.floor(w / 2), y: Math.floor(h / 2) };
+        const low = -Math.ceil(t / 2);                             // le trait vertical occupe [low, low + t[ (impair : 1 px de plus à gauche/en haut)
+        const mid = low + t / 2;                                   // axe du crosshair
+        const near = Math.floor(mid + g);                          // début des traits droite / bas
+        const far = Math.ceil(mid - g);                            // fin des traits gauche / haut
+        // [x0, x1[ × [y0, y1[ en pixels du jeu autour du centre -> rectangle du canvas
+        function box(x0, x1, y0, y1) {
+            const left = C.x + Math.round(x0 * sx);
+            const top = C.y + Math.round(y0 * sy);
+            return [left, top, C.x + Math.round(x1 * sx) - left, C.y + Math.round(y1 * sy) - top];
+        }
+        const list = [];
+        if (len > 0) {
+            list.push(box(near, near + len, low, low + t));        // droite
+            list.push(box(far - len, far, low, low + t));          // gauche
+            list.push(box(low, low + t, near, near + len));        // bas
+            if (!c.tStyleEnabled) {
+                list.push(box(low, low + t, far - len, far));      // haut (absent en style "T")
+            }
+        }
+        if (c.centerDotEnabled) {
+            list.push(box(low, low + t, low, low + t));
+        }
+        const ox = o ? Math.max(1, Math.round(sx)) : 0;
+        const oy = o ? Math.max(1, Math.round(sy)) : 0;
+        if (o) {
+            ctx.fillStyle = outlineColor;
+            list.forEach(function (b) {
+                ctx.fillRect(b[0] - ox, b[1] - oy, b[2] + ox * 2, b[3] + oy * 2);
+            });
+        }
+        ctx.fillStyle = "rgba(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ", " + alpha + ")";
+        list.forEach(function (b) {
+            ctx.fillRect(b[0], b[1], b[2], b[3]);
+        });
+        return;
+    }
     const lengthX = px(length, unitX);  // traits gauche/droite
     const lengthY = px(length, unitY);  // traits haut/bas
     const thickX = px(thick, unitX);    // largeur des traits haut/bas

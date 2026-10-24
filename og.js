@@ -22,34 +22,42 @@ const PER_SHOT = 12;        // captures converties en JPEG par passage de Chrome
 const DARK_LOGOS = ["furia", "spirit", "g2"]; // logos noirs : passés en blanc sur le fond sombre (comme dans style.css)
 
 // Rectangles du crosshair autour du centre (0, 0), en pixels de l'image : [x, y, largeur, hauteur]
-// Même logique que drawBars dans crosshair.js (codes CS2), avec unit = pixels de l'image pour 1 pixel de crosshair
+// Même logique que drawBars dans crosshair.js (codes CS2)
 function crosshairRects(c) {
-    const unit = ZOOM * 1080 / (c.screenHeight || 1080);
-    function px(value) {
-        return Math.max(1, Math.round(value * unit));
-    }
-    const length = px(c.length);
-    const thick = px(c.thickness);
-    const half = Math.floor(thick / 2);
-    const start = Math.ceil(thick / 2) + Math.round(c.gap * unit);
-    const dot = c.centerDotEnabled ? [[-half, -half, thick, thick]] : [];
     if (c.style === 9) {
-        // Crosshair en X : 4 petits carrés tournés de 45°, le point reste droit
+        // Crosshair en X (réglé sur une capture de shox) : 4 petits carrés tournés de 45°, le point reste droit
+        const unit = ZOOM * 1080 / (c.screenHeight || 1080);
+        const thick = Math.max(1, Math.round(c.thickness * unit));
+        const half = Math.floor(thick / 2);
+        const dot = c.centerDotEnabled ? [[-half, -half, thick, thick]] : [];
         const sq = Math.max(1, Math.floor(c.thickness * unit));
         const from = Math.ceil(sq / 2) + Math.round(c.gap * unit);
         const h = Math.floor(sq / 2);
         return { rotated: [[from, -h, sq, sq], [-from - sq, -h, sq, sq], [-h, from, sq, sq], [-h, -from - sq, sq, sq]], straight: dot };
     }
-    const bars = [[start, -half, length, thick], [-start - length, -half, length, thick], [-half, start, thick, length]];
-    if (!c.tStyleEnabled) {
-        bars.push([-half, -start - length, thick, length]);
+    // Placement mesuré en jeu (24/10/2026, même règle que drawBars) : chaque trait commence à « écart » pixels
+    // du centre de l'écran et mesure « longueur − 1 » pixels ; calculé en pixels du jeu (écran 1080) puis agrandi ZOOM fois
+    const k = 1080 / (c.screenHeight || 1080);
+    const t = Math.max(1, Math.round(c.thickness * k));
+    const len = Math.max(0, Math.round((c.length - 1) * k));
+    const g = Math.round(c.gap * k);
+    const low = -Math.ceil(t / 2);
+    const mid = low + t / 2;
+    const near = Math.floor(mid + g);
+    const far = Math.ceil(mid - g);
+    const z = function (x0, x1, y0, y1) {
+        return [x0 * ZOOM, y0 * ZOOM, (x1 - x0) * ZOOM, (y1 - y0) * ZOOM];
+    };
+    const bars = len > 0 ? [z(near, near + len, low, low + t), z(far - len, far, low, low + t), z(low, low + t, near, near + len)] : [];
+    if (len > 0 && !c.tStyleEnabled) {
+        bars.push(z(low, low + t, far - len, far));
     }
-    return { rotated: [], straight: bars.concat(dot) };
+    return { rotated: [], straight: bars.concat(c.centerDotEnabled ? [z(low, low + t, low, low + t)] : []) };
 }
 
 function crosshairHTML(c) {
     const rects = crosshairRects(c);
-    const outline = c.outlineMode > 0 ? Math.max(1, Math.round(ZOOM * 1080 / (c.screenHeight || 1080))) : 0;
+    const outline = c.outlineMode > 0 ? ZOOM : 0; // 1 pixel du jeu, agrandi ZOOM fois
     const color = "rgba(" + c.red + "," + c.green + "," + c.blue + "," + (c.alpha / 255) + ")";
     const outlineColor = "rgba(" + (c.outlineRed ?? 0) + "," + (c.outlineGreen ?? 0) + "," + (c.outlineBlue ?? 0) + "," + ((c.outlineAlpha ?? 255) / 255) + ")";
     function boxes(list) {
