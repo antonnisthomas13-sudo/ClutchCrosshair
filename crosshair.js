@@ -326,16 +326,16 @@ function drawBars(ctx, code, w, h, look) {
         return Math.max(1, Math.round(value * unit));
     }
 
-    // Codes CS2 : placement mesuré au pixel sur 5 captures en jeu d'Anto (1280×960, 24/10/2026) :
-    // chaque trait commence à « écart » pixels du CENTRE de l'écran (l'épaisseur ne change pas sa place)
-    // et mesure « longueur − 1 » pixels (longueur 5 → 4 px ; longueur 1 → plus de trait du tout).
+    // Codes CS2 : placement mesuré au pixel sur 6 captures en jeu d'Anto (1280×960, 24/10/2026) :
+    // chaque trait commence à « écart » pixels du CENTRE de l'écran (l'épaisseur ne change pas sa place) ;
+    // longueur, épaisseur et écart sont proportionnels à la hauteur d'écran, arrondis au pixel.
     // On calcule d'abord les pixels du jeu (écran de hauteur gameH), puis on les agrandit jusqu'au canvas.
     if (c.format !== "legacy-v1" && c.style !== 9) {
         const codeHeight = c.screenHeight || 1080;
         const gameH = look.res ? look.res.height : screenPixelsHigh();
         const k = gameH / codeHeight;
         const t = Math.max(1, Math.round(c.thickness * k));        // épaisseur en pixels du jeu
-        const len = Math.max(0, Math.round((c.length - 1) * k));   // longueur en pixels du jeu
+        const len = Math.max(0, Math.round(c.length * k));         // longueur en pixels du jeu
         const g = Math.round(c.gap * k);                           // écart en pixels du jeu
         const o = c.outlineMode > 0 ? 1 : 0;                       // contour : 1 pixel du jeu
         const sy = screenPixelsHigh() * zoom / gameH;              // pixels du canvas pour 1 pixel du jeu

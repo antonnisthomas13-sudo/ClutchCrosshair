@@ -36,10 +36,10 @@ function crosshairRects(c) {
         return { rotated: [[from, -h, sq, sq], [-from - sq, -h, sq, sq], [-h, from, sq, sq], [-h, -from - sq, sq, sq]], straight: dot };
     }
     // Placement mesuré en jeu (24/10/2026, même règle que drawBars) : chaque trait commence à « écart » pixels
-    // du centre de l'écran et mesure « longueur − 1 » pixels ; calculé en pixels du jeu (écran 1080) puis agrandi ZOOM fois
+    // du centre de l'écran ; tailles proportionnelles à l'écran, calculées en pixels du jeu (écran 1080) puis agrandies ZOOM fois
     const k = 1080 / (c.screenHeight || 1080);
     const t = Math.max(1, Math.round(c.thickness * k));
-    const len = Math.max(0, Math.round((c.length - 1) * k));
+    const len = Math.max(0, Math.round(c.length * k));
     const g = Math.round(c.gap * k);
     const low = -Math.ceil(t / 2);
     const mid = low + t / 2;
