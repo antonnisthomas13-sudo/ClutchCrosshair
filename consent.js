@@ -10,7 +10,7 @@
     var COOKIE_DAYS = 390; // cookies Google Analytics : 13 mois maximum (CNIL), au lieu de 2 ans par défaut
 
     var script = document.currentScript;
-    var legal = (script && script.dataset.legal) || "legal.html";
+    var legal = (script && script.dataset.legal) || "legal";
 
     // Textes : anglais par défaut, traduits par le dictionnaire de la page (<script id="i18n">, pages non anglaises)
     var texts = {};

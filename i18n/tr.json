@@ -1,0 +1,748 @@
+{
+    "_about": "Textes du site en turc (impératif familier « sen » comme sur les sites de jeux, « siz » dans les mentions légales). Mêmes clés que i18n/en.json ; une clé absente reprend le texte anglais. Les pseudos ne reçoivent jamais de suffixe (impossible à accorder automatiquement : ZywOo'nun / donk'un) : phrases tournées avec « {name} adlı oyuncu », « {name} ile »… Noms des menus de CS2 en turc à vérifier en jeu.",
+    "common": {
+        "and": "ve",
+        "copy": "Kopyala",
+        "yes": "Evet",
+        "no": "Hayır",
+        "creator": "İçerik üreticisi",
+        "crosshairOf": "{name} crosshair",
+        "browseAll": "Tüm CS2 pro crosshair'larına göz at ›",
+        "updated": "Güncelleme: {date}",
+        "faq": "SSS"
+    },
+    "nav": {
+        "crosshairs": "Crosshair'lar",
+        "skins": "Pro skinleri",
+        "guides": "Rehberler",
+        "commands": "Komutlar",
+        "tools": "Araçlar",
+        "generator": "Oluşturucu",
+        "homeAria": "ClutchCrosshair ana sayfa",
+        "mainAria": "Ana menü",
+        "footerAria": "Alt bilgi",
+        "breadcrumbAria": "Sayfa yolu",
+        "home": "Ana sayfa",
+        "language": "Dil",
+        "soon": "yakında"
+    },
+    "footer": {
+        "generator": "Crosshair oluşturucu",
+        "bind": "Bind oluşturucu",
+        "skins": "CS2 pro skinleri",
+        "guides": "CS2 rehberleri",
+        "commands": "Konsol komutları",
+        "faq": "SSS",
+        "legal": "Yasal bilgiler",
+        "business": "İş birlikleri ve ortaklıklar:",
+        "rights": "© 2026 ClutchCrosshair. Tüm hakları saklıdır.",
+        "trademarks": "Counter-Strike 2 ve CS2 skinleri Valve Corporation'ın ticari markalarıdır. Takım logoları sahiplerinin ticari markalarıdır. ClutchCrosshair'ın Valve veya takımlarla bir bağlantısı yoktur.",
+        "cookies": "Çerezler"
+    },
+    "meta": {
+        "ogImageAlt": "ClutchCrosshair: sana en uygun CS2 crosshair'ını bul"
+    },
+    "links": {
+        "commands": "CS2 konsol komutları",
+        "generator": "CS2 crosshair oluşturucu",
+        "pros": "CS2 pro crosshair'ları",
+        "guides": "CS2 rehberleri"
+    },
+    "field": {
+        "shareCode": "Paylaşım kodu",
+        "shareHelp": "Ayarlar › Nişangâh › İçe aktar",
+        "console": "Konsol",
+        "consoleHelp": "CS2 konsoluna yapıştır (~)"
+    },
+    "card": {
+        "crosshair": "Crosshair",
+        "previewAria": "{name} CS2 crosshair önizlemesi"
+    },
+    "specs": {
+        "color": "Renk",
+        "length": "Uzunluk",
+        "thickness": "Kalınlık",
+        "gap": "Boşluk",
+        "dot": "Orta nokta",
+        "outline": "Dış çizgi",
+        "tStyle": "T stili",
+        "opacity": "Opaklık"
+    },
+    "colors": {
+        "green": "yeşil",
+        "yellow": "sarı",
+        "cyan": "camgöbeği",
+        "red": "kırmızı",
+        "pink": "pembe",
+        "white": "beyaz",
+        "blue": "mavi",
+        "lightBlue": "açık mavi",
+        "orange": "turuncu",
+        "purple": "mor",
+        "lime": "fıstık yeşili",
+        "teal": "turkuaz"
+    },
+    "colorFamily": {
+        "white": "beyaz",
+        "cyan": "camgöbeği",
+        "yellow": "sarı",
+        "green": "yeşil",
+        "other": "diğer renkler"
+    },
+    "sizes": {
+        "veryShort": "çok kısa",
+        "short": "kısa",
+        "medium": "orta boy",
+        "long": "uzun"
+    },
+    "insights": {
+        "length": "{n} px uzunluk",
+        "thickness": "{n} px kalınlık",
+        "gap": "{n} boşluk",
+        "outline": "dış çizgi var",
+        "noOutline": "dış çizgi yok",
+        "dot": "orta nokta var",
+        "noDot": "orta nokta yok",
+        "tStyle": "T stili (üst çizgi yok)",
+        "opacity": "%{n} opaklık",
+        "styleStatic": " sabit",
+        "styleX": " X şeklinde (45° döndürülmüş)",
+        "settings": "{name}, {size} {color}{style} bir crosshair kullanıyor: {parts}; {height}p ekran yüksekliğine göre ayarlanmış.",
+        "comparison": "ClutchCrosshair'daki {total} pro oyuncunun %{longer} kadarı daha uzun bir crosshair kullanıyor, %{same} kadarı da {color} renkte oynuyor.",
+        "sameTitle": "{name} ile aynı crosshair'ı kullanan prolar",
+        "sameText": {
+            "one": "{list}, {name} ile birebir aynı CS2 crosshair kodunu kullanıyor.",
+            "other": "{list}, {name} ile birebir aynı CS2 crosshair kodunu kullanıyor."
+        },
+        "similarTitle": "{name} crosshair'ına benzeyen crosshair'lar",
+        "similarText": "Bu prolar da neredeyse aynı boyutta ve aynı boşlukta {color} bir crosshair ile oynuyor.",
+        "faqCodeQ": "{name} CS2 crosshair kodu nedir?",
+        "faqCodeA": "{name} adlı oyuncunun CS2 crosshair kodu: {code}. {date} tarihli {source} alındı.",
+        "sourcePro": "resmi bir maç demosundan",
+        "sourceCreator": "bir maçtan",
+        "faqSettingsQ": "{name} hangi crosshair ayarlarını kullanıyor?",
+        "faqSameQ": "Hangi prolar {name} ile aynı crosshair'ı kullanıyor?"
+    },
+    "player": {
+        "title": "{name} CS2 Crosshair Kodu (2026) | ClutchCrosshair",
+        "ogTitle": "{name} CS2 Crosshair Kodu",
+        "ogImageAlt": "{name} CS2 crosshair: önizleme ve kod",
+        "descriptionPro": "{name} ({team}) CS2 crosshair kodunu tek tıkla kopyala: gerçek boyutlu önizleme, konsol komutları ve ayarlar. {date} tarihli maçtan.",
+        "descriptionCreator": "{name} CS2 crosshair kodunu tek tıkla kopyala: gerçek boyutlu önizleme, konsol komutları ve tüm ayarlar. Güncelleme: {date}.",
+        "webPageName": "{name} CS2 Crosshair Kodu",
+        "personPro": "{name}, {team} takımında oynayan profesyonel bir CS2 oyuncusu. CS2 crosshair kodu resmi bir maç demosundan alındı.",
+        "personCreator": "{name}, bir CS2 içerik üreticisi.",
+        "breadcrumb": "{name} crosshair",
+        "h1": "{name} CS2 Crosshair",
+        "lastUpdate": "Son güncelleme:",
+        "faceit": "{name} FACEIT profili",
+        "same": "Aynı crosshair: {list}",
+        "about": "{name} crosshair'ı hakkında",
+        "introPro": "{name}, {team} takımında oynuyor. Bu, {name} adlı oyuncunun {date} tarihli resmi bir maçta kullandığı CS2 crosshair'ının birebir aynısı; doğrudan maç demosundan okundu.",
+        "introCreator": "{name}, bir CS2 içerik üreticisi. Bu, {name} adlı oyuncunun CS2 crosshair'ı; son kontrol: {date}.",
+        "howTitle": "{name} crosshair'ı CS2'de nasıl kullanılır",
+        "how1": "Paylaşım kodunun yanındaki <strong>Kopyala</strong> düğmesine tıkla.",
+        "how2": "CS2'de <strong>Ayarlar › Oyun › Nişangâh</strong> menüsünü aç.",
+        "how3": "<strong>Paylaş veya İçe aktar</strong> düğmesine tıkla ve kodu yapıştır.",
+        "orConsole": "Ya da konsol komutlarını kopyala, CS2 konsolunu (~) aç ve yapıştır.",
+        "commandsLink": "Her crosshair komutu ne işe yarar? ›",
+        "faqLink": "Diğer sorular SSS sayfasında ›",
+        "editLink": "{name} crosshair'ını CS2 crosshair oluşturucuda düzenle ›",
+        "skinsLink": "{name} CS2 skinleri ve envanteri ›",
+        "faqTitle": "{name} crosshair SSS",
+        "matesTeam": "Diğer {team} crosshair'ları",
+        "matesCreator": "Diğer içerik üreticisi crosshair'ları"
+    },
+    "home": {
+        "title": "CS2 Pro Oyuncu Crosshair Kodları (2026) | ClutchCrosshair",
+        "metaDescription": "donk, ZywOo, m0NESY, NiKo ve {count} pro oyuncunun CS2 crosshair kodlarını tek tıkla kopyala: gerçek boyutlu önizleme ve konsol komutları. Maç demolarından.",
+        "ogTitle": "CS2 pro oyuncu ve yayıncı crosshair kodları",
+        "ogDescription": "Pro oyuncuların ve içerik üreticilerinin en güncel CS2 crosshair kodlarını tek tıkla kopyala. donk, ZywOo, m0NESY ve daha fazlası.",
+        "twitterDescription": "Pro oyuncuların ve içerik üreticilerinin en güncel CS2 crosshair kodlarını tek tıkla kopyala.",
+        "siteDescription": "Profesyonel oyuncuların ve içerik üreticilerinin CS2 crosshair kodları, resmi maç demolarıyla güncellenir.",
+        "skip": "Crosshair'lara geç",
+        "proTeams": "Pro takımlar",
+        "followUs": "Bizi takip et",
+        "xAria": "X'te (Twitter) ClutchCrosshair",
+        "xTitle": "X'te ClutchCrosshair",
+        "mailAria": "ClutchCrosshair'a e-posta gönder (clutchcrosshair@gmail.com)",
+        "contactUs": "İletişim",
+        "sideNote": "İş birlikleri, ortaklıklar, sponsorluklar: her teklife açığız.",
+        "gameAria": "Oyun",
+        "valorantTitle": "Valorant crosshair'ları yakında geliyor",
+        "faqTitle": "CS2 crosshair SSS",
+        "themeLight": "Açık mod",
+        "h1": "Sana en uygun CS2 crosshair'ını bul",
+        "lead": "CS2 pro oyuncularının ve içerik üreticilerinin en güncel crosshair'ları. Tek tıkla kopyala.",
+        "searchPlaceholder": "CS2 oyuncusu, takım veya içerik üreticisi ara...",
+        "searchAria": "CS2 oyuncusu, takım veya içerik üreticisi ara",
+        "quickAria": "Hızlı erişim",
+        "quickPros": "Prolar",
+        "quickCreators": "İçerik üreticileri",
+        "quickTrending": "Trendler",
+        "quickSkins": "Pro skinleri",
+        "tablistAria": "Crosshair listeleri",
+        "tabPros": "Prolar",
+        "tabCreators": "İçerik üreticileri",
+        "tabTrending": "Trendler",
+        "tabGenerator": "Oluşturucu",
+        "tabSkins": "Pro skinleri",
+        "sortBy": "Sırala",
+        "sortTeam": "Takım",
+        "sortRecent": "Son güncellenenler",
+        "sortName": "İsim (A-Z)",
+        "prosTitle": "CS2 Pro Crosshair'ları",
+        "empty": "Burada henüz crosshair yok. Yakında yeni oyuncular geliyor!",
+        "creatorsTitle": "CS2 İçerik Üreticisi Crosshair'ları",
+        "trendingTitle": "Trend CS2 Crosshair'ları",
+        "generatorTitle": "CS2 Crosshair Oluşturucu",
+        "generatorIntro": "Kendi CS2 crosshair'ını oluştur: rengi, boyutu, boşluğu ve dış çizgiyi seç, gerçek boyutta canlı gör, sonra kodunu kopyala.",
+        "generatorLink": "Oluşturucu sayfasını aç ›",
+        "skinsTitle": "CS2 Pro Skinleri ve Envanterleri",
+        "aboutTitle": "En iyi CS2 crosshair'ını bul",
+        "aboutText": "ClutchCrosshair, en iyi Counter-Strike 2 pro oyuncularının ve içerik üreticilerinin kullandığı CS2 crosshair kodlarını listeler. Her kod resmi maç demolarından okunur; böylece her pronun yakın tarihli bir maçta kullandığı crosshair'ın birebir aynısını, yeni CS2 formatında alırsın. Paylaşım kodunu kopyala ve CS2'ye aktar (Ayarlar › Oyun › Nişangâh › Paylaş veya İçe aktar) ya da konsol komutlarını CS2 konsoluna yapıştır. Kendininkini mi istiyorsun? <a href=\"generator.html\">CS2 crosshair oluşturucu</a> ile yap. Sorun mu var? <a href=\"faq.html\">CS2 crosshair SSS</a> sayfasını oku.",
+        "modalClose": "Kapat",
+        "modalPreview": "Crosshair önizlemesi",
+        "faceitProfile": "FACEIT profili",
+        "openPage": "Crosshair sayfasının tamamını aç ›",
+        "allCrosshairs": "Tüm crosshair'lar",
+        "countPros": {
+            "one": "{count} pro oyuncu",
+            "other": "{count} pro oyuncu"
+        },
+        "countCreators": {
+            "one": "{count} içerik üreticisi",
+            "other": "{count} içerik üreticisi"
+        },
+        "countTrending": "Şu an trend: {count}",
+        "countSkins": {
+            "one": "{count} envanter",
+            "other": "{count} envanter"
+        },
+        "inventoriesTitle": "Pro envanterleri",
+        "sideSkinTitle": "{name} CS2 skinleri",
+        "allSkins": "Tüm pro skinleri ›",
+        "choosePro": "Bir pro oyuncu seç",
+        "allInventories": "Tüm CS2 pro envanterleri ›",
+        "skinsSoon": "CS2 pro oyuncularının silah skinleri, bıçakları ve eldivenleri. Çok yakında!"
+    },
+    "faq": {
+        "title": "CS2 Crosshair SSS: Kodlar ve Pro İstatistikleri | ClutchCrosshair",
+        "ogTitle": "CS2 Crosshair SSS",
+        "description": "CS2'de crosshair kodu nasıl aktarılır, eski CSGO- kodları neden artık çalışmaz ve CS2 prolarının en çok kullandığı crosshair hangisi: canlı istatistiklerle.",
+        "breadcrumb": "CS2 crosshair SSS",
+        "crumb": "SSS",
+        "h1": "CS2 Crosshair SSS",
+        "intro": "CS2 crosshair kodları hakkında her şey: nasıl aktarılır, yeni CS2 formatı ve proların kullandıkları. İstatistikler {date} tarihinde güncellendi.",
+        "items": [
+            [
+                "CS2'de crosshair kodu nasıl aktarılır?",
+                "Paylaşım kodunu kopyala, sonra CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar düğmesine tıkla ve kodu yapıştır. Crosshair hemen uygulanır."
+            ],
+            [
+                "Paylaşım kodu yerine konsol komutlarını nasıl kullanırım?",
+                "CS2 konsolunu ~ tuşuyla aç (Esc'nin altındaki tuş; gerekirse Ayarlar › Oyun bölümünden geliştirici konsolunu etkinleştir), ClutchCrosshair'dan kopyaladığın konsol komutlarını yapıştır ve Enter'a bas."
+            ],
+            [
+                "Eski CSGO- crosshair kodları neden artık çalışmıyor?",
+                "30 Eylül 2026 tarihli CS2 güncellemesinden beri crosshair paylaşım kodları CS ile başlayan (tiresiz) yeni bir format kullanıyor ve boyutlar piksel olarak kaydediliyor. Eski CSGO-xxxxx kodları artık içe aktarılamaz. ClutchCrosshair'daki tüm kodlar yeni CS2 formatındadır."
+            ],
+            [
+                "Bu pro crosshair kodları nereden geliyor?",
+                "Doğrudan resmi CS2 maç demolarından okunuyor. Her kod, oyuncunun o maçta kullandığı crosshair'ın birebir aynısıdır; gösterilen tarih maçın tarihidir."
+            ],
+            [
+                "Crosshair'lar ne sıklıkla güncelleniyor?",
+                "Bir takımın yeni bir resmi maç demosunu her okuduğumuzda, oyuncularının crosshair'ları kontrol edilip güncellenir. \"Son güncelleme\" tarihi, crosshair'ın onaylandığı en son maçı gösterir."
+            ],
+            [
+                "CS2 prolarının en çok kullandığı crosshair hangisi?",
+                "ClutchCrosshair'daki {total} pro crosshair'ına göre en çok kullanılan renkler: {families}. Proların {smallGap} kadarı 1 veya daha az boşluk, {dot} kadarı orta nokta, {outline} kadarı dış çizgi kullanıyor. Çoğu pro küçük ve sabit bir crosshair ile oynuyor."
+            ],
+            [
+                "En iyi CS2 crosshair'ı hangisi?",
+                "Tek bir en iyi crosshair yok: her haritada kolayca görünmeli ve rakibin kafasını kapatmamalı. Başlamak için sevdiğin bir pronun crosshair'ını kopyala, sonra rengi ve boyutu kendi ekranına göre ayarla."
+            ],
+            [
+                "Crosshair neden oyunumda farklı görünüyor?",
+                "CS2'de crosshair boyutları belirli bir ekran yüksekliği için piksel cinsindendir. Farklı bir çözünürlükte oynuyorsan (örneğin 4:3 stretched), crosshair prodakinden biraz daha büyük veya küçük görünebilir."
+            ],
+            [
+                "Kendi CS2 crosshair'ımı nasıl paylaşırım?",
+                "CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar düğmesine tıkla ve kodunu kopyala. Herkes aynı düğmeyle onu içe aktarabilir."
+            ],
+            [
+                "Bir crosshair yanlış ya da eksik. Nasıl bildiririm?",
+                "Bize {email} adresinden yaz ya da ana sayfadaki İletişim düğmesini kullan. Her bildirimi en son resmi maç demolarıyla kontrol ediyoruz."
+            ]
+        ]
+    },
+    "generator": {
+        "name": "CS2 Crosshair Oluşturucu",
+        "appDescription": "Ücretsiz online CS2 crosshair oluşturucu: rengi, uzunluğu, kalınlığı, boşluğu ve dış çizgiyi seç, gerçek boyutlu önizlemeyi gör, sonra CS2 crosshair kodunu veya konsol komutlarını kopyala.",
+        "breadcrumb": "CS2 crosshair oluşturucu",
+        "title": "CS2 Crosshair Oluşturucu: Kodunu Yap | ClutchCrosshair",
+        "ogTitle": "CS2 Crosshair Oluşturucu",
+        "description": "Ücretsiz CS2 crosshair oluşturucu: rengi, boyutu, boşluğu ve dış çizgiyi seç, bir CS2 haritasında gerçek boyutta gör, sonra kodunu veya komutları kopyala.",
+        "crumb": "Crosshair oluşturucu",
+        "h1": "CS2 Crosshair Oluşturucu",
+        "intro": "Kendi CS2 crosshair'ını birkaç saniyede oluştur: rengi, uzunluğu, kalınlığı, boşluğu ve dış çizgiyi seç, bir CS2 haritasında gerçek boyutta canlı gör, sonra crosshair kodunu veya konsol komutlarını kopyala. Ücretsiz, kayıt gerektirmez, yeni CS2 crosshair kodları için yapıldı.",
+        "howTitle": "CS2 crosshair oluşturucu nasıl kullanılır",
+        "how1": "Sıfırdan başla, bir <strong>pro crosshair'ından</strong> başla ya da kendi kodunu yapıştır.",
+        "how2": "<strong>Rengi</strong> seç, sonra <strong>uzunluğu</strong>, <strong>kalınlığı</strong> ve <strong>boşluğu</strong> ayarla. Önizleme anında güncellenir.",
+        "how3": "Crosshair'ı oyundaki gibi görmek için önizlemenin altından <strong>CS2 çözünürlüğünü</strong> seç (4:3 stretched dahil).",
+        "how4": "<strong>Kopyala</strong> düğmesine tıkla, sonra CS2'de <strong>Ayarlar › Oyun › Nişangâh › Paylaş veya İçe aktar</strong> menüsünü aç ve kodu yapıştır.",
+        "prosTitle": "CS2 prolarının kullandığı crosshair hangisi?",
+        "prosText": "ClutchCrosshair'daki {total} pro crosshair'ına göre en çok kullanılan renkler: {families}. En yaygın ayarlar {length} uzunluk, {thickness} kalınlık ve {gap} piksel boşluk; {dot} kadarı orta nokta, {outline} kadarı dış çizgi kullanıyor.",
+        "statsLink": "Daha fazla istatistik SSS sayfasında ›",
+        "faqTitle": "Crosshair oluşturucu SSS",
+        "faq": [
+            [
+                "Bu CS2 crosshair oluşturucu ücretsiz mi?",
+                "Evet. Ücretsiz, kayıt ve indirme gerektirmez. Her şey tarayıcında çalışır."
+            ],
+            [
+                "Yeni crosshair'ımı CS2'ye nasıl koyarım?",
+                "Paylaşım kodunun yanındaki Kopyala'ya tıkla, sonra CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar'a tıkla ve kodu yapıştır. İstersen konsol komutlarını kopyalayıp CS2 konsoluna (~) da yapıştırabilirsin."
+            ],
+            [
+                "Crosshair'ım 4:3 stretched'te neden farklı görünüyor?",
+                "4:3 stretched (1280×960, 1024×768...) veya 5:4 stretched (1280×1024) çözünürlükte oyun görüntüsü 16:9 ekranı dolduracak şekilde yatay olarak gerilir, bu yüzden crosshair genişler: yatay çizgiler daha uzun, dikey çizgiler daha kalın görünür. Crosshair'ının oyunda nasıl görüneceğini tam olarak görmek için önizlemenin altından çözünürlüğünü seç (16:9, 4:3, 16:10 veya 5:4). Crosshair kodun değişmez."
+            ],
+            [
+                "Bir pro oyuncunun crosshair'ından başlayabilir miyim?",
+                "Evet. Başlangıç listesinden bir pro seç ya da herhangi bir CS2 crosshair kodunu yapıştır, sonra rengi, boyutu veya boşluğu değiştir. Yeni kod anında güncellenir."
+            ],
+            [
+                "Eski CSGO- crosshair kodlarıyla çalışıyor mu?",
+                "Hayır. 30 Eylül 2026 tarihli CS2 güncellemesinden beri oyuna yalnızca CS ile başlayan yeni kodlar aktarılabiliyor. Oluşturucu yalnızca yeni CS2 kodları üretir."
+            ]
+        ]
+    },
+    "gen": {
+        "previewAria": "CS2 crosshair'ının canlı önizlemesi",
+        "zoomAria": "Önizleme boyutu",
+        "realSize": "Gerçek boyut",
+        "resolution": "CS2 çözünürlüğünde önizleme",
+        "stretched": "stretched",
+        "resolutionHint": "Yalnızca önizleme: crosshair kodun değişmez.",
+        "yourCode": "Paylaşım kodun",
+        "noscript": "Crosshair oluşturucuyu kullanmak için JavaScript'i aç.",
+        "startFrom": "Başlangıç",
+        "proCrosshair": "Bir pro crosshair'ı",
+        "choosePro": "Bir pro oyuncu seç…",
+        "pasteCode": "Ya da bir kod yapıştır",
+        "colors": {
+            "green": "Yeşil",
+            "yellow": "Sarı",
+            "cyan": "Camgöbeği",
+            "red": "Kırmızı",
+            "pink": "Pembe",
+            "white": "Beyaz"
+        },
+        "custom": "Özel",
+        "size": "Boyut",
+        "inPixels": "piksel cinsinden",
+        "pixels": "piksel",
+        "style": "Stil",
+        "reset": "Sıfırla"
+    },
+    "skins": {
+        "priceNote": "Fiyatlar: <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> üzerindeki en düşük ilan, ABD doları cinsinden; euro, ECB kuruyla; güncelleme: {date}. Doppler fazları ayrı fiyatlandırılmaz.",
+        "categories": {
+            "knives": "Bıçaklar",
+            "gloves": "Eldivenler",
+            "rifles": "Tüfekler",
+            "snipers": "Keskin nişancı tüfekleri",
+            "pistols": "Tabancalar",
+            "smgs": "Hafif makineliler",
+            "heavy": "Pompalılar ve makineliler"
+        },
+        "knifeCount": {
+            "one": "{count} bıçak skini",
+            "other": "{count} bıçak skini"
+        },
+        "gloveCount": {
+            "one": "{count} çift eldiven",
+            "other": "{count} çift eldiven"
+        },
+        "summary": "{name}{team} adlı oyuncunun {count} CS2 skini var{extras}{value}.",
+        "summaryTeam": " ({team})",
+        "summaryExtras": "; aralarında {list} var",
+        "summaryValue": "; toplam değeri yaklaşık {usd} ({eur})",
+        "count": {
+            "one": "{count} skin",
+            "other": "{count} skin"
+        },
+        "seeAll": "{name} adlı oyuncunun {count} skininin hepsini gör ›",
+        "faqCountQ": "{name} adlı oyuncunun kaç CS2 skini var?",
+        "faqCountA": "{name} adlı oyuncunun herkese açık Steam envanterinde {count} CS2 silah skini var ({different} farklı), aralarında {knives} ve {gloves} bulunuyor. Güncelleme: {date}.",
+        "faqKnifeQ": "{name} CS2'de hangi bıçağı kullanıyor?",
+        "faqGlovesQ": "{name} CS2'de hangi eldivenleri kullanıyor?",
+        "faqOwns": "{name} adlı oyuncunun sahip oldukları: {list}.",
+        "faqWorthQ": "{name} adlı oyuncunun CS2 envanteri ne kadar eder?",
+        "faqWorthA": "{name} adlı oyuncunun CS2 skinleri, her skinin {date} tarihindeki en düşük CSFloat ilanına göre yaklaşık {usd} ({eur}) değerinde. En pahalısı {price} ile {item}.",
+        "faqFloatQ": "Bu skinlerin float değerleri kesin mi?",
+        "faqFloatA": "Evet. Bu sayfadaki her float, {name} adlı oyuncunun herkese açık Steam envanterinden okunan kesin aşınma değeridir.",
+        "descStartPrice": "{name} CS2 envanteri yaklaşık {usd} değerinde: {count} skin, aralarında {top}.",
+        "descStartTop": "{name} CS2 envanteri: {count} skin, aralarında {top}.",
+        "descStart": "{name} CS2 envanteri: {count} skin.",
+        "descEndPrice": " Fiyatlar, kesin float ve aşınma.",
+        "descEnd": " Kesin float ve aşınma, güncelleme: {date}.",
+        "pageName": "{name} CS2 Skinleri ve Envanteri",
+        "listName": "{name} CS2 skinleri",
+        "breadcrumb": "CS2 Pro Skinleri",
+        "playerBreadcrumb": "{name} skinleri",
+        "personTeam": "{name}, {team} takımında oynayan profesyonel bir CS2 oyuncusu.",
+        "person": "{name}, profesyonel bir CS2 oyuncusu.",
+        "titleValue": "{name} CS2 Skinleri ve Envanter Değeri | ClutchCrosshair",
+        "title": "{name} CS2 Skinleri ve Envanteri (2026) | ClutchCrosshair",
+        "ogTitle": "{name} CS2 Skinleri ve Envanteri",
+        "crumb": "Pro skinleri",
+        "h1": "{name} CS2 Skinleri",
+        "updatedLabel": "Güncelleme",
+        "topExpensive": "{name} adlı oyuncunun en pahalı eşyaları: {list}.",
+        "topRarest": "{name} adlı oyuncunun en nadir eşyaları: {list}.",
+        "floatNote": "Her float, {name} adlı oyuncunun herkese açık Steam envanterinden okunan kesin aşınma değeridir.",
+        "crosshairQuestion": "{name} crosshair'ını mı arıyorsun?",
+        "crosshairLink": "{name} CS2 crosshair'ını kopyala ›",
+        "jumpAria": "Skin kategorileri",
+        "mostExpensive": "{name}: en pahalı skinler",
+        "sectionTitle": "{name}: {label}",
+        "faqTitle": "{name} skinleri SSS",
+        "othersTitle": "Diğer CS2 pro envanterleri",
+        "othersLink": "{name} skinleri",
+        "hubDescription": "CS2 pro skinleri: {names} adlı oyuncuların bıçakları, eldivenleri ve silah skinleri, kesin float ile. Güncelleme: {date}.",
+        "hubTitle": "CS2 Pro Skinleri ve Envanterleri (2026) | ClutchCrosshair",
+        "hubOgTitle": "CS2 Pro Skinleri ve Envanterleri",
+        "hubListItem": "{name} CS2 skinleri",
+        "hubH1": "CS2 Pro Skinleri",
+        "hubIntro": "En iyi pro oyuncuların gerçek CS2 envanterleri: her bıçak, her çift eldiven ve her silah skini; herkese açık Steam envanterlerinden okunan kesin float ve aşınma değeriyle, her skinin fiyatı ve her envanterin toplam değeriyle. Güncelleme: {date}.",
+        "hubKnivesGloves": "{name}: bıçaklar ve eldivenler",
+        "hubBest": "{name}: en iyi skinler",
+        "exactFloat": "Kesin float:",
+        "alt": "{name} adlı oyuncunun {skin} CS2 skini",
+        "altShort": "{name}: {skin}",
+        "copies": {
+            "one": "{count} adet",
+            "other": "{count} adet"
+        },
+        "float": "Float",
+        "price": "Fiyat",
+        "noPrice": "Fiyat yok"
+    },
+    "commands": {
+        "removedBadge": "CS2'de kaldırıldı",
+        "cheatBadge": "sv_cheats gerekir",
+        "prosTitle": "CS2 prolarının kullandığı değer hangisi?",
+        "prosText": "ClutchCrosshair'daki, resmi maç demolarından okunan {total} pro crosshair'ı arasında en yaygın değer {value} (proların %{share} kadarı).",
+        "prosWho": "{value} kullanan prolar:",
+        "breadcrumb": "CS2 Konsol Komutları",
+        "faqWhatQ": "{name} CS2'de ne işe yarar?",
+        "faqWorkQ": "{name} CS2'de çalışıyor mu?",
+        "faqWorkA": "Hayır. {name} bir CS:GO komutuydu ve CS2'de bulunmuyor.",
+        "faqWorkInstead": " Bunun yerine {name} kullan.",
+        "faqDefaultQ": "{name} komutunun varsayılan değeri nedir?",
+        "faqDefaultA": "{name} komutunun CS2'deki varsayılan değeri: {value}.",
+        "faqCheatsQ": "{name} için sv_cheats gerekir mi?",
+        "faqCheatsYes": "Evet. {name} yalnızca sv_cheats 1 ile, kendi kurduğun bir sunucuda (örneğin botlarla özel bir maçta) çalışır; resmi eşleştirmede asla çalışmaz.",
+        "faqCheatsNo": "Hayır. {name} sv_cheats olmadan, resmi eşleştirmede de çalışır.",
+        "titlesRemoved": [
+            "CS2'de {name}: kaldırıldı, yerine ne kullanılır | ClutchCrosshair",
+            "CS2'de {name}: kaldırıldı, yerine bunu kullan",
+            "{name} CS2'de kaldırıldı"
+        ],
+        "titles": [
+            "CS2 {name} komutu: değerler ve örnekler | ClutchCrosshair",
+            "CS2 {name} komutu | ClutchCrosshair",
+            "CS2 {name} komutu: değerler ve örnekler",
+            "CS2 {name} komutu"
+        ],
+        "descEndRemoved": " Yerine ne kullanılacağını gör.",
+        "descEndDefault": " Varsayılan {value}, değerler ve örnekler.",
+        "descEnd": " Değerler ve örnekler.",
+        "descStart": "CS2'de {name}: {summary}",
+        "headline": "CS2 {name} konsol komutu",
+        "crumb": "Komutlar",
+        "insteadTitle": "CS2'de yerine ne kullanılır",
+        "useInstead": "Bunun yerine {command} kullan: {summary}",
+        "syntax": "Söz dizimi",
+        "defaultValue": "Varsayılan değer:",
+        "value": "Değer",
+        "whatItDoes": "Ne işe yarar",
+        "cheatNote": "Bu komut {link} gerektirir: yalnızca kendi kurduğun bir sunucuda çalışır, resmi eşleştirmede asla çalışmaz.",
+        "examples": "Örnekler",
+        "howTitle": "CS2'de {name} nasıl kullanılır",
+        "how1": "Geliştirici konsolunu <strong>Ayarlar › Oyun › Geliştirici Konsolunu Etkinleştir</strong> bölümünden aç.",
+        "how2": "Konsolu açmak için <strong>~</strong> tuşuna (Esc'nin altındaki tuş) bas, komutu yaz ve <strong>Enter</strong>'a bas.",
+        "how3": "CS2'yi her açtığında uygulanması için satırı cfg klasöründeki bir <code>autoexec.cfg</code> dosyasına ekle.",
+        "tryGenerator": "Komut yazmadan önce bir crosshair denemek mi istiyorsun? <a href=\"../generator.html\">CS2 crosshair oluşturucu</a>yu kullan ya da bir <a href=\"../\">pro crosshair'ını</a> kopyala: her pro sayfası konsol komutlarının tam listesini verir.",
+        "related": "İlgili komutlar",
+        "learnMore": "Daha fazla bilgi",
+        "faqTitle": "{name} SSS",
+        "allLink": "Tüm CS2 konsol komutları ›",
+        "hubFaq": [
+            [
+                "CS2'de konsol nasıl açılır?",
+                "Ayarlar › Oyun bölümüne git ve Geliştirici Konsolunu Etkinleştir seçeneğini Evet yap. Sonra oyunda ~ tuşuna (Esc'nin altındaki tuş) basarak aç. Çalışmazsa toggleconsole komutunu bind ile başka bir tuşa ata."
+            ],
+            [
+                "Konsol komutları rekabetçi eşleştirmede çalışır mı?",
+                "Kendi ayarlarını değiştiren komutların çoğu (crosshair, HUD, radar, fare, ses) her yerde çalışır. \"sv_cheats gerekir\" olarak işaretlenen komutlar ve mp_ ya da bot_ ile başlayan sunucu komutları yalnızca kendi kurduğun bir sunucuda, örneğin botlarla özel bir maçta çalışır."
+            ],
+            [
+                "Konsol komutlarımı nasıl kaydederim?",
+                "Onları oyunun cfg klasöründe (game/csgo/cfg) autoexec.cfg adlı bir dosyaya koy ve başlatma seçeneklerine +exec autoexec ekle ya da konsola exec autoexec yaz."
+            ],
+            [
+                "Bir CS:GO komutu CS2'de neden çalışmıyor?",
+                "net_graph gibi birçok CS:GO komutu CS2'de kaldırıldı veya adı değişti. Bu sayfada \"CS2'de kaldırıldı\" olarak işaretlenen komutlarda yerine ne kullanacağın yazıyor."
+            ]
+        ],
+        "hubDescription": "İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.",
+        "hubTitle": "CS2 Konsol Komutları Listesi (2026) | ClutchCrosshair",
+        "hubOgTitle": "CS2 Konsol Komutları",
+        "hubH1": "CS2 Konsol Komutları",
+        "hubIntro": "İşe yarayan {count} CS2 konsol komutu sade bir dille: her birinin ne yaptığı, değerleri, varsayılan değeri ve kopyalamaya hazır örnekler. CS:GO'dan kalıp artık çalışmayan komutlar <strong>CS2'de kaldırıldı</strong> olarak işaretlendi. Güncelleme: {date}.",
+        "searchPlaceholder": "Bir komut ara, örn. crosshair, fps, radar...",
+        "searchAria": "Bir CS2 konsol komutu ara",
+        "filterAria": "Kategoriye göre filtrele",
+        "all": "Tümü",
+        "empty": "Komut bulunamadı. Başka bir kelime dene ya da CS2 konsoluna <code>find</code> ve ardından bir kelime yaz.",
+        "sectionTitle": "{category} komutları",
+        "default": "Varsayılan:",
+        "hubFaqTitle": "CS2 konsol SSS"
+    },
+    "guides": {
+        "statsSetting": "Ayar",
+        "statsWhat": "Proların kullandığı",
+        "statsShare": "Proların oranı",
+        "statsStyle": "Stil",
+        "statsStatic": "Sabit",
+        "statsNoDot": "Nokta yok",
+        "statsNoOutline": "Dış çizgi yok",
+        "statsNormal": "Normal (üst çizgili)",
+        "statsNote": "Resmi maç demolarından okunan {total} pro crosshair'ına dayanır. Hepsini <a href=\"../\">CS2 pro crosshair'ları sayfasında</a> gör.",
+        "resolutions": {
+            "768": "1024×768 (4:3)",
+            "800": "1280×800 (16:10)",
+            "864": "1152×864 (4:3)",
+            "960": "1280×960 (4:3)",
+            "1024": "1280×1024 (5:4)",
+            "1050": "1680×1050 (16:10)",
+            "1080": "1920×1080 (16:9) veya 1440×1080 (4:3)",
+            "1440": "2560×1440 (16:9)"
+        },
+        "resHeight": "Koddaki ekran yüksekliği",
+        "resUsual": "Yaygın çözünürlük",
+        "resPros": "Prolar",
+        "calcDpi": "Fare DPI",
+        "calcSens": "CS2 hassasiyeti",
+        "calcValorant": "Valorant hassasiyeti (isteğe bağlı)",
+        "calcExample": "örn. 0.4",
+        "calcSame": "CS2'de aynı hız:",
+        "breadcrumb": "CS2 Rehberleri",
+        "crumb": "Rehberler",
+        "updated": "Güncelleme",
+        "minutes": {
+            "one": "{count} dk okuma",
+            "other": "{count} dk okuma"
+        },
+        "toc": "Bu sayfada",
+        "commandsTitle": "Bu rehberdeki komutlar",
+        "faqTitle": "SSS: {title}",
+        "moreTitle": "Diğer CS2 rehberleri",
+        "allLink": "Tüm CS2 rehberleri ›",
+        "hubDescription": "Her oyuncu için pratik CS2 rehberleri: en iyi ayarlar, başlatma seçenekleri, stretched çözünürlük, hassasiyet, FPS artırma, crosshair ve aim antrenmanı.",
+        "hubTitle": "CS2 Rehberleri: Ayarlar, Aim ve Crosshair | ClutchCrosshair",
+        "hubOgTitle": "CS2 Rehberleri",
+        "hubH1": "CS2 Rehberleri",
+        "hubIntro": "CS2'yi ayarlamak ve daha iyi oynamak için açık ve pratik rehberler: önemli ayarlar, unutabileceğin efsaneler ve proların gerçekte kullandıkları. Güncelleme: {date}.",
+        "moreTools": "Diğer araçlar"
+    },
+    "tools": {
+        "breadcrumb": "CS2 Araçları",
+        "crumb": "Araçlar",
+        "description": "Ücretsiz CS2 araçları: gerçek boyutlu önizlemeli crosshair oluşturucu ve satın alma, jump throw ve daha fazlası için bind oluşturucu.",
+        "title": "Ücretsiz CS2 Araçları: Crosshair ve Bind | ClutchCrosshair",
+        "ogTitle": "CS2 Araçları",
+        "h1": "CS2 Araçları",
+        "intro1": "CS2'yi daha hızlı ayarlamak için ücretsiz araçlar. Her şey tarayıcında çalışır: kayıt yok, indirme yok, reklam yok.",
+        "intro2": "Crosshair oluşturucu, crosshair'ını bir CS2 haritasında gerçek boyutta, tam oyundaki gibi gösterir; 4:3 stretched'te bile. ZywOo veya donk gibi bir pronun crosshair'ından başla, uzunluğu, boşluğu, kalınlığı ve rengi değiştir, sonra paylaşım kodunu veya konsol komutlarını kopyala.",
+        "intro3": "Bind oluşturucu konsol komutunu senin için yazar: tek tuşla tam satın alma bind'ları, hep aynı yere düşen smokelar için jump throw bind'ı, radar yakınlaştırmasını veya sesi değiştiren bir tuş. Tüm bind'larını tek listede tut ve hazır bir autoexec.cfg olarak indir.",
+        "cardGenerator": "Crosshair'ını bir CS2 haritasında gerçek boyutlu önizlemeyle oluştur, kendi çözünürlüğünde gör (4:3 stretched dahil), bir pro crosshair'ından başla ve kodu kopyala.",
+        "cardBind": "Bir tuş ve bir eylem seç (satın alma, jump throw, radar yakınlaştırma, ses...), komutu kopyala ya da hazır bir autoexec.cfg indir.",
+        "moreTitle": "Diğer kaynaklar"
+    },
+    "bind": {
+        "consoleHelp": "CS2 konsoluna yapıştır (~)",
+        "name": "CS2 Bind Oluşturucu",
+        "breadcrumb": "CS2 bind oluşturucu",
+        "description": "Ücretsiz CS2 bind oluşturucu: bir tuş ve eylem seç, bind'ını kopyala ya da hazır bir autoexec.cfg indir. Satın alma, jump throw ve daha fazlası.",
+        "title": "CS2 Bind Oluşturucu: Satın Alma ve Jump Throw | ClutchCrosshair",
+        "crumb": "Bind oluşturucu",
+        "h1": "CS2 Bind Oluşturucu",
+        "intro": "Birkaç tıkla CS2 bind'ları oluştur: bir tuş seç, ne yapacağını seç (silahlarını satın almak, jump throw, radar yakınlaştırmasını değiştirmek...), sonra komutu kopyala ya da hazır bir autoexec.cfg indir. Ücretsiz, kayıt yok.",
+        "step1": "1. Bir tuş seç",
+        "keyAria": "Tuş",
+        "capture": "Bir tuşa bas…",
+        "step2": "2. Bir eylem seç",
+        "actionAria": "Eylem",
+        "actions": {
+            "buy": "Satın al",
+            "jumpthrow": "Jump throw",
+            "toggle": "Aç/kapat",
+            "volume": "Ses",
+            "grenade": "Bomba",
+            "other": "Diğer",
+            "custom": "Özel"
+        },
+        "jumpthrowHint": "Bombanı saldırı düğmesi basılıyken tut, sonra bu tuşa bas: aynı anda zıplar ve atarsın, böylece atışların her seferinde aynı olur.",
+        "toggleLabel": "Değiştirilecek ayar",
+        "volumeLabel": "Yön",
+        "grenadeLabel": "Seçilecek bomba",
+        "otherLabel": "Eylem",
+        "customLabel": "Herhangi bir konsol komutu (birden fazlasını ; ile ayır)",
+        "customPlaceholder": "örn. say gg; disconnect",
+        "yourBind": "Bind'ın",
+        "add": "Bind'larıma ekle",
+        "mine": "Bind'larım",
+        "empty": "Bind'ların burada görünecek. İstediğin kadar ekle, sonra hepsini kopyala ya da autoexec.cfg dosyanı indir.",
+        "copyAll": "Hepsini kopyala",
+        "download": "autoexec.cfg indir",
+        "clear": "Temizle",
+        "noscript": "Bind oluşturucuyu kullanmak için JavaScript'i aç.",
+        "howTitle": "CS2 bind'ların nasıl kullanılır",
+        "how1": "Yukarıda bind'ını oluştur, sonra <strong>Kopyala</strong>'ya tıkla.",
+        "how2": "CS2'de konsolu <strong>~</strong> ile aç (gerekirse Ayarlar › Oyun bölümünden etkinleştir), yapıştır ve <strong>Enter</strong>'a bas.",
+        "how3": "Birden fazla bind'ı güvende tutmak için <strong>autoexec.cfg indir</strong>'e tıkla, dosyayı <code>Counter-Strike Global Offensive/game/csgo/cfg</code> klasörüne koy ve <a href=\"../guides/cs2-launch-options.html\">başlatma seçeneklerine</a> <code>+exec autoexec</code> ekle.",
+        "popularTitle": "Popüler CS2 bind'ları",
+        "popularIntro": "Çoğu oyuncunun kullandığı, kopyalamaya hazır bind'lar. Başka bir tuş istersen tuş adını değiştir.",
+        "jumpTitle": "CS2 jump throw bind'ı",
+        "jumpText": "Jump throw bind'ı zıplamanı ve bombayı tam aynı anda bırakmanı sağlar; böylece smoke ve flash'ların her seferinde aynı yere düşer. Bu üç satırı yapıştır (son satırdaki tuşu değiştir):",
+        "buyTitle": "CS2 satın alma komutları listesi",
+        "buyIntro": "Her satın alma komutu bir bind içinde, tek başına ya da <code>;</code> ile ayrılmış birkaç komutla birlikte çalışır. Satın alma komutları, envanter düzeninde o yuvaya yerleştirdiğin silahı verir.",
+        "buyItem": "Eşya",
+        "buyCommand": "Satın alma komutu",
+        "faqTitle": "CS2 bind oluşturucu SSS",
+        "relatedTitle": "İlgili",
+        "relatedBind": "bind komutu",
+        "relatedAlias": "alias komutu",
+        "relatedExec": "exec komutu",
+        "relatedLaunch": "CS2 başlatma seçenekleri",
+        "faq": [
+            [
+                "CS2'de bind nasıl yapılır?",
+                "Konsolu (~) aç ve bind yaz, ardından tuşu ve tırnak içinde komutu yaz, örneğin bind \"kp_end\" \"buy ak47; buy m4a1\". ClutchCrosshair bind oluşturucu bu satırı senin için yazar."
+            ],
+            [
+                "Satın alma bind'ları CS2'de hâlâ çalışıyor mu?",
+                "Evet. buy ak47 veya buy vesthelm gibi satın alma komutları CS2'de çalışır. Envanter düzeninde o yuvadaki silahı satın alırlar; yani M4A1-S'yi seçtiysen buy m4a1 sana M4A1-S verir."
+            ],
+            [
+                "CS2'de bir bind nasıl kaldırılır?",
+                "Konsola unbind ve ardından tuşu yaz, örneğin unbind kp_end."
+            ],
+            [
+                "CS2 bind'larımı nasıl kaydederim?",
+                "Konsola yazdığın bind'lar otomatik kaydedilir. Tam bir listeyi güvende tutmak için bind'larını game/csgo/cfg klasöründeki bir autoexec.cfg dosyasına koy ve başlatma seçeneklerine +exec autoexec ekle. Oluşturucu bu dosyayı senin için indirebilir."
+            ],
+            [
+                "Jump throw bind'ı nedir?",
+                "Zıplayıp bombayı aynı anda bırakan bir bind; böylece her seferinde aynı atışı yaparsın. Bombayı saldırı düğmesi basılıyken tut, sonra jump throw tuşuna bas."
+            ]
+        ],
+        "js": {
+            "tick": "Satın alacaklarını işaretle",
+            "type": "Bir komut yaz",
+            "careful": "Dikkat: {key} tuşunun CS2'de zaten önemli bir varsayılan görevi var.",
+            "keySet": "Seçilen tuş: {key}",
+            "waiting": "Bir tuş bekleniyor…",
+            "pressNow": "Kullanmak istediğin tuşa bas (iptal için Esc).",
+            "unsupported": "Bu tuş desteklenmiyor, listeden bir tuş seç.",
+            "remove": "Kaldır",
+            "removeAria": "{key} tuşundaki bind'ı kaldır"
+        }
+    },
+    "valorant": {
+        "title": "Valorant Crosshair'ları: Çok Yakında | ClutchCrosshair",
+        "description": "Valorant pro crosshair'ları yakında ClutchCrosshair'da. Bu arada en iyi pro oyuncuların CS2 crosshair'larını kopyala.",
+        "h1": "Valorant crosshair'ları: çok yakında",
+        "lead": "Killjoy hâlâ bu sayfayı inşa ediyor...",
+        "progressAria": "Sayfa yapımı",
+        "eta": "Tahmini varış: bir sonraki yama. Belki.",
+        "back": "CS2 crosshair'larına dön",
+        "alt": "Bu arada bir CS2 crosshair'ı oluştur ›",
+        "jokes": [
+            "Spike kuruldu. Valorant crosshair'ları imha ediliyor.",
+            "Jett'imiz kodu alıp dash attı. Peşindeyiz.",
+            "Sage bu sayfayı diriltiyor. Bekleme süresi: birkaç hafta.",
+            "Cypher çıkış tarihini zaten biliyor. Ama bize söylemiyor.",
+            "Killjoy'un tareti bir bug buldu. Ve onu vurdu."
+        ]
+    },
+    "legal": {
+        "title": "Yasal bilgiler | ClutchCrosshair",
+        "description": "ClutchCrosshair yasal bilgileri: yayıncı, barındırma, ticari markalar, gizlilik ve çerezler. Reklam yok; Google Analytics yalnızca izninizle.",
+        "h1": "Yasal bilgiler",
+        "sections": [
+            [
+                "Yayıncı",
+                "ClutchCrosshair, {name} (Fransa'da yaşayan bir birey) tarafından yayımlanmaktadır.<br>\n        İletişim: {email}<br>\n        Yayın sorumlusu: {name}."
+            ],
+            [
+                "Barındırma",
+                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Amerika Birleşik Devletleri (cloudflare.com)."
+            ],
+            [
+                "Fikri mülkiyet",
+                "Counter-Strike ve CS2, Valve Corporation'ın ticari markalarıdır. Takım adları ve logoları, sahiplerinin ticari markalarıdır. Oyuncu fotoğrafları sahiplerine aittir. ClutchCrosshair'ın Valve, takımlar veya oyuncularla bir bağlantısı yoktur. Bir içeriğin sahibiyseniz ve kaldırılmasını istiyorsanız bizimle iletişime geçin, hızla kaldıralım.</p>\n        <p>Crosshair kodları, herkese açık maç demolarından okunan oyun ayarlarıdır. Pro skinleri, oyuncuların herkese açık Steam envanterlerinden gelir: skin adları ve görselleri Valve Corporation'a aittir; skin fiyatları CSFloat'tan (en düşük ilan), euro kuru Avrupa Merkez Bankası'ndan alınır. Yazı tipleri (Inter, Barlow Condensed, JetBrains Mono, Roboto Condensed) SIL Open Font License ve Apache License 2.0 kapsamında kullanılır."
+            ],
+            [
+                "Gizlilik",
+                "ClutchCrosshair reklam çerezleri kullanmaz. Açık/koyu mod, dil ve çerez tercihleriniz yalnızca kendi tarayıcınızda (localStorage) saklanır. Ziyaretler ayrıca çerez kullanmayan ve sizi siteden siteye takip etmeyen Cloudflare Web Analytics ile sayılır."
+            ],
+            [
+                "Çerezler ve Google Analytics",
+                "Yalnızca izninizle, kitlemizi Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, İrlanda) ile ölçüyoruz: ziyaret sayısı, görüntülenen sayfalar, yaklaşık ülke ve cihaz türü. <code>_ga</code> ve <code>_ga_195B8EZ9BP</code> çerezlerini en fazla 13 ay süreyle yerleştirir. Google bu verileri Avrupa Birliği dışına aktarabilir; <a href=\"https://policies.google.com/privacy?hl=tr\" rel=\"external noopener\" target=\"_blank\">Google gizlilik politikasına</a> bakın.</p>\n        <p><strong>Reddet</strong>'e tıklarsanız Google Analytics yüklenmez ve hiçbir çerez yerleştirilmez; site aynı şekilde çalışır. Seçiminiz tarayıcınızda 6 ay saklanır, ardından bant size yeniden sorar. Fikrinizi istediğiniz zaman her sayfanın altındaki <button type=\"button\" class=\"link-btn\" data-consent-open>Çerezler</button> bağlantısıyla değiştirebilirsiniz. Verilerinizin silinmesini de isteyebilirsiniz: {email}.",
+                "cookies"
+            ],
+            [
+                "Diğer diller",
+                "{languages}"
+            ]
+        ]
+    },
+    "notFound": {
+        "title": "Sayfa bulunamadı | ClutchCrosshair",
+        "description": "Bu sayfa mevcut değil.",
+        "h1": "404 · Sayfa bulunamadı",
+        "text": "Bu sayfa mevcut değil (ya da bir oyuncu adını değiştirdi). Tüm CS2 pro crosshair'larını ana sayfada bul.",
+        "back": "Tüm CS2 crosshair'larına dön"
+    },
+    "js": {
+        "copied": "Kopyalandı!",
+        "copiedAnnounce": "Panoya kopyalandı",
+        "copiedBar": "Kopyalandı",
+        "noPreview": "Önizleme yok",
+        "lightMode": "Açık mod",
+        "darkMode": "Koyu mod",
+        "lastUpdate": "Son güncelleme: ",
+        "sameAs": "Aynı crosshair: ",
+        "and": " ve ",
+        "faceitAria": "{name} FACEIT profili (yeni sekmede açılır)",
+        "previewAria": "{name} CS2 crosshair önizlemesi",
+        "terroristsWin": "Teröristler kazandı",
+        "defuse": "İmha etmeliydin.",
+        "rushB": "Rush B, durmak yok!",
+        "genOldCode": "Eski CSGO- kodları CS2'de artık çalışmıyor. CS ile başlayan bir kod yapıştır.",
+        "genImported": "Kod aktarıldı. İstediğin gibi ayarla.",
+        "genInvalid": "Bu geçerli bir CS2 crosshair kodu değil.",
+        "genFromLink": "Crosshair bağlantıdan yüklendi. İstediğin gibi ayarla.",
+        "consentAria": "Çerez izni",
+        "consentText": "Kitlemizi Google Analytics ile ölçmek istiyoruz. Yalnızca kabul edersen çerez yerleştirir. Reddetmek sitede hiçbir şeyi değiştirmez.",
+        "consentMore": "Daha fazla bilgi",
+        "consentRefuse": "Reddet",
+        "consentAccept": "Kabul et"
+    }
+}

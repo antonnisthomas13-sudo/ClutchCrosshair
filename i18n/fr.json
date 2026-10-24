@@ -126,6 +126,7 @@
     "player": {
         "title": "Code crosshair CS2 de {name} (2026) | ClutchCrosshair",
         "ogTitle": "Code crosshair CS2 de {name}",
+        "ogImageAlt": "Crosshair CS2 de {name} : aperçu et code",
         "descriptionPro": "Copie le code crosshair CS2 de {name} ({team}) en un clic : aperçu taille réelle, commandes console et réglages. Lu dans un match du {date}.",
         "descriptionCreator": "Copie le code crosshair CS2 de {name} en un clic : aperçu taille réelle, commandes console et tous les réglages. Mis à jour le {date}.",
         "webPageName": "Code crosshair CS2 de {name}",
@@ -712,7 +713,7 @@
             ],
             [
                 "Propriété intellectuelle",
-                "Counter-Strike et CS2 sont des marques de Valve Corporation. Les noms et logos des équipes appartiennent à leurs propriétaires respectifs, tout comme les photos des joueurs. ClutchCrosshair n'est affilié ni à Valve, ni aux équipes, ni aux joueurs. Si vous êtes propriétaire d'un contenu et souhaitez son retrait, contactez-nous : il sera retiré rapidement.</p>\n        <p>Les codes de crosshair sont des réglages de jeu lus dans des démos de matchs publiques. Les skins des pros proviennent de leurs inventaires Steam publics : les noms et images des skins appartiennent à Valve Corporation ; les prix viennent de CSFloat (offre la plus basse) et le taux de l'euro de la Banque centrale européenne. Les polices (Inter, Barlow Condensed, JetBrains Mono) sont utilisées sous licence SIL Open Font License."
+                "Counter-Strike et CS2 sont des marques de Valve Corporation. Les noms et logos des équipes appartiennent à leurs propriétaires respectifs, tout comme les photos des joueurs. ClutchCrosshair n'est affilié ni à Valve, ni aux équipes, ni aux joueurs. Si vous êtes propriétaire d'un contenu et souhaitez son retrait, contactez-nous : il sera retiré rapidement.</p>\n        <p>Les codes de crosshair sont des réglages de jeu lus dans des démos de matchs publiques. Les skins des pros proviennent de leurs inventaires Steam publics : les noms et images des skins appartiennent à Valve Corporation ; les prix viennent de CSFloat (offre la plus basse) et le taux de l'euro de la Banque centrale européenne. Les polices (Inter, Barlow Condensed, JetBrains Mono, Roboto Condensed) sont utilisées sous licences SIL Open Font License et Apache 2.0."
             ],
             [
                 "Vie privée",
@@ -724,8 +725,8 @@
                 "cookies"
             ],
             [
-                "English",
-                "This legal notice is also available in English: <a href=\"../legal.html\">English version</a>."
+                "Autres langues",
+                "{languages}"
             ]
         ]
     },

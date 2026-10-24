@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-crosshair-guide">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
     <script>(function () {
-        var A = {"en":"../guides/cs2-crosshair-guide.html","fr":"../fr/guides/cs2-crosshair-guide.html"};
+        var A = {"en":"../guides/cs2-crosshair-guide","fr":"../fr/guides/cs2-crosshair-guide","es":"../es/guides/cs2-crosshair-guide","ru":"../ru/guides/cs2-crosshair-guide","tr":"../tr/guides/cs2-crosshair-guide"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="CS2 Crosshair Guide: Codes, Commands and Pro Stats">
     <meta property="og:description" content="Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.">
     <meta property="og:url" content="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#article","headline":"CS2 Crosshair Guide: Codes, Commands and Pro Stats","description":"Everything about CS2 crosshairs: how to import a code, the console commands, what pros really use (live stats) and how to build your own.","url":"https://clutchcrosshair.com/guides/cs2-crosshair-guide","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Guides","item":"https://clutchcrosshair.com/guides/"},{"@type":"ListItem","position":3,"name":"CS2 Crosshair Guide: Codes, Commands and Pro Stats","item":"https://clutchcrosshair.com/guides/cs2-crosshair-guide"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/guides/cs2-crosshair-guide#faq","mainEntity":[{"@type":"Question","name":"How do I import a crosshair in CS2?","acceptedAnswer":{"@type":"Answer","text":"Copy the code, open Settings › Game › Crosshair, click Share or Import and paste it."}},{"@type":"Question","name":"Why don't CSGO- crosshair codes work anymore?","acceptedAnswer":{"@type":"Answer","text":"Since the CS2 update of September 30, 2026, crosshair codes use a new format starting with CS, with sizes in pixels. Old CSGO- codes can no longer be imported."}},{"@type":"Question","name":"What is the most popular crosshair among CS2 pros?","acceptedAnswer":{"@type":"Answer","text":"A small static crosshair: on ClutchCrosshair, most pros use a short length, a small gap and a cyan or green color, without a center dot."}},{"@type":"Question","name":"How do I make my own CS2 crosshair?","acceptedAnswer":{"@type":"Answer","text":"Use the ClutchCrosshair crosshair generator: adjust color, length, thickness and gap with a real-size preview, then copy your code or console commands."}}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -112,7 +119,7 @@
             <h2 id="the-crosshair-console-commands">The crosshair console commands</h2>
             <div class="table-wrap"><table class="cmd-values">
             <thead><tr><th scope="col">Command</th><th scope="col">What it changes</th></tr></thead>
-            <tbody><tr><td><a href="../commands/cl_crosshair_length.html"><code>cl_crosshair_length</code></a></td><td>Length of the lines, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_thickness.html"><code>cl_crosshair_thickness</code></a></td><td>Thickness of the lines, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_gap.html"><code>cl_crosshair_gap</code></a></td><td>Space in the center, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_screen_height.html"><code>cl_crosshair_screen_height</code></a></td><td>Screen height the sizes are made for</td></tr><tr><td><a href="../commands/cl_crosshairstyle.html"><code>cl_crosshairstyle</code></a></td><td>Static (4) or dynamic crosshair</td></tr><tr><td><a href="../commands/cl_crosshaircolor_r.html"><code>cl_crosshaircolor_r</code></a></td><td>Custom color, with _g and _b</td></tr><tr><td><a href="../commands/cl_crosshair_drawoutline.html"><code>cl_crosshair_drawoutline</code></a></td><td>Black outline for visibility</td></tr><tr><td><a href="../commands/cl_crosshairdot.html"><code>cl_crosshairdot</code></a></td><td>Center dot</td></tr><tr><td><a href="../commands/cl_crosshair_t.html"><code>cl_crosshair_t</code></a></td><td>T-style (no top line)</td></tr></tbody>
+            <tbody><tr><td><a href="../commands/cl_crosshair_length"><code>cl_crosshair_length</code></a></td><td>Length of the lines, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_thickness"><code>cl_crosshair_thickness</code></a></td><td>Thickness of the lines, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_gap"><code>cl_crosshair_gap</code></a></td><td>Space in the center, in pixels</td></tr><tr><td><a href="../commands/cl_crosshair_screen_height"><code>cl_crosshair_screen_height</code></a></td><td>Screen height the sizes are made for</td></tr><tr><td><a href="../commands/cl_crosshairstyle"><code>cl_crosshairstyle</code></a></td><td>Static (4) or dynamic crosshair</td></tr><tr><td><a href="../commands/cl_crosshaircolor_r"><code>cl_crosshaircolor_r</code></a></td><td>Custom color, with _g and _b</td></tr><tr><td><a href="../commands/cl_crosshair_drawoutline"><code>cl_crosshair_drawoutline</code></a></td><td>Black outline for visibility</td></tr><tr><td><a href="../commands/cl_crosshairdot"><code>cl_crosshairdot</code></a></td><td>Center dot</td></tr><tr><td><a href="../commands/cl_crosshair_t"><code>cl_crosshair_t</code></a></td><td>T-style (no top line)</td></tr></tbody>
         </table></div>
             <p>Here is a typical small static pro-style crosshair you can paste in the console:</p>
             <div class="code-block"><pre><code>cl_crosshairstyle 4
@@ -129,11 +136,11 @@ cl_crosshaircolor_a 255</code></pre><button type="button" class="mini" data-copy
         <section aria-labelledby="how-to-choose-your-crosshair">
             <h2 id="how-to-choose-your-crosshair">How to choose your crosshair</h2>
             <ul><li><strong>Color</strong>: pick one that contrasts with every map. Cyan, green and yellow are the most popular for a reason.</li><li><strong>Size</strong>: a small crosshair is precise but can get lost in smokes and flashes; a slightly longer one is easier to find.</li><li><strong>Gap</strong>: keep it small so the target&#39;s head stays visible between the lines.</li><li><strong>Static</strong>: a crosshair that never moves (style 4) gives you a constant reference, which is why almost every pro uses it.</li></ul>
-            <p>The easiest way to test is our <a href="../generator.html">CS2 crosshair generator</a>: it shows your crosshair at real size on a CS2 map, in your resolution, and gives you the code. You can also start from any pro crosshair and tweak it.</p>
+            <p>The easiest way to test is our <a href="../generator">CS2 crosshair generator</a>: it shows your crosshair at real size on a CS2 map, in your resolution, and gives you the code. You can also start from any pro crosshair and tweak it.</p>
         </section>
 
         <h2>Commands in this guide</h2>
-        <ul class="related"><li><a href="../commands/cl_crosshair_length.html">cl_crosshair_length</a></li><li><a href="../commands/cl_crosshair_thickness.html">cl_crosshair_thickness</a></li><li><a href="../commands/cl_crosshair_gap.html">cl_crosshair_gap</a></li><li><a href="../commands/cl_crosshair_screen_height.html">cl_crosshair_screen_height</a></li><li><a href="../commands/cl_crosshairstyle.html">cl_crosshairstyle</a></li><li><a href="../commands/cl_crosshair_drawoutline.html">cl_crosshair_drawoutline</a></li><li><a href="../commands/cl_crosshairdot.html">cl_crosshairdot</a></li><li><a href="../commands/cl_crosshair_t.html">cl_crosshair_t</a></li><li><a href="../commands/cl_crosshaircolor_r.html">cl_crosshaircolor_r</a></li></ul>
+        <ul class="related"><li><a href="../commands/cl_crosshair_length">cl_crosshair_length</a></li><li><a href="../commands/cl_crosshair_thickness">cl_crosshair_thickness</a></li><li><a href="../commands/cl_crosshair_gap">cl_crosshair_gap</a></li><li><a href="../commands/cl_crosshair_screen_height">cl_crosshair_screen_height</a></li><li><a href="../commands/cl_crosshairstyle">cl_crosshairstyle</a></li><li><a href="../commands/cl_crosshair_drawoutline">cl_crosshair_drawoutline</a></li><li><a href="../commands/cl_crosshairdot">cl_crosshairdot</a></li><li><a href="../commands/cl_crosshair_t">cl_crosshair_t</a></li><li><a href="../commands/cl_crosshaircolor_r">cl_crosshaircolor_r</a></li></ul>
 
         <h2 id="faq">CS2 Crosshair Guide FAQ</h2>
         <h3>How do I import a crosshair in CS2?</h3>
@@ -146,19 +153,19 @@ cl_crosshaircolor_a 255</code></pre><button type="button" class="mini" data-copy
         <p>Use the ClutchCrosshair crosshair generator: adjust color, length, thickness and gap with a real-size preview, then copy your code or console commands.</p>
 
         <h2>More CS2 guides</h2>
-        <ul class="related"><li><a href="cs2-stretched-resolution.html">CS2 Stretched Resolution: 4:3 vs 16:9 (2026)</a></li><li><a href="cs2-best-settings.html">Best CS2 Settings (2026): Video, Game and Audio</a></li><li><a href="cs2-aim-training.html">How to Improve Your Aim in CS2: Routine and Aim Maps</a></li></ul>
+        <ul class="related"><li><a href="cs2-stretched-resolution">CS2 Stretched Resolution: 4:3 vs 16:9 (2026)</a></li><li><a href="cs2-best-settings">Best CS2 Settings (2026): Video, Game and Audio</a></li><li><a href="cs2-aim-training">How to Improve Your Aim in CS2: Routine and Aim Maps</a></li></ul>
         <p><a href="./">All CS2 guides ›</a></p>
     </main>
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

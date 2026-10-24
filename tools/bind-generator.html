@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/tools/bind-generator">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/tools/bind-generator">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/tools/bind-generator">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/tools/bind-generator">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/tools/bind-generator">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/tools/bind-generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/tools/bind-generator">
     <script>(function () {
-        var A = {"en":"../tools/bind-generator.html","fr":"../fr/tools/bind-generator.html"};
+        var A = {"en":"../tools/bind-generator","fr":"../fr/tools/bind-generator","es":"../es/tools/bind-generator","ru":"../ru/tools/bind-generator","tr":"../tr/tools/bind-generator"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="CS2 Bind Generator">
     <meta property="og:description" content="Free CS2 bind generator: pick a key and an action, copy your bind or download a ready-made autoexec.cfg. Buy binds, jump throw and more.">
     <meta property="og:url" content="https://clutchcrosshair.com/tools/bind-generator">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/tools/bind-generator","url":"https://clutchcrosshair.com/tools/bind-generator","name":"CS2 Bind Generator","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tools/bind-generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/tools/bind-generator#app"},"dateModified":"2026-10-19"},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/tools/bind-generator#app","name":"CS2 Bind Generator","url":"https://clutchcrosshair.com/tools/bind-generator","description":"Free CS2 bind generator: pick a key and an action, copy your bind or download a ready-made autoexec.cfg. Buy binds, jump throw and more.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tools/bind-generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Tools","item":"https://clutchcrosshair.com/tools/"},{"@type":"ListItem","position":3,"name":"CS2 bind generator","item":"https://clutchcrosshair.com/tools/bind-generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tools/bind-generator#faq","mainEntity":[{"@type":"Question","name":"How do I make a bind in CS2?","acceptedAnswer":{"@type":"Answer","text":"Open the console (~) and type bind followed by the key and the command between quotes, for example bind \"kp_end\" \"buy ak47; buy m4a1\". The ClutchCrosshair bind generator writes the line for you."}},{"@type":"Question","name":"Do buy binds still work in CS2?","acceptedAnswer":{"@type":"Answer","text":"Yes. Buy commands such as buy ak47 or buy vesthelm work in CS2. They buy the weapon equipped in that slot of your loadout, so buy m4a1 gives you the M4A1-S if that is the one you equipped."}},{"@type":"Question","name":"How do I remove a bind in CS2?","acceptedAnswer":{"@type":"Answer","text":"Type unbind followed by the key in the console, for example unbind kp_end."}},{"@type":"Question","name":"How do I save my CS2 binds?","acceptedAnswer":{"@type":"Answer","text":"Binds you type in the console are saved automatically. To keep a full list safe, put your binds in an autoexec.cfg file in game/csgo/cfg and add +exec autoexec to your launch options. The generator can download that file for you."}},{"@type":"Question","name":"What is a jump throw bind?","acceptedAnswer":{"@type":"Answer","text":"A bind that jumps and releases your grenade at the same moment, so you throw the same lineup every time. Hold the grenade with the attack button pressed, then press your jump throw key."}}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -173,7 +180,7 @@
         <ol>
             <li>Build your bind above, then click <strong>Copy</strong>.</li>
             <li>In CS2, open the console with <strong>~</strong> (enable it in Settings › Game if needed), paste and press <strong>Enter</strong>.</li>
-            <li>To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href="../guides/cs2-launch-options.html">launch options</a>.</li>
+            <li>To keep several binds safe, click <strong>Download autoexec.cfg</strong>, put the file in <code>Counter-Strike Global Offensive/game/csgo/cfg</code> and add <code>+exec autoexec</code> to your <a href="../guides/cs2-launch-options">launch options</a>.</li>
         </ol>
 
         <h2>Popular CS2 binds</h2>
@@ -220,23 +227,23 @@ bind "v" "+jumpthrow"</code></pre><button type="button" class="mini" data-copy>C
 
         <h2>Related</h2>
         <ul class="related">
-            <li><a href="../commands/bind.html">bind command</a></li>
-            <li><a href="../commands/alias.html">alias command</a></li>
-            <li><a href="../commands/exec.html">exec command</a></li>
-            <li><a href="../generator.html">CS2 crosshair generator</a></li>
-            <li><a href="../guides/cs2-launch-options.html">CS2 launch options</a></li>
+            <li><a href="../commands/bind">bind command</a></li>
+            <li><a href="../commands/alias">alias command</a></li>
+            <li><a href="../commands/exec">exec command</a></li>
+            <li><a href="../generator">CS2 crosshair generator</a></li>
+            <li><a href="../guides/cs2-launch-options">CS2 launch options</a></li>
         </ul>
     </main>
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

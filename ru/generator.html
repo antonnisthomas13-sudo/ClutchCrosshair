@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru" style="--copied: 'Скопировано'">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор прицела CS2: создайте свой код | ClutchCrosshair</title>
+    <meta name="description" content="Бесплатный генератор прицела CS2: выберите цвет, размер, зазор и обводку, смотрите прицел в реальном размере на карте CS2 и копируйте код или команды.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clutchcrosshair.com/ru/generator">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/generator">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/generator">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/generator">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/generator">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/generator">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/generator">
+    <script>(function () {
+        var A = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
+    <script type="application/json" id="i18n">{"copied":"Скопировано!","copiedAnnounce":"Скопировано в буфер обмена","copiedBar":"Скопировано","noPreview":"Нет предпросмотра","lightMode":"Светлая тема","darkMode":"Тёмная тема","lastUpdate":"Обновлено: ","sameAs":"Такой же прицел у ","and":" и ","faceitAria":"Профиль {name} на FACEIT (откроется в новой вкладке)","previewAria":"Предпросмотр прицела {name} в CS2","terroristsWin":"Победа террористов","defuse":"Надо было разминировать.","rushB":"Раш Б, не останавливаемся!","genOldCode":"Старые коды CSGO- больше не работают в CS2. Вставьте код, который начинается с CS.","genImported":"Код импортирован. Настройте его как хотите.","genInvalid":"Это неверный код прицела CS2.","genFromLink":"Прицел загружен по ссылке. Настройте его как хотите.","consentAria":"Согласие на cookies","consentText":"Мы хотели бы измерять аудиторию с помощью Google Analytics. Cookies устанавливаются, только если вы согласитесь. Отказ никак не влияет на работу сайта.","consentMore":"Подробнее","consentRefuse":"Отказаться","consentAccept":"Принять"}</script>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta property="og:title" content="Генератор прицела CS2">
+    <meta property="og:description" content="Бесплатный генератор прицела CS2: выберите цвет, размер, зазор и обводку, смотрите прицел в реальном размере на карте CS2 и копируйте код или команды.">
+    <meta property="og:url" content="https://clutchcrosshair.com/ru/generator">
+    <meta property="og:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: найдите свой идеальный прицел для CS2">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генератор прицела CS2">
+    <meta name="twitter:description" content="Бесплатный генератор прицела CS2: выберите цвет, размер, зазор и обводку, смотрите прицел в реальном размере на карте CS2 и копируйте код или команды.">
+    <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
+    <link rel="modulepreload" href="../crosshair.min.js?v=fe84164f66">
+    <link rel="modulepreload" href="../lib/csgo-sharecode.js">
+    <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
+    <link rel="modulepreload" href="../generator.min.js?v=af6af32d14">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/generator","url":"https://clutchcrosshair.com/ru/generator","name":"Генератор прицела CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/ru/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/ru/generator#app","name":"Генератор прицела CS2","url":"https://clutchcrosshair.com/ru/generator","description":"Бесплатный онлайн-генератор прицела CS2: выберите цвет, длину, толщину, зазор и обводку, смотрите предпросмотр в реальном размере и копируйте код прицела или консольные команды.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Инструменты CS2","item":"https://clutchcrosshair.com/ru/tools/"},{"@type":"ListItem","position":3,"name":"Генератор прицела CS2","item":"https://clutchcrosshair.com/ru/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/generator#faq","mainEntity":[{"@type":"Question","name":"Этот генератор прицела CS2 бесплатный?","acceptedAnswer":{"@type":"Answer","text":"Да. Он бесплатный, без регистрации и без скачивания. Всё работает в вашем браузере."}},{"@type":"Question","name":"Как поставить новый прицел в CS2?","acceptedAnswer":{"@type":"Answer","text":"Нажмите «Копировать» рядом с кодом, затем в CS2 откройте Настройки › Игра › Прицел, нажмите «Поделиться или импортировать» и вставьте код. Можно также скопировать консольные команды и вставить их в консоль CS2 (~)."}},{"@type":"Question","name":"Почему мой прицел выглядит иначе в 4:3 растянутом?","acceptedAnswer":{"@type":"Answer","text":"В 4:3 растянутом (1280×960, 1024×768...) или 5:4 растянутом (1280×1024) изображение игры растягивается на экран 16:9, поэтому прицел становится шире: горизонтальные линии выглядят длиннее, а вертикальные — толще. Выберите своё разрешение под предпросмотром (16:9, 4:3, 16:10 или 5:4), чтобы увидеть, как прицел будет выглядеть в игре. Код прицела при этом не меняется."}},{"@type":"Question","name":"Можно начать с прицела про-игрока?","acceptedAnswer":{"@type":"Answer","text":"Да. Выберите про-игрока в списке «Начать с» или вставьте любой код прицела CS2, затем измените цвет, размер или зазор. Новый код обновится сразу."}},{"@type":"Question","name":"Работает ли генератор со старыми кодами CSGO-?","acceptedAnswer":{"@type":"Answer","text":"Нет. После обновления CS2 от 30 сентября 2026 года в игру можно импортировать только новые коды, начинающиеся с CS. Генератор создаёт только новые коды CS2."}}]}]}</script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="./" class="logo" aria-label="Главная ClutchCrosshair">
+            <img class="logo-img logo-dark" src="../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Главное меню">
+            <a href="./">Прицелы</a>
+            <a href="./skins/">Скины про</a>
+            <a href="./guides/">Гайды</a>
+            <a href="./commands/">Команды</a>
+            <a href="./tools/" aria-current="page">Инструменты</a>
+        </nav>
+        <select id="lang" class="lang" aria-label="Язык">
+                    <option value="en">EN · English</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru" selected>RU</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
+                </select>
+    </header>
+    <main class="player-page gen-page">
+        <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="./" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Главная</a> › <a href="tools/">Инструменты</a> › <span>Генератор прицела</span></nav>
+        <h1>Генератор прицела CS2</h1>
+        <p>Создайте свой прицел для CS2 за несколько секунд: выберите цвет, длину, толщину, зазор и обводку, смотрите его вживую в реальном размере на карте CS2 и копируйте код прицела или консольные команды. Бесплатно, без регистрации, для новых кодов прицела CS2.</p>
+
+        <div class="gen" id="gen">
+        <div class="gen-view">
+            <div class="gen-stage">
+                <canvas class="preview gen-preview" data-gen="preview" data-bg="raw" data-res="1920x1080" data-stretch="1" width="760" height="320" role="img" aria-label="Предпросмотр вашего прицела CS2"></canvas>
+                <div class="gen-zoom" role="group" aria-label="Размер предпросмотра">
+                    <button type="button" data-zoom="1" aria-pressed="true">Реальный размер</button>
+                    <button type="button" data-zoom="3" aria-pressed="false">Zoom ×3</button>
+                </div>
+            </div>
+            <div class="gen-res">
+                <label class="gen-label" for="gen-res">Предпросмотр в вашем разрешении CS2</label>
+                <select id="gen-res" data-gen="res">
+                    <optgroup label="16:9"><option value="1920x1080" data-stretch="1" selected>1920 × 1080</option><option value="2560x1440" data-stretch="1">2560 × 1440</option><option value="1600x900" data-stretch="1">1600 × 900</option><option value="1280x720" data-stretch="1">1280 × 720</option><option value="3840x2160" data-stretch="1">3840 × 2160</option></optgroup><optgroup label="4:3 растянутое"><option value="1280x960" data-stretch="1.333">1280 × 960 растянутое</option><option value="1024x768" data-stretch="1.333">1024 × 768 растянутое</option><option value="1440x1080" data-stretch="1.333">1440 × 1080 растянутое</option><option value="1152x864" data-stretch="1.333">1152 × 864 растянутое</option></optgroup><optgroup label="16:10"><option value="1680x1050" data-stretch="1">1680 × 1050</option><option value="1440x900" data-stretch="1">1440 × 900</option><option value="1280x800" data-stretch="1">1280 × 800</option><option value="1920x1200" data-stretch="1">1920 × 1200</option></optgroup><optgroup label="5:4 растянутое"><option value="1280x1024" data-stretch="1.422">1280 × 1024 растянутое</option></optgroup>
+                </select>
+                <p class="gen-hint">Только для предпросмотра: код прицела не меняется.</p>
+            </div>
+            <div class="field">
+                <div class="field-label">Ваш код прицела <span><i class="sep">· </i>Настройки › Прицел › Импорт</span></div>
+                <div class="field-row">
+                    <code class="code" data-gen="code">CSqRJsYaOxvHaRK7ef73Sr3FSdC4y4o6JK8DZ3PPWBSFdR</code>
+                    <button type="button" class="mini" data-copy="code">Копировать</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="field-label">Консоль <span><i class="sep">· </i>Вставьте в консоль CS2 (~)</span></div>
+                <div class="field-row">
+                    <code class="console" data-gen="console">cl_crosshair_drawoutline &quot;0&quot;; cl_crosshair_dynamic_maxdist_splitratio &quot;1&quot;; cl_crosshair_dynamic_splitalpha_innermod &quot;0&quot;; cl_crosshair_dynamic_splitalpha_outermod &quot;1&quot;; cl_crosshair_dynamic_splitdist &quot;2&quot;; cl_crosshair_dynamic_spread_limit &quot;181&quot;; cl_crosshair_gap &quot;2&quot;; cl_crosshair_length &quot;4&quot;; cl_crosshair_recoil &quot;0&quot;; cl_crosshair_screen_height &quot;1080&quot;; cl_crosshair_t &quot;0&quot;; cl_crosshair_thickness &quot;2&quot;; cl_crosshaircolor_a &quot;255&quot;; cl_crosshaircolor_b &quot;0&quot;; cl_crosshaircolor_g &quot;255&quot;; cl_crosshaircolor_r &quot;0&quot;; cl_crosshairdot &quot;0&quot;; cl_crosshairoutline_a &quot;255&quot;; cl_crosshairoutline_b &quot;0&quot;; cl_crosshairoutline_g &quot;0&quot;; cl_crosshairoutline_r &quot;0&quot;; cl_crosshairstyle &quot;4&quot;; cl_ironsight_dot_scale &quot;1&quot;; cl_ironsight_usecrosshaircolor &quot;0&quot;</code>
+                    <button type="button" class="mini btn-secondary" data-copy="console">Копировать</button>
+                </div>
+            </div>
+            <noscript><p class="gen-status gen-status-error">Включите JavaScript, чтобы пользоваться генератором прицела.</p></noscript>
+        </div>
+
+        <div class="gen-controls">
+            <fieldset class="gen-group">
+                <legend>Начать с</legend>
+                <div class="gen-start">
+                    <label class="gen-label" for="gen-pro">Прицел про-игрока</label>
+                    <select id="gen-pro" data-gen="pro">
+                        <option value="">Выберите про-игрока…</option>
+                        <optgroup label="Team Spirit"><option value="CSGf8YDobjep5Bk3LiFQUu8ZupRL26TnO4diZ9Z9EcVeyk">donk</option><option value="CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW">magixx</option><option value="CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH">sh1ro</option><option value="CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G">tN1R</option><option value="CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH">zont1x</option></optgroup><optgroup label="Team Vitality"><option value="CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi">apEX</option><option value="CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj">flameZ</option><option value="CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C">mezii</option><option value="CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc">ropz</option><option value="CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H">ZywOo</option></optgroup><optgroup label="MOUZ"><option value="CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h">PR</option><option value="CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR">Spinx</option><option value="CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A">torzsi</option><option value="CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD">xelex</option><option value="CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac">xertioN</option></optgroup><optgroup label="FURIA"><option value="CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD">FalleN</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">KSCERATO</option><option value="CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD">molodoy</option><option value="CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd">YEKINDAR</option><option value="CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ">yuurih</option></optgroup><optgroup label="Falcons"><option value="CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO">karrigan</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">kyousuke</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">m0NESY</option><option value="CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK">NiKo</option><option value="CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX">TeSeS</option></optgroup><optgroup label="Aurora"><option value="CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb">Jimpphat</option><option value="CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW">kyxsan</option><option value="CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ">Wicadia</option><option value="CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc">woxic</option><option value="CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf">XANTARES</option></optgroup><optgroup label="Natus Vincere"><option value="CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD">Aleksib</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">b1t</option><option value="CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ">iM</option><option value="CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn">makazze</option><option value="CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD">w0nderful</option></optgroup><optgroup label="G2 Esports"><option value="CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA">HeavyGod</option><option value="CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie">huNter-</option><option value="CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c">MATYS</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">NertZ</option><option value="CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC">r1nkle</option></optgroup><optgroup label="FaZe Clan"><option value="CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG">frozen</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">JBOEN</option><option value="CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS">jcobbb</option><option value="CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B">Neityu</option><option value="CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL">Twistzz</option></optgroup><optgroup label="Astralis"><option value="CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM">cmtry</option><option value="CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd">phzy</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">ryu</option><option value="CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE">siuhy</option><option value="CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF">Staehr</option></optgroup><optgroup label="Legacy"><option value="CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF">art</option><option value="CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF">dumau</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">latto</option><option value="CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT">n1ssim</option><option value="CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP">try</option></optgroup><optgroup label="MIBR"><option value="CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU">insani</option><option value="CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW">LNZ</option><option value="CSCLkv3EW3WCBBXsqfkWK3mcjXumUrKPfXzCo6KX5wPbUT">nqz</option><option value="CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J">tomaszin</option><option value="CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ">venomzera</option></optgroup><optgroup label="PARIVISION"><option value="CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA">FL1T</option><option value="CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW">Hobbit</option><option value="CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW">Jame</option><option value="CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE">xiELO</option><option value="CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF">zweih</option></optgroup><optgroup label="BetBoom"><option value="CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF">Boombl4</option><option value="CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A">d1Ledez</option><option value="CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X">Magnojez</option><option value="CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H">S1ren</option><option value="CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV">zorte</option></optgroup>
+                    </select>
+                    <label class="gen-label" for="gen-import">Или вставьте код</label>
+                    <input type="text" id="gen-import" data-gen="import" placeholder="CS…" autocomplete="off" spellcheck="false">
+                </div>
+                <p class="gen-status" data-gen="status" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Цвет</legend>
+                <div class="gen-swatches">
+                    <button type="button" class="gen-swatch" data-color="#00FF00" style="--swatch: #00FF00" aria-pressed="true" aria-label="Зелёный" title="Зелёный"></button>
+                    <button type="button" class="gen-swatch" data-color="#FFFF00" style="--swatch: #FFFF00" aria-pressed="false" aria-label="Жёлтый" title="Жёлтый"></button>
+                    <button type="button" class="gen-swatch" data-color="#00FFFF" style="--swatch: #00FFFF" aria-pressed="false" aria-label="Голубой" title="Голубой"></button>
+                    <button type="button" class="gen-swatch" data-color="#FF0000" style="--swatch: #FF0000" aria-pressed="false" aria-label="Красный" title="Красный"></button>
+                    <button type="button" class="gen-swatch" data-color="#FF00FF" style="--swatch: #FF00FF" aria-pressed="false" aria-label="Розовый" title="Розовый"></button>
+                    <button type="button" class="gen-swatch" data-color="#FFFFFF" style="--swatch: #FFFFFF" aria-pressed="false" aria-label="Белый" title="Белый"></button>
+                    <label class="gen-custom">
+                        <input type="color" data-gen="color" value="#00ff00">
+                        <span>Свой</span>
+                    </label>
+                </div>
+                <div class="gen-slider">
+                    <label for="gen-alpha">Прозрачность</label>
+                    <input type="range" id="gen-alpha" data-field="alpha" min="50" max="255" step="1" value="255" style="--fill: 100%">
+                    <output class="gen-out" data-gen="alpha-out" for="gen-alpha">100%</output>
+                </div>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Размер <span>в пикселях</span></legend>
+                <div class="gen-slider">
+                <label for="gen-length">Длина</label>
+                <input type="range" id="gen-length" data-field="length" min="0" max="20" step="1" value="4" style="--fill: 20%">
+                <input type="number" data-field="length" min="0" max="20" step="1" value="4" inputmode="numeric" aria-label="Длина (пикселей)">
+            </div>
+                <div class="gen-slider">
+                <label for="gen-thickness">Толщина</label>
+                <input type="range" id="gen-thickness" data-field="thickness" min="1" max="10" step="1" value="2" style="--fill: 11%">
+                <input type="number" data-field="thickness" min="1" max="10" step="1" value="2" inputmode="numeric" aria-label="Толщина (пикселей)">
+            </div>
+                <div class="gen-slider">
+                <label for="gen-gap">Зазор</label>
+                <input type="range" id="gen-gap" data-field="gap" min="-5" max="10" step="1" value="2" style="--fill: 47%">
+                <input type="number" data-field="gap" min="-5" max="10" step="1" value="2" inputmode="numeric" aria-label="Зазор (пикселей)">
+            </div>
+            </fieldset>
+
+            <fieldset class="gen-group">
+                <legend>Стиль</legend>
+                <div class="gen-toggles">
+                    <label class="gen-toggle"><input type="checkbox" data-field="outlineMode"><span>Обводка</span></label>
+                    <label class="gen-toggle"><input type="checkbox" data-field="centerDotEnabled"><span>Точка в центре</span></label>
+                    <label class="gen-toggle"><input type="checkbox" data-field="tStyleEnabled"><span>T-стиль</span></label>
+                </div>
+                <button type="button" class="gen-reset" data-gen="reset">Сбросить</button>
+            </fieldset>
+        </div>
+    </div>
+
+        <h2>Как пользоваться генератором прицела CS2</h2>
+        <ol>
+            <li>Начните с нуля, с <strong>прицела про-игрока</strong> или вставьте свой код.</li>
+            <li>Выберите <strong>цвет</strong>, затем настройте <strong>длину</strong>, <strong>толщину</strong> и <strong>зазор</strong>. Предпросмотр обновляется сразу.</li>
+            <li>Выберите <strong>своё разрешение в CS2</strong> под предпросмотром, чтобы увидеть прицел точно как в игре (включая 4:3 растянутое).</li>
+            <li>Нажмите <strong>Копировать</strong>, затем в CS2 откройте <strong>Настройки › Игра › Прицел › Поделиться или импортировать</strong> и вставьте код.</li>
+        </ol>
+
+        <h2>Какой прицел у про-игроков CS2?</h2>
+        <p>По данным 70 прицелов про-игроков на ClutchCrosshair, самые популярные цвета: зелёный (44%), голубой (34%), белый (9%), другие цвета (9%), жёлтый (4%). Самые частые настройки: длина 2, толщина 2 и зазор 1 пикс.; 10% используют точку в центре, 6% — обводку. <a href="faq">Больше статистики в FAQ ›</a></p>
+        <ul class="related"><li><a href="players/zywoo">Прицел ZywOo</a></li><li><a href="players/donk">Прицел donk</a></li><li><a href="players/m0nesy">Прицел m0NESY</a></li><li><a href="players/niko">Прицел NiKo</a></li><li><a href="players/ropz">Прицел ropz</a></li><li><a href="players/sh1ro">Прицел sh1ro</a></li><li><a href="players/twistzz">Прицел Twistzz</a></li><li><a href="players/b1t">Прицел b1t</a></li></ul>
+
+        <h2>FAQ о генераторе прицела</h2>
+        <h3>Этот генератор прицела CS2 бесплатный?</h3>
+        <p>Да. Он бесплатный, без регистрации и без скачивания. Всё работает в вашем браузере.</p>
+        <h3>Как поставить новый прицел в CS2?</h3>
+        <p>Нажмите «Копировать» рядом с кодом, затем в CS2 откройте Настройки › Игра › Прицел, нажмите «Поделиться или импортировать» и вставьте код. Можно также скопировать консольные команды и вставить их в консоль CS2 (~).</p>
+        <h3>Почему мой прицел выглядит иначе в 4:3 растянутом?</h3>
+        <p>В 4:3 растянутом (1280×960, 1024×768...) или 5:4 растянутом (1280×1024) изображение игры растягивается на экран 16:9, поэтому прицел становится шире: горизонтальные линии выглядят длиннее, а вертикальные — толще. Выберите своё разрешение под предпросмотром (16:9, 4:3, 16:10 или 5:4), чтобы увидеть, как прицел будет выглядеть в игре. Код прицела при этом не меняется.</p>
+        <h3>Можно начать с прицела про-игрока?</h3>
+        <p>Да. Выберите про-игрока в списке «Начать с» или вставьте любой код прицела CS2, затем измените цвет, размер или зазор. Новый код обновится сразу.</p>
+        <h3>Работает ли генератор со старыми кодами CSGO-?</h3>
+        <p>Нет. После обновления CS2 от 30 сентября 2026 года в игру можно импортировать только новые коды, начинающиеся с CS. Генератор создаёт только новые коды CS2.</p>
+        <p><a href="./">Все прицелы про-игроков CS2 ›</a></p>
+    </main>
+    <footer>
+        <nav class="footer-links" aria-label="Нижнее меню">
+            <a href="generator">Генератор прицела</a>
+            <a href="tools/bind-generator">Генератор биндов</a>
+            <a href="skins/">Скины про-игроков CS2</a>
+            <a href="guides/">Гайды по CS2</a>
+            <a href="commands/">Консольные команды</a>
+            <a href="faq">FAQ</a>
+            <a href="legal">Правовая информация</a>
+            <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
+        </nav>
+        <p class="footer-contact">Бизнес и сотрудничество: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
+        <p>© 2026 ClutchCrosshair. Все права защищены.</p>
+        <p>Counter-Strike 2 и скины CS2 — товарные знаки Valve Corporation. Логотипы команд — товарные знаки их владельцев. ClutchCrosshair не связан с Valve и командами.</p>
+    </footer>
+
+    <script type="module">
+        import { initGenerator } from "../generator.min.js?v=af6af32d14";
+        initGenerator(document.getElementById("gen"), { syncHash: true });
+    </script>
+</body>
+</html>

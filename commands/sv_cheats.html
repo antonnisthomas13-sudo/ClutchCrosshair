@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/commands/sv_cheats">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/sv_cheats">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/sv_cheats">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/sv_cheats">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/sv_cheats">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/sv_cheats">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/sv_cheats">
     <script>(function () {
-        var A = {"en":"../commands/sv_cheats.html","fr":"../fr/commands/sv_cheats.html"};
+        var A = {"en":"../commands/sv_cheats","fr":"../fr/commands/sv_cheats","es":"../es/commands/sv_cheats","ru":"../ru/commands/sv_cheats","tr":"../tr/commands/sv_cheats"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="sv_cheats CS2 console command">
     <meta property="og:description" content="sv_cheats in CS2: Enables cheat commands on your server. Allows commands marked as cheats (noclip, god, sv_rethrow_last_grenade,…">
     <meta property="og:url" content="https://clutchcrosshair.com/commands/sv_cheats">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/sv_cheats#article","headline":"sv_cheats CS2 console command","description":"sv_cheats in CS2: Enables cheat commands on your server. Allows commands marked as cheats (noclip, god, sv_rethrow_last_grenade,…","url":"https://clutchcrosshair.com/commands/sv_cheats","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/sv_cheats#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"sv_cheats","item":"https://clutchcrosshair.com/commands/sv_cheats"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/sv_cheats#faq","mainEntity":[{"@type":"Question","name":"What does sv_cheats do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Enables cheat commands on your server. Allows commands marked as cheats (noclip, god, sv_rethrow_last_grenade, cl_showpos...). It only works on a server you host, such as a private match with bots, never in official matchmaking."}},{"@type":"Question","name":"What is the default value of sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"The default value of sv_cheats in CS2 is 0."}},{"@type":"Question","name":"Does sv_cheats need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. sv_cheats works without sv_cheats, including in official matchmaking."}}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -87,7 +94,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Home</a> › <a href="./">Commands</a> › <span>sv_cheats</span></nav>
         <h1 class="cmd-title">sv_cheats</h1>
         <p class="cmd-meta"><a href="./#practice">Practice &amp; server</a></p>
-        <p class="cmd-lead">Enables cheat commands on your server. Allows commands marked as cheats (noclip, god, <a href="sv_rethrow_last_grenade.html"><code>sv_rethrow_last_grenade</code></a>, <a href="#cl_showpos"><code>cl_showpos</code></a>...). It only works on a server you host, such as a private match with bots, never in official matchmaking.</p>
+        <p class="cmd-lead">Enables cheat commands on your server. Allows commands marked as cheats (noclip, god, <a href="sv_rethrow_last_grenade"><code>sv_rethrow_last_grenade</code></a>, <a href="#cl_showpos"><code>cl_showpos</code></a>...). It only works on a server you host, such as a private match with bots, never in official matchmaking.</p>
         <div class="field-row">
                 <code>sv_cheats 1</code>
                 <button type="button" class="mini" data-copy>Copy</button>
@@ -118,10 +125,10 @@
         
 
         <h2>Related commands</h2>
-        <ul class="related"><li><a href="noclip.html">noclip</a></li><li><a href="#god">god</a></li><li><a href="sv_infinite_ammo.html">sv_infinite_ammo</a></li><li><a href="sv_rethrow_last_grenade.html">sv_rethrow_last_grenade</a></li></ul>
+        <ul class="related"><li><a href="noclip">noclip</a></li><li><a href="#god">god</a></li><li><a href="sv_infinite_ammo">sv_infinite_ammo</a></li><li><a href="sv_rethrow_last_grenade">sv_rethrow_last_grenade</a></li></ul>
 
         <h2>Learn more</h2>
-        <ul class="related"><li><a href="../guides/cs2-aim-training.html">How to Improve Your Aim in CS2: Routine and Aim Maps</a></li></ul>
+        <ul class="related"><li><a href="../guides/cs2-aim-training">How to Improve Your Aim in CS2: Routine and Aim Maps</a></li></ul>
 
         <h2>sv_cheats FAQ</h2>
         <h3>What does sv_cheats do in CS2?</h3>
@@ -135,13 +142,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

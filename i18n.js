@@ -9,9 +9,9 @@ const fs = require("fs");
 const path = require("path");
 
 // Langues publiées (dans l'ordre du sélecteur). Pour en ajouter une : créer i18n/<code>.json puis l'ajouter ici.
-const LANGS = ["en", "fr"];
+const LANGS = ["en", "fr", "es", "ru", "tr"];
 // Langues annoncées « soon » dans le sélecteur (pas encore de pages)
-const SOON = ["ru", "es", "tr"];
+const SOON = [];
 const NAMES = { en: "English", fr: "Français", ru: "Русский", es: "Español", tr: "Türkçe" };
 const LOCALES = { en: "en-US", fr: "fr-FR", ru: "ru-RU", es: "es-ES", tr: "tr-TR" };
 const OG_LOCALES = { en: "en_US", fr: "fr_FR", ru: "ru_RU", es: "es_ES", tr: "tr_TR" };

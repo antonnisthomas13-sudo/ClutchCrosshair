@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/generator">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/generator">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/generator">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/generator">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/generator">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/generator">
     <script>(function () {
-        var A = {"en":"generator.html","fr":"fr/generator.html"};
+        var A = {"en":"generator","fr":"fr/generator","es":"es/generator","ru":"ru/generator","tr":"tr/generator"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="CS2 Crosshair Generator">
     <meta property="og:description" content="Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.">
     <meta property="og:url" content="https://clutchcrosshair.com/generator">
@@ -48,13 +54,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="style.min.css?v=9fee851b61">
     <link rel="modulepreload" href="crosshair.min.js?v=fe84164f66">
     <link rel="modulepreload" href="lib/csgo-sharecode.js">
     <link rel="preload" href="preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <link rel="modulepreload" href="generator.min.js?v=af6af32d14">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/generator","url":"https://clutchcrosshair.com/generator","name":"CS2 Crosshair Generator","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/generator#app","name":"CS2 Crosshair Generator","url":"https://clutchcrosshair.com/generator","description":"Free online CS2 crosshair generator: choose the color, length, thickness, gap and outline, see a real-size preview, then copy your CS2 crosshair code or console commands.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Tools","item":"https://clutchcrosshair.com/tools/"},{"@type":"ListItem","position":3,"name":"CS2 crosshair generator","item":"https://clutchcrosshair.com/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/generator#faq","mainEntity":[{"@type":"Question","name":"Is this CS2 crosshair generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is free, with no sign-up and no download. Everything runs in your browser."}},{"@type":"Question","name":"How do I put my new crosshair in CS2?","acceptedAnswer":{"@type":"Answer","text":"Click Copy next to your share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. You can also copy the console commands and paste them in the CS2 console (~)."}},{"@type":"Question","name":"Why does my crosshair look different in 4:3 stretched?","acceptedAnswer":{"@type":"Answer","text":"In 4:3 stretched (1280×960, 1024×768...) or 5:4 stretched (1280×1024), the game image is stretched to fill a 16:9 screen, so the crosshair gets wider: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview (16:9, 4:3, 16:10 or 5:4) to see exactly how your crosshair will look in game. Your crosshair code stays the same."}},{"@type":"Question","name":"Can I start from a pro player's crosshair?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick a pro in the Start from list, or paste any CS2 crosshair code, then change the color, size or gap. The new code updates instantly."}},{"@type":"Question","name":"Does it work with old CSGO- crosshair codes?","acceptedAnswer":{"@type":"Answer","text":"No. Since the CS2 update of September 30, 2026, only the new codes starting with CS can be imported in the game. The generator only creates new CS2 codes."}}]}]}</script>
-    <script src="consent.min.js?v=0efd8b40cf" data-legal="legal.html" defer></script>
+    <script src="consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -81,9 +87,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
     <main class="player-page gen-page">
@@ -200,8 +207,8 @@
         </ol>
 
         <h2>What crosshair do CS2 pros use?</h2>
-        <p>Based on the 70 pro crosshairs on ClutchCrosshair, the most used colors are green (44%), cyan (34%), white (9%), other colors (9%), yellow (4%). The most common settings are a length of 2, a thickness of 2 and a gap of 1 pixels; 10% use a center dot and 6% an outline. <a href="faq.html">More stats in the FAQ ›</a></p>
-        <ul class="related"><li><a href="players/zywoo.html">ZywOo crosshair</a></li><li><a href="players/donk.html">donk crosshair</a></li><li><a href="players/m0nesy.html">m0NESY crosshair</a></li><li><a href="players/niko.html">NiKo crosshair</a></li><li><a href="players/ropz.html">ropz crosshair</a></li><li><a href="players/sh1ro.html">sh1ro crosshair</a></li><li><a href="players/twistzz.html">Twistzz crosshair</a></li><li><a href="players/b1t.html">b1t crosshair</a></li></ul>
+        <p>Based on the 70 pro crosshairs on ClutchCrosshair, the most used colors are green (44%), cyan (34%), white (9%), other colors (9%), yellow (4%). The most common settings are a length of 2, a thickness of 2 and a gap of 1 pixels; 10% use a center dot and 6% an outline. <a href="faq">More stats in the FAQ ›</a></p>
+        <ul class="related"><li><a href="players/zywoo">ZywOo crosshair</a></li><li><a href="players/donk">donk crosshair</a></li><li><a href="players/m0nesy">m0NESY crosshair</a></li><li><a href="players/niko">NiKo crosshair</a></li><li><a href="players/ropz">ropz crosshair</a></li><li><a href="players/sh1ro">sh1ro crosshair</a></li><li><a href="players/twistzz">Twistzz crosshair</a></li><li><a href="players/b1t">b1t crosshair</a></li></ul>
 
         <h2>Crosshair generator FAQ</h2>
         <h3>Is this CS2 crosshair generator free?</h3>
@@ -218,13 +225,13 @@
     </main>
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="generator.html">Crosshair Generator</a>
-            <a href="tools/bind-generator.html">Bind Generator</a>
+            <a href="generator">Crosshair Generator</a>
+            <a href="tools/bind-generator">Bind Generator</a>
             <a href="skins/">CS2 Pro Skins</a>
             <a href="guides/">CS2 Guides</a>
             <a href="commands/">Console Commands</a>
-            <a href="faq.html">FAQ</a>
-            <a href="legal.html">Legal notice</a>
+            <a href="faq">FAQ</a>
+            <a href="legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

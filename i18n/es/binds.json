@@ -1,0 +1,55 @@
+{
+ "about": "Traduction espagnole de binds.json : même structure et mêmes commandes, seuls les libellés affichés sont traduits. Si binds.json change (nouvelle touche, nouvel achat...), mettre ce fichier à jour aussi.",
+ "updated": "24/10/2026",
+ "keys": [
+  ["Teclado numérico", [["kp_end", "Num 1"], ["kp_downarrow", "Num 2"], ["kp_pgdn", "Num 3"], ["kp_leftarrow", "Num 4"], ["kp_5", "Num 5"], ["kp_rightarrow", "Num 6"], ["kp_home", "Num 7"], ["kp_uparrow", "Num 8"], ["kp_pgup", "Num 9"], ["kp_ins", "Num 0"], ["kp_del", "Num ."], ["kp_slash", "Num /"], ["kp_multiply", "Num *"], ["kp_minus", "Num -"], ["kp_plus", "Num +"], ["kp_enter", "Num Intro"]]],
+  ["Teclas de función", [["f1", "F1"], ["f2", "F2"], ["f3", "F3"], ["f4", "F4"], ["f5", "F5"], ["f6", "F6"], ["f7", "F7"], ["f8", "F8"], ["f9", "F9"], ["f10", "F10"], ["f11", "F11"], ["f12", "F12"]]],
+  ["Ratón", [["mouse3", "Clic central"], ["mouse4", "Ratón 4 (lateral)"], ["mouse5", "Ratón 5 (lateral)"], ["mwheelup", "Rueda arriba"], ["mwheeldown", "Rueda abajo"]]],
+  ["Letras", [["c", "C"], ["f", "F"], ["g", "G"], ["h", "H"], ["j", "J"], ["k", "K"], ["l", "L"], ["n", "N"], ["t", "T"], ["v", "V"], ["x", "X"], ["z", "Z"]]],
+  ["Números", [["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["0", "0"]]],
+  ["Otras", [["space", "Espacio"], ["alt", "Alt"], ["capslock", "Bloq Mayús"], ["ins", "Insert"], ["del", "Supr"], ["home", "Inicio"], ["end", "Fin"], ["pgup", "Re Pág"], ["pgdn", "Av Pág"], ["uparrow", "Flecha arriba"], ["downarrow", "Flecha abajo"], ["leftarrow", "Flecha izquierda"], ["rightarrow", "Flecha derecha"]]]
+ ],
+ "buy": [
+  ["Fusiles", [["ak47", "AK-47"], ["m4a1", "M4A4 / M4A1-S (según tu equipamiento)"], ["galilar", "Galil AR"], ["famas", "FAMAS"], ["sg556", "SG 553"], ["aug", "AUG"]]],
+  ["Francotirador", [["awp", "AWP"], ["ssg08", "SSG 08 (Scout)"], ["g3sg1", "G3SG1"], ["scar20", "SCAR-20"]]],
+  ["Pistolas", [["deagle", "Desert Eagle / R8"], ["p250", "P250"], ["tec9", "Tec-9 / CZ75 (T)"], ["fiveseven", "Five-SeveN / CZ75 (CT)"], ["elite", "Dual Berettas"], ["cz75a", "CZ75-Auto"]]],
+  ["Subfusiles", [["mac10", "MAC-10"], ["mp9", "MP9"], ["mp7", "MP7 / MP5-SD"], ["ump45", "UMP-45"], ["p90", "P90"], ["bizon", "PP-Bizon"]]],
+  ["Armas pesadas", [["nova", "Nova"], ["xm1014", "XM1014"], ["mag7", "MAG-7"], ["sawedoff", "Sawed-Off"], ["m249", "M249"], ["negev", "Negev"]]],
+  ["Equipo", [["vesthelm", "Kevlar + casco"], ["vest", "Kevlar"], ["defuser", "Kit de desactivación"], ["taser", "Zeus x27"]]],
+  ["Granadas", [["smokegrenade", "Humo (smoke)"], ["flashbang", "Flashbang"], ["hegrenade", "Granada HE"], ["molotov", "Molotov / Incendiaria"], ["decoy", "Señuelo (decoy)"]]]
+ ],
+ "toggles": [
+  ["radar", "Zoom del radar (alejado / normal)", "toggle cl_radar_scale 0.3 0.7"],
+  ["crosshair", "Crosshair visible / oculto", "toggle crosshair 0 1"],
+  ["hud", "Pantalla limpia (solo crosshair y kill feed)", "toggle cl_draw_only_deathnotices 1 0"],
+  ["voice", "Silenciar / activar el chat de voz", "toggle snd_voipvolume 0 1"],
+  ["fps", "Contador de FPS visible / oculto", "toggle cl_showfps 1 0"]
+ ],
+ "volume": [
+  ["up", "Subir el volumen", "incrementvar volume 0 1 0.05"],
+  ["down", "Bajar el volumen", "incrementvar volume 0 1 -0.05"]
+ ],
+ "grenades": [
+  ["slot6", "Granada HE"],
+  ["slot7", "Flashbang"],
+  ["slot8", "Humo (smoke)"],
+  ["slot9", "Señuelo (decoy)"],
+  ["slot10", "Molotov / Incendiaria"]
+ ],
+ "other": [
+  ["lastinv", "Volver rápido a tu última arma"],
+  ["player_ping", "Ping donde apuntas (avisar a tu equipo)"],
+  ["+spray_menu", "Abrir la rueda de grafitis"],
+  ["sv_rethrow_last_grenade", "Volver a lanzar tu última granada (servidor de práctica, sv_cheats 1)"],
+  ["noclip", "Volar a través de las paredes (servidor de práctica, sv_cheats 1)"]
+ ],
+ "presets": [
+  ["Comprar AK-47 o M4 + armadura", "kp_end", "buy ak47; buy m4a1; buy vesthelm"],
+  ["Comprar AWP + armadura", "kp_downarrow", "buy awp; buy vesthelm"],
+  ["Comprar todas las granadas", "kp_pgdn", "buy smokegrenade; buy flashbang; buy hegrenade; buy molotov"],
+  ["Comprar armadura + kit de desactivación", "kp_leftarrow", "buy vesthelm; buy defuser"],
+  ["Cambiar el zoom del radar", "kp_plus", "toggle cl_radar_scale 0.3 0.7"],
+  ["Subir / bajar el volumen", "kp_uparrow", "incrementvar volume 0 1 0.05"],
+  ["Volver a lanzar la última granada (práctica)", "x", "sv_rethrow_last_grenade"]
+ ]
+}

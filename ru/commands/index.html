@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="ru" style="--copied: 'Скопировано'">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консольные команды CS2: список (2026) | ClutchCrosshair</title>
+    <meta name="description" content="Все полезные консольные команды CS2 с объяснением: прицел, HUD, радар, FPS, сеть, тренировка и боты — значения по умолчанию, примеры и кнопка «Копировать».">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clutchcrosshair.com/ru/commands/">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/">
+    <script>(function () {
+        var A = {"en":"../../commands/","fr":"../../fr/commands/","es":"../../es/commands/","ru":"../../ru/commands/","tr":"../../tr/commands/"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
+    <script type="application/json" id="i18n">{"copied":"Скопировано!","copiedAnnounce":"Скопировано в буфер обмена","copiedBar":"Скопировано","noPreview":"Нет предпросмотра","lightMode":"Светлая тема","darkMode":"Тёмная тема","lastUpdate":"Обновлено: ","sameAs":"Такой же прицел у ","and":" и ","faceitAria":"Профиль {name} на FACEIT (откроется в новой вкладке)","previewAria":"Предпросмотр прицела {name} в CS2","terroristsWin":"Победа террористов","defuse":"Надо было разминировать.","rushB":"Раш Б, не останавливаемся!","genOldCode":"Старые коды CSGO- больше не работают в CS2. Вставьте код, который начинается с CS.","genImported":"Код импортирован. Настройте его как хотите.","genInvalid":"Это неверный код прицела CS2.","genFromLink":"Прицел загружен по ссылке. Настройте его как хотите.","consentAria":"Согласие на cookies","consentText":"Мы хотели бы измерять аудиторию с помощью Google Analytics. Cookies устанавливаются, только если вы согласитесь. Отказ никак не влияет на работу сайта.","consentMore":"Подробнее","consentRefuse":"Отказаться","consentAccept":"Принять"}</script>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta property="og:title" content="Консольные команды CS2">
+    <meta property="og:description" content="Все полезные консольные команды CS2 с объяснением: прицел, HUD, радар, FPS, сеть, тренировка и боты — значения по умолчанию, примеры и кнопка «Копировать».">
+    <meta property="og:url" content="https://clutchcrosshair.com/ru/commands/">
+    <meta property="og:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: найдите свой идеальный прицел для CS2">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Консольные команды CS2">
+    <meta name="twitter:description" content="Все полезные консольные команды CS2 с объяснением: прицел, HUD, радар, FPS, сеть, тренировка и боты — значения по умолчанию, примеры и кнопка «Копировать».">
+    <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clutchcrosshair.com/ru/commands/","url":"https://clutchcrosshair.com/ru/commands/","name":"Консольные команды CS2","description":"Все полезные консольные команды CS2 с объяснением: прицел, HUD, радар, FPS, сеть, тренировка и боты — значения по умолчанию, примеры и кнопка «Копировать».","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/commands/#breadcrumb"},"dateModified":"2026-10-19","mainEntity":{"@type":"ItemList","numberOfItems":63,"itemListElement":[{"@type":"ListItem","position":1,"name":"crosshair","url":"https://clutchcrosshair.com/ru/commands/crosshair"},{"@type":"ListItem","position":2,"name":"cl_crosshair_length","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_length"},{"@type":"ListItem","position":3,"name":"cl_crosshair_thickness","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_thickness"},{"@type":"ListItem","position":4,"name":"cl_crosshair_gap","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_gap"},{"@type":"ListItem","position":5,"name":"cl_crosshair_screen_height","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_screen_height"},{"@type":"ListItem","position":6,"name":"cl_crosshairstyle","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairstyle"},{"@type":"ListItem","position":7,"name":"cl_crosshaircolor_r","url":"https://clutchcrosshair.com/ru/commands/cl_crosshaircolor_r"},{"@type":"ListItem","position":8,"name":"cl_crosshaircolor_a","url":"https://clutchcrosshair.com/ru/commands/cl_crosshaircolor_a"},{"@type":"ListItem","position":9,"name":"cl_crosshair_drawoutline","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_drawoutline"},{"@type":"ListItem","position":10,"name":"cl_crosshairdot","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairdot"},{"@type":"ListItem","position":11,"name":"cl_crosshair_t","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_t"},{"@type":"ListItem","position":12,"name":"cl_crosshair_recoil","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_recoil"},{"@type":"ListItem","position":13,"name":"cl_crosshair_sniper_width","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_sniper_width"},{"@type":"ListItem","position":14,"name":"cl_crosshairsize","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairsize"},{"@type":"ListItem","position":15,"name":"cl_crosshairthickness","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness"},{"@type":"ListItem","position":16,"name":"cl_crosshairgap","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairgap"},{"@type":"ListItem","position":17,"name":"cl_crosshair_outlinethickness","url":"https://clutchcrosshair.com/ru/commands/cl_crosshair_outlinethickness"},{"@type":"ListItem","position":18,"name":"cl_crosshaircolor","url":"https://clutchcrosshair.com/ru/commands/cl_crosshaircolor"},{"@type":"ListItem","position":19,"name":"cl_hud_color","url":"https://clutchcrosshair.com/ru/commands/cl_hud_color"},{"@type":"ListItem","position":20,"name":"hud_scaling","url":"https://clutchcrosshair.com/ru/commands/hud_scaling"},{"@type":"ListItem","position":21,"name":"cl_hud_radar_scale","url":"https://clutchcrosshair.com/ru/commands/cl_hud_radar_scale"},{"@type":"ListItem","position":22,"name":"cl_radar_scale","url":"https://clutchcrosshair.com/ru/commands/cl_radar_scale"},{"@type":"ListItem","position":23,"name":"cl_radar_always_centered","url":"https://clutchcrosshair.com/ru/commands/cl_radar_always_centered"},{"@type":"ListItem","position":24,"name":"cl_showfps","url":"https://clutchcrosshair.com/ru/commands/cl_showfps"},{"@type":"ListItem","position":25,"name":"cl_draw_only_deathnotices","url":"https://clutchcrosshair.com/ru/commands/cl_draw_only_deathnotices"},{"@type":"ListItem","position":26,"name":"viewmodel_fov","url":"https://clutchcrosshair.com/ru/commands/viewmodel_fov"},{"@type":"ListItem","position":27,"name":"viewmodel_offset_x","url":"https://clutchcrosshair.com/ru/commands/viewmodel_offset_x"},{"@type":"ListItem","position":28,"name":"fps_max","url":"https://clutchcrosshair.com/ru/commands/fps_max"},{"@type":"ListItem","position":29,"name":"r_fullscreen_gamma","url":"https://clutchcrosshair.com/ru/commands/r_fullscreen_gamma"},{"@type":"ListItem","position":30,"name":"rate","url":"https://clutchcrosshair.com/ru/commands/rate"},{"@type":"ListItem","position":31,"name":"mm_dedicated_search_maxping","url":"https://clutchcrosshair.com/ru/commands/mm_dedicated_search_maxping"},{"@type":"ListItem","position":32,"name":"net_graph","url":"https://clutchcrosshair.com/ru/commands/net_graph"},{"@type":"ListItem","position":33,"name":"sensitivity","url":"https://clutchcrosshair.com/ru/commands/sensitivity"},{"@type":"ListItem","position":34,"name":"zoom_sensitivity_ratio","url":"https://clutchcrosshair.com/ru/commands/zoom_sensitivity_ratio"},{"@type":"ListItem","position":35,"name":"m_yaw","url":"https://clutchcrosshair.com/ru/commands/m_yaw"},{"@type":"ListItem","position":36,"name":"m_rawinput","url":"https://clutchcrosshair.com/ru/commands/m_rawinput"},{"@type":"ListItem","position":37,"name":"volume","url":"https://clutchcrosshair.com/ru/commands/volume"},{"@type":"ListItem","position":38,"name":"snd_voipvolume","url":"https://clutchcrosshair.com/ru/commands/snd_voipvolume"},{"@type":"ListItem","position":39,"name":"sv_cheats","url":"https://clutchcrosshair.com/ru/commands/sv_cheats"},{"@type":"ListItem","position":40,"name":"sv_infinite_ammo","url":"https://clutchcrosshair.com/ru/commands/sv_infinite_ammo"},{"@type":"ListItem","position":41,"name":"sv_grenade_trajectory_prac_pipreview","url":"https://clutchcrosshair.com/ru/commands/sv_grenade_trajectory_prac_pipreview"},{"@type":"ListItem","position":42,"name":"sv_grenade_trajectory_prac_trailtime","url":"https://clutchcrosshair.com/ru/commands/sv_grenade_trajectory_prac_trailtime"},{"@type":"ListItem","position":43,"name":"sv_rethrow_last_grenade","url":"https://clutchcrosshair.com/ru/commands/sv_rethrow_last_grenade"},{"@type":"ListItem","position":44,"name":"sv_showimpacts","url":"https://clutchcrosshair.com/ru/commands/sv_showimpacts"},{"@type":"ListItem","position":45,"name":"mp_buy_anywhere","url":"https://clutchcrosshair.com/ru/commands/mp_buy_anywhere"},{"@type":"ListItem","position":46,"name":"noclip","url":"https://clutchcrosshair.com/ru/commands/noclip"},{"@type":"ListItem","position":47,"name":"give","url":"https://clutchcrosshair.com/ru/commands/give"},{"@type":"ListItem","position":48,"name":"bot_kick","url":"https://clutchcrosshair.com/ru/commands/bot_kick"},{"@type":"ListItem","position":49,"name":"bind","url":"https://clutchcrosshair.com/ru/commands/bind"},{"@type":"ListItem","position":50,"name":"alias","url":"https://clutchcrosshair.com/ru/commands/alias"},{"@type":"ListItem","position":51,"name":"exec","url":"https://clutchcrosshair.com/ru/commands/exec"},{"@type":"ListItem","position":52,"name":"find","url":"https://clutchcrosshair.com/ru/commands/find"},{"@type":"ListItem","position":53,"name":"map","url":"https://clutchcrosshair.com/ru/commands/map"},{"@type":"ListItem","position":54,"name":"playdemo","url":"https://clutchcrosshair.com/ru/commands/playdemo"},{"@type":"ListItem","position":55,"name":"cl_interp","url":"https://clutchcrosshair.com/ru/commands/cl_interp"},{"@type":"ListItem","position":56,"name":"cl_interp_ratio","url":"https://clutchcrosshair.com/ru/commands/cl_interp_ratio"},{"@type":"ListItem","position":57,"name":"cl_updaterate","url":"https://clutchcrosshair.com/ru/commands/cl_updaterate"},{"@type":"ListItem","position":58,"name":"cl_cmdrate","url":"https://clutchcrosshair.com/ru/commands/cl_cmdrate"},{"@type":"ListItem","position":59,"name":"voice_scale","url":"https://clutchcrosshair.com/ru/commands/voice_scale"},{"@type":"ListItem","position":60,"name":"mat_monitorgamma","url":"https://clutchcrosshair.com/ru/commands/mat_monitorgamma"},{"@type":"ListItem","position":61,"name":"m_customaccel","url":"https://clutchcrosshair.com/ru/commands/m_customaccel"},{"@type":"ListItem","position":62,"name":"cl_hud_telemetry_frametime_show","url":"https://clutchcrosshair.com/ru/commands/cl_hud_telemetry_frametime_show"},{"@type":"ListItem","position":63,"name":"cl_hud_telemetry_ping_show","url":"https://clutchcrosshair.com/ru/commands/cl_hud_telemetry_ping_show"}]}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/commands/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Консольные команды CS2","item":"https://clutchcrosshair.com/ru/commands/"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/commands/#faq","mainEntity":[{"@type":"Question","name":"Как открыть консоль в CS2?","acceptedAnswer":{"@type":"Answer","text":"Откройте Настройки › Игра и включите консоль разработчика («Да»). Затем в игре нажмите клавишу ~ (Ё, под Esc). Если она не работает, назначьте toggleconsole на другую клавишу через bind."}},{"@type":"Question","name":"Работают ли консольные команды в соревновательном матчмейкинге?","acceptedAnswer":{"@type":"Answer","text":"Большинство команд, которые меняют ваши собственные настройки (прицел, HUD, радар, мышь, звук), работают везде. Команды с пометкой «Нужен sv_cheats» и серверные команды, начинающиеся с mp_ или bot_, работают только на вашем собственном сервере, например в приватном матче с ботами."}},{"@type":"Question","name":"Как сохранить консольные команды?","acceptedAnswer":{"@type":"Answer","text":"Поместите их в файл autoexec.cfg в папке cfg игры (game/csgo/cfg) и добавьте +exec autoexec в параметры запуска или введите exec autoexec в консоли."}},{"@type":"Question","name":"Почему команда из CS:GO не работает в CS2?","acceptedAnswer":{"@type":"Answer","text":"Многие команды CS:GO удалены или переименованы в CS2, например net_graph. Для команд с пометкой «Удалена в CS2» на этой странице указано, чем их заменить."}}]}]}</script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="Главная ClutchCrosshair">
+            <img class="logo-img logo-dark" src="../../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Главное меню">
+            <a href="../">Прицелы</a>
+            <a href="../skins/">Скины про</a>
+            <a href="../guides/">Гайды</a>
+            <a href="../commands/" aria-current="page">Команды</a>
+            <a href="../tools/">Инструменты</a>
+        </nav>
+        <select id="lang" class="lang" aria-label="Язык">
+                    <option value="en">EN · English</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru" selected>RU</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
+                </select>
+    </header>
+
+    <main class="player-page cmd-hub">
+        <nav class="breadcrumb" aria-label="Навигационная цепочка"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Главная</a> › <span>Команды</span></nav>
+        <h1>Консольные команды CS2</h1>
+        <p>Полезные консольные команды CS2 (159) простыми словами: что делает каждая, её значения, значение по умолчанию и готовые примеры для копирования. Команды из CS:GO, которые больше не работают, отмечены как <strong>Удалена в CS2</strong>. Обновлено 19/10/2026.</p>
+
+        <div class="cmd-tools">
+            <div class="hero-search cmd-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+                <input type="search" id="cmd-search" placeholder="Поиск команды, например crosshair, fps, radar..." aria-label="Поиск консольной команды CS2" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="cmd-filters" role="group" aria-label="Фильтр по категории">
+                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">Все <span>159</span></button>
+                <button type="button" class="cmd-filter" data-cat="crosshair" aria-pressed="false">Прицел <span>30</span></button>
+                <button type="button" class="cmd-filter" data-cat="hud" aria-pressed="false">HUD и радар <span>20</span></button>
+                <button type="button" class="cmd-filter" data-cat="viewmodel" aria-pressed="false">Viewmodel (оружие) <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="performance" aria-pressed="false">Графика и FPS <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="network" aria-pressed="false">Сеть <span>10</span></button>
+                <button type="button" class="cmd-filter" data-cat="mouse" aria-pressed="false">Мышь <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="audio" aria-pressed="false">Звук <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="practice" aria-pressed="false">Тренировка и сервер <span>29</span></button>
+                <button type="button" class="cmd-filter" data-cat="bots" aria-pressed="false">Боты <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="general" aria-pressed="false">Общее <span>30</span></button>
+            </div>
+        </div>
+        <p class="cmd-empty hidden" id="cmd-empty">Команда не найдена. Попробуйте другое слово или введите в консоли CS2 <code>find</code> и слово.</p>
+
+        <section class="cmd-section" id="crosshair" data-cat="crosshair" aria-labelledby="crosshair-title">
+            <h2 id="crosshair-title">Команды: Прицел</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="crosshair" data-cat="crosshair" data-search="crosshair показывает или скрывает прицел. включает (1) или выключает (0) прицел. скрывать его имеет смысл в основном для чистых скриншотов и видео; в настоящем матче прицел нужен всегда. прицел">
+                <h3 class="cmd-name"><a href="crosshair">crosshair</a></h3>
+                <p>Показывает или скрывает прицел. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>crosshair 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_length" data-cat="crosshair" data-search="cl_crosshair_length длина каждой линии прицела в пикселях. задаёт длину каждой из четырёх линий прицела. после обновления cs2 от 30 сентября 2026 года размеры прицела считаются в реальных пикселях для высоты экрана из cl_crosshair_screen_height, поэтому значение 2 означает 2 пикселя на таком экране. большинство про-игроков cs2 играет с короткой длиной от 1 до 4. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_length">cl_crosshair_length</a></h3>
+                <p>Длина каждой линии прицела в пикселях.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_thickness" data-cat="crosshair" data-search="cl_crosshair_thickness толщина линий прицела в пикселях. задаёт толщину линий прицела в пикселях для высоты экрана из cl_crosshair_screen_height. толщина 1 даёт тонкий точный прицел; 2 лучше видна на светлых картах и чаще всего встречается у про-игроков. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_thickness">cl_crosshair_thickness</a></h3>
+                <p>Толщина линий прицела в пикселях.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_gap" data-cat="crosshair" data-search="cl_crosshair_gap расстояние между центром и линиями прицела в пикселях. задаёт пустое пространство в центре прицела в пикселях для высоты экрана из cl_crosshair_screen_height. маленький зазор (от 0 до 2) держит линии близко к голове цели; отрицательное значение заставляет линии заходить на центр. на clutchcrosshair большинство про-игроков использует зазор 1 или 2. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_gap">cl_crosshair_gap</a></h3>
+                <p>Расстояние между центром и линиями прицела в пикселях.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_screen_height" data-cat="crosshair" data-search="cl_crosshair_screen_height высота экрана, под которую рассчитаны размеры прицела. появилась в обновлении cs2 от 30 сентября 2026 года. длина, толщина и зазор прицела теперь считаются в пикселях для этой высоты экрана. если вы играете в другом разрешении, cs2 масштабирует прицел, чтобы он сохранял тот же размер относительно экрана. значение сохраняется в каждом коде прицела cs2, поэтому прицел про-игрока правильно выглядит и на вашем экране. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_screen_height">cl_crosshair_screen_height</a></h3>
+                <p>Высота экрана, под которую рассчитаны размеры прицела.</p>
+                <div class="field-row">
+                <code>cl_crosshair_screen_height 1080</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairstyle" data-cat="crosshair" data-search="cl_crosshairstyle выбор статичного или динамического прицела. определяет, как прицел реагирует на движение и стрельбу. стиль 4 (статичный) никогда не двигается, его используют почти все про-игроки. стиль 2 сохраняет неподвижный центр, а внешние части реагируют на отдачу и движение. стиль 5 — старый динамический прицел в стиле cs:go. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshairstyle">cl_crosshairstyle</a></h3>
+                <p>Выбор статичного или динамического прицела. <span class="cmd-default">По умолчанию: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshairstyle 4</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_r" data-cat="crosshair" data-search="cl_crosshaircolor_r красная составляющая своего цвета прицела (0-255). вместе с cl_crosshaircolor_g и cl_crosshaircolor_b задаёт точный цвет прицела значениями красного, зелёного и синего от 0 до 255. например, 0 255 255 даёт голубой, а 0 255 0 — чистый зелёный: два самых популярных цвета у про-игроков cs2. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_r">cl_crosshaircolor_r</a></h3>
+                <p>Красная составляющая своего цвета прицела (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_g" data-cat="crosshair" data-search="cl_crosshaircolor_g зелёная составляющая своего цвета прицела (0-255). значение зелёного в цвете прицела, от 0 до 255. используется вместе с cl_crosshaircolor_r и cl_crosshaircolor_b. прицел">
+                <h3 class="cmd-name">cl_crosshaircolor_g</h3>
+                <p>Зелёная составляющая своего цвета прицела (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_g 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_b" data-cat="crosshair" data-search="cl_crosshaircolor_b синяя составляющая своего цвета прицела (0-255). значение синего в цвете прицела, от 0 до 255. используется вместе с cl_crosshaircolor_r и cl_crosshaircolor_g. прицел">
+                <h3 class="cmd-name">cl_crosshaircolor_b</h3>
+                <p>Синяя составляющая своего цвета прицела (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_a" data-cat="crosshair" data-search="cl_crosshaircolor_a непрозрачность прицела (0-255). задаёт непрозрачность прицела: от 0 (невидимый) до 255 (полностью непрозрачный). почти все про-игроки оставляют 255: полупрозрачный прицел сложнее найти в перестрелке. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_a">cl_crosshaircolor_a</a></h3>
+                <p>Непрозрачность прицела (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_drawoutline" data-cat="crosshair" data-search="cl_crosshair_drawoutline добавляет обводку вокруг прицела. рисует обводку толщиной 1 пиксель вокруг линий прицела. тонкий или светлый прицел с ней хорошо читается на светлых стенах (например, песок на dust2 или mirage). цвет обводки задаётся командами cl_crosshairoutline_r, _g, _b и _a. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_drawoutline">cl_crosshair_drawoutline</a></h3>
+                <p>Добавляет обводку вокруг прицела.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_r" data-cat="crosshair" data-search="cl_crosshairoutline_r красная составляющая цвета обводки (0-255). вместе с cl_crosshairoutline_g, cl_crosshairoutline_b и cl_crosshairoutline_a задаёт цвет и непрозрачность обводки прицела (когда cl_crosshair_drawoutline равен 1). классический выбор — чёрный (0 0 0). прицел">
+                <h3 class="cmd-name">cl_crosshairoutline_r</h3>
+                <p>Красная составляющая цвета обводки (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_r 0; cl_crosshairoutline_g 0; cl_crosshairoutline_b 0; cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_a" data-cat="crosshair" data-search="cl_crosshairoutline_a непрозрачность обводки прицела (0-255). задаёт непрозрачность обводки прицела, от 0 до 255. используется, только когда cl_crosshair_drawoutline равен 1. прицел">
+                <h3 class="cmd-name">cl_crosshairoutline_a</h3>
+                <p>Непрозрачность обводки прицела (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairdot" data-cat="crosshair" data-search="cl_crosshairdot добавляет точку в центре прицела. рисует маленькую точку в центре прицела. некоторым игрокам она помогает точнее целиться, но может закрыть далёкую голову. ею пользуется лишь меньшинство про-игроков cs2. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshairdot">cl_crosshairdot</a></h3>
+                <p>Добавляет точку в центре прицела.</p>
+                <div class="field-row">
+                <code>cl_crosshairdot 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_t" data-cat="crosshair" data-search="cl_crosshair_t т-образный прицел (без верхней линии). убирает верхнюю линию прицела, и он выглядит как перевёрнутая буква т. некоторым игрокам это нравится: ничто не закрывает область над головой цели. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_t">cl_crosshair_t</a></h3>
+                <p>Т-образный прицел (без верхней линии).</p>
+                <div class="field-row">
+                <code>cl_crosshair_t 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_recoil" data-cat="crosshair" data-search="cl_crosshair_recoil прицел следует за отдачей. если включено, прицел двигается вместе с отдачей оружия при стрельбе очередью и показывает, куда летят пули. большинство про-игроков выключают это и учат паттерны спрея, но новичкам опция помогает понять отдачу. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_recoil">cl_crosshair_recoil</a></h3>
+                <p>Прицел следует за отдачей.</p>
+                <div class="field-row">
+                <code>cl_crosshair_recoil 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitdist" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitdist расстояние разделения динамического прицела (стиль 2). работает только с cl_crosshairstyle 2: задаёт, насколько внешние части прицела отходят от неподвижного центра, когда вы двигаетесь или стреляете. прицел">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitdist</h3>
+                <p>Расстояние разделения динамического прицела (стиль 2).</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitdist 7</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_innermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_innermod непрозрачность внутренней части динамического прицела. при cl_crosshairstyle 2 задаёт непрозрачность неподвижной внутренней части прицела, от 0 до 1. прицел">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_innermod</h3>
+                <p>Непрозрачность внутренней части динамического прицела.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_innermod 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_outermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_outermod непрозрачность внешней части динамического прицела. при cl_crosshairstyle 2 задаёт непрозрачность внешних частей, которые расходятся при движении или стрельбе, от 0.3 до 1. прицел">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_outermod</h3>
+                <p>Непрозрачность внешней части динамического прицела.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_outermod 0.5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_maxdist_splitratio" data-cat="crosshair" data-search="cl_crosshair_dynamic_maxdist_splitratio соотношение размеров внутренней и внешней динамических частей. при cl_crosshairstyle 2 задаёт, как длина прицела делится между неподвижной внутренней частью и подвижной внешней, от 0 до 1. прицел">
+                <h3 class="cmd-name">cl_crosshair_dynamic_maxdist_splitratio</h3>
+                <p>Соотношение размеров внутренней и внешней динамических частей.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_maxdist_splitratio 0.35</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_dot_scale" data-cat="crosshair" data-search="cl_ironsight_dot_scale размер точки прицела aug и sg 553. задаёт размер точки, которую вы видите при прицеливании из aug или sg 553. сохраняется в кодах прицела cs2 с обновления от 30 сентября 2026 года. прицел">
+                <h3 class="cmd-name">cl_ironsight_dot_scale</h3>
+                <p>Размер точки прицела AUG и SG 553.</p>
+                <div class="field-row">
+                <code>cl_ironsight_dot_scale 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_usecrosshaircolor" data-cat="crosshair" data-search="cl_ironsight_usecrosshaircolor цвет вашего прицела для точки aug / sg 553. если включено, точка прицела aug и sg 553 принимает цвет вашего прицела вместо стандартного красного. прицел">
+                <h3 class="cmd-name">cl_ironsight_usecrosshaircolor</h3>
+                <p>Цвет вашего прицела для точки AUG / SG 553.</p>
+                <div class="field-row">
+                <code>cl_ironsight_usecrosshaircolor 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_sniper_width" data-cat="crosshair" data-search="cl_crosshair_sniper_width толщина линий снайперского прицела. делает толще чёрные линии прицела awp и scout. 1 оставляет тонкие линии в один пиксель; большие значения делают перекрестие заметнее. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_sniper_width">cl_crosshair_sniper_width</a></h3>
+                <p>Толщина линий снайперского прицела. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_sniper_width 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_friendly_warning" data-cat="crosshair" data-search="cl_crosshair_friendly_warning значок предупреждения при наведении на союзника. показывает небольшое предупреждение на прицеле, когда вы целитесь в союзника, чтобы не нанести урон своим. прицел">
+                <h3 class="cmd-name">cl_crosshair_friendly_warning</h3>
+                <p>Значок предупреждения при наведении на союзника. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_friendly_warning 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairsize" data-cat="crosshair" data-search="cl_crosshairsize старая настройка длины прицела, всё ещё в консоли. cl_crosshairsize всё ещё есть в консоли cs2, но после обновления от 30 сентября 2026 года длина прицела задаётся в реальных пикселях командой cl_crosshair_length. именно она сохраняется в каждом новом коде прицела cs2, поэтому используйте cl_crosshair_length, чтобы прицел выглядел одинаково на любом экране. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshairsize">cl_crosshairsize</a></h3>
+                <p>Старая настройка длины прицела, всё ещё в консоли.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairthickness" data-cat="crosshair" data-search="cl_crosshairthickness старая настройка толщины прицела, всё ещё в консоли. cl_crosshairthickness всё ещё есть в консоли cs2, но после обновления от 30 сентября 2026 года толщина задаётся в реальных пикселях командой cl_crosshair_thickness — она и сохраняется в кодах прицела cs2. используйте cl_crosshair_thickness, чтобы точно скопировать прицел про-игрока. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshairthickness">cl_crosshairthickness</a></h3>
+                <p>Старая настройка толщины прицела, всё ещё в консоли.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshairgap" data-cat="crosshair" data-search="cl_crosshairgap удалена в cs2: заменена на cl_crosshair_gap. cl_crosshairgap больше не существует: если ввести её в консоли cs2, появится unknown command. после обновления от 30 сентября 2026 года зазор задаётся в реальных пикселях командой cl_crosshair_gap (с подчёркиванием перед gap). прицел">
+                <h3 class="cmd-name"><a href="cl_crosshairgap">cl_crosshairgap</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: заменена на cl_crosshair_gap.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshair_outlinethickness" data-cat="crosshair" data-search="cl_crosshair_outlinethickness удалена в cs2: обводка задаётся новыми командами. cl_crosshair_outlinethickness в cs2 больше нет. включайте и выключайте обводку командой cl_crosshair_drawoutline, а её цвет и непрозрачность выбирайте командами cl_crosshairoutline_r, _g, _b и _a. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshair_outlinethickness">cl_crosshair_outlinethickness</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: обводка задаётся новыми командами.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshaircolor" data-cat="crosshair" data-search="cl_crosshaircolor удалена в cs2: готовых цветов больше нет. cl_crosshaircolor, которая выбирала один из пяти готовых цветов, в cs2 больше не существует. задайте любой цвет командами cl_crosshaircolor_r, cl_crosshaircolor_g и cl_crosshaircolor_b, каждая от 0 до 255. прицел">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor">cl_crosshaircolor</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: готовых цветов больше нет.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairalpha" data-cat="crosshair" data-search="cl_crosshairalpha старая настройка непрозрачности прицела, всё ещё в консоли. cl_crosshairalpha всё ещё есть в консоли cs2. коды прицела новой системы хранят непрозрачность в cl_crosshaircolor_a, от 0 до 255. прицел">
+                <h3 class="cmd-name">cl_crosshairalpha</h3>
+                <p>Старая настройка непрозрачности прицела, всё ещё в консоли.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="hud" data-cat="hud" aria-labelledby="hud-title">
+            <h2 id="hud-title">Команды: HUD и радар</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="cl_hud_color" data-cat="hud" data-search="cl_hud_color цвет hud (здоровье, патроны, деньги...). меняет цвет hud: здоровья, брони, патронов и денег. выберите цвет, который легко читать; цвет команды (0) меняется в зависимости от стороны. hud и радар">
+                <h3 class="cmd-name"><a href="cl_hud_color">cl_hud_color</a></h3>
+                <p>Цвет HUD (здоровье, патроны, деньги...).</p>
+                <div class="field-row">
+                <code>cl_hud_color 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="hud_scaling" data-cat="hud" data-search="hud_scaling размер hud. увеличивает или уменьшает весь hud. маленький hud оставляет больше видимого экрана; большой легче читать на крупном мониторе. hud и радар">
+                <h3 class="cmd-name"><a href="hud_scaling">hud_scaling</a></h3>
+                <p>Размер HUD.</p>
+                <div class="field-row">
+                <code>hud_scaling 0.85</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_radar_scale" data-cat="hud" data-search="cl_hud_radar_scale размер радара на экране. меняет размер радара (мини-карты) в левом верхнем углу. масштаб карты не меняется: для этого есть cl_radar_scale. hud и радар">
+                <h3 class="cmd-name"><a href="cl_hud_radar_scale">cl_hud_radar_scale</a></h3>
+                <p>Размер радара на экране. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_hud_radar_scale 1.15</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_scale" data-cat="hud" data-search="cl_radar_scale масштаб радара. задаёт, какую часть карты показывает радар, от 0.25 до 1. меньшее значение отдаляет и показывает больше карты: многие игроки ставят от 0.3 до 0.4, чтобы видеть все плэнты сразу. hud и радар">
+                <h3 class="cmd-name"><a href="cl_radar_scale">cl_radar_scale</a></h3>
+                <p>Масштаб радара. <span class="cmd-default">По умолчанию: <code>0.7</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_scale 0.35</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_always_centered" data-cat="hud" data-search="cl_radar_always_centered держит вас в центре радара. если включено (1), вы всегда находитесь в центре радара. если выключено (0), радар лучше использует место у краёв карты и показывает больше. большинство соревновательных игроков выключает эту опцию. hud и радар">
+                <h3 class="cmd-name"><a href="cl_radar_always_centered">cl_radar_always_centered</a></h3>
+                <p>Держит вас в центре радара. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_always_centered 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_rotate" data-cat="hud" data-search="cl_radar_rotate поворачивает радар вместе с обзором. если включено, радар поворачивается вместе с вами, и верх всегда там, куда вы смотрите. если выключено, карта неподвижна и север сверху, так проще читать коллауты. hud и радар">
+                <h3 class="cmd-name">cl_radar_rotate</h3>
+                <p>Поворачивает радар вместе с обзором. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_rotate 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_icon_scale_min" data-cat="hud" data-search="cl_radar_icon_scale_min минимальный размер значков на радаре. задаёт минимальный размер значков игроков на радаре, от 0.4 до 1.25. крупные значки легче заметить на отдалённом радаре. hud и радар">
+                <h3 class="cmd-name">cl_radar_icon_scale_min</h3>
+                <p>Минимальный размер значков на радаре. <span class="cmd-default">По умолчанию: <code>0.6</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_icon_scale_min 0.8</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_square_with_scoreboard" data-cat="hud" data-search="cl_radar_square_with_scoreboard квадратный радар при открытой таблице счёта. если включено, радар становится большим квадратом, пока вы держите клавишу таблицы счёта (tab), и можно быстро осмотреть всю карту. hud и радар">
+                <h3 class="cmd-name">cl_radar_square_with_scoreboard</h3>
+                <p>Квадратный радар при открытой таблице счёта. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_square_with_scoreboard 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showfps" data-cat="hud" data-search="cl_showfps показывает fps на экране. показывает количество кадров в секунду вверху экрана. 1 — текущее значение, 2 — сглаженное, его легче читать. hud и радар">
+                <h3 class="cmd-name"><a href="cl_showfps">cl_showfps</a></h3>
+                <p>Показывает FPS на экране. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_showfps 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showpos" data-cat="hud" data-search="cl_showpos показывает позицию и углы обзора (чит). показывает вашу точную позицию, углы и скорость вверху экрана. нужен sv_cheats 1, поэтому работает только на вашем сервере, например для тренировки гранат или мувмента. hud и радар">
+                <h3 class="cmd-name">cl_showpos<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Показывает позицию и углы обзора (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_showpos 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cq_netgraph" data-cat="hud" data-search="cq_netgraph показывает статистику очереди сетевых команд. показывает техническую статистику о том, как ваши действия ставятся в очередь и отправляются на сервер. это инструмент отладки, а не полная замена старого net_graph. hud и радар">
+                <h3 class="cmd-name">cq_netgraph</h3>
+                <p>Показывает статистику очереди сетевых команд. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cq_netgraph 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showloadout" data-cat="hud" data-search="cl_showloadout всегда показывает оружие справа на экране. если включено, ваше оружие и гранаты всегда видны справа на экране. если выключено, они появляются только при смене оружия. hud и радар">
+                <h3 class="cmd-name">cl_showloadout</h3>
+                <p>Всегда показывает оружие справа на экране.</p>
+                <div class="field-row">
+                <code>cl_showloadout 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_draw_only_deathnotices" data-cat="hud" data-search="cl_draw_only_deathnotices скрывает hud, кроме прицела и килфида. скрывает почти весь hud и оставляет только прицел и килфид. подходит для чистых видео и скриншотов и работает без sv_cheats. hud и радар">
+                <h3 class="cmd-name"><a href="cl_draw_only_deathnotices">cl_draw_only_deathnotices</a></h3>
+                <p>Скрывает HUD, кроме прицела и килфида. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_draw_only_deathnotices 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_drawhud" data-cat="hud" data-search="cl_drawhud скрывает весь hud (чит). полностью отключает hud, включая прицел. нужен sv_cheats 1. используйте для кинематографичных скриншотов на своём сервере. hud и радар">
+                <h3 class="cmd-name">cl_drawhud<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Скрывает весь HUD (чит). <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_drawhud 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezonex" data-cat="hud" data-search="safezonex сдвигает hud к центру по горизонтали. задаёт, какую часть ширины экрана занимает hud. меньшие значения сдвигают здоровье, патроны и радар к центру — это помогает на очень широких или изогнутых мониторах. hud и радар">
+                <h3 class="cmd-name">safezonex</h3>
+                <p>Сдвигает HUD к центру по горизонтали.</p>
+                <div class="field-row">
+                <code>safezonex 0.9</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezoney" data-cat="hud" data-search="safezoney сдвигает hud к центру по вертикали. задаёт, какую часть высоты экрана занимает hud. меньшие значения отодвигают hud от верхнего и нижнего краёв. hud и радар">
+                <h3 class="cmd-name">safezoney</h3>
+                <p>Сдвигает HUD к центру по вертикали.</p>
+                <div class="field-row">
+                <code>safezoney 0.9</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teamid_overhead_mode" data-cat="hud" data-search="cl_teamid_overhead_mode что видно над головами союзников. выбирает информацию над союзниками: 1 — простая метка, 2 — ещё и ник с снаряжением. hud и радар">
+                <h3 class="cmd-name">cl_teamid_overhead_mode</h3>
+                <p>Что видно над головами союзников. <span class="cmd-default">По умолчанию: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_teamid_overhead_mode 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teammate_colors_show" data-cat="hud" data-search="cl_teammate_colors_show цвета союзников в соревновательном режиме. в соревновательных режимах даёт каждому союзнику цвет на радаре и в таблице (1) или цвет и букву (2) — это помогает, если вам сложно различать цвета. hud и радар">
+                <h3 class="cmd-name">cl_teammate_colors_show</h3>
+                <p>Цвета союзников в соревновательном режиме. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_teammate_colors_show 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_frametime_show" data-cat="hud" data-search="cl_hud_telemetry_frametime_show показывает fps и время кадра на экране (телеметрия). показывает частоту и время кадра в углу экрана — та же опция, что в настройки › игра › телеметрия. вместе с cl_hud_telemetry_ping_show это замена старого net_graph в cs2. поставьте 0, чтобы скрыть. hud и радар">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_frametime_show">cl_hud_telemetry_frametime_show</a></h3>
+                <p>Показывает FPS и время кадра на экране (телеметрия).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_ping_show" data-cat="hud" data-search="cl_hud_telemetry_ping_show показывает пинг на экране (телеметрия). показывает пинг (задержку до сервера) в углу экрана — та же опция, что в настройки › игра › телеметрия. вместе с cl_hud_telemetry_frametime_show заменяет старый net_graph. поставьте 0, чтобы скрыть. hud и радар">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_ping_show">cl_hud_telemetry_ping_show</a></h3>
+                <p>Показывает пинг на экране (телеметрия).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_ping_show 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="viewmodel" data-cat="viewmodel" aria-labelledby="viewmodel-title">
+            <h2 id="viewmodel-title">Команды: Viewmodel (оружие)</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="viewmodel_fov" data-cat="viewmodel" data-search="viewmodel_fov насколько модель оружия удалена от камеры. меняет поле зрения только для модели оружия, от 54 до 68. чем больше значение, тем дальше оружие и тем больше видно экрана; многие игроки ставят максимум, 68. viewmodel (оружие)">
+                <h3 class="cmd-name"><a href="viewmodel_fov">viewmodel_fov</a></h3>
+                <p>Насколько модель оружия удалена от камеры. <span class="cmd-default">По умолчанию: <code>60</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_fov 68</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_x" data-cat="viewmodel" data-search="viewmodel_offset_x сдвигает оружие влево или вправо. сдвигает модель оружия по горизонтали, от -2.5 до 2.5. большие значения уводят оружие к правому краю экрана. viewmodel (оружие)">
+                <h3 class="cmd-name"><a href="viewmodel_offset_x">viewmodel_offset_x</a></h3>
+                <p>Сдвигает оружие влево или вправо. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_x 2.5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_y" data-cat="viewmodel" data-search="viewmodel_offset_y сдвигает оружие вперёд или назад. приближает или отдаляет модель оружия, от -2 до 2. большие значения сдвигают оружие вперёд. viewmodel (оружие)">
+                <h3 class="cmd-name">viewmodel_offset_y</h3>
+                <p>Сдвигает оружие вперёд или назад. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_y 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_z" data-cat="viewmodel" data-search="viewmodel_offset_z сдвигает оружие вверх или вниз. сдвигает модель оружия по вертикали, от -2 до 2. меньшие значения опускают оружие ниже, и оно меньше закрывает происходящее. viewmodel (оружие)">
+                <h3 class="cmd-name">viewmodel_offset_z</h3>
+                <p>Сдвигает оружие вверх или вниз. <span class="cmd-default">По умолчанию: <code>-1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_z -1.5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_presetpos" data-cat="viewmodel" data-search="viewmodel_presetpos готовые положения оружия. применяет одно из трёх готовых положений оружия: 1 desktop (по умолчанию), 2 couch (крупнее и ближе) и 3 classic (вид старого cs:go). viewmodel (оружие)">
+                <h3 class="cmd-name">viewmodel_presetpos</h3>
+                <p>Готовые положения оружия. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_presetpos 3</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_drawviewmodel" data-cat="viewmodel" data-search="r_drawviewmodel скрывает модель оружия (чит). скрывает оружие в руках. нужен sv_cheats 1, поэтому работает только на вашем сервере — для скриншотов или тренировки гранат. viewmodel (оружие)">
+                <h3 class="cmd-name">r_drawviewmodel<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Скрывает модель оружия (чит). <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; r_drawviewmodel 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="performance" data-cat="performance" aria-labelledby="performance-title">
+            <h2 id="performance-title">Команды: Графика и FPS</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="fps_max" data-cat="performance" data-search="fps_max ограничивает частоту кадров. ограничивает количество кадров в секунду, которое рисует cs2. 0 снимает ограничение. лимит чуть выше частоты монитора (или стабильное значение, которое ваш пк всегда держит) даёт более ровное время кадра, чем неограниченный fps, который постоянно скачет. графика и fps">
+                <h3 class="cmd-name"><a href="fps_max">fps_max</a></h3>
+                <p>Ограничивает частоту кадров. <span class="cmd-default">По умолчанию: <code>400</code></span></p>
+                <div class="field-row">
+                <code>fps_max 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="fps_max_ui" data-cat="performance" data-search="fps_max_ui ограничивает частоту кадров в меню. ограничивает fps, пока открыто меню. низкое значение (по умолчанию 120) экономит энергию и не даёт пк перегреваться между матчами. графика и fps">
+                <h3 class="cmd-name">fps_max_ui</h3>
+                <p>Ограничивает частоту кадров в меню. <span class="cmd-default">По умолчанию: <code>120</code></span></p>
+                <div class="field-row">
+                <code>fps_max_ui 60</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_fullscreen_gamma" data-cat="performance" data-search="r_fullscreen_gamma яркость в полноэкранном режиме. настраивает гамму (яркость) игры только в полноэкранном режиме. меньшие значения делают картинку светлее. это замена старого mat_monitorgamma в cs2. графика и fps">
+                <h3 class="cmd-name"><a href="r_fullscreen_gamma">r_fullscreen_gamma</a></h3>
+                <p>Яркость в полноэкранном режиме. <span class="cmd-default">По умолчанию: <code>2.2</code></span></p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="engine_low_latency_sleep_after_client_tick" data-cat="performance" data-search="engine_low_latency_sleep_after_client_tick настройка низкой задержки для nvidia reflex. при включённом режиме низкой задержки переносит короткую паузу движка на время после клиентской симуляции в тиковых кадрах. некоторые игроки отмечают более отзывчивое управление; проверьте сами. графика и fps">
+                <h3 class="cmd-name">engine_low_latency_sleep_after_client_tick</h3>
+                <p>Настройка низкой задержки для NVIDIA Reflex. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>engine_low_latency_sleep_after_client_tick 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_show_build_info" data-cat="performance" data-search="r_show_build_info показывает версию игры в углу экрана. показывает или скрывает небольшую надпись с информацией о сборке в углу экрана. valve просит оставлять её включённой при записи баг-репортов. графика и fps">
+                <h3 class="cmd-name">r_show_build_info</h3>
+                <p>Показывает версию игры в углу экрана. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>r_show_build_info 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="mat_monitorgamma" data-cat="performance" data-search="mat_monitorgamma удалена в cs2: заменена на r_fullscreen_gamma. mat_monitorgamma меняла яркость в cs:go. в cs2 её больше нет: используйте r_fullscreen_gamma (только в полноэкранном режиме) или ползунок яркости в настройках видео. графика и fps">
+                <h3 class="cmd-name"><a href="mat_monitorgamma">mat_monitorgamma</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: заменена на r_fullscreen_gamma.</p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="network" data-cat="network" aria-labelledby="network-title">
+            <h2 id="network-title">Команды: Сеть</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="rate" data-cat="network" data-search="rate максимальный объём данных, который принимает соединение. сообщает серверу, сколько байт в секунду может принять ваше соединение. значение по умолчанию 786432 (около 6 мбит/с) — это максимум, и оно подходит почти для любого соединения; уменьшайте его только при очень медленном или нестабильном интернете. сеть">
+                <h3 class="cmd-name"><a href="rate">rate</a></h3>
+                <p>Максимальный объём данных, который принимает соединение. <span class="cmd-default">По умолчанию: <code>786432</code></span></p>
+                <div class="field-row">
+                <code>rate 786432</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mm_dedicated_search_maxping" data-cat="network" data-search="mm_dedicated_search_maxping максимальный пинг при поиске матча. задаёт максимальный пинг серверов матчмейкинга, который вы принимаете, в миллисекундах. меньшее значение находит более близкие серверы, но поиск может идти дольше. сеть">
+                <h3 class="cmd-name"><a href="mm_dedicated_search_maxping">mm_dedicated_search_maxping</a></h3>
+                <p>Максимальный пинг при поиске матча. <span class="cmd-default">По умолчанию: <code>150</code></span></p>
+                <div class="field-row">
+                <code>mm_dedicated_search_maxping 60</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="net_client_steamdatagram_enable_override" data-cat="network" data-search="net_client_steamdatagram_enable_override использовать или нет ретрансляторы valve. выбирает способ подключения к официальным серверам: 0 — решает игра, положительное значение всегда использует сеть ретрансляторов valve (sdr), когда это возможно, отрицательное — предпочитает прямое подключение. сеть">
+                <h3 class="cmd-name">net_client_steamdatagram_enable_override</h3>
+                <p>Использовать или нет ретрансляторы Valve. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>net_client_steamdatagram_enable_override 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="status" data-cat="network" data-search="status выводит информацию о сервере и игроках. выводит информацию о сервере, на котором вы находитесь, и об игроках, включая их пинг. полезно, чтобы проверить соединение или пожаловаться на игрока. сеть">
+                <h3 class="cmd-name">status</h3>
+                <p>Выводит информацию о сервере и игроках.</p>
+                <div class="field-row">
+                <code>status</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_lagcompensation" data-cat="network" data-search="cl_lagcompensation компенсация лагов на сервере. просит сервер учитывать ваш пинг при проверке попаданий. оставьте включённой: выключение только ухудшит регистрацию ваших выстрелов. сеть">
+                <h3 class="cmd-name">cl_lagcompensation</h3>
+                <p>Компенсация лагов на сервере. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_lagcompensation 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="net_graph" data-cat="network" data-search="net_graph удалена в cs2: старый сетевой график cs:go. net_graph показывал fps, пинг, потери и choke в cs:go. в cs2 его нет. чтобы видеть ту же информацию, используйте cl_hud_telemetry_frametime_show 2 и cl_hud_telemetry_ping_show 2 (опции телеметрии в настройки › игра › телеметрия) или cl_showfps 1 для простого счётчика fps. сеть">
+                <h3 class="cmd-name"><a href="net_graph">net_graph</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: старый сетевой график CS:GO.</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp" data-cat="network" data-search="cl_interp показывает интерполяцию, которую использует игра. в cs2 cl_interp в основном показывает интерполяцию игры вместе с cl_interp_ratio и частотой обновлений сервера (например, cl_interp = 0 при cl_updaterate=64). cs2 сама управляет интерполяцией через систему субтиков, поэтому настраивать её, как в cs:go, не нужно. сеть">
+                <h3 class="cmd-name"><a href="cl_interp">cl_interp</a></h3>
+                <p>Показывает интерполяцию, которую использует игра.</p>
+                <div class="field-row">
+                <code>cl_interp</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp_ratio" data-cat="network" data-search="cl_interp_ratio коэффициент интерполяции, управляется cs2. cl_interp_ratio всё ещё есть в cs2, по умолчанию её значение 0. в отличие от cs:go, интерполяцией управляет система субтиков, поэтому большинству игроков стоит оставить значение по умолчанию. сеть">
+                <h3 class="cmd-name"><a href="cl_interp_ratio">cl_interp_ratio</a></h3>
+                <p>Коэффициент интерполяции, управляется CS2. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_interp_ratio 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_updaterate" data-cat="network" data-search="cl_updaterate удалена в cs2: частоту обновлений задаёт сервер. в cs:go cl_updaterate задавала, сколько обновлений в секунду вы запрашиваете у сервера. в cs2 её больше нет: частота сервера фиксирована (64 обновления в секунду, как показывает cl_interp), а система субтиков и так делает ваши действия точными. сеть">
+                <h3 class="cmd-name"><a href="cl_updaterate">cl_updaterate</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: частоту обновлений задаёт сервер.</p>
+                
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_cmdrate" data-cat="network" data-search="cl_cmdrate удалена в cs2: частота отправки фиксирована. в cs:go cl_cmdrate задавала, сколько пакетов в секунду вы отправляете на сервер. в cs2 её больше нет: частотой отправки управляет игра, а система субтиков фиксирует точный момент ваших выстрелов и движений. сеть">
+                <h3 class="cmd-name"><a href="cl_cmdrate">cl_cmdrate</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: частота отправки фиксирована.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="mouse" data-cat="mouse" aria-labelledby="mouse-title">
+            <h2 id="mouse-title">Команды: Мышь</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sensitivity" data-cat="mouse" data-search="sensitivity чувствительность мыши. задаёт, как быстро поворачивается обзор при движении мыши. про-игроки обычно умножают её на dpi мыши для сравнения: 400 dpi и 2.0 или 800 dpi и 1.0 дают одинаковые 800 edpi; типичный диапазон у про-игроков cs2 — примерно от 600 до 1200 edpi. мышь">
+                <h3 class="cmd-name"><a href="sensitivity">sensitivity</a></h3>
+                <p>Чувствительность мыши. <span class="cmd-default">По умолчанию: <code>2.5</code></span></p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="zoom_sensitivity_ratio" data-cat="mouse" data-search="zoom_sensitivity_ratio чувствительность мыши в прицеле. умножает чувствительность, когда вы смотрите в прицел оружия, например awp. 1 — значение по умолчанию; меньшие значения делают прицеливание в зуме медленнее и точнее. мышь">
+                <h3 class="cmd-name"><a href="zoom_sensitivity_ratio">zoom_sensitivity_ratio</a></h3>
+                <p>Чувствительность мыши в прицеле. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>zoom_sensitivity_ratio 0.9</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_yaw" data-cat="mouse" data-search="m_yaw множитель горизонтальной скорости мыши. умножает горизонтальное движение мыши. значение по умолчанию 0.022 совпадает с вертикальной скоростью. игроки на 4:3 растянутом иногда уменьшают его, чтобы компенсировать более широкую картинку, но большинство оставляет стандарт. мышь">
+                <h3 class="cmd-name"><a href="m_yaw">m_yaw</a></h3>
+                <p>Множитель горизонтальной скорости мыши. <span class="cmd-default">По умолчанию: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_yaw 0.022</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_pitch" data-cat="mouse" data-search="m_pitch множитель вертикальной скорости мыши. умножает вертикальное движение мыши. по умолчанию 0.022, как у m_yaw, поэтому мышь двигается с одинаковой скоростью во всех направлениях. мышь">
+                <h3 class="cmd-name">m_pitch</h3>
+                <p>Множитель вертикальной скорости мыши. <span class="cmd-default">По умолчанию: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_pitch 0.022</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_rawinput" data-cat="mouse" data-search="m_rawinput удалена в cs2: прямой ввод мыши всегда включён. в cs:go m_rawinput 1 заставлял игру читать мышь напрямую. cs2 делает это всегда, поэтому команду удалили, и при вводе появится unknown command. ничего менять не нужно: мышь уже работает через прямой ввод. мышь">
+                <h3 class="cmd-name"><a href="m_rawinput">m_rawinput</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: прямой ввод мыши всегда включён.</p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_customaccel" data-cat="mouse" data-search="m_customaccel удалена в cs2: настройки ускорения мыши нет. m_customaccel управляла ускорением мыши в cs:go. в cs2 её больше нет, а внутриигрового ускорения мыши тоже нет. если аим кажется непостоянным, проверьте, что ускорение («повышенная точность установки указателя») выключено в windows и в программе вашей мыши. мышь">
+                <h3 class="cmd-name"><a href="m_customaccel">m_customaccel</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: настройки ускорения мыши нет.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="audio" data-cat="audio" aria-labelledby="audio-title">
+            <h2 id="audio-title">Команды: Звук</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="volume" data-cat="audio" data-search="volume общая громкость игры. задаёт общую громкость игры, от 0 до 1. многие держат её довольно высокой, чтобы хорошо слышать шаги, а убавляют музыку. звук">
+                <h3 class="cmd-name"><a href="volume">volume</a></h3>
+                <p>Общая громкость игры.</p>
+                <div class="field-row">
+                <code>volume 0.5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_voipvolume" data-cat="audio" data-search="snd_voipvolume громкость голосов союзников. задаёт громкость союзников в голосовом чате, от 0 до 1. заменила старую команду voice_scale из cs:go. звук">
+                <h3 class="cmd-name"><a href="snd_voipvolume">snd_voipvolume</a></h3>
+                <p>Громкость голосов союзников. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_menumusic_volume" data-cat="audio" data-search="snd_menumusic_volume громкость музыки в меню. задаёт громкость музыки в меню и в других моментах вне игры, от 0 до 1. поставьте 0 для тишины в меню. звук">
+                <h3 class="cmd-name">snd_menumusic_volume</h3>
+                <p>Громкость музыки в меню.</p>
+                <div class="field-row">
+                <code>snd_menumusic_volume 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_roundstart_volume" data-cat="audio" data-search="snd_roundstart_volume громкость музыки в начале раунда. задаёт громкость музыки в начале раунда, от 0 до 1. многие выключают её, чтобы слышать первые шаги. звук">
+                <h3 class="cmd-name">snd_roundstart_volume</h3>
+                <p>Громкость музыки в начале раунда.</p>
+                <div class="field-row">
+                <code>snd_roundstart_volume 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mvp_volume" data-cat="audio" data-search="snd_mvp_volume громкость музыки mvp. задаёт громкость музыки mvp (и музыкальных наборов) в конце раунда, от 0 до 1. звук">
+                <h3 class="cmd-name">snd_mvp_volume</h3>
+                <p>Громкость музыки MVP.</p>
+                <div class="field-row">
+                <code>snd_mvp_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_tensecondwarning_volume" data-cat="audio" data-search="snd_tensecondwarning_volume громкость предупреждения за 10 секунд до взрыва. задаёт громкость музыки, которая предупреждает, что до взрыва бомбы осталось 10 секунд, от 0 до 1. оставьте её слышимой: это полезная информация. звук">
+                <h3 class="cmd-name">snd_tensecondwarning_volume</h3>
+                <p>Громкость предупреждения за 10 секунд до взрыва.</p>
+                <div class="field-row">
+                <code>snd_tensecondwarning_volume 0.2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mapobjective_volume" data-cat="audio" data-search="snd_mapobjective_volume громкость музыки бомбы и заложников. задаёт громкость музыки целей карты, например заложенной бомбы, от 0 до 1. звук">
+                <h3 class="cmd-name">snd_mapobjective_volume</h3>
+                <p>Громкость музыки бомбы и заложников.</p>
+                <div class="field-row">
+                <code>snd_mapobjective_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_deathcamera_volume" data-cat="audio" data-search="snd_deathcamera_volume громкость звука камеры смерти. задаёт громкость звука, который играет, когда вы погибаете и включается камера смерти, от 0 до 1. звук">
+                <h3 class="cmd-name">snd_deathcamera_volume</h3>
+                <p>Громкость звука камеры смерти.</p>
+                <div class="field-row">
+                <code>snd_deathcamera_volume 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mute_losefocus" data-cat="audio" data-search="snd_mute_losefocus выключает звук при alt+tab. если включено, игра замолкает, когда её окно не в фокусе. выключите, если хотите услышать начало матча, находясь в другом окне. звук">
+                <h3 class="cmd-name">snd_mute_losefocus</h3>
+                <p>Выключает звук при Alt+Tab.</p>
+                <div class="field-row">
+                <code>snd_mute_losefocus 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_headphone_eq" data-cat="audio" data-search="snd_headphone_eq пресет эквалайзера для наушников. выбирает пресет эквалайзера для наушников — это та же опция, что профиль эквалайзера в настройках звука. попробуйте каждый и оставьте тот, в котором шаги слышны лучше всего. звук">
+                <h3 class="cmd-name">snd_headphone_eq</h3>
+                <p>Пресет эквалайзера для наушников. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>snd_headphone_eq 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="voice_scale" data-cat="audio" data-search="voice_scale удалена в cs2: заменена на snd_voipvolume. voice_scale меняла громкость голосового чата в cs:go. в cs2 её больше нет: используйте snd_voipvolume, от 0 до 1. звук">
+                <h3 class="cmd-name"><a href="voice_scale">voice_scale</a><span class="cmd-badge cmd-removed">Удалена в CS2</span></h3>
+                <p>Удалена в CS2: заменена на snd_voipvolume.</p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="practice" data-cat="practice" aria-labelledby="practice-title">
+            <h2 id="practice-title">Команды: Тренировка и сервер</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sv_cheats" data-cat="practice" data-search="sv_cheats включает чит-команды на вашем сервере. разрешает команды, отмеченные как читы (noclip, god, sv_rethrow_last_grenade, cl_showpos...). работает только на вашем собственном сервере, например в приватном матче с ботами, и никогда в официальном матчмейкинге. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_cheats">sv_cheats</a></h3>
+                <p>Включает чит-команды на вашем сервере. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_infinite_ammo" data-cat="practice" data-search="sv_infinite_ammo бесконечные патроны и гранаты. при 1 магазин никогда не пустеет; при 2 патроны не заканчиваются, но перезаряжаться нужно. также даёт бесконечные гранаты, поэтому это основа любого конфига для тренировки гранат. нужен sv_cheats 1. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_infinite_ammo">sv_infinite_ammo</a><span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Бесконечные патроны и гранаты. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; sv_infinite_ammo 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_pipreview" data-cat="practice" data-search="sv_grenade_trajectory_prac_pipreview предпросмотр места падения гранаты. показывает маленькое окно «картинка в картинке» с траекторией и точкой падения гранаты в руке ещё до броска. это самый быстрый способ выучить смоки и флешки на тренировочном сервере. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_pipreview">sv_grenade_trajectory_prac_pipreview</a></h3>
+                <p>Предпросмотр места падения гранаты. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_pipreview 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_trailtime" data-cat="practice" data-search="sv_grenade_trajectory_prac_trailtime показывает траекторию брошенных гранат. рисует траекторию каждой брошенной гранаты и показывает её указанное количество секунд. поставьте 10 или больше, чтобы сравнить два броска. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_trailtime">sv_grenade_trajectory_prac_trailtime</a></h3>
+                <p>Показывает траекторию брошенных гранат. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_trailtime 10</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_rethrow_last_grenade" data-cat="practice" data-search="sv_rethrow_last_grenade повторяет бросок последней гранаты. бросает последнюю гранату ещё раз ровно с того же места, чтобы посмотреть, куда она упадёт, не возвращаясь пешком. нужен sv_cheats 1; в тренировочных конфигах её часто вешают на клавишу. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_rethrow_last_grenade">sv_rethrow_last_grenade</a><span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Повторяет бросок последней гранаты.</p>
+                <div class="field-row">
+                <code>sv_rethrow_last_grenade</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts" data-cat="practice" data-search="sv_showimpacts показывает, куда попадают пули. рисует квадрат в месте попадания каждой пули: красный — то, что увидела ваша игра, синий — то, что увидел сервер. отлично подходит, чтобы учить паттерны спрея на стене. тренировка и сервер">
+                <h3 class="cmd-name"><a href="sv_showimpacts">sv_showimpacts</a></h3>
+                <p>Показывает, куда попадают пули. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts_time" data-cat="practice" data-search="sv_showimpacts_time как долго видны попадания пуль. задаёт, сколько секунд квадраты попаданий sv_showimpacts остаются на экране. тренировка и сервер">
+                <h3 class="cmd-name">sv_showimpacts_time</h3>
+                <p>Как долго видны попадания пуль. <span class="cmd-default">По умолчанию: <code>4</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts_time 10</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_roundtime_defuse" data-cat="practice" data-search="mp_roundtime_defuse длительность раунда на картах с бомбой, в минутах. задаёт, сколько минут длится раунд на картах с закладкой бомбы. поставьте большое значение (60) на тренировочном сервере, чтобы раунд не заканчивался во время тренировки. тренировка и сервер">
+                <h3 class="cmd-name">mp_roundtime_defuse</h3>
+                <p>Длительность раунда на картах с бомбой, в минутах. <span class="cmd-default">По умолчанию: <code>2.25</code></span></p>
+                <div class="field-row">
+                <code>mp_roundtime_defuse 60</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_freezetime" data-cat="practice" data-search="mp_freezetime время заморозки в начале раунда, в секундах. задаёт, сколько секунд игроки стоят замороженными в начале каждого раунда. поставьте 0 на тренировочном сервере, чтобы двигаться сразу. тренировка и сервер">
+                <h3 class="cmd-name">mp_freezetime</h3>
+                <p>Время заморозки в начале раунда, в секундах. <span class="cmd-default">По умолчанию: <code>5</code></span></p>
+                <div class="field-row">
+                <code>mp_freezetime 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_end" data-cat="practice" data-search="mp_warmup_end сразу завершает разминку. останавливает разминку и сразу начинает матч на вашем сервере. тренировка и сервер">
+                <h3 class="cmd-name">mp_warmup_end</h3>
+                <p>Сразу завершает разминку.</p>
+                <div class="field-row">
+                <code>mp_warmup_end</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_pausetimer" data-cat="practice" data-search="mp_warmup_pausetimer бесконечная разминка. при 1 таймер разминки останавливается, и разминка не заканчивается — удобно для долгих тренировок. поставьте 0, чтобы снова запустить таймер. тренировка и сервер">
+                <h3 class="cmd-name">mp_warmup_pausetimer</h3>
+                <p>Бесконечная разминка. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_warmup_pausetimer 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_restartgame" data-cat="practice" data-search="mp_restartgame перезапускает матч. перезапускает игру через указанное количество секунд. используйте после изменения настроек раунда, чтобы они применились. тренировка и сервер">
+                <h3 class="cmd-name">mp_restartgame</h3>
+                <p>Перезапускает матч.</p>
+                <div class="field-row">
+                <code>mp_restartgame 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buy_anywhere" data-cat="practice" data-search="mp_buy_anywhere покупка в любом месте карты. разрешает покупку вне зоны закупки: 1 — для обеих команд, 2 — только для террористов, 3 — только для спецназа. идеально для тренировки гранат. тренировка и сервер">
+                <h3 class="cmd-name"><a href="mp_buy_anywhere">mp_buy_anywhere</a></h3>
+                <p>Покупка в любом месте карты. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_buy_anywhere 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buytime" data-cat="practice" data-search="mp_buytime сколько можно покупать после начала раунда. задаёт, сколько секунд после начала раунда ещё можно покупать. на тренировочном сервере ставьте очень большое значение. тренировка и сервер">
+                <h3 class="cmd-name">mp_buytime</h3>
+                <p>Сколько можно покупать после начала раунда. <span class="cmd-default">По умолчанию: <code>45</code></span></p>
+                <div class="field-row">
+                <code>mp_buytime 9999</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_maxmoney" data-cat="practice" data-search="mp_maxmoney максимум денег у игрока. задаёт максимальную сумму денег у игрока. поднимите её вместе с mp_startmoney для безлимитных покупок на тренировочном сервере. тренировка и сервер">
+                <h3 class="cmd-name">mp_maxmoney</h3>
+                <p>Максимум денег у игрока. <span class="cmd-default">По умолчанию: <code>10000</code></span></p>
+                <div class="field-row">
+                <code>mp_maxmoney 60000</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_startmoney" data-cat="practice" data-search="mp_startmoney стартовые деньги каждого игрока. задаёт, сколько денег получает каждый игрок в начале половины. используйте вместе с mp_maxmoney для тренировки. тренировка и сервер">
+                <h3 class="cmd-name">mp_startmoney</h3>
+                <p>Стартовые деньги каждого игрока. <span class="cmd-default">По умолчанию: <code>1000</code></span></p>
+                <div class="field-row">
+                <code>mp_startmoney 60000</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_t" data-cat="practice" data-search="mp_respawn_on_death_t террористы возрождаются после смерти. при 1 террористы оживают сразу после смерти. используйте вместе с mp_respawn_on_death_ct для тренировки в стиле дезматча. тренировка и сервер">
+                <h3 class="cmd-name">mp_respawn_on_death_t</h3>
+                <p>Террористы возрождаются после смерти. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_t 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_ct" data-cat="practice" data-search="mp_respawn_on_death_ct спецназ возрождается после смерти. при 1 бойцы спецназа оживают сразу после смерти. тренировка и сервер">
+                <h3 class="cmd-name">mp_respawn_on_death_ct</h3>
+                <p>Спецназ возрождается после смерти. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_ct 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_ignore_round_win_conditions" data-cat="practice" data-search="mp_ignore_round_win_conditions раунды никогда не заканчиваются. при 1 раунд продолжается, даже если команда уничтожена или бомба взорвалась. очень удобно, чтобы тренироваться без перерывов. тренировка и сервер">
+                <h3 class="cmd-name">mp_ignore_round_win_conditions</h3>
+                <p>Раунды никогда не заканчиваются. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_ignore_round_win_conditions 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_limitteams" data-cat="practice" data-search="mp_limitteams максимальная разница в числе игроков между командами. задаёт, на сколько игроков одна команда может быть больше другой. 0 снимает ограничение, и можно играть одному против множества ботов. тренировка и сервер">
+                <h3 class="cmd-name">mp_limitteams</h3>
+                <p>Максимальная разница в числе игроков между командами. <span class="cmd-default">По умолчанию: <code>2</code></span></p>
+                <div class="field-row">
+                <code>mp_limitteams 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_autoteambalance" data-cat="practice" data-search="mp_autoteambalance автобаланс команд. при 1 сервер перемещает игроков между командами, чтобы они были равными. выключите на тренировочном сервере. тренировка и сервер">
+                <h3 class="cmd-name">mp_autoteambalance</h3>
+                <p>Автобаланс команд. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>mp_autoteambalance 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_drop_knife_enable" data-cat="practice" data-search="mp_drop_knife_enable разрешает выбрасывать нож. при 1 игроки могут выбросить нож, как любое другое оружие. тренировка и сервер">
+                <h3 class="cmd-name">mp_drop_knife_enable</h3>
+                <p>Разрешает выбрасывать нож. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_drop_knife_enable 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="ammo_grenade_limit_total" data-cat="practice" data-search="ammo_grenade_limit_total максимум гранат у игрока. задаёт, сколько всего гранат может нести игрок. поднимите значение на тренировочном сервере, чтобы держать все гранаты сразу. тренировка и сервер">
+                <h3 class="cmd-name">ammo_grenade_limit_total</h3>
+                <p>Максимум гранат у игрока. <span class="cmd-default">По умолчанию: <code>4</code></span></p>
+                <div class="field-row">
+                <code>ammo_grenade_limit_total 5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="noclip" data-cat="practice" data-search="noclip полёт сквозь стены (чит). позволяет летать и проходить сквозь стены. введите ещё раз, чтобы выключить. нужен sv_cheats 1; идеально, чтобы быстро перемещаться по карте во время тренировки. тренировка и сервер">
+                <h3 class="cmd-name"><a href="noclip">noclip</a><span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Полёт сквозь стены (чит).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; noclip</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="god" data-cat="practice" data-search="god делает вас неуязвимым (чит). вы перестаёте получать урон. введите ещё раз, чтобы выключить. нужен sv_cheats 1. тренировка и сервер">
+                <h3 class="cmd-name">god<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Делает вас неуязвимым (чит).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; god</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="give" data-cat="practice" data-search="give выдаёт оружие или предмет. выдаёт предмет по его внутреннему названию, например weapon_ak47, weapon_awp, weapon_smokegrenade или weapon_flashbang. работает на вашем собственном сервере. тренировка и сервер">
+                <h3 class="cmd-name"><a href="give">give</a></h3>
+                <p>Выдаёт оружие или предмет.</p>
+                <div class="field-row">
+                <code>give weapon_ak47</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_timescale" data-cat="practice" data-search="host_timescale ускоряет или замедляет игру (чит). меняет скорость игры: 0.5 — половина скорости, 2 — двойная. удобно, чтобы разобрать гранату в замедленном режиме. нужен sv_cheats 1. тренировка и сервер">
+                <h3 class="cmd-name">host_timescale<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Ускоряет или замедляет игру (чит). <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>host_timescale 0.5</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="getpos" data-cat="practice" data-search="getpos выводит вашу точную позицию (чит). выводит в консоль вашу позицию и углы обзора в виде готовой строки setpos/setang. скопируйте её, чтобы потом вернуться в ту же точку, например к раскидке гранаты. нужен sv_cheats 1. тренировка и сервер">
+                <h3 class="cmd-name">getpos<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Выводит вашу точную позицию (чит).</p>
+                <div class="field-row">
+                <code>getpos</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="setpos" data-cat="practice" data-search="setpos телепортирует в указанную точку (чит). перемещает вас на координаты x y z — обычно скопированные из getpos. нужен sv_cheats 1. тренировка и сервер">
+                <h3 class="cmd-name">setpos<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Телепортирует в указанную точку (чит).</p>
+                <div class="field-row">
+                <code>setpos 0 0 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="bots" data-cat="bots" aria-labelledby="bots-title">
+            <h2 id="bots-title">Команды: Боты</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bot_kick" data-cat="bots" data-search="bot_kick удаляет ботов с сервера. кикает всех ботов или только ботов определённой команды, сложности или с определённым именем. используйте, чтобы очистить сервер перед тренировкой. боты">
+                <h3 class="cmd-name"><a href="bot_kick">bot_kick</a></h3>
+                <p>Удаляет ботов с сервера.</p>
+                <div class="field-row">
+                <code>bot_kick</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_t" data-cat="bots" data-search="bot_add_t добавляет бота за террористов. добавляет одного бота в команду террористов. можно указать сложность и имя. боты">
+                <h3 class="cmd-name">bot_add_t</h3>
+                <p>Добавляет бота за террористов.</p>
+                <div class="field-row">
+                <code>bot_add_t</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_ct" data-cat="bots" data-search="bot_add_ct добавляет бота за спецназ. добавляет одного бота в команду спецназа. можно указать сложность и имя. боты">
+                <h3 class="cmd-name">bot_add_ct</h3>
+                <p>Добавляет бота за спецназ.</p>
+                <div class="field-row">
+                <code>bot_add_ct</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_quota" data-cat="bots" data-search="bot_quota общее число ботов на сервере. задаёт, сколько ботов остаётся на сервере. поставьте 0, чтобы ботов не было. боты">
+                <h3 class="cmd-name">bot_quota</h3>
+                <p>Общее число ботов на сервере. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>bot_quota 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_difficulty" data-cat="bots" data-search="bot_difficulty уровень новых ботов. задаёт уровень ботов, которые заходят в игру: 0 — лёгкий, 1 — обычный, 2 — сложный, 3 — эксперт. боты">
+                <h3 class="cmd-name">bot_difficulty</h3>
+                <p>Уровень новых ботов. <span class="cmd-default">По умолчанию: <code>2</code></span></p>
+                <div class="field-row">
+                <code>bot_difficulty 3</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_stop" data-cat="bots" data-search="bot_stop отключает мозги ботов (чит). при 1 боты перестают думать: стоят на месте и ничего не делают. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_stop<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Отключает мозги ботов (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_stop 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_freeze" data-cat="bots" data-search="bot_freeze боты не могут двигаться (чит). при 1 боты стоят на месте, но всё ещё могут целиться. используйте вместе с bot_dont_shoot, чтобы тренировать аим по неподвижным целям. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_freeze<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Боты не могут двигаться (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_freeze 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_dont_shoot" data-cat="bots" data-search="bot_dont_shoot боты никогда не стреляют (чит). при 1 боты не стреляют из оружия. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_dont_shoot<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Боты никогда не стреляют (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_dont_shoot 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_place" data-cat="bots" data-search="bot_place ставит бота туда, куда вы смотрите (чит). перемещает бота в точку, на которую вы смотрите. может понадобиться несколько попыток. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_place<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Ставит бота туда, куда вы смотрите (чит).</p>
+                <div class="field-row">
+                <code>bot_place</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_mimic" data-cat="bots" data-search="bot_mimic боты копируют ваши движения (чит). боты повторяют ваши действия: движение, прицеливание и прочее. удобно, чтобы поставить бота именно туда и так, как вам нужно. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_mimic<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Боты копируют ваши движения (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_mimic 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_crouch" data-cat="bots" data-search="bot_crouch боты приседают (чит). при 1 боты остаются в приседе. нужен sv_cheats 1. боты">
+                <h3 class="cmd-name">bot_crouch<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Боты приседают (чит). <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_crouch 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="general" data-cat="general" aria-labelledby="general-title">
+            <h2 id="general-title">Команды: Общее</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bind" data-cat="general" data-search="bind назначает команду на клавишу. заставляет клавишу выполнять команду при нажатии — например бинд закупки или клавиша для повторного броска последней гранаты. если в команде есть пробелы, возьмите название клавиши и команду в кавычки. общее">
+                <h3 class="cmd-name"><a href="bind">bind</a></h3>
+                <p>Назначает команду на клавишу.</p>
+                <div class="field-row">
+                <code>bind f &quot;+lookatweapon&quot;</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbind" data-cat="general" data-search="unbind снимает назначение с клавиши. удаляет команду, назначенную на клавишу. общее">
+                <h3 class="cmd-name">unbind</h3>
+                <p>Снимает назначение с клавиши.</p>
+                <div class="field-row">
+                <code>unbind kp_end</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbindall" data-cat="general" data-search="unbindall снимает все назначения клавиш. удаляет сразу все бинды, включая движение. используйте только в начале полного конфига, который заново назначает всё. общее">
+                <h3 class="cmd-name">unbindall</h3>
+                <p>Снимает все назначения клавиш.</p>
+                <div class="field-row">
+                <code>unbindall</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="alias" data-cat="general" data-search="alias создаёт свою команду. даёт имя списку команд, чтобы выполнять их все сразу или повесить на клавишу. алиас, имя которого начинается с +, выполняется при нажатии клавиши, а соответствующий алиас с - — при отпускании: так работает бинд jump throw. поместите его в autoexec.cfg, чтобы он загружался при каждом запуске cs2. общее">
+                <h3 class="cmd-name"><a href="alias">alias</a></h3>
+                <p>Создаёт свою команду.</p>
+                <div class="field-row">
+                <code>alias prac &quot;sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1&quot;</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="exec" data-cat="general" data-search="exec выполняет файл конфига. выполняет все команды из файла .cfg в папке cfg игры, например тренировочный конфиг или ваш autoexec. общее">
+                <h3 class="cmd-name"><a href="exec">exec</a></h3>
+                <p>Выполняет файл конфига.</p>
+                <div class="field-row">
+                <code>exec autoexec</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_writeconfig" data-cat="general" data-search="host_writeconfig сохраняет текущие настройки. сразу записывает текущие настройки и бинды в файл конфига. общее">
+                <h3 class="cmd-name">host_writeconfig</h3>
+                <p>Сохраняет текущие настройки.</p>
+                <div class="field-row">
+                <code>host_writeconfig</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="toggleconsole" data-cat="general" data-search="toggleconsole открывает или закрывает консоль. открывает или закрывает консоль разработчика. её можно назначить на другую клавишу, если на клавиатуре нет клавиши ~. общее">
+                <h3 class="cmd-name">toggleconsole</h3>
+                <p>Открывает или закрывает консоль.</p>
+                <div class="field-row">
+                <code>bind f10 toggleconsole</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="clear" data-cat="general" data-search="clear очищает консоль. стирает весь текст в консоли. общее">
+                <h3 class="cmd-name">clear</h3>
+                <p>Очищает консоль.</p>
+                <div class="field-row">
+                <code>clear</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="echo" data-cat="general" data-search="echo выводит текст в консоль. выводит сообщение в консоль. конфиги часто используют её, чтобы подтвердить, что они загрузились. общее">
+                <h3 class="cmd-name">echo</h3>
+                <p>Выводит текст в консоль.</p>
+                <div class="field-row">
+                <code>echo Practice config loaded</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="find" data-cat="general" data-search="find ищет команды по имени или описанию. показывает все команды, в имени или справке которых есть искомое слово. отлично подходит, чтобы находить новые команды, например find crosshair. общее">
+                <h3 class="cmd-name"><a href="find">find</a></h3>
+                <p>Ищет команды по имени или описанию.</p>
+                <div class="field-row">
+                <code>find crosshair</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="help" data-cat="general" data-search="help объясняет команду. выводит справку и текущее значение команды. общее">
+                <h3 class="cmd-name">help</h3>
+                <p>Объясняет команду.</p>
+                <div class="field-row">
+                <code>help fps_max</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="connect" data-cat="general" data-search="connect подключается к серверу по ip-адресу. подключает вас к серверу сообщества по его ip-адресу и порту. общее">
+                <h3 class="cmd-name">connect</h3>
+                <p>Подключается к серверу по IP-адресу.</p>
+                <div class="field-row">
+                <code>connect 127.0.0.1:27015</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="disconnect" data-cat="general" data-search="disconnect покидает текущий сервер. отключает вас от сервера, на котором вы играете. общее">
+                <h3 class="cmd-name">disconnect</h3>
+                <p>Покидает текущий сервер.</p>
+                <div class="field-row">
+                <code>disconnect</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="quit" data-cat="general" data-search="quit закрывает cs2. сразу закрывает игру. общее">
+                <h3 class="cmd-name">quit</h3>
+                <p>Закрывает CS2.</p>
+                <div class="field-row">
+                <code>quit</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="map" data-cat="general" data-search="map загружает карту на вашем сервере. запускает локальный сервер на выбранной карте, например чтобы тренироваться одному. названия официальных карт начинаются с de_ (de_mirage, de_dust2, de_inferno...). общее">
+                <h3 class="cmd-name"><a href="map">map</a></h3>
+                <p>Загружает карту на вашем сервере.</p>
+                <div class="field-row">
+                <code>map de_mirage</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="changelevel" data-cat="general" data-search="changelevel меняет карту на вашем сервере. переключает ваш сервер на другую карту, не закрывая его. общее">
+                <h3 class="cmd-name">changelevel</h3>
+                <p>Меняет карту на вашем сервере.</p>
+                <div class="field-row">
+                <code>changelevel de_inferno</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="kill" data-cat="general" data-search="kill убивает вашего персонажа (чит). мгновенно убивает вашего персонажа. нужен sv_cheats 1. общее">
+                <h3 class="cmd-name">kill<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Убивает вашего персонажа (чит).</p>
+                <div class="field-row">
+                <code>kill</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="explode" data-cat="general" data-search="explode убивает вашего персонажа взрывом (чит). убивает вашего персонажа взрывным уроном. нужен sv_cheats 1. общее">
+                <h3 class="cmd-name">explode<span class="cmd-badge">Нужен sv_cheats</span></h3>
+                <p>Убивает вашего персонажа взрывом (чит).</p>
+                <div class="field-row">
+                <code>explode</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="record" data-cat="general" data-search="record записывает демо игры. начинает запись демо-файла текущей игры. введите stop, чтобы закончить запись. общее">
+                <h3 class="cmd-name">record</h3>
+                <p>Записывает демо игры.</p>
+                <div class="field-row">
+                <code>record mymatch</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="stop" data-cat="general" data-search="stop останавливает запись демо. заканчивает запись демо, начатую командой record. общее">
+                <h3 class="cmd-name">stop</h3>
+                <p>Останавливает запись демо.</p>
+                <div class="field-row">
+                <code>stop</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="playdemo" data-cat="general" data-search="playdemo воспроизводит демо-файл. воспроизводит записанное демо (.dem). положите файл в папку csgo игры и введите его название. clutchcrosshair точно так же читает прицелы про-игроков из демо официальных матчей. общее">
+                <h3 class="cmd-name"><a href="playdemo">playdemo</a></h3>
+                <p>Воспроизводит демо-файл.</p>
+                <div class="field-row">
+                <code>playdemo mymatch</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="demoui" data-cat="general" data-search="demoui открывает панель управления демо. показывает или скрывает панель воспроизведения демо (пауза, скорость, шкала времени) во время просмотра. общее">
+                <h3 class="cmd-name">demoui</h3>
+                <p>Открывает панель управления демо.</p>
+                <div class="field-row">
+                <code>demoui</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="demo_gototick" data-cat="general" data-search="demo_gototick переходит к моменту в демо. перематывает к точному тику (моменту) демо, которое вы смотрите. общее">
+                <h3 class="cmd-name">demo_gototick</h3>
+                <p>Переходит к моменту в демо.</p>
+                <div class="field-row">
+                <code>demo_gototick 64000</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="gameinstructor_enable" data-cat="general" data-search="gameinstructor_enable подсказки для новых игроков. показывает или скрывает небольшие уроки, которые объясняют игру новичкам. общее">
+                <h3 class="cmd-name">gameinstructor_enable</h3>
+                <p>Подсказки для новых игроков. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>gameinstructor_enable 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_autohelp" data-cat="general" data-search="cl_autohelp автоматические подсказки. показывает или скрывает автоматические подсказки во время игры. общее">
+                <h3 class="cmd-name">cl_autohelp</h3>
+                <p>Автоматические подсказки.</p>
+                <div class="field-row">
+                <code>cl_autohelp 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_use_opens_buy_menu" data-cat="general" data-search="cl_use_opens_buy_menu клавиша «использовать» открывает меню закупки. при 1 нажатие клавиши «использовать» (e) в зоне закупки открывает меню закупки. многие выключают это, чтобы не открывать меню случайно. общее">
+                <h3 class="cmd-name">cl_use_opens_buy_menu</h3>
+                <p>Клавиша «Использовать» открывает меню закупки. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_use_opens_buy_menu 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_join_advertise" data-cat="general" data-search="cl_join_advertise разрешает друзьям присоединяться к вашим играм. определяет, могут ли друзья из steam присоединиться к вашей игре без приглашения: 0 — никогда, 1 — на официальных серверах, 2 — на всех серверах. общее">
+                <h3 class="cmd-name">cl_join_advertise</h3>
+                <p>Разрешает друзьям присоединяться к вашим играм. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_join_advertise 2</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_dm_buyrandomweapons" data-cat="general" data-search="cl_dm_buyrandomweapons случайное оружие в дезматче. при 1 вы получаете случайное оружие при каждом возрождении в дезматче. поставьте 0, чтобы всегда выбирать оружие самому. общее">
+                <h3 class="cmd-name">cl_dm_buyrandomweapons</h3>
+                <p>Случайное оружие в дезматче. <span class="cmd-default">По умолчанию: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_dm_buyrandomweapons 0</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_sniper_delay_unscope" data-cat="general" data-search="cl_sniper_delay_unscope задерживает выход из прицела после выстрела awp. при 1 снайперская винтовка остаётся в прицеле чуть дольше после выстрела, а не выходит из него сразу. общее">
+                <h3 class="cmd-name">cl_sniper_delay_unscope</h3>
+                <p>Задерживает выход из прицела после выстрела AWP. <span class="cmd-default">По умолчанию: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_sniper_delay_unscope 1</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            <article class="cmd" id="+lookatweapon" data-cat="general" data-search="+lookatweapon осмотр оружия. проигрывает анимацию осмотра оружия в руках. по умолчанию назначена на клавишу f. общее">
+                <h3 class="cmd-name">+lookatweapon</h3>
+                <p>Осмотр оружия.</p>
+                <div class="field-row">
+                <code>bind f +lookatweapon</code>
+                <button type="button" class="mini" data-copy>Копировать</button>
+            </div>
+            </article>
+            </div>
+        </section>
+
+        <h2>FAQ о консоли CS2</h2>
+        <h3>Как открыть консоль в CS2?</h3>
+        <p>Откройте Настройки › Игра и включите консоль разработчика («Да»). Затем в игре нажмите клавишу ~ (Ё, под Esc). Если она не работает, назначьте toggleconsole на другую клавишу через bind.</p>
+        <h3>Работают ли консольные команды в соревновательном матчмейкинге?</h3>
+        <p>Большинство команд, которые меняют ваши собственные настройки (прицел, HUD, радар, мышь, звук), работают везде. Команды с пометкой «Нужен sv_cheats» и серверные команды, начинающиеся с mp_ или bot_, работают только на вашем собственном сервере, например в приватном матче с ботами.</p>
+        <h3>Как сохранить консольные команды?</h3>
+        <p>Поместите их в файл autoexec.cfg в папке cfg игры (game/csgo/cfg) и добавьте +exec autoexec в параметры запуска или введите exec autoexec в консоли.</p>
+        <h3>Почему команда из CS:GO не работает в CS2?</h3>
+        <p>Многие команды CS:GO удалены или переименованы в CS2, например net_graph. Для команд с пометкой «Удалена в CS2» на этой странице указано, чем их заменить.</p>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Нижнее меню">
+            <a href="../generator">Генератор прицела</a>
+            <a href="../tools/bind-generator">Генератор биндов</a>
+            <a href="../skins/">Скины про-игроков CS2</a>
+            <a href="../guides/">Гайды по CS2</a>
+            <a href="../commands/">Консольные команды</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Правовая информация</a>
+            <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
+        </nav>
+        <p class="footer-contact">Бизнес и сотрудничество: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
+        <p>© 2026 ClutchCrosshair. Все права защищены.</p>
+        <p>Counter-Strike 2 и скины CS2 — товарные знаки Valve Corporation. Логотипы команд — товарные знаки их владельцев. ClutchCrosshair не связан с Valve и командами.</p>
+    </footer>
+    <script type="module">
+        import { copyText } from "../../crosshair.min.js?v=fe84164f66";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row").querySelector("code").textContent, button);
+            }
+        });
+
+        // Recherche instantanée + filtres par catégorie (#crosshair dans l'adresse = filtre direct)
+        const input = document.getElementById("cmd-search");
+        const filters = Array.from(document.querySelectorAll(".cmd-filter"));
+        const items = Array.from(document.querySelectorAll(".cmd"));
+        const sections = Array.from(document.querySelectorAll(".cmd-section"));
+        const empty = document.getElementById("cmd-empty");
+        let category = "";
+
+        function apply() {
+            const words = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+            items.forEach(function (item) {
+                const show = (!category || item.dataset.cat === category) && words.every(function (w) { return item.dataset.search.includes(w); });
+                item.classList.toggle("hidden", !show);
+            });
+            let any = false;
+            sections.forEach(function (section) {
+                const visible = section.querySelector(".cmd:not(.hidden)") !== null;
+                section.classList.toggle("hidden", !visible);
+                any = any || visible;
+            });
+            empty.classList.toggle("hidden", any);
+        }
+
+        function setCategory(value) {
+            category = value;
+            filters.forEach(function (f) { f.setAttribute("aria-pressed", f.dataset.cat === value ? "true" : "false"); });
+            apply();
+        }
+
+        let frame = 0;
+        input.addEventListener("input", function () {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(apply);
+        });
+        filters.forEach(function (f) {
+            f.addEventListener("click", function () { setCategory(f.dataset.cat); });
+        });
+        function categoryFromAddress() {
+            const fromAddress = decodeURIComponent(location.hash.slice(1));
+            if (fromAddress && filters.some(function (f) { return f.dataset.cat === fromAddress; })) {
+                setCategory(fromAddress);
+            }
+        }
+        categoryFromAddress();
+        window.addEventListener("hashchange", categoryFromAddress);
+    </script>
+</body>
+</html>

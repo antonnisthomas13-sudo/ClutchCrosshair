@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/fr/commands/net_graph">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/net_graph">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/net_graph">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/net_graph">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/net_graph">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/net_graph">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/net_graph">
     <script>(function () {
-        var A = {"en":"../../commands/net_graph.html","fr":"../../fr/commands/net_graph.html"};
+        var A = {"en":"../../commands/net_graph","fr":"../../fr/commands/net_graph","es":"../../es/commands/net_graph","ru":"../../ru/commands/net_graph","tr":"../../tr/commands/net_graph"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -36,6 +39,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="Commande console CS2 net_graph">
     <meta property="og:description" content="net_graph dans CS2 : Supprimée dans CS2 : l&#39;ancien graphique réseau de CS:GO. net_graph affichait tes FPS, ton ping, ta perte et ton choke dans…">
     <meta property="og:url" content="https://clutchcrosshair.com/fr/commands/net_graph">
@@ -49,9 +55,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/fr/commands/net_graph#article","headline":"Commande console CS2 net_graph","description":"net_graph dans CS2 : Supprimée dans CS2 : l'ancien graphique réseau de CS:GO. net_graph affichait tes FPS, ton ping, ta perte et ton choke dans…","url":"https://clutchcrosshair.com/fr/commands/net_graph","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/commands/net_graph#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Commandes console CS2","item":"https://clutchcrosshair.com/fr/commands/"},{"@type":"ListItem","position":3,"name":"net_graph","item":"https://clutchcrosshair.com/fr/commands/net_graph"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/commands/net_graph#faq","mainEntity":[{"@type":"Question","name":"À quoi sert net_graph dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Supprimée dans CS2 : l'ancien graphique réseau de CS:GO. net_graph affichait tes FPS, ton ping, ta perte et ton choke dans CS:GO. Il n'existe pas dans CS2. Pour voir les mêmes infos, utilise cl_hud_telemetry_frametime_show 2 et cl_hud_telemetry_ping_show 2 (les options de télémétrie dans les paramètres du jeu), ou cl_showfps 1 pour un simple compteur de FPS."}},{"@type":"Question","name":"Est-ce que net_graph marche dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Non. net_graph était une commande de CS:GO et n'existe pas dans CS2. Utilise plutôt cl_hud_telemetry_frametime_show."}}]}]}</script>
-    <script src="../../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -78,9 +84,10 @@
         <select id="lang" class="lang" aria-label="Langue">
                     <option value="en">EN · English</option>
                     <option value="fr" selected>FR</option>
-                    <option value="ru" disabled>RU · Русский (bientôt)</option>
-                    <option value="es" disabled>ES · Español (bientôt)</option>
-                    <option value="tr" disabled>TR · Türkçe (bientôt)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -92,8 +99,8 @@
         
 
         <h2>Que faire à la place dans CS2</h2>
-        <p><code>net_graph</code> affichait tes FPS, ton ping, ta perte et ton choke dans CS:GO. Il n&#39;existe pas dans CS2. Pour voir les mêmes infos, utilise <a href="cl_hud_telemetry_frametime_show.html"><code>cl_hud_telemetry_frametime_show</code></a> 2 et <a href="cl_hud_telemetry_ping_show.html"><code>cl_hud_telemetry_ping_show</code></a> 2 (les options de télémétrie dans les paramètres du jeu), ou <a href="cl_showfps.html"><code>cl_showfps</code></a> 1 pour un simple compteur de FPS.</p>
-        <p>Utilise plutôt <a href="cl_hud_telemetry_frametime_show.html"><code>cl_hud_telemetry_frametime_show</code></a> : affiche les FPS et le temps d&#39;image à l&#39;écran (télémétrie).</p>
+        <p><code>net_graph</code> affichait tes FPS, ton ping, ta perte et ton choke dans CS:GO. Il n&#39;existe pas dans CS2. Pour voir les mêmes infos, utilise <a href="cl_hud_telemetry_frametime_show"><code>cl_hud_telemetry_frametime_show</code></a> 2 et <a href="cl_hud_telemetry_ping_show"><code>cl_hud_telemetry_ping_show</code></a> 2 (les options de télémétrie dans les paramètres du jeu), ou <a href="cl_showfps"><code>cl_showfps</code></a> 1 pour un simple compteur de FPS.</p>
+        <p>Utilise plutôt <a href="cl_hud_telemetry_frametime_show"><code>cl_hud_telemetry_frametime_show</code></a> : affiche les FPS et le temps d&#39;image à l&#39;écran (télémétrie).</p>
         <div class="field-row">
                 <code>cl_hud_telemetry_frametime_show 2</code>
                 <button type="button" class="mini" data-copy>Copier</button>
@@ -103,7 +110,7 @@
         
 
         <h2>Commandes liées</h2>
-        <ul class="related"><li><a href="cl_hud_telemetry_frametime_show.html">cl_hud_telemetry_frametime_show</a></li><li><a href="cl_hud_telemetry_ping_show.html">cl_hud_telemetry_ping_show</a></li><li><a href="cl_showfps.html">cl_showfps</a></li><li><a href="#cq_netgraph">cq_netgraph</a></li></ul>
+        <ul class="related"><li><a href="cl_hud_telemetry_frametime_show">cl_hud_telemetry_frametime_show</a></li><li><a href="cl_hud_telemetry_ping_show">cl_hud_telemetry_ping_show</a></li><li><a href="cl_showfps">cl_showfps</a></li><li><a href="#cq_netgraph">cq_netgraph</a></li></ul>
 
         
 
@@ -117,13 +124,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Pied de page">
-            <a href="../generator.html">Générateur de crosshair</a>
-            <a href="../tools/bind-generator.html">Générateur de binds</a>
+            <a href="../generator">Générateur de crosshair</a>
+            <a href="../tools/bind-generator">Générateur de binds</a>
             <a href="../skins/">Skins des pros CS2</a>
             <a href="../guides/">Guides CS2</a>
             <a href="../commands/">Commandes console</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Mentions légales</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Mentions légales</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partenariats : <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/fr/commands/mp_buy_anywhere">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/mp_buy_anywhere">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/mp_buy_anywhere">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/mp_buy_anywhere">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/mp_buy_anywhere">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/mp_buy_anywhere">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/mp_buy_anywhere">
     <script>(function () {
-        var A = {"en":"../../commands/mp_buy_anywhere.html","fr":"../../fr/commands/mp_buy_anywhere.html"};
+        var A = {"en":"../../commands/mp_buy_anywhere","fr":"../../fr/commands/mp_buy_anywhere","es":"../../es/commands/mp_buy_anywhere","ru":"../../ru/commands/mp_buy_anywhere","tr":"../../tr/commands/mp_buy_anywhere"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -36,6 +39,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="Commande console CS2 mp_buy_anywhere">
     <meta property="og:description" content="mp_buy_anywhere dans CS2 : Permet d&#39;acheter partout sur la map. Autorise les achats hors de la zone d&#39;achat : 1 pour les deux équipes, 2 pour les…">
     <meta property="og:url" content="https://clutchcrosshair.com/fr/commands/mp_buy_anywhere">
@@ -49,9 +55,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/fr/commands/mp_buy_anywhere#article","headline":"Commande console CS2 mp_buy_anywhere","description":"mp_buy_anywhere dans CS2 : Permet d'acheter partout sur la map. Autorise les achats hors de la zone d'achat : 1 pour les deux équipes, 2 pour les…","url":"https://clutchcrosshair.com/fr/commands/mp_buy_anywhere","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/commands/mp_buy_anywhere#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Commandes console CS2","item":"https://clutchcrosshair.com/fr/commands/"},{"@type":"ListItem","position":3,"name":"mp_buy_anywhere","item":"https://clutchcrosshair.com/fr/commands/mp_buy_anywhere"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/commands/mp_buy_anywhere#faq","mainEntity":[{"@type":"Question","name":"À quoi sert mp_buy_anywhere dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Permet d'acheter partout sur la map. Autorise les achats hors de la zone d'achat : 1 pour les deux équipes, 2 pour les terroristes seulement, 3 pour les antiterroristes seulement. Parfait pour l'entraînement aux grenades."}},{"@type":"Question","name":"Quelle est la valeur par défaut de mp_buy_anywhere ?","acceptedAnswer":{"@type":"Answer","text":"La valeur par défaut de mp_buy_anywhere dans CS2 est 0."}},{"@type":"Question","name":"Est-ce que mp_buy_anywhere nécessite sv_cheats ?","acceptedAnswer":{"@type":"Answer","text":"Non. mp_buy_anywhere marche sans sv_cheats, y compris en matchmaking officiel."}}]}]}</script>
-    <script src="../../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -78,9 +84,10 @@
         <select id="lang" class="lang" aria-label="Langue">
                     <option value="en">EN · English</option>
                     <option value="fr" selected>FR</option>
-                    <option value="ru" disabled>RU · Русский (bientôt)</option>
-                    <option value="es" disabled>ES · Español (bientôt)</option>
-                    <option value="tr" disabled>TR · Türkçe (bientôt)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -122,7 +129,7 @@
         <ul class="related"><li><a href="#mp_buytime">mp_buytime</a></li><li><a href="#mp_maxmoney">mp_maxmoney</a></li><li><a href="#mp_startmoney">mp_startmoney</a></li></ul>
 
         <h2>Pour aller plus loin</h2>
-        <ul class="related"><li><a href="../guides/cs2-aim-training.html">Comment améliorer sa visée sur CS2 : routine et maps d&#39;aim</a></li></ul>
+        <ul class="related"><li><a href="../guides/cs2-aim-training">Comment améliorer sa visée sur CS2 : routine et maps d&#39;aim</a></li></ul>
 
         <h2>FAQ : mp_buy_anywhere</h2>
         <h3>À quoi sert mp_buy_anywhere dans CS2 ?</h3>
@@ -136,13 +143,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Pied de page">
-            <a href="../generator.html">Générateur de crosshair</a>
-            <a href="../tools/bind-generator.html">Générateur de binds</a>
+            <a href="../generator">Générateur de crosshair</a>
+            <a href="../tools/bind-generator">Générateur de binds</a>
             <a href="../skins/">Skins des pros CS2</a>
             <a href="../guides/">Guides CS2</a>
             <a href="../commands/">Commandes console</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Mentions légales</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Mentions légales</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partenariats : <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

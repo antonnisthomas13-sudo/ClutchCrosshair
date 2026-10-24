@@ -126,6 +126,7 @@
     "player": {
         "title": "{name} CS2 Crosshair Code (2026) | ClutchCrosshair",
         "ogTitle": "{name} CS2 Crosshair Code",
+        "ogImageAlt": "{name} CS2 crosshair: preview and share code",
         "descriptionPro": "Copy {name}'s CS2 crosshair code ({team}) in one click: real-size preview, console commands and settings. From a match on {date}.",
         "descriptionCreator": "Copy {name}'s CS2 crosshair code in one click: real-size preview, console commands and full settings. Updated {date}.",
         "webPageName": "{name} CS2 Crosshair Code",
@@ -695,7 +696,7 @@
             ],
             [
                 "Intellectual property",
-                "Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>\n        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License."
+                "Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>\n        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono, Roboto Condensed) are used under the SIL Open Font License and the Apache License 2.0."
             ],
             [
                 "Privacy",
@@ -707,8 +708,8 @@
                 "cookies"
             ],
             [
-                "Français",
-                "Les mentions légales sont aussi disponibles en français : <a href=\"fr/legal.html\">version française</a>."
+                "Other languages",
+                "{languages}"
             ]
         ]
     },

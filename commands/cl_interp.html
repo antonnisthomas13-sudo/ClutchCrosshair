@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/commands/cl_interp">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/cl_interp">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/cl_interp">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/cl_interp">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/cl_interp">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_interp">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_interp">
     <script>(function () {
-        var A = {"en":"../commands/cl_interp.html","fr":"../fr/commands/cl_interp.html"};
+        var A = {"en":"../commands/cl_interp","fr":"../fr/commands/cl_interp","es":"../es/commands/cl_interp","ru":"../ru/commands/cl_interp","tr":"../tr/commands/cl_interp"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="cl_interp CS2 console command">
     <meta property="og:description" content="cl_interp in CS2: Shows the interpolation used by the game. In CS2, cl_interp mostly shows the interpolation the game uses, together with cl_interp_ratio…">
     <meta property="og:url" content="https://clutchcrosshair.com/commands/cl_interp">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/cl_interp#article","headline":"cl_interp CS2 console command","description":"cl_interp in CS2: Shows the interpolation used by the game. In CS2, cl_interp mostly shows the interpolation the game uses, together with cl_interp_ratio…","url":"https://clutchcrosshair.com/commands/cl_interp","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/cl_interp#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"cl_interp","item":"https://clutchcrosshair.com/commands/cl_interp"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/cl_interp#faq","mainEntity":[{"@type":"Question","name":"What does cl_interp do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Shows the interpolation used by the game. In CS2, cl_interp mostly shows the interpolation the game uses, together with cl_interp_ratio and the server update rate (for example cl_interp = 0 with cl_updaterate=64). CS2 manages interpolation for you with its sub-tick system, so there is no need to tweak it like in CS:GO."}},{"@type":"Question","name":"Does cl_interp need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. cl_interp works without sv_cheats, including in official matchmaking."}}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -87,7 +94,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Home</a> › <a href="./">Commands</a> › <span>cl_interp</span></nav>
         <h1 class="cmd-title">cl_interp</h1>
         <p class="cmd-meta"><a href="./#network">Network</a></p>
-        <p class="cmd-lead">Shows the interpolation used by the game. In CS2, <code>cl_interp</code> mostly shows the interpolation the game uses, together with <a href="cl_interp_ratio.html"><code>cl_interp_ratio</code></a> and the server update rate (for example <code>cl_interp</code> = 0 with <a href="cl_updaterate.html"><code>cl_updaterate</code></a>=64). CS2 manages interpolation for you with its sub-tick system, so there is no need to tweak it like in CS:GO.</p>
+        <p class="cmd-lead">Shows the interpolation used by the game. In CS2, <code>cl_interp</code> mostly shows the interpolation the game uses, together with <a href="cl_interp_ratio"><code>cl_interp_ratio</code></a> and the server update rate (for example <code>cl_interp</code> = 0 with <a href="cl_updaterate"><code>cl_updaterate</code></a>=64). CS2 manages interpolation for you with its sub-tick system, so there is no need to tweak it like in CS:GO.</p>
         <div class="field-row">
                 <code>cl_interp</code>
                 <button type="button" class="mini" data-copy>Copy</button>
@@ -115,7 +122,7 @@
         
 
         <h2>Related commands</h2>
-        <ul class="related"><li><a href="cl_interp_ratio.html">cl_interp_ratio</a></li><li><a href="rate.html">rate</a></li><li><a href="cl_updaterate.html">cl_updaterate</a></li></ul>
+        <ul class="related"><li><a href="cl_interp_ratio">cl_interp_ratio</a></li><li><a href="rate">rate</a></li><li><a href="cl_updaterate">cl_updaterate</a></li></ul>
 
         
 
@@ -129,13 +136,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

@@ -1,0 +1,55 @@
+{
+ "about": "Traduction turque de binds.json : même structure et mêmes commandes, seuls les libellés affichés sont traduits. Si binds.json change (nouvelle touche, nouvel achat...), mettre ce fichier à jour aussi.",
+ "updated": "24/10/2026",
+ "keys": [
+  ["Sayısal tuş takımı", [["kp_end", "Num 1"], ["kp_downarrow", "Num 2"], ["kp_pgdn", "Num 3"], ["kp_leftarrow", "Num 4"], ["kp_5", "Num 5"], ["kp_rightarrow", "Num 6"], ["kp_home", "Num 7"], ["kp_uparrow", "Num 8"], ["kp_pgup", "Num 9"], ["kp_ins", "Num 0"], ["kp_del", "Num ."], ["kp_slash", "Num /"], ["kp_multiply", "Num *"], ["kp_minus", "Num -"], ["kp_plus", "Num +"], ["kp_enter", "Num Enter"]]],
+  ["İşlev tuşları", [["f1", "F1"], ["f2", "F2"], ["f3", "F3"], ["f4", "F4"], ["f5", "F5"], ["f6", "F6"], ["f7", "F7"], ["f8", "F8"], ["f9", "F9"], ["f10", "F10"], ["f11", "F11"], ["f12", "F12"]]],
+  ["Fare", [["mouse3", "Orta tık"], ["mouse4", "Fare 4 (yan)"], ["mouse5", "Fare 5 (yan)"], ["mwheelup", "Tekerlek yukarı"], ["mwheeldown", "Tekerlek aşağı"]]],
+  ["Harfler", [["c", "C"], ["f", "F"], ["g", "G"], ["h", "H"], ["j", "J"], ["k", "K"], ["l", "L"], ["n", "N"], ["t", "T"], ["v", "V"], ["x", "X"], ["z", "Z"]]],
+  ["Rakamlar", [["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["0", "0"]]],
+  ["Diğer", [["space", "Boşluk"], ["alt", "Alt"], ["capslock", "Caps Lock"], ["ins", "Insert"], ["del", "Delete"], ["home", "Home"], ["end", "End"], ["pgup", "Page Up"], ["pgdn", "Page Down"], ["uparrow", "Yukarı ok"], ["downarrow", "Aşağı ok"], ["leftarrow", "Sol ok"], ["rightarrow", "Sağ ok"]]]
+ ],
+ "buy": [
+  ["Tüfekler", [["ak47", "AK-47"], ["m4a1", "M4A4 / M4A1-S (envanter düzenine göre)"], ["galilar", "Galil AR"], ["famas", "FAMAS"], ["sg556", "SG 553"], ["aug", "AUG"]]],
+  ["Keskin nişancı", [["awp", "AWP"], ["ssg08", "SSG 08 (Scout)"], ["g3sg1", "G3SG1"], ["scar20", "SCAR-20"]]],
+  ["Tabancalar", [["deagle", "Desert Eagle / R8"], ["p250", "P250"], ["tec9", "Tec-9 / CZ75 (T)"], ["fiveseven", "Five-SeveN / CZ75 (CT)"], ["elite", "Dual Berettas"], ["cz75a", "CZ75-Auto"]]],
+  ["Hafif makineliler", [["mac10", "MAC-10"], ["mp9", "MP9"], ["mp7", "MP7 / MP5-SD"], ["ump45", "UMP-45"], ["p90", "P90"], ["bizon", "PP-Bizon"]]],
+  ["Ağır silahlar", [["nova", "Nova"], ["xm1014", "XM1014"], ["mag7", "MAG-7"], ["sawedoff", "Sawed-Off"], ["m249", "M249"], ["negev", "Negev"]]],
+  ["Teçhizat", [["vesthelm", "Kevlar + kask"], ["vest", "Kevlar"], ["defuser", "İmha kiti"], ["taser", "Zeus x27"]]],
+  ["Bombalar", [["smokegrenade", "Sis bombası (smoke)"], ["flashbang", "Flashbang"], ["hegrenade", "El bombası (HE)"], ["molotov", "Molotof / Yangın bombası"], ["decoy", "Tuzak bomba (decoy)"]]]
+ ],
+ "toggles": [
+  ["radar", "Radar yakınlaştırması (uzak / normal)", "toggle cl_radar_scale 0.3 0.7"],
+  ["crosshair", "Crosshair açık / kapalı", "toggle crosshair 0 1"],
+  ["hud", "Temiz ekran (yalnızca crosshair ve kill feed)", "toggle cl_draw_only_deathnotices 1 0"],
+  ["voice", "Sesli sohbeti kapat / aç", "toggle snd_voipvolume 0 1"],
+  ["fps", "FPS sayacı açık / kapalı", "toggle cl_showfps 1 0"]
+ ],
+ "volume": [
+  ["up", "Sesi aç", "incrementvar volume 0 1 0.05"],
+  ["down", "Sesi kıs", "incrementvar volume 0 1 -0.05"]
+ ],
+ "grenades": [
+  ["slot6", "El bombası (HE)"],
+  ["slot7", "Flashbang"],
+  ["slot8", "Sis bombası (smoke)"],
+  ["slot9", "Tuzak bomba (decoy)"],
+  ["slot10", "Molotof / Yangın bombası"]
+ ],
+ "other": [
+  ["lastinv", "Son silahına hızlı geçiş"],
+  ["player_ping", "Nişan aldığın yere ping at (takımını uyar)"],
+  ["+spray_menu", "Grafiti çarkını aç"],
+  ["sv_rethrow_last_grenade", "Son bombanı tekrar at (antrenman sunucusu, sv_cheats 1)"],
+  ["noclip", "Duvarların içinden uç (antrenman sunucusu, sv_cheats 1)"]
+ ],
+ "presets": [
+  ["AK-47 veya M4 + zırh al", "kp_end", "buy ak47; buy m4a1; buy vesthelm"],
+  ["AWP + zırh al", "kp_downarrow", "buy awp; buy vesthelm"],
+  ["Tüm bombaları al", "kp_pgdn", "buy smokegrenade; buy flashbang; buy hegrenade; buy molotov"],
+  ["Zırh + imha kiti al", "kp_leftarrow", "buy vesthelm; buy defuser"],
+  ["Radar yakınlaştırmasını değiştir", "kp_plus", "toggle cl_radar_scale 0.3 0.7"],
+  ["Sesi aç / kıs", "kp_uparrow", "incrementvar volume 0 1 0.05"],
+  ["Son bombayı tekrar at (antrenman)", "x", "sv_rethrow_last_grenade"]
+ ]
+}

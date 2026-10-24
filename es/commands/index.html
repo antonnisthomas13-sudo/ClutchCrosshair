@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="es" style="--copied: 'Copiado'">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de comandos de consola de CS2 (2026) | ClutchCrosshair</title>
+    <meta name="description" content="Todos los comandos de consola útiles de CS2 explicados: crosshair, HUD, radar, FPS, red, práctica y bots, con valores por defecto, ejemplos y botón Copiar.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clutchcrosshair.com/es/commands/">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/">
+    <script>(function () {
+        var A = {"en":"../../commands/","fr":"../../fr/commands/","es":"../../es/commands/","ru":"../../ru/commands/","tr":"../../tr/commands/"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
+    <script type="application/json" id="i18n">{"copied":"¡Copiado!","copiedAnnounce":"Copiado al portapapeles","copiedBar":"Copiado","noPreview":"Sin vista previa","lightMode":"Modo claro","darkMode":"Modo oscuro","lastUpdate":"Última actualización: ","sameAs":"Mismo crosshair que ","and":" y ","faceitAria":"Perfil de FACEIT de {name} (se abre en una pestaña nueva)","previewAria":"Vista previa del crosshair de CS2 de {name}","terroristsWin":"Ganan los terroristas","defuse":"Tendrías que haberla desactivado.","rushB":"¡Rush B, no pares!","genOldCode":"Los antiguos códigos CSGO- ya no funcionan en CS2. Pega un código que empiece por CS.","genImported":"Código importado. Ajústalo a tu gusto.","genInvalid":"No es un código de crosshair de CS2 válido.","genFromLink":"Crosshair cargado desde el enlace. Ajústalo a tu gusto.","consentAria":"Consentimiento de cookies","consentText":"Nos gustaría medir nuestra audiencia con Google Analytics. Solo instala cookies si aceptas. Rechazar no cambia nada en el sitio.","consentMore":"Más información","consentRefuse":"Rechazar","consentAccept":"Aceptar"}</script>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta property="og:title" content="Comandos de consola de CS2">
+    <meta property="og:description" content="Todos los comandos de consola útiles de CS2 explicados: crosshair, HUD, radar, FPS, red, práctica y bots, con valores por defecto, ejemplos y botón Copiar.">
+    <meta property="og:url" content="https://clutchcrosshair.com/es/commands/">
+    <meta property="og:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: encuentra tu crosshair perfecto para CS2">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comandos de consola de CS2">
+    <meta name="twitter:description" content="Todos los comandos de consola útiles de CS2 explicados: crosshair, HUD, radar, FPS, red, práctica y bots, con valores por defecto, ejemplos y botón Copiar.">
+    <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clutchcrosshair.com/es/commands/","url":"https://clutchcrosshair.com/es/commands/","name":"Comandos de consola de CS2","description":"Todos los comandos de consola útiles de CS2 explicados: crosshair, HUD, radar, FPS, red, práctica y bots, con valores por defecto, ejemplos y botón Copiar.","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/es/commands/#breadcrumb"},"dateModified":"2026-10-19","mainEntity":{"@type":"ItemList","numberOfItems":63,"itemListElement":[{"@type":"ListItem","position":1,"name":"crosshair","url":"https://clutchcrosshair.com/es/commands/crosshair"},{"@type":"ListItem","position":2,"name":"cl_crosshair_length","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_length"},{"@type":"ListItem","position":3,"name":"cl_crosshair_thickness","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness"},{"@type":"ListItem","position":4,"name":"cl_crosshair_gap","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_gap"},{"@type":"ListItem","position":5,"name":"cl_crosshair_screen_height","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_screen_height"},{"@type":"ListItem","position":6,"name":"cl_crosshairstyle","url":"https://clutchcrosshair.com/es/commands/cl_crosshairstyle"},{"@type":"ListItem","position":7,"name":"cl_crosshaircolor_r","url":"https://clutchcrosshair.com/es/commands/cl_crosshaircolor_r"},{"@type":"ListItem","position":8,"name":"cl_crosshaircolor_a","url":"https://clutchcrosshair.com/es/commands/cl_crosshaircolor_a"},{"@type":"ListItem","position":9,"name":"cl_crosshair_drawoutline","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_drawoutline"},{"@type":"ListItem","position":10,"name":"cl_crosshairdot","url":"https://clutchcrosshair.com/es/commands/cl_crosshairdot"},{"@type":"ListItem","position":11,"name":"cl_crosshair_t","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_t"},{"@type":"ListItem","position":12,"name":"cl_crosshair_recoil","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_recoil"},{"@type":"ListItem","position":13,"name":"cl_crosshair_sniper_width","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_sniper_width"},{"@type":"ListItem","position":14,"name":"cl_crosshairsize","url":"https://clutchcrosshair.com/es/commands/cl_crosshairsize"},{"@type":"ListItem","position":15,"name":"cl_crosshairthickness","url":"https://clutchcrosshair.com/es/commands/cl_crosshairthickness"},{"@type":"ListItem","position":16,"name":"cl_crosshairgap","url":"https://clutchcrosshair.com/es/commands/cl_crosshairgap"},{"@type":"ListItem","position":17,"name":"cl_crosshair_outlinethickness","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_outlinethickness"},{"@type":"ListItem","position":18,"name":"cl_crosshaircolor","url":"https://clutchcrosshair.com/es/commands/cl_crosshaircolor"},{"@type":"ListItem","position":19,"name":"cl_hud_color","url":"https://clutchcrosshair.com/es/commands/cl_hud_color"},{"@type":"ListItem","position":20,"name":"hud_scaling","url":"https://clutchcrosshair.com/es/commands/hud_scaling"},{"@type":"ListItem","position":21,"name":"cl_hud_radar_scale","url":"https://clutchcrosshair.com/es/commands/cl_hud_radar_scale"},{"@type":"ListItem","position":22,"name":"cl_radar_scale","url":"https://clutchcrosshair.com/es/commands/cl_radar_scale"},{"@type":"ListItem","position":23,"name":"cl_radar_always_centered","url":"https://clutchcrosshair.com/es/commands/cl_radar_always_centered"},{"@type":"ListItem","position":24,"name":"cl_showfps","url":"https://clutchcrosshair.com/es/commands/cl_showfps"},{"@type":"ListItem","position":25,"name":"cl_draw_only_deathnotices","url":"https://clutchcrosshair.com/es/commands/cl_draw_only_deathnotices"},{"@type":"ListItem","position":26,"name":"viewmodel_fov","url":"https://clutchcrosshair.com/es/commands/viewmodel_fov"},{"@type":"ListItem","position":27,"name":"viewmodel_offset_x","url":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x"},{"@type":"ListItem","position":28,"name":"fps_max","url":"https://clutchcrosshair.com/es/commands/fps_max"},{"@type":"ListItem","position":29,"name":"r_fullscreen_gamma","url":"https://clutchcrosshair.com/es/commands/r_fullscreen_gamma"},{"@type":"ListItem","position":30,"name":"rate","url":"https://clutchcrosshair.com/es/commands/rate"},{"@type":"ListItem","position":31,"name":"mm_dedicated_search_maxping","url":"https://clutchcrosshair.com/es/commands/mm_dedicated_search_maxping"},{"@type":"ListItem","position":32,"name":"net_graph","url":"https://clutchcrosshair.com/es/commands/net_graph"},{"@type":"ListItem","position":33,"name":"sensitivity","url":"https://clutchcrosshair.com/es/commands/sensitivity"},{"@type":"ListItem","position":34,"name":"zoom_sensitivity_ratio","url":"https://clutchcrosshair.com/es/commands/zoom_sensitivity_ratio"},{"@type":"ListItem","position":35,"name":"m_yaw","url":"https://clutchcrosshair.com/es/commands/m_yaw"},{"@type":"ListItem","position":36,"name":"m_rawinput","url":"https://clutchcrosshair.com/es/commands/m_rawinput"},{"@type":"ListItem","position":37,"name":"volume","url":"https://clutchcrosshair.com/es/commands/volume"},{"@type":"ListItem","position":38,"name":"snd_voipvolume","url":"https://clutchcrosshair.com/es/commands/snd_voipvolume"},{"@type":"ListItem","position":39,"name":"sv_cheats","url":"https://clutchcrosshair.com/es/commands/sv_cheats"},{"@type":"ListItem","position":40,"name":"sv_infinite_ammo","url":"https://clutchcrosshair.com/es/commands/sv_infinite_ammo"},{"@type":"ListItem","position":41,"name":"sv_grenade_trajectory_prac_pipreview","url":"https://clutchcrosshair.com/es/commands/sv_grenade_trajectory_prac_pipreview"},{"@type":"ListItem","position":42,"name":"sv_grenade_trajectory_prac_trailtime","url":"https://clutchcrosshair.com/es/commands/sv_grenade_trajectory_prac_trailtime"},{"@type":"ListItem","position":43,"name":"sv_rethrow_last_grenade","url":"https://clutchcrosshair.com/es/commands/sv_rethrow_last_grenade"},{"@type":"ListItem","position":44,"name":"sv_showimpacts","url":"https://clutchcrosshair.com/es/commands/sv_showimpacts"},{"@type":"ListItem","position":45,"name":"mp_buy_anywhere","url":"https://clutchcrosshair.com/es/commands/mp_buy_anywhere"},{"@type":"ListItem","position":46,"name":"noclip","url":"https://clutchcrosshair.com/es/commands/noclip"},{"@type":"ListItem","position":47,"name":"give","url":"https://clutchcrosshair.com/es/commands/give"},{"@type":"ListItem","position":48,"name":"bot_kick","url":"https://clutchcrosshair.com/es/commands/bot_kick"},{"@type":"ListItem","position":49,"name":"bind","url":"https://clutchcrosshair.com/es/commands/bind"},{"@type":"ListItem","position":50,"name":"alias","url":"https://clutchcrosshair.com/es/commands/alias"},{"@type":"ListItem","position":51,"name":"exec","url":"https://clutchcrosshair.com/es/commands/exec"},{"@type":"ListItem","position":52,"name":"find","url":"https://clutchcrosshair.com/es/commands/find"},{"@type":"ListItem","position":53,"name":"map","url":"https://clutchcrosshair.com/es/commands/map"},{"@type":"ListItem","position":54,"name":"playdemo","url":"https://clutchcrosshair.com/es/commands/playdemo"},{"@type":"ListItem","position":55,"name":"cl_interp","url":"https://clutchcrosshair.com/es/commands/cl_interp"},{"@type":"ListItem","position":56,"name":"cl_interp_ratio","url":"https://clutchcrosshair.com/es/commands/cl_interp_ratio"},{"@type":"ListItem","position":57,"name":"cl_updaterate","url":"https://clutchcrosshair.com/es/commands/cl_updaterate"},{"@type":"ListItem","position":58,"name":"cl_cmdrate","url":"https://clutchcrosshair.com/es/commands/cl_cmdrate"},{"@type":"ListItem","position":59,"name":"voice_scale","url":"https://clutchcrosshair.com/es/commands/voice_scale"},{"@type":"ListItem","position":60,"name":"mat_monitorgamma","url":"https://clutchcrosshair.com/es/commands/mat_monitorgamma"},{"@type":"ListItem","position":61,"name":"m_customaccel","url":"https://clutchcrosshair.com/es/commands/m_customaccel"},{"@type":"ListItem","position":62,"name":"cl_hud_telemetry_frametime_show","url":"https://clutchcrosshair.com/es/commands/cl_hud_telemetry_frametime_show"},{"@type":"ListItem","position":63,"name":"cl_hud_telemetry_ping_show","url":"https://clutchcrosshair.com/es/commands/cl_hud_telemetry_ping_show"}]}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/#faq","mainEntity":[{"@type":"Question","name":"¿Cómo abro la consola en CS2?","acceptedAnswer":{"@type":"Answer","text":"Ve a Ajustes › Juego y pon Activar consola de desarrollador en Sí. Luego pulsa la tecla ~ (debajo de Esc; en un teclado español es la tecla º) en el juego para abrirla. Si no funciona, asigna toggleconsole a otra tecla con un bind."}},{"@type":"Question","name":"¿Los comandos de consola funcionan en el matchmaking competitivo?","acceptedAnswer":{"@type":"Answer","text":"La mayoría de los comandos que cambian tus propios ajustes (crosshair, HUD, radar, ratón, audio) funcionan en todas partes. Los comandos marcados como Necesita sv_cheats, y los comandos de servidor que empiezan por mp_ o bot_, solo funcionan en un servidor que alojes tú, por ejemplo una partida privada con bots."}},{"@type":"Question","name":"¿Cómo guardo mis comandos de consola?","acceptedAnswer":{"@type":"Answer","text":"Ponlos en un archivo llamado autoexec.cfg en la carpeta cfg del juego (game/csgo/cfg) y añade +exec autoexec a tus opciones de lanzamiento, o escribe exec autoexec en la consola."}},{"@type":"Question","name":"¿Por qué un comando de CS:GO no funciona en CS2?","acceptedAnswer":{"@type":"Answer","text":"Muchos comandos de CS:GO se eliminaron o cambiaron de nombre en CS2, como net_graph. Los comandos marcados como Eliminado en CS2 en esta página te dicen qué usar en su lugar."}}]}]}</script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="Inicio de ClutchCrosshair">
+            <img class="logo-img logo-dark" src="../../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+            <a href="../">Crosshairs</a>
+            <a href="../skins/">Skins de pros</a>
+            <a href="../guides/">Guías</a>
+            <a href="../commands/" aria-current="page">Comandos</a>
+            <a href="../tools/">Herramientas</a>
+        </nav>
+        <select id="lang" class="lang" aria-label="Idioma">
+                    <option value="en">EN · English</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="es" selected>ES</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
+                </select>
+    </header>
+
+    <main class="player-page cmd-hub">
+        <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Inicio</a> › <span>Comandos</span></nav>
+        <h1>Comandos de consola de CS2</h1>
+        <p>159 comandos de consola útiles de CS2 explicados de forma sencilla: qué hace cada uno, sus valores, su valor por defecto y ejemplos listos para copiar. Los comandos de CS:GO que ya no funcionan aparecen como <strong>Eliminado en CS2</strong>. Actualizado el 19/10/2026.</p>
+
+        <div class="cmd-tools">
+            <div class="hero-search cmd-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+                <input type="search" id="cmd-search" placeholder="Busca un comando, p. ej. crosshair, fps, radar..." aria-label="Busca un comando de consola de CS2" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="cmd-filters" role="group" aria-label="Filtrar por categoría">
+                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">Todos <span>159</span></button>
+                <button type="button" class="cmd-filter" data-cat="crosshair" aria-pressed="false">Crosshair <span>30</span></button>
+                <button type="button" class="cmd-filter" data-cat="hud" aria-pressed="false">HUD y radar <span>20</span></button>
+                <button type="button" class="cmd-filter" data-cat="viewmodel" aria-pressed="false">Viewmodel (arma) <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="performance" aria-pressed="false">Gráficos y FPS <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="network" aria-pressed="false">Red <span>10</span></button>
+                <button type="button" class="cmd-filter" data-cat="mouse" aria-pressed="false">Ratón <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="audio" aria-pressed="false">Audio <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="practice" aria-pressed="false">Práctica y servidor <span>29</span></button>
+                <button type="button" class="cmd-filter" data-cat="bots" aria-pressed="false">Bots <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="general" aria-pressed="false">General <span>30</span></button>
+            </div>
+        </div>
+        <p class="cmd-empty hidden" id="cmd-empty">No se encontró ningún comando. Prueba otra palabra, o escribe <code>find</code> seguido de una palabra en la consola de CS2.</p>
+
+        <section class="cmd-section" id="crosshair" data-cat="crosshair" aria-labelledby="crosshair-title">
+            <h2 id="crosshair-title">Comandos de Crosshair</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="crosshair" data-cat="crosshair" data-search="crosshair muestra u oculta tu crosshair. activa (1) o desactiva (0) el crosshair. ocultarlo sirve sobre todo para capturas y vídeos limpios; en un partido de verdad siempre lo quieres visible. crosshair">
+                <h3 class="cmd-name"><a href="crosshair">crosshair</a></h3>
+                <p>Muestra u oculta tu crosshair. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>crosshair 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_length" data-cat="crosshair" data-search="cl_crosshair_length longitud de cada línea del crosshair, en píxeles. define lo larga que es cada una de las cuatro líneas del crosshair. desde la actualización de cs2 del 30 de septiembre de 2026, los tamaños del crosshair se cuentan en píxeles reales para la altura de pantalla definida en cl_crosshair_screen_height, así que un valor de 2 son 2 píxeles en esa pantalla. la mayoría de los pros de cs2 juega con una longitud corta, entre 1 y 4. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_length">cl_crosshair_length</a></h3>
+                <p>Longitud de cada línea del crosshair, en píxeles.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_thickness" data-cat="crosshair" data-search="cl_crosshair_thickness grosor de las líneas del crosshair, en píxeles. define el grosor de las líneas del crosshair, en píxeles para la altura de pantalla de cl_crosshair_screen_height. un grosor de 1 da un crosshair fino y preciso; 2 se ve mejor en mapas claros y es la opción más común entre los pros. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_thickness">cl_crosshair_thickness</a></h3>
+                <p>Grosor de las líneas del crosshair, en píxeles.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_gap" data-cat="crosshair" data-search="cl_crosshair_gap espacio entre el centro y las líneas del crosshair, en píxeles. define el espacio vacío en el centro del crosshair, en píxeles para la altura de pantalla de cl_crosshair_screen_height. una separación pequeña (de 0 a 2) mantiene las líneas cerca de la cabeza del objetivo; un valor negativo hace que las líneas se superpongan en el centro. en clutchcrosshair, la mayoría de los pros usa una separación de 1 o 2. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_gap">cl_crosshair_gap</a></h3>
+                <p>Espacio entre el centro y las líneas del crosshair, en píxeles.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_screen_height" data-cat="crosshair" data-search="cl_crosshair_screen_height altura de pantalla para la que están pensados los tamaños del crosshair. nuevo en la actualización de cs2 del 30 de septiembre de 2026. la longitud, el grosor y la separación del crosshair se cuentan ahora en píxeles para esta altura de pantalla. si juegas con otra resolución, cs2 escala el crosshair para que mantenga el mismo tamaño en relación con tu pantalla. se guarda en cada código de crosshair de cs2, por eso el crosshair de un pro también se ve bien en tu pantalla. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_screen_height">cl_crosshair_screen_height</a></h3>
+                <p>Altura de pantalla para la que están pensados los tamaños del crosshair.</p>
+                <div class="field-row">
+                <code>cl_crosshair_screen_height 1080</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairstyle" data-cat="crosshair" data-search="cl_crosshairstyle elige un crosshair estático o dinámico. define cómo reacciona el crosshair cuando te mueves y disparas. el estilo 4 (estático) nunca se mueve y lo usan casi todos los pros. el estilo 2 mantiene un centro fijo mientras las partes exteriores reaccionan al retroceso y al movimiento. el estilo 5 es el crosshair dinámico antiguo, al estilo de cs:go. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairstyle">cl_crosshairstyle</a></h3>
+                <p>Elige un crosshair estático o dinámico. <span class="cmd-default">Por defecto: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshairstyle 4</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_r" data-cat="crosshair" data-search="cl_crosshaircolor_r parte roja de un color de crosshair personalizado (0-255). junto con cl_crosshaircolor_g y cl_crosshaircolor_b, define el color exacto de tu crosshair con valores de rojo, verde y azul de 0 a 255. por ejemplo, 0 255 255 da cian y 0 255 0 da verde puro, dos de los colores más populares entre los pros de cs2. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_r">cl_crosshaircolor_r</a></h3>
+                <p>Parte roja de un color de crosshair personalizado (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_g" data-cat="crosshair" data-search="cl_crosshaircolor_g parte verde de un color de crosshair personalizado (0-255). el valor verde del color de tu crosshair, de 0 a 255. úsalo junto con cl_crosshaircolor_r y cl_crosshaircolor_b. crosshair">
+                <h3 class="cmd-name">cl_crosshaircolor_g</h3>
+                <p>Parte verde de un color de crosshair personalizado (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_g 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_b" data-cat="crosshair" data-search="cl_crosshaircolor_b parte azul de un color de crosshair personalizado (0-255). el valor azul del color de tu crosshair, de 0 a 255. úsalo junto con cl_crosshaircolor_r y cl_crosshaircolor_g. crosshair">
+                <h3 class="cmd-name">cl_crosshaircolor_b</h3>
+                <p>Parte azul de un color de crosshair personalizado (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_a" data-cat="crosshair" data-search="cl_crosshaircolor_a opacidad del crosshair (0-255). define lo opaco que es el crosshair, de 0 (invisible) a 255 (totalmente opaco). casi todos los pros dejan 255: un crosshair transparente es más difícil de encontrar en pleno duelo. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_a">cl_crosshaircolor_a</a></h3>
+                <p>Opacidad del crosshair (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_drawoutline" data-cat="crosshair" data-search="cl_crosshair_drawoutline añade un contorno alrededor del crosshair. dibuja un contorno de 1 píxel alrededor de las líneas del crosshair. hace que un crosshair fino o claro se vea bien sobre paredes claras (la arena de dust2 o mirage, por ejemplo). su color se define con los comandos cl_crosshairoutline_r, _g, _b y _a. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_drawoutline">cl_crosshair_drawoutline</a></h3>
+                <p>Añade un contorno alrededor del crosshair.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_r" data-cat="crosshair" data-search="cl_crosshairoutline_r parte roja del color del contorno (0-255). junto con cl_crosshairoutline_g, cl_crosshairoutline_b y cl_crosshairoutline_a, define el color y la opacidad del contorno del crosshair (cuando cl_crosshair_drawoutline vale 1). el negro (0 0 0) es la opción clásica. crosshair">
+                <h3 class="cmd-name">cl_crosshairoutline_r</h3>
+                <p>Parte roja del color del contorno (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_r 0; cl_crosshairoutline_g 0; cl_crosshairoutline_b 0; cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_a" data-cat="crosshair" data-search="cl_crosshairoutline_a opacidad del contorno del crosshair (0-255). define lo opaco que es el contorno del crosshair, de 0 a 255. solo se usa cuando cl_crosshair_drawoutline vale 1. crosshair">
+                <h3 class="cmd-name">cl_crosshairoutline_a</h3>
+                <p>Opacidad del contorno del crosshair (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairdot" data-cat="crosshair" data-search="cl_crosshairdot añade un punto en el centro del crosshair. dibuja un pequeño punto en el centro del crosshair. ayuda a algunos jugadores a apuntar con precisión, pero puede tapar una cabeza lejana. solo una minoría de los pros de cs2 lo usa. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairdot">cl_crosshairdot</a></h3>
+                <p>Añade un punto en el centro del crosshair.</p>
+                <div class="field-row">
+                <code>cl_crosshairdot 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_t" data-cat="crosshair" data-search="cl_crosshair_t crosshair en t (quita la línea de arriba). quita la línea superior del crosshair, que queda como una t al revés. a algunos jugadores les gusta porque nada tapa la zona encima de la cabeza del objetivo. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_t">cl_crosshair_t</a></h3>
+                <p>Crosshair en T (quita la línea de arriba).</p>
+                <div class="field-row">
+                <code>cl_crosshair_t 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_recoil" data-cat="crosshair" data-search="cl_crosshair_recoil hace que el crosshair siga el retroceso. si está activado, el crosshair se mueve con el retroceso del arma mientras haces spray y muestra adónde van tus balas. la mayoría de los pros lo desactiva y aprende los patrones de spray, pero puede ayudar a los principiantes a entender el retroceso. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_recoil">cl_crosshair_recoil</a></h3>
+                <p>Hace que el crosshair siga el retroceso.</p>
+                <div class="field-row">
+                <code>cl_crosshair_recoil 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitdist" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitdist distancia de separación del crosshair dinámico (estilo 2). solo se usa con cl_crosshairstyle 2: define cuánto se alejan las partes exteriores del crosshair cuando se separan del centro fijo mientras te mueves o disparas. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitdist</h3>
+                <p>Distancia de separación del crosshair dinámico (estilo 2).</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitdist 7</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_innermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_innermod opacidad de la parte interior del crosshair dinámico. con cl_crosshairstyle 2, define la opacidad de la parte interior fija del crosshair, de 0 a 1. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_innermod</h3>
+                <p>Opacidad de la parte interior del crosshair dinámico.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_innermod 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_outermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_outermod opacidad de la parte exterior del crosshair dinámico. con cl_crosshairstyle 2, define la opacidad de las partes exteriores que se alejan mientras te mueves o disparas, de 0.3 a 1. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_outermod</h3>
+                <p>Opacidad de la parte exterior del crosshair dinámico.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_outermod 0.5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_maxdist_splitratio" data-cat="crosshair" data-search="cl_crosshair_dynamic_maxdist_splitratio proporción de tamaño entre las partes dinámicas interior y exterior. con cl_crosshairstyle 2, define cómo se reparte la longitud del crosshair entre la parte interior fija y la parte exterior móvil, de 0 a 1. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_maxdist_splitratio</h3>
+                <p>Proporción de tamaño entre las partes dinámicas interior y exterior.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_maxdist_splitratio 0.35</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_dot_scale" data-cat="crosshair" data-search="cl_ironsight_dot_scale tamaño del punto de la mira del aug y el sg 553. define el tamaño del punto que ves al apuntar con la mira del aug o del sg 553. se guarda en los códigos de crosshair de cs2 desde la actualización del 30 de septiembre de 2026. crosshair">
+                <h3 class="cmd-name">cl_ironsight_dot_scale</h3>
+                <p>Tamaño del punto de la mira del AUG y el SG 553.</p>
+                <div class="field-row">
+                <code>cl_ironsight_dot_scale 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_usecrosshaircolor" data-cat="crosshair" data-search="cl_ironsight_usecrosshaircolor usa el color de tu crosshair para el punto de la mira del aug / sg 553. si está activado, el punto de la mira del aug y del sg 553 toma el color de tu crosshair en lugar del rojo por defecto. crosshair">
+                <h3 class="cmd-name">cl_ironsight_usecrosshaircolor</h3>
+                <p>Usa el color de tu crosshair para el punto de la mira del AUG / SG 553.</p>
+                <div class="field-row">
+                <code>cl_ironsight_usecrosshaircolor 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_sniper_width" data-cat="crosshair" data-search="cl_crosshair_sniper_width grosor de las líneas de la mira de francotirador. hace más gruesas las líneas negras de la mira del awp y del scout. 1 mantiene las líneas finas de un píxel; los valores más altos hacen la cruz de la mira más fácil de ver. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_sniper_width">cl_crosshair_sniper_width</a></h3>
+                <p>Grosor de las líneas de la mira de francotirador. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_sniper_width 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_friendly_warning" data-cat="crosshair" data-search="cl_crosshair_friendly_warning icono de aviso al apuntar a un compañero. muestra un pequeño aviso en tu crosshair cuando apuntas a un compañero, para evitar el fuego amigo. crosshair">
+                <h3 class="cmd-name">cl_crosshair_friendly_warning</h3>
+                <p>Icono de aviso al apuntar a un compañero. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_friendly_warning 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairsize" data-cat="crosshair" data-search="cl_crosshairsize antiguo ajuste de longitud del crosshair, todavía en la consola. cl_crosshairsize sigue existiendo en la consola de cs2, pero desde la actualización del 30 de septiembre de 2026 la longitud del crosshair se define en píxeles reales con cl_crosshair_length. ese es el comando que se guarda en cada nuevo código de crosshair de cs2, así que usa cl_crosshair_length para un crosshair que se vea igual en cualquier pantalla. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairsize">cl_crosshairsize</a></h3>
+                <p>Antiguo ajuste de longitud del crosshair, todavía en la consola.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairthickness" data-cat="crosshair" data-search="cl_crosshairthickness antiguo ajuste de grosor del crosshair, todavía en la consola. cl_crosshairthickness sigue existiendo en la consola de cs2, pero desde la actualización del 30 de septiembre de 2026 el grosor se define en píxeles reales con cl_crosshair_thickness, el comando que se guarda en los códigos de crosshair de cs2. usa cl_crosshair_thickness para copiar exactamente el crosshair de un pro. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairthickness">cl_crosshairthickness</a></h3>
+                <p>Antiguo ajuste de grosor del crosshair, todavía en la consola.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshairgap" data-cat="crosshair" data-search="cl_crosshairgap eliminado en cs2: sustituido por cl_crosshair_gap. cl_crosshairgap ya no existe: si lo escribes en la consola de cs2, responde unknown command. desde la actualización del 30 de septiembre de 2026, la separación se define en píxeles reales con cl_crosshair_gap (con un guion bajo antes de gap). crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairgap">cl_crosshairgap</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: sustituido por cl_crosshair_gap.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshair_outlinethickness" data-cat="crosshair" data-search="cl_crosshair_outlinethickness eliminado en cs2: el contorno se define con comandos nuevos. cl_crosshair_outlinethickness ya no existe en cs2. activa o desactiva el contorno con cl_crosshair_drawoutline y elige su color y su opacidad con cl_crosshairoutline_r, _g, _b y _a. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_outlinethickness">cl_crosshair_outlinethickness</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: el contorno se define con comandos nuevos.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshaircolor" data-cat="crosshair" data-search="cl_crosshaircolor eliminado en cs2: ya no hay colores predefinidos. cl_crosshaircolor, que elegía uno de cinco colores predefinidos, ya no existe en cs2. define el color que quieras con cl_crosshaircolor_r, cl_crosshaircolor_g y cl_crosshaircolor_b, de 0 a 255 cada uno. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor">cl_crosshaircolor</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: ya no hay colores predefinidos.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairalpha" data-cat="crosshair" data-search="cl_crosshairalpha antiguo ajuste de opacidad del crosshair, todavía en la consola. cl_crosshairalpha sigue existiendo en la consola de cs2. los códigos de crosshair del nuevo sistema guardan la opacidad en cl_crosshaircolor_a, de 0 a 255. crosshair">
+                <h3 class="cmd-name">cl_crosshairalpha</h3>
+                <p>Antiguo ajuste de opacidad del crosshair, todavía en la consola.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="hud" data-cat="hud" aria-labelledby="hud-title">
+            <h2 id="hud-title">Comandos de HUD y radar</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="cl_hud_color" data-cat="hud" data-search="cl_hud_color color del hud (vida, munición, dinero...). cambia el color de tu hud: vida, armadura, munición y dinero. elige un color que leas fácilmente; el color de equipo (0) cambia según tu bando. hud y radar">
+                <h3 class="cmd-name"><a href="cl_hud_color">cl_hud_color</a></h3>
+                <p>Color del HUD (vida, munición, dinero...).</p>
+                <div class="field-row">
+                <code>cl_hud_color 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="hud_scaling" data-cat="hud" data-search="hud_scaling tamaño del hud. hace todo el hud más grande o más pequeño. un hud más pequeño deja ver más pantalla; uno más grande se lee mejor en un monitor grande. hud y radar">
+                <h3 class="cmd-name"><a href="hud_scaling">hud_scaling</a></h3>
+                <p>Tamaño del HUD.</p>
+                <div class="field-row">
+                <code>hud_scaling 0.85</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_radar_scale" data-cat="hud" data-search="cl_hud_radar_scale tamaño del radar en pantalla. cambia el tamaño con el que se dibuja el radar (minimapa) en la esquina superior izquierda. no cambia el zoom: para eso, usa cl_radar_scale. hud y radar">
+                <h3 class="cmd-name"><a href="cl_hud_radar_scale">cl_hud_radar_scale</a></h3>
+                <p>Tamaño del radar en pantalla. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_hud_radar_scale 1.15</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_scale" data-cat="hud" data-search="cl_radar_scale nivel de zoom del radar. define qué parte del mapa muestra el radar, de 0.25 a 1. un valor más bajo aleja el zoom y muestra más mapa: muchos jugadores usan de 0.3 a 0.4 para ver todos los sitios de bomba a la vez. hud y radar">
+                <h3 class="cmd-name"><a href="cl_radar_scale">cl_radar_scale</a></h3>
+                <p>Nivel de zoom del radar. <span class="cmd-default">Por defecto: <code>0.7</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_scale 0.35</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_always_centered" data-cat="hud" data-search="cl_radar_always_centered te mantiene en el centro del radar. si está activado (1), siempre estás en el centro del radar. si está desactivado (0), el radar aprovecha mejor su espacio cerca de los bordes del mapa y ves más. la mayoría de los jugadores competitivos lo desactiva. hud y radar">
+                <h3 class="cmd-name"><a href="cl_radar_always_centered">cl_radar_always_centered</a></h3>
+                <p>Te mantiene en el centro del radar. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_always_centered 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_rotate" data-cat="hud" data-search="cl_radar_rotate gira el radar con tu vista. si está activado, el radar gira contigo y la parte de arriba siempre es hacia donde miras. si está desactivado, el mapa queda fijo con el norte arriba, lo que facilita leer los callouts. hud y radar">
+                <h3 class="cmd-name">cl_radar_rotate</h3>
+                <p>Gira el radar con tu vista. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_rotate 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_icon_scale_min" data-cat="hud" data-search="cl_radar_icon_scale_min tamaño mínimo de los iconos del radar. define el tamaño mínimo de los iconos de jugadores en el radar, de 0.4 a 1.25. los iconos más grandes se ven mejor con el radar alejado. hud y radar">
+                <h3 class="cmd-name">cl_radar_icon_scale_min</h3>
+                <p>Tamaño mínimo de los iconos del radar. <span class="cmd-default">Por defecto: <code>0.6</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_icon_scale_min 0.8</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_square_with_scoreboard" data-cat="hud" data-search="cl_radar_square_with_scoreboard radar cuadrado con el marcador abierto. si está activado, el radar se convierte en un cuadrado más grande mientras mantienes la tecla del marcador (tab), para revisar todo el mapa rápidamente. hud y radar">
+                <h3 class="cmd-name">cl_radar_square_with_scoreboard</h3>
+                <p>Radar cuadrado con el marcador abierto. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_square_with_scoreboard 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showfps" data-cat="hud" data-search="cl_showfps muestra tus fps en pantalla. muestra tus fotogramas por segundo en la parte superior de la pantalla. usa 1 para el valor en directo o 2 para un valor suavizado más fácil de leer. hud y radar">
+                <h3 class="cmd-name"><a href="cl_showfps">cl_showfps</a></h3>
+                <p>Muestra tus FPS en pantalla. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_showfps 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showpos" data-cat="hud" data-search="cl_showpos muestra tu posición y ángulos de vista (truco). muestra tu posición exacta, tus ángulos y tu velocidad en la parte superior de la pantalla. necesita sv_cheats 1, así que solo funciona en tu propio servidor, por ejemplo para practicar granadas o movimiento. hud y radar">
+                <h3 class="cmd-name">cl_showpos<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Muestra tu posición y ángulos de vista (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_showpos 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cq_netgraph" data-cat="hud" data-search="cq_netgraph muestra estadísticas de la cola de comandos de red. muestra estadísticas técnicas sobre cómo se ponen en cola y se envían tus acciones al servidor. es una herramienta de depuración, no un sustituto completo del antiguo net_graph. hud y radar">
+                <h3 class="cmd-name">cq_netgraph</h3>
+                <p>Muestra estadísticas de la cola de comandos de red. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cq_netgraph 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showloadout" data-cat="hud" data-search="cl_showloadout muestra siempre tus armas a la derecha de la pantalla. si está activado, tus armas y granadas actuales siguen visibles en el lado derecho de la pantalla. si está desactivado, solo aparecen cuando cambias de arma. hud y radar">
+                <h3 class="cmd-name">cl_showloadout</h3>
+                <p>Muestra siempre tus armas a la derecha de la pantalla.</p>
+                <div class="field-row">
+                <code>cl_showloadout 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_draw_only_deathnotices" data-cat="hud" data-search="cl_draw_only_deathnotices oculta el hud salvo el crosshair y el kill feed. oculta casi todo el hud y deja solo el crosshair y el kill feed. está pensado para vídeos y capturas limpios y funciona sin sv_cheats. hud y radar">
+                <h3 class="cmd-name"><a href="cl_draw_only_deathnotices">cl_draw_only_deathnotices</a></h3>
+                <p>Oculta el HUD salvo el crosshair y el kill feed. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_draw_only_deathnotices 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_drawhud" data-cat="hud" data-search="cl_drawhud oculta todo el hud (truco). desactiva todo el hud, crosshair incluido. necesita sv_cheats 1. úsalo para capturas cinematográficas en tu propio servidor. hud y radar">
+                <h3 class="cmd-name">cl_drawhud<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Oculta todo el HUD (truco). <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_drawhud 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezonex" data-cat="hud" data-search="safezonex acerca el hud al centro en horizontal. define qué parte del ancho de la pantalla usa el hud. los valores más bajos acercan la vida, la munición y el radar al centro, lo que ayuda en monitores muy anchos o curvos. hud y radar">
+                <h3 class="cmd-name">safezonex</h3>
+                <p>Acerca el HUD al centro en horizontal.</p>
+                <div class="field-row">
+                <code>safezonex 0.9</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezoney" data-cat="hud" data-search="safezoney acerca el hud al centro en vertical. define qué parte de la altura de la pantalla usa el hud. los valores más bajos alejan el hud de los bordes superior e inferior. hud y radar">
+                <h3 class="cmd-name">safezoney</h3>
+                <p>Acerca el HUD al centro en vertical.</p>
+                <div class="field-row">
+                <code>safezoney 0.9</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teamid_overhead_mode" data-cat="hud" data-search="cl_teamid_overhead_mode lo que ves encima de la cabeza de tus compañeros. elige la información que aparece encima de tus compañeros: 1 muestra un indicador simple y 2 muestra también su nombre y su equipamiento. hud y radar">
+                <h3 class="cmd-name">cl_teamid_overhead_mode</h3>
+                <p>Lo que ves encima de la cabeza de tus compañeros. <span class="cmd-default">Por defecto: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_teamid_overhead_mode 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teammate_colors_show" data-cat="hud" data-search="cl_teammate_colors_show colores de los compañeros en competitivo. en los modos competitivos, da a cada compañero un color en el radar y el marcador (1), o un color y una letra (2), lo que ayuda si te cuesta distinguir los colores. hud y radar">
+                <h3 class="cmd-name">cl_teammate_colors_show</h3>
+                <p>Colores de los compañeros en competitivo. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_teammate_colors_show 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_frametime_show" data-cat="hud" data-search="cl_hud_telemetry_frametime_show muestra los fps y el tiempo de fotograma en pantalla (telemetría). muestra tus fotogramas por segundo y el tiempo de fotograma en la esquina de la pantalla, la misma opción que ajustes › juego › telemetría. con cl_hud_telemetry_ping_show, es el sustituto en cs2 del antiguo net_graph. ponlo a 0 para ocultarlo. hud y radar">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_frametime_show">cl_hud_telemetry_frametime_show</a></h3>
+                <p>Muestra los FPS y el tiempo de fotograma en pantalla (telemetría).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_ping_show" data-cat="hud" data-search="cl_hud_telemetry_ping_show muestra tu ping en pantalla (telemetría). muestra tu ping (la latencia con el servidor) en la esquina de la pantalla, la misma opción que ajustes › juego › telemetría. junto con cl_hud_telemetry_frametime_show, sustituye al antiguo net_graph. ponlo a 0 para ocultarlo. hud y radar">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_ping_show">cl_hud_telemetry_ping_show</a></h3>
+                <p>Muestra tu ping en pantalla (telemetría).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_ping_show 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="viewmodel" data-cat="viewmodel" aria-labelledby="viewmodel-title">
+            <h2 id="viewmodel-title">Comandos de Viewmodel (arma)</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="viewmodel_fov" data-cat="viewmodel" data-search="viewmodel_fov distancia entre el modelo de tu arma y la cámara. cambia el campo de visión solo del modelo de tu arma, de 54 a 68. un valor más alto aleja el arma y deja ver más pantalla; muchos jugadores usan el máximo, 68. viewmodel (arma)">
+                <h3 class="cmd-name"><a href="viewmodel_fov">viewmodel_fov</a></h3>
+                <p>Distancia entre el modelo de tu arma y la cámara. <span class="cmd-default">Por defecto: <code>60</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_fov 68</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_x" data-cat="viewmodel" data-search="viewmodel_offset_x mueve el arma a la izquierda o a la derecha. mueve el modelo de tu arma en horizontal, de -2.5 a 2.5. los valores más altos llevan el arma hacia el borde derecho de la pantalla. viewmodel (arma)">
+                <h3 class="cmd-name"><a href="viewmodel_offset_x">viewmodel_offset_x</a></h3>
+                <p>Mueve el arma a la izquierda o a la derecha. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_x 2.5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_y" data-cat="viewmodel" data-search="viewmodel_offset_y mueve el arma hacia delante o hacia atrás. acerca o aleja el modelo de tu arma, de -2 a 2. los valores más altos llevan el arma hacia delante. viewmodel (arma)">
+                <h3 class="cmd-name">viewmodel_offset_y</h3>
+                <p>Mueve el arma hacia delante o hacia atrás. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_y 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_z" data-cat="viewmodel" data-search="viewmodel_offset_z mueve el arma hacia arriba o hacia abajo. mueve el modelo de tu arma en vertical, de -2 a 2. los valores más bajos ponen el arma más abajo en la pantalla para que tape menos la acción. viewmodel (arma)">
+                <h3 class="cmd-name">viewmodel_offset_z</h3>
+                <p>Mueve el arma hacia arriba o hacia abajo. <span class="cmd-default">Por defecto: <code>-1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_z -1.5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_presetpos" data-cat="viewmodel" data-search="viewmodel_presetpos posiciones predefinidas del arma. aplica una de las tres posiciones predefinidas del arma: 1 desktop (por defecto), 2 couch (más grande y cerca) y 3 classic (el aspecto del antiguo cs:go). viewmodel (arma)">
+                <h3 class="cmd-name">viewmodel_presetpos</h3>
+                <p>Posiciones predefinidas del arma. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_presetpos 3</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_drawviewmodel" data-cat="viewmodel" data-search="r_drawviewmodel oculta el modelo de tu arma (truco). oculta el arma que tienes en las manos. necesita sv_cheats 1, así que solo funciona en tu propio servidor, para capturas o para practicar granadas. viewmodel (arma)">
+                <h3 class="cmd-name">r_drawviewmodel<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Oculta el modelo de tu arma (truco). <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; r_drawviewmodel 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="performance" data-cat="performance" aria-labelledby="performance-title">
+            <h2 id="performance-title">Comandos de Gráficos y FPS</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="fps_max" data-cat="performance" data-search="fps_max limita tus fotogramas por segundo. limita cuántos fotogramas por segundo dibuja cs2. 0 quita el límite. un límite algo por encima de la frecuencia de tu monitor (o un valor estable que tu pc siempre alcance) da tiempos de fotograma más regulares que unos fps sin límite que no paran de saltar. gráficos y fps">
+                <h3 class="cmd-name"><a href="fps_max">fps_max</a></h3>
+                <p>Limita tus fotogramas por segundo. <span class="cmd-default">Por defecto: <code>400</code></span></p>
+                <div class="field-row">
+                <code>fps_max 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="fps_max_ui" data-cat="performance" data-search="fps_max_ui limita tus fps en los menús. limita los fotogramas por segundo mientras los menús están abiertos. mantenerlo bajo (120 por defecto) ahorra energía y mantiene tu pc más fresco entre partidas. gráficos y fps">
+                <h3 class="cmd-name">fps_max_ui</h3>
+                <p>Limita tus FPS en los menús. <span class="cmd-default">Por defecto: <code>120</code></span></p>
+                <div class="field-row">
+                <code>fps_max_ui 60</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_fullscreen_gamma" data-cat="performance" data-search="r_fullscreen_gamma brillo de la pantalla en pantalla completa. ajusta la gamma (brillo) del juego solo en modo pantalla completa. los valores más bajos aclaran la imagen. es el sustituto en cs2 del antiguo mat_monitorgamma. gráficos y fps">
+                <h3 class="cmd-name"><a href="r_fullscreen_gamma">r_fullscreen_gamma</a></h3>
+                <p>Brillo de la pantalla en pantalla completa. <span class="cmd-default">Por defecto: <code>2.2</code></span></p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="engine_low_latency_sleep_after_client_tick" data-cat="performance" data-search="engine_low_latency_sleep_after_client_tick ajuste de baja latencia usado con nvidia reflex. con el modo de baja latencia activado, mueve la breve pausa del motor a después de la simulación del cliente en los fotogramas de tick. algunos jugadores notan una respuesta más fluida con él activado; pruébalo tú mismo. gráficos y fps">
+                <h3 class="cmd-name">engine_low_latency_sleep_after_client_tick</h3>
+                <p>Ajuste de baja latencia usado con NVIDIA Reflex. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>engine_low_latency_sleep_after_client_tick 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_show_build_info" data-cat="performance" data-search="r_show_build_info muestra el texto de la versión del juego en la esquina. muestra u oculta el pequeño texto con la información de la versión en la esquina de la pantalla. valve pide dejarlo activado cuando grabas informes de errores. gráficos y fps">
+                <h3 class="cmd-name">r_show_build_info</h3>
+                <p>Muestra el texto de la versión del juego en la esquina. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>r_show_build_info 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="mat_monitorgamma" data-cat="performance" data-search="mat_monitorgamma eliminado en cs2: sustituido por r_fullscreen_gamma. mat_monitorgamma cambiaba el brillo en cs:go. ya no existe en cs2: usa r_fullscreen_gamma (solo en pantalla completa) o el control de brillo de los ajustes de vídeo. gráficos y fps">
+                <h3 class="cmd-name"><a href="mat_monitorgamma">mat_monitorgamma</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: sustituido por r_fullscreen_gamma.</p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="network" data-cat="network" aria-labelledby="network-title">
+            <h2 id="network-title">Comandos de Red</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="rate" data-cat="network" data-search="rate máximo de datos que puede recibir tu conexión. indica al servidor cuántos bytes por segundo puede recibir tu conexión. el valor por defecto 786432 (unos 6 mbps) es el máximo y es el adecuado para casi cualquier conexión; bájalo solo con una conexión muy lenta o inestable. red">
+                <h3 class="cmd-name"><a href="rate">rate</a></h3>
+                <p>Máximo de datos que puede recibir tu conexión. <span class="cmd-default">Por defecto: <code>786432</code></span></p>
+                <div class="field-row">
+                <code>rate 786432</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mm_dedicated_search_maxping" data-cat="network" data-search="mm_dedicated_search_maxping ping máximo permitido al buscar partida. define el ping más alto que aceptas para los servidores de matchmaking, en milisegundos. un valor más bajo encuentra servidores más cercanos, pero la cola puede tardar más. red">
+                <h3 class="cmd-name"><a href="mm_dedicated_search_maxping">mm_dedicated_search_maxping</a></h3>
+                <p>Ping máximo permitido al buscar partida. <span class="cmd-default">Por defecto: <code>150</code></span></p>
+                <div class="field-row">
+                <code>mm_dedicated_search_maxping 60</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="net_client_steamdatagram_enable_override" data-cat="network" data-search="net_client_steamdatagram_enable_override usa o evita la red de relés de valve. elige cómo te conectas a los servidores oficiales: 0 deja decidir al juego, un valor positivo usa siempre la red de relés de valve (sdr) cuando es posible y un valor negativo prefiere una conexión directa. red">
+                <h3 class="cmd-name">net_client_steamdatagram_enable_override</h3>
+                <p>Usa o evita la red de relés de Valve. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>net_client_steamdatagram_enable_override 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="status" data-cat="network" data-search="status muestra información del servidor y de los jugadores. muestra información sobre el servidor en el que estás y sus jugadores, incluido su ping. útil para comprobar tu conexión o denunciar a un jugador. red">
+                <h3 class="cmd-name">status</h3>
+                <p>Muestra información del servidor y de los jugadores.</p>
+                <div class="field-row">
+                <code>status</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_lagcompensation" data-cat="network" data-search="cl_lagcompensation compensación de lag en el servidor. pide al servidor que compense tu ping al comprobar si tus disparos aciertan. déjalo activado: desactivarlo solo hace que tus disparos registren peor. red">
+                <h3 class="cmd-name">cl_lagcompensation</h3>
+                <p>Compensación de lag en el servidor. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_lagcompensation 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="net_graph" data-cat="network" data-search="net_graph eliminado en cs2: el antiguo gráfico de red de cs:go. net_graph mostraba tus fps, ping, pérdida y choke en cs:go. no existe en cs2. para ver la misma información, usa cl_hud_telemetry_frametime_show 2 y cl_hud_telemetry_ping_show 2 (las opciones de telemetría en ajustes › juego › telemetría), o cl_showfps 1 para un contador de fps rápido. red">
+                <h3 class="cmd-name"><a href="net_graph">net_graph</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: el antiguo gráfico de red de CS:GO.</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp" data-cat="network" data-search="cl_interp muestra la interpolación que usa el juego. en cs2, cl_interp sobre todo muestra la interpolación que usa el juego, junto con cl_interp_ratio y la frecuencia de actualización del servidor (por ejemplo cl_interp = 0 con cl_updaterate=64). cs2 gestiona la interpolación por ti con su sistema sub-tick, así que no hace falta tocarla como en cs:go. red">
+                <h3 class="cmd-name"><a href="cl_interp">cl_interp</a></h3>
+                <p>Muestra la interpolación que usa el juego.</p>
+                <div class="field-row">
+                <code>cl_interp</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp_ratio" data-cat="network" data-search="cl_interp_ratio proporción de interpolación, gestionada por cs2. cl_interp_ratio sigue existiendo en cs2, con un valor de 0 por defecto. a diferencia de cs:go, la interpolación la gestiona el sistema sub-tick del juego, así que la mayoría de los jugadores debería dejarla en su valor por defecto. red">
+                <h3 class="cmd-name"><a href="cl_interp_ratio">cl_interp_ratio</a></h3>
+                <p>Proporción de interpolación, gestionada por CS2. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_interp_ratio 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_updaterate" data-cat="network" data-search="cl_updaterate eliminado en cs2: la frecuencia de actualización la fija el servidor. en cs:go, cl_updaterate definía cuántas actualizaciones por segundo pedías al servidor. ya no existe en cs2: la frecuencia del servidor es fija (64 actualizaciones por segundo, como muestra cl_interp) y el sistema sub-tick hace que tus acciones sean precisas de todos modos. red">
+                <h3 class="cmd-name"><a href="cl_updaterate">cl_updaterate</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: la frecuencia de actualización la fija el servidor.</p>
+                
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_cmdrate" data-cat="network" data-search="cl_cmdrate eliminado en cs2: la frecuencia de envío es fija. en cs:go, cl_cmdrate definía cuántos paquetes por segundo enviabas al servidor. ya no existe en cs2, donde el juego gestiona la frecuencia de envío y el sistema sub-tick registra el momento exacto de tus disparos y movimientos. red">
+                <h3 class="cmd-name"><a href="cl_cmdrate">cl_cmdrate</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: la frecuencia de envío es fija.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="mouse" data-cat="mouse" aria-labelledby="mouse-title">
+            <h2 id="mouse-title">Comandos de Ratón</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sensitivity" data-cat="mouse" data-search="sensitivity la sensibilidad de tu ratón. define lo rápido que gira tu vista al mover el ratón. los pros suelen multiplicarla por el dpi de su ratón para comparar: 400 dpi a 2.0 u 800 dpi a 1.0 dan ambos 800 edpi; el rango típico de los pros de cs2 va de unos 600 a 1200 edpi. ratón">
+                <h3 class="cmd-name"><a href="sensitivity">sensitivity</a></h3>
+                <p>La sensibilidad de tu ratón. <span class="cmd-default">Por defecto: <code>2.5</code></span></p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="zoom_sensitivity_ratio" data-cat="mouse" data-search="zoom_sensitivity_ratio sensibilidad del ratón al apuntar con mira. multiplica tu sensibilidad cuando haces zoom con un arma con mira como el awp. 1 es el valor por defecto; los valores más bajos hacen la puntería con mira más lenta y precisa. ratón">
+                <h3 class="cmd-name"><a href="zoom_sensitivity_ratio">zoom_sensitivity_ratio</a></h3>
+                <p>Sensibilidad del ratón al apuntar con mira. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>zoom_sensitivity_ratio 0.9</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_yaw" data-cat="mouse" data-search="m_yaw factor de velocidad horizontal del ratón. multiplica el movimiento horizontal del ratón. el valor por defecto 0.022 iguala la velocidad vertical. algunos jugadores que juegan en 4:3 estirado lo bajan para compensar la imagen más ancha, pero la mayoría deja el valor por defecto. ratón">
+                <h3 class="cmd-name"><a href="m_yaw">m_yaw</a></h3>
+                <p>Factor de velocidad horizontal del ratón. <span class="cmd-default">Por defecto: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_yaw 0.022</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_pitch" data-cat="mouse" data-search="m_pitch factor de velocidad vertical del ratón. multiplica el movimiento vertical del ratón. el valor por defecto es 0.022, igual que m_yaw, para que tu ratón se mueva a la misma velocidad en todas las direcciones. ratón">
+                <h3 class="cmd-name">m_pitch</h3>
+                <p>Factor de velocidad vertical del ratón. <span class="cmd-default">Por defecto: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_pitch 0.022</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_rawinput" data-cat="mouse" data-search="m_rawinput eliminado en cs2: la entrada directa del ratón siempre está activada. en cs:go, m_rawinput 1 hacía que el juego leyera tu ratón directamente. cs2 lo hace siempre, así que el comando se eliminó y escribirlo responde unknown command. no hay nada que cambiar: tu ratón ya usa la entrada directa. ratón">
+                <h3 class="cmd-name"><a href="m_rawinput">m_rawinput</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: la entrada directa del ratón siempre está activada.</p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_customaccel" data-cat="mouse" data-search="m_customaccel eliminado en cs2: no hay ajuste de aceleración del ratón. m_customaccel controlaba la aceleración del ratón en cs:go. ya no existe en cs2, que no tiene aceleración del ratón dentro del juego. si tu puntería parece irregular, comprueba que la aceleración (mejorar la precisión del puntero) está desactivada en windows y en el software de tu ratón. ratón">
+                <h3 class="cmd-name"><a href="m_customaccel">m_customaccel</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: no hay ajuste de aceleración del ratón.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="audio" data-cat="audio" aria-labelledby="audio-title">
+            <h2 id="audio-title">Comandos de Audio</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="volume" data-cat="audio" data-search="volume volumen principal del juego. define el volumen general del juego, de 0 a 1. muchos jugadores lo mantienen bastante alto para oír bien los pasos y bajan la música en su lugar. audio">
+                <h3 class="cmd-name"><a href="volume">volume</a></h3>
+                <p>Volumen principal del juego.</p>
+                <div class="field-row">
+                <code>volume 0.5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_voipvolume" data-cat="audio" data-search="snd_voipvolume volumen de la voz de tus compañeros. define lo alto que se oye a tus compañeros en el chat de voz, de 0 a 1. sustituyó al antiguo comando voice_scale de cs:go. audio">
+                <h3 class="cmd-name"><a href="snd_voipvolume">snd_voipvolume</a></h3>
+                <p>Volumen de la voz de tus compañeros. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_menumusic_volume" data-cat="audio" data-search="snd_menumusic_volume volumen de la música del menú. define el volumen de la música de los menús y otros momentos fuera del juego, de 0 a 1. ponlo a 0 para tener silencio en el menú. audio">
+                <h3 class="cmd-name">snd_menumusic_volume</h3>
+                <p>Volumen de la música del menú.</p>
+                <div class="field-row">
+                <code>snd_menumusic_volume 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_roundstart_volume" data-cat="audio" data-search="snd_roundstart_volume volumen de la música de inicio de ronda. define el volumen de la música que suena al empezar una ronda, de 0 a 1. muchos jugadores la silencian para oír los primeros pasos. audio">
+                <h3 class="cmd-name">snd_roundstart_volume</h3>
+                <p>Volumen de la música de inicio de ronda.</p>
+                <div class="field-row">
+                <code>snd_roundstart_volume 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mvp_volume" data-cat="audio" data-search="snd_mvp_volume volumen de la música de mvp. define el volumen de la música de mvp (y de los kits de música) que suena al final de una ronda, de 0 a 1. audio">
+                <h3 class="cmd-name">snd_mvp_volume</h3>
+                <p>Volumen de la música de MVP.</p>
+                <div class="field-row">
+                <code>snd_mvp_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_tensecondwarning_volume" data-cat="audio" data-search="snd_tensecondwarning_volume volumen del aviso de 10 segundos de la bomba. define el volumen de la música que avisa de que quedan 10 segundos antes de que explote la bomba, de 0 a 1. mantenlo audible: es información útil. audio">
+                <h3 class="cmd-name">snd_tensecondwarning_volume</h3>
+                <p>Volumen del aviso de 10 segundos de la bomba.</p>
+                <div class="field-row">
+                <code>snd_tensecondwarning_volume 0.2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mapobjective_volume" data-cat="audio" data-search="snd_mapobjective_volume volumen de la música de bomba y rehenes. define el volumen de la música de los objetivos del mapa, como una bomba plantada, de 0 a 1. audio">
+                <h3 class="cmd-name">snd_mapobjective_volume</h3>
+                <p>Volumen de la música de bomba y rehenes.</p>
+                <div class="field-row">
+                <code>snd_mapobjective_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_deathcamera_volume" data-cat="audio" data-search="snd_deathcamera_volume volumen del sonido de la cámara de muerte. define el volumen del sonido que suena cuando mueres y empieza la cámara de muerte, de 0 a 1. audio">
+                <h3 class="cmd-name">snd_deathcamera_volume</h3>
+                <p>Volumen del sonido de la cámara de muerte.</p>
+                <div class="field-row">
+                <code>snd_deathcamera_volume 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mute_losefocus" data-cat="audio" data-search="snd_mute_losefocus silencia el juego cuando haces alt-tab. si está activado, el juego se queda en silencio cuando su ventana no está en primer plano. desactívalo si quieres oír que empieza la partida mientras estás en otra ventana. audio">
+                <h3 class="cmd-name">snd_mute_losefocus</h3>
+                <p>Silencia el juego cuando haces alt-tab.</p>
+                <div class="field-row">
+                <code>snd_mute_losefocus 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_headphone_eq" data-cat="audio" data-search="snd_headphone_eq ecualizador para auriculares. elige el preajuste del ecualizador para auriculares, la misma opción que el perfil de ecualizador de los ajustes de audio. prueba cada uno y quédate con el que te deje oír los pasos con más claridad. audio">
+                <h3 class="cmd-name">snd_headphone_eq</h3>
+                <p>Ecualizador para auriculares. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>snd_headphone_eq 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="voice_scale" data-cat="audio" data-search="voice_scale eliminado en cs2: sustituido por snd_voipvolume. voice_scale cambiaba el volumen del chat de voz en cs:go. ya no existe en cs2: usa snd_voipvolume, de 0 a 1. audio">
+                <h3 class="cmd-name"><a href="voice_scale">voice_scale</a><span class="cmd-badge cmd-removed">Eliminado en CS2</span></h3>
+                <p>Eliminado en CS2: sustituido por snd_voipvolume.</p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="practice" data-cat="practice" aria-labelledby="practice-title">
+            <h2 id="practice-title">Comandos de Práctica y servidor</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sv_cheats" data-cat="practice" data-search="sv_cheats activa los comandos de trucos en tu servidor. permite los comandos marcados como trucos (noclip, god, sv_rethrow_last_grenade, cl_showpos...). solo funciona en un servidor que alojes tú, como una partida privada con bots, nunca en el matchmaking oficial. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_cheats">sv_cheats</a></h3>
+                <p>Activa los comandos de trucos en tu servidor. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_infinite_ammo" data-cat="practice" data-search="sv_infinite_ammo munición y granadas infinitas. con 1, tu cargador nunca se vacía; con 2, nunca te quedas sin munición pero tienes que recargar. también da granadas infinitas, por eso es la base de cualquier config de práctica de granadas. necesita sv_cheats 1. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_infinite_ammo">sv_infinite_ammo</a><span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Munición y granadas infinitas. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; sv_infinite_ammo 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_pipreview" data-cat="practice" data-search="sv_grenade_trajectory_prac_pipreview vista previa en directo de dónde caerá tu granada. muestra una pequeña ventana superpuesta con la trayectoria y el punto de caída de la granada que tienes en la mano antes de lanzarla. es la forma más rápida de aprender smokes y flashes en un servidor de práctica. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_pipreview">sv_grenade_trajectory_prac_pipreview</a></h3>
+                <p>Vista previa en directo de dónde caerá tu granada. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_pipreview 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_trailtime" data-cat="practice" data-search="sv_grenade_trajectory_prac_trailtime muestra la trayectoria de las granadas lanzadas. dibuja la trayectoria de cada granada que lanzas y la deja visible durante ese número de segundos. usa 10 o más para comparar dos lanzamientos. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_trailtime">sv_grenade_trajectory_prac_trailtime</a></h3>
+                <p>Muestra la trayectoria de las granadas lanzadas. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_trailtime 10</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_rethrow_last_grenade" data-cat="practice" data-search="sv_rethrow_last_grenade vuelve a lanzar tu última granada. vuelve a lanzar la última granada desde exactamente el mismo sitio, así puedes ver dónde cae sin volver andando. necesita sv_cheats 1; en las configs de práctica suele asignarse a una tecla. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_rethrow_last_grenade">sv_rethrow_last_grenade</a><span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Vuelve a lanzar tu última granada.</p>
+                <div class="field-row">
+                <code>sv_rethrow_last_grenade</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts" data-cat="practice" data-search="sv_showimpacts muestra dónde impactan tus balas. dibuja una caja donde cae cada bala: roja para lo que vio tu juego, azul para lo que vio el servidor. es ideal para aprender los patrones de spray en una pared. práctica y servidor">
+                <h3 class="cmd-name"><a href="sv_showimpacts">sv_showimpacts</a></h3>
+                <p>Muestra dónde impactan tus balas. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts_time" data-cat="practice" data-search="sv_showimpacts_time cuánto tiempo se ven los impactos de bala. define cuántos segundos se quedan en pantalla las cajas de impacto de sv_showimpacts. práctica y servidor">
+                <h3 class="cmd-name">sv_showimpacts_time</h3>
+                <p>Cuánto tiempo se ven los impactos de bala. <span class="cmd-default">Por defecto: <code>4</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts_time 10</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_roundtime_defuse" data-cat="practice" data-search="mp_roundtime_defuse duración de una ronda en mapas de bomba, en minutos. define cuántos minutos dura una ronda en los mapas de desactivación de bomba. pon un valor alto (60) en un servidor de práctica para que la ronda no termine mientras entrenas. práctica y servidor">
+                <h3 class="cmd-name">mp_roundtime_defuse</h3>
+                <p>Duración de una ronda en mapas de bomba, en minutos. <span class="cmd-default">Por defecto: <code>2.25</code></span></p>
+                <div class="field-row">
+                <code>mp_roundtime_defuse 60</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_freezetime" data-cat="practice" data-search="mp_freezetime tiempo de congelación al inicio de la ronda, en segundos. define cuántos segundos se quedan congelados los jugadores al inicio de cada ronda. usa 0 en un servidor de práctica para moverte de inmediato. práctica y servidor">
+                <h3 class="cmd-name">mp_freezetime</h3>
+                <p>Tiempo de congelación al inicio de la ronda, en segundos. <span class="cmd-default">Por defecto: <code>5</code></span></p>
+                <div class="field-row">
+                <code>mp_freezetime 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_end" data-cat="practice" data-search="mp_warmup_end termina el calentamiento al instante. detiene el calentamiento y empieza la partida de inmediato en tu servidor. práctica y servidor">
+                <h3 class="cmd-name">mp_warmup_end</h3>
+                <p>Termina el calentamiento al instante.</p>
+                <div class="field-row">
+                <code>mp_warmup_end</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_pausetimer" data-cat="practice" data-search="mp_warmup_pausetimer calentamiento infinito. con 1, el temporizador del calentamiento se detiene y el calentamiento no termina nunca, muy práctico para sesiones de práctica largas. vuelve a ponerlo a 0 para reanudar el temporizador. práctica y servidor">
+                <h3 class="cmd-name">mp_warmup_pausetimer</h3>
+                <p>Calentamiento infinito. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_warmup_pausetimer 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_restartgame" data-cat="practice" data-search="mp_restartgame reinicia la partida. reinicia la partida tras el número de segundos indicado. úsalo después de cambiar ajustes de ronda para que se apliquen. práctica y servidor">
+                <h3 class="cmd-name">mp_restartgame</h3>
+                <p>Reinicia la partida.</p>
+                <div class="field-row">
+                <code>mp_restartgame 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buy_anywhere" data-cat="practice" data-search="mp_buy_anywhere te deja comprar en cualquier parte del mapa. permite comprar fuera de la zona de compra: 1 para los dos equipos, 2 solo para los terroristas, 3 solo para los antiterroristas. perfecto para practicar granadas. práctica y servidor">
+                <h3 class="cmd-name"><a href="mp_buy_anywhere">mp_buy_anywhere</a></h3>
+                <p>Te deja comprar en cualquier parte del mapa. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_buy_anywhere 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buytime" data-cat="practice" data-search="mp_buytime cuánto tiempo puedes comprar tras el inicio de la ronda. define cuántos segundos después del inicio de una ronda todavía puedes comprar. usa un valor enorme en un servidor de práctica. práctica y servidor">
+                <h3 class="cmd-name">mp_buytime</h3>
+                <p>Cuánto tiempo puedes comprar tras el inicio de la ronda. <span class="cmd-default">Por defecto: <code>45</code></span></p>
+                <div class="field-row">
+                <code>mp_buytime 9999</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_maxmoney" data-cat="practice" data-search="mp_maxmoney dinero máximo que puede tener un jugador. define el dinero máximo que puede tener un jugador. súbelo junto con mp_startmoney para compras ilimitadas en un servidor de práctica. práctica y servidor">
+                <h3 class="cmd-name">mp_maxmoney</h3>
+                <p>Dinero máximo que puede tener un jugador. <span class="cmd-default">Por defecto: <code>10000</code></span></p>
+                <div class="field-row">
+                <code>mp_maxmoney 60000</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_startmoney" data-cat="practice" data-search="mp_startmoney dinero con el que empieza cada jugador. define cuánto dinero recibe cada jugador al inicio de la mitad. combínalo con mp_maxmoney para practicar. práctica y servidor">
+                <h3 class="cmd-name">mp_startmoney</h3>
+                <p>Dinero con el que empieza cada jugador. <span class="cmd-default">Por defecto: <code>1000</code></span></p>
+                <div class="field-row">
+                <code>mp_startmoney 60000</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_t" data-cat="practice" data-search="mp_respawn_on_death_t los terroristas reaparecen al morir. con 1, los terroristas vuelven a la vida justo después de morir. úsalo con mp_respawn_on_death_ct para practicar al estilo deathmatch. práctica y servidor">
+                <h3 class="cmd-name">mp_respawn_on_death_t</h3>
+                <p>Los terroristas reaparecen al morir. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_t 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_ct" data-cat="practice" data-search="mp_respawn_on_death_ct los antiterroristas reaparecen al morir. con 1, los antiterroristas vuelven a la vida justo después de morir. práctica y servidor">
+                <h3 class="cmd-name">mp_respawn_on_death_ct</h3>
+                <p>Los antiterroristas reaparecen al morir. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_ct 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_ignore_round_win_conditions" data-cat="practice" data-search="mp_ignore_round_win_conditions las rondas no terminan nunca. con 1, la ronda sigue aunque un equipo sea eliminado o la bomba explote. muy útil para practicar sin interrupciones. práctica y servidor">
+                <h3 class="cmd-name">mp_ignore_round_win_conditions</h3>
+                <p>Las rondas no terminan nunca. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_ignore_round_win_conditions 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_limitteams" data-cat="practice" data-search="mp_limitteams diferencia máxima de jugadores entre equipos. define cuántos jugadores más puede tener un equipo que el otro. 0 quita el límite, así puedes estar solo contra muchos bots. práctica y servidor">
+                <h3 class="cmd-name">mp_limitteams</h3>
+                <p>Diferencia máxima de jugadores entre equipos. <span class="cmd-default">Por defecto: <code>2</code></span></p>
+                <div class="field-row">
+                <code>mp_limitteams 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_autoteambalance" data-cat="practice" data-search="mp_autoteambalance equilibrio automático de equipos. con 1, el servidor mueve jugadores entre equipos para mantenerlos equilibrados. desactívalo en un servidor de práctica. práctica y servidor">
+                <h3 class="cmd-name">mp_autoteambalance</h3>
+                <p>Equilibrio automático de equipos. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>mp_autoteambalance 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_drop_knife_enable" data-cat="practice" data-search="mp_drop_knife_enable permite tirar el cuchillo. con 1, los jugadores pueden tirar su cuchillo como cualquier otra arma. práctica y servidor">
+                <h3 class="cmd-name">mp_drop_knife_enable</h3>
+                <p>Permite tirar el cuchillo. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_drop_knife_enable 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="ammo_grenade_limit_total" data-cat="practice" data-search="ammo_grenade_limit_total máximo de granadas que puede llevar un jugador. define cuántas granadas puede llevar un jugador en total. súbelo en un servidor de práctica para llevar todas las granadas a la vez. práctica y servidor">
+                <h3 class="cmd-name">ammo_grenade_limit_total</h3>
+                <p>Máximo de granadas que puede llevar un jugador. <span class="cmd-default">Por defecto: <code>4</code></span></p>
+                <div class="field-row">
+                <code>ammo_grenade_limit_total 5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="noclip" data-cat="practice" data-search="noclip vuela a través de las paredes (truco). te permite volar y atravesar paredes. escríbelo otra vez para desactivarlo. necesita sv_cheats 1; es perfecto para moverte rápido por un mapa mientras practicas. práctica y servidor">
+                <h3 class="cmd-name"><a href="noclip">noclip</a><span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Vuela a través de las paredes (truco).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; noclip</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="god" data-cat="practice" data-search="god te hace invulnerable (truco). dejas de recibir daño. escríbelo otra vez para desactivarlo. necesita sv_cheats 1. práctica y servidor">
+                <h3 class="cmd-name">god<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Te hace invulnerable (truco).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; god</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="give" data-cat="practice" data-search="give te da un arma u objeto. te da un objeto por su nombre interno, por ejemplo weapon_ak47, weapon_awp, weapon_smokegrenade o weapon_flashbang. funciona en tu propio servidor. práctica y servidor">
+                <h3 class="cmd-name"><a href="give">give</a></h3>
+                <p>Te da un arma u objeto.</p>
+                <div class="field-row">
+                <code>give weapon_ak47</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_timescale" data-cat="practice" data-search="host_timescale acelera o ralentiza el juego (truco). cambia la velocidad del juego: 0.5 es la mitad de velocidad, 2 el doble. útil para estudiar una granada a cámara lenta. necesita sv_cheats 1. práctica y servidor">
+                <h3 class="cmd-name">host_timescale<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Acelera o ralentiza el juego (truco). <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>host_timescale 0.5</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="getpos" data-cat="practice" data-search="getpos muestra tu posición exacta (truco). muestra en la consola tu posición y tus ángulos de vista como una línea setpos/setang lista para usar. cópiala para volver más tarde al mismo sitio, por ejemplo a un lineup de granada. necesita sv_cheats 1. práctica y servidor">
+                <h3 class="cmd-name">getpos<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Muestra tu posición exacta (truco).</p>
+                <div class="field-row">
+                <code>getpos</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="setpos" data-cat="practice" data-search="setpos te teletransporta a una posición (truco). te lleva a las coordenadas x y z indicadas, normalmente copiadas de getpos. necesita sv_cheats 1. práctica y servidor">
+                <h3 class="cmd-name">setpos<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Te teletransporta a una posición (truco).</p>
+                <div class="field-row">
+                <code>setpos 0 0 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="bots" data-cat="bots" aria-labelledby="bots-title">
+            <h2 id="bots-title">Comandos de Bots</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bot_kick" data-cat="bots" data-search="bot_kick expulsa a los bots del servidor. expulsa a todos los bots, o solo a los de un equipo, una dificultad o un nombre. úsalo para vaciar tu servidor antes de practicar. bots">
+                <h3 class="cmd-name"><a href="bot_kick">bot_kick</a></h3>
+                <p>Expulsa a los bots del servidor.</p>
+                <div class="field-row">
+                <code>bot_kick</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_t" data-cat="bots" data-search="bot_add_t añade un bot terrorista. añade un bot al equipo terrorista. puedes indicar una dificultad y un nombre. bots">
+                <h3 class="cmd-name">bot_add_t</h3>
+                <p>Añade un bot terrorista.</p>
+                <div class="field-row">
+                <code>bot_add_t</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_ct" data-cat="bots" data-search="bot_add_ct añade un bot antiterrorista. añade un bot al equipo antiterrorista. puedes indicar una dificultad y un nombre. bots">
+                <h3 class="cmd-name">bot_add_ct</h3>
+                <p>Añade un bot antiterrorista.</p>
+                <div class="field-row">
+                <code>bot_add_ct</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_quota" data-cat="bots" data-search="bot_quota número total de bots en el servidor. define cuántos bots se quedan en el servidor. ponlo a 0 para que no haya bots. bots">
+                <h3 class="cmd-name">bot_quota</h3>
+                <p>Número total de bots en el servidor. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>bot_quota 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_difficulty" data-cat="bots" data-search="bot_difficulty nivel de los nuevos bots. define el nivel de los bots que entran en la partida: 0 fácil, 1 normal, 2 difícil, 3 experto. bots">
+                <h3 class="cmd-name">bot_difficulty</h3>
+                <p>Nivel de los nuevos bots. <span class="cmd-default">Por defecto: <code>2</code></span></p>
+                <div class="field-row">
+                <code>bot_difficulty 3</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_stop" data-cat="bots" data-search="bot_stop congela el cerebro de los bots (truco). con 1, los bots dejan de pensar: se quedan quietos y no hacen nada. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_stop<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Congela el cerebro de los bots (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_stop 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_freeze" data-cat="bots" data-search="bot_freeze los bots no pueden moverse (truco). con 1, los bots se quedan en su sitio pero pueden seguir apuntando. combínalo con bot_dont_shoot para practicar tu puntería con objetivos quietos. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_freeze<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Los bots no pueden moverse (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_freeze 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_dont_shoot" data-cat="bots" data-search="bot_dont_shoot los bots nunca disparan (truco). con 1, los bots no disparan sus armas. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_dont_shoot<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Los bots nunca disparan (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_dont_shoot 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_place" data-cat="bots" data-search="bot_place coloca un bot donde apuntas (truco). mueve un bot al punto que estás mirando. puede necesitar varios intentos. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_place<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Coloca un bot donde apuntas (truco).</p>
+                <div class="field-row">
+                <code>bot_place</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_mimic" data-cat="bots" data-search="bot_mimic los bots copian tus movimientos (truco). los bots repiten lo que haces: movimiento, puntería y acciones. útil para colocar un bot exactamente donde y como quieres. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_mimic<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Los bots copian tus movimientos (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_mimic 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_crouch" data-cat="bots" data-search="bot_crouch los bots se agachan (truco). con 1, los bots se quedan agachados. necesita sv_cheats 1. bots">
+                <h3 class="cmd-name">bot_crouch<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Los bots se agachan (truco). <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_crouch 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="general" data-cat="general" aria-labelledby="general-title">
+            <h2 id="general-title">Comandos de General</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bind" data-cat="general" data-search="bind asigna un comando a una tecla. hace que una tecla ejecute un comando al pulsarla, por ejemplo un bind de compra o una tecla para volver a lanzar la última granada. pon el nombre de la tecla y el comando entre comillas si el comando tiene espacios. general">
+                <h3 class="cmd-name"><a href="bind">bind</a></h3>
+                <p>Asigna un comando a una tecla.</p>
+                <div class="field-row">
+                <code>bind f &quot;+lookatweapon&quot;</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbind" data-cat="general" data-search="unbind quita la asignación de una tecla. quita el comando que esté asignado a una tecla. general">
+                <h3 class="cmd-name">unbind</h3>
+                <p>Quita la asignación de una tecla.</p>
+                <div class="field-row">
+                <code>unbind kp_end</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbindall" data-cat="general" data-search="unbindall quita todas las asignaciones de teclas. quita todas las asignaciones de teclas de golpe, movimiento incluido. úsalo solo al principio de un archivo de config completo que vuelva a asignarlo todo. general">
+                <h3 class="cmd-name">unbindall</h3>
+                <p>Quita todas las asignaciones de teclas.</p>
+                <div class="field-row">
+                <code>unbindall</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="alias" data-cat="general" data-search="alias crea un comando personalizado. da un nombre a una lista de comandos, para ejecutarlos todos a la vez o asignarlos a una tecla. un alias cuyo nombre empieza por + se ejecuta al pulsar la tecla, y el alias - correspondiente al soltarla: así funciona el bind de jump throw. ponlo en tu autoexec.cfg para que se cargue cada vez que abras cs2. general">
+                <h3 class="cmd-name"><a href="alias">alias</a></h3>
+                <p>Crea un comando personalizado.</p>
+                <div class="field-row">
+                <code>alias prac &quot;sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1&quot;</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="exec" data-cat="general" data-search="exec ejecuta un archivo de config. ejecuta todos los comandos escritos en un archivo .cfg de la carpeta cfg del juego, por ejemplo una config de práctica o tu autoexec. general">
+                <h3 class="cmd-name"><a href="exec">exec</a></h3>
+                <p>Ejecuta un archivo de config.</p>
+                <div class="field-row">
+                <code>exec autoexec</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_writeconfig" data-cat="general" data-search="host_writeconfig guarda tus ajustes actuales. escribe al instante tus ajustes y binds actuales en tu archivo de config. general">
+                <h3 class="cmd-name">host_writeconfig</h3>
+                <p>Guarda tus ajustes actuales.</p>
+                <div class="field-row">
+                <code>host_writeconfig</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="toggleconsole" data-cat="general" data-search="toggleconsole abre o cierra la consola. abre o cierra la consola de desarrollador. puedes asignarla a otra tecla si tu teclado no tiene la tecla ~. general">
+                <h3 class="cmd-name">toggleconsole</h3>
+                <p>Abre o cierra la consola.</p>
+                <div class="field-row">
+                <code>bind f10 toggleconsole</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="clear" data-cat="general" data-search="clear limpia la consola. borra todo el texto de la consola. general">
+                <h3 class="cmd-name">clear</h3>
+                <p>Limpia la consola.</p>
+                <div class="field-row">
+                <code>clear</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="echo" data-cat="general" data-search="echo escribe texto en la consola. muestra un mensaje en la consola. los archivos de config lo usan a menudo para confirmar que se han cargado. general">
+                <h3 class="cmd-name">echo</h3>
+                <p>Escribe texto en la consola.</p>
+                <div class="field-row">
+                <code>echo Practice config loaded</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="find" data-cat="general" data-search="find busca comandos por nombre o descripción. lista todos los comandos cuyo nombre o texto de ayuda contiene lo que buscas. ideal para descubrir comandos, por ejemplo find crosshair. general">
+                <h3 class="cmd-name"><a href="find">find</a></h3>
+                <p>Busca comandos por nombre o descripción.</p>
+                <div class="field-row">
+                <code>find crosshair</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="help" data-cat="general" data-search="help explica un comando. muestra el texto de ayuda y el valor actual de un comando. general">
+                <h3 class="cmd-name">help</h3>
+                <p>Explica un comando.</p>
+                <div class="field-row">
+                <code>help fps_max</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="connect" data-cat="general" data-search="connect entra en un servidor por dirección ip. te conecta a un servidor de la comunidad con su dirección ip y su puerto. general">
+                <h3 class="cmd-name">connect</h3>
+                <p>Entra en un servidor por dirección IP.</p>
+                <div class="field-row">
+                <code>connect 127.0.0.1:27015</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="disconnect" data-cat="general" data-search="disconnect sale del servidor actual. te desconecta del servidor en el que estás jugando. general">
+                <h3 class="cmd-name">disconnect</h3>
+                <p>Sale del servidor actual.</p>
+                <div class="field-row">
+                <code>disconnect</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="quit" data-cat="general" data-search="quit cierra cs2. cierra el juego al instante. general">
+                <h3 class="cmd-name">quit</h3>
+                <p>Cierra CS2.</p>
+                <div class="field-row">
+                <code>quit</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="map" data-cat="general" data-search="map carga un mapa en tu propio servidor. inicia un servidor local en el mapa que elijas, por ejemplo para practicar solo. los nombres de los mapas oficiales empiezan por de_ (de_mirage, de_dust2, de_inferno...). general">
+                <h3 class="cmd-name"><a href="map">map</a></h3>
+                <p>Carga un mapa en tu propio servidor.</p>
+                <div class="field-row">
+                <code>map de_mirage</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="changelevel" data-cat="general" data-search="changelevel cambia el mapa de tu servidor. cambia el servidor que alojas a otro mapa sin cerrarlo. general">
+                <h3 class="cmd-name">changelevel</h3>
+                <p>Cambia el mapa de tu servidor.</p>
+                <div class="field-row">
+                <code>changelevel de_inferno</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="kill" data-cat="general" data-search="kill mata a tu personaje (truco). mata a tu personaje al instante. necesita sv_cheats 1. general">
+                <h3 class="cmd-name">kill<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Mata a tu personaje (truco).</p>
+                <div class="field-row">
+                <code>kill</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="explode" data-cat="general" data-search="explode mata a tu personaje con una explosión (truco). mata a tu personaje con daño explosivo. necesita sv_cheats 1. general">
+                <h3 class="cmd-name">explode<span class="cmd-badge">Necesita sv_cheats</span></h3>
+                <p>Mata a tu personaje con una explosión (truco).</p>
+                <div class="field-row">
+                <code>explode</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="record" data-cat="general" data-search="record graba una demo de tu partida. empieza a grabar un archivo de demo de la partida en la que estás. escribe stop para terminar la grabación. general">
+                <h3 class="cmd-name">record</h3>
+                <p>Graba una demo de tu partida.</p>
+                <div class="field-row">
+                <code>record mymatch</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="stop" data-cat="general" data-search="stop detiene la grabación de una demo. termina la grabación de demo iniciada con record. general">
+                <h3 class="cmd-name">stop</h3>
+                <p>Detiene la grabación de una demo.</p>
+                <div class="field-row">
+                <code>stop</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="playdemo" data-cat="general" data-search="playdemo reproduce un archivo de demo. reproduce una demo grabada (.dem). pon el archivo en la carpeta csgo del juego y escribe su nombre. clutchcrosshair lee los crosshairs de los pros de las demos de partidos oficiales de la misma manera. general">
+                <h3 class="cmd-name"><a href="playdemo">playdemo</a></h3>
+                <p>Reproduce un archivo de demo.</p>
+                <div class="field-row">
+                <code>playdemo mymatch</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="demoui" data-cat="general" data-search="demoui abre los controles del reproductor de demos. muestra u oculta los controles de reproducción de demos (pausa, velocidad, línea de tiempo) mientras ves una demo. general">
+                <h3 class="cmd-name">demoui</h3>
+                <p>Abre los controles del reproductor de demos.</p>
+                <div class="field-row">
+                <code>demoui</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="demo_gototick" data-cat="general" data-search="demo_gototick salta a un momento de una demo. salta a un tick (momento) preciso de la demo que estás viendo. general">
+                <h3 class="cmd-name">demo_gototick</h3>
+                <p>Salta a un momento de una demo.</p>
+                <div class="field-row">
+                <code>demo_gototick 64000</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="gameinstructor_enable" data-cat="general" data-search="gameinstructor_enable consejos en el juego para nuevos jugadores. muestra u oculta las pequeñas lecciones que explican el juego a los nuevos jugadores. general">
+                <h3 class="cmd-name">gameinstructor_enable</h3>
+                <p>Consejos en el juego para nuevos jugadores. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>gameinstructor_enable 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_autohelp" data-cat="general" data-search="cl_autohelp mensajes de ayuda automáticos. muestra u oculta los mensajes de ayuda automáticos durante la partida. general">
+                <h3 class="cmd-name">cl_autohelp</h3>
+                <p>Mensajes de ayuda automáticos.</p>
+                <div class="field-row">
+                <code>cl_autohelp 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_use_opens_buy_menu" data-cat="general" data-search="cl_use_opens_buy_menu la tecla de usar abre el menú de compra. con 1, pulsar tu tecla de usar (e) en la zona de compra abre el menú de compra. muchos jugadores lo desactivan para no abrir el menú por error. general">
+                <h3 class="cmd-name">cl_use_opens_buy_menu</h3>
+                <p>La tecla de usar abre el menú de compra. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_use_opens_buy_menu 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_join_advertise" data-cat="general" data-search="cl_join_advertise deja que tus amigos se unan a tus partidas. elige si tus amigos de steam pueden unirse a tu partida sin invitación: 0 nunca, 1 en servidores oficiales, 2 en todos los servidores. general">
+                <h3 class="cmd-name">cl_join_advertise</h3>
+                <p>Deja que tus amigos se unan a tus partidas. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_join_advertise 2</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_dm_buyrandomweapons" data-cat="general" data-search="cl_dm_buyrandomweapons armas aleatorias en deathmatch. con 1, recibes un arma aleatoria cada vez que reapareces en deathmatch. ponlo a 0 para elegir siempre tu arma. general">
+                <h3 class="cmd-name">cl_dm_buyrandomweapons</h3>
+                <p>Armas aleatorias en deathmatch. <span class="cmd-default">Por defecto: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_dm_buyrandomweapons 0</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_sniper_delay_unscope" data-cat="general" data-search="cl_sniper_delay_unscope retrasa la salida de la mira tras un disparo de awp. con 1, tu rifle de francotirador se queda con la mira puesta un poco más después de un disparo en lugar de quitarla al instante. general">
+                <h3 class="cmd-name">cl_sniper_delay_unscope</h3>
+                <p>Retrasa la salida de la mira tras un disparo de AWP. <span class="cmd-default">Por defecto: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_sniper_delay_unscope 1</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            <article class="cmd" id="+lookatweapon" data-cat="general" data-search="+lookatweapon inspecciona tu arma. reproduce la animación de inspección del arma que tienes en las manos. por defecto está en la tecla f. general">
+                <h3 class="cmd-name">+lookatweapon</h3>
+                <p>Inspecciona tu arma.</p>
+                <div class="field-row">
+                <code>bind f +lookatweapon</code>
+                <button type="button" class="mini" data-copy>Copiar</button>
+            </div>
+            </article>
+            </div>
+        </section>
+
+        <h2>FAQ de la consola de CS2</h2>
+        <h3>¿Cómo abro la consola en CS2?</h3>
+        <p>Ve a Ajustes › Juego y pon Activar consola de desarrollador en Sí. Luego pulsa la tecla ~ (debajo de Esc; en un teclado español es la tecla º) en el juego para abrirla. Si no funciona, asigna toggleconsole a otra tecla con un bind.</p>
+        <h3>¿Los comandos de consola funcionan en el matchmaking competitivo?</h3>
+        <p>La mayoría de los comandos que cambian tus propios ajustes (crosshair, HUD, radar, ratón, audio) funcionan en todas partes. Los comandos marcados como Necesita sv_cheats, y los comandos de servidor que empiezan por mp_ o bot_, solo funcionan en un servidor que alojes tú, por ejemplo una partida privada con bots.</p>
+        <h3>¿Cómo guardo mis comandos de consola?</h3>
+        <p>Ponlos en un archivo llamado autoexec.cfg en la carpeta cfg del juego (game/csgo/cfg) y añade +exec autoexec a tus opciones de lanzamiento, o escribe exec autoexec en la consola.</p>
+        <h3>¿Por qué un comando de CS:GO no funciona en CS2?</h3>
+        <p>Muchos comandos de CS:GO se eliminaron o cambiaron de nombre en CS2, como net_graph. Los comandos marcados como Eliminado en CS2 en esta página te dicen qué usar en su lugar.</p>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Pie de página">
+            <a href="../generator">Generador de crosshair</a>
+            <a href="../tools/bind-generator">Generador de binds</a>
+            <a href="../skins/">Skins de pros de CS2</a>
+            <a href="../guides/">Guías de CS2</a>
+            <a href="../commands/">Comandos de consola</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Aviso legal</a>
+            <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
+        </nav>
+        <p class="footer-contact">Negocios y colaboraciones: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
+        <p>© 2026 ClutchCrosshair. Todos los derechos reservados.</p>
+        <p>Counter-Strike 2 y las skins de CS2 son marcas de Valve Corporation. Los logos de los equipos son marcas de sus respectivos dueños. ClutchCrosshair no está afiliado a Valve ni a los equipos.</p>
+    </footer>
+    <script type="module">
+        import { copyText } from "../../crosshair.min.js?v=fe84164f66";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row").querySelector("code").textContent, button);
+            }
+        });
+
+        // Recherche instantanée + filtres par catégorie (#crosshair dans l'adresse = filtre direct)
+        const input = document.getElementById("cmd-search");
+        const filters = Array.from(document.querySelectorAll(".cmd-filter"));
+        const items = Array.from(document.querySelectorAll(".cmd"));
+        const sections = Array.from(document.querySelectorAll(".cmd-section"));
+        const empty = document.getElementById("cmd-empty");
+        let category = "";
+
+        function apply() {
+            const words = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+            items.forEach(function (item) {
+                const show = (!category || item.dataset.cat === category) && words.every(function (w) { return item.dataset.search.includes(w); });
+                item.classList.toggle("hidden", !show);
+            });
+            let any = false;
+            sections.forEach(function (section) {
+                const visible = section.querySelector(".cmd:not(.hidden)") !== null;
+                section.classList.toggle("hidden", !visible);
+                any = any || visible;
+            });
+            empty.classList.toggle("hidden", any);
+        }
+
+        function setCategory(value) {
+            category = value;
+            filters.forEach(function (f) { f.setAttribute("aria-pressed", f.dataset.cat === value ? "true" : "false"); });
+            apply();
+        }
+
+        let frame = 0;
+        input.addEventListener("input", function () {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(apply);
+        });
+        filters.forEach(function (f) {
+            f.addEventListener("click", function () { setCategory(f.dataset.cat); });
+        });
+        function categoryFromAddress() {
+            const fromAddress = decodeURIComponent(location.hash.slice(1));
+            if (fromAddress && filters.some(function (f) { return f.dataset.cat === fromAddress; })) {
+                setCategory(fromAddress);
+            }
+        }
+        categoryFromAddress();
+        window.addEventListener("hashchange", categoryFromAddress);
+    </script>
+</body>
+</html>

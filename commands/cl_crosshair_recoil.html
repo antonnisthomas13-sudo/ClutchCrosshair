@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/commands/cl_crosshair_recoil">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/cl_crosshair_recoil">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/cl_crosshair_recoil">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/cl_crosshair_recoil">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/cl_crosshair_recoil">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshair_recoil">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshair_recoil">
     <script>(function () {
-        var A = {"en":"../commands/cl_crosshair_recoil.html","fr":"../fr/commands/cl_crosshair_recoil.html"};
+        var A = {"en":"../commands/cl_crosshair_recoil","fr":"../fr/commands/cl_crosshair_recoil","es":"../es/commands/cl_crosshair_recoil","ru":"../ru/commands/cl_crosshair_recoil","tr":"../tr/commands/cl_crosshair_recoil"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="cl_crosshair_recoil CS2 console command">
     <meta property="og:description" content="cl_crosshair_recoil in CS2: Makes the crosshair follow your recoil. When on, the crosshair moves with the weapon&#39;s recoil while you spray, showing where…">
     <meta property="og:url" content="https://clutchcrosshair.com/commands/cl_crosshair_recoil">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/cl_crosshair_recoil#article","headline":"cl_crosshair_recoil CS2 console command","description":"cl_crosshair_recoil in CS2: Makes the crosshair follow your recoil. When on, the crosshair moves with the weapon's recoil while you spray, showing where…","url":"https://clutchcrosshair.com/commands/cl_crosshair_recoil","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/cl_crosshair_recoil#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshair_recoil","item":"https://clutchcrosshair.com/commands/cl_crosshair_recoil"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/cl_crosshair_recoil#faq","mainEntity":[{"@type":"Question","name":"What does cl_crosshair_recoil do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Makes the crosshair follow your recoil. When on, the crosshair moves with the weapon's recoil while you spray, showing where your bullets go. Most pros turn it off and learn the spray patterns instead, but it can help beginners understand recoil."}},{"@type":"Question","name":"Does cl_crosshair_recoil need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. cl_crosshair_recoil works without sv_cheats, including in official matchmaking."}}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -118,11 +125,11 @@
         <p>Among the 70 pro crosshairs on ClutchCrosshair, read from official match demos, the most common value is <code>cl_crosshair_recoil 0</code> (100% of pros).</p>
         <dl class="cmd-stats"><div><dt><code>cl_crosshair_recoil 0</code></dt><dd><span class="cmd-bar"><i style="width: 100%"></i></span>100%</dd></div></dl>
         <p>Pros who use <code>cl_crosshair_recoil 0</code>:</p>
-        <ul class="related"><li><a href="../players/donk.html">donk crosshair</a></li><li><a href="../players/zywoo.html">ZywOo crosshair</a></li><li><a href="../players/m0nesy.html">m0NESY crosshair</a></li><li><a href="../players/mezii.html">mezii crosshair</a></li><li><a href="../players/flamez.html">flameZ crosshair</a></li><li><a href="../players/apex.html">apEX crosshair</a></li></ul>
-        <p>Want to try a crosshair before typing commands? Use the <a href="../generator.html">CS2 crosshair generator</a> or copy a <a href="../">pro crosshair</a>: every pro page gives you the full list of console commands.</p>
+        <ul class="related"><li><a href="../players/donk">donk crosshair</a></li><li><a href="../players/zywoo">ZywOo crosshair</a></li><li><a href="../players/m0nesy">m0NESY crosshair</a></li><li><a href="../players/mezii">mezii crosshair</a></li><li><a href="../players/flamez">flameZ crosshair</a></li><li><a href="../players/apex">apEX crosshair</a></li></ul>
+        <p>Want to try a crosshair before typing commands? Use the <a href="../generator">CS2 crosshair generator</a> or copy a <a href="../">pro crosshair</a>: every pro page gives you the full list of console commands.</p>
 
         <h2>Related commands</h2>
-        <ul class="related"><li><a href="cl_crosshairstyle.html">cl_crosshairstyle</a></li></ul>
+        <ul class="related"><li><a href="cl_crosshairstyle">cl_crosshairstyle</a></li></ul>
 
         
 
@@ -136,13 +143,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

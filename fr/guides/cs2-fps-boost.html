@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/fr/guides/cs2-fps-boost">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-fps-boost">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/guides/cs2-fps-boost">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-fps-boost">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-fps-boost">
     <script>(function () {
-        var A = {"en":"../../guides/cs2-fps-boost.html","fr":"../../fr/guides/cs2-fps-boost.html"};
+        var A = {"en":"../../guides/cs2-fps-boost","fr":"../../fr/guides/cs2-fps-boost","es":"../../es/guides/cs2-fps-boost","ru":"../../ru/guides/cs2-fps-boost","tr":"../../tr/guides/cs2-fps-boost"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -36,6 +39,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="Comment augmenter ses FPS sur CS2 (2026)">
     <meta property="og:description" content="Des moyens simples d&#39;avoir plus de FPS et un jeu plus fluide sur CS2 : réglages vidéo, limite d&#39;images, options de Windows et les idées reçues qui n&#39;aident pas.">
     <meta property="og:url" content="https://clutchcrosshair.com/fr/guides/cs2-fps-boost">
@@ -49,9 +55,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost#article","headline":"Comment augmenter ses FPS sur CS2 (2026)","description":"Des moyens simples d'avoir plus de FPS et un jeu plus fluide sur CS2 : réglages vidéo, limite d'images, options de Windows et les idées reçues qui n'aident pas.","url":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-20","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Guides CS2","item":"https://clutchcrosshair.com/fr/guides/"},{"@type":"ListItem","position":3,"name":"Comment augmenter ses FPS sur CS2 (2026)","item":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost#faq","mainEntity":[{"@type":"Question","name":"Comment avoir plus de FPS sur CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Désactive l'occlusion ambiante, baisse le détail des shaders, des particules et des modèles/textures, mets le HDR sur Performance, mets à jour ton pilote graphique et ferme les programmes lourds en arrière-plan."}},{"@type":"Question","name":"Faut-il débloquer ses FPS sur CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Pas forcément. Une limite avec fps_max que ton PC tient de façon stable donne souvent une meilleure sensation que des FPS illimités qui varient sans arrêt."}},{"@type":"Question","name":"Comment afficher ses FPS sur CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Tape cl_hud_telemetry_frametime_show 2 ou cl_showfps 1 dans la console, ou active les options de télémétrie dans les paramètres du jeu."}},{"@type":"Question","name":"Les options de lancement augmentent-elles les FPS sur CS2 ?","acceptedAnswer":{"@type":"Answer","text":"À peine. La plupart des options de lancement « FPS » ont été faites pour CS:GO ; les réglages vidéo du jeu comptent beaucoup plus."}}]}]}</script>
-    <script src="../../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -78,9 +84,10 @@
         <select id="lang" class="lang" aria-label="Langue">
                     <option value="en">EN · English</option>
                     <option value="fr" selected>FR</option>
-                    <option value="ru" disabled>RU · Русский (bientôt)</option>
-                    <option value="es" disabled>ES · Español (bientôt)</option>
-                    <option value="tr" disabled>TR · Türkçe (bientôt)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -106,11 +113,11 @@
             <h2 id="2-baisse-les-reglages-video-les-plus-lourds">2. Baisse les réglages vidéo les plus lourds</h2>
             <p>Dans Paramètres › Vidéo › Vidéo avancée, ces réglages coûtent le plus de performances pour le moins d&#39;avantage en compétitif :</p>
             <ul><li>Occlusion ambiante : <strong>désactivée</strong>.</li><li>Détail des shaders et des particules : <strong>bas</strong>.</li><li>Détail des modèles / textures : <strong>bas</strong> ou <strong>moyen</strong>.</li><li>High Dynamic Range : <strong>Performance</strong>.</li><li>Anticrénelage MSAA : baisse-le à 2x ou aucun s&#39;il te manque encore des FPS.</li></ul>
-            <p>Notre <a href="cs2-best-settings.html">guide des meilleurs réglages CS2</a> explique chaque option vidéo.</p>
+            <p>Notre <a href="cs2-best-settings">guide des meilleurs réglages CS2</a> explique chaque option vidéo.</p>
         </section>
         <section aria-labelledby="3-limite-ton-nombre-de-fps">
             <h2 id="3-limite-ton-nombre-de-fps">3. Limite ton nombre de FPS</h2>
-            <p>Des FPS illimités qui varient sans arrêt donnent une moins bonne sensation que des FPS stables. Limite-les avec <a href="../commands/fps_max.html"><code>fps_max</code></a> à une valeur que ton PC tient presque tout le temps, idéalement au-dessus de la fréquence de ton écran. Active <strong>NVIDIA Reflex Low Latency</strong> si ta carte graphique le permet.</p>
+            <p>Des FPS illimités qui varient sans arrêt donnent une moins bonne sensation que des FPS stables. Limite-les avec <a href="../commands/fps_max"><code>fps_max</code></a> à une valeur que ton PC tient presque tout le temps, idéalement au-dessus de la fréquence de ton écran. Active <strong>NVIDIA Reflex Low Latency</strong> si ta carte graphique le permet.</p>
             <div class="field-row"><code>fps_max 300</code><button type="button" class="mini" data-copy>Copier</button></div>
         <div class="field-row"><code>fps_max_ui 60</code><button type="button" class="mini" data-copy>Copier</button></div>
         </section>
@@ -120,11 +127,11 @@
         </section>
         <section aria-labelledby="ce-qui-n-aide-pas">
             <h2 id="ce-qui-n-aide-pas">Ce qui n&#39;aide pas</h2>
-            <ul><li>Les anciennes options de lancement de CS:GO comme <code>-high</code>, <code>-threads</code> ou <code>+mat_queue_mode 2</code> (voir notre <a href="cs2-launch-options.html">guide des options de lancement</a>).</li><li>Les programmes « boost FPS » et les modifications du registre : au mieux inutiles, au pire instables.</li><li>Les résolutions très basses qui rendent les ennemis difficiles à voir : mieux vaut un peu moins de FPS que ne voir personne.</li></ul>
+            <ul><li>Les anciennes options de lancement de CS:GO comme <code>-high</code>, <code>-threads</code> ou <code>+mat_queue_mode 2</code> (voir notre <a href="cs2-launch-options">guide des options de lancement</a>).</li><li>Les programmes « boost FPS » et les modifications du registre : au mieux inutiles, au pire instables.</li><li>Les résolutions très basses qui rendent les ennemis difficiles à voir : mieux vaut un peu moins de FPS que ne voir personne.</li></ul>
         </section>
 
         <h2>Commandes de ce guide</h2>
-        <ul class="related"><li><a href="../commands/fps_max.html">fps_max</a></li><li><a href="../commands/cl_showfps.html">cl_showfps</a></li><li><a href="../commands/cl_hud_telemetry_frametime_show.html">cl_hud_telemetry_frametime_show</a></li></ul>
+        <ul class="related"><li><a href="../commands/fps_max">fps_max</a></li><li><a href="../commands/cl_showfps">cl_showfps</a></li><li><a href="../commands/cl_hud_telemetry_frametime_show">cl_hud_telemetry_frametime_show</a></li></ul>
 
         <h2 id="faq">FAQ : Comment augmenter ses FPS sur CS2</h2>
         <h3>Comment avoir plus de FPS sur CS2 ?</h3>
@@ -137,19 +144,19 @@
         <p>À peine. La plupart des options de lancement « FPS » ont été faites pour CS:GO ; les réglages vidéo du jeu comptent beaucoup plus.</p>
 
         <h2>Autres guides CS2</h2>
-        <ul class="related"><li><a href="cs2-best-settings.html">Meilleurs réglages CS2 (2026) : vidéo, jeu et audio</a></li><li><a href="cs2-launch-options.html">Meilleures options de lancement CS2 (2026)</a></li><li><a href="cs2-stretched-resolution.html">Résolution étirée CS2 : 4:3 ou 16:9 (2026)</a></li></ul>
+        <ul class="related"><li><a href="cs2-best-settings">Meilleurs réglages CS2 (2026) : vidéo, jeu et audio</a></li><li><a href="cs2-launch-options">Meilleures options de lancement CS2 (2026)</a></li><li><a href="cs2-stretched-resolution">Résolution étirée CS2 : 4:3 ou 16:9 (2026)</a></li></ul>
         <p><a href="./">Tous les guides CS2 ›</a></p>
     </main>
 
     <footer>
         <nav class="footer-links" aria-label="Pied de page">
-            <a href="../generator.html">Générateur de crosshair</a>
-            <a href="../tools/bind-generator.html">Générateur de binds</a>
+            <a href="../generator">Générateur de crosshair</a>
+            <a href="../tools/bind-generator">Générateur de binds</a>
             <a href="../skins/">Skins des pros CS2</a>
             <a href="../guides/">Guides CS2</a>
             <a href="../commands/">Commandes console</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Mentions légales</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Mentions légales</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partenariats : <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

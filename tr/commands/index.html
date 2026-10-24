@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="tr" style="--copied: 'Kopyalandı'">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Konsol Komutları Listesi (2026) | ClutchCrosshair</title>
+    <meta name="description" content="İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clutchcrosshair.com/tr/commands/">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/commands/">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/commands/">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/commands/">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/commands/">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/">
+    <script>(function () {
+        var A = {"en":"../../commands/","fr":"../../fr/commands/","es":"../../es/commands/","ru":"../../ru/commands/","tr":"../../tr/commands/"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
+    <script type="application/json" id="i18n">{"copied":"Kopyalandı!","copiedAnnounce":"Panoya kopyalandı","copiedBar":"Kopyalandı","noPreview":"Önizleme yok","lightMode":"Açık mod","darkMode":"Koyu mod","lastUpdate":"Son güncelleme: ","sameAs":"Aynı crosshair: ","and":" ve ","faceitAria":"{name} FACEIT profili (yeni sekmede açılır)","previewAria":"{name} CS2 crosshair önizlemesi","terroristsWin":"Teröristler kazandı","defuse":"İmha etmeliydin.","rushB":"Rush B, durmak yok!","genOldCode":"Eski CSGO- kodları CS2'de artık çalışmıyor. CS ile başlayan bir kod yapıştır.","genImported":"Kod aktarıldı. İstediğin gibi ayarla.","genInvalid":"Bu geçerli bir CS2 crosshair kodu değil.","genFromLink":"Crosshair bağlantıdan yüklendi. İstediğin gibi ayarla.","consentAria":"Çerez izni","consentText":"Kitlemizi Google Analytics ile ölçmek istiyoruz. Yalnızca kabul edersen çerez yerleştirir. Reddetmek sitede hiçbir şeyi değiştirmez.","consentMore":"Daha fazla bilgi","consentRefuse":"Reddet","consentAccept":"Kabul et"}</script>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:title" content="CS2 Konsol Komutları">
+    <meta property="og:description" content="İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.">
+    <meta property="og:url" content="https://clutchcrosshair.com/tr/commands/">
+    <meta property="og:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: sana en uygun CS2 crosshair'ını bul">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CS2 Konsol Komutları">
+    <meta name="twitter:description" content="İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.">
+    <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clutchcrosshair.com/tr/commands/","url":"https://clutchcrosshair.com/tr/commands/","name":"CS2 Konsol Komutları","description":"İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.","inLanguage":"tr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tr/commands/#breadcrumb"},"dateModified":"2026-10-19","mainEntity":{"@type":"ItemList","numberOfItems":63,"itemListElement":[{"@type":"ListItem","position":1,"name":"crosshair","url":"https://clutchcrosshair.com/tr/commands/crosshair"},{"@type":"ListItem","position":2,"name":"cl_crosshair_length","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_length"},{"@type":"ListItem","position":3,"name":"cl_crosshair_thickness","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_thickness"},{"@type":"ListItem","position":4,"name":"cl_crosshair_gap","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_gap"},{"@type":"ListItem","position":5,"name":"cl_crosshair_screen_height","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_screen_height"},{"@type":"ListItem","position":6,"name":"cl_crosshairstyle","url":"https://clutchcrosshair.com/tr/commands/cl_crosshairstyle"},{"@type":"ListItem","position":7,"name":"cl_crosshaircolor_r","url":"https://clutchcrosshair.com/tr/commands/cl_crosshaircolor_r"},{"@type":"ListItem","position":8,"name":"cl_crosshaircolor_a","url":"https://clutchcrosshair.com/tr/commands/cl_crosshaircolor_a"},{"@type":"ListItem","position":9,"name":"cl_crosshair_drawoutline","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_drawoutline"},{"@type":"ListItem","position":10,"name":"cl_crosshairdot","url":"https://clutchcrosshair.com/tr/commands/cl_crosshairdot"},{"@type":"ListItem","position":11,"name":"cl_crosshair_t","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_t"},{"@type":"ListItem","position":12,"name":"cl_crosshair_recoil","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_recoil"},{"@type":"ListItem","position":13,"name":"cl_crosshair_sniper_width","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_sniper_width"},{"@type":"ListItem","position":14,"name":"cl_crosshairsize","url":"https://clutchcrosshair.com/tr/commands/cl_crosshairsize"},{"@type":"ListItem","position":15,"name":"cl_crosshairthickness","url":"https://clutchcrosshair.com/tr/commands/cl_crosshairthickness"},{"@type":"ListItem","position":16,"name":"cl_crosshairgap","url":"https://clutchcrosshair.com/tr/commands/cl_crosshairgap"},{"@type":"ListItem","position":17,"name":"cl_crosshair_outlinethickness","url":"https://clutchcrosshair.com/tr/commands/cl_crosshair_outlinethickness"},{"@type":"ListItem","position":18,"name":"cl_crosshaircolor","url":"https://clutchcrosshair.com/tr/commands/cl_crosshaircolor"},{"@type":"ListItem","position":19,"name":"cl_hud_color","url":"https://clutchcrosshair.com/tr/commands/cl_hud_color"},{"@type":"ListItem","position":20,"name":"hud_scaling","url":"https://clutchcrosshair.com/tr/commands/hud_scaling"},{"@type":"ListItem","position":21,"name":"cl_hud_radar_scale","url":"https://clutchcrosshair.com/tr/commands/cl_hud_radar_scale"},{"@type":"ListItem","position":22,"name":"cl_radar_scale","url":"https://clutchcrosshair.com/tr/commands/cl_radar_scale"},{"@type":"ListItem","position":23,"name":"cl_radar_always_centered","url":"https://clutchcrosshair.com/tr/commands/cl_radar_always_centered"},{"@type":"ListItem","position":24,"name":"cl_showfps","url":"https://clutchcrosshair.com/tr/commands/cl_showfps"},{"@type":"ListItem","position":25,"name":"cl_draw_only_deathnotices","url":"https://clutchcrosshair.com/tr/commands/cl_draw_only_deathnotices"},{"@type":"ListItem","position":26,"name":"viewmodel_fov","url":"https://clutchcrosshair.com/tr/commands/viewmodel_fov"},{"@type":"ListItem","position":27,"name":"viewmodel_offset_x","url":"https://clutchcrosshair.com/tr/commands/viewmodel_offset_x"},{"@type":"ListItem","position":28,"name":"fps_max","url":"https://clutchcrosshair.com/tr/commands/fps_max"},{"@type":"ListItem","position":29,"name":"r_fullscreen_gamma","url":"https://clutchcrosshair.com/tr/commands/r_fullscreen_gamma"},{"@type":"ListItem","position":30,"name":"rate","url":"https://clutchcrosshair.com/tr/commands/rate"},{"@type":"ListItem","position":31,"name":"mm_dedicated_search_maxping","url":"https://clutchcrosshair.com/tr/commands/mm_dedicated_search_maxping"},{"@type":"ListItem","position":32,"name":"net_graph","url":"https://clutchcrosshair.com/tr/commands/net_graph"},{"@type":"ListItem","position":33,"name":"sensitivity","url":"https://clutchcrosshair.com/tr/commands/sensitivity"},{"@type":"ListItem","position":34,"name":"zoom_sensitivity_ratio","url":"https://clutchcrosshair.com/tr/commands/zoom_sensitivity_ratio"},{"@type":"ListItem","position":35,"name":"m_yaw","url":"https://clutchcrosshair.com/tr/commands/m_yaw"},{"@type":"ListItem","position":36,"name":"m_rawinput","url":"https://clutchcrosshair.com/tr/commands/m_rawinput"},{"@type":"ListItem","position":37,"name":"volume","url":"https://clutchcrosshair.com/tr/commands/volume"},{"@type":"ListItem","position":38,"name":"snd_voipvolume","url":"https://clutchcrosshair.com/tr/commands/snd_voipvolume"},{"@type":"ListItem","position":39,"name":"sv_cheats","url":"https://clutchcrosshair.com/tr/commands/sv_cheats"},{"@type":"ListItem","position":40,"name":"sv_infinite_ammo","url":"https://clutchcrosshair.com/tr/commands/sv_infinite_ammo"},{"@type":"ListItem","position":41,"name":"sv_grenade_trajectory_prac_pipreview","url":"https://clutchcrosshair.com/tr/commands/sv_grenade_trajectory_prac_pipreview"},{"@type":"ListItem","position":42,"name":"sv_grenade_trajectory_prac_trailtime","url":"https://clutchcrosshair.com/tr/commands/sv_grenade_trajectory_prac_trailtime"},{"@type":"ListItem","position":43,"name":"sv_rethrow_last_grenade","url":"https://clutchcrosshair.com/tr/commands/sv_rethrow_last_grenade"},{"@type":"ListItem","position":44,"name":"sv_showimpacts","url":"https://clutchcrosshair.com/tr/commands/sv_showimpacts"},{"@type":"ListItem","position":45,"name":"mp_buy_anywhere","url":"https://clutchcrosshair.com/tr/commands/mp_buy_anywhere"},{"@type":"ListItem","position":46,"name":"noclip","url":"https://clutchcrosshair.com/tr/commands/noclip"},{"@type":"ListItem","position":47,"name":"give","url":"https://clutchcrosshair.com/tr/commands/give"},{"@type":"ListItem","position":48,"name":"bot_kick","url":"https://clutchcrosshair.com/tr/commands/bot_kick"},{"@type":"ListItem","position":49,"name":"bind","url":"https://clutchcrosshair.com/tr/commands/bind"},{"@type":"ListItem","position":50,"name":"alias","url":"https://clutchcrosshair.com/tr/commands/alias"},{"@type":"ListItem","position":51,"name":"exec","url":"https://clutchcrosshair.com/tr/commands/exec"},{"@type":"ListItem","position":52,"name":"find","url":"https://clutchcrosshair.com/tr/commands/find"},{"@type":"ListItem","position":53,"name":"map","url":"https://clutchcrosshair.com/tr/commands/map"},{"@type":"ListItem","position":54,"name":"playdemo","url":"https://clutchcrosshair.com/tr/commands/playdemo"},{"@type":"ListItem","position":55,"name":"cl_interp","url":"https://clutchcrosshair.com/tr/commands/cl_interp"},{"@type":"ListItem","position":56,"name":"cl_interp_ratio","url":"https://clutchcrosshair.com/tr/commands/cl_interp_ratio"},{"@type":"ListItem","position":57,"name":"cl_updaterate","url":"https://clutchcrosshair.com/tr/commands/cl_updaterate"},{"@type":"ListItem","position":58,"name":"cl_cmdrate","url":"https://clutchcrosshair.com/tr/commands/cl_cmdrate"},{"@type":"ListItem","position":59,"name":"voice_scale","url":"https://clutchcrosshair.com/tr/commands/voice_scale"},{"@type":"ListItem","position":60,"name":"mat_monitorgamma","url":"https://clutchcrosshair.com/tr/commands/mat_monitorgamma"},{"@type":"ListItem","position":61,"name":"m_customaccel","url":"https://clutchcrosshair.com/tr/commands/m_customaccel"},{"@type":"ListItem","position":62,"name":"cl_hud_telemetry_frametime_show","url":"https://clutchcrosshair.com/tr/commands/cl_hud_telemetry_frametime_show"},{"@type":"ListItem","position":63,"name":"cl_hud_telemetry_ping_show","url":"https://clutchcrosshair.com/tr/commands/cl_hud_telemetry_ping_show"}]}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tr/commands/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://clutchcrosshair.com/tr/"},{"@type":"ListItem","position":2,"name":"CS2 Konsol Komutları","item":"https://clutchcrosshair.com/tr/commands/"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tr/commands/#faq","mainEntity":[{"@type":"Question","name":"CS2'de konsol nasıl açılır?","acceptedAnswer":{"@type":"Answer","text":"Ayarlar › Oyun bölümüne git ve Geliştirici Konsolunu Etkinleştir seçeneğini Evet yap. Sonra oyunda ~ tuşuna (Esc'nin altındaki tuş) basarak aç. Çalışmazsa toggleconsole komutunu bind ile başka bir tuşa ata."}},{"@type":"Question","name":"Konsol komutları rekabetçi eşleştirmede çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Kendi ayarlarını değiştiren komutların çoğu (crosshair, HUD, radar, fare, ses) her yerde çalışır. \"sv_cheats gerekir\" olarak işaretlenen komutlar ve mp_ ya da bot_ ile başlayan sunucu komutları yalnızca kendi kurduğun bir sunucuda, örneğin botlarla özel bir maçta çalışır."}},{"@type":"Question","name":"Konsol komutlarımı nasıl kaydederim?","acceptedAnswer":{"@type":"Answer","text":"Onları oyunun cfg klasöründe (game/csgo/cfg) autoexec.cfg adlı bir dosyaya koy ve başlatma seçeneklerine +exec autoexec ekle ya da konsola exec autoexec yaz."}},{"@type":"Question","name":"Bir CS:GO komutu CS2'de neden çalışmıyor?","acceptedAnswer":{"@type":"Answer","text":"net_graph gibi birçok CS:GO komutu CS2'de kaldırıldı veya adı değişti. Bu sayfada \"CS2'de kaldırıldı\" olarak işaretlenen komutlarda yerine ne kullanacağın yazıyor."}}]}]}</script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="ClutchCrosshair ana sayfa">
+            <img class="logo-img logo-dark" src="../../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Ana menü">
+            <a href="../">Crosshair'lar</a>
+            <a href="../skins/">Pro skinleri</a>
+            <a href="../guides/">Rehberler</a>
+            <a href="../commands/" aria-current="page">Komutlar</a>
+            <a href="../tools/">Araçlar</a>
+        </nav>
+        <select id="lang" class="lang" aria-label="Dil">
+                    <option value="en">EN · English</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr" selected>TR</option>
+                    
+                </select>
+    </header>
+
+    <main class="player-page cmd-hub">
+        <nav class="breadcrumb" aria-label="Sayfa yolu"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Ana sayfa</a> › <span>Komutlar</span></nav>
+        <h1>CS2 Konsol Komutları</h1>
+        <p>İşe yarayan 159 CS2 konsol komutu sade bir dille: her birinin ne yaptığı, değerleri, varsayılan değeri ve kopyalamaya hazır örnekler. CS:GO'dan kalıp artık çalışmayan komutlar <strong>CS2'de kaldırıldı</strong> olarak işaretlendi. Güncelleme: 19/10/2026.</p>
+
+        <div class="cmd-tools">
+            <div class="hero-search cmd-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.06l4.24 4.24-1.4 1.4-4.24-4.24A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+                <input type="search" id="cmd-search" placeholder="Bir komut ara, örn. crosshair, fps, radar..." aria-label="Bir CS2 konsol komutu ara" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="cmd-filters" role="group" aria-label="Kategoriye göre filtrele">
+                <button type="button" class="cmd-filter" data-cat="" aria-pressed="true">Tümü <span>159</span></button>
+                <button type="button" class="cmd-filter" data-cat="crosshair" aria-pressed="false">Crosshair <span>30</span></button>
+                <button type="button" class="cmd-filter" data-cat="hud" aria-pressed="false">HUD ve radar <span>20</span></button>
+                <button type="button" class="cmd-filter" data-cat="viewmodel" aria-pressed="false">Viewmodel (silah) <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="performance" aria-pressed="false">Grafik ve FPS <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="network" aria-pressed="false">Ağ <span>10</span></button>
+                <button type="button" class="cmd-filter" data-cat="mouse" aria-pressed="false">Fare <span>6</span></button>
+                <button type="button" class="cmd-filter" data-cat="audio" aria-pressed="false">Ses <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="practice" aria-pressed="false">Antrenman ve sunucu <span>29</span></button>
+                <button type="button" class="cmd-filter" data-cat="bots" aria-pressed="false">Botlar <span>11</span></button>
+                <button type="button" class="cmd-filter" data-cat="general" aria-pressed="false">Genel <span>30</span></button>
+            </div>
+        </div>
+        <p class="cmd-empty hidden" id="cmd-empty">Komut bulunamadı. Başka bir kelime dene ya da CS2 konsoluna <code>find</code> ve ardından bir kelime yaz.</p>
+
+        <section class="cmd-section" id="crosshair" data-cat="crosshair" aria-labelledby="crosshair-title">
+            <h2 id="crosshair-title">Crosshair komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="crosshair" data-cat="crosshair" data-search="crosshair crosshair&#39;ı gösterir veya gizler. crosshair&#39;ı açar (1) veya kapatır (0). gizlemek çoğunlukla temiz ekran görüntüleri ve videolar için işe yarar; gerçek bir maçta her zaman açık olmasını istersin. crosshair">
+                <h3 class="cmd-name"><a href="crosshair">crosshair</a></h3>
+                <p>Crosshair&#39;ı gösterir veya gizler. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>crosshair 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_length" data-cat="crosshair" data-search="cl_crosshair_length her crosshair çizgisinin uzunluğu, piksel olarak. crosshair&#39;ın dört çizgisinin her birinin uzunluğunu belirler. 30 eylül 2026 tarihli cs2 güncellemesinden beri crosshair boyutları cl_crosshair_screen_height ile ayarlanan ekran yüksekliği için gerçek piksel olarak sayılır; yani 2 değeri o ekranda 2 piksel demektir. cs2 prolarının çoğu 1 ile 4 arasında kısa bir uzunlukla oynar. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_length">cl_crosshair_length</a></h3>
+                <p>Her crosshair çizgisinin uzunluğu, piksel olarak.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_thickness" data-cat="crosshair" data-search="cl_crosshair_thickness crosshair çizgilerinin kalınlığı, piksel olarak. crosshair çizgilerinin kalınlığını, cl_crosshair_screen_height ile ayarlanan ekran yüksekliği için piksel olarak belirler. 1 kalınlık ince ve hassas bir crosshair verir; 2 aydınlık haritalarda daha kolay görünür ve prolar arasında en yaygın seçimdir. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_thickness">cl_crosshair_thickness</a></h3>
+                <p>Crosshair çizgilerinin kalınlığı, piksel olarak.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_gap" data-cat="crosshair" data-search="cl_crosshair_gap merkez ile crosshair çizgileri arasındaki boşluk, piksel olarak. crosshair&#39;ın ortasındaki boş alanı, cl_crosshair_screen_height ile ayarlanan ekran yüksekliği için piksel olarak belirler. küçük bir boşluk (0 ile 2 arası) çizgileri hedefin kafasına yakın tutar; negatif bir değer çizgilerin merkezde üst üste binmesini sağlar. clutchcrosshair&#39;da proların çoğu 1 veya 2 boşluk kullanır. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_gap">cl_crosshair_gap</a></h3>
+                <p>Merkez ile crosshair çizgileri arasındaki boşluk, piksel olarak.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_screen_height" data-cat="crosshair" data-search="cl_crosshair_screen_height crosshair boyutlarının tasarlandığı ekran yüksekliği. 30 eylül 2026 tarihli cs2 güncellemesiyle geldi. crosshair uzunluğu, kalınlığı ve boşluğu artık bu ekran yüksekliği için piksel olarak sayılıyor. farklı bir çözünürlükte oynarsan cs2 crosshair&#39;ı ölçekler, böylece ekranına göre aynı boyutta kalır. her cs2 crosshair paylaşım koduna kaydedilir; bir pronun crosshair&#39;ının senin ekranında da doğru görünmesinin nedeni budur. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_screen_height">cl_crosshair_screen_height</a></h3>
+                <p>Crosshair boyutlarının tasarlandığı ekran yüksekliği.</p>
+                <div class="field-row">
+                <code>cl_crosshair_screen_height 1080</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairstyle" data-cat="crosshair" data-search="cl_crosshairstyle sabit veya dinamik crosshair seçer. hareket edip ateş ettiğinde crosshair&#39;ın nasıl tepki vereceğini seçer. stil 4 (sabit) hiç hareket etmez ve neredeyse tüm prolar tarafından kullanılır. stil 2 merkezi sabit tutarken dış parçalar geri tepmeye ve harekete tepki verir. stil 5, cs:go tarzı eski dinamik crosshair&#39;dır. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairstyle">cl_crosshairstyle</a></h3>
+                <p>Sabit veya dinamik crosshair seçer. <span class="cmd-default">Varsayılan: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshairstyle 4</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_r" data-cat="crosshair" data-search="cl_crosshaircolor_r özel crosshair renginin kırmızı bileşeni (0-255). cl_crosshaircolor_g ve cl_crosshaircolor_b ile birlikte crosshair&#39;ının tam rengini 0 ile 255 arasındaki kırmızı, yeşil ve mavi değerleriyle belirler. örneğin 0 255 255 camgöbeği, 0 255 0 ise saf yeşil verir: cs2 prolarının en sevdiği iki renk. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_r">cl_crosshaircolor_r</a></h3>
+                <p>Özel crosshair renginin kırmızı bileşeni (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_g" data-cat="crosshair" data-search="cl_crosshaircolor_g özel crosshair renginin yeşil bileşeni (0-255). crosshair renginin yeşil değeri, 0 ile 255 arası. cl_crosshaircolor_r ve cl_crosshaircolor_b ile birlikte kullan. crosshair">
+                <h3 class="cmd-name">cl_crosshaircolor_g</h3>
+                <p>Özel crosshair renginin yeşil bileşeni (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_g 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_b" data-cat="crosshair" data-search="cl_crosshaircolor_b özel crosshair renginin mavi bileşeni (0-255). crosshair renginin mavi değeri, 0 ile 255 arası. cl_crosshaircolor_r ve cl_crosshaircolor_g ile birlikte kullan. crosshair">
+                <h3 class="cmd-name">cl_crosshaircolor_b</h3>
+                <p>Özel crosshair renginin mavi bileşeni (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshaircolor_a" data-cat="crosshair" data-search="cl_crosshaircolor_a crosshair opaklığı (0-255). crosshair&#39;ın ne kadar opak olduğunu belirler: 0 (görünmez) ile 255 (tamamen opak) arası. neredeyse tüm prolar 255&#39;te bırakır: yarı saydam bir crosshair&#39;ı çatışma anında bulmak daha zordur. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor_a">cl_crosshaircolor_a</a></h3>
+                <p>Crosshair opaklığı (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_drawoutline" data-cat="crosshair" data-search="cl_crosshair_drawoutline crosshair&#39;ın etrafına dış çizgi ekler. crosshair çizgilerinin etrafına 1 piksellik bir dış çizgi çizer. i̇nce veya açık renkli bir crosshair&#39;ın açık renkli duvarlarda (örneğin dust2 veya mirage&#39;daki kum) okunmasını sağlar. rengi cl_crosshairoutline_r, _g, _b ve _a komutlarıyla ayarlanır. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_drawoutline">cl_crosshair_drawoutline</a></h3>
+                <p>Crosshair&#39;ın etrafına dış çizgi ekler.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_r" data-cat="crosshair" data-search="cl_crosshairoutline_r dış çizgi renginin kırmızı bileşeni (0-255). cl_crosshairoutline_g, cl_crosshairoutline_b ve cl_crosshairoutline_a ile birlikte crosshair dış çizgisinin rengini ve opaklığını belirler (cl_crosshair_drawoutline 1 olduğunda). klasik seçim siyahtır (0 0 0). crosshair">
+                <h3 class="cmd-name">cl_crosshairoutline_r</h3>
+                <p>Dış çizgi renginin kırmızı bileşeni (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_r 0; cl_crosshairoutline_g 0; cl_crosshairoutline_b 0; cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairoutline_a" data-cat="crosshair" data-search="cl_crosshairoutline_a crosshair dış çizgisinin opaklığı (0-255). crosshair dış çizgisinin ne kadar opak olduğunu 0 ile 255 arasında belirler. yalnızca cl_crosshair_drawoutline 1 olduğunda kullanılır. crosshair">
+                <h3 class="cmd-name">cl_crosshairoutline_a</h3>
+                <p>Crosshair dış çizgisinin opaklığı (0-255).</p>
+                <div class="field-row">
+                <code>cl_crosshairoutline_a 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairdot" data-cat="crosshair" data-search="cl_crosshairdot crosshair&#39;ın ortasına nokta ekler. crosshair&#39;ın ortasına küçük bir nokta çizer. bazı oyuncuların hassas nişan almasına yardım eder ama uzaktaki bir kafayı kapatabilir. cs2 prolarının yalnızca azı kullanır. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairdot">cl_crosshairdot</a></h3>
+                <p>Crosshair&#39;ın ortasına nokta ekler.</p>
+                <div class="field-row">
+                <code>cl_crosshairdot 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_t" data-cat="crosshair" data-search="cl_crosshair_t t stili crosshair (üst çizgiyi kaldırır). crosshair&#39;ın üst çizgisini kaldırır, böylece ters bir t gibi görünür. bazı oyuncular hedefin kafasının üstündeki alanı hiçbir şey kapatmadığı için bunu sever. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_t">cl_crosshair_t</a></h3>
+                <p>T stili crosshair (üst çizgiyi kaldırır).</p>
+                <div class="field-row">
+                <code>cl_crosshair_t 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_recoil" data-cat="crosshair" data-search="cl_crosshair_recoil crosshair&#39;ın geri tepmeyi takip etmesini sağlar. açıkken crosshair, sprey atarken silahın geri tepmesiyle birlikte hareket eder ve mermilerinin nereye gittiğini gösterir. çoğu pro bunu kapatıp sprey kalıplarını öğrenir, ama yeni başlayanların geri tepmeyi anlamasına yardımcı olabilir. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_recoil">cl_crosshair_recoil</a></h3>
+                <p>Crosshair&#39;ın geri tepmeyi takip etmesini sağlar.</p>
+                <div class="field-row">
+                <code>cl_crosshair_recoil 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitdist" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitdist dinamik crosshair&#39;ın ayrılma mesafesi (stil 2). yalnızca cl_crosshairstyle 2 ile kullanılır: hareket ederken veya ateş ederken crosshair&#39;ın dış parçalarının sabit merkezden ne kadar uzaklaşacağını belirler. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitdist</h3>
+                <p>Dinamik crosshair&#39;ın ayrılma mesafesi (stil 2).</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitdist 7</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_innermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_innermod dinamik crosshair&#39;ın iç parçasının opaklığı. cl_crosshairstyle 2 ile, crosshair&#39;ın sabit iç parçasının opaklığını 0 ile 1 arasında belirler. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_innermod</h3>
+                <p>Dinamik crosshair&#39;ın iç parçasının opaklığı.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_innermod 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_splitalpha_outermod" data-cat="crosshair" data-search="cl_crosshair_dynamic_splitalpha_outermod dinamik crosshair&#39;ın dış parçasının opaklığı. cl_crosshairstyle 2 ile, hareket ederken veya ateş ederken uzaklaşan dış parçaların opaklığını 0.3 ile 1 arasında belirler. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_splitalpha_outermod</h3>
+                <p>Dinamik crosshair&#39;ın dış parçasının opaklığı.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_splitalpha_outermod 0.5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_dynamic_maxdist_splitratio" data-cat="crosshair" data-search="cl_crosshair_dynamic_maxdist_splitratio i̇ç ve dış dinamik parçalar arasındaki boyut oranı. cl_crosshairstyle 2 ile, crosshair uzunluğunun sabit iç parça ile hareketli dış parça arasında nasıl paylaşılacağını 0 ile 1 arasında belirler. crosshair">
+                <h3 class="cmd-name">cl_crosshair_dynamic_maxdist_splitratio</h3>
+                <p>İç ve dış dinamik parçalar arasındaki boyut oranı.</p>
+                <div class="field-row">
+                <code>cl_crosshair_dynamic_maxdist_splitratio 0.35</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_dot_scale" data-cat="crosshair" data-search="cl_ironsight_dot_scale aug ve sg 553 dürbün noktasının boyutu. aug veya sg 553 ile dürbüne bakarken gördüğün noktanın boyutunu belirler. 30 eylül 2026 güncellemesinden beri cs2 crosshair paylaşım kodlarına kaydedilir. crosshair">
+                <h3 class="cmd-name">cl_ironsight_dot_scale</h3>
+                <p>AUG ve SG 553 dürbün noktasının boyutu.</p>
+                <div class="field-row">
+                <code>cl_ironsight_dot_scale 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_ironsight_usecrosshaircolor" data-cat="crosshair" data-search="cl_ironsight_usecrosshaircolor aug / sg 553 dürbün noktası için crosshair rengini kullanır. açıkken aug ve sg 553&#39;ün dürbün noktası varsayılan kırmızı yerine crosshair&#39;ının rengini alır. crosshair">
+                <h3 class="cmd-name">cl_ironsight_usecrosshaircolor</h3>
+                <p>AUG / SG 553 dürbün noktası için crosshair rengini kullanır.</p>
+                <div class="field-row">
+                <code>cl_ironsight_usecrosshaircolor 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_sniper_width" data-cat="crosshair" data-search="cl_crosshair_sniper_width keskin nişancı dürbünü çizgilerinin kalınlığı. awp ve scout dürbünlerinin siyah çizgilerini kalınlaştırır. 1, tek piksellik ince çizgileri korur; daha yüksek değerler dürbün artısını daha kolay görünür kılar. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_sniper_width">cl_crosshair_sniper_width</a></h3>
+                <p>Keskin nişancı dürbünü çizgilerinin kalınlığı. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_sniper_width 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshair_friendly_warning" data-cat="crosshair" data-search="cl_crosshair_friendly_warning takım arkadaşına nişan alınca uyarı simgesi. takım arkadaşına nişan aldığında crosshair&#39;ında küçük bir uyarı gösterir, böylece dost ateşinden kaçınırsın. crosshair">
+                <h3 class="cmd-name">cl_crosshair_friendly_warning</h3>
+                <p>Takım arkadaşına nişan alınca uyarı simgesi. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_crosshair_friendly_warning 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairsize" data-cat="crosshair" data-search="cl_crosshairsize eski crosshair uzunluğu ayarı, konsolda hâlâ var. cl_crosshairsize cs2 konsolunda hâlâ var, ama 30 eylül 2026 güncellemesinden beri crosshair uzunluğu gerçek piksel olarak cl_crosshair_length ile ayarlanıyor. her yeni cs2 crosshair koduna kaydedilen komut budur; her ekranda aynı görünen bir crosshair için cl_crosshair_length kullan. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairsize">cl_crosshairsize</a></h3>
+                <p>Eski crosshair uzunluğu ayarı, konsolda hâlâ var.</p>
+                <div class="field-row">
+                <code>cl_crosshair_length 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairthickness" data-cat="crosshair" data-search="cl_crosshairthickness eski crosshair kalınlığı ayarı, konsolda hâlâ var. cl_crosshairthickness cs2 konsolunda hâlâ var, ama 30 eylül 2026 güncellemesinden beri kalınlık gerçek piksel olarak cl_crosshair_thickness ile ayarlanıyor; cs2 crosshair kodlarına kaydedilen komut da bu. bir pronun crosshair&#39;ını birebir kopyalamak için cl_crosshair_thickness kullan. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairthickness">cl_crosshairthickness</a></h3>
+                <p>Eski crosshair kalınlığı ayarı, konsolda hâlâ var.</p>
+                <div class="field-row">
+                <code>cl_crosshair_thickness 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshairgap" data-cat="crosshair" data-search="cl_crosshairgap cs2&#39;de kaldırıldı: yerine cl_crosshair_gap geldi. cl_crosshairgap artık yok: cs2 konsoluna yazınca unknown command yanıtı gelir. 30 eylül 2026 güncellemesinden beri boşluk gerçek piksel olarak cl_crosshair_gap ile ayarlanıyor (gap&#39;ten önce alt çizgiyle). crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshairgap">cl_crosshairgap</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: yerine cl_crosshair_gap geldi.</p>
+                <div class="field-row">
+                <code>cl_crosshair_gap 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshair_outlinethickness" data-cat="crosshair" data-search="cl_crosshair_outlinethickness cs2&#39;de kaldırıldı: dış çizgi yeni komutlarla ayarlanıyor. cl_crosshair_outlinethickness cs2&#39;de artık yok. dış çizgiyi cl_crosshair_drawoutline ile aç veya kapat; rengini ve opaklığını cl_crosshairoutline_r, _g, _b ve _a ile seç. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshair_outlinethickness">cl_crosshair_outlinethickness</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: dış çizgi yeni komutlarla ayarlanıyor.</p>
+                <div class="field-row">
+                <code>cl_crosshair_drawoutline 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_crosshaircolor" data-cat="crosshair" data-search="cl_crosshaircolor cs2&#39;de kaldırıldı: hazır renkler artık yok. beş hazır renkten birini seçen cl_crosshaircolor cs2&#39;de artık yok. i̇stediğin rengi cl_crosshaircolor_r, cl_crosshaircolor_g ve cl_crosshaircolor_b ile, her biri 0 ile 255 arasında ayarla. crosshair">
+                <h3 class="cmd-name"><a href="cl_crosshaircolor">cl_crosshaircolor</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: hazır renkler artık yok.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_r 0; cl_crosshaircolor_g 255; cl_crosshaircolor_b 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_crosshairalpha" data-cat="crosshair" data-search="cl_crosshairalpha eski crosshair opaklığı ayarı, konsolda hâlâ var. cl_crosshairalpha cs2 konsolunda hâlâ var. yeni sistemin crosshair kodları opaklığı cl_crosshaircolor_a içinde, 0 ile 255 arasında saklar. crosshair">
+                <h3 class="cmd-name">cl_crosshairalpha</h3>
+                <p>Eski crosshair opaklığı ayarı, konsolda hâlâ var.</p>
+                <div class="field-row">
+                <code>cl_crosshaircolor_a 255</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="hud" data-cat="hud" aria-labelledby="hud-title">
+            <h2 id="hud-title">HUD ve radar komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="cl_hud_color" data-cat="hud" data-search="cl_hud_color hud rengi (can, cephane, para...). hud&#39;ının rengini değiştirir: can, zırh, cephane ve para. kolay okuduğun bir renk seç; takım rengi (0) tarafına göre değişir. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_hud_color">cl_hud_color</a></h3>
+                <p>HUD rengi (can, cephane, para...).</p>
+                <div class="field-row">
+                <code>cl_hud_color 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="hud_scaling" data-cat="hud" data-search="hud_scaling hud boyutu. tüm hud&#39;ı büyütür veya küçültür. küçük bir hud ekranın daha fazlasını görünür bırakır; büyük bir hud geniş monitörde daha kolay okunur. hud ve radar">
+                <h3 class="cmd-name"><a href="hud_scaling">hud_scaling</a></h3>
+                <p>HUD boyutu.</p>
+                <div class="field-row">
+                <code>hud_scaling 0.85</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_radar_scale" data-cat="hud" data-search="cl_hud_radar_scale radarın ekrandaki boyutu. sol üst köşedeki radarın (mini haritanın) boyutunu değiştirir. yakınlaştırmayı değiştirmez: bunun için cl_radar_scale kullan. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_hud_radar_scale">cl_hud_radar_scale</a></h3>
+                <p>Radarın ekrandaki boyutu. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_hud_radar_scale 1.15</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_scale" data-cat="hud" data-search="cl_radar_scale radar yakınlaştırma seviyesi. radarın haritanın ne kadarını gösterdiğini 0.25 ile 1 arasında belirler. daha düşük bir değer uzaklaştırır ve haritanın daha fazlasını gösterir: birçok oyuncu tüm bomba bölgelerini aynı anda görmek için 0.3 ile 0.4 arası kullanır. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_radar_scale">cl_radar_scale</a></h3>
+                <p>Radar yakınlaştırma seviyesi. <span class="cmd-default">Varsayılan: <code>0.7</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_scale 0.35</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_always_centered" data-cat="hud" data-search="cl_radar_always_centered seni radarın ortasında tutar. açıkken (1) her zaman radarın ortasında kalırsın. kapalıyken (0) radar, haritanın kenarlarına yakın yerlerde alanını daha iyi kullanır ve daha fazlasını görürsün. rekabetçi oyuncuların çoğu bunu kapatır. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_radar_always_centered">cl_radar_always_centered</a></h3>
+                <p>Seni radarın ortasında tutar. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_always_centered 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_rotate" data-cat="hud" data-search="cl_radar_rotate radarı bakış açınla birlikte döndürür. açıkken radar seninle birlikte döner, üst taraf her zaman baktığın yöndür. kapalıyken harita sabit kalır ve kuzey yukarıdadır; bu, bölge isimlerini okumayı kolaylaştırır. hud ve radar">
+                <h3 class="cmd-name">cl_radar_rotate</h3>
+                <p>Radarı bakış açınla birlikte döndürür. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_rotate 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_icon_scale_min" data-cat="hud" data-search="cl_radar_icon_scale_min radardaki simgelerin en küçük boyutu. radardaki oyuncu simgelerinin en küçük boyutunu 0.4 ile 1.25 arasında belirler. radar uzaklaştırılmışken büyük simgeler daha kolay fark edilir. hud ve radar">
+                <h3 class="cmd-name">cl_radar_icon_scale_min</h3>
+                <p>Radardaki simgelerin en küçük boyutu. <span class="cmd-default">Varsayılan: <code>0.6</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_icon_scale_min 0.8</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_radar_square_with_scoreboard" data-cat="hud" data-search="cl_radar_square_with_scoreboard skor tablosu açıkken kare radar. açıkken, skor tablosu tuşunu (tab) basılı tuttuğun sürece radar daha büyük bir kareye dönüşür, böylece tüm haritaya hızlıca bakabilirsin. hud ve radar">
+                <h3 class="cmd-name">cl_radar_square_with_scoreboard</h3>
+                <p>Skor tablosu açıkken kare radar. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_radar_square_with_scoreboard 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showfps" data-cat="hud" data-search="cl_showfps fps&#39;ini ekranda gösterir. saniyedeki kare sayını ekranın üstünde gösterir. anlık değer için 1, okuması daha kolay yumuşatılmış değer için 2 kullan. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_showfps">cl_showfps</a></h3>
+                <p>FPS&#39;ini ekranda gösterir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_showfps 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showpos" data-cat="hud" data-search="cl_showpos konumunu ve bakış açılarını gösterir (hile). tam konumunu, açılarını ve hızını ekranın üstünde gösterir. sv_cheats 1 gerektirir, bu yüzden yalnızca kendi sunucunda çalışır; örneğin bomba veya hareket antrenmanı için. hud ve radar">
+                <h3 class="cmd-name">cl_showpos<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Konumunu ve bakış açılarını gösterir (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_showpos 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cq_netgraph" data-cat="hud" data-search="cq_netgraph ağ komut kuyruğu istatistiklerini gösterir. girdilerinin sunucuya nasıl sıraya konup gönderildiğiyle ilgili teknik istatistikleri gösterir. bu bir hata ayıklama aracıdır, eski net_graph&#39;ın tam yerine geçmez. hud ve radar">
+                <h3 class="cmd-name">cq_netgraph</h3>
+                <p>Ağ komut kuyruğu istatistiklerini gösterir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cq_netgraph 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_showloadout" data-cat="hud" data-search="cl_showloadout silahlarını her zaman ekranın sağında gösterir. açıkken mevcut silahların ve bombaların ekranın sağ tarafında görünür kalır. kapalıyken yalnızca silah değiştirdiğinde görünürler. hud ve radar">
+                <h3 class="cmd-name">cl_showloadout</h3>
+                <p>Silahlarını her zaman ekranın sağında gösterir.</p>
+                <div class="field-row">
+                <code>cl_showloadout 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_draw_only_deathnotices" data-cat="hud" data-search="cl_draw_only_deathnotices crosshair ve kill feed dışında hud&#39;ı gizler. hud&#39;ın neredeyse tamamını gizler, yalnızca crosshair&#39;ı ve kill feed&#39;i bırakır. temiz videolar ve ekran görüntüleri için yapılmıştır ve sv_cheats olmadan çalışır. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_draw_only_deathnotices">cl_draw_only_deathnotices</a></h3>
+                <p>Crosshair ve kill feed dışında HUD&#39;ı gizler. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_draw_only_deathnotices 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_drawhud" data-cat="hud" data-search="cl_drawhud tüm hud&#39;ı gizler (hile). crosshair dahil tüm hud&#39;ı kapatır. sv_cheats 1 gerektirir. kendi sunucunda sinematik ekran görüntüleri için kullan. hud ve radar">
+                <h3 class="cmd-name">cl_drawhud<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Tüm HUD&#39;ı gizler (hile). <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; cl_drawhud 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezonex" data-cat="hud" data-search="safezonex hud&#39;ı yatayda içeri doğru kaydırır. hud&#39;ın ekran genişliğinin ne kadarını kullanacağını belirler. daha düşük değerler canı, cephaneyi ve radarı merkeze doğru taşır; çok geniş veya kavisli monitörlerde işe yarar. hud ve radar">
+                <h3 class="cmd-name">safezonex</h3>
+                <p>HUD&#39;ı yatayda içeri doğru kaydırır.</p>
+                <div class="field-row">
+                <code>safezonex 0.9</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="safezoney" data-cat="hud" data-search="safezoney hud&#39;ı dikeyde içeri doğru kaydırır. hud&#39;ın ekran yüksekliğinin ne kadarını kullanacağını belirler. daha düşük değerler hud&#39;ı üst ve alt kenarlardan uzaklaştırır. hud ve radar">
+                <h3 class="cmd-name">safezoney</h3>
+                <p>HUD&#39;ı dikeyde içeri doğru kaydırır.</p>
+                <div class="field-row">
+                <code>safezoney 0.9</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teamid_overhead_mode" data-cat="hud" data-search="cl_teamid_overhead_mode takım arkadaşlarının başının üstünde ne gördüğün. takım arkadaşlarının üstünde gösterilecek bilgiyi seçer: 1 basit bir işaret gösterir, 2 ayrıca adlarını ve ekipmanlarını da gösterir. hud ve radar">
+                <h3 class="cmd-name">cl_teamid_overhead_mode</h3>
+                <p>Takım arkadaşlarının başının üstünde ne gördüğün. <span class="cmd-default">Varsayılan: <code>2</code></span></p>
+                <div class="field-row">
+                <code>cl_teamid_overhead_mode 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_teammate_colors_show" data-cat="hud" data-search="cl_teammate_colors_show rekabetçi modda takım arkadaşı renkleri. rekabetçi modlarda her takım arkadaşına radarda ve skor tablosunda bir renk (1) ya da bir renk ve bir harf (2) verir; renkleri ayırt etmekte zorlanıyorsan işe yarar. hud ve radar">
+                <h3 class="cmd-name">cl_teammate_colors_show</h3>
+                <p>Rekabetçi modda takım arkadaşı renkleri. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_teammate_colors_show 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_frametime_show" data-cat="hud" data-search="cl_hud_telemetry_frametime_show fps ve kare süresini ekranda gösterir (telemetri). kare hızını ve kare süresini ekranın köşesinde gösterir; ayarlar › oyun › telemetri ile aynı seçenektir. cl_hud_telemetry_ping_show ile birlikte eski net_graph&#39;ın cs2&#39;deki karşılığıdır. gizlemek için 0 yap. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_frametime_show">cl_hud_telemetry_frametime_show</a></h3>
+                <p>FPS ve kare süresini ekranda gösterir (telemetri).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_hud_telemetry_ping_show" data-cat="hud" data-search="cl_hud_telemetry_ping_show pingini ekranda gösterir (telemetri). pingini (sunucuya gecikme) ekranın köşesinde gösterir; ayarlar › oyun › telemetri ile aynı seçenektir. cl_hud_telemetry_frametime_show ile birlikte eski net_graph&#39;ın yerini alır. gizlemek için 0 yap. hud ve radar">
+                <h3 class="cmd-name"><a href="cl_hud_telemetry_ping_show">cl_hud_telemetry_ping_show</a></h3>
+                <p>Pingini ekranda gösterir (telemetri).</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_ping_show 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="viewmodel" data-cat="viewmodel" aria-labelledby="viewmodel-title">
+            <h2 id="viewmodel-title">Viewmodel (silah) komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="viewmodel_fov" data-cat="viewmodel" data-search="viewmodel_fov silah modelinin kameraya uzaklığı. yalnızca silah modelinin görüş alanını 54 ile 68 arasında değiştirir. daha yüksek bir değer silahı uzaklaştırır ve ekranın daha fazlasını gösterir; birçok oyuncu en yüksek değer olan 68&#39;i kullanır. viewmodel (silah)">
+                <h3 class="cmd-name"><a href="viewmodel_fov">viewmodel_fov</a></h3>
+                <p>Silah modelinin kameraya uzaklığı. <span class="cmd-default">Varsayılan: <code>60</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_fov 68</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_x" data-cat="viewmodel" data-search="viewmodel_offset_x silahı sola veya sağa kaydırır. silah modelini yatayda -2.5 ile 2.5 arasında kaydırır. daha yüksek değerler silahı ekranın sağ kenarına doğru iter. viewmodel (silah)">
+                <h3 class="cmd-name"><a href="viewmodel_offset_x">viewmodel_offset_x</a></h3>
+                <p>Silahı sola veya sağa kaydırır. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_x 2.5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_y" data-cat="viewmodel" data-search="viewmodel_offset_y silahı öne veya geriye kaydırır. silah modelini sana doğru ya da senden uzağa, -2 ile 2 arasında kaydırır. daha yüksek değerler silahı öne iter. viewmodel (silah)">
+                <h3 class="cmd-name">viewmodel_offset_y</h3>
+                <p>Silahı öne veya geriye kaydırır. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_y 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_offset_z" data-cat="viewmodel" data-search="viewmodel_offset_z silahı yukarı veya aşağı kaydırır. silah modelini dikeyde -2 ile 2 arasında kaydırır. daha düşük değerler silahı ekranda aşağı indirir, böylece aksiyonu daha az kapatır. viewmodel (silah)">
+                <h3 class="cmd-name">viewmodel_offset_z</h3>
+                <p>Silahı yukarı veya aşağı kaydırır. <span class="cmd-default">Varsayılan: <code>-1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_offset_z -1.5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="viewmodel_presetpos" data-cat="viewmodel" data-search="viewmodel_presetpos hazır silah konumları. üç hazır silah konumundan birini uygular: 1 desktop (varsayılan), 2 couch (daha büyük, daha yakın) ve 3 classic (eski cs:go görünümü). viewmodel (silah)">
+                <h3 class="cmd-name">viewmodel_presetpos</h3>
+                <p>Hazır silah konumları. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>viewmodel_presetpos 3</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_drawviewmodel" data-cat="viewmodel" data-search="r_drawviewmodel silah modelini gizler (hile). elindeki silahı gizler. sv_cheats 1 gerektirir, bu yüzden yalnızca kendi sunucunda çalışır; ekran görüntüleri veya bomba antrenmanı için. viewmodel (silah)">
+                <h3 class="cmd-name">r_drawviewmodel<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Silah modelini gizler (hile). <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; r_drawviewmodel 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="performance" data-cat="performance" aria-labelledby="performance-title">
+            <h2 id="performance-title">Grafik ve FPS komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="fps_max" data-cat="performance" data-search="fps_max kare hızını sınırlar. cs2&#39;nin saniyede kaç kare çizeceğini sınırlar. 0 sınırı kaldırır. monitörünün yenileme hızının biraz üstünde bir sınır (ya da bilgisayarının her zaman ulaşabildiği sabit bir değer), sürekli zıplayan sınırsız bir kare hızından daha düzgün kare süreleri verir. grafik ve fps">
+                <h3 class="cmd-name"><a href="fps_max">fps_max</a></h3>
+                <p>Kare hızını sınırlar. <span class="cmd-default">Varsayılan: <code>400</code></span></p>
+                <div class="field-row">
+                <code>fps_max 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="fps_max_ui" data-cat="performance" data-search="fps_max_ui menülerde kare hızını sınırlar. menüler açıkken kare hızını sınırlar. düşük tutmak (varsayılan 120) enerji tasarrufu sağlar ve maçlar arasında bilgisayarını daha serin tutar. grafik ve fps">
+                <h3 class="cmd-name">fps_max_ui</h3>
+                <p>Menülerde kare hızını sınırlar. <span class="cmd-default">Varsayılan: <code>120</code></span></p>
+                <div class="field-row">
+                <code>fps_max_ui 60</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_fullscreen_gamma" data-cat="performance" data-search="r_fullscreen_gamma tam ekranda ekran parlaklığı. oyunun gamasını (parlaklığını) yalnızca tam ekran modunda ayarlar. daha düşük değerler görüntüyü aydınlatır. eski mat_monitorgamma&#39;nın cs2&#39;deki karşılığıdır. grafik ve fps">
+                <h3 class="cmd-name"><a href="r_fullscreen_gamma">r_fullscreen_gamma</a></h3>
+                <p>Tam ekranda ekran parlaklığı. <span class="cmd-default">Varsayılan: <code>2.2</code></span></p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="engine_low_latency_sleep_after_client_tick" data-cat="performance" data-search="engine_low_latency_sleep_after_client_tick nvidia reflex ile kullanılan düşük gecikme ayarı. düşük gecikme modu açıkken, motorun kısa beklemesini tick karelerinde istemci simülasyonundan sonraya taşır. bazı oyuncular açıkken girdinin daha akıcı olduğunu söylüyor; kendin dene. grafik ve fps">
+                <h3 class="cmd-name">engine_low_latency_sleep_after_client_tick</h3>
+                <p>NVIDIA Reflex ile kullanılan düşük gecikme ayarı. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>engine_low_latency_sleep_after_client_tick 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="r_show_build_info" data-cat="performance" data-search="r_show_build_info köşede oyun sürümü yazısını gösterir. ekranın köşesindeki küçük sürüm bilgisi yazısını gösterir veya gizler. valve, hata raporu kaydederken açık tutulmasını istiyor. grafik ve fps">
+                <h3 class="cmd-name">r_show_build_info</h3>
+                <p>Köşede oyun sürümü yazısını gösterir. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>r_show_build_info 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="mat_monitorgamma" data-cat="performance" data-search="mat_monitorgamma cs2&#39;de kaldırıldı: yerine r_fullscreen_gamma geldi. mat_monitorgamma, cs:go&#39;da parlaklığı değiştirirdi. cs2&#39;de artık yok: r_fullscreen_gamma (yalnızca tam ekran modunda) ya da video ayarlarındaki parlaklık kaydırıcısını kullan. grafik ve fps">
+                <h3 class="cmd-name"><a href="mat_monitorgamma">mat_monitorgamma</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: yerine r_fullscreen_gamma geldi.</p>
+                <div class="field-row">
+                <code>r_fullscreen_gamma 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="network" data-cat="network" aria-labelledby="network-title">
+            <h2 id="network-title">Ağ komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="rate" data-cat="network" data-search="rate bağlantının alabileceği en fazla veri. sunucuya bağlantının saniyede kaç bayt alabileceğini söyler. varsayılan 786432 (yaklaşık 6 mbps) en yüksek değerdir ve neredeyse her bağlantı için doğrudur; yalnızca çok yavaş veya kararsız bir bağlantıda düşür. ağ">
+                <h3 class="cmd-name"><a href="rate">rate</a></h3>
+                <p>Bağlantının alabileceği en fazla veri. <span class="cmd-default">Varsayılan: <code>786432</code></span></p>
+                <div class="field-row">
+                <code>rate 786432</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mm_dedicated_search_maxping" data-cat="network" data-search="mm_dedicated_search_maxping maç ararken izin verilen en yüksek ping. eşleştirme sunucuları için kabul ettiğin en yüksek pingi milisaniye olarak belirler. daha düşük bir değer sana daha yakın sunucular bulur ama sıra daha uzun sürebilir. ağ">
+                <h3 class="cmd-name"><a href="mm_dedicated_search_maxping">mm_dedicated_search_maxping</a></h3>
+                <p>Maç ararken izin verilen en yüksek ping. <span class="cmd-default">Varsayılan: <code>150</code></span></p>
+                <div class="field-row">
+                <code>mm_dedicated_search_maxping 60</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="net_client_steamdatagram_enable_override" data-cat="network" data-search="net_client_steamdatagram_enable_override valve&#39;ın aktarma ağını kullanır veya kullanmaz. resmi sunuculara nasıl bağlanacağını seçer: 0 oyunun karar vermesine izin verir, pozitif bir değer mümkün olduğunda her zaman valve&#39;ın aktarma ağını (sdr) kullanır, negatif bir değer doğrudan bağlantıyı tercih eder. ağ">
+                <h3 class="cmd-name">net_client_steamdatagram_enable_override</h3>
+                <p>Valve&#39;ın aktarma ağını kullanır veya kullanmaz. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>net_client_steamdatagram_enable_override 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="status" data-cat="network" data-search="status sunucu ve oyuncu bilgilerini yazdırır. bulunduğun sunucu ve içindeki oyuncular hakkında, pingleri dahil bilgileri yazdırır. bağlantını kontrol etmek veya bir oyuncuyu şikâyet etmek için işe yarar. ağ">
+                <h3 class="cmd-name">status</h3>
+                <p>Sunucu ve oyuncu bilgilerini yazdırır.</p>
+                <div class="field-row">
+                <code>status</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_lagcompensation" data-cat="network" data-search="cl_lagcompensation sunucu tarafında gecikme telafisi. sunucudan, atışlarının isabet edip etmediğini kontrol ederken pingini telafi etmesini ister. açık bırak: kapatmak yalnızca atışlarının daha kötü kaydedilmesine yol açar. ağ">
+                <h3 class="cmd-name">cl_lagcompensation</h3>
+                <p>Sunucu tarafında gecikme telafisi. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_lagcompensation 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="net_graph" data-cat="network" data-search="net_graph cs2&#39;de kaldırıldı: eski cs:go ağ grafiği. net_graph, cs:go&#39;da fps&#39;ini, pingini, kaybı ve choke değerini gösterirdi. cs2&#39;de yok. aynı bilgiyi görmek için cl_hud_telemetry_frametime_show 2 ve cl_hud_telemetry_ping_show 2 kullan (ayarlar › oyun › telemetri bölümündeki telemetri seçenekleri) ya da hızlı bir fps sayacı için cl_showfps 1. ağ">
+                <h3 class="cmd-name"><a href="net_graph">net_graph</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: eski CS:GO ağ grafiği.</p>
+                <div class="field-row">
+                <code>cl_hud_telemetry_frametime_show 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp" data-cat="network" data-search="cl_interp oyunun kullandığı interpolasyonu gösterir. cs2&#39;de cl_interp çoğunlukla oyunun kullandığı interpolasyonu, cl_interp_ratio ve sunucu güncelleme hızıyla birlikte gösterir (örneğin cl_updaterate=64 ile cl_interp = 0). cs2 interpolasyonu sub-tick sistemiyle senin yerine yönetir, bu yüzden cs:go&#39;daki gibi ayarlamana gerek yok. ağ">
+                <h3 class="cmd-name"><a href="cl_interp">cl_interp</a></h3>
+                <p>Oyunun kullandığı interpolasyonu gösterir.</p>
+                <div class="field-row">
+                <code>cl_interp</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_interp_ratio" data-cat="network" data-search="cl_interp_ratio cs2&#39;nin yönettiği interpolasyon oranı. cl_interp_ratio cs2&#39;de hâlâ var ve varsayılan değeri 0. cs:go&#39;dan farklı olarak interpolasyonu oyunun sub-tick sistemi yönetir, bu yüzden çoğu oyuncu varsayılan değerde bırakmalı. ağ">
+                <h3 class="cmd-name"><a href="cl_interp_ratio">cl_interp_ratio</a></h3>
+                <p>CS2&#39;nin yönettiği interpolasyon oranı. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_interp_ratio 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_updaterate" data-cat="network" data-search="cl_updaterate cs2&#39;de kaldırıldı: güncelleme hızını sunucu belirler. cs:go&#39;da cl_updaterate, sunucudan saniyede kaç güncelleme istediğini belirlerdi. cs2&#39;de artık yok: sunucu hızı sabittir (cl_interp&#39;in gösterdiği gibi saniyede 64 güncelleme) ve sub-tick sistemi zaten girdilerini hassas kılar. ağ">
+                <h3 class="cmd-name"><a href="cl_updaterate">cl_updaterate</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: güncelleme hızını sunucu belirler.</p>
+                
+            </article>
+            <article class="cmd cmd-is-removed" id="cl_cmdrate" data-cat="network" data-search="cl_cmdrate cs2&#39;de kaldırıldı: gönderme hızı sabit. cs:go&#39;da cl_cmdrate, sunucuya saniyede kaç paket gönderdiğini belirlerdi. cs2&#39;de artık yok; gönderme hızını oyun yönetir ve sub-tick zamanlaması atışlarının ve hareketlerinin tam anını kaydeder. ağ">
+                <h3 class="cmd-name"><a href="cl_cmdrate">cl_cmdrate</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: gönderme hızı sabit.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="mouse" data-cat="mouse" aria-labelledby="mouse-title">
+            <h2 id="mouse-title">Fare komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sensitivity" data-cat="mouse" data-search="sensitivity fare hassasiyetin. fareyi hareket ettirdiğinde görüşünün ne kadar hızlı döneceğini belirler. prolar karşılaştırmak için genellikle bunu fare dpi&#39;larıyla çarpar: 400 dpi&#39;da 2.0 veya 800 dpi&#39;da 1.0, ikisi de 800 edpi eder; cs2 prolarının tipik aralığı yaklaşık 600 ile 1200 edpi arasıdır. fare">
+                <h3 class="cmd-name"><a href="sensitivity">sensitivity</a></h3>
+                <p>Fare hassasiyetin. <span class="cmd-default">Varsayılan: <code>2.5</code></span></p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="zoom_sensitivity_ratio" data-cat="mouse" data-search="zoom_sensitivity_ratio dürbündeyken fare hassasiyeti. awp gibi dürbünlü bir silahla yakınlaştırdığında hassasiyetini çarpar. 1 varsayılandır; daha düşük değerler dürbünle nişan almayı daha yavaş ve hassas yapar. fare">
+                <h3 class="cmd-name"><a href="zoom_sensitivity_ratio">zoom_sensitivity_ratio</a></h3>
+                <p>Dürbündeyken fare hassasiyeti. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>zoom_sensitivity_ratio 0.9</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_yaw" data-cat="mouse" data-search="m_yaw yatay fare hızı çarpanı. yatay fare hareketini çarpar. varsayılan 0.022 dikey hızla eşleşir. 4:3 stretched oynayan bazı oyuncular daha geniş görüntüyü telafi etmek için düşürür, ama çoğu varsayılanı korur. fare">
+                <h3 class="cmd-name"><a href="m_yaw">m_yaw</a></h3>
+                <p>Yatay fare hızı çarpanı. <span class="cmd-default">Varsayılan: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_yaw 0.022</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="m_pitch" data-cat="mouse" data-search="m_pitch dikey fare hızı çarpanı. dikey fare hareketini çarpar. varsayılan, m_yaw ile aynı şekilde 0.022&#39;dir; böylece faren her yönde aynı hızda hareket eder. fare">
+                <h3 class="cmd-name">m_pitch</h3>
+                <p>Dikey fare hızı çarpanı. <span class="cmd-default">Varsayılan: <code>0.022</code></span></p>
+                <div class="field-row">
+                <code>m_pitch 0.022</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_rawinput" data-cat="mouse" data-search="m_rawinput cs2&#39;de kaldırıldı: ham fare girişi her zaman açık. cs:go&#39;da m_rawinput 1, oyunun fareni doğrudan okumasını sağlardı. cs2 bunu her zaman yapıyor, bu yüzden komut kaldırıldı ve yazınca unknown command yanıtı gelir. değiştirecek bir şey yok: faren zaten ham girişi kullanıyor. fare">
+                <h3 class="cmd-name"><a href="m_rawinput">m_rawinput</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: ham fare girişi her zaman açık.</p>
+                <div class="field-row">
+                <code>sensitivity 1.2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="m_customaccel" data-cat="mouse" data-search="m_customaccel cs2&#39;de kaldırıldı: fare ivmesi ayarı yok. m_customaccel, cs:go&#39;da fare ivmesini kontrol ederdi. oyun içi fare ivmesi olmayan cs2&#39;de artık yok. nişanın tutarsız geliyorsa windows&#39;ta ve fare yazılımında ivmenin (i̇şaretçi hassasiyetini artır) kapalı olduğunu kontrol et. fare">
+                <h3 class="cmd-name"><a href="m_customaccel">m_customaccel</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: fare ivmesi ayarı yok.</p>
+                
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="audio" data-cat="audio" aria-labelledby="audio-title">
+            <h2 id="audio-title">Ses komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="volume" data-cat="audio" data-search="volume ana oyun sesi. oyunun genel ses seviyesini 0 ile 1 arasında belirler. birçok oyuncu adım seslerini net duymak için oldukça yüksek tutar ve onun yerine müziği kısar. ses">
+                <h3 class="cmd-name"><a href="volume">volume</a></h3>
+                <p>Ana oyun sesi.</p>
+                <div class="field-row">
+                <code>volume 0.5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_voipvolume" data-cat="audio" data-search="snd_voipvolume takım arkadaşlarının ses seviyesi. sesli sohbette takım arkadaşlarının ne kadar yüksek duyulacağını 0 ile 1 arasında belirler. cs:go&#39;daki eski voice_scale komutunun yerini aldı. ses">
+                <h3 class="cmd-name"><a href="snd_voipvolume">snd_voipvolume</a></h3>
+                <p>Takım arkadaşlarının ses seviyesi. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_menumusic_volume" data-cat="audio" data-search="snd_menumusic_volume menü müziğinin ses seviyesi. menülerdeki ve oyun dışındaki diğer anlardaki müziğin ses seviyesini 0 ile 1 arasında belirler. menüde sessizlik için 0 yap. ses">
+                <h3 class="cmd-name">snd_menumusic_volume</h3>
+                <p>Menü müziğinin ses seviyesi.</p>
+                <div class="field-row">
+                <code>snd_menumusic_volume 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_roundstart_volume" data-cat="audio" data-search="snd_roundstart_volume raunt başı müziğinin ses seviyesi. raunt başladığında çalan müziğin ses seviyesini 0 ile 1 arasında belirler. birçok oyuncu ilk adım seslerini duymak için kapatır. ses">
+                <h3 class="cmd-name">snd_roundstart_volume</h3>
+                <p>Raunt başı müziğinin ses seviyesi.</p>
+                <div class="field-row">
+                <code>snd_roundstart_volume 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mvp_volume" data-cat="audio" data-search="snd_mvp_volume mvp müziğinin ses seviyesi. raunt sonunda çalan mvp müziğinin (ve müzik kitlerinin) ses seviyesini 0 ile 1 arasında belirler. ses">
+                <h3 class="cmd-name">snd_mvp_volume</h3>
+                <p>MVP müziğinin ses seviyesi.</p>
+                <div class="field-row">
+                <code>snd_mvp_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_tensecondwarning_volume" data-cat="audio" data-search="snd_tensecondwarning_volume bombanın 10 saniye uyarısının ses seviyesi. bombanın patlamasına 10 saniye kaldığını haber veren müziğin ses seviyesini 0 ile 1 arasında belirler. duyulabilir tut: faydalı bir bilgi. ses">
+                <h3 class="cmd-name">snd_tensecondwarning_volume</h3>
+                <p>Bombanın 10 saniye uyarısının ses seviyesi.</p>
+                <div class="field-row">
+                <code>snd_tensecondwarning_volume 0.2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mapobjective_volume" data-cat="audio" data-search="snd_mapobjective_volume bomba ve rehine müziğinin ses seviyesi. kurulmuş bir bomba gibi harita hedefleri için çalan müziğin ses seviyesini 0 ile 1 arasında belirler. ses">
+                <h3 class="cmd-name">snd_mapobjective_volume</h3>
+                <p>Bomba ve rehine müziğinin ses seviyesi.</p>
+                <div class="field-row">
+                <code>snd_mapobjective_volume 0.1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_deathcamera_volume" data-cat="audio" data-search="snd_deathcamera_volume ölüm kamerası sesinin seviyesi. öldüğünde ve ölüm kamerası başladığında çalan sesin seviyesini 0 ile 1 arasında belirler. ses">
+                <h3 class="cmd-name">snd_deathcamera_volume</h3>
+                <p>Ölüm kamerası sesinin seviyesi.</p>
+                <div class="field-row">
+                <code>snd_deathcamera_volume 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_mute_losefocus" data-cat="audio" data-search="snd_mute_losefocus alt-tab yapınca oyunun sesini kapatır. açıkken, oyun penceresi odakta değilse oyun sessizleşir. başka bir penceredeyken maçın başladığını duymak istiyorsan kapat. ses">
+                <h3 class="cmd-name">snd_mute_losefocus</h3>
+                <p>Alt-tab yapınca oyunun sesini kapatır.</p>
+                <div class="field-row">
+                <code>snd_mute_losefocus 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="snd_headphone_eq" data-cat="audio" data-search="snd_headphone_eq kulaklık ekolayzır ön ayarı. kulaklık ekolayzır ön ayarını seçer; ses ayarlarındaki eq profiliyle aynı seçenektir. hepsini dene ve adım seslerini en net duyduğun ön ayarı tut. ses">
+                <h3 class="cmd-name">snd_headphone_eq</h3>
+                <p>Kulaklık ekolayzır ön ayarı. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>snd_headphone_eq 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd cmd-is-removed" id="voice_scale" data-cat="audio" data-search="voice_scale cs2&#39;de kaldırıldı: yerine snd_voipvolume geldi. voice_scale, cs:go&#39;da sesli sohbetin ses seviyesini değiştirirdi. cs2&#39;de artık yok: 0 ile 1 arasında snd_voipvolume kullan. ses">
+                <h3 class="cmd-name"><a href="voice_scale">voice_scale</a><span class="cmd-badge cmd-removed">CS2'de kaldırıldı</span></h3>
+                <p>CS2&#39;de kaldırıldı: yerine snd_voipvolume geldi.</p>
+                <div class="field-row">
+                <code>snd_voipvolume 0.6</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="practice" data-cat="practice" aria-labelledby="practice-title">
+            <h2 id="practice-title">Antrenman ve sunucu komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="sv_cheats" data-cat="practice" data-search="sv_cheats sunucunda hile komutlarını etkinleştirir. hile olarak işaretlenen komutlara izin verir (noclip, god, sv_rethrow_last_grenade, cl_showpos...). yalnızca kendi kurduğun bir sunucuda, örneğin botlarla özel bir maçta çalışır; resmi eşleştirmede asla çalışmaz. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_cheats">sv_cheats</a></h3>
+                <p>Sunucunda hile komutlarını etkinleştirir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_infinite_ammo" data-cat="practice" data-search="sv_infinite_ammo sınırsız cephane ve bomba. 1 ile şarjörün hiç boşalmaz; 2 ile cephanen hiç bitmez ama yine de şarjör değiştirmen gerekir. ayrıca sınırsız bomba verir; bu yüzden her bomba antrenmanı config&#39;inin temelidir. sv_cheats 1 gerektirir. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_infinite_ammo">sv_infinite_ammo</a><span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Sınırsız cephane ve bomba. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_cheats 1; sv_infinite_ammo 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_pipreview" data-cat="practice" data-search="sv_grenade_trajectory_prac_pipreview bombanın düşeceği yerin canlı önizlemesi. elindeki bombanın yolunu ve düşeceği yeri, atmadan önce küçük bir resim içinde resim penceresinde gösterir. antrenman sunucusunda smoke ve flash öğrenmenin en hızlı yoludur. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_pipreview">sv_grenade_trajectory_prac_pipreview</a></h3>
+                <p>Bombanın düşeceği yerin canlı önizlemesi. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_pipreview 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_grenade_trajectory_prac_trailtime" data-cat="practice" data-search="sv_grenade_trajectory_prac_trailtime atılan bombaların yolunu gösterir. attığın her bombanın yolunu çizer ve bu kadar saniye görünür tutar. i̇ki atışı karşılaştırmak için 10 veya daha fazlasını kullan. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_grenade_trajectory_prac_trailtime">sv_grenade_trajectory_prac_trailtime</a></h3>
+                <p>Atılan bombaların yolunu gösterir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_grenade_trajectory_prac_trailtime 10</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_rethrow_last_grenade" data-cat="practice" data-search="sv_rethrow_last_grenade son bombanı tekrar atar. son bombayı tam olarak aynı yerden tekrar atar; böylece geri yürümeden nereye düştüğünü izleyebilirsin. sv_cheats 1 gerektirir; antrenman config&#39;lerinde genellikle bir tuşa atanır. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_rethrow_last_grenade">sv_rethrow_last_grenade</a><span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Son bombanı tekrar atar.</p>
+                <div class="field-row">
+                <code>sv_rethrow_last_grenade</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts" data-cat="practice" data-search="sv_showimpacts mermilerinin nereye isabet ettiğini gösterir. her merminin düştüğü yere bir kutu çizer: oyununun gördüğü için kırmızı, sunucunun gördüğü için mavi. duvarda sprey kalıplarını öğrenmek için harika. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="sv_showimpacts">sv_showimpacts</a></h3>
+                <p>Mermilerinin nereye isabet ettiğini gösterir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="sv_showimpacts_time" data-cat="practice" data-search="sv_showimpacts_time mermi izlerinin ne kadar görünür kalacağı. sv_showimpacts isabet kutularının ekranda kaç saniye kalacağını belirler. antrenman ve sunucu">
+                <h3 class="cmd-name">sv_showimpacts_time</h3>
+                <p>Mermi izlerinin ne kadar görünür kalacağı. <span class="cmd-default">Varsayılan: <code>4</code></span></p>
+                <div class="field-row">
+                <code>sv_showimpacts_time 10</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_roundtime_defuse" data-cat="practice" data-search="mp_roundtime_defuse bomba haritalarında raunt süresi, dakika olarak. bomba imha haritalarında bir rauntun kaç dakika süreceğini belirler. antrenman sunucusunda yüksek bir değer (60) ver ki sen antrenman yaparken raunt bitmesin. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_roundtime_defuse</h3>
+                <p>Bomba haritalarında raunt süresi, dakika olarak. <span class="cmd-default">Varsayılan: <code>2.25</code></span></p>
+                <div class="field-row">
+                <code>mp_roundtime_defuse 60</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_freezetime" data-cat="practice" data-search="mp_freezetime raunt başındaki donma süresi, saniye olarak. her rauntun başında oyuncuların kaç saniye donmuş kalacağını belirler. hemen hareket etmek için antrenman sunucusunda 0 kullan. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_freezetime</h3>
+                <p>Raunt başındaki donma süresi, saniye olarak. <span class="cmd-default">Varsayılan: <code>5</code></span></p>
+                <div class="field-row">
+                <code>mp_freezetime 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_end" data-cat="practice" data-search="mp_warmup_end isınmayı hemen bitirir. isınmayı durdurur ve sunucunda maçı hemen başlatır. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_warmup_end</h3>
+                <p>Isınmayı hemen bitirir.</p>
+                <div class="field-row">
+                <code>mp_warmup_end</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_warmup_pausetimer" data-cat="practice" data-search="mp_warmup_pausetimer sonsuz ısınma. 1 ile ısınma sayacı durur ve ısınma hiç bitmez; uzun antrenmanlar için kullanışlıdır. sayacı devam ettirmek için 0&#39;a geri al. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_warmup_pausetimer</h3>
+                <p>Sonsuz ısınma. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_warmup_pausetimer 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_restartgame" data-cat="practice" data-search="mp_restartgame maçı yeniden başlatır. belirtilen saniye sonra oyunu yeniden başlatır. raunt ayarlarını değiştirdikten sonra geçerli olmaları için kullan. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_restartgame</h3>
+                <p>Maçı yeniden başlatır.</p>
+                <div class="field-row">
+                <code>mp_restartgame 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buy_anywhere" data-cat="practice" data-search="mp_buy_anywhere haritanın her yerinde satın almaya izin verir. satın alma bölgesi dışında satın almaya izin verir: 1 iki takım için, 2 yalnızca teröristler için, 3 yalnızca anti-teröristler için. bomba antrenmanı için ideal. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="mp_buy_anywhere">mp_buy_anywhere</a></h3>
+                <p>Haritanın her yerinde satın almaya izin verir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_buy_anywhere 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_buytime" data-cat="practice" data-search="mp_buytime raunt başladıktan sonra ne kadar süre satın alabileceğin. raunt başladıktan sonra kaç saniye daha satın alabileceğini belirler. antrenman sunucusunda çok büyük bir değer kullan. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_buytime</h3>
+                <p>Raunt başladıktan sonra ne kadar süre satın alabileceğin. <span class="cmd-default">Varsayılan: <code>45</code></span></p>
+                <div class="field-row">
+                <code>mp_buytime 9999</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_maxmoney" data-cat="practice" data-search="mp_maxmoney bir oyuncunun sahip olabileceği en fazla para. bir oyuncunun tutabileceği en yüksek para miktarını belirler. antrenman sunucusunda sınırsız alışveriş için mp_startmoney ile birlikte yükselt. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_maxmoney</h3>
+                <p>Bir oyuncunun sahip olabileceği en fazla para. <span class="cmd-default">Varsayılan: <code>10000</code></span></p>
+                <div class="field-row">
+                <code>mp_maxmoney 60000</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_startmoney" data-cat="practice" data-search="mp_startmoney her oyuncunun başlangıç parası. her oyuncunun devre başında ne kadar para alacağını belirler. antrenman için mp_maxmoney ile birlikte kullan. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_startmoney</h3>
+                <p>Her oyuncunun başlangıç parası. <span class="cmd-default">Varsayılan: <code>1000</code></span></p>
+                <div class="field-row">
+                <code>mp_startmoney 60000</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_t" data-cat="practice" data-search="mp_respawn_on_death_t teröristler öldükten sonra yeniden doğar. 1 ile teröristler öldükten hemen sonra hayata döner. deathmatch tarzı antrenman için mp_respawn_on_death_ct ile birlikte kullan. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_respawn_on_death_t</h3>
+                <p>Teröristler öldükten sonra yeniden doğar. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_t 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_respawn_on_death_ct" data-cat="practice" data-search="mp_respawn_on_death_ct anti-teröristler öldükten sonra yeniden doğar. 1 ile anti-teröristler öldükten hemen sonra hayata döner. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_respawn_on_death_ct</h3>
+                <p>Anti-teröristler öldükten sonra yeniden doğar. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_respawn_on_death_ct 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_ignore_round_win_conditions" data-cat="practice" data-search="mp_ignore_round_win_conditions rauntlar hiç bitmez. 1 ile bir takım elense veya bomba patlasa bile raunt devam eder. kesintisiz antrenman için çok kullanışlı. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_ignore_round_win_conditions</h3>
+                <p>Rauntlar hiç bitmez. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_ignore_round_win_conditions 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_limitteams" data-cat="practice" data-search="mp_limitteams takımlar arasındaki en fazla oyuncu farkı. bir takımın diğerinden en fazla kaç oyuncu fazla olabileceğini belirler. 0 sınırı kaldırır, böylece birçok bota karşı tek başına olabilirsin. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_limitteams</h3>
+                <p>Takımlar arasındaki en fazla oyuncu farkı. <span class="cmd-default">Varsayılan: <code>2</code></span></p>
+                <div class="field-row">
+                <code>mp_limitteams 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_autoteambalance" data-cat="practice" data-search="mp_autoteambalance otomatik takım dengesi. 1 ile sunucu, takımları dengede tutmak için oyuncuları takımlar arasında taşır. antrenman sunucusunda kapat. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_autoteambalance</h3>
+                <p>Otomatik takım dengesi. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>mp_autoteambalance 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="mp_drop_knife_enable" data-cat="practice" data-search="mp_drop_knife_enable bıçak atmaya izin verir. 1 ile oyuncular bıçaklarını diğer silahlar gibi yere atabilir. antrenman ve sunucu">
+                <h3 class="cmd-name">mp_drop_knife_enable</h3>
+                <p>Bıçak atmaya izin verir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>mp_drop_knife_enable 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="ammo_grenade_limit_total" data-cat="practice" data-search="ammo_grenade_limit_total bir oyuncunun taşıyabileceği en fazla bomba. bir oyuncunun toplamda kaç bomba taşıyabileceğini belirler. tüm bombaları aynı anda taşımak için antrenman sunucusunda yükselt. antrenman ve sunucu">
+                <h3 class="cmd-name">ammo_grenade_limit_total</h3>
+                <p>Bir oyuncunun taşıyabileceği en fazla bomba. <span class="cmd-default">Varsayılan: <code>4</code></span></p>
+                <div class="field-row">
+                <code>ammo_grenade_limit_total 5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="noclip" data-cat="practice" data-search="noclip duvarların içinden uç (hile). uçmanı ve duvarların içinden geçmeni sağlar. kapatmak için tekrar yaz. sv_cheats 1 gerektirir; antrenman yaparken harita üzerinde hızlıca dolaşmak için mükemmel. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="noclip">noclip</a><span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Duvarların içinden uç (hile).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; noclip</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="god" data-cat="practice" data-search="god seni ölümsüz yapar (hile). hasar almayı bırakırsın. kapatmak için tekrar yaz. sv_cheats 1 gerektirir. antrenman ve sunucu">
+                <h3 class="cmd-name">god<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Seni ölümsüz yapar (hile).</p>
+                <div class="field-row">
+                <code>sv_cheats 1; god</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="give" data-cat="practice" data-search="give sana bir silah veya eşya verir. bir eşyayı iç adıyla verir; örneğin weapon_ak47, weapon_awp, weapon_smokegrenade veya weapon_flashbang. kendi sunucunda çalışır. antrenman ve sunucu">
+                <h3 class="cmd-name"><a href="give">give</a></h3>
+                <p>Sana bir silah veya eşya verir.</p>
+                <div class="field-row">
+                <code>give weapon_ak47</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_timescale" data-cat="practice" data-search="host_timescale oyunu hızlandırır veya yavaşlatır (hile). oyun hızını değiştirir: 0.5 yarı hız, 2 iki kat hız. bir bombayı ağır çekimde incelemek için kullanışlı. sv_cheats 1 gerektirir. antrenman ve sunucu">
+                <h3 class="cmd-name">host_timescale<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Oyunu hızlandırır veya yavaşlatır (hile). <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>host_timescale 0.5</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="getpos" data-cat="practice" data-search="getpos tam konumunu yazdırır (hile). konumunu ve bakış açılarını konsola kullanıma hazır bir setpos/setang satırı olarak yazdırır. daha sonra aynı noktaya dönmek için, örneğin bir bomba atış noktasına, kopyala. sv_cheats 1 gerektirir. antrenman ve sunucu">
+                <h3 class="cmd-name">getpos<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Tam konumunu yazdırır (hile).</p>
+                <div class="field-row">
+                <code>getpos</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="setpos" data-cat="practice" data-search="setpos seni bir konuma ışınlar (hile). seni genellikle getpos&#39;tan kopyalanan x y z koordinatlarına taşır. sv_cheats 1 gerektirir. antrenman ve sunucu">
+                <h3 class="cmd-name">setpos<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Seni bir konuma ışınlar (hile).</p>
+                <div class="field-row">
+                <code>setpos 0 0 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="bots" data-cat="bots" aria-labelledby="bots-title">
+            <h2 id="bots-title">Botlar komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bot_kick" data-cat="bots" data-search="bot_kick botları sunucudan atar. tüm botları ya da yalnızca bir takıma, zorluğa veya isme uyan botları atar. antrenmandan önce sunucunu boşaltmak için kullan. botlar">
+                <h3 class="cmd-name"><a href="bot_kick">bot_kick</a></h3>
+                <p>Botları sunucudan atar.</p>
+                <div class="field-row">
+                <code>bot_kick</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_t" data-cat="bots" data-search="bot_add_t terörist bot ekler. terörist takımına bir bot ekler. bir zorluk ve bir isim ekleyebilirsin. botlar">
+                <h3 class="cmd-name">bot_add_t</h3>
+                <p>Terörist bot ekler.</p>
+                <div class="field-row">
+                <code>bot_add_t</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_add_ct" data-cat="bots" data-search="bot_add_ct anti-terörist bot ekler. anti-terörist takımına bir bot ekler. bir zorluk ve bir isim ekleyebilirsin. botlar">
+                <h3 class="cmd-name">bot_add_ct</h3>
+                <p>Anti-terörist bot ekler.</p>
+                <div class="field-row">
+                <code>bot_add_ct</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_quota" data-cat="bots" data-search="bot_quota sunucudaki toplam bot sayısı. sunucuda kaç botun kalacağını belirler. sunucuda bot olmaması için 0 yap. botlar">
+                <h3 class="cmd-name">bot_quota</h3>
+                <p>Sunucudaki toplam bot sayısı. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>bot_quota 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_difficulty" data-cat="bots" data-search="bot_difficulty yeni botların seviyesi. oyuna katılan botların seviyesini belirler: 0 kolay, 1 normal, 2 zor, 3 uzman. botlar">
+                <h3 class="cmd-name">bot_difficulty</h3>
+                <p>Yeni botların seviyesi. <span class="cmd-default">Varsayılan: <code>2</code></span></p>
+                <div class="field-row">
+                <code>bot_difficulty 3</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_stop" data-cat="bots" data-search="bot_stop botların beynini dondurur (hile). 1 ile botlar düşünmeyi bırakır: yerlerinde durur ve hiçbir şey yapmazlar. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_stop<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Botların beynini dondurur (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_stop 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_freeze" data-cat="bots" data-search="bot_freeze botlar hareket edemez (hile). 1 ile botlar yerinde kalır ama nişan almaya devam edebilir. duran hedeflerde aim çalışmak için bot_dont_shoot ile birlikte kullan. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_freeze<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Botlar hareket edemez (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_freeze 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_dont_shoot" data-cat="bots" data-search="bot_dont_shoot botlar hiç ateş etmez (hile). 1 ile botlar silahlarını ateşlemez. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_dont_shoot<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Botlar hiç ateş etmez (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_dont_shoot 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_place" data-cat="bots" data-search="bot_place nişan aldığın yere bot koyar (hile). bir botu baktığın noktaya taşır. birkaç deneme gerekebilir. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_place<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Nişan aldığın yere bot koyar (hile).</p>
+                <div class="field-row">
+                <code>bot_place</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_mimic" data-cat="bots" data-search="bot_mimic botlar hareketlerini taklit eder (hile). botlar girdilerini tekrarlar: hareket, nişan ve eylemler. bir botu tam istediğin yere ve şekilde yerleştirmek için kullanışlı. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_mimic<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Botlar hareketlerini taklit eder (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_mimic 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="bot_crouch" data-cat="bots" data-search="bot_crouch botlar çömelir (hile). 1 ile botlar çömelmiş kalır. sv_cheats 1 gerektirir. botlar">
+                <h3 class="cmd-name">bot_crouch<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Botlar çömelir (hile). <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>bot_crouch 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+        <section class="cmd-section" id="general" data-cat="general" aria-labelledby="general-title">
+            <h2 id="general-title">Genel komutları</h2>
+            <div class="cmd-grid">
+            <article class="cmd" id="bind" data-cat="general" data-search="bind bir tuşa komut atar. bir tuşa bastığında bir komut çalıştırmasını sağlar; örneğin bir satın alma bind&#39;ı veya son bombayı tekrar atan bir tuş. komutta boşluk varsa tuş adını ve komutu tırnak içine al. genel">
+                <h3 class="cmd-name"><a href="bind">bind</a></h3>
+                <p>Bir tuşa komut atar.</p>
+                <div class="field-row">
+                <code>bind f &quot;+lookatweapon&quot;</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbind" data-cat="general" data-search="unbind bir tuş atamasını kaldırır. bir tuşa atanmış komutu kaldırır. genel">
+                <h3 class="cmd-name">unbind</h3>
+                <p>Bir tuş atamasını kaldırır.</p>
+                <div class="field-row">
+                <code>unbind kp_end</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="unbindall" data-cat="general" data-search="unbindall tüm tuş atamalarını kaldırır. hareket dahil tüm tuş atamalarını bir kerede kaldırır. yalnızca her şeyi yeniden atayan eksiksiz bir config dosyasının en başında kullan. genel">
+                <h3 class="cmd-name">unbindall</h3>
+                <p>Tüm tuş atamalarını kaldırır.</p>
+                <div class="field-row">
+                <code>unbindall</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="alias" data-cat="general" data-search="alias özel bir komut oluşturur. bir komut listesine bir ad verir; böylece hepsini aynı anda çalıştırabilir veya bir tuşa atayabilirsin. adı + ile başlayan bir alias tuşa bastığında, eşleşen - alias ise tuşu bıraktığında çalışır: jump throw bind&#39;ı böyle çalışır. cs2&#39;yi her açtığında yüklenmesi için autoexec.cfg dosyana koy. genel">
+                <h3 class="cmd-name"><a href="alias">alias</a></h3>
+                <p>Özel bir komut oluşturur.</p>
+                <div class="field-row">
+                <code>alias prac &quot;sv_cheats 1; sv_infinite_ammo 1; mp_buy_anywhere 1&quot;</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="exec" data-cat="general" data-search="exec bir config dosyasını çalıştırır. oyunun cfg klasöründeki bir .cfg dosyasında yazılı tüm komutları çalıştırır; örneğin bir antrenman config&#39;i veya autoexec dosyan. genel">
+                <h3 class="cmd-name"><a href="exec">exec</a></h3>
+                <p>Bir config dosyasını çalıştırır.</p>
+                <div class="field-row">
+                <code>exec autoexec</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="host_writeconfig" data-cat="general" data-search="host_writeconfig mevcut ayarlarını kaydeder. mevcut ayarlarını ve bind&#39;larını hemen config dosyana yazar. genel">
+                <h3 class="cmd-name">host_writeconfig</h3>
+                <p>Mevcut ayarlarını kaydeder.</p>
+                <div class="field-row">
+                <code>host_writeconfig</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="toggleconsole" data-cat="general" data-search="toggleconsole konsolu açar veya kapatır. geliştirici konsolunu açar veya kapatır. klavyende ~ tuşu yoksa başka bir tuşa atayabilirsin. genel">
+                <h3 class="cmd-name">toggleconsole</h3>
+                <p>Konsolu açar veya kapatır.</p>
+                <div class="field-row">
+                <code>bind f10 toggleconsole</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="clear" data-cat="general" data-search="clear konsolu temizler. konsoldaki tüm yazıyı siler. genel">
+                <h3 class="cmd-name">clear</h3>
+                <p>Konsolu temizler.</p>
+                <div class="field-row">
+                <code>clear</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="echo" data-cat="general" data-search="echo konsola yazı yazar. konsola bir mesaj yazdırır. config dosyaları yüklendiklerini doğrulamak için sık sık kullanır. genel">
+                <h3 class="cmd-name">echo</h3>
+                <p>Konsola yazı yazar.</p>
+                <div class="field-row">
+                <code>echo Practice config loaded</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="find" data-cat="general" data-search="find komutları ada veya açıklamaya göre arar. adında veya yardım metninde aradığın kelime geçen tüm komutları listeler. komut keşfetmek için harika; örneğin find crosshair. genel">
+                <h3 class="cmd-name"><a href="find">find</a></h3>
+                <p>Komutları ada veya açıklamaya göre arar.</p>
+                <div class="field-row">
+                <code>find crosshair</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="help" data-cat="general" data-search="help bir komutu açıklar. bir komutun yardım metnini ve mevcut değerini yazdırır. genel">
+                <h3 class="cmd-name">help</h3>
+                <p>Bir komutu açıklar.</p>
+                <div class="field-row">
+                <code>help fps_max</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="connect" data-cat="general" data-search="connect ip adresiyle bir sunucuya katılır. seni ip adresi ve portuyla bir topluluk sunucusuna bağlar. genel">
+                <h3 class="cmd-name">connect</h3>
+                <p>IP adresiyle bir sunucuya katılır.</p>
+                <div class="field-row">
+                <code>connect 127.0.0.1:27015</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="disconnect" data-cat="general" data-search="disconnect bulunduğun sunucudan çıkar. oynadığın sunucuyla bağlantını keser. genel">
+                <h3 class="cmd-name">disconnect</h3>
+                <p>Bulunduğun sunucudan çıkar.</p>
+                <div class="field-row">
+                <code>disconnect</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="quit" data-cat="general" data-search="quit cs2&#39;yi kapatır. oyunu hemen kapatır. genel">
+                <h3 class="cmd-name">quit</h3>
+                <p>CS2&#39;yi kapatır.</p>
+                <div class="field-row">
+                <code>quit</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="map" data-cat="general" data-search="map kendi sunucunda bir harita yükler. seçtiğin haritada yerel bir sunucu başlatır; örneğin tek başına antrenman için. resmi harita adları de_ ile başlar (de_mirage, de_dust2, de_inferno...). genel">
+                <h3 class="cmd-name"><a href="map">map</a></h3>
+                <p>Kendi sunucunda bir harita yükler.</p>
+                <div class="field-row">
+                <code>map de_mirage</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="changelevel" data-cat="general" data-search="changelevel sunucundaki haritayı değiştirir. kurduğun sunucuyu kapatmadan başka bir haritaya geçirir. genel">
+                <h3 class="cmd-name">changelevel</h3>
+                <p>Sunucundaki haritayı değiştirir.</p>
+                <div class="field-row">
+                <code>changelevel de_inferno</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="kill" data-cat="general" data-search="kill karakterini öldürür (hile). karakterini anında öldürür. sv_cheats 1 gerektirir. genel">
+                <h3 class="cmd-name">kill<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Karakterini öldürür (hile).</p>
+                <div class="field-row">
+                <code>kill</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="explode" data-cat="general" data-search="explode karakterini patlamayla öldürür (hile). karakterini patlama hasarıyla öldürür. sv_cheats 1 gerektirir. genel">
+                <h3 class="cmd-name">explode<span class="cmd-badge">sv_cheats gerekir</span></h3>
+                <p>Karakterini patlamayla öldürür (hile).</p>
+                <div class="field-row">
+                <code>explode</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="record" data-cat="general" data-search="record oyununun demosunu kaydeder. i̇çinde bulunduğun oyunun demo dosyasını kaydetmeye başlar. kaydı bitirmek için stop yaz. genel">
+                <h3 class="cmd-name">record</h3>
+                <p>Oyununun demosunu kaydeder.</p>
+                <div class="field-row">
+                <code>record mymatch</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="stop" data-cat="general" data-search="stop demo kaydını durdurur. record ile başlatılan demo kaydını bitirir. genel">
+                <h3 class="cmd-name">stop</h3>
+                <p>Demo kaydını durdurur.</p>
+                <div class="field-row">
+                <code>stop</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="playdemo" data-cat="general" data-search="playdemo bir demo dosyasını oynatır. kaydedilmiş bir demoyu (.dem) oynatır. dosyayı oyunun csgo klasörüne koy ve adını yaz. clutchcrosshair, pro crosshair&#39;larını resmi maç demolarından aynı şekilde okur. genel">
+                <h3 class="cmd-name"><a href="playdemo">playdemo</a></h3>
+                <p>Bir demo dosyasını oynatır.</p>
+                <div class="field-row">
+                <code>playdemo mymatch</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="demoui" data-cat="general" data-search="demoui demo oynatıcı kontrollerini açar. demo izlerken demo oynatma kontrollerini (duraklat, hız, zaman çizelgesi) gösterir veya gizler. genel">
+                <h3 class="cmd-name">demoui</h3>
+                <p>Demo oynatıcı kontrollerini açar.</p>
+                <div class="field-row">
+                <code>demoui</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="demo_gototick" data-cat="general" data-search="demo_gototick demoda bir ana atlar. i̇zlediğin demonun belirli bir tick&#39;ine (anına) atlar. genel">
+                <h3 class="cmd-name">demo_gototick</h3>
+                <p>Demoda bir ana atlar.</p>
+                <div class="field-row">
+                <code>demo_gototick 64000</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="gameinstructor_enable" data-cat="general" data-search="gameinstructor_enable yeni oyuncular için oyun içi ipuçları. oyunu yeni oyunculara anlatan küçük dersleri gösterir veya gizler. genel">
+                <h3 class="cmd-name">gameinstructor_enable</h3>
+                <p>Yeni oyuncular için oyun içi ipuçları. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>gameinstructor_enable 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_autohelp" data-cat="general" data-search="cl_autohelp otomatik yardım ipuçları. oyun sırasında otomatik yardım mesajlarını gösterir veya gizler. genel">
+                <h3 class="cmd-name">cl_autohelp</h3>
+                <p>Otomatik yardım ipuçları.</p>
+                <div class="field-row">
+                <code>cl_autohelp 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_use_opens_buy_menu" data-cat="general" data-search="cl_use_opens_buy_menu kullan tuşu satın alma menüsünü açar. 1 ile satın alma bölgesinde kullan tuşuna (e) basmak satın alma menüsünü açar. birçok oyuncu menüyü yanlışlıkla açmamak için kapatır. genel">
+                <h3 class="cmd-name">cl_use_opens_buy_menu</h3>
+                <p>Kullan tuşu satın alma menüsünü açar. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_use_opens_buy_menu 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_join_advertise" data-cat="general" data-search="cl_join_advertise arkadaşlarının oyunlarına katılmasına izin verir. steam arkadaşlarının davetsiz olarak oyununa katılıp katılamayacağını seçer: 0 asla, 1 resmi sunucularda, 2 tüm sunucularda. genel">
+                <h3 class="cmd-name">cl_join_advertise</h3>
+                <p>Arkadaşlarının oyunlarına katılmasına izin verir. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_join_advertise 2</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_dm_buyrandomweapons" data-cat="general" data-search="cl_dm_buyrandomweapons deathmatch&#39;te rastgele silahlar. 1 ile deathmatch&#39;te her doğduğunda rastgele bir silah alırsın. silahını her zaman kendin seçmek için 0 yap. genel">
+                <h3 class="cmd-name">cl_dm_buyrandomweapons</h3>
+                <p>Deathmatch&#39;te rastgele silahlar. <span class="cmd-default">Varsayılan: <code>1</code></span></p>
+                <div class="field-row">
+                <code>cl_dm_buyrandomweapons 0</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="cl_sniper_delay_unscope" data-cat="general" data-search="cl_sniper_delay_unscope awp atışından sonra dürbünden çıkmayı geciktirir. 1 ile keskin nişancı tüfeğin atıştan sonra hemen dürbünden çıkmak yerine biraz daha dürbünde kalır. genel">
+                <h3 class="cmd-name">cl_sniper_delay_unscope</h3>
+                <p>AWP atışından sonra dürbünden çıkmayı geciktirir. <span class="cmd-default">Varsayılan: <code>0</code></span></p>
+                <div class="field-row">
+                <code>cl_sniper_delay_unscope 1</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            <article class="cmd" id="+lookatweapon" data-cat="general" data-search="+lookatweapon silahını inceler. elindeki silahın inceleme animasyonunu oynatır. varsayılan olarak f tuşuna atanmıştır. genel">
+                <h3 class="cmd-name">+lookatweapon</h3>
+                <p>Silahını inceler.</p>
+                <div class="field-row">
+                <code>bind f +lookatweapon</code>
+                <button type="button" class="mini" data-copy>Kopyala</button>
+            </div>
+            </article>
+            </div>
+        </section>
+
+        <h2>CS2 konsol SSS</h2>
+        <h3>CS2&#39;de konsol nasıl açılır?</h3>
+        <p>Ayarlar › Oyun bölümüne git ve Geliştirici Konsolunu Etkinleştir seçeneğini Evet yap. Sonra oyunda ~ tuşuna (Esc&#39;nin altındaki tuş) basarak aç. Çalışmazsa toggleconsole komutunu bind ile başka bir tuşa ata.</p>
+        <h3>Konsol komutları rekabetçi eşleştirmede çalışır mı?</h3>
+        <p>Kendi ayarlarını değiştiren komutların çoğu (crosshair, HUD, radar, fare, ses) her yerde çalışır. &quot;sv_cheats gerekir&quot; olarak işaretlenen komutlar ve mp_ ya da bot_ ile başlayan sunucu komutları yalnızca kendi kurduğun bir sunucuda, örneğin botlarla özel bir maçta çalışır.</p>
+        <h3>Konsol komutlarımı nasıl kaydederim?</h3>
+        <p>Onları oyunun cfg klasöründe (game/csgo/cfg) autoexec.cfg adlı bir dosyaya koy ve başlatma seçeneklerine +exec autoexec ekle ya da konsola exec autoexec yaz.</p>
+        <h3>Bir CS:GO komutu CS2&#39;de neden çalışmıyor?</h3>
+        <p>net_graph gibi birçok CS:GO komutu CS2&#39;de kaldırıldı veya adı değişti. Bu sayfada &quot;CS2&#39;de kaldırıldı&quot; olarak işaretlenen komutlarda yerine ne kullanacağın yazıyor.</p>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Alt bilgi">
+            <a href="../generator">Crosshair oluşturucu</a>
+            <a href="../tools/bind-generator">Bind oluşturucu</a>
+            <a href="../skins/">CS2 pro skinleri</a>
+            <a href="../guides/">CS2 rehberleri</a>
+            <a href="../commands/">Konsol komutları</a>
+            <a href="../faq">SSS</a>
+            <a href="../legal">Yasal bilgiler</a>
+            <button type="button" class="footer-cookies" data-consent-open>Çerezler</button>
+        </nav>
+        <p class="footer-contact">İş birlikleri ve ortaklıklar: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
+        <p>© 2026 ClutchCrosshair. Tüm hakları saklıdır.</p>
+        <p>Counter-Strike 2 ve CS2 skinleri Valve Corporation'ın ticari markalarıdır. Takım logoları sahiplerinin ticari markalarıdır. ClutchCrosshair'ın Valve veya takımlarla bir bağlantısı yoktur.</p>
+    </footer>
+    <script type="module">
+        import { copyText } from "../../crosshair.min.js?v=fe84164f66";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row").querySelector("code").textContent, button);
+            }
+        });
+
+        // Recherche instantanée + filtres par catégorie (#crosshair dans l'adresse = filtre direct)
+        const input = document.getElementById("cmd-search");
+        const filters = Array.from(document.querySelectorAll(".cmd-filter"));
+        const items = Array.from(document.querySelectorAll(".cmd"));
+        const sections = Array.from(document.querySelectorAll(".cmd-section"));
+        const empty = document.getElementById("cmd-empty");
+        let category = "";
+
+        function apply() {
+            const words = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+            items.forEach(function (item) {
+                const show = (!category || item.dataset.cat === category) && words.every(function (w) { return item.dataset.search.includes(w); });
+                item.classList.toggle("hidden", !show);
+            });
+            let any = false;
+            sections.forEach(function (section) {
+                const visible = section.querySelector(".cmd:not(.hidden)") !== null;
+                section.classList.toggle("hidden", !visible);
+                any = any || visible;
+            });
+            empty.classList.toggle("hidden", any);
+        }
+
+        function setCategory(value) {
+            category = value;
+            filters.forEach(function (f) { f.setAttribute("aria-pressed", f.dataset.cat === value ? "true" : "false"); });
+            apply();
+        }
+
+        let frame = 0;
+        input.addEventListener("input", function () {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(apply);
+        });
+        filters.forEach(function (f) {
+            f.addEventListener("click", function () { setCategory(f.dataset.cat); });
+        });
+        function categoryFromAddress() {
+            const fromAddress = decodeURIComponent(location.hash.slice(1));
+            if (fromAddress && filters.some(function (f) { return f.dataset.cat === fromAddress; })) {
+                setCategory(fromAddress);
+            }
+        }
+        categoryFromAddress();
+        window.addEventListener("hashchange", categoryFromAddress);
+    </script>
+</body>
+</html>

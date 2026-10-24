@@ -7,7 +7,7 @@
     <meta name="description" content="Legal notice of ClutchCrosshair: publisher, hosting, trademarks, privacy and cookies. No ads; Google Analytics only with your consent.">
     <meta name="robots" content="noindex">
     <script>(function () {
-        var A = {"en":"legal.html","fr":"fr/legal.html"};
+        var A = {"en":"legal","fr":"fr/legal","es":"es/legal","ru":"ru/legal","tr":"tr/legal"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -31,6 +31,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="Legal notice | ClutchCrosshair">
     <meta property="og:description" content="Legal notice of ClutchCrosshair: publisher, hosting, trademarks, privacy and cookies. No ads; Google Analytics only with your consent.">
     <meta property="og:url" content="https://clutchcrosshair.com/legal">
@@ -44,8 +47,8 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.min.css?v=848388ec0a">
-    <script src="consent.min.js?v=0efd8b40cf" data-legal="legal.html" defer></script>
+    <link rel="stylesheet" href="style.min.css?v=9fee851b61">
+    <script src="consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -72,9 +75,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
     <main class="player-page">
@@ -91,7 +95,7 @@
 
         <h2>Intellectual property</h2>
         <p>Counter-Strike and CS2 are trademarks of Valve Corporation. Team names and logos are trademarks of their respective owners. Player photos belong to their respective owners. ClutchCrosshair is not affiliated with Valve, the teams or the players. If you own a content and want it removed, contact us and we will remove it quickly.</p>
-        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono) are used under the SIL Open Font License.</p>
+        <p>Crosshair codes are game settings read from public match demos. Pro skins come from the players' public Steam inventories: skin names and images belong to Valve Corporation; skin prices come from CSFloat (lowest listing) and the euro rate from the European Central Bank. Fonts (Inter, Barlow Condensed, JetBrains Mono, Roboto Condensed) are used under the SIL Open Font License and the Apache License 2.0.</p>
 
         <h2>Privacy</h2>
         <p>ClutchCrosshair does not use advertising cookies. Your light/dark mode, language and cookie choices are only stored in your own browser (localStorage). Visits are also counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites.</p>
@@ -100,18 +104,18 @@
         <p>With your consent only, we measure our audience with Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland): number of visits, pages viewed, approximate country and type of device. It sets the cookies <code>_ga</code> and <code>_ga_195B8EZ9BP</code>, kept for 13 months at most. Google may transfer this data outside the European Union; see <a href="https://policies.google.com/privacy" rel="external noopener" target="_blank">Google's privacy policy</a>.</p>
         <p>If you click <strong>Refuse</strong>, Google Analytics is not loaded and no cookie is set; the site works exactly the same. Your choice is kept for 6 months in your browser, then the banner asks again. You can change your mind at any time with the <button type="button" class="link-btn" data-consent-open>Cookies</button> link at the bottom of every page. You can also ask us to delete your data: <a href="mailto:clutchcrosshair@gmail.com">clutchcrosshair@gmail.com</a>.</p>
 
-        <h2>Français</h2>
-        <p>Les mentions légales sont aussi disponibles en français : <a href="fr/legal.html">version française</a>.</p>
+        <h2>Other languages</h2>
+        <p><a href="fr/legal" hreflang="fr" lang="fr">Français</a> · <a href="es/legal" hreflang="es" lang="es">Español</a> · <a href="ru/legal" hreflang="ru" lang="ru">Русский</a> · <a href="tr/legal" hreflang="tr" lang="tr">Türkçe</a></p>
     </main>
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="generator.html">Crosshair Generator</a>
-            <a href="tools/bind-generator.html">Bind Generator</a>
+            <a href="generator">Crosshair Generator</a>
+            <a href="tools/bind-generator">Bind Generator</a>
             <a href="skins/">CS2 Pro Skins</a>
             <a href="guides/">CS2 Guides</a>
             <a href="commands/">Console Commands</a>
-            <a href="faq.html">FAQ</a>
-            <a href="legal.html">Legal notice</a>
+            <a href="faq">FAQ</a>
+            <a href="legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>

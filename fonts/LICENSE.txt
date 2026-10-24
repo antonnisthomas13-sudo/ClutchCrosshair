@@ -1,9 +1,13 @@
-Fonts hosted with ClutchCrosshair (latin subsets, WOFF2), all licensed under the
-SIL Open Font License, Version 1.1 — https://openfontlicense.org
+Fonts hosted with ClutchCrosshair (subsets, WOFF2).
 
+SIL Open Font License, Version 1.1 — https://openfontlicense.org
 - Barlow Condensed (700): Copyright 2017 The Barlow Project Authors (https://github.com/jpt/barlow)
 - Inter (variable, 400–600): Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
 - JetBrains Mono (400): Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+
+Apache License, Version 2.0 — https://www.apache.org/licenses/LICENSE-2.0
+- Roboto Condensed (700, Cyrillic letters only, used for Russian headings): Copyright 2011 Google Inc. All Rights Reserved.
+  Modified: reduced to the Cyrillic letters used by the site (subset) and converted to WOFF2.
 
 Files downloaded from Google Fonts (fonts.google.com) and served from this site,
 so visitors' browsers do not contact any third-party font server.

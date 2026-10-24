@@ -1,0 +1,440 @@
+{
+ "about": "Traduction turque de guides.json : mêmes slugs et même structure ; les noms des options de CS2 gardent le nom anglais entre parenthèses (menus à vérifier en jeu). Les commandes, configs et liens ne changent pas. Si un guide anglais change, mettre ce fichier à jour aussi.",
+ "updated": "24/10/2026",
+ "guides": [
+  {
+   "slug": "cs2-launch-options",
+   "category": "Ayarlar",
+   "title": "En İyi CS2 Başlatma Seçenekleri (2026)",
+   "seoTitle": "En İyi CS2 Başlatma Seçenekleri (2026) | ClutchCrosshair",
+   "description": "2026'da hâlâ işe yarayan CS2 başlatma seçenekleri, Steam'e nasıl eklendikleri ve artık hiçbir şey yapmayan eski CS:GO başlatma seçenekleri.",
+   "intro": "Başlatma seçenekleri, oyun açılırken Steam'in CS2'ye ilettiği küçük komutlardır. Birkaçı gerçekten işe yarar, ama internette bulduğun uzun listelerin çoğu CS:GO için hazırlanmıştır ve CS2'de hiçbir şey yapmaz. İşte kullanmaya değer olanlar ve unutabileceğin efsaneler.",
+   "commands": ["fps_max", "exec", "toggleconsole"],
+   "sections": [
+    {
+     "title": "Steam'de başlatma seçenekleri nasıl eklenir",
+     "blocks": [
+      {"type": "steps", "items": ["Steam **Kütüphanen**i aç ve **Counter-Strike 2**'ye sağ tıkla.", "**Özellikler**'e tıkla ve **Genel** sekmesinde kal.", "Seçeneklerini **Başlatma Seçenekleri** alanına, aralarında boşluk bırakarak yaz.", "Pencereyi kapat ve CS2'yi başlat: seçenekler hemen uygulanır."]},
+      {"type": "tip", "text": "Eksi işaretiyle başlayan seçenekler (-console) başlatma parametreleridir. Artı işaretiyle başlayanlar (+exec autoexec) oyun açılırken bir konsol komutu çalıştırır."}
+     ]
+    },
+    {
+     "title": "Kullanmaya değer başlatma seçenekleri",
+     "blocks": [
+      {"type": "table", "head": ["Başlatma seçeneği", "Ne yapar"], "rows": [
+       ["`-console`", "Oyun açılır açılmaz geliştirici konsolunu açar. Sık kullanıyorsan pratiktir."],
+       ["`+exec autoexec`", "Her açılışta autoexec.cfg dosyanı çalıştırır, böylece ayarların ve bind'ların her zaman uygulanır."],
+       ["`-fullscreen`", "Özel tam ekranı zorlar; genellikle giriş gecikmesi en düşük moddur."],
+       ["`-w 1280 -h 960`", "Bir çözünürlüğü (genişlik ve yükseklik) zorlar. Oyun yanlış çözünürlükte açılıyorsa işe yarar."],
+       ["`-freq 240`", "Hz cinsinden bir yenileme hızı ister. Monitörünün gerçek yenileme hızını kullan."],
+       ["`-vulkan`", "CS2'yi Windows'ta DirectX yerine Vulkan ile başlatır. Bilgisayarına göre yardımcı da olabilir zarar da verebilir, FPS'ini karşılaştır."],
+       ["`-allow_third_party_software`", "Oyuna bağlanan yazılımların (bazı kayıt veya overlay araçları) çalışmasına izin verir. Yalnızca bir araç gerektiriyorsa ekle."]
+      ]},
+      {"type": "p", "text": "Çoğu oyuncu için basit ve güvenli bir set şöyle görünür:"},
+      {"type": "copy", "items": ["-console +exec autoexec -fullscreen"]}
+     ]
+    },
+    {
+     "title": "CS2'de hiçbir şey yapmayan başlatma seçenekleri",
+     "blocks": [
+      {"type": "p", "text": "Bunlar eski CS:GO rehberlerinden geliyor. En iyi ihtimalle zararsızdırlar, bazıları durumu kötüleştirebilir:"},
+      {"type": "table", "head": ["Eski seçenek", "Neden kaldırılmalı"], "rows": [
+       ["`-high`", "Yüksek işlemci önceliğini zorlar. Modern Windows oyuna zaten ihtiyacı olanı verir ve sesli sohbet gibi arka plan uygulamalarının takılmasına yol açabilir."],
+       ["`-threads`", "CS2 işlemci çekirdeklerini kendisi algılar; bir sayı zorlamak genellikle performansı düşürür."],
+       ["`-tickrate 128`", "Resmi CS2 sunucuları sub-tick güncellemelerle 64 tick'te çalışır; bu seçenek eşleştirmeyi değiştirmez."],
+       ["`-novid`", "CS:GO'da giriş videosunu atlıyordu. CS2'de atlanacak bir giriş videosu yok."],
+       ["`-d3d9ex`, `+mat_queue_mode 2`, `+cl_forcepreload 1`", "Eski Source 1 motorunun ayarları. CS2, Source 2 ile çalışır ve bunları yok sayar."]
+      ]},
+      {"type": "tip", "text": "Oyunun garip davranıyorsa ilk deneyeceğin şey Başlatma Seçenekleri alanını boşaltmaktır."}
+     ]
+    },
+    {
+     "title": "Başlatma seçenekleri ve konsol: fark ne?",
+     "blocks": [
+      {"type": "p", "text": "Çoğu ayarın yeri başlatma seçenekleri değil, bir autoexec dosyasıdır. `Counter-Strike Global Offensive/game/csgo/cfg` içinde **autoexec.cfg** adlı bir dosya oluştur, her satıra bir komut yaz (örneğin `fps_max 0` veya crosshair komutların), sonra başlatma seçeneklerine `+exec autoexec` ekle. İşe yarayan tüm komutları [CS2 konsol komutları listemizde](../commands/) bulabilirsin."}
+     ]
+    }
+   ],
+   "faq": [
+    ["En iyi CS2 başlatma seçenekleri hangileri?", "Kısa tut: konsolu açmak için -console, ayarlarını yüklemek için +exec autoexec ve -fullscreen. -w, -h veya -freq'i yalnızca oyun yanlış çözünürlükte ya da yenileme hızında açılıyorsa ekle."],
+    ["-high CS2'de FPS'i artırır mı?", "Hayır. Yalnızca oyunun işlemci önceliğini değiştirir; modern Windows bunu zaten iyi yönetir ve diğer programların takılmasına yol açabilir."],
+    ["-tickrate 128 CS2'de çalışır mı?", "Hayır. Resmi CS2 sunucuları sub-tick güncellemelerle 64 tick kullanır ve başlatma seçeneği eşleştirmeyi değiştirmez."],
+    ["CS2 başlatma seçeneklerini nereye yazarım?", "Steam'de: kütüphanende Counter-Strike 2'ye sağ tıkla, ardından Özellikler › Genel › Başlatma Seçenekleri."]
+   ],
+   "related": ["cs2-fps-boost", "cs2-best-settings", "cs2-stretched-resolution"]
+  },
+  {
+   "slug": "cs2-best-settings",
+   "category": "Ayarlar",
+   "title": "En İyi CS2 Ayarları (2026): Görüntü, Oyun ve Ses",
+   "seoTitle": "En İyi CS2 Ayarları (2026): Görüntü ve Ses | ClutchCrosshair",
+   "description": "Görünürlük ve FPS için en iyi CS2 ayarları: değiştirilecek görüntü seçenekleri, oyun ve radar ayarları, adımları net duymak için ses ayarları.",
+   "intro": "CS2'de iyi ayarlar iki şey yapar: rakipleri kolay görünür kılar ve kare hızını yüksek ve sabit tutar. Görsel güzellik en son gelir. Bu rehber görüntü, oyun ve ses seçeneklerini tek tek ele alıp her birinin neyi değiştirdiğini anlatır; böylece rastgele sayılar kopyalamak yerine kendi seçimlerini yapabilirsin.",
+   "commands": ["fps_max", "cl_radar_scale", "cl_radar_always_centered", "cl_hud_radar_scale", "viewmodel_fov", "cl_hud_color", "snd_headphone_eq", "volume", "cl_hud_telemetry_frametime_show"],
+   "sections": [
+    {
+     "title": "Görüntü ayarları",
+     "blocks": [
+      {"type": "p", "text": "**Ayarlar › Görüntü › Gelişmiş Görüntü** bölümünü aç. Aşağıdaki tablo, rekabetçi oyuncuların çoğunun tercihi olan görünürlük ve FPS'i öne çıkarır (her seçeneğin İngilizce adı parantez içinde):"},
+      {"type": "table", "head": ["Ayar", "Önerilen", "Neden"], "rows": [
+       ["Oyuncu kontrastını artır (Boost Player Contrast)", "Açık", "Oyuncu modellerinin arka plandan ayrışmasını sağlar."],
+       ["Dikey senkronizasyon (Wait for Vertical Sync)", "Kapalı", "V-Sync giriş gecikmesi ekler."],
+       ["NVIDIA Reflex Low Latency", "Açık", "Desteklenen ekran kartlarında giriş gecikmesini azaltır."],
+       ["Çoklu örnekleme kenar yumuşatma (MSAA)", "2x veya 4x MSAA", "Daha yumuşak kenarlar; FPS gerekiyorsa ilk bunu düşür."],
+       ["Gölge kalitesi (Global Shadow Quality)", "Orta veya Yüksek", "Gölgeler köşedeki oyuncuları ele verebilir."],
+       ["Model / doku detayı", "Düşük veya Orta", "Görünürlüğe etkisi az, FPS kazandırır."],
+       ["Gölgelendirici detayı (Shader Detail)", "Düşük", "Daha az efekt, daha net görüntü."],
+       ["Parçacık detayı (Particle Detail)", "Düşük", "Efektlerden gelen görsel kalabalık azalır."],
+       ["Ortam perdeleme (Ambient Occlusion)", "Kapalı", "Rakipleri görmene yardım etmeden FPS yer."],
+       ["Yüksek dinamik aralık (High Dynamic Range)", "Performans (Performance)", "Daha hızlı, görüntü neredeyse aynı."],
+       ["FidelityFX Super Resolution", "Kapalı", "Ölçekleme görüntüyü bulanıklaştırır, uzaktaki rakipleri görmek zorlaşır."]
+      ]},
+      {"type": "tip", "text": "Her seferinde tek bir ayar değiştir ve FPS'ini `cl_hud_telemetry_frametime_show 2` ile kontrol et. Doğru ayarlar, senin bilgisayarında FPS'ini sabit tutanlardır."}
+     ]
+    },
+    {
+     "title": "Çözünürlük ve ekran modu",
+     "blocks": [
+      {"type": "p", "text": "En düşük giriş gecikmesi için ekran modu olarak **Tam ekran** kullan. Çözünürlük için tek bir doğru cevap yok: yerel 16:9 en net görüntüyü ve en geniş görüşü verir, 4:3 stretched ise modellerin daha geniş görünmesini sağlar. [Stretched çözünürlük rehberimiz](cs2-stretched-resolution.html) artılarını ve eksilerini ayrıntılı anlatıyor."}
+     ]
+    },
+    {
+     "title": "Oyun ve HUD ayarları",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Radar**: `cl_radar_scale 0.35` ile uzaklaştır ve radarın haritanın daha fazlasını göstermesi için `cl_radar_always_centered 0` kullan. `cl_hud_radar_scale` ile büyüt.",
+       "**Viewmodel**: `viewmodel_fov 68` silahını uzaklaştırır ve ekranın daha fazlasını gösterir.",
+       "**HUD rengi**: `cl_hud_color` ile kolay okuduğun bir renk seç.",
+       "**Telemetri**: performans sorunlarını fark etmek için Ayarlar › Oyun › Telemetri bölümünden FPS'ini ve pingini göster.",
+       "**Crosshair**: bir [pro crosshair'ından](../) başla ya da kendininkini [crosshair oluşturucu](../generator.html) ile yap."
+      ]},
+      {"type": "config", "lines": ["cl_radar_scale 0.35", "cl_radar_always_centered 0", "cl_hud_radar_scale 1.15", "viewmodel_fov 68"]}
+     ]
+    },
+    {
+     "title": "Ses ayarları",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Kulaklıkla** oyna: CS2'nin konumsal sesi kulaklık için tasarlandı.",
+       "Ses ayarlarındaki her **EQ profilini (EQ Profile)** dene ve adım seslerini en net duyduğunu tut.",
+       "Ana `volume` değerini oldukça yüksek tut, onun yerine müziği kıs (raunt başı, MVP, menü müziği).",
+       "Takım arkadaşların adım seslerini bastırıyorsa sesli sohbeti `snd_voipvolume` ile kıs."
+      ]},
+      {"type": "config", "lines": ["snd_roundstart_volume 0", "snd_mvp_volume 0", "snd_menumusic_volume 0"]}
+     ]
+    }
+   ],
+   "faq": [
+    ["FPS için en iyi CS2 ayarları neler?", "Gölgelendirici, parçacık ve model/doku detayını düşür, Ambient Occlusion ve FidelityFX Super Resolution'ı kapat, HDR'yi Performans'a al ve V-Sync'i kapalı tut. Sonra FPS'ini telemetriyle kontrol et."],
+    ["CS2'de Boost Player Contrast'ı açmalı mıyım?", "Evet. Oyuncu modellerinin arka plandan ayrışmasını sağlar, bu da rakipleri daha hızlı fark etmene yardım eder."],
+    ["FidelityFX Super Resolution CS2 için iyi mi?", "Rekabetçi oyun için genellikle hayır: oyunu daha düşük çözünürlükte çizip büyütür, bu da uzaktaki rakipleri bulanıklaştırır."],
+    ["CS2 prolarının ses ayarları neler?", "Çoğu kulaklıkla oynar, ana ses seviyesini oldukça yüksek tutar ve adım seslerini daha kolay duymak için müziği (raunt başı, MVP, menü) kapatır."]
+   ],
+   "related": ["cs2-fps-boost", "cs2-stretched-resolution", "cs2-crosshair-guide"]
+  },
+  {
+   "slug": "cs2-stretched-resolution",
+   "category": "Ayarlar",
+   "title": "CS2 Stretched Çözünürlük: 4:3 mü 16:9 mu (2026)",
+   "seoTitle": "CS2 Stretched Çözünürlük: 4:3 mü 16:9 mu | ClutchCrosshair",
+   "description": "CS2'yi 4:3 stretched mi oynamalısın? 1280×960'ın modelleri, görüş alanını ve crosshair'ını nasıl değiştirdiği, NVIDIA ve AMD'de nasıl ayarlandığı.",
+   "intro": "Birçok CS2 prosu hâlâ 4:3 stretched, genellikle 1280×960 oynuyor; CS 1.6 ve CS:GO'dan kalma bir alışkanlık. Sihir değil: modeller daha geniş görünür ama görüş alanının bir kısmını kaybedersin. Bu rehber tam olarak neyin değiştiğini anlatıyor, böylece kararı kendin verirsin.",
+   "commands": ["m_yaw", "cl_crosshair_screen_height", "sensitivity"],
+   "sections": [
+    {
+     "title": "4:3 stretched gerçekte neyi değiştirir",
+     "blocks": [
+      {"type": "table", "head": ["", "Yerel 16:9 (1920×1080)", "4:3 stretched (1280×960)"], "rows": [
+       ["Görüş alanı", "En geniş: yanlarda daha fazlasını görürsün", "Daha dar: ekranın yanları kesilir"],
+       ["Oyuncu modelleri", "Normal genişlik", "Daha geniş görünür, bazılarına göre vurması daha kolay"],
+       ["Görüntü netliği", "En net", "Daha yumuşak, pikseller gerilmiş"],
+       ["Fare hissi", "Her yönde aynı hız", "Yatay hareket daha hızlı hissettirir"],
+       ["FPS", "Daha düşük", "Biraz daha yüksek (çizilecek piksel daha az)"]
+      ]},
+      {"type": "tip", "text": "Görüntüyü germek hitbox'ları büyütmez: modeller yalnızca görüntü gerildiği için daha geniş görünür. Bunun işe yarayıp yaramadığı kişisel bir his meselesi."}
+     ]
+    },
+    {
+     "title": "CS2 proları hangi çözünürlüğü kullanıyor?",
+     "blocks": [
+      {"type": "p", "text": "Her CS2 crosshair kodu, crosshair'ın yapıldığı ekran yüksekliğini saklar. ClutchCrosshair'da pro crosshair'larının çoğu **960 px** ekran yüksekliği, yani 1280×960'ın yüksekliği için yapılmış; bu da 4:3 stretched'in en üst seviyede hâlâ en popüler seçim olduğunu gösteriyor. Her pronun değerini crosshair sayfasında görebilirsin."},
+      {"type": "pro-resolution-stats"}
+     ]
+    },
+    {
+     "title": "CS2 4:3 stretched nasıl oynanır",
+     "blocks": [
+      {"type": "steps", "items": [
+       "CS2'de **Ayarlar › Görüntü › Görüntü** bölümünü aç. **En boy oranını** (Aspect Ratio) **Normal 4:3**, **çözünürlüğü** **1280×960** yap (veya 1024×768, 1440×1080).",
+       "**Ekran modunu** (Display Mode) **Tam ekran** yap.",
+       "**NVIDIA**: NVIDIA Denetim Masası › Masaüstü boyutunu ve konumunu ayarla'yı aç, **Tam ekran** ölçeklemeyi ve **Ölçeklemeyi şurada gerçekleştir: GPU**'yu seç, ardından **Oyunlar ve programlar tarafından ayarlanan ölçekleme modunu geçersiz kıl** kutusunu işaretle.",
+       "**AMD**: AMD Software › Ayarlar › Ekran'ı aç, **GPU Ölçekleme**'yi (GPU Scaling) etkinleştir ve **Ölçekleme Modu**'nu **Tam Panel** (Full Panel) yap.",
+       "CS2'yi yeniden başlat. Yanlarda siyah şeritler görüyorsan ekran kartının ölçekleme ayarı henüz uygulanmamıştır."
+      ]}
+     ]
+    },
+    {
+     "title": "Stretched'te crosshair ve hassasiyet",
+     "blocks": [
+      {"type": "p", "text": "Stretched'te ekrandaki her şey, crosshair'ın dahil, daha geniştir: yatay çizgiler daha uzun, dikey çizgiler daha kalın görünür. Bir crosshair'ı kullanmadan önce 4:3 stretched'te tam olarak nasıl göründüğünü görmek için [crosshair oluşturucumuzun](../generator.html) önizlemesinin altından çözünürlüğünü seç."},
+      {"type": "p", "text": "Faren de yatayda daha hızlı hissettirir. Çoğu oyuncu buna alışır. Bazıları telafi etmek için `m_yaw` değerini düşürür; 16:9 monitörde 1280×960 için hesap 0.022 yerine yaklaşık 0.0165 verir, ama bu bir zevk meselesi."}
+     ]
+    }
+   ],
+   "faq": [
+    ["CS2'de 4:3 stretched daha mı iyi?", "Objektif olarak hayır. Modeller daha geniş görünür ve FPS biraz daha yüksektir, ama yanlarda daha az görürsün ve görüntü daha az nettir. İkisini de birkaç gün dene ve sana en iyi geleni tut."],
+    ["CS2 prolarının en yaygın çözünürlüğü hangisi?", "1280×960 stretched prolar arasında hâlâ çok yaygın: ClutchCrosshair'daki pro crosshair kodlarının çoğu 960 px ekran yüksekliği için yapılmış."],
+    ["4:3'te neden siyah şeritler var?", "Ekran kartın görüntüyü germeye ayarlı değil. NVIDIA Denetim Masası'nda GPU tarafından yapılan tam ekran ölçeklemeyi ya da AMD Software'de Tam Panel ile GPU Ölçekleme'yi ayarla."],
+    ["Stretched CS2'de hitbox'ları büyütür mü?", "Hayır. Hitbox'lar aynı kalır; modeller yalnızca görüntü yatayda gerildiği için daha geniş görünür."]
+   ],
+   "related": ["cs2-sensitivity", "cs2-crosshair-guide", "cs2-best-settings"]
+  },
+  {
+   "slug": "cs2-sensitivity",
+   "category": "Aim",
+   "title": "CS2 Hassasiyet Rehberi: eDPI, cm/360 ve Hesaplayıcı",
+   "seoTitle": "CS2 Hassasiyet Rehberi ve eDPI Hesaplayıcı | ClutchCrosshair",
+   "description": "En iyi CS2 hassasiyetini bul: eDPI ve cm/360 ne demek, proların aralıkları, ücretsiz eDPI hesaplayıcı ve Valorant hassasiyetini dönüştürme.",
+   "intro": "Hassasiyetin, fareyi hareket ettirdiğinde crosshair'ının ne kadar gideceğini belirler. Mükemmel bir sayı yok ama CS2 için makul bir aralık var ve iki basit ölçü karşılaştırmaya yardım eder: eDPI ve cm/360. Kendininkini bulmak için aşağıdaki hesaplayıcıyı kullan.",
+   "commands": ["sensitivity", "zoom_sensitivity_ratio", "m_yaw", "m_pitch"],
+   "sections": [
+    {
+     "title": "eDPI ve cm/360 hesaplayıcı",
+     "blocks": [
+      {"type": "p", "text": "Fare DPI'ını ve CS2 `sensitivity` değerini gir:"},
+      {"type": "sens-calc"}
+     ]
+    },
+    {
+     "title": "eDPI ve cm/360 nedir",
+     "blocks": [
+      {"type": "list", "items": [
+       "**eDPI** = fare DPI × oyun içi hassasiyet. 400 DPI'da 2.0 ile 800 DPI'da 1.0, ikisi de 800 eDPI eder: oyunda aynı hız.",
+       "**cm/360**, tam bir 360° dönüş için farenin gittiği mesafedir. En dürüst ölçüdür, çünkü her oyunda aynıdır."
+      ]},
+      {"type": "p", "text": "CS2 prolarının çoğu yaklaşık **600 ile 1200 eDPI** arasında oynar; bu da 360° dönüş başına kabaca 35 ile 70 cm demektir. Düşük hassasiyet uzak mesafede hassas nişan almaya yardım eder ama büyük bir mousepad ister."}
+     ]
+    },
+    {
+     "title": "Hassasiyetini nasıl bulursun",
+     "blocks": [
+      {"type": "steps", "items": [
+       "Yaklaşık 800 eDPI ile başla (örneğin 400 DPI'da 2.0 veya 800 DPI'da 1.0).",
+       "Birkaç deathmatch oyna. Hedefi sık sık geçiyorsan biraz düşür; hızlı dönmekte zorlanıyorsan yükselt.",
+       "Küçük adımlarla değiştir (yaklaşık %5 ile %10) ve her değeri birkaç gün kullan.",
+       "Bulduktan sonra değiştirmeyi bırak: tutarlılık tam sayıdan daha önemlidir."
+      ]},
+      {"type": "copy", "items": ["sensitivity 2", "zoom_sensitivity_ratio 1"]}
+     ]
+    },
+    {
+     "title": "Valorant hassasiyetini dönüştür",
+     "blocks": [
+      {"type": "p", "text": "Valorant farklı bir ölçek kullanır. CS2'de aynı hızı elde etmek için Valorant hassasiyetini **3.18** ile çarp. Örneğin Valorant'ta 0.4, aynı DPI ile CS2'de yaklaşık 1.27'ye eşittir. Yukarıdaki hesaplayıcı bunu senin için yapar."}
+     ]
+    },
+    {
+     "title": "Dürbün ve ham giriş",
+     "blocks": [
+      {"type": "list", "items": [
+       "`zoom_sensitivity_ratio`, AWP veya Scout ile dürbüne baktığındaki hızını değiştirir. 1 varsayılandır ve çoğu oyuncuya doğal gelir.",
+       "CS2 fareni her zaman doğrudan okur (ham giriş), bu yüzden eski `m_rawinput` komutu yok. Windows'ta **İşaretçi hassasiyetini artır**'ı ve fare yazılımındaki ivmeyi kapat."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["CS2 için iyi bir hassasiyet nedir?", "Proların çoğu yaklaşık 600 ile 1200 eDPI (DPI × hassasiyet) arasında oynar. 800 eDPI iyi bir başlangıç noktasıdır, sonra küçük adımlarla ayarla."],
+    ["CS2'de eDPI nasıl hesaplanır?", "Fare DPI'ını oyun içi hassasiyetinle çarp. 800 DPI'da 1.1, 880 eDPI eder."],
+    ["Valorant hassasiyetini CS2'ye nasıl dönüştürürüm?", "Valorant hassasiyetini 3.18 ile çarp (aynı DPI ile). Valorant'ta 0.4, CS2'de yaklaşık 1.27'dir."],
+    ["CS2'de 400 mü 800 DPI mı kullanmalıyım?", "İkisi de olur. Hız için yalnızca eDPI önemlidir; 800 DPI ile 400 DPI'daki hassasiyetin yarısı aynı hissettirir ve biraz daha akıcı olabilir."]
+   ],
+   "related": ["cs2-aim-training", "cs2-stretched-resolution", "cs2-best-settings"]
+  },
+  {
+   "slug": "cs2-fps-boost",
+   "category": "Performans",
+   "title": "CS2'de FPS Nasıl Artırılır (2026)",
+   "seoTitle": "CS2'de FPS Nasıl Artırılır (2026) | ClutchCrosshair",
+   "description": "CS2'de daha fazla FPS ve daha akıcı oyun için basit yollar: görüntü ayarları, kare hızı sınırı, Windows seçenekleri ve işe yaramayan efsaneler.",
+   "intro": "Yüksek ve sabit FPS, CS2'nin daha akıcı ve daha tepkili hissettirmesini sağlar. İyi haber: en büyük kazançlar gizli ayarlardan değil, birkaç oyun içi ayardan ve temel bilgisayar bakımından gelir. İşte gerçekten işe yarayanlar, sırasıyla.",
+   "commands": ["fps_max", "cl_showfps", "cl_hud_telemetry_frametime_show", "fps_max_ui", "engine_low_latency_sleep_after_client_tick"],
+   "sections": [
+    {
+     "title": "1. Önce FPS'ini ölç",
+     "blocks": [
+      {"type": "p", "text": "Bir şey değiştirmeden önce telemetriyi aç, böylece her değişikliğin etkisini görebilirsin:"},
+      {"type": "copy", "items": ["cl_hud_telemetry_frametime_show 2", "cl_showfps 1"]},
+      {"type": "p", "text": "Yalnızca en yüksek değere değil, kare hızının ne kadar sabit olduğuna bak: çatışmalardaki düşüşler hissettiğin şeydir."}
+     ]
+    },
+    {
+     "title": "2. En ağır görüntü ayarlarını düşür",
+     "blocks": [
+      {"type": "p", "text": "Ayarlar › Görüntü › Gelişmiş Görüntü bölümünde bu ayarlar, en az rekabetçi fayda için en çok performansı götürür:"},
+      {"type": "list", "items": ["Ambient Occlusion: **Kapalı**.", "Gölgelendirici ve parçacık detayı: **Düşük**.", "Model / doku detayı: **Düşük** veya **Orta**.", "High Dynamic Range: **Performans** (Performance).", "MSAA kenar yumuşatma: hâlâ FPS gerekiyorsa 2x'e ya da Yok'a düşür."]},
+      {"type": "p", "text": "[En iyi CS2 ayarları rehberimiz](cs2-best-settings.html) her görüntü seçeneğini açıklıyor."}
+     ]
+    },
+    {
+     "title": "3. Kare hızını sınırla",
+     "blocks": [
+      {"type": "p", "text": "Sürekli zıplayan sınırsız bir kare hızı, sabit bir kare hızından daha kötü hissettirir. `fps_max` ile bilgisayarının neredeyse her zaman tutabildiği bir değerde, ideal olarak monitörünün yenileme hızının üstünde sınırla. Ekran kartın destekliyorsa **NVIDIA Reflex Low Latency**'yi aç."},
+      {"type": "copy", "items": ["fps_max 300", "fps_max_ui 60"]}
+     ]
+    },
+    {
+     "title": "4. Temel bilgisayar bakımı",
+     "blocks": [
+      {"type": "list", "items": [
+       "Ekran kartı sürücünü güncelle.",
+       "Windows ayarlarında **Oyun Modu**'nu aç ve masaüstü bilgisayarda yüksek performans güç planını kullan.",
+       "Oynarken ağır programları kapat (çok sekmeli tarayıcılar, kullanmadığın kayıt yazılımları).",
+       "Dizüstü bilgisayarda şarja tak ve CS2 için harici ekran kartını kullan.",
+       "Bilgisayarının aşırı ısınmadığından emin ol: fanlardaki toz performansını yarıya düşürebilir."
+      ]}
+     ]
+    },
+    {
+     "title": "İşe yaramayanlar",
+     "blocks": [
+      {"type": "list", "items": [
+       "`-high`, `-threads` veya `+mat_queue_mode 2` gibi eski CS:GO başlatma seçenekleri ([başlatma seçenekleri rehberimize](cs2-launch-options.html) bak).",
+       "\"FPS boost\" programları ve kayıt defteri ayarları: en iyi ihtimalle işe yaramaz, en kötü ihtimalle sistemi kararsız yapar.",
+       "Rakipleri görmeyi zorlaştıran çok düşük çözünürlükler: biraz daha düşük FPS, kimseyi görememekten iyidir."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["CS2'de nasıl daha fazla FPS alırım?", "Ambient Occlusion'ı kapat, gölgelendirici, parçacık ve model/doku detayını düşür, HDR'yi Performans'a al, ekran kartı sürücünü güncelle ve ağır arka plan programlarını kapat."],
+    ["CS2'de FPS sınırını kaldırmalı mıyım?", "Şart değil. Bilgisayarının sabit tutabildiği bir fps_max sınırı, sürekli zıplayan sınırsız bir kare hızından genellikle daha akıcı hissettirir."],
+    ["CS2'de FPS nasıl gösterilir?", "Konsola cl_hud_telemetry_frametime_show 2 veya cl_showfps 1 yaz ya da Ayarlar › Oyun bölümünden telemetri seçeneklerini aç."],
+    ["Başlatma seçenekleri CS2'de FPS'i artırır mı?", "Neredeyse hiç. FPS için önerilen başlatma seçeneklerinin çoğu CS:GO için yapılmıştı; oyun içi görüntü ayarları çok daha önemli."]
+   ],
+   "related": ["cs2-best-settings", "cs2-launch-options", "cs2-stretched-resolution"]
+  },
+  {
+   "slug": "cs2-crosshair-guide",
+   "category": "Crosshair",
+   "title": "CS2 Crosshair Rehberi: Kodlar, Komutlar ve Pro İstatistikleri",
+   "seoTitle": "CS2 Crosshair Rehberi: Kodlar ve Pro Verileri | ClutchCrosshair",
+   "description": "CS2 crosshair'ları hakkında her şey: kod nasıl aktarılır, konsol komutları, proların gerçekte ne kullandığı (canlı istatistikler) ve kendininkini yapmak.",
+   "intro": "Crosshair'ın, bir maçın her saniyesinde baktığın tek şeydir. Bu rehber, 30 Eylül 2026 güncellemesinden beri CS2 crosshair kodlarının nasıl çalıştığını, her ayarı hangi konsol komutlarının kontrol ettiğini ve ClutchCrosshair'daki proların, gerçek maç demolarına göre, aslında ne kullandığını anlatıyor.",
+   "commands": ["cl_crosshair_length", "cl_crosshair_thickness", "cl_crosshair_gap", "cl_crosshair_screen_height", "cl_crosshairstyle", "cl_crosshair_drawoutline", "cl_crosshairdot", "cl_crosshair_t", "cl_crosshaircolor_r"],
+   "sections": [
+    {
+     "title": "Crosshair kodu nasıl aktarılır",
+     "blocks": [
+      {"type": "steps", "items": ["Bir kod kopyala, örneğin bir [pro crosshair sayfasından](../).", "CS2'de **Ayarlar › Oyun › Nişangâh** menüsünü aç.", "**Paylaş veya İçe aktar**'a tıkla, kodu yapıştır ve onayla."]},
+      {"type": "tip", "text": "30 Eylül 2026 tarihli CS2 güncellemesinden beri kodlar CS ile başlıyor (tiresiz). Eski CSGO-xxxxx kodları artık içe aktarılamaz."}
+     ]
+    },
+    {
+     "title": "CS2 proları hangi crosshair'ı kullanıyor?",
+     "blocks": [
+      {"type": "p", "text": "Bu sayılar, resmi maç demolarından okunan, ClutchCrosshair'daki tüm proların crosshair'larından hesaplanır. Her yeni demo eklendiğinde güncellenir:"},
+      {"type": "pro-crosshair-stats"}
+     ]
+    },
+    {
+     "title": "Crosshair konsol komutları",
+     "blocks": [
+      {"type": "table", "head": ["Komut", "Neyi değiştirir"], "rows": [
+       ["`cl_crosshair_length`", "Çizgilerin uzunluğu, piksel olarak"],
+       ["`cl_crosshair_thickness`", "Çizgilerin kalınlığı, piksel olarak"],
+       ["`cl_crosshair_gap`", "Ortadaki boşluk, piksel olarak"],
+       ["`cl_crosshair_screen_height`", "Boyutların yapıldığı ekran yüksekliği"],
+       ["`cl_crosshairstyle`", "Sabit (4) veya dinamik crosshair"],
+       ["`cl_crosshaircolor_r`", "Özel renk, _g ve _b ile birlikte"],
+       ["`cl_crosshair_drawoutline`", "Görünürlük için siyah dış çizgi"],
+       ["`cl_crosshairdot`", "Orta nokta"],
+       ["`cl_crosshair_t`", "T stili (üst çizgi yok)"]
+      ]},
+      {"type": "p", "text": "İşte konsola yapıştırabileceğin, tipik küçük ve sabit bir pro tarzı crosshair:"},
+      {"type": "config", "lines": ["cl_crosshairstyle 4", "cl_crosshair_length 2", "cl_crosshair_thickness 2", "cl_crosshair_gap 2", "cl_crosshair_drawoutline 0", "cl_crosshairdot 0", "cl_crosshaircolor_r 0", "cl_crosshaircolor_g 255", "cl_crosshaircolor_b 255", "cl_crosshaircolor_a 255"]}
+     ]
+    },
+    {
+     "title": "Crosshair'ını nasıl seçersin",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Renk**: her haritada kontrast oluşturan birini seç. Camgöbeği, yeşil ve sarının en popüler olmasının bir nedeni var.",
+       "**Boyut**: küçük bir crosshair hassastır ama smoke ve flash'larda kaybolabilir; biraz daha uzun olanı bulmak daha kolaydır.",
+       "**Boşluk**: hedefin kafası çizgiler arasında görünür kalsın diye küçük tut.",
+       "**Sabit**: hiç hareket etmeyen bir crosshair (stil 4) sana sabit bir referans verir; neredeyse her pronun onu kullanmasının nedeni bu."
+      ]},
+      {"type": "p", "text": "Denemenin en kolay yolu [CS2 crosshair oluşturucumuz](../generator.html): crosshair'ını bir CS2 haritasında gerçek boyutta, kendi çözünürlüğünde gösterir ve sana kodu verir. İstersen herhangi bir pronun crosshair'ından başlayıp onu değiştirebilirsin."}
+     ]
+    }
+   ],
+   "faq": [
+    ["CS2'de crosshair nasıl aktarılır?", "Kodu kopyala, Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar'a tıkla ve yapıştır."],
+    ["CSGO- crosshair kodları neden artık çalışmıyor?", "30 Eylül 2026 tarihli CS2 güncellemesinden beri crosshair kodları CS ile başlayan ve boyutları piksel olarak saklayan yeni bir format kullanıyor. Eski CSGO- kodları artık içe aktarılamaz."],
+    ["CS2 prolarında en popüler crosshair hangisi?", "Küçük ve sabit bir crosshair: ClutchCrosshair'da proların çoğu kısa bir uzunluk, küçük bir boşluk ve orta nokta olmadan camgöbeği veya yeşil bir renk kullanıyor."],
+    ["Kendi CS2 crosshair'ımı nasıl yaparım?", "ClutchCrosshair crosshair oluşturucusunu kullan: rengi, uzunluğu, kalınlığı ve boşluğu gerçek boyutlu önizlemeyle ayarla, sonra kodunu veya konsol komutlarını kopyala."]
+   ],
+   "related": ["cs2-stretched-resolution", "cs2-best-settings", "cs2-aim-training"]
+  },
+  {
+   "slug": "cs2-aim-training",
+   "category": "Aim",
+   "title": "CS2'de Aim Nasıl Geliştirilir: Rutin ve Aim Haritaları",
+   "seoTitle": "CS2'de Aim Geliştirme: Rutin ve Aim Haritaları | ClutchCrosshair",
+   "description": "Basit bir günlük CS2 aim rutini, en iyi Atölye aim haritaları, kopyalamaya hazır bir antrenman config'i ve daha çok headshot attıran alışkanlıklar.",
+   "intro": "Aim, saatlerce düşünmeden ateş etmekle değil, düzenli ve odaklı antrenmanla gelişir. Bu rehber sana kısa bir günlük rutin, en çok işe yarayan Atölye harita türlerini ve kendi sunucuna yapıştırabileceğin bir antrenman config'i veriyor.",
+   "commands": ["sv_cheats", "sv_infinite_ammo", "mp_buy_anywhere", "sv_showimpacts", "bot_kick", "map", "noclip"],
+   "sections": [
+    {
+     "title": "20 dakikalık günlük rutin",
+     "blocks": [
+      {"type": "table", "head": ["Süre", "Egzersiz", "Hedef"], "rows": [
+       ["5 dk", "Bir aim haritasında botlar (Aim Botz tarzı)", "Isınma: crosshair kafa hizasında, akıcı flick'ler"],
+       ["5 dk", "`sv_showimpacts 1` ile duvara sprey", "AK-47 ve M4 sprey kalıplarını öğren"],
+       ["10 dk", "Deathmatch (resmi veya topluluk)", "Gerçek, hareket eden oyunculara karşı uygula"]
+      ]},
+      {"type": "tip", "text": "Kısa ve düzenli, uzun ve seyrekten iyidir: her gün 20 odaklı dakika, haftada bir 3 saatten daha çok işe yarar."}
+     ]
+    },
+    {
+     "title": "Denemeye değer aim haritaları",
+     "blocks": [
+      {"type": "p", "text": "CS2 Steam Atölyesi'nde bu tür haritaları ara ve beğendiklerine abone ol:"},
+      {"type": "list", "items": [
+       "**Aim Botz tarzı haritalar**: flick, takip ve headshot çalışmak için sıra sıra botlar.",
+       "**Prefire haritaları**: gerçek harita pozisyonlarında ilerle ve rakiplerin genellikle saklandığı yerlere konmuş botları öldür.",
+       "**Geri tepme haritaları**: kontrol etmeyi öğrenmen için sprey kalıplarını gösterir.",
+       "**Hareket haritaları**: ateş ederken tamamen durmuş olmak için counter-strafe çalış."
+      ]}
+     ]
+    },
+    {
+     "title": "Kendi antrenman sunucun",
+     "blocks": [
+      {"type": "p", "text": "`map de_mirage` (veya herhangi bir harita) ile bir harita yükle, konsolu aç ve bu config'i yapıştır. Sınırsız cephane verir, her yerde satın almana izin verir, raunt süresini kaldırır ve mermilerinin nereye düştüğünü gösterir:"},
+      {"type": "config", "lines": ["sv_cheats 1", "bot_kick", "mp_warmup_end", "mp_freezetime 0", "mp_roundtime_defuse 60", "mp_ignore_round_win_conditions 1", "mp_buy_anywhere 1", "mp_buytime 9999", "mp_maxmoney 60000", "mp_startmoney 60000", "sv_infinite_ammo 1", "sv_showimpacts 1", "mp_restartgame 1"]},
+      {"type": "p", "text": "Her komut [CS2 konsol komutları listemizde](../commands/#practice) açıklanıyor."}
+     ]
+    },
+    {
+     "title": "En büyük farkı yaratan alışkanlıklar",
+     "blocks": [
+      {"type": "list", "items": [
+       "**Crosshair yerleşimi**: crosshair'ını kafa hizasında ve rakiplerin çıkacağı yere yakın tut. İyi bir yerleşimle neredeyse hiç flick atman gerekmez.",
+       "**Counter-strafe**: tamamen durmak için ateş etmeden önce ters yöndeki hareket tuşuna dokun. CS2'de hareket hâlinde atışlar isabetsizdir.",
+       "**Uzakta seri atış**: uzak mesafede sprey yerine kısa seriler veya tek atışlar yap.",
+       "**Aynı ayarlarda kal**: her hafta hassasiyet veya crosshair değiştirmek kas hafızanı sıfırlar. [ClutchCrosshair](../)'da sevdiğin bir pro crosshair'ı bul ve onunla devam et."
+      ]}
+     ]
+    }
+   ],
+   "faq": [
+    ["CS2'de aim'imi hızlıca nasıl geliştiririm?", "Her gün 20 odaklı dakika çalış: bir aim haritasında ısın, sprey çalış, sonra deathmatch oyna. Crosshair yerleşimi ve counter-strafe üzerinde çalış."],
+    ["CS2'nin en iyi aim haritası hangisi?", "Aim Botz tarzı haritalar klasik ısınmadır. Gerçek açıları öğrenmek için prefire haritalarını, spreylere hâkim olmak için geri tepme haritalarını ekle."],
+    ["CS2'de antrenman sunucusu nasıl kurulur?", "map ve ardından bir harita adı yaz (map de_mirage), sonra bir antrenman config'i yapıştır: sv_cheats 1, sv_infinite_ammo 1, mp_buy_anywhere 1, mp_roundtime_defuse 60 ve mp_restartgame 1."],
+    ["Hassasiyet CS2'de aim'i etkiler mi?", "Evet: çok yüksekse küçük düzeltmeler zorlaşır, çok düşükse dönmek yavaşlar. Proların çoğu yaklaşık 600 ile 1200 eDPI arasında kalır."]
+   ],
+   "related": ["cs2-sensitivity", "cs2-crosshair-guide", "cs2-best-settings"]
+  }
+ ]
+}

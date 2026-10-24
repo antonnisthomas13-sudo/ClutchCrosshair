@@ -242,4 +242,4 @@ function optimizeImages() {
     }
 }
 
-module.exports = { optimizeImages, findChrome };
+module.exports = { optimizeImages, findChrome, runCanvasJobs, dataUrl, fileUrl };

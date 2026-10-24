@@ -15,6 +15,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { optimizeImages, findChrome } = require("./images.js");
+const { makePlayerOgImages } = require("./og.js");
 const { extractCritical } = require("./critical.js");
 const { LANGS, SOON, NAMES, makeI18n } = require("./i18n.js");
 
@@ -201,6 +202,12 @@ async function main() {
             return null;
         }
     }
+
+    // Image d'aperçu de lien de chaque joueur (og/<pseudo>.jpg, voir og.js) : { "<slug>": "og/<slug>.jpg" }
+    const ogImages = makePlayerOgImages(players, {
+        decode: sharecode.decodeCrosshairShareCode, slug: slug, teamInfo: teamInfo, teamColor: teamColor, textOnColor: textOnColor,
+        photoOf: function (p) { return photoFiles(p).original; }
+    });
 
     // ===== Données communes à toutes les langues =====
     const COLOR_NAMES = [["green", 0, 255, 0], ["yellow", 255, 255, 0], ["cyan", 0, 255, 255], ["red", 255, 0, 0], ["pink", 255, 0, 255],
@@ -445,14 +452,14 @@ async function main() {
     <meta property="og:title" content="${o.ogTitle || o.title}">
     <meta property="og:description" content="${esc(o.description)}">
     <meta property="og:url" content="${o.url}">
-    <meta property="og:image" content="${SITE_URL}/og-image.jpg">
+    <meta property="og:image" content="${SITE_URL}/${o.ogImage ? versioned(o.ogImage.file) : "og-image.jpg"}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="${t("meta.ogImageAlt")}">
+    <meta property="og:image:alt" content="${o.ogImage ? esc(o.ogImage.alt) : t("meta.ogImageAlt")}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${o.ogTitle || o.title}">
     <meta name="twitter:description" content="${esc(o.description)}">
-    <meta name="twitter:image" content="${SITE_URL}/og-image.jpg">
+    <meta name="twitter:image" content="${SITE_URL}/${o.ogImage ? versioned(o.ogImage.file) : "og-image.jpg"}">
     <link rel="preload" href="${p}fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="${p}fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="${p}style.min.css?v=${CSS_HASH}">${o.crosshair ? `
@@ -726,6 +733,7 @@ ${HTML_OPEN}
         path: rel,
         prefix: "../",
         crosshair: true,
+        ogImage: ogImages[slug(player.name)] ? { file: ogImages[slug(player.name)], alt: t("player.ogImageAlt", { name: player.name }) } : null,
         jsonLd: { "@context": "https://schema.org", "@graph": [webPage, breadcrumb(t("player.breadcrumb", { name: player.name }), url), person].concat(insights ? [faqGraph(url, insights.faq)] : []) }
     })}
 </head>
@@ -1759,8 +1767,12 @@ ${categoriesUsed.map(function (cat) {
             }).map(function (c) { return c.name; }) : []);
             const guidesUpdated = guideTr.updated || guideData.updated;
 
+            // Ancre d'un titre de section (sommaire « On this page ») : sans accents (« Réglages » -> reglages),
+            // russe translittéré en lettres latines (« Настройки » -> nastroyki), « ı » turc -> i
+            const CYRILLIC = { а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "e", ж: "zh", з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n", о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "kh", ц: "ts", ч: "ch", ш: "sh", щ: "shch", ъ: "", ы: "y", ь: "", э: "e", ю: "yu", я: "ya" };
             function anchor(text) {
-                return slug(String(text).normalize("NFD").replace(/[\u0300-\u036f]/g, "")).slice(0, 60); // sans accents (« Réglages » -> reglages)
+                const latin = String(text).toLowerCase().replace(/[а-яё]/g, function (c) { return CYRILLIC[c]; }).replace(/ı/g, "i");
+                return slug(latin.normalize("NFD").replace(/[\u0300-\u036f]/g, "")).slice(0, 60);
             }
 
             // Mise en forme simple des textes : `code` (lien si la commande a une page), **gras**, [texte](lien)
@@ -2024,8 +2036,8 @@ ${HTML_OPEN}
         <h1>${t("guides.hubH1")}</h1>
         <p>${t("guides.hubIntro", { date: esc(guidesUpdated) })}</p>
 ${categories.map(function (cat) {
-        return `        <section aria-labelledby="cat-${slug(cat)}">
-            <h2 id="cat-${slug(cat)}">${esc(cat)}</h2>
+        return `        <section aria-labelledby="cat-${anchor(cat)}">
+            <h2 id="cat-${anchor(cat)}">${esc(cat)}</h2>
             <div class="guide-cards">
             ${guides.filter(function (g) { return g.category === cat; }).map(function (g) {
                 return `<a class="guide-card" href="${g.slug}.html"><span class="guide-card-title">${esc(g.title)}</span><span class="guide-card-desc">${esc(g.description)}</span></a>`;
@@ -2625,7 +2637,7 @@ ${HTML_OPEN}
     <main class="player-page">
         ${crumbs("./", `<span>${t("legal.h1")}</span>`)}
         <h1>${t("legal.h1")}</h1>
-${tList("legal.sections", { name: esc(PUBLISHER_NAME), email: `<a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>` }).map(function (s) {
+${tList("legal.sections", { name: esc(PUBLISHER_NAME), email: `<a href="mailto:${esc(PUBLISHER_EMAIL)}">${esc(PUBLISHER_EMAIL)}</a>`, languages: LANGS.filter(function (l) { return l !== lang; }).map(function (l) { return `<a href="${altHref("", l, "legal.html")}" hreflang="${l}" lang="${l}">${NAMES[l]}</a>`; }).join(" · ") }).map(function (s) {
         return `
         <h2${s[2] ? ` id="${s[2]}"` : ""}>${s[0]}</h2>
         <p>${s[1]}</p>`;
@@ -2753,9 +2765,17 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
     // ===== Adresses officielles sans « .html » =====
     // Cloudflare Pages sert chaque page sans son extension (/players/zywoo.html redirige vers /players/zywoo,
     // /tools/index.html vers /tools/). Les adresses données à Google (canonical, sitemap, og:url, JSON-LD, hreflang)
-    // doivent être celles qui répondent directement, sans redirection. Les liens internes relatifs gardent
-    // « .html » : ils marchent avec Live Server, et Cloudflare les redirige tout seul.
+    // doivent être celles qui répondent directement, sans redirection. Les liens internes relatifs aussi
+    // (href, data-legal, adresses du sélecteur de langue) : « donk.html » → « donk », « tools/index.html » → « tools/ »,
+    // « index.html » → « ./ ». Pour tester sur le PC : node serve.js (Live Server ne sait pas ouvrir ces adresses).
     const absoluteHtml = new RegExp(SITE_URL.split(".").join("\\.") + "/([^\"'<>\\s#?]*?)(?:index)?\\.html", "g");
+    const relativeHtml = /((?:href|data-legal)="|":")([^"'<>\s:#?]*?)\.html(?=[#?"])/g;
+    function cleanRelative(match, before, path) {
+        if (path === "index") {
+            return before + "./";
+        }
+        return before + (path.endsWith("/index") ? path.slice(0, -5) : path);
+    }
     const generated = ["sitemap.xml"];
     LANGS.forEach(function (lang) {
         const dir = lang === "en" ? "" : lang + "/";
@@ -2768,7 +2788,7 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
     });
     generated.filter(function (file) { return fs.existsSync(file); }).forEach(function (file) {
         const text = fs.readFileSync(file, "utf8");
-        const cleaned = text.replace(absoluteHtml, SITE_URL + "/$1");
+        const cleaned = text.replace(absoluteHtml, SITE_URL + "/$1").replace(relativeHtml, cleanRelative);
         if (cleaned !== text) {
             fs.writeFileSync(file, cleaned);
         }

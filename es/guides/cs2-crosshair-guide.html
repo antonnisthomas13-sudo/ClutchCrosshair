@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es" style="--copied: 'Copiado'">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía del crosshair de CS2: códigos y stats | ClutchCrosshair</title>
+    <meta name="description" content="Todo sobre los crosshairs de CS2: cómo importar un código, los comandos de consola, lo que usan de verdad los pros (stats en directo) y cómo crear el tuyo.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://clutchcrosshair.com/es/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-crosshair-guide">
+    <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-crosshair-guide">
+    <script>(function () {
+        var A = {"en":"../../guides/cs2-crosshair-guide","fr":"../../fr/guides/cs2-crosshair-guide","es":"../../es/guides/cs2-crosshair-guide","ru":"../../ru/guides/cs2-crosshair-guide","tr":"../../tr/guides/cs2-crosshair-guide"};
+        try {
+            var saved = localStorage.getItem("lang");
+            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
+                location.replace(A[nav]);
+            }
+        } catch (error) {}
+        document.addEventListener("change", function (event) {
+            if (event.target && event.target.id === "lang" && A[event.target.value]) {
+                try { localStorage.setItem("lang", event.target.value); } catch (error) {}
+                location.href = A[event.target.value];
+            }
+        });
+    })();</script>
+    <script type="application/json" id="i18n">{"copied":"¡Copiado!","copiedAnnounce":"Copiado al portapapeles","copiedBar":"Copiado","noPreview":"Sin vista previa","lightMode":"Modo claro","darkMode":"Modo oscuro","lastUpdate":"Última actualización: ","sameAs":"Mismo crosshair que ","and":" y ","faceitAria":"Perfil de FACEIT de {name} (se abre en una pestaña nueva)","previewAria":"Vista previa del crosshair de CS2 de {name}","terroristsWin":"Ganan los terroristas","defuse":"Tendrías que haberla desactivado.","rushB":"¡Rush B, no pares!","genOldCode":"Los antiguos códigos CSGO- ya no funcionan en CS2. Pega un código que empiece por CS.","genImported":"Código importado. Ajústalo a tu gusto.","genInvalid":"No es un código de crosshair de CS2 válido.","genFromLink":"Crosshair cargado desde el enlace. Ajústalo a tu gusto.","consentAria":"Consentimiento de cookies","consentText":"Nos gustaría medir nuestra audiencia con Google Analytics. Solo instala cookies si aceptas. Rechazar no cambia nada en el sitio.","consentMore":"Más información","consentRefuse":"Rechazar","consentAccept":"Aceptar"}</script>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <meta name="theme-color" content="#111214">
+    <meta name="color-scheme" content="dark light">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ClutchCrosshair">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
+    <meta property="og:title" content="Guía del crosshair de CS2: códigos, comandos y stats de pros">
+    <meta property="og:description" content="Todo sobre los crosshairs de CS2: cómo importar un código, los comandos de consola, lo que usan de verdad los pros (stats en directo) y cómo crear el tuyo.">
+    <meta property="og:url" content="https://clutchcrosshair.com/es/guides/cs2-crosshair-guide">
+    <meta property="og:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="ClutchCrosshair: encuentra tu crosshair perfecto para CS2">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guía del crosshair de CS2: códigos, comandos y stats de pros">
+    <meta name="twitter:description" content="Todo sobre los crosshairs de CS2: cómo importar un código, los comandos de consola, lo que usan de verdad los pros (stats en directo) y cómo crear el tuyo.">
+    <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
+    <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../style.min.css?v=9fee851b61">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/es/guides/cs2-crosshair-guide#article","headline":"Guía del crosshair de CS2: códigos, comandos y stats de pros","description":"Todo sobre los crosshairs de CS2: cómo importar un código, los comandos de consola, lo que usan de verdad los pros (stats en directo) y cómo crear el tuyo.","url":"https://clutchcrosshair.com/es/guides/cs2-crosshair-guide","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-24","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/guides/cs2-crosshair-guide#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Guías de CS2","item":"https://clutchcrosshair.com/es/guides/"},{"@type":"ListItem","position":3,"name":"Guía del crosshair de CS2: códigos, comandos y stats de pros","item":"https://clutchcrosshair.com/es/guides/cs2-crosshair-guide"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/guides/cs2-crosshair-guide#faq","mainEntity":[{"@type":"Question","name":"¿Cómo importo un crosshair en CS2?","acceptedAnswer":{"@type":"Answer","text":"Copia el código, abre Ajustes › Juego › Punto de mira, haz clic en Compartir o importar y pégalo."}},{"@type":"Question","name":"¿Por qué ya no funcionan los códigos de crosshair CSGO-?","acceptedAnswer":{"@type":"Answer","text":"Desde la actualización de CS2 del 30 de septiembre de 2026, los códigos de crosshair usan un nuevo formato que empieza por CS, con tamaños en píxeles. Los antiguos códigos CSGO- ya no se pueden importar."}},{"@type":"Question","name":"¿Cuál es el crosshair más popular entre los pros de CS2?","acceptedAnswer":{"@type":"Answer","text":"Un crosshair pequeño y estático: en ClutchCrosshair, la mayoría de los pros usa una longitud corta, una separación pequeña y un color cian o verde, sin punto central."}},{"@type":"Question","name":"¿Cómo creo mi propio crosshair de CS2?","acceptedAnswer":{"@type":"Answer","text":"Usa el generador de crosshair de ClutchCrosshair: ajusta el color, la longitud, el grosor y la separación con una vista previa a tamaño real y copia tu código o los comandos de consola."}}]}]}</script>
+    <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+</head>
+<body class="page">
+    <script>
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved === "light") {
+                document.documentElement.classList.add("light");
+                document.body.classList.add("light");
+            }
+        } catch (error) {}
+    </script>
+    <header class="page-top">
+        <a href="../" class="logo" aria-label="Inicio de ClutchCrosshair">
+            <img class="logo-img logo-dark" src="../../logo-horizontal-dark.svg" alt="ClutchCrosshair" width="114" height="40">
+            <img class="logo-img logo-light" src="../../logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
+        </a>
+        <nav class="main-nav" aria-label="Principal">
+            <a href="../">Crosshairs</a>
+            <a href="../skins/">Skins de pros</a>
+            <a href="../guides/" aria-current="page">Guías</a>
+            <a href="../commands/">Comandos</a>
+            <a href="../tools/">Herramientas</a>
+        </nav>
+        <select id="lang" class="lang" aria-label="Idioma">
+                    <option value="en">EN · English</option>
+                    <option value="fr">FR · Français</option>
+                    <option value="es" selected>ES</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
+                </select>
+    </header>
+
+    <main class="player-page guide-page">
+        <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="../" class="crumb-home"><svg class="crumb-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11.5h3V21h5.5v-6h3v6H19v-9.5h3L12 3Z"/></svg>Inicio</a> › <a href="./">Guías</a> › <span>Guía del crosshair de CS2: códigos, comandos y stats de pros</span></nav>
+        <h1 class="guide-title">Guía del crosshair de CS2: códigos, comandos y stats de pros</h1>
+        <p class="guide-meta">Crosshair · Actualizado <time datetime="2026-10-24">24/10/2026</time> · 2 min de lectura</p>
+        <p class="guide-lead">Tu crosshair es lo único que miras cada segundo de una partida. Esta guía explica cómo funcionan los códigos de crosshair de CS2 desde la actualización del 30 de septiembre de 2026, qué comandos de consola controlan cada ajuste y qué usan de verdad los pros de ClutchCrosshair, según las demos reales de sus partidos.</p>
+
+        <nav class="guide-toc" aria-label="En esta página">
+            <p class="guide-toc-title">En esta página</p>
+            <ol><li><a href="#como-importar-un-codigo-de-crosshair">Cómo importar un código de crosshair</a></li><li><a href="#que-crosshair-usan-los-pros-de-cs2">¿Qué crosshair usan los pros de CS2?</a></li><li><a href="#los-comandos-de-consola-del-crosshair">Los comandos de consola del crosshair</a></li><li><a href="#como-elegir-tu-crosshair">Cómo elegir tu crosshair</a></li><li><a href="#faq">FAQ</a></li></ol>
+        </nav>
+
+        <section aria-labelledby="como-importar-un-codigo-de-crosshair">
+            <h2 id="como-importar-un-codigo-de-crosshair">Cómo importar un código de crosshair</h2>
+            <ol><li>Copia un código, por ejemplo de una <a href="../">página de crosshair de un pro</a>.</li><li>En CS2, abre <strong>Ajustes › Juego › Punto de mira</strong>.</li><li>Haz clic en <strong>Compartir o importar</strong>, pega el código y confirma.</li></ol>
+            <p class="guide-tip">Desde la actualización de CS2 del 30 de septiembre de 2026, los códigos empiezan por CS (sin guiones). Los antiguos códigos CSGO-xxxxx ya no se pueden importar.</p>
+        </section>
+        <section aria-labelledby="que-crosshair-usan-los-pros-de-cs2">
+            <h2 id="que-crosshair-usan-los-pros-de-cs2">¿Qué crosshair usan los pros de CS2?</h2>
+            <p>Estas cifras se calculan con los crosshairs de todos los pros de ClutchCrosshair, leídos de demos de partidos oficiales. Se actualizan cada vez que se añade una nueva demo:</p>
+            <table class="cmd-values">
+            <thead><tr><th scope="col">Ajuste</th><th scope="col">Lo que usan los pros</th><th scope="col">% de pros</th></tr></thead>
+            <tbody><tr><td>Color</td><td>verde</td><td>37%</td></tr><tr><td>Estilo</td><td>Estático (<code>cl_crosshairstyle 4</code>)</td><td>94%</td></tr><tr><td>Longitud</td><td><code>cl_crosshair_length 2</code></td><td>71%</td></tr><tr><td>Grosor</td><td><code>cl_crosshair_thickness 2</code></td><td>60%</td></tr><tr><td>Separación</td><td><code>cl_crosshair_gap 1</code></td><td>51%</td></tr><tr><td>Punto central</td><td>Sin punto</td><td>90%</td></tr><tr><td>Contorno</td><td>Sin contorno</td><td>94%</td></tr><tr><td>Estilo T</td><td>Normal (con línea de arriba)</td><td>100%</td></tr></tbody>
+        </table>
+        <p class="guide-note">Basado en 70 crosshairs de pros leídos de demos de partidos oficiales. Míralos todos en la <a href="../">página de crosshairs de pros de CS2</a>.</p>
+        </section>
+        <section aria-labelledby="los-comandos-de-consola-del-crosshair">
+            <h2 id="los-comandos-de-consola-del-crosshair">Los comandos de consola del crosshair</h2>
+            <div class="table-wrap"><table class="cmd-values">
+            <thead><tr><th scope="col">Comando</th><th scope="col">Qué cambia</th></tr></thead>
+            <tbody><tr><td><a href="../commands/cl_crosshair_length"><code>cl_crosshair_length</code></a></td><td>Longitud de las líneas, en píxeles</td></tr><tr><td><a href="../commands/cl_crosshair_thickness"><code>cl_crosshair_thickness</code></a></td><td>Grosor de las líneas, en píxeles</td></tr><tr><td><a href="../commands/cl_crosshair_gap"><code>cl_crosshair_gap</code></a></td><td>Espacio en el centro, en píxeles</td></tr><tr><td><a href="../commands/cl_crosshair_screen_height"><code>cl_crosshair_screen_height</code></a></td><td>Altura de pantalla para la que están hechos los tamaños</td></tr><tr><td><a href="../commands/cl_crosshairstyle"><code>cl_crosshairstyle</code></a></td><td>Crosshair estático (4) o dinámico</td></tr><tr><td><a href="../commands/cl_crosshaircolor_r"><code>cl_crosshaircolor_r</code></a></td><td>Color personalizado, con _g y _b</td></tr><tr><td><a href="../commands/cl_crosshair_drawoutline"><code>cl_crosshair_drawoutline</code></a></td><td>Contorno negro para verlo mejor</td></tr><tr><td><a href="../commands/cl_crosshairdot"><code>cl_crosshairdot</code></a></td><td>Punto central</td></tr><tr><td><a href="../commands/cl_crosshair_t"><code>cl_crosshair_t</code></a></td><td>Estilo T (sin línea de arriba)</td></tr></tbody>
+        </table></div>
+            <p>Aquí tienes un crosshair típico de pro, pequeño y estático, que puedes pegar en la consola:</p>
+            <div class="code-block"><pre><code>cl_crosshairstyle 4
+cl_crosshair_length 2
+cl_crosshair_thickness 2
+cl_crosshair_gap 2
+cl_crosshair_drawoutline 0
+cl_crosshairdot 0
+cl_crosshaircolor_r 0
+cl_crosshaircolor_g 255
+cl_crosshaircolor_b 255
+cl_crosshaircolor_a 255</code></pre><button type="button" class="mini" data-copy>Copiar</button></div>
+        </section>
+        <section aria-labelledby="como-elegir-tu-crosshair">
+            <h2 id="como-elegir-tu-crosshair">Cómo elegir tu crosshair</h2>
+            <ul><li><strong>Color</strong>: elige uno que contraste en todos los mapas. El cian, el verde y el amarillo son los más populares por algo.</li><li><strong>Tamaño</strong>: un crosshair pequeño es preciso pero puede perderse en humos y flashes; uno algo más largo es más fácil de encontrar.</li><li><strong>Separación</strong>: mantenla pequeña para que la cabeza del objetivo siga visible entre las líneas.</li><li><strong>Estático</strong>: un crosshair que nunca se mueve (estilo 4) te da una referencia constante, por eso lo usan casi todos los pros.</li></ul>
+            <p>La forma más fácil de probar es nuestro <a href="../generator">generador de crosshair de CS2</a>: muestra tu crosshair a tamaño real en un mapa de CS2, en tu resolución, y te da el código. También puedes partir del crosshair de cualquier pro y ajustarlo.</p>
+        </section>
+
+        <h2>Comandos de esta guía</h2>
+        <ul class="related"><li><a href="../commands/cl_crosshair_length">cl_crosshair_length</a></li><li><a href="../commands/cl_crosshair_thickness">cl_crosshair_thickness</a></li><li><a href="../commands/cl_crosshair_gap">cl_crosshair_gap</a></li><li><a href="../commands/cl_crosshair_screen_height">cl_crosshair_screen_height</a></li><li><a href="../commands/cl_crosshairstyle">cl_crosshairstyle</a></li><li><a href="../commands/cl_crosshair_drawoutline">cl_crosshair_drawoutline</a></li><li><a href="../commands/cl_crosshairdot">cl_crosshairdot</a></li><li><a href="../commands/cl_crosshair_t">cl_crosshair_t</a></li><li><a href="../commands/cl_crosshaircolor_r">cl_crosshaircolor_r</a></li></ul>
+
+        <h2 id="faq">FAQ: Guía del crosshair de CS2</h2>
+        <h3>¿Cómo importo un crosshair en CS2?</h3>
+        <p>Copia el código, abre Ajustes › Juego › Punto de mira, haz clic en Compartir o importar y pégalo.</p>
+        <h3>¿Por qué ya no funcionan los códigos de crosshair CSGO-?</h3>
+        <p>Desde la actualización de CS2 del 30 de septiembre de 2026, los códigos de crosshair usan un nuevo formato que empieza por CS, con tamaños en píxeles. Los antiguos códigos CSGO- ya no se pueden importar.</p>
+        <h3>¿Cuál es el crosshair más popular entre los pros de CS2?</h3>
+        <p>Un crosshair pequeño y estático: en ClutchCrosshair, la mayoría de los pros usa una longitud corta, una separación pequeña y un color cian o verde, sin punto central.</p>
+        <h3>¿Cómo creo mi propio crosshair de CS2?</h3>
+        <p>Usa el generador de crosshair de ClutchCrosshair: ajusta el color, la longitud, el grosor y la separación con una vista previa a tamaño real y copia tu código o los comandos de consola.</p>
+
+        <h2>Más guías de CS2</h2>
+        <ul class="related"><li><a href="cs2-stretched-resolution">Resolución estirada en CS2: 4:3 o 16:9 (2026)</a></li><li><a href="cs2-best-settings">Mejores ajustes de CS2 (2026): vídeo, juego y audio</a></li><li><a href="cs2-aim-training">Cómo mejorar tu puntería en CS2: rutina y mapas de aim</a></li></ul>
+        <p><a href="./">Todas las guías de CS2 ›</a></p>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Pie de página">
+            <a href="../generator">Generador de crosshair</a>
+            <a href="../tools/bind-generator">Generador de binds</a>
+            <a href="../skins/">Skins de pros de CS2</a>
+            <a href="../guides/">Guías de CS2</a>
+            <a href="../commands/">Comandos de consola</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Aviso legal</a>
+            <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
+        </nav>
+        <p class="footer-contact">Negocios y colaboraciones: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
+        <p>© 2026 ClutchCrosshair. Todos los derechos reservados.</p>
+        <p>Counter-Strike 2 y las skins de CS2 son marcas de Valve Corporation. Los logos de los equipos son marcas de sus respectivos dueños. ClutchCrosshair no está afiliado a Valve ni a los equipos.</p>
+    </footer>
+    <script type="module">
+        import { copyText } from "../../crosshair.min.js?v=fe84164f66";
+        document.addEventListener("click", function (event) {
+            const button = event.target.closest("[data-copy]");
+            if (button) {
+                copyText(button.closest(".field-row, .code-block").querySelector("code").textContent, button);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -9,9 +9,12 @@
     <link rel="canonical" href="https://clutchcrosshair.com/tools/">
     <link rel="alternate" hreflang="en" href="https://clutchcrosshair.com/tools/">
     <link rel="alternate" hreflang="fr" href="https://clutchcrosshair.com/fr/tools/">
+    <link rel="alternate" hreflang="es" href="https://clutchcrosshair.com/es/tools/">
+    <link rel="alternate" hreflang="ru" href="https://clutchcrosshair.com/ru/tools/">
+    <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/tools/">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/tools/">
     <script>(function () {
-        var A = {"en":"../tools/","fr":"../fr/tools/"};
+        var A = {"en":"../tools/","fr":"../fr/tools/","es":"../es/tools/","ru":"../ru/tools/","tr":"../tr/tools/"};
         try {
             var saved = localStorage.getItem("lang");
             var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
@@ -35,6 +38,9 @@
     <meta property="og:site_name" content="ClutchCrosshair">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="ru_RU">
+    <meta property="og:locale:alternate" content="tr_TR">
     <meta property="og:title" content="CS2 Tools">
     <meta property="og:description" content="Free CS2 tools: a crosshair generator with real-size preview and a bind generator for buy binds, jump throw and more.">
     <meta property="og:url" content="https://clutchcrosshair.com/tools/">
@@ -48,9 +54,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=848388ec0a">
+    <link rel="stylesheet" href="../style.min.css?v=9fee851b61">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clutchcrosshair.com/tools/","url":"https://clutchcrosshair.com/tools/","name":"CS2 Tools","description":"Free CS2 tools: a crosshair generator with real-size preview and a bind generator for buy binds, jump throw and more.","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tools/#breadcrumb"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"CS2 Crosshair Generator","url":"https://clutchcrosshair.com/generator"},{"@type":"ListItem","position":2,"name":"CS2 Bind Generator","url":"https://clutchcrosshair.com/tools/bind-generator"}]}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tools/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Tools","item":"https://clutchcrosshair.com/tools/"}]}]}</script>
-    <script src="../consent.min.js?v=0efd8b40cf" data-legal="../legal.html" defer></script>
+    <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
 </head>
 <body class="page">
     <script>
@@ -77,9 +83,10 @@
         <select id="lang" class="lang" aria-label="Language">
                     <option value="en" selected>EN</option>
                     <option value="fr">FR · Français</option>
-                    <option value="ru" disabled>RU · Русский (soon)</option>
-                    <option value="es" disabled>ES · Español (soon)</option>
-                    <option value="tr" disabled>TR · Türkçe (soon)</option>
+                    <option value="es">ES · Español</option>
+                    <option value="ru">RU · Русский</option>
+                    <option value="tr">TR · Türkçe</option>
+                    
                 </select>
     </header>
 
@@ -90,8 +97,8 @@
         <p>The crosshair generator shows your crosshair at its real size on a CS2 map, exactly as it looks in game, even in 4:3 stretched. Start from the crosshair of a pro player like ZywOo or donk, change the length, gap, thickness and color, then copy the share code or the console commands.</p>
         <p>The bind generator writes the console command for you: buy binds for a full buy in one key, a jump throw bind for repeatable smokes, a key to toggle the radar zoom or the volume. Keep all your binds in one list and download them as a ready-made autoexec.cfg.</p>
         <div class="guide-cards">
-            <a class="guide-card" href="../generator.html"><span class="guide-card-title">CS2 Crosshair Generator</span><span class="guide-card-desc">Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.</span></a>
-            <a class="guide-card" href="bind-generator.html"><span class="guide-card-title">CS2 Bind Generator</span><span class="guide-card-desc">Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.</span></a>
+            <a class="guide-card" href="../generator"><span class="guide-card-title">CS2 Crosshair Generator</span><span class="guide-card-desc">Build your crosshair with a real-size preview on a CS2 map, see it in your resolution (4:3 stretched included), start from a pro crosshair and copy the code.</span></a>
+            <a class="guide-card" href="bind-generator"><span class="guide-card-title">CS2 Bind Generator</span><span class="guide-card-desc">Pick a key and an action (buy binds, jump throw, radar zoom, volume...), copy the command or download a ready-made autoexec.cfg.</span></a>
         </div>
         <h2>More resources</h2>
         <ul class="related">
@@ -103,13 +110,13 @@
 
     <footer>
         <nav class="footer-links" aria-label="Footer">
-            <a href="../generator.html">Crosshair Generator</a>
-            <a href="../tools/bind-generator.html">Bind Generator</a>
+            <a href="../generator">Crosshair Generator</a>
+            <a href="../tools/bind-generator">Bind Generator</a>
             <a href="../skins/">CS2 Pro Skins</a>
             <a href="../guides/">CS2 Guides</a>
             <a href="../commands/">Console Commands</a>
-            <a href="../faq.html">FAQ</a>
-            <a href="../legal.html">Legal notice</a>
+            <a href="../faq">FAQ</a>
+            <a href="../legal">Legal notice</a>
             <button type="button" class="footer-cookies" data-consent-open>Cookies</button>
         </nav>
         <p class="footer-contact">Business &amp; partnerships: <a href="mailto:clutchcrosshair@gmail.com?subject=Business%20-%20ClutchCrosshair">clutchcrosshair@gmail.com</a></p>
