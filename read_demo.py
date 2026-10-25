@@ -140,7 +140,9 @@ def update_players(found, day, data):
             continue
 
         existing["steamid"] = p["steamid"]
-        existing["team"] = team
+        # Un joueur classé créateur par Anto le reste (ex. jL, remplaçant chez Vitality) : on met à jour son code, pas son équipe
+        if existing.get("category") != "creator":
+            existing["team"] = team
         existing["updated"] = day_text  # le crosshair est confirmé à la date de ce match
         if existing.get("code") != p["code"]:
             existing["code"] = p["code"]
