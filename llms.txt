@@ -1,6 +1,6 @@
 # ClutchCrosshair
 
-> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 71 pro players and 13 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 14 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
 
 Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in Français (https://clutchcrosshair.com/fr/), Español (https://clutchcrosshair.com/es/), Русский (https://clutchcrosshair.com/ru/), Türkçe (https://clutchcrosshair.com/tr/).
 
@@ -84,7 +84,6 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [zont1x](https://clutchcrosshair.com/players/zont1x): Team Spirit, CS2 crosshair code updated 2026-10-24
 - [apEX](https://clutchcrosshair.com/players/apex): Team Vitality, CS2 crosshair code updated 2026-10-17
 - [flameZ](https://clutchcrosshair.com/players/flamez): Team Vitality, CS2 crosshair code updated 2026-10-24
-- [jL](https://clutchcrosshair.com/players/jl): Team Vitality, CS2 crosshair code updated 2026-10-24
 - [mezii](https://clutchcrosshair.com/players/mezii): Team Vitality, CS2 crosshair code updated 2026-10-24
 - [ropz](https://clutchcrosshair.com/players/ropz): Team Vitality, CS2 crosshair code updated 2026-10-24
 - [ZywOo](https://clutchcrosshair.com/players/zywoo): Team Vitality, CS2 crosshair code updated 2026-10-24
@@ -98,6 +97,7 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [Freakazoid](https://clutchcrosshair.com/players/freakazoid): content creator, CS2 crosshair code updated 2026-10-19
 - [GeT_RiGhT](https://clutchcrosshair.com/players/get-right): content creator, CS2 crosshair code updated 2026-10-19
 - [Izak](https://clutchcrosshair.com/players/izak): content creator, CS2 crosshair code updated 2026-10-19
+- [jL](https://clutchcrosshair.com/players/jl): content creator, CS2 crosshair code updated 2026-10-24
 - [kennyS](https://clutchcrosshair.com/players/kennys): content creator, CS2 crosshair code updated 2026-10-19
 - [Maj3r](https://clutchcrosshair.com/players/maj3r): content creator, CS2 crosshair code updated 2026-10-19
 - [pashaBiceps](https://clutchcrosshair.com/players/pashabiceps): content creator, CS2 crosshair code updated 2026-10-19

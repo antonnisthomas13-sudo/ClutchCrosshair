@@ -1,6 +1,6 @@
 # ClutchCrosshair
 
-> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 71 pro players and 13 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
+> ClutchCrosshair lists the CS2 (Counter-Strike 2) crosshair share codes of 70 pro players and 14 content creators. Pro crosshairs are read from official match demos played after the CS2 crosshair code update of 30 September 2026 (new "CS..." code format). Each player page shows the share code, the equivalent console commands, a real-size preview and the date of the match the crosshair comes from. Valorant crosshairs are not available yet.
 
 Codes are in the current CS2 format (they start with "CS", no dashes). To use one in CS2: Settings › Game › Crosshair › Share or Import, then paste the code. Older "CSGO-" codes no longer import in CS2 and are not listed. The site is also available in Français (https://clutchcrosshair.com/fr/), Español (https://clutchcrosshair.com/es/), Русский (https://clutchcrosshair.com/ru/), Türkçe (https://clutchcrosshair.com/tr/).
 
@@ -611,15 +611,6 @@ Most recent crosshair update: 2026-10-24.
 - Last update: 2026-10-24 (date of the official match the crosshair was read from)
 - Page: https://clutchcrosshair.com/players/flamez
 
-### jL
-
-- Game: CS2
-- Team: Team Vitality
-- Crosshair share code: CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV
-- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "135"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
-- Last update: 2026-10-24 (date of the official match the crosshair was read from)
-- Page: https://clutchcrosshair.com/players/jl
-
 ### mezii
 
 - Game: CS2
@@ -711,6 +702,15 @@ Most recent crosshair update: 2026-10-24.
 - Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "1"; cl_crosshair_dynamic_splitalpha_innermod "0"; cl_crosshair_dynamic_splitalpha_outermod "1"; cl_crosshair_dynamic_splitdist "2"; cl_crosshair_dynamic_spread_limit "242"; cl_crosshair_gap "1"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "1024"; cl_crosshair_t "0"; cl_crosshair_thickness "2"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "212"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
 - Last update: 2026-10-19
 - Page: https://clutchcrosshair.com/players/izak
+
+### jL
+
+- Game: CS2
+- Category: content creator
+- Crosshair share code: CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV
+- Console commands: cl_crosshair_drawoutline "0"; cl_crosshair_dynamic_maxdist_splitratio "0.3"; cl_crosshair_dynamic_splitalpha_innermod "1"; cl_crosshair_dynamic_splitalpha_outermod "0.5"; cl_crosshair_dynamic_splitdist "6"; cl_crosshair_dynamic_spread_limit "227"; cl_crosshair_gap "2"; cl_crosshair_length "2"; cl_crosshair_recoil "0"; cl_crosshair_screen_height "960"; cl_crosshair_t "0"; cl_crosshair_thickness "1"; cl_crosshaircolor_a "255"; cl_crosshaircolor_b "135"; cl_crosshaircolor_g "255"; cl_crosshaircolor_r "0"; cl_crosshairdot "0"; cl_crosshairoutline_a "255"; cl_crosshairoutline_b "0"; cl_crosshairoutline_g "0"; cl_crosshairoutline_r "0"; cl_crosshairstyle "4"; cl_ironsight_dot_scale "1"; cl_ironsight_usecrosshaircolor "0"
+- Last update: 2026-10-24
+- Page: https://clutchcrosshair.com/players/jl
 
 ### kennyS
 
