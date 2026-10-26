@@ -4,10 +4,11 @@
         "team": "Team Spirit",
         "category": "pro",
         "code": "CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": true,
         "steamid": "76561198386265483",
-        "liquipedia": "Donk"
+        "liquipedia": "Donk",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "ZywOo",
@@ -162,10 +163,11 @@
         "steamid": "76561198081484775",
         "team": "Team Spirit",
         "category": "pro",
-        "code": "CSBxKrcaLUVjhUmOKLuKNiNL9ZnKVo475iaKFOGKEDDO3Z",
-        "updated": "25/10/2026",
+        "code": "CSi5hDhKCLMhkyhSseTSApsBoK3pKYmqF5TN3pTwVZHHtZ",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Sh1ro"
+        "liquipedia": "Sh1ro",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "woxic",
@@ -199,13 +201,14 @@
     },
     {
         "name": "tN1R",
-        "steamid": "76561198872013168",
+        "steamid": "76561198769026820",
         "team": "Team Spirit",
         "category": "pro",
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "TN1R"
+        "liquipedia": "TN1R",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "zont1x",
@@ -213,9 +216,10 @@
         "team": "Team Spirit",
         "category": "pro",
         "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Zont1x"
+        "liquipedia": "Zont1x",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "magixx",
@@ -223,9 +227,10 @@
         "team": "Team Spirit",
         "category": "pro",
         "code": "CSztEhEt9QadbRnTfWZswHPP2fXDit2bUu4RfNTJbPWndP",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Magixx"
+        "liquipedia": "Magixx",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "FalleN",
@@ -233,29 +238,32 @@
         "team": "FURIA",
         "category": "pro",
         "code": "CSZnexV3r5hMCdKeHnQOWPbV42BeCTttd5dM4utKdmsO3Z",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "FalleN"
+        "liquipedia": "FalleN",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "KSCERATO",
         "steamid": "76561198058500492",
         "team": "FURIA",
         "category": "pro",
-        "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
-        "updated": "25/10/2026",
+        "code": "CSFXqWYBtYWZVDSJ2qsJHBdNWmDnziHcf8p3J3Vn4htnaa",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "KSCERATO"
+        "liquipedia": "KSCERATO",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "YEKINDAR",
         "steamid": "76561198134401925",
         "team": "FURIA",
         "category": "pro",
-        "code": "CSDF94OWLondOfWjK8zLWCqRFoRtvoxekDhHbH7bc5KXtY",
-        "updated": "25/10/2026",
+        "code": "CSaWhXTO8eQ5coYvt7dZ5oJYy8kK23KXrm6N4LxAoYc8KY",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "YEKINDAR"
+        "liquipedia": "YEKINDAR",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "yuurih",
@@ -263,9 +271,10 @@
         "team": "FURIA",
         "category": "pro",
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Yuurih"
+        "liquipedia": "Yuurih",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "molodoy",
@@ -273,9 +282,10 @@
         "team": "FURIA",
         "category": "pro",
         "code": "CSpxaYsCrCP5Hk4GPu7Kmv2z2QFpzrNGuwX2RTWNb628CU",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Molodoy"
+        "liquipedia": "Molodoy",
+        "matchTime": "2026-10-26T17:46"
     },
     {
         "name": "karrigan",
@@ -313,9 +323,10 @@
         "team": "BetBoom",
         "category": "pro",
         "code": "CSw8tqHyP8nNNd5BrkQncC9JGbsLaAokVbcY6pTwVZHHtZ",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Zorte"
+        "liquipedia": "Zorte",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "Boombl4",
@@ -323,9 +334,10 @@
         "team": "BetBoom",
         "category": "pro",
         "code": "CSNPRU57bvYRiQjtazKWibCC2qjwXfxEUvM3r6d4eWmv9A",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Boombl4"
+        "liquipedia": "Boombl4",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "S1ren",
@@ -333,9 +345,10 @@
         "team": "BetBoom",
         "category": "pro",
         "code": "CSGDYD5VaQqjnavBsuCEiVQwnn7xa4DHNueqVsyJ3ajFpK",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "S1ren"
+        "liquipedia": "S1ren",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "Magnojez",
@@ -343,19 +356,21 @@
         "team": "BetBoom",
         "category": "pro",
         "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Magnojez"
+        "liquipedia": "Magnojez",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "d1Ledez",
         "steamid": "76561198859428279",
         "team": "BetBoom",
         "category": "pro",
-        "code": "CSqLHMiCDdfEZjxBx8AsB2dnU9SJrDqyZ35zt6ZsDeOSrB",
-        "updated": "25/10/2026",
+        "code": "CSUZv765y3aLZAJjiiTR5hxq6R9FEiPWFNKuKCAbcuEe9B",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "D1Ledez"
+        "liquipedia": "D1Ledez",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "kyousuke",
@@ -522,19 +537,21 @@
         "team": "Natus Vincere",
         "category": "pro",
         "code": "CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Aleksib"
+        "liquipedia": "Aleksib",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "iM",
         "steamid": "76561198050250233",
         "team": "Natus Vincere",
         "category": "pro",
-        "code": "CSivFaGr7nSRmaKWM8CLYQN3wGKAOZkpWr9j2r6JecFQOM",
-        "updated": "25/10/2026",
+        "code": "CSx6quXcU8bN8ZVLM6G9SEmHz9yodQko8uvW6uwuNE227H",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "IM"
+        "liquipedia": "IM",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "b1t",
@@ -542,9 +559,10 @@
         "team": "Natus Vincere",
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "B1t"
+        "liquipedia": "B1t",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "w0nderful",
@@ -552,19 +570,21 @@
         "team": "Natus Vincere",
         "category": "pro",
         "code": "CSi7izaV3Etc3HAKvMYTvOLcjWvLj8cwO4ZjrsVURjyOLX",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "W0nderful"
+        "liquipedia": "W0nderful",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "makazze",
         "steamid": "76561199076189612",
         "team": "Natus Vincere",
         "category": "pro",
-        "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
-        "updated": "25/10/2026",
+        "code": "CSF68EZcNUK2tnJpxOs4a6YRNmBNMJMBaH5AjAS63CFNqF",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Makazze"
+        "liquipedia": "Makazze",
+        "matchTime": "2026-10-26T20:03"
     },
     {
         "name": "JBOEN",
