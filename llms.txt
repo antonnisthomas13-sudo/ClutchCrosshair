@@ -52,11 +52,11 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [molodoy](https://clutchcrosshair.com/players/molodoy): FURIA, CS2 crosshair code updated 2026-10-25
 - [YEKINDAR](https://clutchcrosshair.com/players/yekindar): FURIA, CS2 crosshair code updated 2026-10-25
 - [yuurih](https://clutchcrosshair.com/players/yuurih): FURIA, CS2 crosshair code updated 2026-10-25
-- [dem0n](https://clutchcrosshair.com/players/dem0n): FUT Esports, CS2 crosshair code updated 2026-10-25
-- [dziugss](https://clutchcrosshair.com/players/dziugss): FUT Esports, CS2 crosshair code updated 2026-10-25
-- [Krabeni](https://clutchcrosshair.com/players/krabeni): FUT Esports, CS2 crosshair code updated 2026-10-25
-- [SunPayus](https://clutchcrosshair.com/players/sunpayus): FUT Esports, CS2 crosshair code updated 2026-10-25
-- [xfl0ud](https://clutchcrosshair.com/players/xfl0ud): FUT Esports, CS2 crosshair code updated 2026-10-25
+- [dem0n](https://clutchcrosshair.com/players/dem0n): FUT Esports, CS2 crosshair code updated 2026-10-26
+- [dziugss](https://clutchcrosshair.com/players/dziugss): FUT Esports, CS2 crosshair code updated 2026-10-26
+- [Krabeni](https://clutchcrosshair.com/players/krabeni): FUT Esports, CS2 crosshair code updated 2026-10-26
+- [SunPayus](https://clutchcrosshair.com/players/sunpayus): FUT Esports, CS2 crosshair code updated 2026-10-26
+- [xfl0ud](https://clutchcrosshair.com/players/xfl0ud): FUT Esports, CS2 crosshair code updated 2026-10-26
 - [HeavyGod](https://clutchcrosshair.com/players/heavygod): G2 Esports, CS2 crosshair code updated 2026-10-25
 - [huNter-](https://clutchcrosshair.com/players/hunter): G2 Esports, CS2 crosshair code updated 2026-10-25
 - [MATYS](https://clutchcrosshair.com/players/matys): G2 Esports, CS2 crosshair code updated 2026-10-25
@@ -88,10 +88,10 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [tN1R](https://clutchcrosshair.com/players/tn1r): Team Spirit, CS2 crosshair code updated 2026-10-25
 - [zont1x](https://clutchcrosshair.com/players/zont1x): Team Spirit, CS2 crosshair code updated 2026-10-25
 - [apEX](https://clutchcrosshair.com/players/apex): Team Vitality, CS2 crosshair code updated 2026-10-17
-- [flameZ](https://clutchcrosshair.com/players/flamez): Team Vitality, CS2 crosshair code updated 2026-10-25
-- [mezii](https://clutchcrosshair.com/players/mezii): Team Vitality, CS2 crosshair code updated 2026-10-25
-- [ropz](https://clutchcrosshair.com/players/ropz): Team Vitality, CS2 crosshair code updated 2026-10-25
-- [ZywOo](https://clutchcrosshair.com/players/zywoo): Team Vitality, CS2 crosshair code updated 2026-10-25
+- [flameZ](https://clutchcrosshair.com/players/flamez): Team Vitality, CS2 crosshair code updated 2026-10-26
+- [mezii](https://clutchcrosshair.com/players/mezii): Team Vitality, CS2 crosshair code updated 2026-10-26
+- [ropz](https://clutchcrosshair.com/players/ropz): Team Vitality, CS2 crosshair code updated 2026-10-26
+- [ZywOo](https://clutchcrosshair.com/players/zywoo): Team Vitality, CS2 crosshair code updated 2026-10-26
 
 ## Content creators (CS2)
 
@@ -102,7 +102,7 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [Freakazoid](https://clutchcrosshair.com/players/freakazoid): content creator, CS2 crosshair code updated 2026-10-19
 - [GeT_RiGhT](https://clutchcrosshair.com/players/get-right): content creator, CS2 crosshair code updated 2026-10-19
 - [Izak](https://clutchcrosshair.com/players/izak): content creator, CS2 crosshair code updated 2026-10-19
-- [jL](https://clutchcrosshair.com/players/jl): content creator, CS2 crosshair code updated 2026-10-25
+- [jL](https://clutchcrosshair.com/players/jl): content creator, CS2 crosshair code updated 2026-10-26
 - [kennyS](https://clutchcrosshair.com/players/kennys): content creator, CS2 crosshair code updated 2026-10-19
 - [Maj3r](https://clutchcrosshair.com/players/maj3r): content creator, CS2 crosshair code updated 2026-10-19
 - [pashaBiceps](https://clutchcrosshair.com/players/pashabiceps): content creator, CS2 crosshair code updated 2026-10-19

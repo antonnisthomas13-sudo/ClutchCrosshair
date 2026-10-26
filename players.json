@@ -14,10 +14,11 @@
         "team": "Team Vitality",
         "category": "pro",
         "code": "CS6bn6bJeOmmd35ur7m83TdDtmCPucSTUjz3hSNuwJMiyE",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": true,
         "steamid": "76561198113666193",
-        "liquipedia": "ZywOo"
+        "liquipedia": "ZywOo",
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "m0NESY",
@@ -44,9 +45,10 @@
         "team": "Team Vitality",
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Mezii"
+        "liquipedia": "Mezii",
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "flameZ",
@@ -54,9 +56,10 @@
         "team": "Team Vitality",
         "category": "pro",
         "code": "CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "FlameZ"
+        "liquipedia": "FlameZ",
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "apEX",
@@ -74,9 +77,10 @@
         "team": "Team Vitality",
         "category": "pro",
         "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
-        "updated": "25/10/2026",
+        "updated": "26/10/2026",
         "trending": false,
-        "liquipedia": "Ropz"
+        "liquipedia": "Ropz",
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "Spinx",
@@ -829,17 +833,19 @@
         "team": "Creator",
         "category": "creator",
         "code": "CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV",
-        "updated": "25/10/2026",
-        "trending": false
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "xfl0ud",
         "steamid": "76561198178209109",
         "team": "FUT Esports",
         "category": "pro",
-        "code": "CSw2mRAE9vsS5ZvzPFaHrTBM8N3X2nM6N8smaooyTXRivQ",
-        "updated": "25/10/2026",
-        "trending": false
+        "code": "CSXsyUTOpwQOBGW2h97Me8XQwAY5pX5oXSmpOG3bmuVbnQ",
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "SunPayus",
@@ -847,8 +853,9 @@
         "team": "FUT Esports",
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
-        "updated": "25/10/2026",
-        "trending": false
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "dem0n",
@@ -856,8 +863,9 @@
         "team": "FUT Esports",
         "category": "pro",
         "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
-        "updated": "25/10/2026",
-        "trending": false
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "Krabeni",
@@ -865,8 +873,9 @@
         "team": "FUT Esports",
         "category": "pro",
         "code": "CS788ewGhNmaSXVTSRAO5c89mPH3CBn4mz758xJq223WmU",
-        "updated": "25/10/2026",
-        "trending": false
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     },
     {
         "name": "dziugss",
@@ -874,7 +883,8 @@
         "team": "FUT Esports",
         "category": "pro",
         "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
-        "updated": "25/10/2026",
-        "trending": false
+        "updated": "26/10/2026",
+        "trending": false,
+        "matchTime": "2026-10-26T14:23"
     }
 ]
