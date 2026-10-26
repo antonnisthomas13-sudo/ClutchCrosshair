@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshairthickness">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshairthickness">
     <script>(function () {
-        var A = {"en":"../../commands/cl_crosshairthickness","fr":"../../fr/commands/cl_crosshairthickness","es":"../../es/commands/cl_crosshairthickness","ru":"../../ru/commands/cl_crosshairthickness","tr":"../../tr/commands/cl_crosshairthickness"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/cl_crosshairthickness","fr":"../../fr/commands/cl_crosshairthickness","es":"../../es/commands/cl_crosshairthickness","ru":"../../ru/commands/cl_crosshairthickness","tr":"../../tr/commands/cl_crosshairthickness"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness#article","headline":"Консольная команда cl_crosshairthickness в CS2","description":"cl_crosshairthickness в CS2: Старая настройка толщины прицела, всё ещё в консоли. cl_crosshairthickness всё ещё есть в консоли CS2, но после обновления от…","url":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Консольные команды CS2","item":"https://clutchcrosshair.com/ru/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshairthickness","item":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/commands/cl_crosshairthickness#faq","mainEntity":[{"@type":"Question","name":"Что делает cl_crosshairthickness в CS2?","acceptedAnswer":{"@type":"Answer","text":"Старая настройка толщины прицела, всё ещё в консоли. cl_crosshairthickness всё ещё есть в консоли CS2, но после обновления от 30 сентября 2026 года толщина задаётся в реальных пикселях командой cl_crosshair_thickness — она и сохраняется в кодах прицела CS2. Используйте cl_crosshair_thickness, чтобы точно скопировать прицел про-игрока."}},{"@type":"Question","name":"Нужен ли sv_cheats для cl_crosshairthickness?","acceptedAnswer":{"@type":"Answer","text":"Нет. cl_crosshairthickness работает без sv_cheats, в том числе в официальном матчмейкинге."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

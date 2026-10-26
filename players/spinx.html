@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/spinx">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/spinx">
     <script>(function () {
-        var A = {"en":"../players/spinx","fr":"../fr/players/spinx","es":"../es/players/spinx","ru":"../ru/players/spinx","tr":"../tr/players/spinx"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../players/spinx","fr":"../fr/players/spinx","es":"../es/players/spinx","ru":"../ru/players/spinx","tr":"../tr/players/spinx"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,12 +47,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/spinx.jpg?v=d8b5a150f6">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/players/spinx","url":"https://clutchcrosshair.com/players/spinx","name":"Spinx CS2 Crosshair Code","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/players/spinx#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/players/spinx#breadcrumb"},"dateModified":"2026-10-24","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/spinx.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/players/spinx#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"Spinx crosshair","item":"https://clutchcrosshair.com/players/spinx"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/players/spinx#person","name":"Spinx","description":"Spinx is a CS2 pro player for MOUZ. CS2 crosshair code read from an official match demo.","url":"https://clutchcrosshair.com/players/spinx","memberOf":{"@type":"SportsTeam","name":"MOUZ","sport":"Counter-Strike 2"},"image":"https://clutchcrosshair.com/photos/spinx.webp","sameAs":["https://steamcommunity.com/profiles/76561198063336407","https://liquipedia.net/counterstrike/Spinx"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/players/spinx#faq","mainEntity":[{"@type":"Question","name":"What is Spinx's CS2 crosshair code?","acceptedAnswer":{"@type":"Answer","text":"Spinx's CS2 crosshair code is CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF. It was read from an official match demo on 24/10/2026."}},{"@type":"Question","name":"What crosshair settings does Spinx use?","acceptedAnswer":{"@type":"Answer","text":"Spinx uses a very short cyan static crosshair: 2 px long, 2 px thick, a gap of 1, no outline and no center dot, set for a 960p screen height."}},{"@type":"Question","name":"Which pros use the same crosshair as Spinx?","acceptedAnswer":{"@type":"Answer","text":"m0NESY, kyousuke, dumau, JBOEN and s1mple use exactly the same CS2 crosshair code as Spinx."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

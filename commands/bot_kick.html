@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/bot_kick">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/bot_kick">
     <script>(function () {
-        var A = {"en":"../commands/bot_kick","fr":"../fr/commands/bot_kick","es":"../es/commands/bot_kick","ru":"../ru/commands/bot_kick","tr":"../tr/commands/bot_kick"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../commands/bot_kick","fr":"../fr/commands/bot_kick","es":"../es/commands/bot_kick","ru":"../ru/commands/bot_kick","tr":"../tr/commands/bot_kick"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,9 +47,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/bot_kick#article","headline":"bot_kick CS2 console command","description":"bot_kick in CS2: Removes bots from the server. Kicks all bots, or only the bots matching a team, difficulty or name. Values and examples.","url":"https://clutchcrosshair.com/commands/bot_kick","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/bot_kick#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"bot_kick","item":"https://clutchcrosshair.com/commands/bot_kick"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/bot_kick#faq","mainEntity":[{"@type":"Question","name":"What does bot_kick do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Removes bots from the server. Kicks all bots, or only the bots matching a team, difficulty or name. Use it to empty your server before practice."}},{"@type":"Question","name":"Does bot_kick need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. bot_kick works without sv_cheats, including in official matchmaking."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

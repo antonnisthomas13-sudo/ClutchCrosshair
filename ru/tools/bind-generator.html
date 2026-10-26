@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/tools/bind-generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/tools/bind-generator">
     <script>(function () {
-        var A = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/tools/bind-generator","url":"https://clutchcrosshair.com/ru/tools/bind-generator","name":"Генератор биндов CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/tools/bind-generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/ru/tools/bind-generator#app"},"dateModified":"2026-10-19"},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/ru/tools/bind-generator#app","name":"Генератор биндов CS2","url":"https://clutchcrosshair.com/ru/tools/bind-generator","description":"Бесплатный генератор биндов CS2: выберите клавишу и действие, скопируйте бинд или скачайте готовый autoexec.cfg. Закупка, jump throw и не только.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/tools/bind-generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Инструменты CS2","item":"https://clutchcrosshair.com/ru/tools/"},{"@type":"ListItem","position":3,"name":"Генератор биндов CS2","item":"https://clutchcrosshair.com/ru/tools/bind-generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/tools/bind-generator#faq","mainEntity":[{"@type":"Question","name":"Как сделать бинд в CS2?","acceptedAnswer":{"@type":"Answer","text":"Откройте консоль (~) и введите bind, затем клавишу и команду в кавычках, например bind \"kp_end\" \"buy ak47; buy m4a1\". Генератор биндов ClutchCrosshair напишет строку за вас."}},{"@type":"Question","name":"Работают ли бинды закупки в CS2?","acceptedAnswer":{"@type":"Answer","text":"Да. Команды закупки, такие как buy ak47 или buy vesthelm, работают в CS2. Они покупают оружие, которое стоит в этом слоте снаряжения, поэтому buy m4a1 даст M4A1-S, если в снаряжении стоит она."}},{"@type":"Question","name":"Как удалить бинд в CS2?","acceptedAnswer":{"@type":"Answer","text":"Введите в консоли unbind и клавишу, например unbind kp_end."}},{"@type":"Question","name":"Как сохранить бинды CS2?","acceptedAnswer":{"@type":"Answer","text":"Бинды, введённые в консоли, сохраняются автоматически. Чтобы надёжно хранить весь список, поместите бинды в файл autoexec.cfg в game/csgo/cfg и добавьте +exec autoexec в параметры запуска. Генератор может скачать этот файл за вас."}},{"@type":"Question","name":"Что такое бинд jump throw?","acceptedAnswer":{"@type":"Answer","text":"Это бинд, который прыгает и отпускает гранату одновременно, чтобы раскидка всегда была одинаковой. Держите гранату с зажатой кнопкой атаки, затем нажмите клавишу jump throw."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

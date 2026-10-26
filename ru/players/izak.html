@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/izak">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/izak">
     <script>(function () {
-        var A = {"en":"../../players/izak","fr":"../../fr/players/izak","es":"../../es/players/izak","ru":"../../ru/players/izak","tr":"../../tr/players/izak"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/izak","fr":"../../fr/players/izak","es":"../../es/players/izak","ru":"../../ru/players/izak","tr":"../../tr/players/izak"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/izak.jpg?v=c4d223f034">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/players/izak","url":"https://clutchcrosshair.com/ru/players/izak","name":"Код прицела Izak в CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/ru/players/izak#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/players/izak#breadcrumb"},"dateModified":"2026-10-19","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/izak.png"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/players/izak#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Прицел Izak","item":"https://clutchcrosshair.com/ru/players/izak"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/ru/players/izak#person","name":"Izak","description":"Izak — автор контента по CS2.","url":"https://clutchcrosshair.com/ru/players/izak","image":"https://clutchcrosshair.com/photos/izak.png"},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/players/izak#faq","mainEntity":[{"@type":"Question","name":"Какой код прицела у Izak в CS2?","acceptedAnswer":{"@type":"Answer","text":"Код прицела Izak в CS2: CSrAvmLsG9dTORpb99Rh7OCNZ2UOjdCkRhuyacGaNNHseL. Он взят из матча от 19/10/2026."}},{"@type":"Question","name":"Какие настройки прицела у Izak?","acceptedAnswer":{"@type":"Answer","text":"Izak играет с прицелом: очень короткий, голубой, статичный — длина 2 px, толщина 2 px, зазор 1, без обводки и без точки в центре; настроен для высоты экрана 1024p."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshairstyle">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshairstyle">
     <script>(function () {
-        var A = {"en":"../commands/cl_crosshairstyle","fr":"../fr/commands/cl_crosshairstyle","es":"../es/commands/cl_crosshairstyle","ru":"../ru/commands/cl_crosshairstyle","tr":"../tr/commands/cl_crosshairstyle"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../commands/cl_crosshairstyle","fr":"../fr/commands/cl_crosshairstyle","es":"../es/commands/cl_crosshairstyle","ru":"../ru/commands/cl_crosshairstyle","tr":"../tr/commands/cl_crosshairstyle"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,9 +47,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/commands/cl_crosshairstyle#article","headline":"cl_crosshairstyle CS2 console command","description":"cl_crosshairstyle in CS2: Chooses a static or dynamic crosshair. Picks how the crosshair reacts when you move and shoot. Default 2, values and examples.","url":"https://clutchcrosshair.com/commands/cl_crosshairstyle","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/commands/cl_crosshairstyle#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Console Commands","item":"https://clutchcrosshair.com/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshairstyle","item":"https://clutchcrosshair.com/commands/cl_crosshairstyle"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/commands/cl_crosshairstyle#faq","mainEntity":[{"@type":"Question","name":"What does cl_crosshairstyle do in CS2?","acceptedAnswer":{"@type":"Answer","text":"Chooses a static or dynamic crosshair. Picks how the crosshair reacts when you move and shoot. Style 4 (static) never moves and is used by almost every pro. Style 2 keeps a fixed center while the outer parts react to recoil and movement. Style 5 is the legacy CS:GO-style dynamic crosshair."}},{"@type":"Question","name":"What is the default value of cl_crosshairstyle?","acceptedAnswer":{"@type":"Answer","text":"The default value of cl_crosshairstyle in CS2 is 2."}},{"@type":"Question","name":"Does cl_crosshairstyle need sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. cl_crosshairstyle works without sv_cheats, including in official matchmaking."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

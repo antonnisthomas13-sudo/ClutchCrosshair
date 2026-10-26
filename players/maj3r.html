@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/maj3r">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/maj3r">
     <script>(function () {
-        var A = {"en":"../players/maj3r","fr":"../fr/players/maj3r","es":"../es/players/maj3r","ru":"../ru/players/maj3r","tr":"../tr/players/maj3r"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../players/maj3r","fr":"../fr/players/maj3r","es":"../es/players/maj3r","ru":"../ru/players/maj3r","tr":"../tr/players/maj3r"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,12 +47,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/maj3r.jpg?v=04e634bd0a">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/players/maj3r","url":"https://clutchcrosshair.com/players/maj3r","name":"Maj3r CS2 Crosshair Code","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/players/maj3r#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/players/maj3r#breadcrumb"},"dateModified":"2026-10-19","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/maj3r.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/players/maj3r#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"Maj3r crosshair","item":"https://clutchcrosshair.com/players/maj3r"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/players/maj3r#person","name":"Maj3r","description":"Maj3r is a CS2 content creator.","url":"https://clutchcrosshair.com/players/maj3r","image":"https://clutchcrosshair.com/photos/maj3r.webp","sameAs":["https://www.faceit.com/en/players/Maj3r"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/players/maj3r#faq","mainEntity":[{"@type":"Question","name":"What is Maj3r's CS2 crosshair code?","acceptedAnswer":{"@type":"Answer","text":"Maj3r's CS2 crosshair code is CSYpPMe3jLTZufV8VpXmi79Lbrp9dJ9eoRMyYem8byXdxJ. It was read from a match on 19/10/2026."}},{"@type":"Question","name":"What crosshair settings does Maj3r use?","acceptedAnswer":{"@type":"Answer","text":"Maj3r uses a very short white static crosshair: 2 px long, 2 px thick, a gap of -2, an outline, no center dot and 92% opacity, set for a 960p screen height."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

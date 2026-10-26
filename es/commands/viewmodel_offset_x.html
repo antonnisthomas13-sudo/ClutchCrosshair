@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/viewmodel_offset_x">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/viewmodel_offset_x">
     <script>(function () {
-        var A = {"en":"../../commands/viewmodel_offset_x","fr":"../../fr/commands/viewmodel_offset_x","es":"../../es/commands/viewmodel_offset_x","ru":"../../ru/commands/viewmodel_offset_x","tr":"../../tr/commands/viewmodel_offset_x"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/viewmodel_offset_x","fr":"../../fr/commands/viewmodel_offset_x","es":"../../es/commands/viewmodel_offset_x","ru":"../../ru/commands/viewmodel_offset_x","tr":"../../tr/commands/viewmodel_offset_x"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x#article","headline":"Comando de consola viewmodel_offset_x de CS2","description":"viewmodel_offset_x en CS2: Mueve el arma a la izquierda o a la derecha. Mueve el modelo de tu arma en horizontal, de -2.5 a…","url":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"viewmodel_offset_x","item":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/viewmodel_offset_x#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace viewmodel_offset_x en CS2?","acceptedAnswer":{"@type":"Answer","text":"Mueve el arma a la izquierda o a la derecha. Mueve el modelo de tu arma en horizontal, de -2.5 a 2.5. Los valores más altos llevan el arma hacia el borde derecho de la pantalla."}},{"@type":"Question","name":"¿Cuál es el valor por defecto de viewmodel_offset_x?","acceptedAnswer":{"@type":"Answer","text":"El valor por defecto de viewmodel_offset_x en CS2 es 1."}},{"@type":"Question","name":"¿viewmodel_offset_x necesita sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. viewmodel_offset_x funciona sin sv_cheats, también en el matchmaking oficial."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

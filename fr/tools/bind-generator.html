@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/tools/bind-generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/tools/bind-generator">
     <script>(function () {
-        var A = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/fr/tools/bind-generator","url":"https://clutchcrosshair.com/fr/tools/bind-generator","name":"Générateur de binds CS2","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/fr/tools/bind-generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/fr/tools/bind-generator#app"},"dateModified":"2026-10-19"},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/fr/tools/bind-generator#app","name":"Générateur de binds CS2","url":"https://clutchcrosshair.com/fr/tools/bind-generator","description":"Générateur de binds CS2 gratuit : choisis une touche et une action, copie ton bind ou télécharge un autoexec.cfg prêt à l'emploi. Achat, jump throw et plus.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/tools/bind-generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Outils CS2","item":"https://clutchcrosshair.com/fr/tools/"},{"@type":"ListItem","position":3,"name":"Générateur de binds CS2","item":"https://clutchcrosshair.com/fr/tools/bind-generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/tools/bind-generator#faq","mainEntity":[{"@type":"Question","name":"Comment faire un bind dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Ouvre la console (² ou ~) et tape bind suivi de la touche et de la commande entre guillemets, par exemple bind \"kp_end\" \"buy ak47; buy m4a1\". Le générateur de binds de ClutchCrosshair écrit la ligne pour toi."}},{"@type":"Question","name":"Les binds d'achat marchent-ils encore dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les commandes d'achat comme buy ak47 ou buy vesthelm marchent dans CS2. Elles achètent l'arme équipée dans cet emplacement de ton inventaire : buy m4a1 te donne la M4A1-S si c'est celle que tu as équipée."}},{"@type":"Question","name":"Comment supprimer un bind dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Tape unbind suivi de la touche dans la console, par exemple unbind kp_end."}},{"@type":"Question","name":"Comment sauvegarder mes binds CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Les binds tapés dans la console sont enregistrés automatiquement. Pour garder une liste complète en sécurité, mets tes binds dans un fichier autoexec.cfg dans game/csgo/cfg et ajoute +exec autoexec à tes options de lancement. Le générateur peut télécharger ce fichier pour toi."}},{"@type":"Question","name":"C'est quoi un bind de jump throw ?","acceptedAnswer":{"@type":"Answer","text":"Un bind qui saute et lâche ta grenade au même moment, pour lancer le même lineup à chaque fois. Tiens la grenade avec le bouton d'attaque enfoncé, puis appuie sur ta touche de jump throw."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

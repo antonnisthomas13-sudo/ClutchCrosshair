@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/generator">
     <script>(function () {
-        var A = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,13 +48,14 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <link rel="modulepreload" href="../generator.min.js?v=430964b16d">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/generator","url":"https://clutchcrosshair.com/ru/generator","name":"Генератор прицела CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/ru/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/ru/generator#app","name":"Генератор прицела CS2","url":"https://clutchcrosshair.com/ru/generator","description":"Бесплатный онлайн-генератор прицела CS2: выберите цвет, длину, толщину, зазор и обводку, смотрите предпросмотр в реальном размере и копируйте код прицела или консольные команды.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Инструменты CS2","item":"https://clutchcrosshair.com/ru/tools/"},{"@type":"ListItem","position":3,"name":"Генератор прицела CS2","item":"https://clutchcrosshair.com/ru/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/generator#faq","mainEntity":[{"@type":"Question","name":"Этот генератор прицела CS2 бесплатный?","acceptedAnswer":{"@type":"Answer","text":"Да. Он бесплатный, без регистрации и без скачивания. Всё работает в вашем браузере."}},{"@type":"Question","name":"Как поставить новый прицел в CS2?","acceptedAnswer":{"@type":"Answer","text":"Нажмите «Копировать» рядом с кодом, затем в CS2 откройте Настройки › Игра › Прицел, нажмите «Поделиться или импортировать» и вставьте код. Можно также скопировать консольные команды и вставить их в консоль CS2 (~)."}},{"@type":"Question","name":"Почему мой прицел выглядит иначе в 4:3 растянутом?","acceptedAnswer":{"@type":"Answer","text":"В 4:3 растянутом (1280×960, 1024×768...) или 5:4 растянутом (1280×1024) изображение игры растягивается на экран 16:9, поэтому прицел становится шире: горизонтальные линии выглядят длиннее, а вертикальные — толще. Выберите своё разрешение под предпросмотром (16:9, 4:3, 16:10 или 5:4), чтобы увидеть, как прицел будет выглядеть в игре. Код прицела при этом не меняется."}},{"@type":"Question","name":"Можно начать с прицела про-игрока?","acceptedAnswer":{"@type":"Answer","text":"Да. Выберите про-игрока в списке «Начать с» или вставьте любой код прицела CS2, затем измените цвет, размер или зазор. Новый код обновится сразу."}},{"@type":"Question","name":"Работает ли генератор со старыми кодами CSGO-?","acceptedAnswer":{"@type":"Answer","text":"Нет. После обновления CS2 от 30 сентября 2026 года в игру можно импортировать только новые коды, начинающиеся с CS. Генератор создаёт только новые коды CS2."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

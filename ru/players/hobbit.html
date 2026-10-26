@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/hobbit">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/hobbit">
     <script>(function () {
-        var A = {"en":"../../players/hobbit","fr":"../../fr/players/hobbit","es":"../../es/players/hobbit","ru":"../../ru/players/hobbit","tr":"../../tr/players/hobbit"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/hobbit","fr":"../../fr/players/hobbit","es":"../../es/players/hobbit","ru":"../../ru/players/hobbit","tr":"../../tr/players/hobbit"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/hobbit.jpg?v=8b9cf48eec">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/players/hobbit","url":"https://clutchcrosshair.com/ru/players/hobbit","name":"Код прицела Hobbit в CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/ru/players/hobbit#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/players/hobbit#breadcrumb"},"dateModified":"2026-10-07"},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/players/hobbit#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Прицел Hobbit","item":"https://clutchcrosshair.com/ru/players/hobbit"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/ru/players/hobbit#person","name":"Hobbit","description":"Hobbit — профессиональный игрок CS2 в команде PARIVISION. Код прицела взят из демо официального матча.","url":"https://clutchcrosshair.com/ru/players/hobbit","memberOf":{"@type":"SportsTeam","name":"PARIVISION","sport":"Counter-Strike 2"},"sameAs":["https://steamcommunity.com/profiles/76561198028292758","https://liquipedia.net/counterstrike/HObbit"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/players/hobbit#faq","mainEntity":[{"@type":"Question","name":"Какой код прицела у Hobbit в CS2?","acceptedAnswer":{"@type":"Answer","text":"Код прицела Hobbit в CS2: CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW. Он взят из демо официального матча от 07/10/2026."}},{"@type":"Question","name":"Какие настройки прицела у Hobbit?","acceptedAnswer":{"@type":"Answer","text":"Hobbit играет с прицелом: очень короткий, белый, статичный — длина 2 px, толщина 1 px, зазор 0, с обводкой и с точкой в центре; настроен для высоты экрана 960p."}},{"@type":"Question","name":"У каких про-игроков такой же прицел, как у Hobbit?","acceptedAnswer":{"@type":"Answer","text":"У Jame точно такой же код прицела CS2, как у Hobbit."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

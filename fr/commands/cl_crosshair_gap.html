@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshair_gap">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshair_gap">
     <script>(function () {
-        var A = {"en":"../../commands/cl_crosshair_gap","fr":"../../fr/commands/cl_crosshair_gap","es":"../../es/commands/cl_crosshair_gap","ru":"../../ru/commands/cl_crosshair_gap","tr":"../../tr/commands/cl_crosshair_gap"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/cl_crosshair_gap","fr":"../../fr/commands/cl_crosshair_gap","es":"../../es/commands/cl_crosshair_gap","ru":"../../ru/commands/cl_crosshair_gap","tr":"../../tr/commands/cl_crosshair_gap"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_gap#article","headline":"Commande console CS2 cl_crosshair_gap","description":"cl_crosshair_gap dans CS2 : Espace entre le centre et les traits du crosshair, en pixels. Règle l'espace vide au milieu du crosshair, en pixels pour la…","url":"https://clutchcrosshair.com/fr/commands/cl_crosshair_gap","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_gap#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Commandes console CS2","item":"https://clutchcrosshair.com/fr/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshair_gap","item":"https://clutchcrosshair.com/fr/commands/cl_crosshair_gap"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_gap#faq","mainEntity":[{"@type":"Question","name":"À quoi sert cl_crosshair_gap dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Espace entre le centre et les traits du crosshair, en pixels. Règle l'espace vide au milieu du crosshair, en pixels pour la hauteur d'écran réglée dans cl_crosshair_screen_height. Un petit écart (0 à 2) garde les traits près de la tête de la cible ; une valeur négative fait se chevaucher les traits au centre. Sur ClutchCrosshair, la plupart des pros utilisent un écart de 1 ou 2."}},{"@type":"Question","name":"Est-ce que cl_crosshair_gap nécessite sv_cheats ?","acceptedAnswer":{"@type":"Answer","text":"Non. cl_crosshair_gap marche sans sv_cheats, y compris en matchmaking officiel."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

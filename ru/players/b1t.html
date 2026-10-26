@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/b1t">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/b1t">
     <script>(function () {
-        var A = {"en":"../../players/b1t","fr":"../../fr/players/b1t","es":"../../es/players/b1t","ru":"../../ru/players/b1t","tr":"../../tr/players/b1t"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/b1t","fr":"../../fr/players/b1t","es":"../../es/players/b1t","ru":"../../ru/players/b1t","tr":"../../tr/players/b1t"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/b1t.jpg?v=e59cc2a72c">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/players/b1t","url":"https://clutchcrosshair.com/ru/players/b1t","name":"Код прицела b1t в CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/ru/players/b1t#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/players/b1t#breadcrumb"},"dateModified":"2026-10-24"},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/players/b1t#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Прицел b1t","item":"https://clutchcrosshair.com/ru/players/b1t"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/ru/players/b1t#person","name":"b1t","description":"b1t — профессиональный игрок CS2 в команде Natus Vincere. Код прицела взят из демо официального матча.","url":"https://clutchcrosshair.com/ru/players/b1t","memberOf":{"@type":"SportsTeam","name":"Natus Vincere","sport":"Counter-Strike 2"},"sameAs":["https://steamcommunity.com/profiles/76561198246607476","https://liquipedia.net/counterstrike/B1t"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/players/b1t#faq","mainEntity":[{"@type":"Question","name":"Какой код прицела у b1t в CS2?","acceptedAnswer":{"@type":"Answer","text":"Код прицела b1t в CS2: CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF. Он взят из демо официального матча от 24/10/2026."}},{"@type":"Question","name":"Какие настройки прицела у b1t?","acceptedAnswer":{"@type":"Answer","text":"b1t играет с прицелом: очень короткий, зелёный, статичный — длина 2 px, толщина 2 px, зазор 1, без обводки и без точки в центре; настроен для высоты экрана 960p."}},{"@type":"Question","name":"У каких про-игроков такой же прицел, как у b1t?","acceptedAnswer":{"@type":"Answer","text":"У latto, NertZ и zweih точно такой же код прицела CS2, как у b1t."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

@@ -750,6 +750,11 @@
             ]
         ]
     },
+    "langBanner": {
+        "text": "Bu site Türkçe olarak da mevcut.",
+        "button": "Türkçe sürümü gör",
+        "close": "Kapat"
+    },
     "notFound": {
         "title": "Sayfa bulunamadı | ClutchCrosshair",
         "description": "Bu sayfa mevcut değil.",

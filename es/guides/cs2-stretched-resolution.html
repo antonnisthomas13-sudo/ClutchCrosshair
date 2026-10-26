@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-stretched-resolution">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
     <script>(function () {
-        var A = {"en":"../../guides/cs2-stretched-resolution","fr":"../../fr/guides/cs2-stretched-resolution","es":"../../es/guides/cs2-stretched-resolution","ru":"../../ru/guides/cs2-stretched-resolution","tr":"../../tr/guides/cs2-stretched-resolution"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../guides/cs2-stretched-resolution","fr":"../../fr/guides/cs2-stretched-resolution","es":"../../es/guides/cs2-stretched-resolution","ru":"../../ru/guides/cs2-stretched-resolution","tr":"../../tr/guides/cs2-stretched-resolution"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/es/guides/cs2-stretched-resolution#article","headline":"Resolución estirada en CS2: 4:3 o 16:9 (2026)","description":"¿Jugar a CS2 en 4:3 estirado? Cómo cambia 1280×960 los modelos, el campo de visión y tu crosshair, y cómo configurarlo en NVIDIA y AMD.","url":"https://clutchcrosshair.com/es/guides/cs2-stretched-resolution","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-24","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/guides/cs2-stretched-resolution#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Guías de CS2","item":"https://clutchcrosshair.com/es/guides/"},{"@type":"ListItem","position":3,"name":"Resolución estirada en CS2: 4:3 o 16:9 (2026)","item":"https://clutchcrosshair.com/es/guides/cs2-stretched-resolution"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/guides/cs2-stretched-resolution#faq","mainEntity":[{"@type":"Question","name":"¿El 4:3 estirado es mejor en CS2?","acceptedAnswer":{"@type":"Answer","text":"No objetivamente. Los modelos parecen más anchos y los FPS son algo más altos, pero ves menos por los lados y la imagen es menos nítida. Prueba los dos unos días y quédate con el que te siente mejor."}},{"@type":"Question","name":"¿Cuál es la resolución más común entre los pros de CS2?","acceptedAnswer":{"@type":"Answer","text":"El 1280×960 estirado sigue siendo muy común entre los pros: la mayoría de los códigos de crosshair de pros en ClutchCrosshair están hechos para una altura de 960 px."}},{"@type":"Question","name":"¿Por qué tengo bandas negras en 4:3?","acceptedAnswer":{"@type":"Answer","text":"Tu tarjeta gráfica no está configurada para estirar la imagen. Pon el escalado a pantalla completa realizado por la GPU en el Panel de control de NVIDIA, o el escalado de GPU con Panel completo en AMD Software."}},{"@type":"Question","name":"¿El estirado agranda las hitboxes en CS2?","acceptedAnswer":{"@type":"Answer","text":"No. Las hitboxes no cambian; los modelos solo parecen más anchos porque la imagen se estira en horizontal."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

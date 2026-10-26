@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/">
     <script>(function () {
-        var A = {"en":"../../guides/","fr":"../../fr/guides/","es":"../../es/guides/","ru":"../../ru/guides/","tr":"../../tr/guides/"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../guides/","fr":"../../fr/guides/","es":"../../es/guides/","ru":"../../ru/guides/","tr":"../../tr/guides/"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clutchcrosshair.com/fr/guides/","url":"https://clutchcrosshair.com/fr/guides/","name":"Guides CS2","description":"Guides CS2 pratiques : meilleurs réglages, options de lancement, résolution étirée, sensibilité, gain de FPS, crosshairs et entraînement à la visée.","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/fr/guides/#breadcrumb"},"dateModified":"2026-10-20","mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Meilleures options de lancement CS2 (2026)","url":"https://clutchcrosshair.com/fr/guides/cs2-launch-options"},{"@type":"ListItem","position":2,"name":"Meilleurs réglages CS2 (2026) : vidéo, jeu et audio","url":"https://clutchcrosshair.com/fr/guides/cs2-best-settings"},{"@type":"ListItem","position":3,"name":"Résolution étirée CS2 : 4:3 ou 16:9 (2026)","url":"https://clutchcrosshair.com/fr/guides/cs2-stretched-resolution"},{"@type":"ListItem","position":4,"name":"Guide de la sensibilité CS2 : eDPI, cm/360 et calculateur","url":"https://clutchcrosshair.com/fr/guides/cs2-sensitivity"},{"@type":"ListItem","position":5,"name":"Comment augmenter ses FPS sur CS2 (2026)","url":"https://clutchcrosshair.com/fr/guides/cs2-fps-boost"},{"@type":"ListItem","position":6,"name":"Guide du crosshair CS2 : codes, commandes et stats des pros","url":"https://clutchcrosshair.com/fr/guides/cs2-crosshair-guide"},{"@type":"ListItem","position":7,"name":"Comment améliorer sa visée sur CS2 : routine et maps d'aim","url":"https://clutchcrosshair.com/fr/guides/cs2-aim-training"}]}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/guides/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Guides CS2","item":"https://clutchcrosshair.com/fr/guides/"}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

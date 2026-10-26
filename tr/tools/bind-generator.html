@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/tools/bind-generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/tools/bind-generator">
     <script>(function () {
-        var A = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../tools/bind-generator","fr":"../../fr/tools/bind-generator","es":"../../es/tools/bind-generator","ru":"../../ru/tools/bind-generator","tr":"../../tr/tools/bind-generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/tr/tools/bind-generator","url":"https://clutchcrosshair.com/tr/tools/bind-generator","name":"CS2 Bind Oluşturucu","inLanguage":"tr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tr/tools/bind-generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/tr/tools/bind-generator#app"},"dateModified":"2026-10-19"},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/tr/tools/bind-generator#app","name":"CS2 Bind Oluşturucu","url":"https://clutchcrosshair.com/tr/tools/bind-generator","description":"Ücretsiz CS2 bind oluşturucu: bir tuş ve eylem seç, bind'ını kopyala ya da hazır bir autoexec.cfg indir. Satın alma, jump throw ve daha fazlası.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tr/tools/bind-generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://clutchcrosshair.com/tr/"},{"@type":"ListItem","position":2,"name":"CS2 Araçları","item":"https://clutchcrosshair.com/tr/tools/"},{"@type":"ListItem","position":3,"name":"CS2 bind oluşturucu","item":"https://clutchcrosshair.com/tr/tools/bind-generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tr/tools/bind-generator#faq","mainEntity":[{"@type":"Question","name":"CS2'de bind nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"Konsolu (~) aç ve bind yaz, ardından tuşu ve tırnak içinde komutu yaz, örneğin bind \"kp_end\" \"buy ak47; buy m4a1\". ClutchCrosshair bind oluşturucu bu satırı senin için yazar."}},{"@type":"Question","name":"Satın alma bind'ları CS2'de hâlâ çalışıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Evet. buy ak47 veya buy vesthelm gibi satın alma komutları CS2'de çalışır. Envanter düzeninde o yuvadaki silahı satın alırlar; yani M4A1-S'yi seçtiysen buy m4a1 sana M4A1-S verir."}},{"@type":"Question","name":"CS2'de bir bind nasıl kaldırılır?","acceptedAnswer":{"@type":"Answer","text":"Konsola unbind ve ardından tuşu yaz, örneğin unbind kp_end."}},{"@type":"Question","name":"CS2 bind'larımı nasıl kaydederim?","acceptedAnswer":{"@type":"Answer","text":"Konsola yazdığın bind'lar otomatik kaydedilir. Tam bir listeyi güvende tutmak için bind'larını game/csgo/cfg klasöründeki bir autoexec.cfg dosyasına koy ve başlatma seçeneklerine +exec autoexec ekle. Oluşturucu bu dosyayı senin için indirebilir."}},{"@type":"Question","name":"Jump throw bind'ı nedir?","acceptedAnswer":{"@type":"Answer","text":"Zıplayıp bombayı aynı anda bırakan bir bind; böylece her seferinde aynı atışı yaparsın. Bombayı saldırı düğmesi basılıyken tut, sonra jump throw tuşuna bas."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

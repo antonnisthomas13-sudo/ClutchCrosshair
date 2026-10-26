@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/faq">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/faq">
     <script>(function () {
-        var A = {"en":"../faq","fr":"../fr/faq","es":"../es/faq","ru":"../ru/faq","tr":"../tr/faq"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../faq","fr":"../fr/faq","es":"../es/faq","ru":"../ru/faq","tr":"../tr/faq"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tr/faq#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://clutchcrosshair.com/tr/"},{"@type":"ListItem","position":2,"name":"CS2 crosshair SSS","item":"https://clutchcrosshair.com/tr/faq"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tr/faq","url":"https://clutchcrosshair.com/tr/faq","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tr/faq#breadcrumb"},"mainEntity":[{"@type":"Question","name":"CS2'de crosshair kodu nasıl aktarılır?","acceptedAnswer":{"@type":"Answer","text":"Paylaşım kodunu kopyala, sonra CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar düğmesine tıkla ve kodu yapıştır. Crosshair hemen uygulanır."}},{"@type":"Question","name":"Paylaşım kodu yerine konsol komutlarını nasıl kullanırım?","acceptedAnswer":{"@type":"Answer","text":"CS2 konsolunu ~ tuşuyla aç (Esc'nin altındaki tuş; gerekirse Ayarlar › Oyun bölümünden geliştirici konsolunu etkinleştir), ClutchCrosshair'dan kopyaladığın konsol komutlarını yapıştır ve Enter'a bas."}},{"@type":"Question","name":"Eski CSGO- crosshair kodları neden artık çalışmıyor?","acceptedAnswer":{"@type":"Answer","text":"30 Eylül 2026 tarihli CS2 güncellemesinden beri crosshair paylaşım kodları CS ile başlayan (tiresiz) yeni bir format kullanıyor ve boyutlar piksel olarak kaydediliyor. Eski CSGO-xxxxx kodları artık içe aktarılamaz. ClutchCrosshair'daki tüm kodlar yeni CS2 formatındadır."}},{"@type":"Question","name":"Bu pro crosshair kodları nereden geliyor?","acceptedAnswer":{"@type":"Answer","text":"Doğrudan resmi CS2 maç demolarından okunuyor. Her kod, oyuncunun o maçta kullandığı crosshair'ın birebir aynısıdır; gösterilen tarih maçın tarihidir."}},{"@type":"Question","name":"Crosshair'lar ne sıklıkla güncelleniyor?","acceptedAnswer":{"@type":"Answer","text":"Bir takımın yeni bir resmi maç demosunu her okuduğumuzda, oyuncularının crosshair'ları kontrol edilip güncellenir. \"Son güncelleme\" tarihi, crosshair'ın onaylandığı en son maçı gösterir."}},{"@type":"Question","name":"CS2 prolarının en çok kullandığı crosshair hangisi?","acceptedAnswer":{"@type":"Answer","text":"ClutchCrosshair'daki 70 pro crosshair'ına göre en çok kullanılan renkler: yeşil (50%), camgöbeği (30%), beyaz (10%), sarı (6%), diğer renkler (4%). Proların 71% kadarı 1 veya daha az boşluk, 6% kadarı orta nokta, 4% kadarı dış çizgi kullanıyor. Çoğu pro küçük ve sabit bir crosshair ile oynuyor."}},{"@type":"Question","name":"En iyi CS2 crosshair'ı hangisi?","acceptedAnswer":{"@type":"Answer","text":"Tek bir en iyi crosshair yok: her haritada kolayca görünmeli ve rakibin kafasını kapatmamalı. Başlamak için sevdiğin bir pronun crosshair'ını kopyala, sonra rengi ve boyutu kendi ekranına göre ayarla."}},{"@type":"Question","name":"Crosshair neden oyunumda farklı görünüyor?","acceptedAnswer":{"@type":"Answer","text":"CS2'de crosshair boyutları belirli bir ekran yüksekliği için piksel cinsindendir. Farklı bir çözünürlükte oynuyorsan (örneğin 4:3 stretched), crosshair prodakinden biraz daha büyük veya küçük görünebilir."}},{"@type":"Question","name":"Kendi CS2 crosshair'ımı nasıl paylaşırım?","acceptedAnswer":{"@type":"Answer","text":"CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar düğmesine tıkla ve kodunu kopyala. Herkes aynı düğmeyle onu içe aktarabilir."}},{"@type":"Question","name":"Bir crosshair yanlış ya da eksik. Nasıl bildiririm?","acceptedAnswer":{"@type":"Answer","text":"Bize clutchcrosshair@gmail.com adresinden yaz ya da ana sayfadaki İletişim düğmesini kullan. Her bildirimi en son resmi maç demolarıyla kontrol ediyoruz."}}],"dateModified":"2026-10-25"}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

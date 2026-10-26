@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/generator">
     <script>(function () {
-        var A = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,13 +48,14 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <link rel="modulepreload" href="../generator.min.js?v=430964b16d">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/tr/generator","url":"https://clutchcrosshair.com/tr/generator","name":"CS2 Crosshair Oluşturucu","inLanguage":"tr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/tr/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/tr/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/tr/generator#app","name":"CS2 Crosshair Oluşturucu","url":"https://clutchcrosshair.com/tr/generator","description":"Ücretsiz online CS2 crosshair oluşturucu: rengi, uzunluğu, kalınlığı, boşluğu ve dış çizgiyi seç, gerçek boyutlu önizlemeyi gör, sonra CS2 crosshair kodunu veya konsol komutlarını kopyala.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tr/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://clutchcrosshair.com/tr/"},{"@type":"ListItem","position":2,"name":"CS2 Araçları","item":"https://clutchcrosshair.com/tr/tools/"},{"@type":"ListItem","position":3,"name":"CS2 crosshair oluşturucu","item":"https://clutchcrosshair.com/tr/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tr/generator#faq","mainEntity":[{"@type":"Question","name":"Bu CS2 crosshair oluşturucu ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Ücretsiz, kayıt ve indirme gerektirmez. Her şey tarayıcında çalışır."}},{"@type":"Question","name":"Yeni crosshair'ımı CS2'ye nasıl koyarım?","acceptedAnswer":{"@type":"Answer","text":"Paylaşım kodunun yanındaki Kopyala'ya tıkla, sonra CS2'de Ayarlar › Oyun › Nişangâh menüsünü aç, Paylaş veya İçe aktar'a tıkla ve kodu yapıştır. İstersen konsol komutlarını kopyalayıp CS2 konsoluna (~) da yapıştırabilirsin."}},{"@type":"Question","name":"Crosshair'ım 4:3 stretched'te neden farklı görünüyor?","acceptedAnswer":{"@type":"Answer","text":"4:3 stretched (1280×960, 1024×768...) veya 5:4 stretched (1280×1024) çözünürlükte oyun görüntüsü 16:9 ekranı dolduracak şekilde yatay olarak gerilir, bu yüzden crosshair genişler: yatay çizgiler daha uzun, dikey çizgiler daha kalın görünür. Crosshair'ının oyunda nasıl görüneceğini tam olarak görmek için önizlemenin altından çözünürlüğünü seç (16:9, 4:3, 16:10 veya 5:4). Crosshair kodun değişmez."}},{"@type":"Question","name":"Bir pro oyuncunun crosshair'ından başlayabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Başlangıç listesinden bir pro seç ya da herhangi bir CS2 crosshair kodunu yapıştır, sonra rengi, boyutu veya boşluğu değiştir. Yeni kod anında güncellenir."}},{"@type":"Question","name":"Eski CSGO- crosshair kodlarıyla çalışıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. 30 Eylül 2026 tarihli CS2 güncellemesinden beri oyuna yalnızca CS ile başlayan yeni kodlar aktarılabiliyor. Oluşturucu yalnızca yeni CS2 kodları üretir."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

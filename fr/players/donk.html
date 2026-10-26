@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/donk">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/donk">
     <script>(function () {
-        var A = {"en":"../../players/donk","fr":"../../fr/players/donk","es":"../../es/players/donk","ru":"../../ru/players/donk","tr":"../../tr/players/donk"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/donk","fr":"../../fr/players/donk","es":"../../es/players/donk","ru":"../../ru/players/donk","tr":"../../tr/players/donk"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/donk.jpg?v=6611f51120">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/fr/players/donk","url":"https://clutchcrosshair.com/fr/players/donk","name":"Code crosshair CS2 de donk","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/fr/players/donk#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/fr/players/donk#breadcrumb"},"dateModified":"2026-10-25","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/donk.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/players/donk#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Crosshair de donk","item":"https://clutchcrosshair.com/fr/players/donk"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/fr/players/donk#person","name":"donk","description":"donk est un joueur pro CS2 de Team Spirit. Code crosshair CS2 lu dans la démo d'un match officiel.","url":"https://clutchcrosshair.com/fr/players/donk","memberOf":{"@type":"SportsTeam","name":"Team Spirit","sport":"Counter-Strike 2"},"image":"https://clutchcrosshair.com/photos/donk.webp","sameAs":["https://steamcommunity.com/profiles/76561198386265483","https://liquipedia.net/counterstrike/Donk"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/players/donk#faq","mainEntity":[{"@type":"Question","name":"Quel est le code crosshair CS2 de donk ?","acceptedAnswer":{"@type":"Answer","text":"Le code crosshair CS2 de donk est CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG. Il a été lu dans la démo d'un match officiel du 25/10/2026."}},{"@type":"Question","name":"Quels réglages de crosshair utilise donk ?","acceptedAnswer":{"@type":"Answer","text":"donk utilise un crosshair vert très court statique : 2 px de long, 2 px d'épaisseur, un écart de 1, pas de contour et pas de point central, réglé pour une hauteur d'écran de 960p."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

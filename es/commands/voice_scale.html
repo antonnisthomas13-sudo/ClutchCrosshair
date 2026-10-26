@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/voice_scale">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/voice_scale">
     <script>(function () {
-        var A = {"en":"../../commands/voice_scale","fr":"../../fr/commands/voice_scale","es":"../../es/commands/voice_scale","ru":"../../ru/commands/voice_scale","tr":"../../tr/commands/voice_scale"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/voice_scale","fr":"../../fr/commands/voice_scale","es":"../../es/commands/voice_scale","ru":"../../ru/commands/voice_scale","tr":"../../tr/commands/voice_scale"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/voice_scale#article","headline":"Comando de consola voice_scale de CS2","description":"voice_scale en CS2: Eliminado en CS2: sustituido por snd_voipvolume. voice_scale cambiaba el volumen del chat de voz en CS:GO. Mira qué usar en su lugar.","url":"https://clutchcrosshair.com/es/commands/voice_scale","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/voice_scale#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"voice_scale","item":"https://clutchcrosshair.com/es/commands/voice_scale"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/voice_scale#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace voice_scale en CS2?","acceptedAnswer":{"@type":"Answer","text":"Eliminado en CS2: sustituido por snd_voipvolume. voice_scale cambiaba el volumen del chat de voz en CS:GO. Ya no existe en CS2: usa snd_voipvolume, de 0 a 1."}},{"@type":"Question","name":"¿Funciona voice_scale en CS2?","acceptedAnswer":{"@type":"Answer","text":"No. voice_scale era un comando de CS:GO y no existe en CS2. Usa snd_voipvolume en su lugar."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

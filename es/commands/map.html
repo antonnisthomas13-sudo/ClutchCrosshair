@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/map">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/map">
     <script>(function () {
-        var A = {"en":"../../commands/map","fr":"../../fr/commands/map","es":"../../es/commands/map","ru":"../../ru/commands/map","tr":"../../tr/commands/map"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/map","fr":"../../fr/commands/map","es":"../../es/commands/map","ru":"../../ru/commands/map","tr":"../../tr/commands/map"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/map#article","headline":"Comando de consola map de CS2","description":"map en CS2: Carga un mapa en tu propio servidor. Inicia un servidor local en el mapa que elijas, por ejemplo para practicar solo. Valores y ejemplos.","url":"https://clutchcrosshair.com/es/commands/map","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/map#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"map","item":"https://clutchcrosshair.com/es/commands/map"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/map#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace map en CS2?","acceptedAnswer":{"@type":"Answer","text":"Carga un mapa en tu propio servidor. Inicia un servidor local en el mapa que elijas, por ejemplo para practicar solo. Los nombres de los mapas oficiales empiezan por de_ (de_mirage, de_dust2, de_inferno...)."}},{"@type":"Question","name":"¿map necesita sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. map funciona sin sv_cheats, también en el matchmaking oficial."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

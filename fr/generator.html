@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/generator">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/generator">
     <script>(function () {
-        var A = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../generator","fr":"../fr/generator","es":"../es/generator","ru":"../ru/generator","tr":"../tr/generator"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,13 +48,14 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <link rel="modulepreload" href="../generator.min.js?v=430964b16d">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/fr/generator","url":"https://clutchcrosshair.com/fr/generator","name":"Générateur de crosshair CS2","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/fr/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/fr/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/fr/generator#app","name":"Générateur de crosshair CS2","url":"https://clutchcrosshair.com/fr/generator","description":"Générateur de crosshair CS2 gratuit en ligne : choisis la couleur, la longueur, l'épaisseur, l'écart et le contour, vois un aperçu taille réelle, puis copie ton code crosshair CS2 ou les commandes console.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Outils CS2","item":"https://clutchcrosshair.com/fr/tools/"},{"@type":"ListItem","position":3,"name":"Générateur de crosshair CS2","item":"https://clutchcrosshair.com/fr/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/generator#faq","mainEntity":[{"@type":"Question","name":"Ce générateur de crosshair CS2 est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il est gratuit, sans inscription et sans téléchargement. Tout se passe dans ton navigateur."}},{"@type":"Question","name":"Comment mettre mon nouveau crosshair dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Clique sur Copier à côté de ton code de partage, puis dans CS2 ouvre Paramètres › Jeu › Réticule, clique sur Partager ou importer et colle le code. Tu peux aussi copier les commandes console et les coller dans la console CS2 (touche ² ou ~)."}},{"@type":"Question","name":"Pourquoi mon crosshair est différent en 4:3 étiré ?","acceptedAnswer":{"@type":"Answer","text":"En 4:3 étiré (1280×960, 1024×768...) ou en 5:4 étiré (1280×1024), l'image du jeu est étirée pour remplir un écran 16:9 : le crosshair s'élargit, les traits horizontaux paraissent plus longs et les traits verticaux plus épais. Choisis ta résolution sous l'aperçu (16:9, 4:3, 16:10 ou 5:4) pour voir exactement ton crosshair en jeu. Ton code crosshair, lui, ne change pas."}},{"@type":"Question","name":"Je peux partir du crosshair d'un pro ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Choisis un pro dans la liste « Partir de », ou colle n'importe quel code crosshair CS2, puis change la couleur, la taille ou l'écart. Le nouveau code se met à jour tout de suite."}},{"@type":"Question","name":"Est-ce que ça marche avec les anciens codes CSGO- ?","acceptedAnswer":{"@type":"Answer","text":"Non. Depuis la mise à jour CS2 du 30 septembre 2026, seuls les nouveaux codes qui commencent par CS peuvent être importés dans le jeu. Le générateur crée uniquement des codes CS2."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-stretched-resolution">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-stretched-resolution">
     <script>(function () {
-        var A = {"en":"../../guides/cs2-stretched-resolution","fr":"../../fr/guides/cs2-stretched-resolution","es":"../../es/guides/cs2-stretched-resolution","ru":"../../ru/guides/cs2-stretched-resolution","tr":"../../tr/guides/cs2-stretched-resolution"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../guides/cs2-stretched-resolution","fr":"../../fr/guides/cs2-stretched-resolution","es":"../../es/guides/cs2-stretched-resolution","ru":"../../ru/guides/cs2-stretched-resolution","tr":"../../tr/guides/cs2-stretched-resolution"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/ru/guides/cs2-stretched-resolution#article","headline":"Растянутое разрешение в CS2: 4:3 или 16:9 (2026)","description":"Играть ли в CS2 на 4:3 растянутом? Как 1280×960 меняет модели, обзор и прицел, и как настроить растяжение на NVIDIA и AMD.","url":"https://clutchcrosshair.com/ru/guides/cs2-stretched-resolution","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-24","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/guides/cs2-stretched-resolution#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Гайды по CS2","item":"https://clutchcrosshair.com/ru/guides/"},{"@type":"ListItem","position":3,"name":"Растянутое разрешение в CS2: 4:3 или 16:9 (2026)","item":"https://clutchcrosshair.com/ru/guides/cs2-stretched-resolution"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/guides/cs2-stretched-resolution#faq","mainEntity":[{"@type":"Question","name":"4:3 растянутое лучше в CS2?","acceptedAnswer":{"@type":"Answer","text":"Объективно нет. Модели выглядят шире, FPS чуть выше, но по бокам видно меньше, а картинка менее чёткая. Поиграйте несколько дней в обоих вариантах и оставьте тот, что удобнее."}},{"@type":"Question","name":"Какое разрешение чаще всего у про-игроков CS2?","acceptedAnswer":{"@type":"Answer","text":"1280×960 растянутое по-прежнему очень распространено у про-игроков: большинство кодов прицелов про на ClutchCrosshair сделаны под высоту экрана 960 px."}},{"@type":"Question","name":"Почему в 4:3 по бокам чёрные полосы?","acceptedAnswer":{"@type":"Answer","text":"Видеокарта не настроена растягивать изображение. Включите масштабирование во весь экран на ГП в Панели управления NVIDIA или GPU Scaling с режимом Full Panel в AMD Software."}},{"@type":"Question","name":"Увеличивает ли растянутое разрешение хитбоксы в CS2?","acceptedAnswer":{"@type":"Answer","text":"Нет. Хитбоксы не меняются; модели только выглядят шире, потому что картинка растянута по горизонтали."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

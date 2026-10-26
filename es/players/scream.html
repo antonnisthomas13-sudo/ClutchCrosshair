@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/scream">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/scream">
     <script>(function () {
-        var A = {"en":"../../players/scream","fr":"../../fr/players/scream","es":"../../es/players/scream","ru":"../../ru/players/scream","tr":"../../tr/players/scream"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/scream","fr":"../../fr/players/scream","es":"../../es/players/scream","ru":"../../ru/players/scream","tr":"../../tr/players/scream"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/scream.jpg?v=078ad8c8c6">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/es/players/scream","url":"https://clutchcrosshair.com/es/players/scream","name":"Código de crosshair de ScreaM en CS2","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/es/players/scream#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/es/players/scream#breadcrumb"},"dateModified":"2026-10-19","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/scream.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/players/scream#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Crosshair de ScreaM","item":"https://clutchcrosshair.com/es/players/scream"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/es/players/scream#person","name":"ScreaM","description":"ScreaM es un creador de contenido de CS2.","url":"https://clutchcrosshair.com/es/players/scream","image":"https://clutchcrosshair.com/photos/scream.webp"},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/players/scream#faq","mainEntity":[{"@type":"Question","name":"¿Cuál es el código de crosshair de ScreaM en CS2?","acceptedAnswer":{"@type":"Answer","text":"El código de crosshair de CS2 de ScreaM es CShnzRUUQL8RSSG69TBoUvAm6LzBO7DmYdOpPBGsCHqJKb. Se leyó de una partida el 19/10/2026."}},{"@type":"Question","name":"¿Qué ajustes de crosshair usa ScreaM?","acceptedAnswer":{"@type":"Answer","text":"ScreaM usa un crosshair verde muy corto estático: 0 px de largo, 2 px de grosor, una separación de 3, contorno y punto central, configurado para una altura de pantalla de 768p."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

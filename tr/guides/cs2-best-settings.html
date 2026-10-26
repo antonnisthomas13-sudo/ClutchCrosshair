@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/guides/cs2-best-settings">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/guides/cs2-best-settings">
     <script>(function () {
-        var A = {"en":"../../guides/cs2-best-settings","fr":"../../fr/guides/cs2-best-settings","es":"../../es/guides/cs2-best-settings","ru":"../../ru/guides/cs2-best-settings","tr":"../../tr/guides/cs2-best-settings"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../guides/cs2-best-settings","fr":"../../fr/guides/cs2-best-settings","es":"../../es/guides/cs2-best-settings","ru":"../../ru/guides/cs2-best-settings","tr":"../../tr/guides/cs2-best-settings"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://clutchcrosshair.com/tr/guides/cs2-best-settings#article","headline":"En İyi CS2 Ayarları (2026): Görüntü, Oyun ve Ses","description":"Görünürlük ve FPS için en iyi CS2 ayarları: değiştirilecek görüntü seçenekleri, oyun ve radar ayarları, adımları net duymak için ses ayarları.","url":"https://clutchcrosshair.com/tr/guides/cs2-best-settings","inLanguage":"tr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"author":{"@id":"https://clutchcrosshair.com/#organization"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-24","image":"https://clutchcrosshair.com/og-image.jpg","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/tr/guides/cs2-best-settings#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://clutchcrosshair.com/tr/"},{"@type":"ListItem","position":2,"name":"CS2 Rehberleri","item":"https://clutchcrosshair.com/tr/guides/"},{"@type":"ListItem","position":3,"name":"En İyi CS2 Ayarları (2026): Görüntü, Oyun ve Ses","item":"https://clutchcrosshair.com/tr/guides/cs2-best-settings"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/tr/guides/cs2-best-settings#faq","mainEntity":[{"@type":"Question","name":"FPS için en iyi CS2 ayarları neler?","acceptedAnswer":{"@type":"Answer","text":"Gölgelendirici, parçacık ve model/doku detayını düşür, Ambient Occlusion ve FidelityFX Super Resolution'ı kapat, HDR'yi Performans'a al ve V-Sync'i kapalı tut. Sonra FPS'ini telemetriyle kontrol et."}},{"@type":"Question","name":"CS2'de Boost Player Contrast'ı açmalı mıyım?","acceptedAnswer":{"@type":"Answer","text":"Evet. Oyuncu modellerinin arka plandan ayrışmasını sağlar, bu da rakipleri daha hızlı fark etmene yardım eder."}},{"@type":"Question","name":"FidelityFX Super Resolution CS2 için iyi mi?","acceptedAnswer":{"@type":"Answer","text":"Rekabetçi oyun için genellikle hayır: oyunu daha düşük çözünürlükte çizip büyütür, bu da uzaktaki rakipleri bulanıklaştırır."}},{"@type":"Question","name":"CS2 prolarının ses ayarları neler?","acceptedAnswer":{"@type":"Answer","text":"Çoğu kulaklıkla oynar, ana ses seviyesini oldukça yüksek tutar ve adım seslerini daha kolay duymak için müziği (raunt başı, MVP, menü) kapatır."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

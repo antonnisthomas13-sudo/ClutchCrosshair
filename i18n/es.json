@@ -750,6 +750,11 @@
             ]
         ]
     },
+    "langBanner": {
+        "text": "Este sitio está disponible en español.",
+        "button": "Ver la versión en español",
+        "close": "Cerrar"
+    },
     "notFound": {
         "title": "Página no encontrada | ClutchCrosshair",
         "description": "Esta página no existe.",

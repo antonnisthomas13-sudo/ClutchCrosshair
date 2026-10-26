@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/spinx">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/spinx">
     <script>(function () {
-        var A = {"en":"../../players/spinx","fr":"../../fr/players/spinx","es":"../../es/players/spinx","ru":"../../ru/players/spinx","tr":"../../tr/players/spinx"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/spinx","fr":"../../fr/players/spinx","es":"../../es/players/spinx","ru":"../../ru/players/spinx","tr":"../../tr/players/spinx"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/spinx.jpg?v=d8b5a150f6">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/players/spinx","url":"https://clutchcrosshair.com/ru/players/spinx","name":"Код прицела Spinx в CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/ru/players/spinx#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/players/spinx#breadcrumb"},"dateModified":"2026-10-24","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/spinx.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/players/spinx#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Прицел Spinx","item":"https://clutchcrosshair.com/ru/players/spinx"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/ru/players/spinx#person","name":"Spinx","description":"Spinx — профессиональный игрок CS2 в команде MOUZ. Код прицела взят из демо официального матча.","url":"https://clutchcrosshair.com/ru/players/spinx","memberOf":{"@type":"SportsTeam","name":"MOUZ","sport":"Counter-Strike 2"},"image":"https://clutchcrosshair.com/photos/spinx.webp","sameAs":["https://steamcommunity.com/profiles/76561198063336407","https://liquipedia.net/counterstrike/Spinx"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/players/spinx#faq","mainEntity":[{"@type":"Question","name":"Какой код прицела у Spinx в CS2?","acceptedAnswer":{"@type":"Answer","text":"Код прицела Spinx в CS2: CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF. Он взят из демо официального матча от 24/10/2026."}},{"@type":"Question","name":"Какие настройки прицела у Spinx?","acceptedAnswer":{"@type":"Answer","text":"Spinx играет с прицелом: очень короткий, голубой, статичный — длина 2 px, толщина 2 px, зазор 1, без обводки и без точки в центре; настроен для высоты экрана 960p."}},{"@type":"Question","name":"У каких про-игроков такой же прицел, как у Spinx?","acceptedAnswer":{"@type":"Answer","text":"У m0NESY, kyousuke, dumau, JBOEN и s1mple точно такой же код прицела CS2, как у Spinx."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

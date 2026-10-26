@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/methodology">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/methodology">
     <script>(function () {
-        var A = {"en":"methodology","fr":"fr/methodology","es":"es/methodology","ru":"ru/methodology","tr":"tr/methodology"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"methodology","fr":"fr/methodology","es":"es/methodology","ru":"ru/methodology","tr":"tr/methodology"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,9 +47,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://clutchcrosshair.com/methodology","url":"https://clutchcrosshair.com/methodology","name":"How we get the crosshair codes","description":"Every pro crosshair code on ClutchCrosshair is read from an official CS2 match demo, never typed by hand. Here is how codes are collected, dated and checked.","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-25","breadcrumb":{"@id":"https://clutchcrosshair.com/methodology#breadcrumb"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/methodology#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"How we get the crosshair codes","item":"https://clutchcrosshair.com/methodology"}]}]}</script>
     <script src="consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

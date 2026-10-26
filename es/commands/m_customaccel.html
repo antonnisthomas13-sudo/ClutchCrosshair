@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/m_customaccel">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/m_customaccel">
     <script>(function () {
-        var A = {"en":"../../commands/m_customaccel","fr":"../../fr/commands/m_customaccel","es":"../../es/commands/m_customaccel","ru":"../../ru/commands/m_customaccel","tr":"../../tr/commands/m_customaccel"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/m_customaccel","fr":"../../fr/commands/m_customaccel","es":"../../es/commands/m_customaccel","ru":"../../ru/commands/m_customaccel","tr":"../../tr/commands/m_customaccel"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/m_customaccel#article","headline":"Comando de consola m_customaccel de CS2","description":"m_customaccel en CS2: Eliminado en CS2: no hay ajuste de aceleración del ratón. m_customaccel controlaba la aceleración del ratón en…","url":"https://clutchcrosshair.com/es/commands/m_customaccel","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/m_customaccel#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"m_customaccel","item":"https://clutchcrosshair.com/es/commands/m_customaccel"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/m_customaccel#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace m_customaccel en CS2?","acceptedAnswer":{"@type":"Answer","text":"Eliminado en CS2: no hay ajuste de aceleración del ratón. m_customaccel controlaba la aceleración del ratón en CS:GO. Ya no existe en CS2, que no tiene aceleración del ratón dentro del juego. Si tu puntería parece irregular, comprueba que la aceleración (Mejorar la precisión del puntero) está desactivada en Windows y en el software de tu ratón."}},{"@type":"Question","name":"¿Funciona m_customaccel en CS2?","acceptedAnswer":{"@type":"Answer","text":"No. m_customaccel era un comando de CS:GO y no existe en CS2."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

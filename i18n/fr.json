@@ -767,6 +767,11 @@
             ]
         ]
     },
+    "langBanner": {
+        "text": "Ce site existe en français.",
+        "button": "Voir la version française",
+        "close": "Fermer"
+    },
     "notFound": {
         "title": "Page introuvable | ClutchCrosshair",
         "description": "Cette page n'existe pas.",

@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshair_length">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshair_length">
     <script>(function () {
-        var A = {"en":"../../commands/cl_crosshair_length","fr":"../../fr/commands/cl_crosshair_length","es":"../../es/commands/cl_crosshair_length","ru":"../../ru/commands/cl_crosshair_length","tr":"../../tr/commands/cl_crosshair_length"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/cl_crosshair_length","fr":"../../fr/commands/cl_crosshair_length","es":"../../es/commands/cl_crosshair_length","ru":"../../ru/commands/cl_crosshair_length","tr":"../../tr/commands/cl_crosshair_length"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_length#article","headline":"Commande console CS2 cl_crosshair_length","description":"cl_crosshair_length dans CS2 : Longueur de chaque trait du crosshair, en pixels. Règle la longueur des quatre traits du crosshair. Valeurs et exemples.","url":"https://clutchcrosshair.com/fr/commands/cl_crosshair_length","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_length#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Commandes console CS2","item":"https://clutchcrosshair.com/fr/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshair_length","item":"https://clutchcrosshair.com/fr/commands/cl_crosshair_length"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/commands/cl_crosshair_length#faq","mainEntity":[{"@type":"Question","name":"À quoi sert cl_crosshair_length dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Longueur de chaque trait du crosshair, en pixels. Règle la longueur des quatre traits du crosshair. Depuis la mise à jour CS2 du 30 septembre 2026, les tailles du crosshair se comptent en vrais pixels pour la hauteur d'écran réglée dans cl_crosshair_screen_height : une valeur de 2 veut dire 2 pixels sur cet écran. La plupart des pros CS2 jouent avec une longueur courte, entre 1 et 4."}},{"@type":"Question","name":"Est-ce que cl_crosshair_length nécessite sv_cheats ?","acceptedAnswer":{"@type":"Answer","text":"Non. cl_crosshair_length marche sans sv_cheats, y compris en matchmaking officiel."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

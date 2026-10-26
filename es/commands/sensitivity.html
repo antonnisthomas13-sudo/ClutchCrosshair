@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/sensitivity">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/sensitivity">
     <script>(function () {
-        var A = {"en":"../../commands/sensitivity","fr":"../../fr/commands/sensitivity","es":"../../es/commands/sensitivity","ru":"../../ru/commands/sensitivity","tr":"../../tr/commands/sensitivity"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/sensitivity","fr":"../../fr/commands/sensitivity","es":"../../es/commands/sensitivity","ru":"../../ru/commands/sensitivity","tr":"../../tr/commands/sensitivity"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/sensitivity#article","headline":"Comando de consola sensitivity de CS2","description":"sensitivity en CS2: La sensibilidad de tu ratón. Define lo rápido que gira tu vista al mover el ratón. Valor por defecto 2.5, valores y ejemplos.","url":"https://clutchcrosshair.com/es/commands/sensitivity","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/sensitivity#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"sensitivity","item":"https://clutchcrosshair.com/es/commands/sensitivity"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/sensitivity#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace sensitivity en CS2?","acceptedAnswer":{"@type":"Answer","text":"La sensibilidad de tu ratón. Define lo rápido que gira tu vista al mover el ratón. Los pros suelen multiplicarla por el DPI de su ratón para comparar: 400 DPI a 2.0 u 800 DPI a 1.0 dan ambos 800 eDPI; el rango típico de los pros de CS2 va de unos 600 a 1200 eDPI."}},{"@type":"Question","name":"¿Cuál es el valor por defecto de sensitivity?","acceptedAnswer":{"@type":"Answer","text":"El valor por defecto de sensitivity en CS2 es 2.5."}},{"@type":"Question","name":"¿sensitivity necesita sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. sensitivity funciona sin sv_cheats, también en el matchmaking oficial."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

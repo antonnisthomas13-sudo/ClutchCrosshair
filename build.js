@@ -129,11 +129,15 @@ async function main() {
     } catch (error) {
         console.log("Attention : esbuild n'est pas installé (lancer « npm ci ») : les fichiers .min sont copiés sans être minifiés");
     }
-    function minify(source, out, loader, imports) {
+    // transform (facultatif) : retouche le code avant la minification (ex. textes ajoutés dans lang-banner.js)
+    function minify(source, out, loader, imports, transform) {
         let code = fs.readFileSync(source, "utf8").replace(/\r\n/g, "\n");
         (imports || []).forEach(function (imp) {
             code = code.replace(new RegExp("([\"'])\\./" + imp.from.replace(".", "\\.") + "(\\?v=[^\"']*)?([\"'])", "g"), "$1./" + imp.to + "?v=" + imp.hash + "$3");
         });
+        if (transform) {
+            code = transform(code);
+        }
         if (esbuild) {
             code = esbuild.transformSync(code, { loader: loader, minify: true, legalComments: "none" }).code;
         }
@@ -146,6 +150,18 @@ async function main() {
     const CROSSHAIR_HASH = minify("crosshair.js", "crosshair.min.js", "js");
     const GENERATOR_HASH = minify("generator.js", "generator.min.js", "js", [{ from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH }]);
     const CONSENT_HASH = minify("consent.js", "consent.min.js", "js");
+    // Bandeau de suggestion de langue : textes « langBanner » de chaque langue, écrits dans la langue elle-même
+    const LANG_BANNER_HASH = minify("lang-banner.js", "lang-banner.min.js", "js", null, function (code) {
+        const texts = {};
+        LANGS.forEach(function (l) {
+            const i = makeI18n(l);
+            texts[l] = { text: i.t("langBanner.text"), button: i.t("langBanner.button"), close: i.t("langBanner.close") };
+        });
+        if (!code.includes("var TEXTS = {};")) {
+            throw new Error("lang-banner.js : la ligne « var TEXTS = {}; » est introuvable");
+        }
+        return code.replace("var TEXTS = {};", "var TEXTS = " + JSON.stringify(texts) + ";");
+    });
     const SCRIPT_HASH = minify("script.js", "script.min.js", "js", [
         { from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH },
         { from: "generator.js", to: "generator.min.js", hash: GENERATOR_HASH }
@@ -388,7 +404,9 @@ async function main() {
         const CLIENT_I18N = EN ? "" : `
     <script type="application/json" id="i18n">${JSON.stringify(tList("js")).replace(/</g, "\\u003c")}</script>`;
 
-        // Langues : liens hreflang pour Google + petit script (1re visite : langue du navigateur ; sélecteur : change de page)
+        // Langues : liens hreflang pour Google + petit script (sélecteur : change de page).
+        // Plus aucune redirection automatique selon la langue du navigateur (26/10/2026) : lang-banner.js propose
+        // la bonne langue dans un bandeau ; il lit les adresses traduites dans window.ccAlternates.
         function langHead(prefix, rel, withLinks) {
             const alts = {};
             LANGS.forEach(function (l) { alts[l] = altHref(prefix, l, rel); });
@@ -399,14 +417,7 @@ async function main() {
     <link rel="alternate" hreflang="x-default" href="${SITE_URL}/${rel}">`;
             return `${links}
     <script>(function () {
-        var A = ${JSON.stringify(alts)};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = ${JSON.stringify(alts).replace(/</g, "\\u003c")};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -479,8 +490,10 @@ async function main() {
         }
 
         // Bandeau cookies (CNIL) + Google Analytics après accord : sur toutes les pages (voir consent.js)
+        // + bandeau de suggestion de langue (voir lang-banner.js), lui aussi en defer : il ne ralentit pas l'affichage
         function consentScript(prefix) {
-            return `<script src="${ap(prefix)}consent.min.js?v=${CONSENT_HASH}" data-legal="${prefix}legal.html" defer></script>`;
+            return `<script src="${ap(prefix)}consent.min.js?v=${CONSENT_HASH}" data-legal="${prefix}legal.html" defer></script>
+    <script src="${ap(prefix)}lang-banner.min.js?v=${LANG_BANNER_HASH}" defer></script>`;
         }
 
         // Le menu principal, le même sur toutes les pages. Une rubrique n'apparaît que si ses pages existent

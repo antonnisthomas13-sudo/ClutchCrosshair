@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/neityu">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/neityu">
     <script>(function () {
-        var A = {"en":"../../players/neityu","fr":"../../fr/players/neityu","es":"../../es/players/neityu","ru":"../../ru/players/neityu","tr":"../../tr/players/neityu"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../players/neityu","fr":"../../fr/players/neityu","es":"../../es/players/neityu","ru":"../../ru/players/neityu","tr":"../../tr/players/neityu"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,12 +48,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/neityu.jpg?v=14d9df3eeb">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../../lib/csgo-sharecode.js">
     <link rel="preload" href="../../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/ru/players/neityu","url":"https://clutchcrosshair.com/ru/players/neityu","name":"Код прицела Neityu в CS2","inLanguage":"ru","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/ru/players/neityu#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/ru/players/neityu#breadcrumb"},"dateModified":"2026-10-10"},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/ru/players/neityu#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://clutchcrosshair.com/ru/"},{"@type":"ListItem","position":2,"name":"Прицел Neityu","item":"https://clutchcrosshair.com/ru/players/neityu"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/ru/players/neityu#person","name":"Neityu","description":"Neityu — профессиональный игрок CS2 в команде FaZe Clan. Код прицела взят из демо официального матча.","url":"https://clutchcrosshair.com/ru/players/neityu","memberOf":{"@type":"SportsTeam","name":"FaZe Clan","sport":"Counter-Strike 2"},"sameAs":["https://steamcommunity.com/profiles/76561198971718392","https://liquipedia.net/counterstrike/Neityu"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/ru/players/neityu#faq","mainEntity":[{"@type":"Question","name":"Какой код прицела у Neityu в CS2?","acceptedAnswer":{"@type":"Answer","text":"Код прицела Neityu в CS2: CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B. Он взят из демо официального матча от 10/10/2026."}},{"@type":"Question","name":"Какие настройки прицела у Neityu?","acceptedAnswer":{"@type":"Answer","text":"Neityu играет с прицелом: очень короткий, салатовый, статичный — длина 2 px, толщина 1 px, зазор 2, без обводки и без точки в центре; настроен для высоты экрана 1024p."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

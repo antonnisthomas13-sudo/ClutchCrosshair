@@ -7,14 +7,7 @@
     <meta name="description" content="Esta página no existe.">
     <meta name="robots" content="noindex">
     <script>(function () {
-        var A = {"en":"https://clutchcrosshair.com/","fr":"https://clutchcrosshair.com/fr/","es":"https://clutchcrosshair.com/es/","ru":"https://clutchcrosshair.com/ru/","tr":"https://clutchcrosshair.com/tr/"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"https://clutchcrosshair.com/","fr":"https://clutchcrosshair.com/fr/","es":"https://clutchcrosshair.com/es/","ru":"https://clutchcrosshair.com/ru/","tr":"https://clutchcrosshair.com/tr/"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -48,8 +41,9 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="https://clutchcrosshair.com/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://clutchcrosshair.com/fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="https://clutchcrosshair.com/style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="https://clutchcrosshair.com/style.min.css?v=681f2d2464">
     <script src="https://clutchcrosshair.com/consent.min.js?v=fdcf5763f3" data-legal="https://clutchcrosshair.com/es/legal" defer></script>
+    <script src="https://clutchcrosshair.com/lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

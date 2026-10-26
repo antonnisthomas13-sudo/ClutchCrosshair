@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/players/xelex">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/players/xelex">
     <script>(function () {
-        var A = {"en":"../players/xelex","fr":"../fr/players/xelex","es":"../es/players/xelex","ru":"../ru/players/xelex","tr":"../tr/players/xelex"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../players/xelex","fr":"../fr/players/xelex","es":"../es/players/xelex","ru":"../ru/players/xelex","tr":"../tr/players/xelex"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -54,12 +47,13 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og/xelex.jpg?v=8a77332ac8">
     <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../style.min.css?v=681f2d2464">
     <link rel="modulepreload" href="../crosshair.min.js?v=da13dcace5">
     <link rel="modulepreload" href="../lib/csgo-sharecode.js">
     <link rel="preload" href="../preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/players/xelex","url":"https://clutchcrosshair.com/players/xelex","name":"xelex CS2 Crosshair Code","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"about":{"@id":"https://clutchcrosshair.com/players/xelex#person"},"breadcrumb":{"@id":"https://clutchcrosshair.com/players/xelex#breadcrumb"},"dateModified":"2026-10-24","primaryImageOfPage":{"@type":"ImageObject","url":"https://clutchcrosshair.com/photos/xelex.webp"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/players/xelex#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"xelex crosshair","item":"https://clutchcrosshair.com/players/xelex"}]},{"@type":"Person","@id":"https://clutchcrosshair.com/players/xelex#person","name":"xelex","description":"xelex is a CS2 pro player for MOUZ. CS2 crosshair code read from an official match demo.","url":"https://clutchcrosshair.com/players/xelex","memberOf":{"@type":"SportsTeam","name":"MOUZ","sport":"Counter-Strike 2"},"image":"https://clutchcrosshair.com/photos/xelex.webp","sameAs":["https://steamcommunity.com/profiles/76561198998266210","https://liquipedia.net/counterstrike/Xelex"]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/players/xelex#faq","mainEntity":[{"@type":"Question","name":"What is xelex's CS2 crosshair code?","acceptedAnswer":{"@type":"Answer","text":"xelex's CS2 crosshair code is CSAQENfyphnRoJeSSY5tjVHfcVtCpz7qK2nyxjmH6qv8FJ. It was read from an official match demo on 24/10/2026."}},{"@type":"Question","name":"What crosshair settings does xelex use?","acceptedAnswer":{"@type":"Answer","text":"xelex uses a very short green static crosshair: 2 px long, 2 px thick, a gap of 1, no outline and no center dot, set for a 960p screen height."}}]}]}</script>
     <script src="../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

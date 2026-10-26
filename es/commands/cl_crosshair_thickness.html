@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/cl_crosshair_thickness">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/cl_crosshair_thickness">
     <script>(function () {
-        var A = {"en":"../../commands/cl_crosshair_thickness","fr":"../../fr/commands/cl_crosshair_thickness","es":"../../es/commands/cl_crosshair_thickness","ru":"../../ru/commands/cl_crosshair_thickness","tr":"../../tr/commands/cl_crosshair_thickness"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/cl_crosshair_thickness","fr":"../../fr/commands/cl_crosshair_thickness","es":"../../es/commands/cl_crosshair_thickness","ru":"../../ru/commands/cl_crosshair_thickness","tr":"../../tr/commands/cl_crosshair_thickness"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness#article","headline":"Comando de consola cl_crosshair_thickness de CS2","description":"cl_crosshair_thickness en CS2: Grosor de las líneas del crosshair, en píxeles. Define el grosor de las líneas del crosshair, en píxeles para la altura de…","url":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness","inLanguage":"es","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://clutchcrosshair.com/es/"},{"@type":"ListItem","position":2,"name":"Comandos de consola de CS2","item":"https://clutchcrosshair.com/es/commands/"},{"@type":"ListItem","position":3,"name":"cl_crosshair_thickness","item":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/es/commands/cl_crosshair_thickness#faq","mainEntity":[{"@type":"Question","name":"¿Qué hace cl_crosshair_thickness en CS2?","acceptedAnswer":{"@type":"Answer","text":"Grosor de las líneas del crosshair, en píxeles. Define el grosor de las líneas del crosshair, en píxeles para la altura de pantalla de cl_crosshair_screen_height. Un grosor de 1 da un crosshair fino y preciso; 2 se ve mejor en mapas claros y es la opción más común entre los pros."}},{"@type":"Question","name":"¿cl_crosshair_thickness necesita sv_cheats?","acceptedAnswer":{"@type":"Answer","text":"No. cl_crosshair_thickness funciona sin sv_cheats, también en el matchmaking oficial."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>

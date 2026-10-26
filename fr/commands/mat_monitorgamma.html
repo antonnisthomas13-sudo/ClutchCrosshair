@@ -14,14 +14,7 @@
     <link rel="alternate" hreflang="tr" href="https://clutchcrosshair.com/tr/commands/mat_monitorgamma">
     <link rel="alternate" hreflang="x-default" href="https://clutchcrosshair.com/commands/mat_monitorgamma">
     <script>(function () {
-        var A = {"en":"../../commands/mat_monitorgamma","fr":"../../fr/commands/mat_monitorgamma","es":"../../es/commands/mat_monitorgamma","ru":"../../ru/commands/mat_monitorgamma","tr":"../../tr/commands/mat_monitorgamma"};
-        try {
-            var saved = localStorage.getItem("lang");
-            var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
-            if (!saved && document.documentElement.lang === "en" && nav !== "en" && A[nav]) {
-                location.replace(A[nav]);
-            }
-        } catch (error) {}
+        var A = window.ccAlternates = {"en":"../../commands/mat_monitorgamma","fr":"../../fr/commands/mat_monitorgamma","es":"../../es/commands/mat_monitorgamma","ru":"../../ru/commands/mat_monitorgamma","tr":"../../tr/commands/mat_monitorgamma"};
         document.addEventListener("change", function (event) {
             if (event.target && event.target.id === "lang" && A[event.target.value]) {
                 try { localStorage.setItem("lang", event.target.value); } catch (error) {}
@@ -55,9 +48,10 @@
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="../../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../../style.min.css?v=e627a1dd71">
+    <link rel="stylesheet" href="../../style.min.css?v=681f2d2464">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clutchcrosshair.com/fr/commands/mat_monitorgamma#article","headline":"Commande console CS2 mat_monitorgamma","description":"mat_monitorgamma dans CS2 : Supprimée dans CS2 : remplacée par r_fullscreen_gamma. mat_monitorgamma changeait la luminosité dans…","url":"https://clutchcrosshair.com/fr/commands/mat_monitorgamma","inLanguage":"fr","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"},"dateModified":"2026-10-19","about":{"@type":"Thing","name":"Counter-Strike 2"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/fr/commands/mat_monitorgamma#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://clutchcrosshair.com/fr/"},{"@type":"ListItem","position":2,"name":"Commandes console CS2","item":"https://clutchcrosshair.com/fr/commands/"},{"@type":"ListItem","position":3,"name":"mat_monitorgamma","item":"https://clutchcrosshair.com/fr/commands/mat_monitorgamma"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/fr/commands/mat_monitorgamma#faq","mainEntity":[{"@type":"Question","name":"À quoi sert mat_monitorgamma dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Supprimée dans CS2 : remplacée par r_fullscreen_gamma. mat_monitorgamma changeait la luminosité dans CS:GO. Elle n'existe plus dans CS2 : utilise r_fullscreen_gamma (en plein écran seulement), ou le curseur de luminosité dans les paramètres vidéo."}},{"@type":"Question","name":"Est-ce que mat_monitorgamma marche dans CS2 ?","acceptedAnswer":{"@type":"Answer","text":"Non. mat_monitorgamma était une commande de CS:GO et n'existe pas dans CS2. Utilise plutôt r_fullscreen_gamma."}}]}]}</script>
     <script src="../../consent.min.js?v=fdcf5763f3" data-legal="../legal" defer></script>
+    <script src="../../lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
     <script>
