@@ -193,9 +193,11 @@
 /es/players/chopper.html /es/players/chopper 301
 /es/players/cmtry.html /es/players/cmtry 301
 /es/players/d1ledez.html /es/players/d1ledez 301
+/es/players/dem0n.html /es/players/dem0n 301
 /es/players/dima.html /es/players/dima 301
 /es/players/donk.html /es/players/donk 301
 /es/players/dumau.html /es/players/dumau 301
+/es/players/dziugss.html /es/players/dziugss 301
 /es/players/f0rest.html /es/players/f0rest 301
 /es/players/fallen.html /es/players/fallen 301
 /es/players/fl0m.html /es/players/fl0m 301
@@ -216,6 +218,7 @@
 /es/players/jl.html /es/players/jl 301
 /es/players/karrigan.html /es/players/karrigan 301
 /es/players/kennys.html /es/players/kennys 301
+/es/players/krabeni.html /es/players/krabeni 301
 /es/players/kscerato.html /es/players/kscerato 301
 /es/players/kyousuke.html /es/players/kyousuke 301
 /es/players/kyxsan.html /es/players/kyxsan 301
@@ -250,6 +253,7 @@
 /es/players/spinx.html /es/players/spinx 301
 /es/players/staehr.html /es/players/staehr 301
 /es/players/strogo.html /es/players/strogo 301
+/es/players/sunpayus.html /es/players/sunpayus 301
 /es/players/teses.html /es/players/teses 301
 /es/players/tn1r.html /es/players/tn1r 301
 /es/players/torzsi.html /es/players/torzsi 301
@@ -261,6 +265,7 @@
 /es/players/xantares.html /es/players/xantares 301
 /es/players/xelex.html /es/players/xelex 301
 /es/players/xertion.html /es/players/xertion 301
+/es/players/xfl0ud.html /es/players/xfl0ud 301
 /es/players/xielo.html /es/players/xielo 301
 /es/players/yekindar.html /es/players/yekindar 301
 /es/players/yuurih.html /es/players/yuurih 301
@@ -364,9 +369,11 @@
 /fr/players/chopper.html /fr/players/chopper 301
 /fr/players/cmtry.html /fr/players/cmtry 301
 /fr/players/d1ledez.html /fr/players/d1ledez 301
+/fr/players/dem0n.html /fr/players/dem0n 301
 /fr/players/dima.html /fr/players/dima 301
 /fr/players/donk.html /fr/players/donk 301
 /fr/players/dumau.html /fr/players/dumau 301
+/fr/players/dziugss.html /fr/players/dziugss 301
 /fr/players/f0rest.html /fr/players/f0rest 301
 /fr/players/fallen.html /fr/players/fallen 301
 /fr/players/fl0m.html /fr/players/fl0m 301
@@ -387,6 +394,7 @@
 /fr/players/jl.html /fr/players/jl 301
 /fr/players/karrigan.html /fr/players/karrigan 301
 /fr/players/kennys.html /fr/players/kennys 301
+/fr/players/krabeni.html /fr/players/krabeni 301
 /fr/players/kscerato.html /fr/players/kscerato 301
 /fr/players/kyousuke.html /fr/players/kyousuke 301
 /fr/players/kyxsan.html /fr/players/kyxsan 301
@@ -421,6 +429,7 @@
 /fr/players/spinx.html /fr/players/spinx 301
 /fr/players/staehr.html /fr/players/staehr 301
 /fr/players/strogo.html /fr/players/strogo 301
+/fr/players/sunpayus.html /fr/players/sunpayus 301
 /fr/players/teses.html /fr/players/teses 301
 /fr/players/tn1r.html /fr/players/tn1r 301
 /fr/players/torzsi.html /fr/players/torzsi 301
@@ -432,6 +441,7 @@
 /fr/players/xantares.html /fr/players/xantares 301
 /fr/players/xelex.html /fr/players/xelex 301
 /fr/players/xertion.html /fr/players/xertion 301
+/fr/players/xfl0ud.html /fr/players/xfl0ud 301
 /fr/players/xielo.html /fr/players/xielo 301
 /fr/players/yekindar.html /fr/players/yekindar 301
 /fr/players/yuurih.html /fr/players/yuurih 301
@@ -469,9 +479,11 @@
 /players/chopper.html /players/chopper 301
 /players/cmtry.html /players/cmtry 301
 /players/d1ledez.html /players/d1ledez 301
+/players/dem0n.html /players/dem0n 301
 /players/dima.html /players/dima 301
 /players/donk.html /players/donk 301
 /players/dumau.html /players/dumau 301
+/players/dziugss.html /players/dziugss 301
 /players/f0rest.html /players/f0rest 301
 /players/fallen.html /players/fallen 301
 /players/fl0m.html /players/fl0m 301
@@ -492,6 +504,7 @@
 /players/jl.html /players/jl 301
 /players/karrigan.html /players/karrigan 301
 /players/kennys.html /players/kennys 301
+/players/krabeni.html /players/krabeni 301
 /players/kscerato.html /players/kscerato 301
 /players/kyousuke.html /players/kyousuke 301
 /players/kyxsan.html /players/kyxsan 301
@@ -526,6 +539,7 @@
 /players/spinx.html /players/spinx 301
 /players/staehr.html /players/staehr 301
 /players/strogo.html /players/strogo 301
+/players/sunpayus.html /players/sunpayus 301
 /players/teses.html /players/teses 301
 /players/tn1r.html /players/tn1r 301
 /players/torzsi.html /players/torzsi 301
@@ -537,6 +551,7 @@
 /players/xantares.html /players/xantares 301
 /players/xelex.html /players/xelex 301
 /players/xertion.html /players/xertion 301
+/players/xfl0ud.html /players/xfl0ud 301
 /players/xielo.html /players/xielo 301
 /players/yekindar.html /players/yekindar 301
 /players/yuurih.html /players/yuurih 301
@@ -630,9 +645,11 @@
 /ru/players/chopper.html /ru/players/chopper 301
 /ru/players/cmtry.html /ru/players/cmtry 301
 /ru/players/d1ledez.html /ru/players/d1ledez 301
+/ru/players/dem0n.html /ru/players/dem0n 301
 /ru/players/dima.html /ru/players/dima 301
 /ru/players/donk.html /ru/players/donk 301
 /ru/players/dumau.html /ru/players/dumau 301
+/ru/players/dziugss.html /ru/players/dziugss 301
 /ru/players/f0rest.html /ru/players/f0rest 301
 /ru/players/fallen.html /ru/players/fallen 301
 /ru/players/fl0m.html /ru/players/fl0m 301
@@ -653,6 +670,7 @@
 /ru/players/jl.html /ru/players/jl 301
 /ru/players/karrigan.html /ru/players/karrigan 301
 /ru/players/kennys.html /ru/players/kennys 301
+/ru/players/krabeni.html /ru/players/krabeni 301
 /ru/players/kscerato.html /ru/players/kscerato 301
 /ru/players/kyousuke.html /ru/players/kyousuke 301
 /ru/players/kyxsan.html /ru/players/kyxsan 301
@@ -687,6 +705,7 @@
 /ru/players/spinx.html /ru/players/spinx 301
 /ru/players/staehr.html /ru/players/staehr 301
 /ru/players/strogo.html /ru/players/strogo 301
+/ru/players/sunpayus.html /ru/players/sunpayus 301
 /ru/players/teses.html /ru/players/teses 301
 /ru/players/tn1r.html /ru/players/tn1r 301
 /ru/players/torzsi.html /ru/players/torzsi 301
@@ -698,6 +717,7 @@
 /ru/players/xantares.html /ru/players/xantares 301
 /ru/players/xelex.html /ru/players/xelex 301
 /ru/players/xertion.html /ru/players/xertion 301
+/ru/players/xfl0ud.html /ru/players/xfl0ud 301
 /ru/players/xielo.html /ru/players/xielo 301
 /ru/players/yekindar.html /ru/players/yekindar 301
 /ru/players/yuurih.html /ru/players/yuurih 301
@@ -808,9 +828,11 @@
 /tr/players/chopper.html /tr/players/chopper 301
 /tr/players/cmtry.html /tr/players/cmtry 301
 /tr/players/d1ledez.html /tr/players/d1ledez 301
+/tr/players/dem0n.html /tr/players/dem0n 301
 /tr/players/dima.html /tr/players/dima 301
 /tr/players/donk.html /tr/players/donk 301
 /tr/players/dumau.html /tr/players/dumau 301
+/tr/players/dziugss.html /tr/players/dziugss 301
 /tr/players/f0rest.html /tr/players/f0rest 301
 /tr/players/fallen.html /tr/players/fallen 301
 /tr/players/fl0m.html /tr/players/fl0m 301
@@ -831,6 +853,7 @@
 /tr/players/jl.html /tr/players/jl 301
 /tr/players/karrigan.html /tr/players/karrigan 301
 /tr/players/kennys.html /tr/players/kennys 301
+/tr/players/krabeni.html /tr/players/krabeni 301
 /tr/players/kscerato.html /tr/players/kscerato 301
 /tr/players/kyousuke.html /tr/players/kyousuke 301
 /tr/players/kyxsan.html /tr/players/kyxsan 301
@@ -865,6 +888,7 @@
 /tr/players/spinx.html /tr/players/spinx 301
 /tr/players/staehr.html /tr/players/staehr 301
 /tr/players/strogo.html /tr/players/strogo 301
+/tr/players/sunpayus.html /tr/players/sunpayus 301
 /tr/players/teses.html /tr/players/teses 301
 /tr/players/tn1r.html /tr/players/tn1r 301
 /tr/players/torzsi.html /tr/players/torzsi 301
@@ -876,6 +900,7 @@
 /tr/players/xantares.html /tr/players/xantares 301
 /tr/players/xelex.html /tr/players/xelex 301
 /tr/players/xertion.html /tr/players/xertion 301
+/tr/players/xfl0ud.html /tr/players/xfl0ud 301
 /tr/players/xielo.html /tr/players/xielo 301
 /tr/players/yekindar.html /tr/players/yekindar 301
 /tr/players/yuurih.html /tr/players/yuurih 301

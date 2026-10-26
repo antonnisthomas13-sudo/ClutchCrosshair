@@ -122,7 +122,7 @@ Plusieurs pros ont exactement le même code (ex. petit crosshair cyan ou vert) :
 5. Menu de gauche sous les équipes : « Latest updates » (5 derniers crosshairs modifiés) + place pour une pub plus tard.
 6. Mentions légales : `PUBLISHER_NAME` = « Anto » (fait) ; e-mail clutchcrosshair@gmail.com (fait le 19/10/2026). Photos HLTV : risque droits d'auteur (décision à prendre). Liens réseaux sociaux `#` à remplacer ou cacher. (Fait le 18/10 : image d'aperçu 1200×630, polices hébergées sur le site.)
 7. ~~Nom de domaine~~ fait le 19/10/2026 (adresses changées partout). Redirection www et désactivation de GitHub Pages faites. Reste : Google Search Console (propriété « Domaine », sitemap + indexation de l'accueil).
-8. FUT : ajouter quand ils rejouent un match (aucun match depuis le 30/09).
+8. ~~FUT~~ : fait le 26/10/2026 (démo FUT-Liquid du 25/10 : xfl0ud, SunPayus, dem0n, Krabeni, dziugss ; pas encore de photos). Les 15 équipes ont maintenant des joueurs.
 8 bis. **Viewmodel : mis de côté le 22/10/2026 à la demande d’Anto** (travail dans `git stash`). Pour reprendre : skill **`reprendre-viewmodel`** (`.claude/skills/reprendre-viewmodel/SKILL.md`).
 9. Plus tard : `update.py` (lire tout le dossier `demos/`, archives comprises, de la plus ancienne à la plus récente, refuser les codes `CSGO-`), stats des pros, 100 % automatique (pistes : API FACEIT, GRID Open Access), sondage (Firebase), Valorant.
    **Le jour où la partie Valorant est lancée : retirer le `noindex` de `valorant.html`** (`noindex: true` dans l'appel `head()` de valorant.html dans build.js, dans les 5 langues), l'ajouter au sitemap et à llms.txt, sinon Google ne l'indexera jamais (demande d'Anto du 26/10/2026).

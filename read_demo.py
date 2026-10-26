@@ -91,6 +91,14 @@ def match_date(demo, forced=None):
     return datetime.fromtimestamp(demo.stat().st_mtime).date()
 
 
+def match_time(demo, forced=None):
+    """Heure de fin du match (date du fichier .dem), ou None avec --date (heure inconnue).
+    Sert à départager deux matchs du même jour (ex. FaZe-BC.Game 17 h 33 puis BC.Game-JiJieHao 21 h 01, le 22/10/2026)."""
+    if forced:
+        return None
+    return datetime.fromtimestamp(demo.stat().st_mtime).replace(second=0, microsecond=0)
+
+
 def parse_date(text):
     """ "17/10/2026" -> date (ou None si la date est absente/illisible)."""
     try:
@@ -99,10 +107,19 @@ def parse_date(text):
         return None
 
 
-def update_players(found, day, data):
-    """Met à jour la liste des joueurs (data) avec les joueurs d'une démo jouée le jour "day"."""
+def parse_time(text):
+    """ "2026-10-22T21:01" -> datetime (ou None)."""
+    try:
+        return datetime.strptime(text, "%Y-%m-%dT%H:%M")
+    except (TypeError, ValueError):
+        return None
+
+
+def update_players(found, day, data, when=None):
+    """Met à jour la liste des joueurs (data) avec les joueurs d'une démo jouée le jour "day" (à l'heure "when")."""
     day_text = day.strftime("%d/%m/%Y")
-    report = {"added": [], "updated": [], "confirmed": [], "older": [], "old_format": [], "ignored": []}
+    when_text = when.strftime("%Y-%m-%dT%H:%M") if when else None
+    report = {"added": [], "updated": [], "confirmed": [], "older": [], "same_day": [], "old_format": [], "ignored": []}
 
     for p in found:
         team = site_team(p["demo_team"])
@@ -130,6 +147,8 @@ def update_players(found, day, data):
                 "updated": day_text,
                 "trending": False,
             })
+            if when_text:
+                data[-1]["matchTime"] = when_text
             report["added"].append(p["name"])
             continue
 
@@ -138,12 +157,24 @@ def update_players(found, day, data):
         if known and day < known:
             report["older"].append(existing["name"])
             continue
+        # Même jour : on départage par l'heure. Heure inconnue d'un côté et code différent : on ne devine pas
+        if known and day == known:
+            known_time = parse_time(existing.get("matchTime"))
+            if when and known_time:
+                if when < known_time:
+                    report["older"].append(existing["name"])
+                    continue
+            elif existing.get("code") != p["code"]:
+                report["same_day"].append(existing["name"])
+                continue
 
         existing["steamid"] = p["steamid"]
         # Un joueur classé créateur par Anto le reste (ex. jL, remplaçant chez Vitality) : on met à jour son code, pas son équipe
         if existing.get("category") != "creator":
             existing["team"] = team
         existing["updated"] = day_text  # le crosshair est confirmé à la date de ce match
+        if when_text:
+            existing["matchTime"] = when_text
         if existing.get("code") != p["code"]:
             existing["code"] = p["code"]
             report["updated"].append(existing["name"])
@@ -180,7 +211,7 @@ def main():
     found = read_demo(demo)
 
     data = json.loads(PLAYERS_FILE.read_text(encoding="utf-8"))
-    report = update_players(found, day, data)
+    report = update_players(found, day, data, match_time(demo, forced))
     PLAYERS_FILE.write_text(json.dumps(data, indent=4, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print()
@@ -192,6 +223,7 @@ def main():
     print("Code changé     :", ", ".join(report["updated"]) or "-")
     print("Code confirmé   :", ", ".join(report["confirmed"]) or "-", "(même code, date avancée)")
     print("Pas touchés     :", ", ".join(report["older"]) or "-", "(on a déjà un match plus récent)")
+    print("À vérifier      :", ", ".join(report["same_day"]) or "-", "(autre match le même jour, heure inconnue : code gardé)")
     print("Refusés         :", ", ".join(report["old_format"]) or "-", "(ancien format CSGO-)")
     print("Ignorés         :", ", ".join(report["ignored"]) or "-", "(équipe pas sur le site)")
     print()
