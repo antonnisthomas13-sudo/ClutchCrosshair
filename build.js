@@ -2854,8 +2854,9 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
     // Redirections 301 « /page.html » -> « /page » dans _redirects (Cloudflare le ferait seul, mais en 308) :
     // une ligne par page (pas les 404), entre « # HTML:START » et « # HTML:END ». Limite Cloudflare : 2 000 lignes simples.
     if (fs.existsSync("_redirects")) {
+        // Seulement les pages .html (la liste contient aussi sitemap.xml : une ligne pour lui ferait une boucle)
         const lines = generated.filter(function (file) {
-            return fs.existsSync(file) && !/(^|\/)404\.html$/.test(file);
+            return /\.html$/.test(file) && fs.existsSync(file) && !/(^|\/)404\.html$/.test(file);
         }).map(function (file) {
             return "/" + file + " /" + file.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "") + " 301";
         }).sort();
