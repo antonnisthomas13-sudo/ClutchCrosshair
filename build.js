@@ -2851,6 +2851,25 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
         }
     });
 
+    // Redirections 301 « /page.html » -> « /page » dans _redirects (Cloudflare le ferait seul, mais en 308) :
+    // une ligne par page (pas les 404), entre « # HTML:START » et « # HTML:END ». Limite Cloudflare : 2 000 lignes simples.
+    if (fs.existsSync("_redirects")) {
+        const lines = generated.filter(function (file) {
+            return fs.existsSync(file) && !/(^|\/)404\.html$/.test(file);
+        }).map(function (file) {
+            return "/" + file + " /" + file.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "") + " 301";
+        }).sort();
+        const text = fs.readFileSync("_redirects", "utf8").replace(/\r\n/g, "\n");
+        const updated = text.replace(/(# HTML:START\n)[\s\S]*?(# HTML:END)/, "$1" + lines.map(function (l) { return l + "\n"; }).join("") + "$2");
+        if (updated !== text) {
+            fs.writeFileSync("_redirects", updated);
+        }
+        const simple = updated.split("\n").filter(function (l) { return /^\/\S+ \S+ 30[1278]$/.test(l) && !l.includes("*"); }).length;
+        if (simple > 2000) {
+            console.log("Attention : " + simple + " redirections simples dans _redirects (Cloudflare n'en lit que 2 000)");
+        }
+    }
+
     // ===== CSS critique de l'accueil (voir critical.js) =====
     // Le CSS du haut de page est écrit dans index.html (affichage immédiat), style.min.css se charge ensuite sans bloquer.
     // Gardé dans critical.css avec l'empreinte de style.min.css : recalculé seulement si le CSS change
