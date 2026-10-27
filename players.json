@@ -144,19 +144,21 @@
         "team": "Aurora",
         "category": "pro",
         "code": "CSbTEaGDR5GhNAifhXfx8dnavVdRCvsLSCeTDvSS8ndJQE",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "XANTARES"
+        "liquipedia": "XANTARES",
+        "matchTime": "2026-10-27T15:19"
     },
     {
         "name": "kyxsan",
         "steamid": "76561198057282432",
         "team": "Aurora",
         "category": "pro",
-        "code": "CSEc7EnC6TCeGE5vdMLqQqaZFnYTrBLM8SLmffcRxvzKQE",
-        "updated": "25/10/2026",
+        "code": "CSERGEO2zcyhT6avwXOw3xLEaJzuPvBAbSfbKLyW6omcqE",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Kyxsan"
+        "liquipedia": "Kyxsan",
+        "matchTime": "2026-10-27T15:19"
     },
     {
         "name": "sh1ro",
@@ -175,9 +177,10 @@
         "team": "Aurora",
         "category": "pro",
         "code": "CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Woxic"
+        "liquipedia": "Woxic",
+        "matchTime": "2026-10-27T15:19"
     },
     {
         "name": "Wicadia",
@@ -185,19 +188,21 @@
         "team": "Aurora",
         "category": "pro",
         "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Wicadia"
+        "liquipedia": "Wicadia",
+        "matchTime": "2026-10-27T15:19"
     },
     {
         "name": "Jimpphat",
         "steamid": "76561198855375325",
         "team": "Aurora",
         "category": "pro",
-        "code": "CS8pi5Z9WbSeWXDR5OjcruQ462pMOBQXY7syxcXtyfBZ5R",
-        "updated": "25/10/2026",
+        "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Jimpphat"
+        "liquipedia": "Jimpphat",
+        "matchTime": "2026-10-27T15:19"
     },
     {
         "name": "tN1R",
@@ -388,9 +393,10 @@
         "team": "Legacy",
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "hltv": "https://www.hltv.org/player/12521/art"
+        "hltv": "https://www.hltv.org/player/12521/art",
+        "matchTime": "2026-10-27T15:52"
     },
     {
         "name": "n1ssim",
@@ -398,19 +404,21 @@
         "team": "Legacy",
         "category": "pro",
         "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "N1ssim"
+        "liquipedia": "N1ssim",
+        "matchTime": "2026-10-27T15:52"
     },
     {
         "name": "dumau",
-        "steamid": "76561198712713132",
+        "steamid": "76561198194325317",
         "team": "Legacy",
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Dumau"
+        "liquipedia": "Dumau",
+        "matchTime": "2026-10-27T15:52"
     },
     {
         "name": "try",
@@ -418,9 +426,10 @@
         "team": "Legacy",
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Try"
+        "liquipedia": "Try",
+        "matchTime": "2026-10-27T15:52"
     },
     {
         "name": "latto",
@@ -428,9 +437,10 @@
         "team": "Legacy",
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
-        "updated": "25/10/2026",
+        "updated": "27/10/2026",
         "trending": false,
-        "liquipedia": "Latto"
+        "liquipedia": "Latto",
+        "matchTime": "2026-10-27T15:52"
     },
     {
         "name": "FL1T",
