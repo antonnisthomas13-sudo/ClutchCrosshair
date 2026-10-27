@@ -274,9 +274,10 @@ export function skinParts(name) {
 export function groupSkins(items) {
     const groups = new Map();
     items.forEach(function (item) {
-        const group = groups.get(item.marketName);
+        const key = item.marketName + (item.phase ? "#" + item.phase : ""); // deux Doppler de phases différentes = deux skins
+        const group = groups.get(key);
         if (!group) {
-            groups.set(item.marketName, { item: item, count: 1 });
+            groups.set(key, { item: item, count: 1 });
             return;
         }
         group.count++;
@@ -313,12 +314,15 @@ export function formatPrice(value, currency, locale) {
 export function skinCardHTML(group, playerName, prefix, eager, t, locale) {
     const item = group.item;
     const parts = skinParts(item.name);
+    if (item.phase) {
+        parts.finish += " (" + item.phase + ")"; // "Doppler (Sapphire)" : la phase explique le prix
+    }
     const opt = function (key, fallback) {
         try { return t(key); } catch (error) { return fallback; }
     };
     const exterior = opt("skins.exteriors." + item.exterior, item.exterior);
     const rarity = opt("skins.rarities." + item.rarity, item.rarity);
-    const label = `${item.name}${item.exterior !== "Vanilla" ? " (" + exterior + ")" : ""}`;
+    const label = `${item.name}${item.phase ? " " + item.phase : ""}${item.exterior !== "Vanilla" ? " (" + exterior + ")" : ""}`;
     const badges = (item.statTrak ? `<span class="skin-badge">StatTrak™</span>` : "") + (item.souvenir ? `<span class="skin-badge">Souvenir</span>` : "");
     const float = item.float !== null
         ? `<div class="skin-wear" title="${t("skins.exactFloat")} ${item.float}"><span class="wear-bar"><i style="left: ${Math.min(100, item.float * 100).toFixed(2)}%"></i></span></div>`

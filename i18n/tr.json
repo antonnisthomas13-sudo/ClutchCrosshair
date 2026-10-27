@@ -349,7 +349,7 @@
         "reset": "Sıfırla"
     },
     "skins": {
-        "priceNote": "Fiyatlar: <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> üzerindeki en düşük ilan, ABD doları cinsinden; euro, ECB kuruyla; güncelleme: {date}. Doppler fazları ayrı fiyatlandırılmaz.",
+        "priceNote": "Fiyatlar: <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> üzerindeki en düşük ilan, ABD doları cinsinden; euro, ECB kuruyla; güncelleme: {date}. Her Doppler fazının (Ruby, Sapphire…) kendi fiyatı vardır.",
         "categories": {
             "knives": "Bıçaklar",
             "gloves": "Eldivenler",
@@ -742,7 +742,7 @@
             ],
             [
                 "Pro skinleri ve fiyatlar",
-                "Skinler, her pro oyuncunun herkese açık Steam envanterinden gelir ve her gün güncellenir. Fiyatlar, CSFloat'taki o anki en düşük satış fiyatıdır ve Avrupa Merkez Bankası'nın günlük kuruyla avroya çevrilir. Doppler fazlarının ayrı fiyatı yoktur."
+                "Skinler, her pro oyuncunun herkese açık Steam envanterinden gelir ve her gün güncellenir. Fiyatlar, CSFloat'taki o anki en düşük satış fiyatıdır ve Avrupa Merkez Bankası'nın günlük kuruyla avroya çevrilir. Her Doppler fazının (Ruby, Sapphire…) kendi fiyatı vardır."
             ],
             [
                 "Yanlış bir kod mu gördün?",

@@ -349,7 +349,7 @@
         "reset": "Réinitialiser"
     },
     "skins": {
-        "priceNote": "Prix : offre la plus basse sur <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> en dollars US, euros au taux de change de la BCE, mis à jour le {date}. Les phases des Doppler n'ont pas de prix séparé.",
+        "priceNote": "Prix : offre la plus basse sur <a href=\"https://csfloat.com\" rel=\"nofollow noopener\" target=\"_blank\">CSFloat</a> en dollars US, euros au taux de change de la BCE, mis à jour le {date}. Chaque phase des Doppler (Ruby, Sapphire…) a son propre prix.",
         "categories": {
             "knives": "Couteaux",
             "gloves": "Gants",
@@ -759,7 +759,7 @@
             ],
             [
                 "Skins des pros et prix",
-                "Les skins viennent de l'inventaire Steam public de chaque pro, mis à jour chaque jour. Les prix sont le prix le plus bas actuellement en vente sur CSFloat, convertis en euros avec le taux du jour de la Banque centrale européenne. Les phases Doppler n'ont pas de prix séparé."
+                "Les skins viennent de l'inventaire Steam public de chaque pro, mis à jour chaque jour. Les prix sont le prix le plus bas actuellement en vente sur CSFloat, convertis en euros avec le taux du jour de la Banque centrale européenne. Chaque phase des Doppler (Ruby, Sapphire…) a son propre prix."
             ],
             [
                 "Un code est faux ?",

@@ -1138,9 +1138,14 @@ ${faqItems(genFaq, "h3")}
         const skinsUrl = langUrl("skins/");
         const sa = ap("../"); // racine du site depuis skins/
 
+        // "★ Butterfly Knife | Doppler Ruby (Factory New)" : la phase des Doppler explique leur prix
+        function skinLabel(item) {
+            return item.name + (item.phase ? " " + item.phase : "") + (item.exterior !== "Vanilla" ? " (" + opt("skins.exteriors." + item.exterior, item.exterior) + ")" : "");
+        }
+
         function skinList(groups, max) {
             const names = groups.slice(0, max).map(function (g) {
-                return g.item.name + (g.item.exterior !== "Vanilla" ? " (" + opt("skins.exteriors." + g.item.exterior, g.item.exterior) + ")" : "");
+                return skinLabel(g.item);
             });
             return names.length > 1 ? names.slice(0, -1).join(", ") + " " + t("common.and") + " " + names[names.length - 1] : names.join("");
         }
@@ -1173,7 +1178,7 @@ ${faqItems(genFaq, "h3")}
             }
             if (p.hasPrices) {
                 faq.unshift([t("skins.faqWorthQ", { name: p.name }),
-                    t("skins.faqWorthA", { name: p.name, usd: money(p.value, "USD"), eur: money(p.valueEur, "EUR"), date: skinData.prices.updated, item: p.best[0].item.marketName, price: price(p.best[0].item.price, "USD") })]);
+                    t("skins.faqWorthA", { name: p.name, usd: money(p.value, "USD"), eur: money(p.valueEur, "EUR"), date: skinData.prices.updated, item: skinLabel(p.best[0].item), price: price(p.best[0].item.price, "USD") })]);
             }
             faq.push([t("skins.faqFloatQ"), t("skins.faqFloatA", { name: p.name })]);
 

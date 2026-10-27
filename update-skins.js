@@ -117,6 +117,7 @@ function readSkins(inventory) {
         };
         const wear = prop("Wear Rating");
         const pattern = prop("Pattern Template");
+        const finish = prop("Finish Catalog"); // numéro exact du motif : distingue les phases des Doppler (416 = Sapphire...)
         const weapon = tag(d, "Weapon");
         items.push({
             id: asset.assetid,
@@ -129,6 +130,8 @@ function readSkins(inventory) {
             rarityColor: rarity && rarity.color ? "#" + rarity.color.toUpperCase() : "",
             float: wear ? Number(wear.float_value) : null,
             pattern: pattern ? Number(pattern.int_value) : null,
+            paintIndex: finish ? Number(finish.int_value) : null,
+            phase: null,                                    // ex. "Sapphire", "Phase 2" (Doppler seulement, rempli avec le prix)
             statTrak: /^(★ )?StatTrak™/.test(d.name),
             souvenir: /^Souvenir /.test(d.name),
             image: crypto.createHash("sha1").update(d.icon_url).digest("hex").slice(0, 16),
@@ -162,7 +165,52 @@ async function fetchPrices() {
     (Array.isArray(list) ? list : list.data || []).forEach(function (entry) {
         prices.set(entry.market_hash_name, entry.min_price / 100); // CSFloat compte en centimes de dollar
     });
+    prices.key = key;
     return prices;
+}
+
+// Les Doppler et Gamma Doppler ont le même nom sur le marché quelle que soit leur phase, mais pas le même prix
+// (une Sapphire vaut 3 à 4 fois une Phase 1). La liste de prix ne donne que la phase la moins chère :
+// pour ces skins on demande à CSFloat l'annonce la moins chère avec le numéro de motif exact (paint_index).
+function needsPhasePrice(item) {
+    return /Doppler/.test(item.marketName) && item.paintIndex != null;
+}
+
+async function fetchPhasePrices(items, key) {
+    const cache = new Map();
+    let problems = 0;
+    for (const item of items.filter(needsPhasePrice)) {
+        const id = item.marketName + "#" + item.paintIndex;
+        if (!cache.has(id)) {
+            let found = null;
+            try {
+                const url = "https://csfloat.com/api/v1/listings?type=buy_now&sort_by=lowest_price&limit=1&market_hash_name=" + encodeURIComponent(item.marketName) + "&paint_index=" + item.paintIndex;
+                const response = await fetch(url, { headers: { Authorization: key } });
+                if (response.ok) {
+                    const json = await response.json();
+                    const listing = (Array.isArray(json) ? json : json.data || [])[0];
+                    if (listing && listing.item && listing.item.paint_index === item.paintIndex) {
+                        found = { usd: listing.price / 100, phase: listing.item.phase || null };
+                    }
+                }
+            } catch (error) {
+                // laissé à null : signalé plus bas
+            }
+            cache.set(id, found);
+            await sleep(1500); // politesse envers CSFloat
+        }
+        const found = cache.get(id);
+        if (found) {
+            item.price = found.usd;
+            item.phase = found.phase;
+        } else {
+            // Pas d'annonce pour cette phase : on retire le prix plutôt que d'afficher celui d'une autre phase
+            item.price = null;
+            problems++;
+            console.log("  ATTENTION : pas de prix pour " + item.marketName + " (motif " + item.paintIndex + ")");
+        }
+    }
+    return problems;
 }
 
 // Taux de change officiel du jour (Banque centrale européenne, gratuit) : combien de dollars pour 1 euro
@@ -251,17 +299,20 @@ async function main() {
         const prices = await fetchPrices();
         if (prices) {
             const rate = await fetchEuroRate();
-            let found = 0;
             allItems.forEach(function (item) {
                 const usd = prices.get(item.marketName);
                 item.price = usd !== undefined ? usd : null;
-                item.priceEur = usd !== undefined ? Math.round(usd / rate * 100) / 100 : null;
-                if (usd !== undefined) {
+            });
+            const problems = await fetchPhasePrices(allItems, prices.key);
+            let found = 0;
+            allItems.forEach(function (item) {
+                item.priceEur = item.price != null ? Math.round(item.price / rate * 100) / 100 : null;
+                if (item.price != null) {
                     found++;
                 }
             });
             result.prices = { source: "CSFloat", updated: today(), usdPerEur: rate };
-            console.log("Prix : " + found + " skins sur " + allItems.length + " (taux 1 € = " + rate + " $)");
+            console.log("Prix : " + found + " skins sur " + allItems.length + " (taux 1 € = " + rate + " $), dont " + allItems.filter(needsPhasePrice).length + " Doppler au prix de leur phase" + (problems ? ", " + problems + " SANS PRIX (voir ATTENTION)" : ""));
         }
     } catch (error) {
         console.log("Prix non mis à jour (" + error.message + "), anciens prix gardés");
@@ -271,6 +322,7 @@ async function main() {
             if (old) {
                 item.price = old.price;
                 item.priceEur = old.priceEur;
+                item.phase = old.phase || null;
             }
         });
         result.prices = previous.prices;
