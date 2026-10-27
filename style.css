@@ -237,6 +237,7 @@ body {
     font-variant-numeric: tabular-nums;
     caret-color: var(--accent-line);
     -webkit-font-smoothing: antialiased;
+    overflow-wrap: break-word; /* coupe un mot trop long pour l'écran (ex. un code CS... dans une phrase) au lieu d'élargir la page sur téléphone */
 }
 
 ::selection {
