@@ -1,12 +1,12 @@
 {
- "updated": "28/10/2026",
+ "updated": "29/10/2026",
  "players": [
   {
    "name": "ZywOo",
    "steamid": "76561198113666193",
    "team": "Team Vitality",
    "status": "public",
-   "updated": "28/10/2026",
+   "updated": "29/10/2026",
    "items": [
     {
      "id": "54107854455",
@@ -25,7 +25,7 @@
      "souvenir": false,
      "image": "531f54e8960eda27",
      "price": 79.24,
-     "priceEur": 71.07
+     "priceEur": 71.18
     },
     {
      "id": "50934991444",
@@ -43,8 +43,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "60a66e9ca2e284c5",
-     "price": 42.71,
-     "priceEur": 38.3
+     "price": 42.69,
+     "priceEur": 38.35
     },
     {
      "id": "50655460263",
@@ -62,8 +62,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ea479b3b9510499b",
-     "price": 83.34,
-     "priceEur": 74.74
+     "price": 84.03,
+     "priceEur": 75.48
     },
     {
      "id": "50627939129",
@@ -82,7 +82,7 @@
      "souvenir": false,
      "image": "f7e27192befc1b91",
      "price": 6.66,
-     "priceEur": 5.97
+     "priceEur": 5.98
     },
     {
      "id": "50626093082",
@@ -100,8 +100,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "60a66e9ca2e284c5",
-     "price": 20.67,
-     "priceEur": 18.54
+     "price": 20.16,
+     "priceEur": 18.11
     },
     {
      "id": "50476810289",
@@ -119,8 +119,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e581cc052c97eed9",
-     "price": 0.72,
-     "priceEur": 0.65
+     "price": 0.73,
+     "priceEur": 0.66
     },
     {
      "id": "50476658766",
@@ -138,8 +138,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "a29de50856faf034",
-     "price": 62,
-     "priceEur": 55.61
+     "price": 61.2,
+     "priceEur": 54.97
     },
     {
      "id": "50414832731",
@@ -157,8 +157,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1d8e120937e1a7aa",
-     "price": 749.22,
-     "priceEur": 671.95
+     "price": 735,
+     "priceEur": 660.2
     },
     {
      "id": "50414781273",
@@ -176,8 +176,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "aa9f883630d70956",
-     "price": 90,
-     "priceEur": 80.72
+     "price": 85.17,
+     "priceEur": 76.5
     },
     {
      "id": "50414539580",
@@ -195,8 +195,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0ad7e7fec0e67943",
-     "price": 11.29,
-     "priceEur": 10.13
+     "price": 12.1,
+     "priceEur": 10.87
     },
     {
      "id": "50414526856",
@@ -214,7 +214,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2092fd4ccf0f7857",
-     "price": 0.74,
+     "price": 0.73,
      "priceEur": 0.66
     },
     {
@@ -233,7 +233,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6cc41cb57b4f83db",
-     "price": 4.44,
+     "price": 4.43,
      "priceEur": 3.98
     },
     {
@@ -252,8 +252,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "37245ea6a465839f",
-     "price": 1.31,
-     "priceEur": 1.17
+     "price": 1.33,
+     "priceEur": 1.19
     },
     {
      "id": "50375546429",
@@ -271,8 +271,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5489101756c4457b",
-     "price": 8.8,
-     "priceEur": 7.89
+     "price": 8.36,
+     "priceEur": 7.51
     },
     {
      "id": "50375477099",
@@ -290,8 +290,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fd840e1c7e193ce8",
-     "price": 11.58,
-     "priceEur": 10.39
+     "price": 11.6,
+     "priceEur": 10.42
     },
     {
      "id": "50375464332",
@@ -309,8 +309,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "715d4d9f2b481e66",
-     "price": 4.51,
-     "priceEur": 4.04
+     "price": 4.45,
+     "priceEur": 4
     },
     {
      "id": "50158280890",
@@ -328,8 +328,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ef34c202f5b0de75",
-     "price": 420,
-     "priceEur": 376.68
+     "price": 420.68,
+     "priceEur": 377.87
     },
     {
      "id": "50158280876",
@@ -347,8 +347,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ee2cca0908cc2c5d",
-     "price": 46,
-     "priceEur": 41.26
+     "price": 44.44,
+     "priceEur": 39.92
     },
     {
      "id": "50158280845",
@@ -366,8 +366,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "20a3f5f50efd1151",
-     "price": 312,
-     "priceEur": 279.82
+     "price": 314,
+     "priceEur": 282.04
     },
     {
      "id": "50002492161",
@@ -386,7 +386,7 @@
      "souvenir": false,
      "image": "08d32c815eb65fad",
      "price": 462.83,
-     "priceEur": 415.09
+     "priceEur": 415.73
     },
     {
      "id": "49408131980",
@@ -404,8 +404,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "18e35e89198887a2",
-     "price": 125.51,
-     "priceEur": 112.57
+     "price": 123.87,
+     "priceEur": 111.26
     },
     {
      "id": "49202818643",
@@ -423,8 +423,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7d5aac050f532aed",
-     "price": 85.7,
-     "priceEur": 76.86
+     "price": 84.5,
+     "priceEur": 75.9
     },
     {
      "id": "47641566718",
@@ -442,8 +442,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e14b4c7df71f46f1",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "47623856164",
@@ -461,8 +461,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b7dde17414804cce",
-     "price": 1.43,
-     "priceEur": 1.28
+     "price": 1.39,
+     "priceEur": 1.25
     },
     {
      "id": "47559350915",
@@ -481,7 +481,7 @@
      "souvenir": false,
      "image": "f3cd38a56e050b74",
      "price": 5721.08,
-     "priceEur": 5131.01
+     "priceEur": 5138.85
     },
     {
      "id": "46153207670",
@@ -518,8 +518,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "46153203893",
@@ -556,8 +556,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "93603dec8f150a18",
-     "price": 1204.42,
-     "priceEur": 1080.2
+     "price": 1225,
+     "priceEur": 1100.33
     },
     {
      "id": "44004357147",
@@ -594,8 +594,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "47d1986cb9e39da7",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "44004353099",
@@ -670,8 +670,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c9928935780a6895",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.09,
+     "priceEur": 0.08
     },
     {
      "id": "44004343430",
@@ -746,8 +746,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "47d1986cb9e39da7",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "44004335803",
@@ -784,8 +784,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "47d1986cb9e39da7",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "44004332069",
@@ -936,8 +936,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "3eb9035dbddca347",
-     "price": 409.28,
-     "priceEur": 367.07
+     "price": 400,
+     "priceEur": 359.29
     },
     {
      "id": "43806382694",
@@ -1126,8 +1126,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7c368aa4021a3fdd",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "43806354632",
@@ -1145,8 +1145,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "381b49ee02489c10",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "43806353079",
@@ -1221,8 +1221,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "24915cd4d3b7abcc",
-     "price": 1.6,
-     "priceEur": 1.43
+     "price": 1.61,
+     "priceEur": 1.45
     },
     {
      "id": "43806340967",
@@ -1335,8 +1335,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1b149689a29f7f32",
-     "price": 0.19,
-     "priceEur": 0.17
+     "price": 0.15,
+     "priceEur": 0.13
     },
     {
      "id": "43806328075",
@@ -1354,8 +1354,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "dd5b537ea0f2f95e",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43806326547",
@@ -1392,8 +1392,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "dd5b537ea0f2f95e",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43806322664",
@@ -1430,8 +1430,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2c747e79be18fc94",
-     "price": 0.91,
-     "priceEur": 0.82
+     "price": 1.05,
+     "priceEur": 0.94
     },
     {
      "id": "43806319660",
@@ -1449,8 +1449,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "dd5b537ea0f2f95e",
-     "price": 0.58,
-     "priceEur": 0.52
+     "price": 0.57,
+     "priceEur": 0.51
     },
     {
      "id": "43806316857",
@@ -1506,8 +1506,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e030a3040f25d3b8",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "43806302630",
@@ -1544,8 +1544,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "acab695838ec1f6d",
-     "price": 2.91,
-     "priceEur": 2.61
+     "price": 2.86,
+     "priceEur": 2.57
     },
     {
      "id": "43806242727",
@@ -1620,8 +1620,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "74307c5eb3846cf8",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43806236957",
@@ -1658,7 +1658,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3eb6f09b8dad6b7c",
-     "price": 0.15,
+     "price": 0.14,
      "priceEur": 0.13
     },
     {
@@ -1677,7 +1677,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3eb6f09b8dad6b7c",
-     "price": 0.15,
+     "price": 0.14,
      "priceEur": 0.13
     },
     {
@@ -1696,8 +1696,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "74307c5eb3846cf8",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43806223666",
@@ -1715,8 +1715,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cf9ef98417c4c050",
-     "price": 0.62,
-     "priceEur": 0.56
+     "price": 0.59,
+     "priceEur": 0.53
     },
     {
      "id": "43806222297",
@@ -1734,8 +1734,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e0fb6120c58f6eab",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.25,
+     "priceEur": 0.22
     },
     {
      "id": "43806221041",
@@ -1753,8 +1753,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "3eb6f09b8dad6b7c",
-     "price": 0.15,
-     "priceEur": 0.13
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "43806219648",
@@ -1772,8 +1772,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e030a3040f25d3b8",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "43806217918",
@@ -1791,8 +1791,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "696300c1771af90d",
-     "price": 1.84,
-     "priceEur": 1.65
+     "price": 1.61,
+     "priceEur": 1.45
     },
     {
      "id": "43806216447",
@@ -1829,8 +1829,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "74307c5eb3846cf8",
-     "price": 0.42,
-     "priceEur": 0.38
+     "price": 0.4,
+     "priceEur": 0.36
     },
     {
      "id": "43806201883",
@@ -1848,7 +1848,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "647d680636b2d6aa",
-     "price": 0.34,
+     "price": 0.33,
      "priceEur": 0.3
     },
     {
@@ -1867,8 +1867,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "d6858e1f54da2087",
-     "price": 3.42,
-     "priceEur": 3.07
+     "price": 3.43,
+     "priceEur": 3.08
     },
     {
      "id": "43806198704",
@@ -1886,7 +1886,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "abf47fb2e2e9c9f9",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -1905,8 +1905,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f751853f9d27ac71",
-     "price": 0.84,
-     "priceEur": 0.75
+     "price": 0.85,
+     "priceEur": 0.76
     },
     {
      "id": "43806192750",
@@ -1943,8 +1943,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "945417013c8ebc19",
-     "price": 0.2,
-     "priceEur": 0.18
+     "price": 0.22,
+     "priceEur": 0.2
     },
     {
      "id": "43806188853",
@@ -1981,8 +1981,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "60b5c37b166aa5be",
-     "price": 3977.06,
-     "priceEur": 3566.87
+     "price": 4040,
+     "priceEur": 3628.85
     },
     {
      "id": "43805950354",
@@ -2000,8 +2000,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "032a66c51354150a",
-     "price": 374.57,
-     "priceEur": 335.94
+     "price": 375.37,
+     "priceEur": 337.17
     },
     {
      "id": "43805927416",
@@ -2076,8 +2076,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "2c13c7eb33b58f37",
-     "price": 0.16,
-     "priceEur": 0.14
+     "price": 0.15,
+     "priceEur": 0.13
     },
     {
      "id": "43805858778",
@@ -2209,8 +2209,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f2f7b898db0d66e7",
-     "price": 1.66,
-     "priceEur": 1.49
+     "price": 1.54,
+     "priceEur": 1.38
     },
     {
      "id": "43805845378",
@@ -2229,7 +2229,7 @@
      "souvenir": false,
      "image": "9f4d1bb8b69a878b",
      "price": 0.44,
-     "priceEur": 0.39
+     "priceEur": 0.4
     },
     {
      "id": "43805843687",
@@ -2418,8 +2418,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d88a75a7a019a22f",
-     "price": 0.16,
-     "priceEur": 0.14
+     "price": 0.18,
+     "priceEur": 0.16
     },
     {
      "id": "43805816938",
@@ -2437,8 +2437,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e21ffca1a49dfe1a",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "43805814856",
@@ -2456,8 +2456,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f84585593e30b7c8",
-     "price": 0.07,
-     "priceEur": 0.06
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "43805813049",
@@ -2513,8 +2513,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1787d15b58e60318",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "43805807845",
@@ -2627,8 +2627,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a0e37898437c56fe",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "43805792507",
@@ -2684,8 +2684,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e21ffca1a49dfe1a",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "43805785630",
@@ -2741,8 +2741,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e21ffca1a49dfe1a",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "43805751236",
@@ -2760,8 +2760,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6aee58e2ab02fb07",
-     "price": 0.65,
-     "priceEur": 0.58
+     "price": 0.69,
+     "priceEur": 0.62
     },
     {
      "id": "43805749583",
@@ -2798,8 +2798,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "23ad28d2b1d64de4",
-     "price": 3.68,
-     "priceEur": 3.3
+     "price": 3.64,
+     "priceEur": 3.27
     },
     {
      "id": "43805745257",
@@ -2855,8 +2855,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4df1f3d8d71d842e",
-     "price": 0.36,
-     "priceEur": 0.32
+     "price": 0.37,
+     "priceEur": 0.33
     },
     {
      "id": "43805734899",
@@ -2874,8 +2874,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "47d1986cb9e39da7",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43805733362",
@@ -3045,8 +3045,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "47d1986cb9e39da7",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43805718124",
@@ -3197,8 +3197,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c9928935780a6895",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.09,
+     "priceEur": 0.08
     },
     {
      "id": "43635443307",
@@ -3235,8 +3235,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a6ed2827cf871be6",
-     "price": 0.18,
-     "priceEur": 0.16
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43635420690",
@@ -3254,8 +3254,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "25f49902cc418a52",
-     "price": 0.67,
-     "priceEur": 0.6
+     "price": 0.6,
+     "priceEur": 0.54
     },
     {
      "id": "43635416330",
@@ -3331,7 +3331,7 @@
      "souvenir": false,
      "image": "569ed0d61f0468e1",
      "price": 0.34,
-     "priceEur": 0.3
+     "priceEur": 0.31
     },
     {
      "id": "43635373506",
@@ -3425,8 +3425,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8bfd0242da7e784b",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43635346781",
@@ -3445,7 +3445,7 @@
      "souvenir": false,
      "image": "0c01fd1bd93ef95c",
      "price": 0.34,
-     "priceEur": 0.3
+     "priceEur": 0.31
     },
     {
      "id": "43635342023",
@@ -3501,8 +3501,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8bfd0242da7e784b",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43635212648",
@@ -3596,8 +3596,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a6ed2827cf871be6",
-     "price": 0.18,
-     "priceEur": 0.16
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43635189482",
@@ -3615,8 +3615,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8bfd0242da7e784b",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43635185083",
@@ -3653,8 +3653,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5f2486c030812983",
-     "price": 1.1,
-     "priceEur": 0.99
+     "price": 1.25,
+     "priceEur": 1.12
     },
     {
      "id": "43635175118",
@@ -3691,8 +3691,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "8bfd0242da7e784b",
-     "price": 0.49,
-     "priceEur": 0.44
+     "price": 0.68,
+     "priceEur": 0.61
     },
     {
      "id": "43635165310",
@@ -3767,8 +3767,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a6ed2827cf871be6",
-     "price": 0.18,
-     "priceEur": 0.16
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "43635144438",
@@ -3805,8 +3805,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c9928935780a6895",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.09,
+     "priceEur": 0.08
     },
     {
      "id": "43635135560",
@@ -3919,8 +3919,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "569ed0d61f0468e1",
-     "price": 0.39,
-     "priceEur": 0.35
+     "price": 0.37,
+     "priceEur": 0.33
     },
     {
      "id": "43635096315",
@@ -3957,7 +3957,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "aeaec4719f50f4d2",
-     "price": 2.01,
+     "price": 2,
      "priceEur": 1.8
     },
     {
@@ -3976,8 +3976,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "ed46b1f8b1d1b6f5",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "43635081176",
@@ -4033,8 +4033,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4df1f3d8d71d842e",
-     "price": 0.36,
-     "priceEur": 0.32
+     "price": 0.37,
+     "priceEur": 0.33
     },
     {
      "id": "43635065570",
@@ -4090,8 +4090,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4df1f3d8d71d842e",
-     "price": 0.36,
-     "priceEur": 0.32
+     "price": 0.37,
+     "priceEur": 0.33
     },
     {
      "id": "43635015192",
@@ -4128,8 +4128,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4df1f3d8d71d842e",
-     "price": 0.36,
-     "priceEur": 0.32
+     "price": 0.37,
+     "priceEur": 0.33
     },
     {
      "id": "43635004017",
@@ -4147,8 +4147,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b39aa2b7edf8ea2d",
-     "price": 1.35,
-     "priceEur": 1.21
+     "price": 1.28,
+     "priceEur": 1.15
     },
     {
      "id": "43634999416",
@@ -4166,8 +4166,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "569ed0d61f0468e1",
-     "price": 0.61,
-     "priceEur": 0.55
+     "price": 0.6,
+     "priceEur": 0.54
     },
     {
      "id": "43634992229",
@@ -4185,8 +4185,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b39aa2b7edf8ea2d",
-     "price": 1.35,
-     "priceEur": 1.21
+     "price": 1.28,
+     "priceEur": 1.15
     },
     {
      "id": "43634986187",
@@ -4204,8 +4204,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8bfd0242da7e784b",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43634980160",
@@ -4280,8 +4280,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f2f7b898db0d66e7",
-     "price": 1.66,
-     "priceEur": 1.49
+     "price": 1.54,
+     "priceEur": 1.38
     },
     {
      "id": "43634945981",
@@ -4299,8 +4299,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "58206dff35aaa8d7",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634941120",
@@ -4318,8 +4318,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "1f60e0ac544e4486",
-     "price": 0.15,
-     "priceEur": 0.13
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "43634936382",
@@ -4432,8 +4432,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "1f60e0ac544e4486",
-     "price": 0.15,
-     "priceEur": 0.13
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "43634891413",
@@ -4470,8 +4470,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a7f6434370109c24",
-     "price": 0.38,
-     "priceEur": 0.34
+     "price": 0.39,
+     "priceEur": 0.35
     },
     {
      "id": "43634880824",
@@ -4508,8 +4508,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f2f7b898db0d66e7",
-     "price": 0.67,
-     "priceEur": 0.6
+     "price": 0.68,
+     "priceEur": 0.61
     },
     {
      "id": "43634866421",
@@ -4603,8 +4603,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "da9752d4d3dffe6b",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634822058",
@@ -4622,8 +4622,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ffc799e382296d0a",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634816833",
@@ -4660,8 +4660,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ffc799e382296d0a",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634791988",
@@ -4717,8 +4717,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "bc1dde5ee6d63a1e",
-     "price": 0.16,
-     "priceEur": 0.14
+     "price": 0.15,
+     "priceEur": 0.13
     },
     {
      "id": "43634777312",
@@ -4736,8 +4736,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c0c9e6e3174fb8a5",
-     "price": 0.95,
-     "priceEur": 0.85
+     "price": 0.9,
+     "priceEur": 0.81
     },
     {
      "id": "43634772710",
@@ -4774,8 +4774,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2e89b35de5efb178",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634762499",
@@ -4793,8 +4793,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "318e70fcf71e108b",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43634757135",
@@ -4812,8 +4812,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2e89b35de5efb178",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634752051",
@@ -4831,8 +4831,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ffc799e382296d0a",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43634747391",
@@ -4907,8 +4907,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c647ea4056847f6a",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.08,
+     "priceEur": 0.07
     },
     {
      "id": "43634664132",
@@ -4945,8 +4945,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "1fc2a44622fe2b21",
-     "price": 0.88,
-     "priceEur": 0.79
+     "price": 0.9,
+     "priceEur": 0.81
     },
     {
      "id": "43512303700",
@@ -5040,8 +5040,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4f2b2c5802bf3e25",
-     "price": 0.15,
-     "priceEur": 0.13
+     "price": 0.18,
+     "priceEur": 0.16
     },
     {
      "id": "43512192420",
@@ -5097,8 +5097,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3c12c1d418672419",
-     "price": 0.42,
-     "priceEur": 0.38
+     "price": 0.46,
+     "priceEur": 0.41
     },
     {
      "id": "43512177775",
@@ -5154,8 +5154,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "da9752d4d3dffe6b",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "43512154868",
@@ -5192,8 +5192,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c647ea4056847f6a",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.08,
+     "priceEur": 0.07
     },
     {
      "id": "43512143265",
@@ -5249,8 +5249,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cdd925f137ce3819",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "43512083282",
@@ -5402,7 +5402,7 @@
      "souvenir": true,
      "image": "04c75887394ed93a",
      "price": 266,
-     "priceEur": 238.57
+     "priceEur": 238.93
     },
     {
      "id": "40518827427",
@@ -5420,8 +5420,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d303274aed9397ae",
-     "price": 149.41,
-     "priceEur": 134
+     "price": 151.56,
+     "priceEur": 136.14
     },
     {
      "id": "39868518815",
@@ -5439,8 +5439,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f4ac2ed219965373",
-     "price": 0.59,
-     "priceEur": 0.53
+     "price": 0.6,
+     "priceEur": 0.54
     },
     {
      "id": "39868515637",
@@ -5534,8 +5534,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "37225099379",
@@ -5553,8 +5553,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7d5aac050f532aed",
-     "price": 85.7,
-     "priceEur": 76.86
+     "price": 84.5,
+     "priceEur": 75.9
     },
     {
      "id": "36377868853",
@@ -5610,8 +5610,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "3c9b5185fd8eaa01",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.15,
+     "priceEur": 0.13
     },
     {
      "id": "34529681441",
@@ -5705,8 +5705,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f42d969d4b6d1ecb",
-     "price": 0.84,
-     "priceEur": 0.75
+     "price": 0.54,
+     "priceEur": 0.49
     },
     {
      "id": "34434221929",
@@ -5800,8 +5800,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "de852452ca2c1ab2",
-     "price": 0.14,
-     "priceEur": 0.13
+     "price": 0.18,
+     "priceEur": 0.16
     },
     {
      "id": "34434204556",
@@ -5819,8 +5819,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a8f138acfcdcd768",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.23,
+     "priceEur": 0.21
     },
     {
      "id": "34434202285",
@@ -5838,8 +5838,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "21a5f5d59ff6c8f3",
-     "price": 0.4,
-     "priceEur": 0.36
+     "price": 0.54,
+     "priceEur": 0.49
     },
     {
      "id": "34434199256",
@@ -5857,8 +5857,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "716f94488d73230b",
-     "price": 0.39,
-     "priceEur": 0.35
+     "price": 0.38,
+     "priceEur": 0.34
     },
     {
      "id": "34434196888",
@@ -5971,8 +5971,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "9bdccb1a28b5fa6f",
-     "price": 5.75,
-     "priceEur": 5.16
+     "price": 5.76,
+     "priceEur": 5.17
     },
     {
      "id": "34434173508",
@@ -6009,8 +6009,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "20b4875e5be399db",
-     "price": 5.06,
-     "priceEur": 4.54
+     "price": 5.15,
+     "priceEur": 4.63
     },
     {
      "id": "34434166864",
@@ -6028,8 +6028,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cc76b6c31ddd18a4",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "34434164294",
@@ -6123,8 +6123,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "92f406354ec40581",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "34434148072",
@@ -6218,8 +6218,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b9054fc888014b57",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "34434126566",
@@ -6275,8 +6275,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a0e37898437c56fe",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "34434117081",
@@ -6313,8 +6313,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "da9752d4d3dffe6b",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.12,
+     "priceEur": 0.11
     },
     {
      "id": "34434109126",
@@ -6352,7 +6352,7 @@
      "souvenir": false,
      "image": "0d8fc46f1874a9f7",
      "price": 0.54,
-     "priceEur": 0.48
+     "priceEur": 0.49
     },
     {
      "id": "34434102694",
@@ -6408,8 +6408,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "10edf45d1c96e9ad",
-     "price": 0.3,
-     "priceEur": 0.27
+     "price": 0.29,
+     "priceEur": 0.26
     },
     {
      "id": "34434092031",
@@ -6427,8 +6427,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a8f138acfcdcd768",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.23,
+     "priceEur": 0.21
     },
     {
      "id": "34434084473",
@@ -6484,8 +6484,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "67fefe56a873c82b",
-     "price": 0.32,
-     "priceEur": 0.29
+     "price": 0.31,
+     "priceEur": 0.28
     },
     {
      "id": "34434071405",
@@ -6522,8 +6522,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ffc799e382296d0a",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "34433919420",
@@ -6541,8 +6541,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "c0c9e6e3174fb8a5",
-     "price": 1.85,
-     "priceEur": 1.66
+     "price": 1.4,
+     "priceEur": 1.26
     },
     {
      "id": "34253702423",
@@ -6579,8 +6579,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "da9752d4d3dffe6b",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.12,
+     "priceEur": 0.11
     },
     {
      "id": "34138137847",
@@ -6598,8 +6598,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cc76b6c31ddd18a4",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "34138132486",
@@ -6712,8 +6712,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "40370af9d509a23f",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "33580292122",
@@ -6750,8 +6750,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cdd925f137ce3819",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.1,
+     "priceEur": 0.09
     },
     {
      "id": "33580269789",
@@ -6864,8 +6864,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31755454453",
@@ -6883,8 +6883,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "31755452728",
@@ -6921,8 +6921,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31755449433",
@@ -6959,8 +6959,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31755446284",
@@ -6978,8 +6978,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31755443937",
@@ -6997,8 +6997,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31755442090",
@@ -7016,8 +7016,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31755440120",
@@ -7035,8 +7035,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "31755438534",
@@ -7073,8 +7073,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31755435050",
@@ -7111,8 +7111,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "31755431813",
@@ -7168,8 +7168,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31755426074",
@@ -7187,8 +7187,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "31755424626",
@@ -7225,8 +7225,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31745657732",
@@ -7244,8 +7244,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "10edf45d1c96e9ad",
-     "price": 0.3,
-     "priceEur": 0.27
+     "price": 0.29,
+     "priceEur": 0.26
     },
     {
      "id": "31745654227",
@@ -7263,8 +7263,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "de852452ca2c1ab2",
-     "price": 0.14,
-     "priceEur": 0.13
+     "price": 0.18,
+     "priceEur": 0.16
     },
     {
      "id": "31745650521",
@@ -7282,8 +7282,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "21a5f5d59ff6c8f3",
-     "price": 0.4,
-     "priceEur": 0.36
+     "price": 0.54,
+     "priceEur": 0.49
     },
     {
      "id": "31745645149",
@@ -7301,8 +7301,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7c368aa4021a3fdd",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "31745640982",
@@ -7358,8 +7358,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1b149689a29f7f32",
-     "price": 0.19,
-     "priceEur": 0.17
+     "price": 0.15,
+     "priceEur": 0.13
     },
     {
      "id": "31745630904",
@@ -7377,8 +7377,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2a8433b57cdf48e1",
-     "price": 0.15,
-     "priceEur": 0.13
+     "price": 0.18,
+     "priceEur": 0.16
     },
     {
      "id": "31745627333",
@@ -7396,8 +7396,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "381b49ee02489c10",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "31745623785",
@@ -7415,8 +7415,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7c368aa4021a3fdd",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "31745618769",
@@ -7510,8 +7510,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "21a5f5d59ff6c8f3",
-     "price": 0.4,
-     "priceEur": 0.36
+     "price": 0.54,
+     "priceEur": 0.49
     },
     {
      "id": "31744481934",
@@ -7548,8 +7548,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "dd5b537ea0f2f95e",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.19,
+     "priceEur": 0.17
     },
     {
      "id": "31744474906",
@@ -7586,8 +7586,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1b149689a29f7f32",
-     "price": 0.55,
-     "priceEur": 0.49
+     "price": 0.42,
+     "priceEur": 0.38
     },
     {
      "id": "31603911196",
@@ -7605,8 +7605,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31603908776",
@@ -7624,8 +7624,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31603906237",
@@ -7644,7 +7644,7 @@
      "souvenir": true,
      "image": "9ab734fcd75562bc",
      "price": 0.54,
-     "priceEur": 0.48
+     "priceEur": 0.49
     },
     {
      "id": "31603903774",
@@ -7662,8 +7662,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31603901923",
@@ -7681,8 +7681,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31603899535",
@@ -7700,8 +7700,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "31603897540",
@@ -7719,8 +7719,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31603895241",
@@ -7738,7 +7738,7 @@
      "statTrak": false,
      "souvenir": true,
      "image": "accd616872aabef8",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -7795,8 +7795,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31603885893",
@@ -7833,8 +7833,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "b469dcc5ad1070c1",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31603881500",
@@ -7852,8 +7852,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31603879417",
@@ -7871,8 +7871,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31603877240",
@@ -7928,8 +7928,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31603870329",
@@ -7966,8 +7966,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "31559204055",
@@ -7986,7 +7986,7 @@
      "souvenir": true,
      "image": "9ab734fcd75562bc",
      "price": 0.54,
-     "priceEur": 0.48
+     "priceEur": 0.49
     },
     {
      "id": "31559201778",
@@ -8005,7 +8005,7 @@
      "souvenir": true,
      "image": "9ab734fcd75562bc",
      "price": 0.54,
-     "priceEur": 0.48
+     "priceEur": 0.49
     },
     {
      "id": "31559195595",
@@ -8023,8 +8023,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31559184009",
@@ -8042,8 +8042,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31559182229",
@@ -8061,8 +8061,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31559180497",
@@ -8080,7 +8080,7 @@
      "statTrak": false,
      "souvenir": true,
      "image": "accd616872aabef8",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -8100,7 +8100,7 @@
      "souvenir": true,
      "image": "b838a44297eee6f4",
      "price": 0.93,
-     "priceEur": 0.83
+     "priceEur": 0.84
     },
     {
      "id": "31559175615",
@@ -8118,8 +8118,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31559173771",
@@ -8156,8 +8156,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31559169004",
@@ -8232,8 +8232,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31559127077",
@@ -8289,8 +8289,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "31559101089",
@@ -8327,8 +8327,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "ead2fc8460ff4b08",
-     "price": 14.38,
-     "priceEur": 12.9
+     "price": 14.27,
+     "priceEur": 12.82
     },
     {
      "id": "31559083065",
@@ -8346,8 +8346,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "b469dcc5ad1070c1",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31547782743",
@@ -8403,8 +8403,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31547777740",
@@ -8422,8 +8422,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "5f3a8121fe0c8333",
-     "price": 0.25,
-     "priceEur": 0.22
+     "price": 0.26,
+     "priceEur": 0.23
     },
     {
      "id": "31547776129",
@@ -8442,7 +8442,7 @@
      "souvenir": true,
      "image": "8cd0c51262c00984",
      "price": 2,
-     "priceEur": 1.79
+     "priceEur": 1.8
     },
     {
      "id": "31547774241",
@@ -8479,8 +8479,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31547770110",
@@ -8517,8 +8517,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "31547763399",
@@ -8537,7 +8537,7 @@
      "souvenir": true,
      "image": "9ab734fcd75562bc",
      "price": 0.54,
-     "priceEur": 0.48
+     "priceEur": 0.49
     },
     {
      "id": "31547760515",
@@ -8555,8 +8555,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31547758893",
@@ -8612,8 +8612,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "31547753344",
@@ -8650,8 +8650,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "31547747506",
@@ -8670,7 +8670,7 @@
      "souvenir": true,
      "image": "0c68267d74b58a57",
      "price": 0.93,
-     "priceEur": 0.83
+     "priceEur": 0.84
     },
     {
      "id": "31547744345",
@@ -8708,7 +8708,7 @@
      "souvenir": true,
      "image": "a413acccd36b7630",
      "price": 126,
-     "priceEur": 113
+     "priceEur": 113.18
     },
     {
      "id": "31547734374",
@@ -8726,8 +8726,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "31536258394",
@@ -8745,8 +8745,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "59900e01064dd596",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "31125697276",
@@ -8783,8 +8783,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1c922d16aeeb0089",
-     "price": 0.41,
-     "priceEur": 0.37
+     "price": 0.34,
+     "priceEur": 0.31
     },
     {
      "id": "30631357235",
@@ -8802,8 +8802,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30631354680",
@@ -8859,8 +8859,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30631348205",
@@ -8897,8 +8897,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631345134",
@@ -8916,8 +8916,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0acd0fbedf3d8e4e",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631341828",
@@ -8935,8 +8935,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631338282",
@@ -9011,8 +9011,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631332133",
@@ -9030,8 +9030,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631330940",
@@ -9049,8 +9049,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30631328240",
@@ -9068,8 +9068,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30631327177",
@@ -9087,8 +9087,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0c68267d74b58a57",
-     "price": 0.62,
-     "priceEur": 0.56
+     "price": 0.64,
+     "priceEur": 0.57
     },
     {
      "id": "30631325933",
@@ -9106,8 +9106,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631324553",
@@ -9125,8 +9125,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "30631323086",
@@ -9163,8 +9163,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631297209",
@@ -9182,8 +9182,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631295703",
@@ -9239,7 +9239,7 @@
      "statTrak": false,
      "souvenir": true,
      "image": "accd616872aabef8",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -9315,8 +9315,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.05,
-     "priceEur": 0.04
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "30631278348",
@@ -9372,8 +9372,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631273220",
@@ -9391,8 +9391,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631271480",
@@ -9448,8 +9448,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "630c99b09c4f9cae",
-     "price": 2,
-     "priceEur": 1.79
+     "price": 1.98,
+     "priceEur": 1.78
     },
     {
      "id": "30631265879",
@@ -9467,8 +9467,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30631263107",
@@ -9486,8 +9486,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "5f3a8121fe0c8333",
-     "price": 0.25,
-     "priceEur": 0.22
+     "price": 0.26,
+     "priceEur": 0.23
     },
     {
      "id": "30631261430",
@@ -9505,8 +9505,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "9ab734fcd75562bc",
-     "price": 0.92,
-     "priceEur": 0.83
+     "price": 0.91,
+     "priceEur": 0.82
     },
     {
      "id": "30631259901",
@@ -9524,8 +9524,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.1,
-     "priceEur": 0.09
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30631255934",
@@ -9543,8 +9543,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "30630885664",
@@ -9562,8 +9562,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30600368828",
@@ -9581,8 +9581,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d4f3f30ca7714411",
-     "price": 5.22,
-     "priceEur": 4.68
+     "price": 5.11,
+     "priceEur": 4.59
     },
     {
      "id": "30600354317",
@@ -9600,8 +9600,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c01a0974ece1ebe7",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.25,
+     "priceEur": 0.22
     },
     {
      "id": "30600347307",
@@ -9619,8 +9619,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8d5961e574db55ce",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.13,
+     "priceEur": 0.12
     },
     {
      "id": "30600342039",
@@ -9638,8 +9638,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3dc0d84068e20c63",
-     "price": 0.93,
-     "priceEur": 0.83
+     "price": 0.94,
+     "priceEur": 0.84
     },
     {
      "id": "30600326590",
@@ -9658,7 +9658,7 @@
      "souvenir": false,
      "image": "5f7284284cb6b926",
      "price": 2.79,
-     "priceEur": 2.5
+     "priceEur": 2.51
     },
     {
      "id": "30600324641",
@@ -9714,8 +9714,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "73b29810324f7ccb",
-     "price": 0.94,
-     "priceEur": 0.84
+     "price": 0.97,
+     "priceEur": 0.87
     },
     {
      "id": "30600230053",
@@ -9733,8 +9733,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "30600228760",
@@ -9752,8 +9752,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600227721",
@@ -9771,8 +9771,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "e3c5eaae3a9bbb37",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "30600226408",
@@ -9790,7 +9790,7 @@
      "statTrak": false,
      "souvenir": true,
      "image": "accd616872aabef8",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -9809,8 +9809,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "74bc6edd86f8f6a7",
-     "price": 0.13,
-     "priceEur": 0.12
+     "price": 0.16,
+     "priceEur": 0.14
     },
     {
      "id": "30600223621",
@@ -9828,8 +9828,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "30600222231",
@@ -9866,8 +9866,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "30600219148",
@@ -9904,8 +9904,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "e3c5eaae3a9bbb37",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "30600215762",
@@ -9999,8 +9999,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30600204765",
@@ -10037,7 +10037,7 @@
      "statTrak": false,
      "souvenir": true,
      "image": "accd616872aabef8",
-     "price": 0.25,
+     "price": 0.24,
      "priceEur": 0.22
     },
     {
@@ -10075,8 +10075,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "b469dcc5ad1070c1",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30600198065",
@@ -10094,8 +10094,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600196792",
@@ -10113,8 +10113,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "0433aaad06a322ad",
-     "price": 0.17,
-     "priceEur": 0.15
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "30600195109",
@@ -10132,8 +10132,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600193695",
@@ -10189,8 +10189,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600189961",
@@ -10246,8 +10246,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600172537",
@@ -10284,8 +10284,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "9ab734fcd75562bc",
-     "price": 0.92,
-     "priceEur": 0.83
+     "price": 0.91,
+     "priceEur": 0.82
     },
     {
      "id": "30600169500",
@@ -10303,8 +10303,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30600167362",
@@ -10322,8 +10322,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "479d373a346ba5d0",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.04,
+     "priceEur": 0.04
     },
     {
      "id": "30600165798",
@@ -10341,8 +10341,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8f31abbc7ccad13c",
-     "price": 0.12,
-     "priceEur": 0.11
+     "price": 0.11,
+     "priceEur": 0.1
     },
     {
      "id": "30600164306",
@@ -10360,8 +10360,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "cbf319769e996042",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "30600162695",
@@ -10512,8 +10512,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0d8fc46f1874a9f7",
-     "price": 1.03,
-     "priceEur": 0.92
+     "price": 1.2,
+     "priceEur": 1.08
     },
     {
      "id": "29542881552",
@@ -10531,8 +10531,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fb93950fd963948a",
-     "price": 0.33,
-     "priceEur": 0.3
+     "price": 0.32,
+     "priceEur": 0.29
     },
     {
      "id": "27269594210",
@@ -10588,8 +10588,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4514f8f46744d872",
-     "price": 0.84,
-     "priceEur": 0.75
+     "price": 0.79,
+     "priceEur": 0.71
     },
     {
      "id": "25242819643",
@@ -10702,8 +10702,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f70068ce45c6fda2",
-     "price": 0.57,
-     "priceEur": 0.51
+     "price": 0.69,
+     "priceEur": 0.62
     },
     {
      "id": "23452671732",
@@ -10760,7 +10760,7 @@
      "souvenir": false,
      "image": "e7f7781b97b58787",
      "price": 2,
-     "priceEur": 1.79
+     "priceEur": 1.8
     },
     {
      "id": "23421828364",
@@ -10778,8 +10778,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4387e9ff486e958f",
-     "price": 91.56,
-     "priceEur": 82.12
+     "price": 91.06,
+     "priceEur": 81.79
     },
     {
      "id": "23415516076",
@@ -10892,8 +10892,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3dc0d84068e20c63",
-     "price": 1.24,
-     "priceEur": 1.11
+     "price": 1.34,
+     "priceEur": 1.2
     },
     {
      "id": "23412255397",
@@ -10931,7 +10931,7 @@
      "souvenir": false,
      "image": "90212aabb791305f",
      "price": 5.14,
-     "priceEur": 4.61
+     "priceEur": 4.62
     },
     {
      "id": "23399004984",
@@ -10949,8 +10949,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "48d20c1f4a7292c4",
-     "price": 4.08,
-     "priceEur": 3.66
+     "price": 4.2,
+     "priceEur": 3.77
     },
     {
      "id": "23376103910",
@@ -11025,8 +11025,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "9641386a807601cd",
-     "price": 0.76,
-     "priceEur": 0.68
+     "price": 0.75,
+     "priceEur": 0.67
     },
     {
      "id": "20902113868",
@@ -11063,8 +11063,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "6ee50379e23bc523",
-     "price": 9.81,
-     "priceEur": 8.8
+     "price": 9.52,
+     "priceEur": 8.55
     },
     {
      "id": "20738642419",
@@ -11082,8 +11082,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "7d7e7b51bd123f22",
-     "price": 21.5,
-     "priceEur": 19.28
+     "price": 22.09,
+     "priceEur": 19.84
     },
     {
      "id": "20506565547",
@@ -11139,8 +11139,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "58adc9c5cdd2b7a5",
-     "price": 0.88,
-     "priceEur": 0.79
+     "price": 0.96,
+     "priceEur": 0.86
     },
     {
      "id": "20224034951",
@@ -11158,7 +11158,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b2d7dd4eda095c73",
-     "price": 0.84,
+     "price": 0.83,
      "priceEur": 0.75
     },
     {
@@ -11177,8 +11177,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "58adc9c5cdd2b7a5",
-     "price": 0.88,
-     "priceEur": 0.79
+     "price": 0.96,
+     "priceEur": 0.86
     },
     {
      "id": "20224032838",
@@ -11234,8 +11234,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "673fab09a26f3e41",
-     "price": 0.69,
-     "priceEur": 0.62
+     "price": 0.68,
+     "priceEur": 0.61
     },
     {
      "id": "20224012851",
@@ -11253,7 +11253,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5b98c32cbfb49c00",
-     "price": 0.74,
+     "price": 0.73,
      "priceEur": 0.66
     },
     {
@@ -11329,7 +11329,7 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5b98c32cbfb49c00",
-     "price": 0.74,
+     "price": 0.73,
      "priceEur": 0.66
     },
     {
@@ -11367,8 +11367,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "ee2cca0908cc2c5d",
-     "price": 84.98,
-     "priceEur": 76.22
+     "price": 85.06,
+     "priceEur": 76.4
     },
     {
      "id": "18019442273",
@@ -11463,7 +11463,7 @@
      "souvenir": false,
      "image": "87de27de56aa1ffd",
      "price": 2.96,
-     "priceEur": 2.65
+     "priceEur": 2.66
     },
     {
      "id": "17203180290",
@@ -11482,7 +11482,7 @@
      "souvenir": false,
      "image": "20e89d1a87940ee9",
      "price": 4.47,
-     "priceEur": 4.01
+     "priceEur": 4.02
     },
     {
      "id": "17203173797",
@@ -11520,7 +11520,7 @@
      "souvenir": false,
      "image": "47497c2555806415",
      "price": 1.62,
-     "priceEur": 1.45
+     "priceEur": 1.46
     },
     {
      "id": "17203173781",
@@ -11538,8 +11538,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1036ad94323ecf78",
-     "price": 2.88,
-     "priceEur": 2.58
+     "price": 2.86,
+     "priceEur": 2.57
     },
     {
      "id": "17203173771",
@@ -11558,7 +11558,7 @@
      "souvenir": false,
      "image": "3e67c3290fd7370a",
      "price": 2.6,
-     "priceEur": 2.33
+     "priceEur": 2.34
     },
     {
      "id": "17090692705",
@@ -11672,7 +11672,7 @@
      "souvenir": false,
      "image": "78058982ca5f636d",
      "price": 3.16,
-     "priceEur": 2.83
+     "priceEur": 2.84
     },
     {
      "id": "15179119734",
@@ -11690,8 +11690,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "8bde9882b6a5c26e",
-     "price": 0.25,
-     "priceEur": 0.22
+     "price": 0.23,
+     "priceEur": 0.21
     },
     {
      "id": "14703699626",
@@ -11709,8 +11709,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "df1c52c136c28a14",
-     "price": 0.32,
-     "priceEur": 0.29
+     "price": 0.33,
+     "priceEur": 0.3
     },
     {
      "id": "14657367734",
@@ -11728,8 +11728,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "39903f634a0d6a00",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.39,
+     "priceEur": 0.35
     },
     {
      "id": "14550552743",
@@ -11747,8 +11747,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "d19ae4047a26abbe",
-     "price": 1.55,
-     "priceEur": 1.39
+     "price": 1.54,
+     "priceEur": 1.38
     },
     {
      "id": "14544436351",
@@ -11804,8 +11804,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e8f3a97ff3880e3a",
-     "price": 0.93,
-     "priceEur": 0.83
+     "price": 0.89,
+     "priceEur": 0.8
     },
     {
      "id": "14421817436",
@@ -11823,8 +11823,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "396174c454afffeb",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "14293785255",
@@ -11842,8 +11842,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0fc8e631887e7af7",
-     "price": 201.24,
-     "priceEur": 180.48
+     "price": 198.99,
+     "priceEur": 178.74
     },
     {
      "id": "14260925500",
@@ -11861,8 +11861,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "ff524ccbef2ccae3",
-     "price": 4.2,
-     "priceEur": 3.77
+     "price": 4.84,
+     "priceEur": 4.35
     },
     {
      "id": "12086999490",
@@ -11880,8 +11880,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "245aedc42d5139c1",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.22,
+     "priceEur": 0.2
     },
     {
      "id": "7775277673",
@@ -11956,8 +11956,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c0152fd9b78bbd65",
-     "price": 0.08,
-     "priceEur": 0.07
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "6391987263",
@@ -12023,46 +12023,8 @@
    "steamid": "76561198386265483",
    "team": "Team Spirit",
    "status": "public",
-   "updated": "28/10/2026",
+   "updated": "29/10/2026",
    "items": [
-    {
-     "id": "54202012931",
-     "name": "★ Specialist Gloves | Crimson Kimono",
-     "marketName": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
-     "weapon": "",
-     "category": "gloves",
-     "exterior": "Minimal Wear",
-     "rarity": "Extraordinary",
-     "rarityColor": "#EB4B4B",
-     "float": 0.1247933954000473,
-     "pattern": 208,
-     "paintIndex": null,
-     "phase": null,
-     "statTrak": false,
-     "souvenir": false,
-     "image": "bcb37e5e0a73dfb7",
-     "price": 2200.97,
-     "priceEur": 1973.96
-    },
-    {
-     "id": "54200866364",
-     "name": "★ Butterfly Knife | Fade",
-     "marketName": "★ Butterfly Knife | Fade (Factory New)",
-     "weapon": "Butterfly Knife",
-     "category": "knives",
-     "exterior": "Factory New",
-     "rarity": "Covert",
-     "rarityColor": "#EB4B4B",
-     "float": 0.03177562728524208,
-     "pattern": 956,
-     "paintIndex": null,
-     "phase": null,
-     "statTrak": false,
-     "souvenir": false,
-     "image": "722f0d9133376ab2",
-     "price": 1888,
-     "priceEur": 1693.27
-    },
     {
      "id": "54207309111",
      "name": "Souvenir M4A1-S | Welcome to the Jungle",
@@ -12080,7 +12042,64 @@
      "souvenir": true,
      "image": "5d21c7802f78f2f8",
      "price": 834.31,
-     "priceEur": 748.26
+     "priceEur": 749.4
+    },
+    {
+     "id": "54202012931",
+     "name": "★ Specialist Gloves | Crimson Kimono",
+     "marketName": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
+     "weapon": "",
+     "category": "gloves",
+     "exterior": "Minimal Wear",
+     "rarity": "Extraordinary",
+     "rarityColor": "#EB4B4B",
+     "float": 0.1247933954000473,
+     "pattern": 208,
+     "paintIndex": null,
+     "phase": null,
+     "statTrak": false,
+     "souvenir": false,
+     "image": "bcb37e5e0a73dfb7",
+     "price": 2200,
+     "priceEur": 1976.11
+    },
+    {
+     "id": "54200866364",
+     "name": "★ Butterfly Knife | Fade",
+     "marketName": "★ Butterfly Knife | Fade (Factory New)",
+     "weapon": "Butterfly Knife",
+     "category": "knives",
+     "exterior": "Factory New",
+     "rarity": "Covert",
+     "rarityColor": "#EB4B4B",
+     "float": 0.03177562728524208,
+     "pattern": 956,
+     "paintIndex": null,
+     "phase": null,
+     "statTrak": false,
+     "souvenir": false,
+     "image": "722f0d9133376ab2",
+     "price": 1850,
+     "priceEur": 1661.73
+    },
+    {
+     "id": "54225011935",
+     "name": "★ Karambit | Doppler",
+     "marketName": "★ Karambit | Doppler (Factory New)",
+     "weapon": "Karambit",
+     "category": "knives",
+     "exterior": "Factory New",
+     "rarity": "Covert",
+     "rarityColor": "#EB4B4B",
+     "float": 0.03301987424492836,
+     "pattern": 774,
+     "paintIndex": 415,
+     "phase": "Ruby",
+     "statTrak": false,
+     "souvenir": false,
+     "image": "e79e7fe1f7cae3dc",
+     "price": 6699,
+     "priceEur": 6017.25
     },
     {
      "id": "54097884623",
@@ -12098,8 +12117,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4c9dfaa61feacc8c",
-     "price": 1120,
-     "priceEur": 1004.48
+     "price": 1110.5,
+     "priceEur": 997.48
     },
     {
      "id": "54060396265",
@@ -12117,8 +12136,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d10d39e21b18ffe6",
-     "price": 2491.81,
-     "priceEur": 2234.81
+     "price": 2461.72,
+     "priceEur": 2211.19
     },
     {
      "id": "54046016489",
@@ -12136,8 +12155,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e77a9d4287a1c9e6",
-     "price": 438.16,
-     "priceEur": 392.97
+     "price": 436.75,
+     "priceEur": 392.3
     },
     {
      "id": "54045907226",
@@ -12155,8 +12174,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b525f5cabcea262b",
-     "price": 6400,
-     "priceEur": 5739.91
+     "price": 6350,
+     "priceEur": 5703.76
     },
     {
      "id": "53944185182",
@@ -12174,8 +12193,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0f0b613a4c0cd345",
-     "price": 10.8,
-     "priceEur": 9.69
+     "price": 10.86,
+     "priceEur": 9.75
     },
     {
      "id": "53741176135",
@@ -12193,8 +12212,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7cd409bd06a4b045",
-     "price": 404,
-     "priceEur": 362.33
+     "price": 412.79,
+     "priceEur": 370.78
     },
     {
      "id": "53733431599",
@@ -12212,8 +12231,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7ecdddc22c7bfa6c",
-     "price": 6380.88,
-     "priceEur": 5722.76
+     "price": 6342.88,
+     "priceEur": 5697.37
     },
     {
      "id": "53638653244",
@@ -12231,8 +12250,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f7fb4d34f2544243",
-     "price": 6969.67,
-     "priceEur": 6250.83
+     "price": 6690.54,
+     "priceEur": 6009.65
     },
     {
      "id": "53499722651",
@@ -12250,8 +12269,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d816dfec30a10a2a",
-     "price": 9555,
-     "priceEur": 8569.51
+     "price": 9335.22,
+     "priceEur": 8385.18
     },
     {
      "id": "53275915834",
@@ -12269,8 +12288,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fdc679fabd5fa3e6",
-     "price": 689.69,
-     "priceEur": 618.56
+     "price": 700.57,
+     "priceEur": 629.27
     },
     {
      "id": "53231614683",
@@ -12288,8 +12307,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "829dfe48385edddb",
-     "price": 10354.94,
-     "priceEur": 9286.94
+     "price": 10515.96,
+     "priceEur": 9445.76
     },
     {
      "id": "53028902310",
@@ -12307,8 +12326,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d672717173876dbe",
-     "price": 144.67,
-     "priceEur": 129.75
+     "price": 144.34,
+     "priceEur": 129.65
     },
     {
      "id": "53020027539",
@@ -12327,7 +12346,7 @@
      "souvenir": false,
      "image": "0fc8e631887e7af7",
      "price": 624.9,
-     "priceEur": 560.45
+     "priceEur": 561.3
     },
     {
      "id": "53012889002",
@@ -12345,8 +12364,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "dacc3a53517a146d",
-     "price": 156.55,
-     "priceEur": 140.4
+     "price": 165.24,
+     "priceEur": 148.42
     },
     {
      "id": "53012420576",
@@ -12365,7 +12384,7 @@
      "souvenir": false,
      "image": "f96768a5f8d914f2",
      "price": 394.92,
-     "priceEur": 354.19
+     "priceEur": 354.73
     },
     {
      "id": "52855043588",
@@ -12383,8 +12402,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0d557f9e1b49788c",
-     "price": 103.6,
-     "priceEur": 92.91
+     "price": 103.15,
+     "priceEur": 92.65
     },
     {
      "id": "52854086964",
@@ -12402,8 +12421,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5b1bb3c91962a077",
-     "price": 1127.5,
-     "priceEur": 1011.21
+     "price": 1123.05,
+     "priceEur": 1008.76
     },
     {
      "id": "52793190483",
@@ -12421,8 +12440,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "12203327492be914",
-     "price": 23.65,
-     "priceEur": 21.21
+     "price": 23.49,
+     "priceEur": 21.1
     },
     {
      "id": "52691587654",
@@ -12440,8 +12459,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "befbfd8adf4d33cc",
-     "price": 523.81,
-     "priceEur": 469.78
+     "price": 517.25,
+     "priceEur": 464.61
     },
     {
      "id": "52691586648",
@@ -12459,8 +12478,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3e8b9472027dc126",
-     "price": 389.94,
-     "priceEur": 349.72
+     "price": 375,
+     "priceEur": 336.84
     },
     {
      "id": "50753110304",
@@ -12478,8 +12497,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4afdac42ad50caf9",
-     "price": 517.4,
-     "priceEur": 464.04
+     "price": 520.15,
+     "priceEur": 467.21
     },
     {
      "id": "50701596278",
@@ -12497,8 +12516,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4e7b6a22f3154e40",
-     "price": 569.9,
-     "priceEur": 511.12
+     "price": 560,
+     "priceEur": 503.01
     },
     {
      "id": "50176761956",
@@ -12535,8 +12554,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "832d8d4a274614b8",
-     "price": 5983.95,
-     "priceEur": 5366.77
+     "price": 6074.67,
+     "priceEur": 5456.45
     },
     {
      "id": "49922032047",
@@ -12554,8 +12573,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6921370c906ae6f7",
-     "price": 168.37,
-     "priceEur": 151
+     "price": 166.09,
+     "priceEur": 149.19
     },
     {
      "id": "49602687745",
@@ -12573,8 +12592,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "232d1705524a7862",
-     "price": 130,
-     "priceEur": 116.59
+     "price": 128,
+     "priceEur": 114.97
     },
     {
      "id": "48176198164",
@@ -12592,8 +12611,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "946bc7f023357f26",
-     "price": 111.85,
-     "priceEur": 100.31
+     "price": 114.96,
+     "priceEur": 103.26
     },
     {
      "id": "46938646626",
@@ -12612,7 +12631,7 @@
      "souvenir": false,
      "image": "8f3e16f47c034534",
      "price": 3150,
-     "priceEur": 2825.11
+     "priceEur": 2829.43
     },
     {
      "id": "46915593508",
@@ -12630,8 +12649,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8f8d7dc8c5fdba22",
-     "price": 968.82,
-     "priceEur": 868.9
+     "price": 883.7,
+     "priceEur": 793.77
     },
     {
      "id": "46676632859",
@@ -12649,8 +12668,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "17ecf09f07e2bcc2",
-     "price": 114.92,
-     "priceEur": 103.07
+     "price": 114.3,
+     "priceEur": 102.67
     },
     {
      "id": "46667688808",
@@ -12668,8 +12687,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c6f27757103ad729",
-     "price": 1465.62,
-     "priceEur": 1314.46
+     "price": 1465.45,
+     "priceEur": 1316.31
     },
     {
      "id": "46401928683",
@@ -12687,8 +12706,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "479f6b013bd7712e",
-     "price": 0.55,
-     "priceEur": 0.49
+     "price": 0.58,
+     "priceEur": 0.52
     },
     {
      "id": "45622265284",
@@ -12706,8 +12725,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "aba5f1e2dfa16e78",
-     "price": 1000,
-     "priceEur": 896.86
+     "price": 995,
+     "priceEur": 893.74
     },
     {
      "id": "45587465948",
@@ -12725,8 +12744,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0c7f1c179517c3ec",
-     "price": 6790,
-     "priceEur": 6089.69
+     "price": 6795.36,
+     "priceEur": 6103.8
     },
     {
      "id": "44190473380",
@@ -12744,8 +12763,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6b4d2122a65cf6ca",
-     "price": 58.37,
-     "priceEur": 52.35
+     "price": 58,
+     "priceEur": 52.1
     },
     {
      "id": "44155112984",
@@ -12763,8 +12782,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "13c687dcb3706a9e",
-     "price": 735.95,
-     "priceEur": 660.04
+     "price": 736.78,
+     "priceEur": 661.8
     },
     {
      "id": "43981133575",
@@ -12783,7 +12802,7 @@
      "souvenir": false,
      "image": "6bebf4da3b247ba8",
      "price": 905,
-     "priceEur": 811.66
+     "priceEur": 812.9
     },
     {
      "id": "42657088883",
@@ -12801,8 +12820,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0897eb525b31b191",
-     "price": 210.95,
-     "priceEur": 189.19
+     "price": 210,
+     "priceEur": 188.63
     },
     {
      "id": "42632091257",
@@ -12820,8 +12839,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4d0c6f64e7e59636",
-     "price": 1160,
-     "priceEur": 1040.36
+     "price": 1140,
+     "priceEur": 1023.98
     },
     {
      "id": "41570395937",
@@ -12839,8 +12858,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "8a8a28e180c83454",
-     "price": 174.02,
-     "priceEur": 156.07
+     "price": 170,
+     "priceEur": 152.7
     },
     {
      "id": "41418000682",
@@ -12858,8 +12877,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cf1c73b271a565d4",
-     "price": 172,
-     "priceEur": 154.26
+     "price": 172.06,
+     "priceEur": 154.55
     },
     {
      "id": "41417637044",
@@ -12877,8 +12896,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cf57bfdadf601078",
-     "price": 65.97,
-     "priceEur": 59.17
+     "price": 63.34,
+     "priceEur": 56.89
     },
     {
      "id": "40963654245",
@@ -12896,8 +12915,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e7558176daa04a8c",
-     "price": 30.05,
-     "priceEur": 26.95
+     "price": 30.2,
+     "priceEur": 27.13
     },
     {
      "id": "40825842533",
@@ -12934,8 +12953,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8db44d52842ef859",
-     "price": 29.64,
-     "priceEur": 26.58
+     "price": 30.11,
+     "priceEur": 27.05
     },
     {
      "id": "40154821395",
@@ -12953,8 +12972,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f4ac2ed219965373",
-     "price": 0.59,
-     "priceEur": 0.53
+     "price": 0.6,
+     "priceEur": 0.54
     },
     {
      "id": "37477227121",
@@ -12972,8 +12991,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "bfe95983b6d37239",
-     "price": 10384.1,
-     "priceEur": 9313.09
+     "price": 10150,
+     "priceEur": 9117.04
     },
     {
      "id": "37272535041",
@@ -12991,8 +13010,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c9ea79c2c6d441b3",
-     "price": 6.25,
-     "priceEur": 5.61
+     "price": 6.13,
+     "priceEur": 5.51
     },
     {
      "id": "36741404107",
@@ -13011,7 +13030,7 @@
      "souvenir": false,
      "image": "6af6e923538617cc",
      "price": 0.44,
-     "priceEur": 0.39
+     "priceEur": 0.4
     },
     {
      "id": "36660370211",
@@ -13029,8 +13048,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5248fb9aa4e0d89a",
-     "price": 109.45,
-     "priceEur": 98.16
+     "price": 109.88,
+     "priceEur": 98.7
     },
     {
      "id": "36642348133",
@@ -13067,8 +13086,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "53c809d1cd610461",
-     "price": 24.29,
-     "priceEur": 21.78
+     "price": 24.4,
+     "priceEur": 21.92
     },
     {
      "id": "35722500083",
@@ -13086,8 +13105,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "45f055aea05fe9a9",
-     "price": 0.47,
-     "priceEur": 0.42
+     "price": 0.52,
+     "priceEur": 0.47
     },
     {
      "id": "35618198487",
@@ -13106,7 +13125,7 @@
      "souvenir": false,
      "image": "f3d17a50a811a424",
      "price": 15.33,
-     "priceEur": 13.75
+     "priceEur": 13.77
     },
     {
      "id": "35511001450",
@@ -13124,8 +13143,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5dc10fef6463a241",
-     "price": 3.26,
-     "priceEur": 2.92
+     "price": 3.3,
+     "priceEur": 2.96
     },
     {
      "id": "35504618073",
@@ -13144,7 +13163,7 @@
      "souvenir": false,
      "image": "8a8a28e180c83454",
      "price": 100.2,
-     "priceEur": 89.87
+     "priceEur": 90
     }
    ]
   },
@@ -13153,7 +13172,7 @@
    "steamid": "76561198074762801",
    "team": "Falcons",
    "status": "public",
-   "updated": "28/10/2026",
+   "updated": "29/10/2026",
    "items": [
     {
      "id": "53911789885",
@@ -13171,8 +13190,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "12203327492be914",
-     "price": 55.37,
-     "priceEur": 49.66
+     "price": 54.23,
+     "priceEur": 48.71
     },
     {
      "id": "53485644727",
@@ -13209,8 +13228,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ff235be1f4eb1512",
-     "price": 258.99,
-     "priceEur": 232.28
+     "price": 257.12,
+     "priceEur": 230.95
     },
     {
      "id": "53419434826",
@@ -13229,7 +13248,7 @@
      "souvenir": false,
      "image": "c995ee54b087510b",
      "price": 18.62,
-     "priceEur": 16.7
+     "priceEur": 16.73
     },
     {
      "id": "53362801287",
@@ -13247,8 +13266,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "13c687dcb3706a9e",
-     "price": 735.95,
-     "priceEur": 660.04
+     "price": 736.78,
+     "priceEur": 661.8
     },
     {
      "id": "53362801286",
@@ -13285,8 +13304,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d816dfec30a10a2a",
-     "price": 9555,
-     "priceEur": 8569.51
+     "price": 9335.22,
+     "priceEur": 8385.18
     },
     {
      "id": "52847892342",
@@ -13304,8 +13323,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d32500e626ed7546",
-     "price": 376,
-     "priceEur": 337.22
+     "price": 371.69,
+     "priceEur": 333.86
     },
     {
      "id": "52681260613",
@@ -13323,8 +13342,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4d0c6f64e7e59636",
-     "price": 1160,
-     "priceEur": 1040.36
+     "price": 1140,
+     "priceEur": 1023.98
     },
     {
      "id": "52681244960",
@@ -13342,8 +13361,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "bd5d4e8c44009ff7",
-     "price": 3.63,
-     "priceEur": 3.26
+     "price": 3.73,
+     "priceEur": 3.35
     },
     {
      "id": "52680378426",
@@ -13361,8 +13380,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c3adf5580eef1428",
-     "price": 36.01,
-     "priceEur": 32.3
+     "price": 36,
+     "priceEur": 32.34
     },
     {
      "id": "52324450901",
@@ -13380,8 +13399,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "d550af86c36a056a",
-     "price": 74.28,
-     "priceEur": 66.62
+     "price": 74.99,
+     "priceEur": 67.36
     },
     {
      "id": "51838213163",
@@ -13399,8 +13418,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7cd409bd06a4b045",
-     "price": 404,
-     "priceEur": 362.33
+     "price": 412.79,
+     "priceEur": 370.78
     },
     {
      "id": "51665711802",
@@ -13418,8 +13437,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "106e1388ddb1b85b",
-     "price": 933.64,
-     "priceEur": 837.35
+     "price": 935.45,
+     "priceEur": 840.25
     },
     {
      "id": "51158737006",
@@ -13437,8 +13456,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "83d93ab0bfd7c415",
-     "price": 0.39,
-     "priceEur": 0.35
+     "price": 0.4,
+     "priceEur": 0.36
     },
     {
      "id": "50654735243",
@@ -13456,8 +13475,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0ad7e7fec0e67943",
-     "price": 8.9,
-     "priceEur": 7.98
+     "price": 8.7,
+     "priceEur": 7.81
     },
     {
      "id": "50654667570",
@@ -13475,8 +13494,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "fd840e1c7e193ce8",
-     "price": 26.58,
-     "priceEur": 23.84
+     "price": 26.38,
+     "priceEur": 23.7
     },
     {
      "id": "50654599005",
@@ -13494,8 +13513,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fd840e1c7e193ce8",
-     "price": 11.58,
-     "priceEur": 10.39
+     "price": 11.6,
+     "priceEur": 10.42
     },
     {
      "id": "50654572623",
@@ -13513,8 +13532,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "96a67d2f4913f2a7",
-     "price": 85.81,
-     "priceEur": 76.96
+     "price": 83.24,
+     "priceEur": 74.77
     },
     {
      "id": "50277863988",
@@ -13532,8 +13551,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a29de50856faf034",
-     "price": 43.53,
-     "priceEur": 39.04
+     "price": 41.57,
+     "priceEur": 37.34
     },
     {
      "id": "49818350990",
@@ -13570,8 +13589,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6ada61862ad28ba1",
-     "price": 1409.74,
-     "priceEur": 1264.34
+     "price": 1420.65,
+     "priceEur": 1276.07
     },
     {
      "id": "49408860512",
@@ -13589,8 +13608,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0c7f1c179517c3ec",
-     "price": 6790,
-     "priceEur": 6089.69
+     "price": 6795.36,
+     "priceEur": 6103.8
     },
     {
      "id": "49264743600",
@@ -13608,8 +13627,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "faef662ea435a87b",
-     "price": 134.61,
-     "priceEur": 120.73
+     "price": 144.13,
+     "priceEur": 129.46
     },
     {
      "id": "48947361032",
@@ -13627,8 +13646,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d816dfec30a10a2a",
-     "price": 9555,
-     "priceEur": 8569.51
+     "price": 9335.22,
+     "priceEur": 8385.18
     },
     {
      "id": "48844180256",
@@ -13646,8 +13665,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0f0b613a4c0cd345",
-     "price": 32.06,
-     "priceEur": 28.75
+     "price": 31.16,
+     "priceEur": 27.99
     },
     {
      "id": "48778931559",
@@ -13665,8 +13684,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "87366726f70ab121",
-     "price": 590,
-     "priceEur": 529.15
+     "price": 601.28,
+     "priceEur": 540.09
     },
     {
      "id": "48775225991",
@@ -13684,8 +13703,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b69638b94a78e884",
-     "price": 290.35,
-     "priceEur": 260.4
+     "price": 288.12,
+     "priceEur": 258.8
     },
     {
      "id": "48153083732",
@@ -13703,8 +13722,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ddaacd0f7c144907",
-     "price": 440,
-     "priceEur": 394.62
+     "price": 442.03,
+     "priceEur": 397.04
     },
     {
      "id": "47779437044",
@@ -13722,8 +13741,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ce3a6915d5a12f92",
-     "price": 34.18,
-     "priceEur": 30.65
+     "price": 34,
+     "priceEur": 30.54
     },
     {
      "id": "47765352684",
@@ -13741,8 +13760,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b803ab3245b50474",
-     "price": 0.28,
-     "priceEur": 0.25
+     "price": 0.25,
+     "priceEur": 0.22
     },
     {
      "id": "47765345765",
@@ -13760,8 +13779,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d46c9c0278cd54a0",
-     "price": 0.23,
-     "priceEur": 0.21
+     "price": 0.2,
+     "priceEur": 0.18
     },
     {
      "id": "47765339952",
@@ -13818,7 +13837,7 @@
      "souvenir": false,
      "image": "bc368ee4a199bf02",
      "price": 0.44,
-     "priceEur": 0.39
+     "priceEur": 0.4
     },
     {
      "id": "47764826333",
@@ -13893,8 +13912,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "87d160924027aadf",
-     "price": 0.18,
-     "priceEur": 0.16
+     "price": 0.24,
+     "priceEur": 0.22
     },
     {
      "id": "47764802628",
@@ -13931,8 +13950,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7113313ab3692b87",
-     "price": 0.28,
-     "priceEur": 0.25
+     "price": 0.22,
+     "priceEur": 0.2
     },
     {
      "id": "47743515935",
@@ -13950,8 +13969,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b803ab3245b50474",
-     "price": 0.28,
-     "priceEur": 0.25
+     "price": 0.25,
+     "priceEur": 0.22
     },
     {
      "id": "47743510307",
@@ -13970,7 +13989,7 @@
      "souvenir": false,
      "image": "bc368ee4a199bf02",
      "price": 0.44,
-     "priceEur": 0.39
+     "priceEur": 0.4
     },
     {
      "id": "47743499103",
@@ -14027,7 +14046,7 @@
      "souvenir": false,
      "image": "9cc20fe2b5628d9f",
      "price": 15.14,
-     "priceEur": 13.58
+     "priceEur": 13.6
     },
     {
      "id": "46706309736",
@@ -14045,8 +14064,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6947e1d0a9c6af54",
-     "price": 1510,
-     "priceEur": 1354.26
+     "price": 1500,
+     "priceEur": 1347.35
     },
     {
      "id": "46039065307",
@@ -14064,8 +14083,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c6f27757103ad729",
-     "price": 1465.62,
-     "priceEur": 1314.46
+     "price": 1465.45,
+     "priceEur": 1316.31
     },
     {
      "id": "44463197134",
@@ -14197,8 +14216,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "aad4bc8e2f277065",
-     "price": 13492.61,
-     "priceEur": 12101
+     "price": 13462.61,
+     "priceEur": 12092.53
     },
     {
      "id": "44353610028",
@@ -14235,8 +14254,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2ff2f14d87065b84",
-     "price": 3245,
-     "priceEur": 2910.31
+     "price": 3280,
+     "priceEur": 2946.2
     },
     {
      "id": "43287757702",
@@ -14254,8 +14273,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "bfe95983b6d37239",
-     "price": 10621,
-     "priceEur": 9525.56
+     "price": 10470,
+     "priceEur": 9404.47
     },
     {
      "id": "41918635414",
@@ -14273,8 +14292,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "722f0d9133376ab2",
-     "price": 1888,
-     "priceEur": 1693.27
+     "price": 1850,
+     "priceEur": 1661.73
     },
     {
      "id": "41098850435",
@@ -14292,8 +14311,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f28684d60a72c6e2",
-     "price": 1264.74,
-     "priceEur": 1134.3
+     "price": 1262.9,
+     "priceEur": 1134.38
     },
     {
      "id": "41035047477",
@@ -14311,8 +14330,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ef5ace273d81669b",
-     "price": 1130,
-     "priceEur": 1013.45
+     "price": 1100,
+     "priceEur": 988.05
     },
     {
      "id": "40784058094",
@@ -14349,8 +14368,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "a3a8afb2fc9142a6",
-     "price": 0.03,
-     "priceEur": 0.03
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "40784055376",
@@ -14387,8 +14406,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ee23751232d343a8",
-     "price": 2.17,
-     "priceEur": 1.95
+     "price": 2.14,
+     "priceEur": 1.92
     },
     {
      "id": "39945557836",
@@ -14406,8 +14425,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "8f06b2da0ea00a4d",
-     "price": 328.59,
-     "priceEur": 294.7
+     "price": 350,
+     "priceEur": 314.38
     },
     {
      "id": "39934659359",
@@ -14425,8 +14444,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "3514cb78ae716b9f",
-     "price": 111.05,
-     "priceEur": 99.6
+     "price": 115.05,
+     "priceEur": 103.34
     },
     {
      "id": "39934640202",
@@ -14444,8 +14463,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "946bc7f023357f26",
-     "price": 111.85,
-     "priceEur": 100.31
+     "price": 114.96,
+     "priceEur": 103.26
     },
     {
      "id": "39894292290",
@@ -14463,8 +14482,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "fe4ddddc10d325ab",
-     "price": 181.13,
-     "priceEur": 162.45
+     "price": 175,
+     "priceEur": 157.19
     },
     {
      "id": "39893661277",
@@ -14482,8 +14501,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "a45ab6a555349f46",
-     "price": 12.89,
-     "priceEur": 11.56
+     "price": 12.8,
+     "priceEur": 11.5
     },
     {
      "id": "39411119701",
@@ -14501,8 +14520,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "bd0624edd8ae1c19",
-     "price": 29.44,
-     "priceEur": 26.4
+     "price": 34.2,
+     "priceEur": 30.72
     },
     {
      "id": "37441967534",
@@ -14520,8 +14539,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "26af60b54d506051",
-     "price": 116.33,
-     "priceEur": 104.33
+     "price": 115.67,
+     "priceEur": 103.9
     },
     {
      "id": "37441967518",
@@ -14539,8 +14558,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0fc8e631887e7af7",
-     "price": 201.24,
-     "priceEur": 180.48
+     "price": 198.99,
+     "priceEur": 178.74
     },
     {
      "id": "37441960137",
@@ -14558,8 +14577,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3ff704025622fd0e",
-     "price": 29.44,
-     "priceEur": 26.4
+     "price": 28.95,
+     "priceEur": 26
     },
     {
      "id": "37340455141",
@@ -14577,8 +14596,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4387e9ff486e958f",
-     "price": 91.56,
-     "priceEur": 82.12
+     "price": 91.06,
+     "priceEur": 81.79
     },
     {
      "id": "36706888730",
@@ -14596,8 +14615,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "4ed453483799810b",
-     "price": 0.54,
-     "priceEur": 0.48
+     "price": 0.51,
+     "priceEur": 0.46
     },
     {
      "id": "35930498896",
@@ -14615,8 +14634,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "5187135c465d7e90",
-     "price": 13.16,
-     "priceEur": 11.8
+     "price": 12.86,
+     "priceEur": 11.55
     },
     {
      "id": "33840164172",
@@ -14635,7 +14654,7 @@
      "souvenir": false,
      "image": "8eedb72f909522fe",
      "price": 11,
-     "priceEur": 9.87
+     "priceEur": 9.88
     },
     {
      "id": "33753897051",
@@ -14653,8 +14672,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "d7dd023f2b687b95",
-     "price": 1.91,
-     "priceEur": 1.71
+     "price": 1.92,
+     "priceEur": 1.72
     },
     {
      "id": "30811835689",
@@ -14672,8 +14691,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cc76b6c31ddd18a4",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "30811822618",
@@ -14691,8 +14710,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "4215388c4b808b8b",
-     "price": 17.85,
-     "priceEur": 16.01
+     "price": 17.28,
+     "priceEur": 15.52
     },
     {
      "id": "30597131177",
@@ -14710,8 +14729,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "fbb0524cf790f969",
-     "price": 7.8,
-     "priceEur": 7
+     "price": 8.36,
+     "priceEur": 7.51
     },
     {
      "id": "30286552760",
@@ -14729,8 +14748,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "30482bc61b009351",
-     "price": 2.35,
-     "priceEur": 2.11
+     "price": 2.46,
+     "priceEur": 2.21
     },
     {
      "id": "29147119049",
@@ -14748,8 +14767,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "97bbd2449c3166f5",
-     "price": 1.09,
-     "priceEur": 0.98
+     "price": 1.1,
+     "priceEur": 0.99
     },
     {
      "id": "28930828264",
@@ -14767,8 +14786,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f52e58ff6099b70a",
-     "price": 0.27,
-     "priceEur": 0.24
+     "price": 0.28,
+     "priceEur": 0.25
     },
     {
      "id": "28846013787",
@@ -14786,8 +14805,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "8e23508a3947f1cf",
-     "price": 0.44,
-     "priceEur": 0.39
+     "price": 0.47,
+     "priceEur": 0.42
     },
     {
      "id": "28846010807",
@@ -14805,8 +14824,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f4ac2ed219965373",
-     "price": 0.59,
-     "priceEur": 0.53
+     "price": 0.6,
+     "priceEur": 0.54
     },
     {
      "id": "28026197576",
@@ -14825,7 +14844,7 @@
      "souvenir": false,
      "image": "5c69aa0586d6496a",
      "price": 150.69,
-     "priceEur": 135.15
+     "priceEur": 135.35
     },
     {
      "id": "27162336573",
@@ -14843,8 +14862,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "ef3cf43298f50b2b",
-     "price": 218.28,
-     "priceEur": 195.77
+     "price": 217.49,
+     "priceEur": 195.36
     },
     {
      "id": "26535495791",
@@ -14863,7 +14882,7 @@
      "souvenir": false,
      "image": "3f06fd50740e9d73",
      "price": 4.15,
-     "priceEur": 3.72
+     "priceEur": 3.73
     },
     {
      "id": "25997807237",
@@ -14881,8 +14900,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c6560b04c8784795",
-     "price": 1.76,
-     "priceEur": 1.58
+     "price": 1.8,
+     "priceEur": 1.62
     },
     {
      "id": "25607082647",
@@ -14900,8 +14919,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "29a5310ba5336ad4",
-     "price": 11.39,
-     "priceEur": 10.22
+     "price": 11.66,
+     "priceEur": 10.47
     },
     {
      "id": "25586648818",
@@ -14919,8 +14938,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7384f5512aed82cb",
-     "price": 80.13,
-     "priceEur": 71.87
+     "price": 79.06,
+     "priceEur": 71.01
     },
     {
      "id": "24405292689",
@@ -16249,8 +16268,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "26904dc30f948ed8",
-     "price": 8.5,
-     "priceEur": 7.62
+     "price": 8.57,
+     "priceEur": 7.7
     },
     {
      "id": "22806106763",
@@ -16268,8 +16287,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "9e398e4a806a85ab",
-     "price": 15.62,
-     "priceEur": 14.01
+     "price": 15.5,
+     "priceEur": 13.92
     },
     {
      "id": "22806105777",
@@ -16287,8 +16306,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7529b97a8857e90a",
-     "price": 18.82,
-     "priceEur": 16.88
+     "price": 19.81,
+     "priceEur": 17.79
     },
     {
      "id": "20646454063",
@@ -16307,7 +16326,7 @@
      "souvenir": false,
      "image": "5b17eab85541505e",
      "price": 28.54,
-     "priceEur": 25.6
+     "priceEur": 25.64
     },
     {
      "id": "19053228404",
@@ -16326,7 +16345,7 @@
      "souvenir": false,
      "image": "3747f124311f9c37",
      "price": 15.65,
-     "priceEur": 14.04
+     "priceEur": 14.06
     },
     {
      "id": "18890412378",
@@ -16344,7 +16363,7 @@
      "statTrak": true,
      "souvenir": false,
      "image": "f403f89a4de5b15d",
-     "price": 10.37,
+     "price": 10.35,
      "priceEur": 9.3
     },
     {
@@ -16363,8 +16382,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3ab7d777a23b647c",
-     "price": 274.1,
-     "priceEur": 245.83
+     "price": 271.09,
+     "priceEur": 243.5
     },
     {
      "id": "53969002027",
@@ -16383,7 +16402,7 @@
      "souvenir": false,
      "image": "0c5414c32a95de2f",
      "price": 5998.59,
-     "priceEur": 5379.9
+     "priceEur": 5388.12
     }
    ]
   },
@@ -16392,7 +16411,7 @@
    "steamid": "76561198041683378",
    "team": "Falcons",
    "status": "public",
-   "updated": "28/10/2026",
+   "updated": "29/10/2026",
    "items": [
     {
      "id": "52275208269",
@@ -16411,7 +16430,7 @@
      "souvenir": false,
      "image": "6588b3498c440d05",
      "price": 49,
-     "priceEur": 43.95
+     "priceEur": 44.01
     },
     {
      "id": "51484464446",
@@ -16429,8 +16448,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "032a66c51354150a",
-     "price": 374.57,
-     "priceEur": 335.94
+     "price": 375.37,
+     "priceEur": 337.17
     },
     {
      "id": "51405434846",
@@ -16449,7 +16468,7 @@
      "souvenir": false,
      "image": "4aea5ad230057ad9",
      "price": 202.7,
-     "priceEur": 181.79
+     "priceEur": 182.07
     },
     {
      "id": "51405432159",
@@ -16467,8 +16486,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3972b7109975c62c",
-     "price": 347.96,
-     "priceEur": 312.07
+     "price": 345.14,
+     "priceEur": 310.02
     },
     {
      "id": "49528937429",
@@ -16487,7 +16506,7 @@
      "souvenir": false,
      "image": "9373e97238c9187d",
      "price": 886.14,
-     "priceEur": 794.74
+     "priceEur": 795.96
     },
     {
      "id": "49528937428",
@@ -16505,8 +16524,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "9d6c01edfc3789d2",
-     "price": 247.79,
-     "priceEur": 222.23
+     "price": 253,
+     "priceEur": 227.25
     },
     {
      "id": "49408903503",
@@ -16525,7 +16544,7 @@
      "souvenir": false,
      "image": "0c5414c32a95de2f",
      "price": 5998.59,
-     "priceEur": 5379.9
+     "priceEur": 5388.12
     },
     {
      "id": "44203583873",
@@ -16544,7 +16563,7 @@
      "souvenir": false,
      "image": "f3cd38a56e050b74",
      "price": 5721.08,
-     "priceEur": 5131.01
+     "priceEur": 5138.85
     },
     {
      "id": "44203583872",
@@ -16563,7 +16582,7 @@
      "souvenir": false,
      "image": "4afdac42ad50caf9",
      "price": 2063.03,
-     "priceEur": 1850.25
+     "priceEur": 1853.08
     },
     {
      "id": "53319262115",
@@ -16581,8 +16600,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d663deecfda5554a",
-     "price": 364.01,
-     "priceEur": 326.47
+     "price": 361.97,
+     "priceEur": 325.13
     },
     {
      "id": "43543848066",
@@ -16600,8 +16619,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "dde2b9fe7d8475a3",
-     "price": 2345,
-     "priceEur": 2103.14
+     "price": 2341.07,
+     "priceEur": 2102.82
     },
     {
      "id": "41336181036",
@@ -16619,8 +16638,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "b525f5cabcea262b",
-     "price": 6400,
-     "priceEur": 5739.91
+     "price": 6350,
+     "priceEur": 5703.76
     },
     {
      "id": "31964849596",
@@ -16638,8 +16657,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "ca9b03f122767e29",
-     "price": 310,
-     "priceEur": 278.03
+     "price": 305.7,
+     "priceEur": 274.59
     },
     {
      "id": "30710543107",
@@ -16658,7 +16677,7 @@
      "souvenir": false,
      "image": "a8f38029574c4d7f",
      "price": 350,
-     "priceEur": 313.9
+     "priceEur": 314.38
     },
     {
      "id": "30653673392",
@@ -16695,8 +16714,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "cf0eba0022a88d30",
-     "price": 0.31,
-     "priceEur": 0.28
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "30653525236",
@@ -16715,7 +16734,7 @@
      "souvenir": false,
      "image": "20b4875e5be399db",
      "price": 3.09,
-     "priceEur": 2.77
+     "priceEur": 2.78
     },
     {
      "id": "30653439356",
@@ -16733,8 +16752,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "1e9ab573c8ccc170",
-     "price": 4.55,
-     "priceEur": 4.08
+     "price": 4.68,
+     "priceEur": 4.2
     },
     {
      "id": "30653413622",
@@ -16752,8 +16771,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "d08120146e37414c",
-     "price": 7.55,
-     "priceEur": 6.77
+     "price": 7.44,
+     "priceEur": 6.68
     },
     {
      "id": "30653349892",
@@ -16772,7 +16791,7 @@
      "souvenir": false,
      "image": "181303ddb868a0f8",
      "price": 22.28,
-     "priceEur": 19.98
+     "priceEur": 20.01
     },
     {
      "id": "30653339339",
@@ -16790,8 +16809,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "48d20c1f4a7292c4",
-     "price": 4.08,
-     "priceEur": 3.66
+     "price": 4.2,
+     "priceEur": 3.77
     },
     {
      "id": "30653292715",
@@ -16809,8 +16828,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6fb9ba91a50468e9",
-     "price": 13.4,
-     "priceEur": 12.02
+     "price": 13.2,
+     "priceEur": 11.86
     },
     {
      "id": "30643736026",
@@ -16828,8 +16847,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fed20837c85bf199",
-     "price": 103.95,
-     "priceEur": 93.23
+     "price": 111.91,
+     "priceEur": 100.52
     },
     {
      "id": "30643694950",
@@ -16847,8 +16866,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "c7340518f1c041d1",
-     "price": 10.57,
-     "priceEur": 9.48
+     "price": 10.61,
+     "priceEur": 9.53
     },
     {
      "id": "30286545222",
@@ -16923,8 +16942,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0c238f5eb9d850f1",
-     "price": 1.1,
-     "priceEur": 0.99
+     "price": 1.07,
+     "priceEur": 0.96
     },
     {
      "id": "28619652508",
@@ -16942,8 +16961,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "68fcc697acebe0f4",
-     "price": 25.98,
-     "priceEur": 23.3
+     "price": 25,
+     "priceEur": 22.46
     },
     {
      "id": "28179879993",
@@ -16961,8 +16980,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "bcb37e5e0a73dfb7",
-     "price": 2200.97,
-     "priceEur": 1973.96
+     "price": 2200,
+     "priceEur": 1976.11
     },
     {
      "id": "27770856656",
@@ -16980,8 +16999,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "0897eb525b31b191",
-     "price": 97.28,
-     "priceEur": 87.25
+     "price": 95.78,
+     "priceEur": 86.03
     },
     {
      "id": "27770856655",
@@ -17000,7 +17019,7 @@
      "souvenir": false,
      "image": "a6f9dc506e218af0",
      "price": 56.98,
-     "priceEur": 51.1
+     "priceEur": 51.18
     },
     {
      "id": "27275000159",
@@ -17018,8 +17037,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6bebf4da3b247ba8",
-     "price": 215.97,
-     "priceEur": 193.7
+     "price": 214.68,
+     "priceEur": 192.83
     },
     {
      "id": "25705590368",
@@ -17037,8 +17056,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "5fbbd590d6e61f4c",
-     "price": 57.95,
-     "priceEur": 51.97
+     "price": 57.97,
+     "priceEur": 52.07
     },
     {
      "id": "25704622822",
@@ -17056,8 +17075,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "1a4989edd957c399",
-     "price": 30.37,
-     "priceEur": 27.24
+     "price": 31.14,
+     "priceEur": 27.97
     },
     {
      "id": "25301728498",
@@ -17075,8 +17094,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2fa57b85f51ab6ee",
-     "price": 43.5,
-     "priceEur": 39.01
+     "price": 43.19,
+     "priceEur": 38.79
     },
     {
      "id": "23530883535",
@@ -17094,8 +17113,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "a3ceca99ea2c98b0",
-     "price": 25.01,
-     "priceEur": 22.43
+     "price": 25.03,
+     "priceEur": 22.48
     },
     {
      "id": "19248216121",
@@ -17114,7 +17133,7 @@
      "souvenir": false,
      "image": "84d6c88c237b1ab1",
      "price": 45.23,
-     "priceEur": 40.57
+     "priceEur": 40.63
     },
     {
      "id": "17072524978",
@@ -17132,8 +17151,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "e0fb6120c58f6eab",
-     "price": 0.21,
-     "priceEur": 0.19
+     "price": 0.14,
+     "priceEur": 0.13
     },
     {
      "id": "14064906031",
@@ -17152,7 +17171,7 @@
      "souvenir": true,
      "image": "a85e9cb207060d89",
      "price": 50.21,
-     "priceEur": 45.03
+     "priceEur": 45.1
     },
     {
      "id": "8912623149",
@@ -17189,8 +17208,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "9e398e4a806a85ab",
-     "price": 15.62,
-     "priceEur": 14.01
+     "price": 15.5,
+     "priceEur": 13.92
     },
     {
      "id": "6030551108",
@@ -17208,8 +17227,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "4215388c4b808b8b",
-     "price": 17.85,
-     "priceEur": 16.01
+     "price": 17.28,
+     "priceEur": 15.52
     },
     {
      "id": "5017186386",
@@ -17227,8 +17246,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "befbfd8adf4d33cc",
-     "price": 523.81,
-     "priceEur": 469.78
+     "price": 517.25,
+     "priceEur": 464.61
     },
     {
      "id": "4054334611",
@@ -17246,8 +17265,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4d0c6f64e7e59636",
-     "price": 1160,
-     "priceEur": 1040.36
+     "price": 1140,
+     "priceEur": 1023.98
     }
    ]
   },
@@ -17256,7 +17275,7 @@
    "steamid": "76561198200982290",
    "team": "FURIA",
    "status": "public",
-   "updated": "28/10/2026",
+   "updated": "29/10/2026",
    "items": [
     {
      "id": "54167422855",
@@ -17274,8 +17293,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "0c7f1c179517c3ec",
-     "price": 6790,
-     "priceEur": 6089.69
+     "price": 6795.36,
+     "priceEur": 6103.8
     },
     {
      "id": "54167422854",
@@ -17293,8 +17312,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fdc679fabd5fa3e6",
-     "price": 689.69,
-     "priceEur": 618.56
+     "price": 700.57,
+     "priceEur": 629.27
     },
     {
      "id": "54154029542",
@@ -17312,8 +17331,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "12203327492be914",
-     "price": 23.65,
-     "priceEur": 21.21
+     "price": 23.49,
+     "priceEur": 21.1
     },
     {
      "id": "54154029541",
@@ -17331,8 +17350,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4387e9ff486e958f",
-     "price": 91.56,
-     "priceEur": 82.12
+     "price": 91.06,
+     "priceEur": 81.79
     },
     {
      "id": "54154029540",
@@ -17350,8 +17369,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "90f4f7551e326029",
-     "price": 28.95,
-     "priceEur": 25.96
+     "price": 28.5,
+     "priceEur": 25.6
     },
     {
      "id": "54106410903",
@@ -17369,8 +17388,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "31ef6656597a7ef4",
-     "price": 449.98,
-     "priceEur": 403.57
+     "price": 451.28,
+     "priceEur": 405.35
     },
     {
      "id": "53479409307",
@@ -17388,8 +17407,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d10d39e21b18ffe6",
-     "price": 2491.81,
-     "priceEur": 2234.81
+     "price": 2461.72,
+     "priceEur": 2211.19
     },
     {
      "id": "53349310644",
@@ -17407,8 +17426,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "4387e9ff486e958f",
-     "price": 91.56,
-     "priceEur": 82.12
+     "price": 91.06,
+     "priceEur": 81.79
     },
     {
      "id": "52838400807",
@@ -17502,8 +17521,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "3f3d485c4ba80b4b",
-     "price": 1.34,
-     "priceEur": 1.2
+     "price": 1.39,
+     "priceEur": 1.25
     },
     {
      "id": "52243933842",
@@ -17521,8 +17540,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "87953f62d6644cfe",
-     "price": 0.06,
-     "priceEur": 0.05
+     "price": 0.05,
+     "priceEur": 0.04
     },
     {
      "id": "52243932079",
@@ -17578,8 +17597,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "e030a3040f25d3b8",
-     "price": 0.22,
-     "priceEur": 0.2
+     "price": 0.21,
+     "priceEur": 0.19
     },
     {
      "id": "52243919884",
@@ -17597,8 +17616,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "f84585593e30b7c8",
-     "price": 0.07,
-     "priceEur": 0.06
+     "price": 0.06,
+     "priceEur": 0.05
     },
     {
      "id": "52243918648",
@@ -17635,8 +17654,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "7113313ab3692b87",
-     "price": 0.28,
-     "priceEur": 0.25
+     "price": 0.22,
+     "priceEur": 0.2
     },
     {
      "id": "52243913908",
@@ -17673,8 +17692,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "5dc10fef6463a241",
-     "price": 3.26,
-     "priceEur": 2.92
+     "price": 3.3,
+     "priceEur": 2.96
     },
     {
      "id": "49355989682",
@@ -17692,8 +17711,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "244f2405d930e8cb",
-     "price": 31.9,
-     "priceEur": 28.61
+     "price": 31.6,
+     "priceEur": 28.38
     },
     {
      "id": "49341404282",
@@ -17711,8 +17730,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "6ada61862ad28ba1",
-     "price": 1409.74,
-     "priceEur": 1264.34
+     "price": 1420.65,
+     "priceEur": 1276.07
     },
     {
      "id": "48331782939",
@@ -17730,8 +17749,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "a5d64a734b7d0e6e",
-     "price": 3.07,
-     "priceEur": 2.75
+     "price": 3.12,
+     "priceEur": 2.8
     },
     {
      "id": "48176837266",
@@ -17749,8 +17768,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "fb72675da9cd9dc3",
-     "price": 2.97,
-     "priceEur": 2.66
+     "price": 2.9,
+     "priceEur": 2.6
     },
     {
      "id": "47851663666",
@@ -17940,7 +17959,7 @@
      "souvenir": false,
      "image": "ef6747f352340d2e",
      "price": 3.97,
-     "priceEur": 3.56
+     "priceEur": 3.57
     },
     {
      "id": "47842364100",
@@ -17958,8 +17977,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "2f8d337d58a2ad74",
-     "price": 0.09,
-     "priceEur": 0.08
+     "price": 0.07,
+     "priceEur": 0.06
     },
     {
      "id": "47842357998",
@@ -17996,8 +18015,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "8e202dfca0a05916",
-     "price": 0.29,
-     "priceEur": 0.26
+     "price": 0.26,
+     "priceEur": 0.23
     },
     {
      "id": "47588751245",
@@ -18015,8 +18034,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "371191e589603607",
-     "price": 2.76,
-     "priceEur": 2.48
+     "price": 2.69,
+     "priceEur": 2.42
     },
     {
      "id": "47588747019",
@@ -18034,8 +18053,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "cd195f1c9ee4c107",
-     "price": 3.6,
-     "priceEur": 3.23
+     "price": 3.58,
+     "priceEur": 3.22
     },
     {
      "id": "47588743823",
@@ -18053,8 +18072,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "d5a805f82569bf9e",
-     "price": 0.73,
-     "priceEur": 0.65
+     "price": 0.77,
+     "priceEur": 0.69
     },
     {
      "id": "47588732615",
@@ -18130,7 +18149,7 @@
      "souvenir": false,
      "image": "746122c82439453a",
      "price": 15.47,
-     "priceEur": 13.87
+     "priceEur": 13.9
     },
     {
      "id": "45844955521",
@@ -18167,8 +18186,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "a499a607b36e294c",
-     "price": 0.11,
-     "priceEur": 0.1
+     "price": 0.05,
+     "priceEur": 0.04
     },
     {
      "id": "45844803553",
@@ -18186,8 +18205,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "710da564474d77d9",
-     "price": 0.63,
-     "priceEur": 0.57
+     "price": 0.67,
+     "priceEur": 0.6
     },
     {
      "id": "45844773564",
@@ -18224,8 +18243,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "77d0407bd9a96be8",
-     "price": 745,
-     "priceEur": 668.16
+     "price": 740,
+     "priceEur": 664.69
     },
     {
      "id": "45040815345",
@@ -18262,8 +18281,8 @@
      "statTrak": false,
      "souvenir": false,
      "image": "34883fd206a60b30",
-     "price": 4.25,
-     "priceEur": 3.81
+     "price": 4.18,
+     "priceEur": 3.75
     },
     {
      "id": "44223356746",
@@ -18281,8 +18300,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "23fa15286e541f3f",
-     "price": 0.35,
-     "priceEur": 0.31
+     "price": 0.36,
+     "priceEur": 0.32
     },
     {
      "id": "44223354802",
@@ -18300,8 +18319,8 @@
      "statTrak": true,
      "souvenir": false,
      "image": "8299331d38493e4a",
-     "price": 0.29,
-     "priceEur": 0.26
+     "price": 0.3,
+     "priceEur": 0.27
     },
     {
      "id": "43701387439",
@@ -18319,8 +18338,8 @@
      "statTrak": false,
      "souvenir": true,
      "image": "35284d1a786dbe0d",
-     "price": 1.41,
-     "priceEur": 1.26
+     "price": 1.37,
+     "priceEur": 1.23
     },
     {
      "id": "41234768413",
@@ -18460,7 +18479,7 @@
  ],
  "prices": {
   "source": "CSFloat",
-  "updated": "28/10/2026",
-  "usdPerEur": 1.115
+  "updated": "29/10/2026",
+  "usdPerEur": 1.1133
  }
 }
