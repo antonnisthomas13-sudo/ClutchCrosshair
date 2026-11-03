@@ -40,6 +40,7 @@ TEAM_ALIASES = {
     "faze": "FaZe Clan",
     "fut": "FUT Esports",
     "betboom team": "BetBoom",
+    "bb team": "BetBoom",
     "team falcons": "Falcons",
     "aurora gaming": "Aurora",
     "bc.game esports": "BC.Game",

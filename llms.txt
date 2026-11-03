@@ -22,26 +22,26 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [ryu](https://clutchcrosshair.com/players/ryu): Astralis, CS2 crosshair code updated 2026-10-16
 - [siuhy](https://clutchcrosshair.com/players/siuhy): Astralis, CS2 crosshair code updated 2026-10-16
 - [Staehr](https://clutchcrosshair.com/players/staehr): Astralis, CS2 crosshair code updated 2026-10-16
-- [Jimpphat](https://clutchcrosshair.com/players/jimpphat): Aurora, CS2 crosshair code updated 2026-10-29
-- [kyxsan](https://clutchcrosshair.com/players/kyxsan): Aurora, CS2 crosshair code updated 2026-10-29
-- [Wicadia](https://clutchcrosshair.com/players/wicadia): Aurora, CS2 crosshair code updated 2026-10-29
-- [woxic](https://clutchcrosshair.com/players/woxic): Aurora, CS2 crosshair code updated 2026-10-29
-- [XANTARES](https://clutchcrosshair.com/players/xantares): Aurora, CS2 crosshair code updated 2026-10-29
+- [Jimpphat](https://clutchcrosshair.com/players/jimpphat): Aurora, CS2 crosshair code updated 2026-11-03
+- [kyxsan](https://clutchcrosshair.com/players/kyxsan): Aurora, CS2 crosshair code updated 2026-11-03
+- [Wicadia](https://clutchcrosshair.com/players/wicadia): Aurora, CS2 crosshair code updated 2026-11-03
+- [woxic](https://clutchcrosshair.com/players/woxic): Aurora, CS2 crosshair code updated 2026-11-03
+- [XANTARES](https://clutchcrosshair.com/players/xantares): Aurora, CS2 crosshair code updated 2026-11-03
 - [asap](https://clutchcrosshair.com/players/asap): BC.Game, CS2 crosshair code updated 2026-10-31
 - [Magisk](https://clutchcrosshair.com/players/magisk): BC.Game, CS2 crosshair code updated 2026-10-31
 - [mzinho](https://clutchcrosshair.com/players/mzinho): BC.Game, CS2 crosshair code updated 2026-10-31
 - [s1mple](https://clutchcrosshair.com/players/s1mple): BC.Game, CS2 crosshair code updated 2026-10-31
 - [Senzu](https://clutchcrosshair.com/players/senzu): BC.Game, CS2 crosshair code updated 2026-10-31
-- [Boombl4](https://clutchcrosshair.com/players/boombl4): BetBoom, CS2 crosshair code updated 2026-10-29
-- [d1Ledez](https://clutchcrosshair.com/players/d1ledez): BetBoom, CS2 crosshair code updated 2026-10-29
-- [Magnojez](https://clutchcrosshair.com/players/magnojez): BetBoom, CS2 crosshair code updated 2026-10-29
-- [S1ren](https://clutchcrosshair.com/players/s1ren): BetBoom, CS2 crosshair code updated 2026-10-29
-- [zorte](https://clutchcrosshair.com/players/zorte): BetBoom, CS2 crosshair code updated 2026-10-29
-- [karrigan](https://clutchcrosshair.com/players/karrigan): Falcons, CS2 crosshair code updated 2026-10-17
-- [kyousuke](https://clutchcrosshair.com/players/kyousuke): Falcons, CS2 crosshair code updated 2026-10-17
-- [m0NESY](https://clutchcrosshair.com/players/m0nesy): Falcons, CS2 crosshair code updated 2026-10-17
-- [NiKo](https://clutchcrosshair.com/players/niko): Falcons, CS2 crosshair code updated 2026-10-17
-- [TeSeS](https://clutchcrosshair.com/players/teses): Falcons, CS2 crosshair code updated 2026-10-17
+- [Boombl4](https://clutchcrosshair.com/players/boombl4): BetBoom, CS2 crosshair code updated 2026-11-02
+- [d1Ledez](https://clutchcrosshair.com/players/d1ledez): BetBoom, CS2 crosshair code updated 2026-11-02
+- [Magnojez](https://clutchcrosshair.com/players/magnojez): BetBoom, CS2 crosshair code updated 2026-11-02
+- [S1ren](https://clutchcrosshair.com/players/s1ren): BetBoom, CS2 crosshair code updated 2026-11-02
+- [zorte](https://clutchcrosshair.com/players/zorte): BetBoom, CS2 crosshair code updated 2026-11-02
+- [karrigan](https://clutchcrosshair.com/players/karrigan): Falcons, CS2 crosshair code updated 2026-11-02
+- [kyousuke](https://clutchcrosshair.com/players/kyousuke): Falcons, CS2 crosshair code updated 2026-11-02
+- [m0NESY](https://clutchcrosshair.com/players/m0nesy): Falcons, CS2 crosshair code updated 2026-11-02
+- [NiKo](https://clutchcrosshair.com/players/niko): Falcons, CS2 crosshair code updated 2026-11-02
+- [TeSeS](https://clutchcrosshair.com/players/teses): Falcons, CS2 crosshair code updated 2026-11-02
 - [frozen](https://clutchcrosshair.com/players/frozen): FaZe Clan, CS2 crosshair code updated 2026-10-22
 - [JBOEN](https://clutchcrosshair.com/players/jboen): FaZe Clan, CS2 crosshair code updated 2026-10-22
 - [jcobbb](https://clutchcrosshair.com/players/jcobbb): FaZe Clan, CS2 crosshair code updated 2026-10-22
@@ -57,11 +57,11 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [Krabeni](https://clutchcrosshair.com/players/krabeni): FUT Esports, CS2 crosshair code updated 2026-10-29
 - [SunPayus](https://clutchcrosshair.com/players/sunpayus): FUT Esports, CS2 crosshair code updated 2026-10-29
 - [xfl0ud](https://clutchcrosshair.com/players/xfl0ud): FUT Esports, CS2 crosshair code updated 2026-10-29
-- [HeavyGod](https://clutchcrosshair.com/players/heavygod): G2 Esports, CS2 crosshair code updated 2026-10-25
-- [huNter-](https://clutchcrosshair.com/players/hunter): G2 Esports, CS2 crosshair code updated 2026-10-25
-- [MATYS](https://clutchcrosshair.com/players/matys): G2 Esports, CS2 crosshair code updated 2026-10-25
-- [NertZ](https://clutchcrosshair.com/players/nertz): G2 Esports, CS2 crosshair code updated 2026-10-25
-- [r1nkle](https://clutchcrosshair.com/players/r1nkle): G2 Esports, CS2 crosshair code updated 2026-10-25
+- [HeavyGod](https://clutchcrosshair.com/players/heavygod): G2 Esports, CS2 crosshair code updated 2026-11-03
+- [huNter-](https://clutchcrosshair.com/players/hunter): G2 Esports, CS2 crosshair code updated 2026-11-03
+- [MATYS](https://clutchcrosshair.com/players/matys): G2 Esports, CS2 crosshair code updated 2026-11-03
+- [NertZ](https://clutchcrosshair.com/players/nertz): G2 Esports, CS2 crosshair code updated 2026-11-03
+- [r1nkle](https://clutchcrosshair.com/players/r1nkle): G2 Esports, CS2 crosshair code updated 2026-11-03
 - [art](https://clutchcrosshair.com/players/art): Legacy, CS2 crosshair code updated 2026-10-27
 - [dumau](https://clutchcrosshair.com/players/dumau): Legacy, CS2 crosshair code updated 2026-10-27
 - [latto](https://clutchcrosshair.com/players/latto): Legacy, CS2 crosshair code updated 2026-10-27
@@ -72,11 +72,11 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 - [torzsi](https://clutchcrosshair.com/players/torzsi): MOUZ, CS2 crosshair code updated 2026-10-31
 - [xelex](https://clutchcrosshair.com/players/xelex): MOUZ, CS2 crosshair code updated 2026-10-31
 - [xertioN](https://clutchcrosshair.com/players/xertion): MOUZ, CS2 crosshair code updated 2026-10-31
-- [Aleksib](https://clutchcrosshair.com/players/aleksib): Natus Vincere, CS2 crosshair code updated 2026-10-28
-- [b1t](https://clutchcrosshair.com/players/b1t): Natus Vincere, CS2 crosshair code updated 2026-10-28
-- [iM](https://clutchcrosshair.com/players/im): Natus Vincere, CS2 crosshair code updated 2026-10-28
-- [makazze](https://clutchcrosshair.com/players/makazze): Natus Vincere, CS2 crosshair code updated 2026-10-28
-- [w0nderful](https://clutchcrosshair.com/players/w0nderful): Natus Vincere, CS2 crosshair code updated 2026-10-28
+- [Aleksib](https://clutchcrosshair.com/players/aleksib): Natus Vincere, CS2 crosshair code updated 2026-11-02
+- [b1t](https://clutchcrosshair.com/players/b1t): Natus Vincere, CS2 crosshair code updated 2026-11-02
+- [iM](https://clutchcrosshair.com/players/im): Natus Vincere, CS2 crosshair code updated 2026-11-02
+- [makazze](https://clutchcrosshair.com/players/makazze): Natus Vincere, CS2 crosshair code updated 2026-11-02
+- [w0nderful](https://clutchcrosshair.com/players/w0nderful): Natus Vincere, CS2 crosshair code updated 2026-11-02
 - [FL1T](https://clutchcrosshair.com/players/fl1t): PARIVISION, CS2 crosshair code updated 2026-10-07
 - [Hobbit](https://clutchcrosshair.com/players/hobbit): PARIVISION, CS2 crosshair code updated 2026-10-07
 - [Jame](https://clutchcrosshair.com/players/jame): PARIVISION, CS2 crosshair code updated 2026-10-07
