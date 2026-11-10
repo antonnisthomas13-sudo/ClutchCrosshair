@@ -18,8 +18,12 @@ const OG_LOCALES = { en: "en_US", fr: "fr_FR", ru: "ru_RU", es: "es_ES", tr: "tr
 
 const DIR = path.join(__dirname, "i18n");
 
+// L'année en cours, calculée à chaque build : dans tous les textes, {year} est remplacé par elle
+// (titres « (2026) », « © 2026 »…). Le site est refabriqué chaque jour : il passe tout seul à l'année suivante.
+const YEAR = String(new Date().getFullYear());
+
 function readJson(file) {
-    return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : null;
+    return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8").replace(/\{year\}/g, YEAR)) : null;
 }
 
 // Cherche "player.faq.code" dans { player: { faq: { code: ... } } }
@@ -91,4 +95,4 @@ function makeI18n(lang) {
     };
 }
 
-module.exports = { LANGS, SOON, NAMES, makeI18n };
+module.exports = { LANGS, SOON, NAMES, makeI18n, readJson };

@@ -5,9 +5,9 @@
   {
    "slug": "cs2-launch-options",
    "category": "Settings",
-   "title": "Best CS2 Launch Options (2026)",
-   "seoTitle": "Best CS2 Launch Options (2026): What Works | ClutchCrosshair",
-   "description": "The CS2 launch options that still work in 2026, how to add them in Steam, and the old CS:GO launch options that do nothing anymore.",
+   "title": "Best CS2 Launch Options ({year})",
+   "seoTitle": "Best CS2 Launch Options ({year}): What Works | ClutchCrosshair",
+   "description": "The CS2 launch options that still work in {year}, how to add them in Steam, and the old CS:GO launch options that do nothing anymore.",
    "intro": "Launch options are small commands that Steam passes to CS2 when the game starts. A few of them are genuinely useful, but most of the long lists you find online were made for CS:GO and do nothing in CS2. Here are the ones worth using, and the myths to forget.",
    "commands": ["fps_max", "exec", "toggleconsole"],
    "sections": [
@@ -66,8 +66,8 @@
   {
    "slug": "cs2-best-settings",
    "category": "Settings",
-   "title": "Best CS2 Settings (2026): Video, Game and Audio",
-   "seoTitle": "Best CS2 Settings (2026): Video, Game & Audio | ClutchCrosshair",
+   "title": "Best CS2 Settings ({year}): Video, Game and Audio",
+   "seoTitle": "Best CS2 Settings ({year}): Video, Game & Audio | ClutchCrosshair",
    "description": "The best CS2 settings for visibility and FPS: video options to change, game and radar settings, and audio settings to hear footsteps clearly.",
    "intro": "Good settings in CS2 do two things: they make enemies easy to see, and they keep your frame rate high and stable. Visual beauty comes last. This guide goes through the video, game and audio options and explains what each one changes, so you can make your own choices instead of copying random numbers.",
    "commands": ["fps_max", "cl_radar_scale", "cl_radar_always_centered", "cl_hud_radar_scale", "viewmodel_fov", "cl_hud_color", "snd_headphone_eq", "volume", "cl_hud_telemetry_frametime_show"],
@@ -135,7 +135,7 @@
   {
    "slug": "cs2-stretched-resolution",
    "category": "Settings",
-   "title": "CS2 Stretched Resolution: 4:3 vs 16:9 (2026)",
+   "title": "CS2 Stretched Resolution: 4:3 vs 16:9 ({year})",
    "seoTitle": "CS2 Stretched Resolution: 4:3 vs 16:9 Guide | ClutchCrosshair",
    "description": "Should you play CS2 in 4:3 stretched? How 1280×960 changes models, field of view and your crosshair, and how to set it up on NVIDIA and AMD.",
    "intro": "Many CS2 pros still play in 4:3 stretched, usually 1280×960, a habit inherited from CS 1.6 and CS:GO. It is not magic: you gain wider-looking models and lose part of your field of view. This guide explains exactly what changes, so you can decide for yourself.",
@@ -254,8 +254,8 @@
   {
    "slug": "cs2-fps-boost",
    "category": "Performance",
-   "title": "How to Boost FPS in CS2 (2026)",
-   "seoTitle": "How to Boost FPS in CS2 (2026) | ClutchCrosshair",
+   "title": "How to Boost FPS in CS2 ({year})",
+   "seoTitle": "How to Boost FPS in CS2 ({year}) | ClutchCrosshair",
    "description": "Simple ways to get more FPS and smoother gameplay in CS2: video settings, frame rate cap, Windows options and the myths that do not help.",
    "intro": "High and stable FPS make CS2 feel smoother and more responsive. The good news: the biggest gains come from a few in-game settings and basic PC care, not from secret tweaks. Here is what really helps, in order.",
    "commands": ["fps_max", "cl_showfps", "cl_hud_telemetry_frametime_show", "fps_max_ui", "engine_low_latency_sleep_after_client_tick"],

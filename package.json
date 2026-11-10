@@ -3,7 +3,8 @@
   "private": true,
   "description": "Outils du site ClutchCrosshair (esbuild sert seulement a minifier le CSS/JS dans node build.js)",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "check": "node check.js"
   },
   "devDependencies": {
     "esbuild": "0.28.2"

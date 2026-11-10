@@ -7,6 +7,8 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 ## Main pages
 
 - [CS2 pro crosshairs](https://clutchcrosshair.com/): all pro and creator crosshair codes, searchable, grouped by team
+- [CS2 crosshairs by team](https://clutchcrosshair.com/teams/): one page per pro team with the crosshair of each player
+- [CS2 crosshair lists](https://clutchcrosshair.com/crosshairs/): most used pro codes, dot crosshairs, small crosshairs, crosshairs by color
 - [CS2 crosshair generator](https://clutchcrosshair.com/generator): build a crosshair and get a working CS2 share code
 - [CS2 crosshair FAQ](https://clutchcrosshair.com/faq): importing codes, CSGO- codes, pro crosshair statistics
 - [How the codes are collected](https://clutchcrosshair.com/methodology): pro codes read from official match demos, match dates, checks, skin prices

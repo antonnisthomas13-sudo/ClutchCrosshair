@@ -824,7 +824,8 @@ main {
 
 #trending,
 #pros,
-#creators {
+#creators,
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
     gap: 14px;
@@ -3996,6 +3997,177 @@ body.light .team-badge img[src*="fut"] {
 .same-xhair a:focus-visible {
     color: var(--link);
     text-decoration: underline;
+}
+
+/* ===== Anciens crosshairs d'un joueur (pages joueurs) : dates, réglages, code + Copy ===== */
+.player-page .history {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: none;
+    padding-left: 0;
+    list-style: none;
+}
+
+.history li {
+    display: grid;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+}
+
+.history-date {
+    color: var(--text);
+    font-weight: var(--fw-semibold);
+}
+
+.history-spec {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    color: var(--text-body);
+    font-size: var(--fs-ui);
+}
+
+/* Image du crosshair (zoom ×5) dans la page joueur : une vraie image, que Google Images peut afficher */
+.xhair-figure {
+    margin: 12px 0 0;
+}
+
+.xhair-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+}
+
+.xhair-figure figcaption {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+/* Le logo FURIA est noir et son bandeau est presque noir : toujours en blanc sur le bandeau */
+.player-head .player-team-logo[src*="furia"] {
+    filter: invert(1);
+}
+
+/* ===== Lien sponsorisé (sponsors.json, voir sponsorSlot dans build.js) : toujours avec la mention « Sponsored » ===== */
+.sponsor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    padding: 10px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+}
+
+/* Sur l'accueil : mêmes marges que le texte de bas de page */
+.content > .sponsor {
+    margin: 8px 32px 0;
+}
+
+.sponsor-label {
+    color: var(--muted);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.sponsor-link {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+    color: var(--text);
+    font-size: var(--fs-ui);
+    text-decoration: none;
+}
+
+.sponsor-link:hover strong {
+    text-decoration: underline;
+}
+
+.sponsor-link span {
+    color: var(--text-body);
+}
+
+.sponsor-link img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* ===== Pages des équipes (teams/) et pages de listes : des cartes de joueurs dans une page ===== */
+.team-page {
+    max-width: 1120px;
+}
+
+/* La grille de cartes d'une page (même grille que l'accueil) */
+.card-grid {
+    margin-top: 4px;
+}
+
+/* Bandeau couleur d'équipe sans photo : moins haut que celui d'un joueur */
+.team-head {
+    min-height: 0;
+    padding-top: 22px;
+}
+
+.team-head h1 {
+    margin-bottom: 8px;
+}
+
+/* La liste des équipes (teams/) : logo, nom de l'équipe, pseudos des joueurs */
+.player-page .team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 8px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.team-list li {
+    display: flex;
+}
+
+.team-list a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.team-list a:hover {
+    border-color: var(--team, var(--accent));
+}
+
+.team-list strong {
+    display: block;
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+}
+
+.team-list small {
+    display: block;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
 }
 
 @media (max-width: 800px) {

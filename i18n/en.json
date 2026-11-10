@@ -1,5 +1,135 @@
 {
     "_about": "Textes du site en anglais (langue par défaut). Chaque clé est utilisée par build.js, render.js, index.template.html ou le JavaScript (section js). {nom} = valeur remplacée par build.js ; { \"one\", \"other\" } = singulier / pluriel. Ne pas traduire les pseudos, les équipes, les codes ni les commandes console.",
+    "sponsor": {
+        "label": "Sponsored"
+    },
+    "lists": {
+        "memberOf": "{name} is in these crosshair lists:",
+        "crumb": "Crosshair lists",
+        "hubTitle": "Best CS2 Crosshairs by Color &amp; Style ({year}) | ClutchCrosshair",
+        "hubH1": "Best CS2 Crosshairs by Color and Style",
+        "hubDescription": "CS2 crosshair lists built from real pro settings: most used codes, dot crosshairs, small crosshairs, green, cyan, white and yellow. One-click copy.",
+        "hubIntro": "These lists are built from the {total} crosshairs on ClutchCrosshair, read from match demos. They are recalculated every time a player changes crosshair.",
+        "count": {
+            "one": "{count} crosshair",
+            "other": "{count} crosshairs"
+        },
+        "othersTitle": "More CS2 crosshair lists",
+        "cardsTitle": "Players and codes",
+        "usedBy": {
+            "one": "Used by {count} player: {list}",
+            "other": "Used by {count} players: {list}"
+        },
+        "rankTitle": "The most used codes",
+        "howTitle": "How to use one of these crosshairs in CS2",
+        "homeTitle": "CS2 crosshair lists",
+        "items": {
+            "mostUsed": {
+                "title": "Best CS2 Crosshairs: Most Used Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "Best CS2 Crosshairs: the Most Used Pro Codes",
+                "description": "The CS2 crosshair codes shared by several pro players, ranked by how many use them. Real-size preview, one-click copy and console commands.",
+                "intro": "Several pros play with exactly the same crosshair code. Here are the {codes} codes used by at least two players on ClutchCrosshair ({count} players in total), from the most used to the least used."
+            },
+            "dot": {
+                "title": "CS2 Dot Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "CS2 Dot Crosshairs",
+                "description": "CS2 dot crosshair codes used by pro players and creators: every crosshair with a center dot, with real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a center dot (cl_crosshairdot 1): a small point in the middle of the crosshair."
+            },
+            "small": {
+                "title": "Small CS2 Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "Small CS2 Crosshairs",
+                "description": "The smallest CS2 crosshairs used by pro players: length 2 or less and thickness 1. Real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a very small crosshair: lines 2 pixels long or less and 1 pixel thick."
+            },
+            "outline": {
+                "title": "CS2 Crosshairs with Outline: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "CS2 Crosshairs with an Outline",
+                "description": "CS2 crosshair codes with a black outline, used by pro players and creators. Real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) add a black outline around their crosshair (cl_crosshair_drawoutline 1). It keeps the crosshair visible on bright backgrounds."
+            },
+            "green": {
+                "title": "Green CS2 Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "Green CS2 Crosshairs",
+                "description": "Green CS2 crosshair codes used by pro players and creators, with real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a green crosshair."
+            },
+            "cyan": {
+                "title": "Cyan CS2 Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "Cyan CS2 Crosshairs",
+                "description": "Cyan CS2 crosshair codes used by pro players and creators, with real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a cyan crosshair."
+            },
+            "white": {
+                "title": "White CS2 Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "White CS2 Crosshairs",
+                "description": "White CS2 crosshair codes used by pro players and creators, with real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a white crosshair."
+            },
+            "yellow": {
+                "title": "Yellow CS2 Crosshairs: Pro Codes ({year}) | ClutchCrosshair",
+                "h1": "Yellow CS2 Crosshairs",
+                "description": "Yellow CS2 crosshair codes used by pro players and creators, with real-size preview, one-click copy and console commands.",
+                "intro": "{count} of the {total} players on ClutchCrosshair ({percent}%) play with a yellow crosshair."
+            }
+        }
+    },
+    "history": {
+        "title": "{name}'s previous crosshairs",
+        "since": "{name} has played with the current crosshair since the match of {date}.",
+        "intro": {
+            "one": "Before that, ClutchCrosshair read {count} other crosshair from {name}'s matches. You can still copy it.",
+            "other": "Before that, ClutchCrosshair read {count} other crosshairs from {name}'s matches. You can still copy them."
+        },
+        "single": "Match of {date}",
+        "range": "Matches from {from} to {to}",
+        "spec": "{color}, length {length}, thickness {thickness}, gap {gap}",
+        "dot": "center dot",
+        "preview": "Preview",
+        "faqQ": "How often does {name} change crosshair?",
+        "faqA": {
+            "one": "{name} changed crosshair {count} time in the matches read by ClutchCrosshair since {first}. The current one has been used since {since}.",
+            "other": "{name} changed crosshair {count} times in the matches read by ClutchCrosshair since {first}. The current one has been used since {since}."
+        }
+    },
+    "teams": {
+        "hubCrumb": "Teams",
+        "hubTitle": "CS2 Crosshairs by Team ({year}) | ClutchCrosshair",
+        "hubDescription": "CS2 crosshair codes of {teams} pro teams and {players} players, grouped by team. Pick a team to see and copy the crosshair of each player.",
+        "hubH1": "CS2 Crosshairs by Team",
+        "hubIntro": "Pick a team to see the crosshair of each of its players, read from official match demos.",
+        "title": "{team} CS2 Crosshair Codes ({year}) | ClutchCrosshair",
+        "ogTitle": "{team} CS2 Crosshair Codes",
+        "description": "{team} CS2 crosshair codes: {list}. One-click copy, real-size preview and console commands, read from official match demos.",
+        "descriptionShort": "{team} CS2 crosshair codes: {list}. One-click copy, real-size preview and console commands.",
+        "h1": "{team} CS2 Crosshairs",
+        "players": {
+            "one": "{count} player",
+            "other": "{count} players"
+        },
+        "lastMatch": "Last match: {date}",
+        "intro": "These are the CS2 crosshairs of the {count} {team} players on ClutchCrosshair: {list}. Each code was read from an official match demo; the most recent match was played on {date}.",
+        "statsColor": {
+            "one": "{count} of the {total} players uses a {color} crosshair.",
+            "other": "{count} of the {total} players use a {color} crosshair."
+        },
+        "statsDot": {
+            "one": "{count} player uses a center dot.",
+            "other": "{count} players use a center dot."
+        },
+        "statsNoDot": "None of them plays with a center dot.",
+        "listTitle": "{team} crosshair codes",
+        "howTitle": "How to use a {team} crosshair in CS2",
+        "faqTitle": "{team} crosshair FAQ",
+        "faqRosterQ": "Which {team} players are on ClutchCrosshair?",
+        "faqRosterA": "{list}. Their crosshairs come from official match demos; the latest match was played on {date}.",
+        "faqSpecQ": "What crosshairs do {team} players use?",
+        "faqSpec": "{name}: {color}, length {length}, thickness {thickness}, gap {gap}.",
+        "othersTitle": "Other CS2 teams",
+        "teamLink": "{team} crosshairs",
+        "allLink": "All {team} crosshairs",
+        "homeTitle": "CS2 crosshairs by team"
+    },
     "common": {
         "and": "and",
         "copy": "Copy",
@@ -27,6 +157,8 @@
         "soon": "soon"
     },
     "footer": {
+        "lists": "Best CS2 Crosshairs",
+        "teams": "Crosshairs by Team",
         "generator": "Crosshair Generator",
         "bind": "Bind Generator",
         "skins": "CS2 Pro Skins",
@@ -36,7 +168,7 @@
         "method": "How we get the codes",
         "legal": "Legal notice",
         "business": "Business &amp; partnerships:",
-        "rights": "© 2026 ClutchCrosshair. All rights reserved.",
+        "rights": "© {year} ClutchCrosshair. All rights reserved.",
         "trademarks": "Counter-Strike 2 and CS2 skins are trademarks of Valve Corporation. Team logos are trademarks of their respective owners. ClutchCrosshair is not affiliated with Valve or the teams.",
         "cookies": "Cookies"
     },
@@ -125,7 +257,8 @@
         "faqSameQ": "Which pros use the same crosshair as {name}?"
     },
     "player": {
-        "title": "{name} CS2 Crosshair Code (2026) | ClutchCrosshair",
+        "figure": "{name}'s CS2 crosshair on Dust2, zoomed ×5.",
+        "title": "{name} CS2 Crosshair Code ({year}) | ClutchCrosshair",
         "ogTitle": "{name} CS2 Crosshair Code",
         "ogImageAlt": "{name} CS2 crosshair: preview and share code",
         "descriptionPro": "Copy {name}'s CS2 crosshair code ({team}) in one click: real-size preview, console commands and settings. From a match on {date}.",
@@ -155,7 +288,7 @@
         "matesCreator": "Other creator crosshairs"
     },
     "home": {
-        "title": "CS2 Crosshair Codes of Pro Players (2026) | ClutchCrosshair",
+        "title": "CS2 Crosshair Codes of Pro Players ({year}) | ClutchCrosshair",
         "metaDescription": "Copy the CS2 crosshair codes of donk, ZywOo, m0NESY, NiKo and {count} pros in one click, with a real-size preview and console commands. Read from match demos.",
         "ogTitle": "CS2 Crosshair Codes of Pro Players & Creators",
         "ogDescription": "Copy the latest CS2 crosshair codes of pro players and creators in one click. donk, ZywOo, m0NESY and more.",
@@ -396,8 +529,8 @@
         "playerBreadcrumb": "{name} skins",
         "personTeam": "{name} is a CS2 pro player for {team}.",
         "person": "{name} is a CS2 pro player.",
-        "titleValue": "{name} CS2 Skins &amp; Inventory Value (2026) | ClutchCrosshair",
-        "title": "{name} CS2 Skins &amp; Inventory (2026) | ClutchCrosshair",
+        "titleValue": "{name} CS2 Skins &amp; Inventory Value ({year}) | ClutchCrosshair",
+        "title": "{name} CS2 Skins &amp; Inventory ({year}) | ClutchCrosshair",
         "ogTitle": "{name} CS2 Skins & Inventory",
         "crumb": "Pro skins",
         "h1": "{name} CS2 Skins",
@@ -414,7 +547,7 @@
         "othersTitle": "Other CS2 pro inventories",
         "othersLink": "{name} skins",
         "hubDescription": "CS2 pro skins and inventories: the knives, gloves and weapon skins of {names}, with exact floats. Updated {date}.",
-        "hubTitle": "CS2 Pro Skins &amp; Inventories (2026) | ClutchCrosshair",
+        "hubTitle": "CS2 Pro Skins &amp; Inventories ({year}) | ClutchCrosshair",
         "hubOgTitle": "CS2 Pro Skins & Inventories",
         "hubListItem": "{name} CS2 skins",
         "hubH1": "CS2 Pro Skins",
@@ -501,7 +634,7 @@
             ]
         ],
         "hubDescription": "Every useful CS2 console command explained: crosshair, HUD, radar, FPS, network, practice and bot commands, with default values, examples and a Copy button.",
-        "hubTitle": "CS2 Console Commands List (2026) | ClutchCrosshair",
+        "hubTitle": "CS2 Console Commands List ({year}) | ClutchCrosshair",
         "hubOgTitle": "CS2 Console Commands",
         "hubH1": "CS2 Console Commands",
         "hubIntro": "{count} useful CS2 console commands explained in plain English: what each one does, its values, its default and ready-to-copy examples. Commands from CS:GO that no longer work are marked <strong>Removed in CS2</strong>. Updated {date}.",
@@ -555,7 +688,7 @@
         "moreTitle": "More CS2 guides",
         "allLink": "All CS2 guides ›",
         "hubDescription": "Practical CS2 guides for every player: best settings, launch options, stretched resolution, sensitivity, FPS boost, crosshairs and aim training.",
-        "hubTitle": "CS2 Guides: Settings, Aim &amp; Crosshair (2026) | ClutchCrosshair",
+        "hubTitle": "CS2 Guides: Settings, Aim &amp; Crosshair ({year}) | ClutchCrosshair",
         "hubOgTitle": "CS2 Guides",
         "hubH1": "CS2 Guides",
         "hubIntro": "Clear, practical guides to set up CS2 and play better: the settings that matter, the myths to forget, and what the pros really use. Updated {date}.",
@@ -684,7 +817,7 @@
     },
     "legal": {
         "title": "Legal notice | ClutchCrosshair",
-        "description": "Legal notice of ClutchCrosshair: publisher, hosting, trademarks, privacy and cookies. No ads; Google Analytics only with your consent.",
+        "description": "Legal notice of ClutchCrosshair: publisher, hosting, trademarks, privacy and cookies. Google Analytics only with your consent.",
         "h1": "Legal notice",
         "sections": [
             [
@@ -693,7 +826,7 @@
             ],
             [
                 "Hosting",
-                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, United States (cloudflare.com)."
+                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, United States (cloudflare.com), phone: +1 888 993 5273."
             ],
             [
                 "Intellectual property",
@@ -701,12 +834,17 @@
             ],
             [
                 "Privacy",
-                "ClutchCrosshair does not use advertising cookies. Your light/dark mode, language and cookie choices are only stored in your own browser (localStorage). Visits are also counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites."
+                "ClutchCrosshair does not use advertising cookies. Your light/dark mode, language and cookie choices are only stored in your own browser (localStorage). Visits are also counted with Cloudflare Web Analytics, which uses no cookies and does not follow you across websites. Under the GDPR, you can ask to access, correct or delete the data that concerns you by writing to {email}, and you can lodge a complaint with the French data protection authority (CNIL, cnil.fr)."
             ],
             [
                 "Cookies and Google Analytics",
                 "With your consent only, we measure our audience with Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland): number of visits, pages viewed, approximate country and type of device. It sets the cookies <code>_ga</code> and <code>_ga_195B8EZ9BP</code>, kept for 13 months at most. Google may transfer this data outside the European Union; see <a href=\"https://policies.google.com/privacy\" rel=\"external noopener\" target=\"_blank\">Google's privacy policy</a>.</p>\n        <p>If you click <strong>Refuse</strong>, Google Analytics is not loaded and no cookie is set; the site works exactly the same. Your choice is kept for 6 months in your browser, then the banner asks again. You can change your mind at any time with the <button type=\"button\" class=\"link-btn\" data-consent-open>Cookies</button> link at the bottom of every page. You can also ask us to delete your data: {email}.",
                 "cookies"
+            ],
+            [
+                "Sponsored links",
+                "ClutchCrosshair may display sponsored links. They are always marked “Sponsored”. Sponsors have no influence on the crosshair codes, which are read from match demos, and sponsored links set no cookies on this site.",
+                "sponsored"
             ],
             [
                 "Other languages",
@@ -783,7 +921,7 @@
         "genFromLink": "Crosshair loaded from the link. Adjust it as you like.",
         "consentAria": "Cookie consent",
         "consentText": "We would like to measure our audience with Google Analytics. It sets cookies only if you accept. Refusing has no effect on the site.",
-        "consentMore": "Learn more",
+        "consentMore": "Learn more about cookies",
         "consentRefuse": "Refuse",
         "consentAccept": "Accept"
     }

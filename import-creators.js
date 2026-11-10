@@ -119,7 +119,7 @@ async function main() {
             return;
         }
         if (!existing) {
-            const player = { name: name, team: "Creator", category: "creator", code: code, updated: date || today(), trending: false };
+            const player = { name: name, team: "Creator", category: "creator", code: code, updated: date || today(), since: date || today(), trending: false };
             if (url) {
                 player.faceit = url;
             }
@@ -128,6 +128,11 @@ async function main() {
             return;
         }
         const changed = existing.code !== code;
+        // Le code change : on garde l'ancien dans l'historique (affiché sur la page du joueur), comme read_demo.py
+        if (changed && /^CS(?!GO-)/.test(existing.code || "")) {
+            existing.history = (existing.history || []).concat({ code: existing.code, from: existing.since || existing.updated, to: existing.updated });
+            existing.since = date || today();
+        }
         existing.name = name;
         existing.team = "Creator";
         existing.category = "creator";

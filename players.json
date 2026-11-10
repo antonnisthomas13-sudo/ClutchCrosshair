@@ -5,10 +5,33 @@
         "category": "pro",
         "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
         "updated": "28/10/2026",
+        "since": "28/10/2026",
         "trending": true,
         "steamid": "76561198386265483",
         "liquipedia": "Donk",
-        "matchTime": "2026-10-28T19:37"
+        "matchTime": "2026-10-28T19:37",
+        "history": [
+            {
+                "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSGf8YDobjep5Bk3LiFQUu8ZupRL26TnO4diZ9Z9EcVeyk",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            },
+            {
+                "code": "CSntztNWLLatMptL4XWsMWDEW3nSjM7tSVzh4wFAEo2QVQ",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG",
+                "from": "25/10/2026",
+                "to": "27/10/2026"
+            }
+        ]
     },
     {
         "name": "ZywOo",
@@ -16,10 +39,18 @@
         "category": "pro",
         "code": "CS6bn6bJeOmmd35ur7m83TdDtmCPucSTUjz3hSNuwJMiyE",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": true,
         "steamid": "76561198113666193",
         "liquipedia": "ZywOo",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "m0NESY",
@@ -27,6 +58,7 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "02/11/2026",
+        "since": "17/10/2026",
         "trending": false,
         "steamid": "76561198074762801",
         "liquipedia": "M0NESY",
@@ -38,6 +70,7 @@
         "category": "creator",
         "code": "CSYpPMe3jLTZufV8VpXmi79Lbrp9dJ9eoRMyYem8byXdxJ",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/Maj3r"
     },
@@ -48,9 +81,17 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "Mezii",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "flameZ",
@@ -59,6 +100,7 @@
         "category": "pro",
         "code": "CSCTWJSVydL9ecJ292AFNuNd7tj4qfJTDzV34iQqryCjhj",
         "updated": "31/10/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "FlameZ",
         "matchTime": "2026-10-31T10:49"
@@ -70,6 +112,7 @@
         "category": "pro",
         "code": "CSHhdAW9O6Kujk5Wc8i2YOYzJsQiQk8hP2XJbEfHTMtnQi",
         "updated": "17/10/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "ApEX"
     },
@@ -80,6 +123,7 @@
         "category": "pro",
         "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
         "updated": "31/10/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "Ropz",
         "matchTime": "2026-10-31T10:49"
@@ -91,9 +135,17 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "Spinx",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "xertioN",
@@ -102,9 +154,27 @@
         "category": "pro",
         "code": "CSKC7tG2ziH25GNDYLbpAbQD94pBD3tfWuXWLFnUcCrWif",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
         "liquipedia": "XertioN",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSroQsPLTwHXwuhfhQACrYwiexziaTuveQmT6XFOvWmvAc",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSaBV9zYubjoK5cCkzou2FLcNr8UtzTtk8BO4GfvucxhrA",
+                "from": "25/10/2026",
+                "to": "27/10/2026"
+            }
+        ]
     },
     {
         "name": "PR",
@@ -113,9 +183,17 @@
         "category": "pro",
         "code": "CS66kA6YM7kRTQHGiikDK4rkAPeD5nREphvP2PqZkrEXqk",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "PR",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "torzsi",
@@ -124,6 +202,7 @@
         "category": "pro",
         "code": "CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A",
         "updated": "31/10/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "Torzsi",
         "matchTime": "2026-10-31T10:49"
@@ -135,9 +214,22 @@
         "category": "pro",
         "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
         "updated": "31/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "liquipedia": "Xelex",
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSAQENfyphnRoJeSSY5tjVHfcVtCpz7qK2nyxjmH6qv8FJ",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            }
+        ]
     },
     {
         "name": "XANTARES",
@@ -146,9 +238,17 @@
         "category": "pro",
         "code": "CSbTEaGDR5GhNAifhXfx8dnavVdRCvsLSCeTDvSS8ndJQE",
         "updated": "03/11/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "XANTARES",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSPok8xAqU5uivNOqjvCebb325odqS4PDd4DZ8TBiRbKRf",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "kyxsan",
@@ -157,9 +257,27 @@
         "category": "pro",
         "code": "CSa75PfiyHzfL6WJFuPCZeTJtcsxujmSEtXRkJd9BuUuja",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
         "liquipedia": "Kyxsan",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSsfJrbhYh8nB4ipSVLbrKUtYXa7qOrJWOzkYJQqEUsfLW",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSEc7EnC6TCeGE5vdMLqQqaZFnYTrBLM8SLmffcRxvzKQE",
+                "from": "24/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSERGEO2zcyhT6avwXOw3xLEaJzuPvBAbSfbKLyW6omcqE",
+                "from": "27/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "sh1ro",
@@ -168,9 +286,27 @@
         "category": "pro",
         "code": "CSV5eLcKReqH9sBsxQ5uX65zG9SunXUN7HiK7V7yuKT4PF",
         "updated": "28/10/2026",
+        "since": "28/10/2026",
         "trending": false,
         "liquipedia": "Sh1ro",
-        "matchTime": "2026-10-28T19:37"
+        "matchTime": "2026-10-28T19:37",
+        "history": [
+            {
+                "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSBxKrcaLUVjhUmOKLuKNiNL9ZnKVo475iaKFOGKEDDO3Z",
+                "from": "24/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSi5hDhKCLMhkyhSseTSApsBoK3pKYmqF5TN3pTwVZHHtZ",
+                "from": "26/10/2026",
+                "to": "27/10/2026"
+            }
+        ]
     },
     {
         "name": "woxic",
@@ -179,6 +315,7 @@
         "category": "pro",
         "code": "CSNKVaehG52BbGmbdDH9a36Xqa82mW7JrVQAGdNWfQZASc",
         "updated": "03/11/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "Woxic",
         "matchTime": "2026-11-03T06:38"
@@ -190,9 +327,22 @@
         "category": "pro",
         "code": "CS6OpxPO4UFU8MZmxhUAEktdn7DveuEhiX3uru22HzvT7K",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
         "liquipedia": "Wicadia",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CShbYisp5vnwFm72jpaxNsMkBMFr8OBpUpUiMDd7byXdxJ",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
+                "from": "24/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "Jimpphat",
@@ -201,9 +351,32 @@
         "category": "pro",
         "code": "CSSkST2PkEj9LzvPZKb5Utkjr2CbwFUGqDfMoRxZ3GYMeN",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
         "liquipedia": "Jimpphat",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSqyDjDsJMj6wSETN2Mw48jLSreSUaoYVwxoadLf9Hxcjb",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CS8pi5Z9WbSeWXDR5OjcruQ462pMOBQXY7syxcXtyfBZ5R",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+                "from": "27/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "tN1R",
@@ -212,9 +385,17 @@
         "category": "pro",
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
         "updated": "28/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "TN1R",
-        "matchTime": "2026-10-28T19:37"
+        "matchTime": "2026-10-28T19:37",
+        "history": [
+            {
+                "code": "CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "zont1x",
@@ -223,6 +404,7 @@
         "category": "pro",
         "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
         "updated": "28/10/2026",
+        "since": "17/10/2026",
         "trending": false,
         "liquipedia": "Zont1x",
         "matchTime": "2026-10-28T19:37"
@@ -234,9 +416,32 @@
         "category": "pro",
         "code": "CSOO4jyrC6XY2puAqtAdDeVK6Tmc77UpYwh9MkiDHQubnQ",
         "updated": "28/10/2026",
+        "since": "28/10/2026",
         "trending": false,
         "liquipedia": "Magixx",
-        "matchTime": "2026-10-28T19:37"
+        "matchTime": "2026-10-28T19:37",
+        "history": [
+            {
+                "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CS7OUHLFkK5XZqANxWHXh4tKymopbbFjjPwO2veyqEOPLX",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSztEhEt9QadbRnTfWZswHPP2fXDit2bUu4RfNTJbPWndP",
+                "from": "25/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CS7OUHLFkK5XZqANxWHXh4tKymopbbFjjPwO2veyqEOPLX",
+                "from": "27/10/2026",
+                "to": "27/10/2026"
+            }
+        ]
     },
     {
         "name": "FalleN",
@@ -245,9 +450,17 @@
         "category": "pro",
         "code": "CSZnexV3r5hMCdKeHnQOWPbV42BeCTttd5dM4utKdmsO3Z",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "FalleN",
-        "matchTime": "2026-10-31T16:43"
+        "matchTime": "2026-10-31T16:43",
+        "history": [
+            {
+                "code": "CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "KSCERATO",
@@ -256,9 +469,37 @@
         "category": "pro",
         "code": "CSXVQtCujeaNWjvQatoVBuqiWcRLPqAUAJ4AFee9yd25dO",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
         "liquipedia": "KSCERATO",
-        "matchTime": "2026-10-31T16:43"
+        "matchTime": "2026-10-31T16:43",
+        "history": [
+            {
+                "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSXKjQPtqvqVkvMWNKNVoOM4uYVn4XW2QquEqsxwjtTSoN",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSFXqWYBtYWZVDSJ2qsJHBdNWmDnziHcf8p3J3Vn4htnaa",
+                "from": "26/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CSThwkEFs63W3UmOzk7raBHcXq8kx9NN25qGS3kH5yY7tW",
+                "from": "28/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "YEKINDAR",
@@ -267,9 +508,37 @@
         "category": "pro",
         "code": "CSHwwEuPeaioROD9qTvmN7HT3umotat8EACz2BvTXsPUJe",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
         "liquipedia": "YEKINDAR",
-        "matchTime": "2026-10-31T16:43"
+        "matchTime": "2026-10-31T16:43",
+        "history": [
+            {
+                "code": "CS2mdFhfahKzDLHSRLGULHMYPcXrw9heL253K4ZOQzcBsd",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSJ6FYBGBABGNmYjKqrUMKbrL9T7oTSzYU494HkjLjP9Rc",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSDF94OWLondOfWjK8zLWCqRFoRtvoxekDhHbH7bc5KXtY",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSaWhXTO8eQ5coYvt7dZ5oJYy8kK23KXrm6N4LxAoYc8KY",
+                "from": "26/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CSu3wq3poVe93EpQR3zPFEdU9QFmWW2KHJdNBNEhBBnYCW",
+                "from": "28/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "yuurih",
@@ -278,9 +547,17 @@
         "category": "pro",
         "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
         "updated": "31/10/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "Yuurih",
-        "matchTime": "2026-10-31T16:43"
+        "matchTime": "2026-10-31T16:43",
+        "history": [
+            {
+                "code": "CSVGdXcXbnJXUPKFmxzL6ewiUDGmHLNJOZKxe5adnTrEPJ",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "molodoy",
@@ -289,9 +566,22 @@
         "category": "pro",
         "code": "CSpxaYsCrCP5Hk4GPu7Kmv2z2QFpzrNGuwX2RTWNb628CU",
         "updated": "31/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "liquipedia": "Molodoy",
-        "matchTime": "2026-10-31T16:43"
+        "matchTime": "2026-10-31T16:43",
+        "history": [
+            {
+                "code": "CS5LZV2fGTkS9FGX34DbvfEGKTrevYyD6tYSUr8yHJxsqD",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            }
+        ]
     },
     {
         "name": "karrigan",
@@ -300,9 +590,17 @@
         "category": "pro",
         "code": "CSErFb9xph6deZD8sYBimNJktYoK2isifmqEtumE8WnO6O",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "Karrigan",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "TeSeS",
@@ -311,9 +609,17 @@
         "category": "pro",
         "code": "CSn7Vvb9oqvwrCvUrkCwcTcUC3TJiVnM9B36N3EiGUEbbX",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "TeSeS",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "NiKo",
@@ -322,9 +628,17 @@
         "category": "pro",
         "code": "CSjdGh48mioXws2RtuOp8vNCzaqDoGebKPm2Ej2jmpATyF",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "NiKo",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSv49ZAk57PdjSJHEiKZNh9OOQw9CNjztLfeDPmYSUF5WK",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "zorte",
@@ -333,9 +647,22 @@
         "category": "pro",
         "code": "CS9N83UjXRAjNRMtFLmQGpAR8qcuhCfByNtBOKTHrWjwLV",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "Zorte",
-        "matchTime": "2026-11-02T10:56"
+        "matchTime": "2026-11-02T10:56",
+        "history": [
+            {
+                "code": "CSSLYE8rQVkDKNhtZXz4xFvrWncuhCfByNtBOKTHrWjwLV",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSw8tqHyP8nNNd5BrkQncC9JGbsLaAokVbcY6pTwVZHHtZ",
+                "from": "24/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "Boombl4",
@@ -344,9 +671,17 @@
         "category": "pro",
         "code": "CSNPRU57bvYRiQjtazKWibCC2qjwXfxEUvM3r6d4eWmv9A",
         "updated": "02/11/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "Boombl4",
-        "matchTime": "2026-11-02T10:56"
+        "matchTime": "2026-11-02T10:56",
+        "history": [
+            {
+                "code": "CSrCn7EEbXbamh7BsDkFOYPcjeyNRd6o2A7PZbeiLZKGhF",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "S1ren",
@@ -355,9 +690,27 @@
         "category": "pro",
         "code": "CSsqRC5Q7RcOd2hVqDqHU72t3LeZwOGV6NpBfw2C7xRmTW",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "S1ren",
-        "matchTime": "2026-11-02T10:56"
+        "matchTime": "2026-11-02T10:56",
+        "history": [
+            {
+                "code": "CSaxs9im9U6XXkm4qe2DeBdJYOyLEiOrCAaVYWYvW6dz7H",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSGDYD5VaQqjnavBsuCEiVQwnn7xa4DHNueqVsyJ3ajFpK",
+                "from": "24/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CSDVpex5Gi3hbCmwhAp9PerDKdStWnA8Of6HWRuZpSjtxH",
+                "from": "29/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "Magnojez",
@@ -366,9 +719,17 @@
         "category": "pro",
         "code": "CS8t7arBB5ciWmsyktOawwOZTQ2MzJDAKA26byEpBGA5aZ",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "Magnojez",
-        "matchTime": "2026-11-02T10:56"
+        "matchTime": "2026-11-02T10:56",
+        "history": [
+            {
+                "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
+                "from": "17/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "d1Ledez",
@@ -377,9 +738,37 @@
         "category": "pro",
         "code": "CSb6hSBoH9jxa9s5pZREQvTSOfwbALxSuOL6f38ytS724T",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "D1Ledez",
-        "matchTime": "2026-11-02T10:56"
+        "matchTime": "2026-11-02T10:56",
+        "history": [
+            {
+                "code": "CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            },
+            {
+                "code": "CSxME3OzixpbdeKA7uGWWGHRuyyoexXikNx4fXoVV3SMiB",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSqLHMiCDdfEZjxBx8AsB2dnU9SJrDqyZ35zt6ZsDeOSrB",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSUZv765y3aLZAJjiiTR5hxq6R9FEiPWFNKuKCAbcuEe9B",
+                "from": "26/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CS8Omh99WXxy9XXNnu4Bixk52AacsywR6ZDGKEu5DaMBZh",
+                "from": "29/10/2026",
+                "to": "29/10/2026"
+            }
+        ]
     },
     {
         "name": "kyousuke",
@@ -388,9 +777,17 @@
         "category": "pro",
         "code": "CSCbVYPm8VFPzijMwx79HhpWPxt4bYa7NUhwWKXDPE227H",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "Kyousuke",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+                "from": "17/10/2026",
+                "to": "17/10/2026"
+            }
+        ]
     },
     {
         "name": "art",
@@ -399,9 +796,17 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "27/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "hltv": "https://www.hltv.org/player/12521/art",
-        "matchTime": "2026-10-27T15:52"
+        "matchTime": "2026-10-27T15:52",
+        "history": [
+            {
+                "code": "CSnCWacMELAywHFtWjRCPC6H3UQsA44tkbwDWbeiLZKGhF",
+                "from": "16/10/2026",
+                "to": "16/10/2026"
+            }
+        ]
     },
     {
         "name": "n1ssim",
@@ -410,9 +815,17 @@
         "category": "pro",
         "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
         "updated": "27/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "liquipedia": "N1ssim",
-        "matchTime": "2026-10-27T15:52"
+        "matchTime": "2026-10-27T15:52",
+        "history": [
+            {
+                "code": "CSLW68GQ8h26pe9BKbXRbL9O9BAM2nw3QbPes4zPK5aODT",
+                "from": "16/10/2026",
+                "to": "16/10/2026"
+            }
+        ]
     },
     {
         "name": "dumau",
@@ -421,6 +834,7 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "27/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Dumau",
         "matchTime": "2026-10-27T15:52"
@@ -432,9 +846,17 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "27/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "liquipedia": "Try",
-        "matchTime": "2026-10-27T15:52"
+        "matchTime": "2026-10-27T15:52",
+        "history": [
+            {
+                "code": "CSV4sxJqhMXbqP7sUHCbsYqp9ho67BZMFu2dxvOjOJL2vP",
+                "from": "16/10/2026",
+                "to": "16/10/2026"
+            }
+        ]
     },
     {
         "name": "latto",
@@ -443,6 +865,7 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "27/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Latto",
         "matchTime": "2026-10-27T15:52"
@@ -454,6 +877,7 @@
         "category": "pro",
         "code": "CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA",
         "updated": "07/10/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "FL1T"
     },
@@ -464,9 +888,27 @@
         "category": "pro",
         "code": "CSTum3CfNRAuPAYuTjGJZzJE8v7OtRxRo3z8ZrFdYAe4TV",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
         "liquipedia": "HuNter-",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSJawJduJTFEGjfmiOeLbPZHoBmqVhG9ALrrz9jL2RMpie",
+                "from": "06/10/2026",
+                "to": "06/10/2026"
+            },
+            {
+                "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            }
+        ]
     },
     {
         "name": "Hobbit",
@@ -475,6 +917,7 @@
         "category": "pro",
         "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
         "updated": "07/10/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "HObbit"
     },
@@ -485,6 +928,7 @@
         "category": "pro",
         "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
         "updated": "07/10/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "Jame"
     },
@@ -495,9 +939,22 @@
         "category": "pro",
         "code": "CSepLVoksm3C6LSyXD889ffQ6rawDimQ7fqJkkaAaJhO9C",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
         "liquipedia": "NertZ",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+                "from": "06/10/2026",
+                "to": "06/10/2026"
+            },
+            {
+                "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+                "from": "24/10/2026",
+                "to": "25/10/2026"
+            }
+        ]
     },
     {
         "name": "HeavyGod",
@@ -506,9 +963,17 @@
         "category": "pro",
         "code": "CSmvCoRjzt9i8m9x72zRBjhLtjOpHd4uMBRetab6kzJrKZ",
         "updated": "03/11/2026",
+        "since": "24/10/2026",
         "trending": false,
         "liquipedia": "HeavyGod",
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSicEtwNLDZeQ9xYyJEk5QhAs92mpOK8YdNOCYPpE23aiA",
+                "from": "06/10/2026",
+                "to": "06/10/2026"
+            }
+        ]
     },
     {
         "name": "xiELO",
@@ -517,6 +982,7 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "07/10/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "XiELO"
     },
@@ -527,6 +993,7 @@
         "category": "pro",
         "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
         "updated": "07/10/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "Zweih"
     },
@@ -537,6 +1004,7 @@
         "category": "pro",
         "code": "CSjVbYTjhXB7ox4RbL3LFxe8AfU3Nc7ki3H9dWzxLXAmHC",
         "updated": "03/11/2026",
+        "since": "06/10/2026",
         "trending": false,
         "liquipedia": "R1nkle",
         "matchTime": "2026-11-03T06:38"
@@ -548,8 +1016,26 @@
         "category": "pro",
         "code": "CSNf4HwJkHMPYvN9KvLu4Tz36oxVto5n4GD8RZqOiQv5id",
         "updated": "03/11/2026",
+        "since": "03/11/2026",
         "trending": false,
-        "matchTime": "2026-11-03T06:38"
+        "matchTime": "2026-11-03T06:38",
+        "history": [
+            {
+                "code": "CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c",
+                "from": "06/10/2026",
+                "to": "06/10/2026"
+            },
+            {
+                "code": "CSd9MaDqDZmVKVQGtiVwFMHVhh3ay7uAjEQVOWymzpATzh",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSPniCTsWW4D7xfkpavNy8jZW8tZM56Sq6jMp8nXBJKY2c",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            }
+        ]
     },
     {
         "name": "Aleksib",
@@ -558,6 +1044,7 @@
         "category": "pro",
         "code": "CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD",
         "updated": "02/11/2026",
+        "since": "07/10/2026",
         "trending": false,
         "liquipedia": "Aleksib",
         "matchTime": "2026-11-02T14:38"
@@ -569,9 +1056,37 @@
         "category": "pro",
         "code": "CSx6quXcU8bN8ZVLM6G9SEmHz9yodQko8uvW6uwuNE227H",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "IM",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            },
+            {
+                "code": "CSZb3rndRTeSiCOdCifNDrdNvMmOGDHb4sHqPXhzhDcCyG",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSivFaGr7nSRmaKWM8CLYQN3wGKAOZkpWr9j2r6JecFQOM",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSx6quXcU8bN8ZVLM6G9SEmHz9yodQko8uvW6uwuNE227H",
+                "from": "26/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CSrTmmdk2kqhXQbH3hZQsbR5qssf2KVNhEnkVGj7byXdxJ",
+                "from": "28/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "b1t",
@@ -580,9 +1095,17 @@
         "category": "pro",
         "code": "CSiuObDzWBiXvWXr8UJU5TLsmhBNMJMBaH5AjAS63CFNqF",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "B1t",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+                "from": "07/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "w0nderful",
@@ -591,9 +1114,22 @@
         "category": "pro",
         "code": "CSnBAzYp5uNERqbePBrROJnWAHTV5Lop7nj4yGRzEYpX5R",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "W0nderful",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSEWBHkDuZHeCScfVw355DMHiW2aryNDJcouthPzFQCZQD",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            },
+            {
+                "code": "CSi7izaV3Etc3HAKvMYTvOLcjWvLj8cwO4ZjrsVURjyOLX",
+                "from": "24/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "makazze",
@@ -602,9 +1138,37 @@
         "category": "pro",
         "code": "CSiuObDzWBiXvWXr8UJU5TLsmhBNMJMBaH5AjAS63CFNqF",
         "updated": "02/11/2026",
+        "since": "02/11/2026",
         "trending": false,
         "liquipedia": "Makazze",
-        "matchTime": "2026-11-02T14:38"
+        "matchTime": "2026-11-02T14:38",
+        "history": [
+            {
+                "code": "CSO3zJtH39855RTObRWRdpVx7aQehfJJQv8jVkp8ZGpaGn",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            },
+            {
+                "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
+                "from": "24/10/2026",
+                "to": "24/10/2026"
+            },
+            {
+                "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            },
+            {
+                "code": "CSF68EZcNUK2tnJpxOs4a6YRNmBNMJMBaH5AjAS63CFNqF",
+                "from": "26/10/2026",
+                "to": "26/10/2026"
+            },
+            {
+                "code": "CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG",
+                "from": "28/10/2026",
+                "to": "28/10/2026"
+            }
+        ]
     },
     {
         "name": "JBOEN",
@@ -613,6 +1177,7 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "22/10/2026",
+        "since": "10/10/2026",
         "trending": false,
         "liquipedia": "JBOEN",
         "matchTime": "2026-10-22T17:33"
@@ -624,6 +1189,7 @@
         "category": "pro",
         "code": "CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL",
         "updated": "22/10/2026",
+        "since": "10/10/2026",
         "trending": false,
         "liquipedia": "Twistzz",
         "matchTime": "2026-10-22T17:33"
@@ -635,9 +1201,17 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "22/10/2026",
+        "since": "22/10/2026",
         "trending": false,
         "liquipedia": "Frozen",
-        "matchTime": "2026-10-22T17:33"
+        "matchTime": "2026-10-22T17:33",
+        "history": [
+            {
+                "code": "CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG",
+                "from": "10/10/2026",
+                "to": "10/10/2026"
+            }
+        ]
     },
     {
         "name": "jcobbb",
@@ -646,9 +1220,17 @@
         "category": "pro",
         "code": "CSc5yCFvhsVwrv5HVFFSzDcAvTizywLh3tJOnGSeoX8jyE",
         "updated": "22/10/2026",
+        "since": "22/10/2026",
         "trending": false,
         "liquipedia": "Jcobbb",
-        "matchTime": "2026-10-22T17:33"
+        "matchTime": "2026-10-22T17:33",
+        "history": [
+            {
+                "code": "CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS",
+                "from": "10/10/2026",
+                "to": "10/10/2026"
+            }
+        ]
     },
     {
         "name": "Neityu",
@@ -657,6 +1239,7 @@
         "category": "pro",
         "code": "CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B",
         "updated": "22/10/2026",
+        "since": "10/10/2026",
         "trending": false,
         "liquipedia": "Neityu",
         "matchTime": "2026-10-22T17:33"
@@ -668,6 +1251,7 @@
         "category": "pro",
         "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
         "updated": "16/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Staehr"
     },
@@ -678,6 +1262,7 @@
         "category": "pro",
         "code": "CSfTz9vSMPKhkhevA2JDr82HiYiuiOBDe5s6UuZXFfQbqE",
         "updated": "16/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Siuhy"
     },
@@ -688,6 +1273,7 @@
         "category": "pro",
         "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
         "updated": "16/10/2026",
+        "since": "16/10/2026",
         "trending": false
     },
     {
@@ -697,6 +1283,7 @@
         "category": "pro",
         "code": "CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd",
         "updated": "16/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Phzy"
     },
@@ -707,6 +1294,7 @@
         "category": "pro",
         "code": "CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM",
         "updated": "16/10/2026",
+        "since": "16/10/2026",
         "trending": false,
         "liquipedia": "Cmtry"
     },
@@ -716,6 +1304,7 @@
         "category": "creator",
         "code": "CSt7PvFkUto4omVGTAU2e9RiPrs7niZzhbkCjT7JORKure",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/StRoGo"
     },
@@ -725,6 +1314,7 @@
         "category": "creator",
         "code": "CStQMLXKSkuapWiMdbSN8eyAFq6kp4NbTPfwUV4SqJhOAe",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/eblan666__"
     },
@@ -734,6 +1324,7 @@
         "category": "creator",
         "code": "CSTOE8kOHC6GtS2s6vt7VYCzdxEYBOUNCoMc57BirKsKNQ",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/fl0m"
     },
@@ -743,6 +1334,7 @@
         "category": "creator",
         "code": "CSE5OKECjoEpVDjfZeECKjtGUpR323uMAYCG2s8Zk5bq9f",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/f0rest"
     },
@@ -752,6 +1344,7 @@
         "category": "creator",
         "code": "CSs6Wdrtq7847F95MJJFyQRiAx4iCJTczb8XxEhLeo3sRd",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/GeT_RiGhT"
     },
@@ -761,10 +1354,23 @@
         "category": "pro",
         "code": "CSqdyVHCfmbXwfATimefA3LMo9PUmPzqFZpYyXn5eWmv9A",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": true,
         "faceit": "https://www.faceit.com/en/players/s1mplecsgod",
         "steamid": "76561198034202275",
-        "matchTime": "2026-10-31T00:52"
+        "matchTime": "2026-10-31T00:52",
+        "history": [
+            {
+                "code": "CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ",
+                "from": "19/10/2026",
+                "to": "19/10/2026"
+            },
+            {
+                "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "Chopper",
@@ -772,6 +1378,7 @@
         "category": "creator",
         "code": "CSsnVC5U2XHFdudX6FRMHjK3HqsfArhNu2xhWeDp7n53WK",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/Chopperis"
     },
@@ -781,6 +1388,7 @@
         "category": "creator",
         "code": "CSuvQMzJS4YN7qsqQFmjrAL5A7DK37WOCnv2Ej2jmpATyF",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/freakazoid"
     },
@@ -790,6 +1398,7 @@
         "category": "creator",
         "code": "CShnzRUUQL8RSSG69TBoUvAm6LzBO7DmYdOpPBGsCHqJKb",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false
     },
     {
@@ -798,6 +1407,7 @@
         "category": "creator",
         "code": "CSG3sDcP6epzYRqPawHj7NRksb5MKQrzvcqFwAjLPHDfVP",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/kennyS"
     },
@@ -807,6 +1417,7 @@
         "category": "creator",
         "code": "CS69Qj4dwkDH7GZtvFdhn99CsHe5LJBycqnWU23TyEKRhk",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/shox"
     },
@@ -816,6 +1427,7 @@
         "category": "creator",
         "code": "CSrAvmLsG9dTORpb99Rh7OCNZ2UOjdCkRhuyacGaNNHseL",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false
     },
     {
@@ -824,6 +1436,7 @@
         "category": "creator",
         "code": "CSV3Pik9RFSEQ2ZGcvFsctrwK7NTJ89P77QAwdf4dePunP",
         "updated": "19/10/2026",
+        "since": "19/10/2026",
         "trending": false,
         "faceit": "https://www.faceit.com/en/players/paszaBiceps"
     },
@@ -834,8 +1447,16 @@
         "category": "pro",
         "code": "CST3s8Q9BxyAvXq5h7pApE6xXkCuRr6EuWkA7s48Cmrv6M",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
-        "matchTime": "2026-10-31T00:52"
+        "matchTime": "2026-10-31T00:52",
+        "history": [
+            {
+                "code": "CSRCRjZsXkOUOtdxNpZoNdMOazXLoHFeFOF769MTkpATyF",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "asap",
@@ -844,8 +1465,16 @@
         "category": "pro",
         "code": "CSpvmpyuWEZxXZ2DuJuqc3PDNMZeoynraAMPwVvJecFQOM",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
-        "matchTime": "2026-10-31T00:52"
+        "matchTime": "2026-10-31T00:52",
+        "history": [
+            {
+                "code": "CSJkoyVGhj7VxpjQTU8PW8KsByeNysCTBTYYGRRWGDtRZf",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "mzinho",
@@ -854,8 +1483,16 @@
         "category": "pro",
         "code": "CSJoXEA5vzVjAqDyjpTXhHLOR2fcCm98Gf69qseHV5bq8E",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
-        "matchTime": "2026-10-31T00:52"
+        "matchTime": "2026-10-31T00:52",
+        "history": [
+            {
+                "code": "CStvcohLq9Nh4k2S95d4rwv7tdjzOKXGzYSt7ivrvF5c3Y",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "Senzu",
@@ -864,8 +1501,16 @@
         "category": "pro",
         "code": "CST3s8Q9BxyAvXq5h7pApE6xXkCuRr6EuWkA7s48Cmrv6M",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
-        "matchTime": "2026-10-31T00:52"
+        "matchTime": "2026-10-31T00:52",
+        "history": [
+            {
+                "code": "CSJkoyVGhj7VxpjQTU8PW8KsByeNysCTBTYYGRRWGDtRZf",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "jL",
@@ -874,8 +1519,16 @@
         "category": "creator",
         "code": "CSrSUSeb4VSYxmNKG64hKYC2nXKyi8mreHXdMYwcyiL5TV",
         "updated": "31/10/2026",
+        "since": "31/10/2026",
         "trending": false,
-        "matchTime": "2026-10-31T10:49"
+        "matchTime": "2026-10-31T10:49",
+        "history": [
+            {
+                "code": "CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV",
+                "from": "24/10/2026",
+                "to": "26/10/2026"
+            }
+        ]
     },
     {
         "name": "xfl0ud",
@@ -884,8 +1537,16 @@
         "category": "pro",
         "code": "CSXsyUTOpwQOBGW2h97Me8XQwAY5pX5oXSmpOG3bmuVbnQ",
         "updated": "29/10/2026",
+        "since": "26/10/2026",
         "trending": false,
-        "matchTime": "2026-10-29T11:05"
+        "matchTime": "2026-10-29T11:05",
+        "history": [
+            {
+                "code": "CSw2mRAE9vsS5ZvzPFaHrTBM8N3X2nM6N8smaooyTXRivQ",
+                "from": "25/10/2026",
+                "to": "25/10/2026"
+            }
+        ]
     },
     {
         "name": "SunPayus",
@@ -894,6 +1555,7 @@
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
         "updated": "29/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "matchTime": "2026-10-29T11:05"
     },
@@ -904,6 +1566,7 @@
         "category": "pro",
         "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
         "updated": "29/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "matchTime": "2026-10-29T11:05"
     },
@@ -914,8 +1577,16 @@
         "category": "pro",
         "code": "CSp7wAbBtndyHiiDixK9HwVeqkMpmP62LHkVJOGKEDDO3Z",
         "updated": "29/10/2026",
+        "since": "29/10/2026",
         "trending": false,
-        "matchTime": "2026-10-29T11:05"
+        "matchTime": "2026-10-29T11:05",
+        "history": [
+            {
+                "code": "CS788ewGhNmaSXVTSRAO5c89mPH3CBn4mz758xJq223WmU",
+                "from": "25/10/2026",
+                "to": "26/10/2026"
+            }
+        ]
     },
     {
         "name": "dziugss",
@@ -924,6 +1595,7 @@
         "category": "pro",
         "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
         "updated": "29/10/2026",
+        "since": "25/10/2026",
         "trending": false,
         "matchTime": "2026-10-29T11:05"
     }

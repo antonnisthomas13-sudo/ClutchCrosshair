@@ -84,7 +84,8 @@ export function photoHTML(player, className, file, eager) {
 // La carte complète d'un joueur, façon "fiche joueur" de retransmission :
 // bandeau couleur d'équipe (nom + photo), ligne équipe/date, boîte "Crosshair" (aperçu taille réelle), code, console
 // options : photo (vignette), photoMd (photo moyenne pour la fiche), eager (charger tout de suite), logo (logo optimisé),
-//           t (traduction, voir i18n.js), teamLabel (nom affiché de l'équipe : "Creator" est traduit)
+//           t (traduction, voir i18n.js), teamLabel (nom affiché de l'équipe : "Creator" est traduit),
+//           base (chemin vers la racine de la langue, "" sur l'accueil, "../" depuis teams/ : pour le lien vers la page du joueur)
 export function cardHTML(player, options) {
     const o = options || {};
     const t = o.t;
@@ -96,7 +97,7 @@ export function cardHTML(player, options) {
         + (o.twins && o.twins.length ? ` data-twins="${esc(o.twins.map(function (p) { return slug(p.name) + ":" + p.name; }).join(","))}"` : ""); // joueurs au code identique
     return `<article class="card" data-slug="${slug(player.name)}" data-team="${team}" data-name="${esc(player.name.toLowerCase())}" data-updated="${sortableDate(player.updated)}" data-date="${esc(player.updated)}"${photoAttr} style="--team: ${color}; --on-team: ${textOnColor(color)}">
             <div class="card-top">
-                <h3><a href="players/${slug(player.name)}.html">${name}</a></h3>
+                <h3><a href="${o.base || ""}players/${slug(player.name)}.html">${name}</a></h3>
                 ${photoHTML(player, "card-photo", o.photo, o.eager)}
             </div>
             <div class="card-meta">

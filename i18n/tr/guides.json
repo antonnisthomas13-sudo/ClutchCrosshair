@@ -5,9 +5,9 @@
   {
    "slug": "cs2-launch-options",
    "category": "Ayarlar",
-   "title": "En İyi CS2 Başlatma Seçenekleri (2026)",
-   "seoTitle": "En İyi CS2 Başlatma Seçenekleri (2026) | ClutchCrosshair",
-   "description": "2026'da hâlâ işe yarayan CS2 başlatma seçenekleri, Steam'e nasıl eklendikleri ve artık hiçbir şey yapmayan eski CS:GO başlatma seçenekleri.",
+   "title": "En İyi CS2 Başlatma Seçenekleri ({year})",
+   "seoTitle": "En İyi CS2 Başlatma Seçenekleri ({year}) | ClutchCrosshair",
+   "description": "{year} yılında hâlâ işe yarayan CS2 başlatma seçenekleri, Steam'e nasıl eklendikleri ve artık hiçbir şey yapmayan eski CS:GO başlatma seçenekleri.",
    "intro": "Başlatma seçenekleri, oyun açılırken Steam'in CS2'ye ilettiği küçük komutlardır. Birkaçı gerçekten işe yarar, ama internette bulduğun uzun listelerin çoğu CS:GO için hazırlanmıştır ve CS2'de hiçbir şey yapmaz. İşte kullanmaya değer olanlar ve unutabileceğin efsaneler.",
    "commands": ["fps_max", "exec", "toggleconsole"],
    "sections": [
@@ -66,8 +66,8 @@
   {
    "slug": "cs2-best-settings",
    "category": "Ayarlar",
-   "title": "En İyi CS2 Ayarları (2026): Görüntü, Oyun ve Ses",
-   "seoTitle": "En İyi CS2 Ayarları (2026): Görüntü ve Ses | ClutchCrosshair",
+   "title": "En İyi CS2 Ayarları ({year}): Görüntü, Oyun ve Ses",
+   "seoTitle": "En İyi CS2 Ayarları ({year}): Görüntü ve Ses | ClutchCrosshair",
    "description": "Görünürlük ve FPS için en iyi CS2 ayarları: değiştirilecek görüntü seçenekleri, oyun ve radar ayarları, adımları net duymak için ses ayarları.",
    "intro": "CS2'de iyi ayarlar iki şey yapar: rakipleri kolay görünür kılar ve kare hızını yüksek ve sabit tutar. Görsel güzellik en son gelir. Bu rehber görüntü, oyun ve ses seçeneklerini tek tek ele alıp her birinin neyi değiştirdiğini anlatır; böylece rastgele sayılar kopyalamak yerine kendi seçimlerini yapabilirsin.",
    "commands": ["fps_max", "cl_radar_scale", "cl_radar_always_centered", "cl_hud_radar_scale", "viewmodel_fov", "cl_hud_color", "snd_headphone_eq", "volume", "cl_hud_telemetry_frametime_show"],
@@ -135,7 +135,7 @@
   {
    "slug": "cs2-stretched-resolution",
    "category": "Ayarlar",
-   "title": "CS2 Stretched Çözünürlük: 4:3 mü 16:9 mu (2026)",
+   "title": "CS2 Stretched Çözünürlük: 4:3 mü 16:9 mu ({year})",
    "seoTitle": "CS2 Stretched Çözünürlük: 4:3 mü 16:9 mu | ClutchCrosshair",
    "description": "CS2'yi 4:3 stretched mi oynamalısın? 1280×960'ın modelleri, görüş alanını ve crosshair'ını nasıl değiştirdiği, NVIDIA ve AMD'de nasıl ayarlandığı.",
    "intro": "Birçok CS2 prosu hâlâ 4:3 stretched, genellikle 1280×960 oynuyor; CS 1.6 ve CS:GO'dan kalma bir alışkanlık. Sihir değil: modeller daha geniş görünür ama görüş alanının bir kısmını kaybedersin. Bu rehber tam olarak neyin değiştiğini anlatıyor, böylece kararı kendin verirsin.",
@@ -254,8 +254,8 @@
   {
    "slug": "cs2-fps-boost",
    "category": "Performans",
-   "title": "CS2'de FPS Nasıl Artırılır (2026)",
-   "seoTitle": "CS2'de FPS Nasıl Artırılır (2026) | ClutchCrosshair",
+   "title": "CS2'de FPS Nasıl Artırılır ({year})",
+   "seoTitle": "CS2'de FPS Nasıl Artırılır ({year}) | ClutchCrosshair",
    "description": "CS2'de daha fazla FPS ve daha akıcı oyun için basit yollar: görüntü ayarları, kare hızı sınırı, Windows seçenekleri ve işe yaramayan efsaneler.",
    "intro": "Yüksek ve sabit FPS, CS2'nin daha akıcı ve daha tepkili hissettirmesini sağlar. İyi haber: en büyük kazançlar gizli ayarlardan değil, birkaç oyun içi ayardan ve temel bilgisayar bakımından gelir. İşte gerçekten işe yarayanlar, sırasıyla.",
    "commands": ["fps_max", "cl_showfps", "cl_hud_telemetry_frametime_show", "fps_max_ui", "engine_low_latency_sleep_after_client_tick"],

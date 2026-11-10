@@ -181,8 +181,12 @@ function framePlacement(w, h, look) {
 }
 
 // La zone recadrée suffit-elle pour cet aperçu ? (sinon : image entière, pour ne jamais montrer de bord vide)
+// Pour les petites cartes (look.dim), et sur téléphone (écran de 800 px de large au plus) pour la page joueur et la fiche :
+// la capture y est de toute façon agrandie, et l'image entière pèse 12 fois plus lourd (406 Ko contre 33 Ko).
+// Sur ordinateur, la page joueur et la fiche gardent l'image entière (nette, pixel pour pixel en 1080p).
 function cropFits(w, h, look) {
-    if (!look.dim || look.raw || look.zoom !== 1 || look.res) {
+    const phone = typeof matchMedia === "function" && matchMedia("(max-width: 800px)").matches;
+    if ((!look.dim && !phone) || look.raw || look.zoom !== 1 || look.res) {
         return false;
     }
     const p = framePlacement(w, h, look);

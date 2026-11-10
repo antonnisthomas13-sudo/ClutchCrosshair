@@ -108,7 +108,7 @@
         text.append(tr("consentText", "We would like to measure our audience with Google Analytics. It sets cookies only if you accept. Refusing has no effect on the site.") + " ");
         var more = document.createElement("a");
         more.href = legal + "#cookies";
-        more.textContent = tr("consentMore", "Learn more");
+        more.textContent = tr("consentMore", "Learn more about cookies");
         text.append(more);
 
         var actions = document.createElement("div");

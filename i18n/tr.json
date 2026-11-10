@@ -1,5 +1,135 @@
 {
     "_about": "Textes du site en turc (impératif familier « sen » comme sur les sites de jeux, « siz » dans les mentions légales). Mêmes clés que i18n/en.json ; une clé absente reprend le texte anglais. Les pseudos ne reçoivent jamais de suffixe (impossible à accorder automatiquement : ZywOo'nun / donk'un) : phrases tournées avec « {name} adlı oyuncu », « {name} ile »… Noms des menus de CS2 en turc à vérifier en jeu.",
+    "sponsor": {
+        "label": "Sponsorlu"
+    },
+    "lists": {
+        "memberOf": "{name} şu crosshair listelerinde yer alıyor:",
+        "crumb": "Crosshair listeleri",
+        "hubTitle": "Renk ve Stile Göre En İyi CS2 Crosshair'ları ({year}) | ClutchCrosshair",
+        "hubH1": "Renk ve Stile Göre En İyi CS2 Crosshair'ları",
+        "hubDescription": "Pro oyuncuların gerçek ayarlarından CS2 crosshair listeleri: en çok kullanılan kodlar, noktalı, küçük, yeşil, camgöbeği, beyaz ve sarı crosshair'lar.",
+        "hubIntro": "Bu listeler ClutchCrosshair'daki {total} crosshair'dan hesaplanıyor; hepsi maç demolarından okundu. Bir oyuncu crosshair'ını değiştirdiğinde listeler yeniden hesaplanır.",
+        "count": {
+            "one": "{count} crosshair",
+            "other": "{count} crosshair"
+        },
+        "othersTitle": "Diğer CS2 crosshair listeleri",
+        "cardsTitle": "Oyuncular ve kodlar",
+        "usedBy": {
+            "one": "Bu kodu {count} oyuncu kullanıyor: {list}",
+            "other": "Bu kodu {count} oyuncu kullanıyor: {list}"
+        },
+        "rankTitle": "En çok kullanılan kodlar",
+        "howTitle": "Bu crosshair'lardan biri CS2'de nasıl kullanılır",
+        "homeTitle": "CS2 crosshair listeleri",
+        "items": {
+            "mostUsed": {
+                "title": "En İyi CS2 Crosshair'ları: En Çok Kullanılan Kodlar ({year}) | ClutchCrosshair",
+                "h1": "En İyi CS2 Crosshair'ları: Proların En Çok Kullandığı Kodlar",
+                "description": "Birden fazla pro oyuncunun kullandığı CS2 crosshair kodları, oyuncu sayısına göre sıralı. Gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "Bazı pro oyuncular birebir aynı crosshair koduyla oynuyor. ClutchCrosshair'da en az iki oyuncunun kullandığı {codes} kod burada (toplam {count} oyuncu); en çok kullanılandan en aza doğru sıralı."
+            },
+            "dot": {
+                "title": "CS2 Nokta Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "CS2 Nokta Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı orta noktalı (dot) CS2 crosshair kodları: gerçek boyutlu önizleme ve tek tıkla kopyalama.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) orta nokta ile oynuyor (cl_crosshairdot 1): crosshair'ın ortasında küçük bir nokta."
+            },
+            "small": {
+                "title": "Küçük CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Küçük CS2 Crosshair'ları",
+                "description": "Pro oyuncuların en küçük CS2 crosshair'ları: uzunluk 2 veya daha az, kalınlık 1. Gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) çok küçük bir crosshair ile oynuyor: çizgiler en fazla 2 piksel uzunluğunda ve 1 piksel kalınlığında."
+            },
+            "outline": {
+                "title": "Dış Çizgili CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Dış Çizgili CS2 Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı siyah dış çizgili CS2 crosshair kodları. Gerçek boyutlu önizleme ve tek tıkla kopyalama.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) crosshair'ına siyah bir dış çizgi ekliyor (cl_crosshair_drawoutline 1). Böylece crosshair açık renkli zeminlerde daha iyi görünüyor."
+            },
+            "green": {
+                "title": "Yeşil CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Yeşil CS2 Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı yeşil CS2 crosshair kodları: gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) yeşil bir crosshair ile oynuyor."
+            },
+            "cyan": {
+                "title": "Camgöbeği CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Camgöbeği CS2 Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı camgöbeği CS2 crosshair kodları: gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) camgöbeği bir crosshair ile oynuyor."
+            },
+            "white": {
+                "title": "Beyaz CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Beyaz CS2 Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı beyaz CS2 crosshair kodları: gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) beyaz bir crosshair ile oynuyor."
+            },
+            "yellow": {
+                "title": "Sarı CS2 Crosshair'ları: Pro Kodları ({year}) | ClutchCrosshair",
+                "h1": "Sarı CS2 Crosshair'ları",
+                "description": "Pro oyuncuların ve içerik üreticilerinin kullandığı sarı CS2 crosshair kodları: gerçek boyutlu önizleme, tek tıkla kopyalama ve konsol komutları.",
+                "intro": "ClutchCrosshair'daki {total} oyuncudan {count} tanesi (%{percent}) sarı bir crosshair ile oynuyor."
+            }
+        }
+    },
+    "history": {
+        "title": "{name}: önceki crosshair'lar",
+        "since": "{name}, şu anki crosshair'ını {date} tarihli maçtan beri kullanıyor.",
+        "intro": {
+            "one": "Bundan önce ClutchCrosshair, bu oyuncunun maçlarında {count} farklı crosshair daha kaydetti. Hâlâ kopyalayabilirsin.",
+            "other": "Bundan önce ClutchCrosshair, bu oyuncunun maçlarında {count} farklı crosshair daha kaydetti. Hâlâ kopyalayabilirsin."
+        },
+        "single": "{date} tarihli maç",
+        "range": "{from} - {to} arası maçlar",
+        "spec": "{color}, uzunluk {length}, kalınlık {thickness}, boşluk {gap}",
+        "dot": "orta nokta",
+        "preview": "Önizleme",
+        "faqQ": "{name} crosshair'ını ne sıklıkla değiştiriyor?",
+        "faqA": {
+            "one": "{name} adlı oyuncu, ClutchCrosshair'ın {first} tarihinden beri kaydettiği maçlarda crosshair'ını {count} kez değiştirdi. Şu anki crosshair'ını {since} tarihinden beri kullanıyor.",
+            "other": "{name} adlı oyuncu, ClutchCrosshair'ın {first} tarihinden beri kaydettiği maçlarda crosshair'ını {count} kez değiştirdi. Şu anki crosshair'ını {since} tarihinden beri kullanıyor."
+        }
+    },
+    "teams": {
+        "hubCrumb": "Takımlar",
+        "hubTitle": "Takımlara Göre CS2 Crosshair'ları ({year}) | ClutchCrosshair",
+        "hubDescription": "{teams} pro takımın ve {players} oyuncunun CS2 crosshair kodları, takımlara göre sıralı. Bir takım seç, her oyuncunun crosshair'ını gör ve kopyala.",
+        "hubH1": "Takımlara Göre CS2 Crosshair'ları",
+        "hubIntro": "Bir takım seç ve her oyuncusunun resmi maç demolarından okunan crosshair'ını gör.",
+        "title": "{team} CS2 Crosshair Kodları ({year}) | ClutchCrosshair",
+        "ogTitle": "{team} CS2 Crosshair Kodları",
+        "description": "{team} CS2 crosshair kodları: {list}. Tek tıkla kopyala; gerçek boyutlu önizleme ve konsol komutları. Resmi maç demolarından okundu.",
+        "descriptionShort": "{team} CS2 crosshair kodları: {list}. Tek tıkla kopyala; gerçek boyutlu önizleme ve konsol komutları.",
+        "h1": "{team} CS2 Crosshair'ları",
+        "players": {
+            "one": "{count} oyuncu",
+            "other": "{count} oyuncu"
+        },
+        "lastMatch": "Son maç: {date}",
+        "intro": "ClutchCrosshair'daki {count} {team} oyuncusunun CS2 crosshair'ları burada: {list}. Her kod resmi bir maçın demosundan okundu; en son maç {date} tarihinde oynandı.",
+        "statsColor": {
+            "one": "{total} oyuncudan {count} tanesi {color} bir crosshair kullanıyor.",
+            "other": "{total} oyuncudan {count} tanesi {color} bir crosshair kullanıyor."
+        },
+        "statsDot": {
+            "one": "{count} oyuncu orta nokta kullanıyor.",
+            "other": "{count} oyuncu orta nokta kullanıyor."
+        },
+        "statsNoDot": "Hiçbiri orta nokta ile oynamıyor.",
+        "listTitle": "{team} crosshair kodları",
+        "howTitle": "{team} crosshair'ı CS2'de nasıl kullanılır",
+        "faqTitle": "{team} crosshair SSS",
+        "faqRosterQ": "ClutchCrosshair'da hangi {team} oyuncuları var?",
+        "faqRosterA": "{list}. Crosshair'ları resmi maç demolarından geliyor; en son maç {date} tarihinde oynandı.",
+        "faqSpecQ": "{team} oyuncuları hangi crosshair'ları kullanıyor?",
+        "faqSpec": "{name}: {color}, uzunluk {length}, kalınlık {thickness}, boşluk {gap}.",
+        "othersTitle": "Diğer CS2 takımları",
+        "teamLink": "{team} crosshair'ları",
+        "allLink": "Tüm {team} crosshair'ları",
+        "homeTitle": "Takımlara göre CS2 crosshair'ları"
+    },
     "common": {
         "and": "ve",
         "copy": "Kopyala",
@@ -27,6 +157,8 @@
         "soon": "yakında"
     },
     "footer": {
+        "lists": "En iyi CS2 crosshair'ları",
+        "teams": "Takım crosshair'ları",
         "generator": "Crosshair oluşturucu",
         "bind": "Bind oluşturucu",
         "skins": "CS2 pro skinleri",
@@ -36,7 +168,7 @@
         "method": "Kodlar nereden geliyor",
         "legal": "Yasal bilgiler",
         "business": "İş birlikleri ve ortaklıklar:",
-        "rights": "© 2026 ClutchCrosshair. Tüm hakları saklıdır.",
+        "rights": "© {year} ClutchCrosshair. Tüm hakları saklıdır.",
         "trademarks": "Counter-Strike 2 ve CS2 skinleri Valve Corporation'ın ticari markalarıdır. Takım logoları sahiplerinin ticari markalarıdır. ClutchCrosshair'ın Valve veya takımlarla bir bağlantısı yoktur.",
         "cookies": "Çerezler"
     },
@@ -125,7 +257,8 @@
         "faqSameQ": "Hangi prolar {name} ile aynı crosshair'ı kullanıyor?"
     },
     "player": {
-        "title": "{name} CS2 Crosshair Kodu (2026) | ClutchCrosshair",
+        "figure": "{name} CS2 crosshair'ı, Dust2 üzerinde ×5 yakınlaştırma.",
+        "title": "{name} CS2 Crosshair Kodu ({year}) | ClutchCrosshair",
         "ogTitle": "{name} CS2 Crosshair Kodu",
         "ogImageAlt": "{name} CS2 crosshair: önizleme ve kod",
         "descriptionPro": "{name} ({team}) CS2 crosshair kodunu tek tıkla kopyala: gerçek boyutlu önizleme, konsol komutları ve ayarlar. {date} tarihli maçtan.",
@@ -155,7 +288,7 @@
         "matesCreator": "Diğer içerik üreticisi crosshair'ları"
     },
     "home": {
-        "title": "CS2 Pro Oyuncu Crosshair Kodları (2026) | ClutchCrosshair",
+        "title": "CS2 Pro Oyuncu Crosshair Kodları ({year}) | ClutchCrosshair",
         "metaDescription": "donk, ZywOo, m0NESY, NiKo ve {count} pro oyuncunun CS2 crosshair kodlarını tek tıkla kopyala: gerçek boyutlu önizleme ve konsol komutları. Maç demolarından.",
         "ogTitle": "CS2 pro oyuncu ve yayıncı crosshair kodları",
         "ogDescription": "Pro oyuncuların ve içerik üreticilerinin en güncel CS2 crosshair kodlarını tek tıkla kopyala. donk, ZywOo, m0NESY ve daha fazlası.",
@@ -397,7 +530,7 @@
         "personTeam": "{name}, {team} takımında oynayan profesyonel bir CS2 oyuncusu.",
         "person": "{name}, profesyonel bir CS2 oyuncusu.",
         "titleValue": "{name} CS2 Skinleri ve Envanter Değeri | ClutchCrosshair",
-        "title": "{name} CS2 Skinleri ve Envanteri (2026) | ClutchCrosshair",
+        "title": "{name} CS2 Skinleri ve Envanteri ({year}) | ClutchCrosshair",
         "ogTitle": "{name} CS2 Skinleri ve Envanteri",
         "crumb": "Pro skinleri",
         "h1": "{name} CS2 Skinleri",
@@ -414,7 +547,7 @@
         "othersTitle": "Diğer CS2 pro envanterleri",
         "othersLink": "{name} skinleri",
         "hubDescription": "CS2 pro skinleri: {names} adlı oyuncuların bıçakları, eldivenleri ve silah skinleri, kesin float ile. Güncelleme: {date}.",
-        "hubTitle": "CS2 Pro Skinleri ve Envanterleri (2026) | ClutchCrosshair",
+        "hubTitle": "CS2 Pro Skinleri ve Envanterleri ({year}) | ClutchCrosshair",
         "hubOgTitle": "CS2 Pro Skinleri ve Envanterleri",
         "hubListItem": "{name} CS2 skinleri",
         "hubH1": "CS2 Pro Skinleri",
@@ -501,7 +634,7 @@
             ]
         ],
         "hubDescription": "İşe yarayan tüm CS2 konsol komutları: crosshair, HUD, radar, FPS, ağ, antrenman ve botlar; varsayılan değerler, örnekler ve Kopyala düğmesi.",
-        "hubTitle": "CS2 Konsol Komutları Listesi (2026) | ClutchCrosshair",
+        "hubTitle": "CS2 Konsol Komutları Listesi ({year}) | ClutchCrosshair",
         "hubOgTitle": "CS2 Konsol Komutları",
         "hubH1": "CS2 Konsol Komutları",
         "hubIntro": "İşe yarayan {count} CS2 konsol komutu sade bir dille: her birinin ne yaptığı, değerleri, varsayılan değeri ve kopyalamaya hazır örnekler. CS:GO'dan kalıp artık çalışmayan komutlar <strong>CS2'de kaldırıldı</strong> olarak işaretlendi. Güncelleme: {date}.",
@@ -684,7 +817,7 @@
     },
     "legal": {
         "title": "Yasal bilgiler | ClutchCrosshair",
-        "description": "ClutchCrosshair yasal bilgileri: yayıncı, barındırma, ticari markalar, gizlilik ve çerezler. Reklam yok; Google Analytics yalnızca izninizle.",
+        "description": "ClutchCrosshair yasal bilgileri: yayıncı, barındırma, ticari markalar, gizlilik ve çerezler. Google Analytics yalnızca izninizle.",
         "h1": "Yasal bilgiler",
         "sections": [
             [
@@ -693,7 +826,7 @@
             ],
             [
                 "Barındırma",
-                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Amerika Birleşik Devletleri (cloudflare.com)."
+                "Cloudflare Pages, Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, Amerika Birleşik Devletleri (cloudflare.com), telefon: +1 888 993 5273."
             ],
             [
                 "Fikri mülkiyet",
@@ -701,12 +834,17 @@
             ],
             [
                 "Gizlilik",
-                "ClutchCrosshair reklam çerezleri kullanmaz. Açık/koyu mod, dil ve çerez tercihleriniz yalnızca kendi tarayıcınızda (localStorage) saklanır. Ziyaretler ayrıca çerez kullanmayan ve sizi siteden siteye takip etmeyen Cloudflare Web Analytics ile sayılır."
+                "ClutchCrosshair reklam çerezleri kullanmaz. Açık/koyu mod, dil ve çerez tercihleriniz yalnızca kendi tarayıcınızda (localStorage) saklanır. Ziyaretler ayrıca çerez kullanmayan ve sizi siteden siteye takip etmeyen Cloudflare Web Analytics ile sayılır. GDPR uyarınca, {email} adresine yazarak sizinle ilgili verilere erişmeyi, bunların düzeltilmesini veya silinmesini talep edebilir ve Fransız veri koruma kurumuna (CNIL, cnil.fr) şikâyette bulunabilirsiniz."
             ],
             [
                 "Çerezler ve Google Analytics",
                 "Yalnızca izninizle, kitlemizi Google Analytics 4 (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, İrlanda) ile ölçüyoruz: ziyaret sayısı, görüntülenen sayfalar, yaklaşık ülke ve cihaz türü. <code>_ga</code> ve <code>_ga_195B8EZ9BP</code> çerezlerini en fazla 13 ay süreyle yerleştirir. Google bu verileri Avrupa Birliği dışına aktarabilir; <a href=\"https://policies.google.com/privacy?hl=tr\" rel=\"external noopener\" target=\"_blank\">Google gizlilik politikasına</a> bakın.</p>\n        <p><strong>Reddet</strong>'e tıklarsanız Google Analytics yüklenmez ve hiçbir çerez yerleştirilmez; site aynı şekilde çalışır. Seçiminiz tarayıcınızda 6 ay saklanır, ardından bant size yeniden sorar. Fikrinizi istediğiniz zaman her sayfanın altındaki <button type=\"button\" class=\"link-btn\" data-consent-open>Çerezler</button> bağlantısıyla değiştirebilirsiniz. Verilerinizin silinmesini de isteyebilirsiniz: {email}.",
                 "cookies"
+            ],
+            [
+                "Sponsorlu bağlantılar",
+                "ClutchCrosshair sponsorlu bağlantılar gösterebilir. Bu bağlantılar her zaman “Sponsorlu” ibaresiyle işaretlenir. Sponsorların, maç demolarından okunan crosshair kodları üzerinde hiçbir etkisi yoktur ve bu bağlantılar bu sitede çerez bırakmaz.",
+                "sponsored"
             ],
             [
                 "Diğer diller",
@@ -783,7 +921,7 @@
         "genFromLink": "Crosshair bağlantıdan yüklendi. İstediğin gibi ayarla.",
         "consentAria": "Çerez izni",
         "consentText": "Kitlemizi Google Analytics ile ölçmek istiyoruz. Yalnızca kabul edersen çerez yerleştirir. Reddetmek sitede hiçbir şeyi değiştirmez.",
-        "consentMore": "Daha fazla bilgi",
+        "consentMore": "Çerezler hakkında daha fazla bilgi",
         "consentRefuse": "Reddet",
         "consentAccept": "Kabul et"
     }

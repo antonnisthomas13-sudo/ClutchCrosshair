@@ -120,12 +120,16 @@ def update_players(found, day, data, when=None):
     """Met à jour la liste des joueurs (data) avec les joueurs d'une démo jouée le jour "day" (à l'heure "when")."""
     day_text = day.strftime("%d/%m/%Y")
     when_text = when.strftime("%Y-%m-%dT%H:%M") if when else None
-    report = {"added": [], "updated": [], "confirmed": [], "older": [], "same_day": [], "old_format": [], "ignored": []}
+    report = {"added": [], "updated": [], "confirmed": [], "older": [], "same_day": [], "old_format": [], "ignored": [], "renamed": []}
 
     for p in found:
         team = site_team(p["demo_team"])
         if not team:
             report["ignored"].append(f'{p["name"]} ({p["demo_team"] or "équipe inconnue"})')
+            # Un joueur déjà sur le site (même SteamID) avec un nom d'équipe inconnu : l'équipe a sans doute changé
+            # de nom dans les démos (ex. BetBoom -> « BB TEAM », 03/11/2026). Il faut l'ajouter dans TEAM_ALIASES.
+            if any(x.get("steamid") == p["steamid"] and x.get("category") == "pro" for x in data):
+                report["renamed"].append(f'{p["name"]} ({p["demo_team"] or "équipe inconnue"})')
             continue
 
         # Les anciens codes CSGO-... ne s'importent plus dans CS2 : on les refuse
@@ -146,6 +150,7 @@ def update_players(found, day, data, when=None):
                 "category": "pro",
                 "code": p["code"],
                 "updated": day_text,
+                "since": day_text,
                 "trending": False,
             })
             if when_text:
@@ -173,13 +178,25 @@ def update_players(found, day, data, when=None):
         # Un joueur classé créateur par Anto le reste (ex. jL, remplaçant chez Vitality) : on met à jour son code, pas son équipe
         if existing.get("category") != "creator":
             existing["team"] = team
+        previous_day = existing.get("updated")  # dernier match où on a vu son crosshair actuel
         existing["updated"] = day_text  # le crosshair est confirmé à la date de ce match
         if when_text:
             existing["matchTime"] = when_text
         if existing.get("code") != p["code"]:
+            # Historique (affiché sur la page du joueur) : on garde l'ancien crosshair, avec le premier ("from")
+            # et le dernier ("to") match où on l'a vu. "since" = premier match du crosshair actuel.
+            old_code = existing.get("code") or ""
+            if old_code.startswith("CS") and not old_code.startswith("CSGO-") and previous_day:
+                existing.setdefault("history", []).append({
+                    "code": old_code,
+                    "from": existing.get("since") or previous_day,
+                    "to": previous_day,
+                })
             existing["code"] = p["code"]
+            existing["since"] = day_text
             report["updated"].append(existing["name"])
         else:
+            existing.setdefault("since", previous_day or day_text)
             report["confirmed"].append(existing["name"])
 
     return report
@@ -227,6 +244,11 @@ def main():
     print("À vérifier      :", ", ".join(report["same_day"]) or "-", "(autre match le même jour, heure inconnue : code gardé)")
     print("Refusés         :", ", ".join(report["old_format"]) or "-", "(ancien format CSGO-)")
     print("Ignorés         :", ", ".join(report["ignored"]) or "-", "(équipe pas sur le site)")
+    if report["renamed"]:
+        print()
+        print("ATTENTION : ces joueurs sont déjà sur le site mais leur équipe n'a pas été reconnue :")
+        print("   ", ", ".join(report["renamed"]))
+        print("    Leur crosshair n'a PAS été mis à jour. Ajoute ce nom d'équipe dans TEAM_ALIASES (read_demo.py), puis relis la démo.")
     print()
     print("players.json est à jour. Lance ensuite : node build.js")
 

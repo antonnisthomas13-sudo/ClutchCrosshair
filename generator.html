@@ -42,18 +42,20 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="ClutchCrosshair: find your perfect CS2 crosshair">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ClutchCrosshair">
     <meta name="twitter:title" content="CS2 Crosshair Generator">
     <meta name="twitter:description" content="Free CS2 crosshair generator: pick the color, size, gap and outline, see a real-size preview on a CS2 map, then copy your crosshair code or console commands.">
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/barlow-condensed-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.min.css?v=52c5bcb3b1">
-    <link rel="modulepreload" href="crosshair.min.js?v=da13dcace5">
+    <link rel="stylesheet" href="style.min.css?v=c1caa479b1">
+    <link rel="preload" href="fonts/jetbrains-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="modulepreload" href="crosshair.min.js?v=4e3e1d3029">
     <link rel="modulepreload" href="lib/csgo-sharecode.js">
     <link rel="preload" href="preview-bg.webp?v=282ecb7043" as="image" type="image/webp">
-    <link rel="modulepreload" href="generator.min.js?v=430964b16d">
+    <link rel="modulepreload" href="generator.min.js?v=ea50712f65">
     <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://clutchcrosshair.com/generator","url":"https://clutchcrosshair.com/generator","name":"CS2 Crosshair Generator","inLanguage":"en","isPartOf":{"@id":"https://clutchcrosshair.com/#website"},"breadcrumb":{"@id":"https://clutchcrosshair.com/generator#breadcrumb"},"mainEntity":{"@id":"https://clutchcrosshair.com/generator#app"}},{"@type":"WebApplication","@id":"https://clutchcrosshair.com/generator#app","name":"CS2 Crosshair Generator","url":"https://clutchcrosshair.com/generator","description":"Free online CS2 crosshair generator: choose the color, length, thickness, gap and outline, see a real-size preview, then copy your CS2 crosshair code or console commands.","applicationCategory":"GameApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://clutchcrosshair.com/#organization"}},{"@type":"BreadcrumbList","@id":"https://clutchcrosshair.com/generator#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clutchcrosshair.com/"},{"@type":"ListItem","position":2,"name":"CS2 Tools","item":"https://clutchcrosshair.com/tools/"},{"@type":"ListItem","position":3,"name":"CS2 crosshair generator","item":"https://clutchcrosshair.com/generator"}]},{"@type":"FAQPage","@id":"https://clutchcrosshair.com/generator#faq","mainEntity":[{"@type":"Question","name":"Is this CS2 crosshair generator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is free, with no sign-up and no download. Everything runs in your browser."}},{"@type":"Question","name":"How do I put my new crosshair in CS2?","acceptedAnswer":{"@type":"Answer","text":"Click Copy next to your share code, then in CS2 open Settings › Game › Crosshair, click Share or Import and paste the code. You can also copy the console commands and paste them in the CS2 console (~)."}},{"@type":"Question","name":"Why does my crosshair look different in 4:3 stretched?","acceptedAnswer":{"@type":"Answer","text":"In 4:3 stretched (1280×960, 1024×768...) or 5:4 stretched (1280×1024), the game image is stretched to fill a 16:9 screen, so the crosshair gets wider: horizontal lines look longer and vertical lines thicker. Pick your resolution under the preview (16:9, 4:3, 16:10 or 5:4) to see exactly how your crosshair will look in game. Your crosshair code stays the same."}},{"@type":"Question","name":"Can I start from a pro player's crosshair?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick a pro in the Start from list, or paste any CS2 crosshair code, then change the color, size or gap. The new code updates instantly."}},{"@type":"Question","name":"Does it work with old CSGO- crosshair codes?","acceptedAnswer":{"@type":"Answer","text":"No. Since the CS2 update of September 30, 2026, only the new codes starting with CS can be imported in the game. The generator only creates new CS2 codes."}}]}]}</script>
-    <script src="consent.min.js?v=fdcf5763f3" data-legal="legal" defer></script>
+    <script src="consent.min.js?v=0e1b3519e8" data-legal="legal" defer></script>
     <script src="lang-banner.min.js?v=aec40a5320" defer></script>
 </head>
 <body class="page">
@@ -221,6 +223,8 @@
         <nav class="footer-links" aria-label="Footer">
             <a href="generator">Crosshair Generator</a>
             <a href="tools/bind-generator">Bind Generator</a>
+            <a href="crosshairs/">Best CS2 Crosshairs</a>
+            <a href="teams/">Crosshairs by Team</a>
             <a href="skins/">CS2 Pro Skins</a>
             <a href="guides/">CS2 Guides</a>
             <a href="commands/">Console Commands</a>
@@ -235,7 +239,7 @@
     </footer>
 
     <script type="module">
-        import { initGenerator } from "./generator.min.js?v=430964b16d";
+        import { initGenerator } from "./generator.min.js?v=ea50712f65";
         initGenerator(document.getElementById("gen"), { syncHash: true });
     </script>
 </body>

@@ -7,6 +7,19 @@ https://:project.pages.dev/*
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex
 
+# En-têtes de sécurité, sur toutes les pages et tous les fichiers (audit du 10/11/2026) :
+#   Strict-Transport-Security : le navigateur n'utilise plus jamais http:// pour ce site (1 an)
+#   X-Content-Type-Options    : le navigateur ne devine pas le type d'un fichier (un .txt ne peut pas être lu comme un script)
+#   X-Frame-Options           : le site ne peut pas être affiché dans le cadre d'un autre site (faux clics)
+#   Permissions-Policy        : le site n'a besoin ni de la caméra, ni du micro, ni de la position
+# (Referrer-Policy est déjà envoyé par Cloudflare. Pas encore de Content-Security-Policy : les pages contiennent
+#  de petits scripts écrits dans le HTML, il faudra la tester avant de l'activer.)
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
 # Mise en cache dans le navigateur des visiteurs (site plus rapide quand on revient)
 # CSS / JS : 1 an, sans risque, car chaque page les appelle avec une empreinte ?v= qui change à chaque modification
 # (node build.js). Ne JAMAIS appeler ces fichiers sans ?v= (sinon les visiteurs garderaient l'ancienne version).

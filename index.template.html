@@ -29,6 +29,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{meta.ogImageAlt}}">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ClutchCrosshair">
     <meta name="twitter:title" content="{{home.ogTitle}}">
     <meta name="twitter:description" content="{{home.twitterDescription}}">
     <meta name="twitter:image" content="https://clutchcrosshair.com/og-image.jpg">
@@ -65,7 +66,7 @@
                 "url": "https://clutchcrosshair.com/",
                 "logo": { "@type": "ImageObject", "url": "https://clutchcrosshair.com/icon-512.png", "width": 512, "height": 512 },
                 "email": "clutchcrosshair@gmail.com",
-                "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "clutchcrosshair@gmail.com", "availableLanguage": ["English", "French"] },
+                "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "clutchcrosshair@gmail.com", "availableLanguage": ["English", "French", "Spanish", "Russian", "Turkish"] },
                 "sameAs": ["https://x.com/ClutchCrosshair"]
             }
         ]
@@ -249,15 +250,22 @@
                 </div>
             </main>
 
+            <!-- SPONSOR:START (lien sponsorisé de sponsors.json, écrit par build.js ; vide s'il n'y en a pas) -->
+            <!-- SPONSOR:END -->
+
             <section class="about">
                 <h2>{{home.aboutTitle}}</h2>
                 <p>{{home.aboutText}}</p>
+                <!-- TEAMLINKS:START (liens vers les pages des équipes, écrits automatiquement par build.js) -->
+                <!-- TEAMLINKS:END -->
             </section>
 
             <footer>
                 <nav class="footer-links" aria-label="{{nav.footerAria}}">
                     <a href="generator.html">{{footer.generator}}</a>
                     <a href="tools/bind-generator.html">{{footer.bind}}</a>
+                    <a href="crosshairs/">{{footer.lists}}</a>
+                    <a href="teams/">{{footer.teams}}</a>
                     <a href="skins/">{{footer.skins}}</a>
                     <a href="guides/">{{footer.guides}}</a>
                     <a href="commands/">{{footer.commands}}</a>

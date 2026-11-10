@@ -5,9 +5,9 @@
   {
    "slug": "cs2-launch-options",
    "category": "Réglages",
-   "title": "Meilleures options de lancement CS2 (2026)",
-   "seoTitle": "Meilleures options de lancement CS2 (2026) | ClutchCrosshair",
-   "description": "Les options de lancement CS2 qui marchent encore en 2026, comment les ajouter dans Steam, et les anciennes options de CS:GO qui ne servent plus à rien.",
+   "title": "Meilleures options de lancement CS2 ({year})",
+   "seoTitle": "Meilleures options de lancement CS2 ({year}) | ClutchCrosshair",
+   "description": "Les options de lancement CS2 qui marchent encore en {year}, comment les ajouter dans Steam, et les anciennes options de CS:GO qui ne servent plus à rien.",
    "intro": "Les options de lancement sont de petites commandes que Steam transmet à CS2 au démarrage du jeu. Quelques-unes sont vraiment utiles, mais la plupart des longues listes qu'on trouve sur Internet ont été faites pour CS:GO et ne font rien dans CS2. Voici celles qui valent le coup, et les idées reçues à oublier.",
    "commands": [
     "fps_max",
@@ -164,8 +164,8 @@
   {
    "slug": "cs2-best-settings",
    "category": "Réglages",
-   "title": "Meilleurs réglages CS2 (2026) : vidéo, jeu et audio",
-   "seoTitle": "Meilleurs réglages CS2 (2026) : vidéo & audio | ClutchCrosshair",
+   "title": "Meilleurs réglages CS2 ({year}) : vidéo, jeu et audio",
+   "seoTitle": "Meilleurs réglages CS2 ({year}) : vidéo & audio | ClutchCrosshair",
    "description": "Les meilleurs réglages CS2 pour la visibilité et les FPS : options vidéo à changer, réglages du jeu et du radar, et réglages audio pour bien entendre les pas.",
    "intro": "De bons réglages dans CS2 font deux choses : ils rendent les ennemis faciles à voir, et ils gardent tes FPS hauts et stables. La beauté de l'image passe en dernier. Ce guide passe en revue les options vidéo, jeu et audio et explique ce que change chacune, pour que tu fasses tes propres choix au lieu de copier des chiffres au hasard.",
    "commands": [
@@ -341,7 +341,7 @@
   {
    "slug": "cs2-stretched-resolution",
    "category": "Réglages",
-   "title": "Résolution étirée CS2 : 4:3 ou 16:9 (2026)",
+   "title": "Résolution étirée CS2 : 4:3 ou 16:9 ({year})",
    "seoTitle": "Résolution étirée CS2 : 4:3 ou 16:9, le guide | ClutchCrosshair",
    "description": "Faut-il jouer à CS2 en 4:3 étiré ? Ce que le 1280×960 change aux modèles, au champ de vision et à ton crosshair, et comment le régler sur NVIDIA et AMD.",
    "intro": "Beaucoup de pros CS2 jouent encore en 4:3 étiré, le plus souvent en 1280×960, une habitude héritée de CS 1.6 et de CS:GO. Ce n'est pas magique : tu gagnes des modèles qui paraissent plus larges et tu perds une partie de ton champ de vision. Ce guide explique exactement ce qui change, pour que tu décides par toi-même.",
@@ -572,8 +572,8 @@
   {
    "slug": "cs2-fps-boost",
    "category": "Performances",
-   "title": "Comment augmenter ses FPS sur CS2 (2026)",
-   "seoTitle": "Comment augmenter ses FPS sur CS2 (2026) | ClutchCrosshair",
+   "title": "Comment augmenter ses FPS sur CS2 ({year})",
+   "seoTitle": "Comment augmenter ses FPS sur CS2 ({year}) | ClutchCrosshair",
    "description": "Des moyens simples d'avoir plus de FPS et un jeu plus fluide sur CS2 : réglages vidéo, limite d'images, options de Windows et les idées reçues qui n'aident pas.",
    "intro": "Des FPS hauts et stables rendent CS2 plus fluide et plus réactif. Bonne nouvelle : les plus gros gains viennent de quelques réglages du jeu et d'un PC bien entretenu, pas de réglages secrets. Voici ce qui aide vraiment, dans l'ordre.",
    "commands": [
