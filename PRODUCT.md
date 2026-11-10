@@ -20,10 +20,10 @@ Every pro code is read directly from official match demos (the exact crosshair u
 
 ## Operating Context
 
-- Static site (HTML/CSS/vanilla JS modules) on GitHub Pages; future domain clutchcrosshair.com. No framework, no build step except `node build.js` (pre-renders cards, player pages, FAQ, legal, sitemap).
-- Data: `players.json` (71 pros from 14 teams, 1 creator), updated by `read_demo.py` from HLTV demos.
-- Pages: home (search, team menu, tabs Pros / Creators / Trending / Generator / Pro Skins, sort, cards, player modal with `#slug` address), one page per player, FAQ, legal notice, 404.
-- Site copy is in English; FR/RU/ES/TR planned (language selector present, disabled).
+- Static site (HTML/CSS/vanilla JS modules) on Cloudflare Pages at https://clutchcrosshair.com (code on GitHub, each push is deployed). No framework, no build step except `node build.js` (pre-renders every page, the sitemap and the minified CSS/JS), checked with `node check.js`.
+- Data: `players.json` (75 pros from 15 teams, 14 creators), updated by `read_demo.py` from HLTV demos; previous crosshair codes are kept per player.
+- Pages: home (search, team menu, tabs Pros / Creators / Trending / Generator / Pro Skins, sort, cards, player modal with `#slug` address), one page per player, one page per team, crosshair lists (most used, dot, small, outline, colors), crosshair generator, pro skins (5 inventories), guides, console commands, tools (bind generator), FAQ, methodology, legal notice, 404.
+- Site copy is written in English and published in 5 languages: English, French, Spanish, Russian, Turkish (language selector on every page).
 
 ## Capabilities and Constraints
 
@@ -31,8 +31,8 @@ Every pro code is read directly from official match demos (the exact crosshair u
 - Must keep the page skeleton, structure and all text content.
 - Crosshair preview must stay at real in-game size (validated against the game); codes and console are correct.
 - Planned: a game selector CS2 / Valorant (CS2 active, Valorant "soon") must have a place in the design now.
-- Planned: Crosshair Generator tab and Pro Skins tab (currently "Coming soon").
-- SEO is the top business priority (keyword "CS2"); monetisation (ads, sponsorships) later.
+- Online: Crosshair Generator, Pro Skins, guides, console commands and tools (bind generator).
+- SEO is the top business priority (keyword "CS2"); monetisation through fixed-price sponsored links (`sponsors.json`, always labelled "Sponsored" with `rel="sponsored"`), none sold yet.
 
 ## Brand Commitments
 
@@ -41,7 +41,7 @@ Every pro code is read directly from official match demos (the exact crosshair u
 
 ## Evidence on Hand
 
-- Real data: 71 pro crosshair codes with match dates, team logos (`logos/`), 15 player photos (`photos/`, HLTV, rights not cleared), CS2 screenshot `preview-bg.jpg` (Nuke).
+- Real data: 75 pro and 14 creator crosshair codes with match dates, team logos (`logos/`), 89 player photos (`photos/`, HLTV, rights not cleared), CS2 screenshot `preview-bg.jpg` (Dust2, Long A doors).
 - Computed pro stats (FAQ): color families, gap, center dot, outline shares.
 - No testimonials, user counts, press or partnerships exist: do not invent them.
 
