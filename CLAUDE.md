@@ -15,6 +15,7 @@
 - Python : `py` (pas `python`)
 - Lire une démo : `py read_demo.py "demos/fichier.dem"` (skill `lire-une-demo`)
 - Créateurs : `node import-creators.js` ; skins : `node update-skins.js` puis `node build.js`
+- Jeu Zero to Major : `node career-sim.js 200` (joue 200 carrières tout seul) ; données réelles : `node career-src/update-data.js`
 - Haut de l'accueil changé sans toucher au CSS : `node build.js --critical`
 - Refaire l'image de partage : supprimer `og-image.jpg` puis `node build.js`
 
@@ -38,6 +39,7 @@
 - Pseudos en vraie casse (« ZywOo »), jamais en majuscules. Pas de jaune ni d'ambre dans l'interface. La console reste visible sur les cartes
 - Thème sombre à la première visite. Aucune redirection automatique selon la langue
 - Garder les adresses `/players/<pseudo>`
+- Jeu Zero to Major : jamais de dispute, de polémique ou de défaut inventé sur un vrai joueur ou une vraie équipe (rôles sans nom : « ton IGL », « ton coach », ou personnages fictifs de `career-src/cast.json`). Jamais un vrai joueur dans une histoire d'alcool, de drogue, de santé ou de vie privée
 - Ne rien affirmer de faux sur le site (methodology, llms.txt, FAQ) : pas de chiffres ni de témoignages inventés
 - Laisser « Block AI bots » désactivé dans Cloudflare
 - Ne pas ajouter de nouvelles séries de pages tant que Google n'a pas remonté le site (voir « À faire »)
@@ -59,6 +61,7 @@ Hébergement : **Cloudflare Pages**, https://clutchcrosshair.com (sans www). Le 
 - Générateur : `.claude/rules/generateur.md` ; skins : `.claude/rules/skins.md` ; créateurs : `.claude/rules/createurs.md`
 - Commandes, guides, outils : `.claude/rules/commandes-guides-outils.md`
 - Animations, Google Analytics, cookies : `.claude/rules/animations-cookies.md`
+- Le jeu « Zero to Major » (page /career, anglais et français) : `.claude/rules/career.md`
 - Pourquoi c'est comme ça (dates, décisions, bugs corrigés, constat Search Console) : `HISTORIQUE.md`
 - Fiche produit : `PRODUCT.md`
 
@@ -77,6 +80,7 @@ Hébergement : **Cloudflare Pages**, https://clutchcrosshair.com (sans www). Le 
 - `consent.js` — bandeau cookies + Google Analytics après accord.
 - `lang-banner.js` — bandeau « ce site existe dans ta langue ».
 - `teams.js` — les 15 équipes (nom, couleur, logo).
+- `career.js`, `career-engine.js` — le jeu « Zero to Major » (affichage, règles). `career-src/` — ses données et ses textes. `career-sim.js` — simulation pour l'équilibrage.
 - `lib/csgo-sharecode.js` — librairie de décodage des codes (copie locale).
 
 **Données**
@@ -101,12 +105,13 @@ Hébergement : **Cloudflare Pages**, https://clutchcrosshair.com (sans www). Le 
 **Images**
 - `photos/` — photos d'origine, nom = pseudo en minuscules (`hunter.webp`). `logos/` — logos des équipes.
 - `preview-bg.jpg` — capture Dust2, fond de tous les aperçus.
+- `flags/` — drapeaux des pays (flag-icons, licence MIT), utilisés seulement par le jeu « Zero to Major ».
 - `og-image.jpg` — image de partage du site. `og/` — image de partage par joueur.
 - `favicon.svg`, `logo-horizontal-*.svg`, `apple-touch-icon.png`, `icon-512.png`, `site.webmanifest` — logo et icônes.
 - `fonts/` — les polices du site.
 
 **Fabriqués (ne pas toucher)**
-- `index.html`, `players/`, `teams/`, `crosshairs/`, `skins/`, `commands/`, `guides/`, `tools/`, `faq.html`, `generator.html`, `methodology.html`, `legal.html`, `valorant.html`, `404.html`, les mêmes dans `fr/` `es/` `ru/` `tr/`, `sitemap.xml`, `lastmod.json`, `llms.txt`, `llms-full.txt`, les `.min`, `critical.css`.
+- `index.html`, `career.html`, `career.en.json`, `career.fr.json`, `players/`, `teams/`, `crosshairs/`, `skins/`, `commands/`, `guides/`, `tools/`, `faq.html`, `generator.html`, `methodology.html`, `legal.html`, `valorant.html`, `404.html`, les mêmes dans `fr/` `es/` `ru/` `tr/`, `sitemap.xml`, `lastmod.json`, `llms.txt`, `llms-full.txt`, les `.min`, `critical.css`.
 
 **Jamais sur GitHub** : `demos/`, `captures/`, `skins/src/`, `csfloat-key.txt`, `.env`, `faceit-test/`, `node_modules/`.
 

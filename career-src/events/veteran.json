@@ -1,0 +1,157 @@
+[
+ {
+  "id": "igl-offer", "type": "special", "once": true,
+  "text": { "en": "You are {age}. The coach closes the door. \"Your reflexes are not what they were at 22, and you know it. But nobody here reads the game like you. I want you to become our in-game leader. Less aim, more brain. Think about it.\"", "fr": "Tu as {age} ans. Le coach ferme la porte. « Tes réflexes ne sont plus ceux de tes 22 ans, et tu le sais. Mais personne ici ne lit le jeu comme toi. Je veux que tu deviennes notre leader en jeu. Moins d'aim, plus de cerveau. Réfléchis. »" },
+  "choices": [
+   { "text": { "en": "Accept. A second career starts today", "fr": "Accepter. Une deuxième carrière commence aujourd'hui" }, "act": "igl", "fx": { "leadership": 7, "comms": 4, "gameSense": 3, "chemistry": 5, "confidence": -3, "flag": ["iglAsked", "iglPhase"] }, "result": { "en": "You hand over your position and pick up the notebook. The first weeks are rough: you call rounds half a second too late. But the team listens.", "fr": "Tu rends ta position et tu prends le carnet. Les premières semaines sont rudes : tu appelles les rounds une demi-seconde trop tard. Mais l'équipe écoute." } },
+   { "text": { "en": "Refuse. You are a fragger, and you will stay one", "fr": "Refuser. Tu es un fragger, et tu le resteras" }, "fx": { "confidence": 4, "chemistry": -4, "flag": ["iglAsked", "iglRefused"] }, "result": { "en": "\"Your choice.\" He writes something down. From now on, every duel you lose will be counted.", "fr": "« C'est ton choix. » Il note quelque chose. À partir de maintenant, chaque duel que tu perds sera compté." } }
+  ]
+ },
+ {
+  "id": "ld-first-call", "type": "leader", "when": { "flag": "iglPhase" }, "once": true,
+  "text": { "en": "Your first official match as in-game leader. 0-3 down after three rounds of your calls. In the timeout, four pairs of eyes turn to you.", "fr": "Ton premier match officiel comme leader. 0-3 après trois rounds appelés par toi. Au temps mort, quatre paires d'yeux se tournent vers toi." },
+  "choices": [
+   { "text": { "en": "\"My reads were wrong. New plan, here is why.\"", "fr": "« Mes lectures étaient fausses. Nouveau plan, voilà pourquoi. »" }, "test": { "a": { "leadership": 2, "gameSense": 2, "comms": 1 }, "d": 0 },
+     "win": { "text": { "en": "The adjustment works. You win the half 8-4, and something clicks: this is yours now.", "fr": "L'ajustement marche. Vous gagnez la mi-temps 8-4, et quelque chose se met en place : c'est ton rôle maintenant." }, "fx": { "leadership": 3, "confidence": 7, "chemistry": 5, "bonus": 2 } },
+     "lose": { "text": { "en": "The new plan fails too. You will need time, and the team gives it to you.", "fr": "Le nouveau plan échoue aussi. Il te faudra du temps, et l'équipe te le donne." }, "fx": { "leadership": 1, "confidence": -4, "chemistry": 2 } } },
+   { "text": { "en": "Let the old IGL call the rest of the map", "fr": "Laisser l'ancien IGL appeler le reste de la map" }, "fx": { "confidence": -5, "leadership": -1, "chemistry": -2 }, "result": { "en": "It stabilises the map and delays the question.", "fr": "Ça stabilise la map et ça repousse la question." } }
+  ]
+ },
+ {
+  "id": "ld-system", "type": "leader",
+  "text": { "en": "Pre-season. You have two weeks to decide how your team will play this year. The whiteboard is empty.", "fr": "Pré-saison. Tu as deux semaines pour décider comment ton équipe jouera cette année. Le tableau blanc est vide." },
+  "choices": [
+   { "text": { "en": "A loose system: defaults, then let your stars read the round", "fr": "Un système libre : des defaults, puis laisser tes stars lire le round" }, "test": { "a": { "leadership": 2, "gameSense": 2 }, "d": 2 },
+     "win": { "text": { "en": "Your fraggers feel trusted and it shows on the scoreboard.", "fr": "Tes fraggers se sentent en confiance et ça se voit au tableau." }, "fx": { "chemistry": 8, "leadership": 2, "bonus": 1 } },
+     "lose": { "text": { "en": "Without structure, the mid-rounds turn into five solo queues.", "fr": "Sans structure, les milieux de round deviennent cinq solo queues." }, "fx": { "chemistry": -4, "leadership": 1 } } },
+   { "text": { "en": "A strict playbook: forty set plays, everyone learns all of them", "fr": "Un playbook strict : quarante strats, tout le monde les apprend toutes" }, "fx": { "utility": 2, "leadership": 2, "chemistry": -2, "energy": -8 }, "result": { "en": "Boring to learn, hard to play against.", "fr": "Pénible à apprendre, pénible à affronter." } },
+   { "text": { "en": "Ask each player what he needs to be at his best", "fr": "Demander à chaque joueur ce dont il a besoin pour être à son meilleur" }, "fx": { "chemistry": 9, "comms": 2, "leadership": 1 }, "result": { "en": "Five conversations, five different answers. You build the system around them.", "fr": "Cinq discussions, cinq réponses différentes. Tu construis le système autour d'eux." } }
+  ]
+ },
+ {
+  "id": "ld-star-ego", "type": "leader",
+  "text": { "en": "Your best fragger ignores your call for the third time in a map and takes a solo duel. He wins it. The round is still lost.", "fr": "Ton meilleur fragger ignore ton call pour la troisième fois sur la map et prend un duel seul. Il le gagne. Le round est quand même perdu." },
+  "choices": [
+   { "text": { "en": "Talk to him after the match: give him freedom, inside a frame", "fr": "Lui parler après le match : lui donner de la liberté, dans un cadre" }, "test": { "a": { "leadership": 3, "comms": 2 }, "d": 2 },
+     "win": { "text": { "en": "\"Two rounds a half are yours. The rest, you are mine.\" He grins. Deal.", "fr": "« Deux rounds par mi-temps sont à toi. Le reste, tu es à moi. » Il sourit. Marché conclu." }, "fx": { "chemistry": 8, "leadership": 3 } },
+     "lose": { "text": { "en": "He hears a leash. The next map is worse.", "fr": "Il entend une laisse. La map suivante est pire." }, "fx": { "chemistry": -5 } } },
+   { "text": { "en": "Call him out on comms, right now", "fr": "Le reprendre dans le vocal, tout de suite" }, "fx": { "chemistry": -6, "tox": 6, "leadership": 1 }, "result": { "en": "He obeys for the rest of the map, and plays like a man in handcuffs.", "fr": "Il obéit pour le reste de la map, et joue comme un homme menotté." } },
+   { "text": { "en": "Build the next round around his solo play", "fr": "Construire le round suivant autour de son jeu solo" }, "fx": { "gameSense": 2, "chemistry": 3 }, "result": { "en": "If you cannot stop the river, dig the canal.", "fr": "Si tu ne peux pas arrêter la rivière, creuse le canal." } }
+  ]
+ },
+ {
+  "id": "ld-antistrat", "type": "leader",
+  "text": { "en": "The night before a playoff match against {rival}. Your analyst has found a pattern: they always fake A before a late B hit when the score is tied.", "fr": "La veille d'un match de playoffs contre {rival}. Ton analyste a trouvé une habitude : ils feintent toujours A avant de taper B tard quand le score est à égalité." },
+  "choices": [
+   { "text": { "en": "Build a trap for that exact round and keep it secret until then", "fr": "Monter un piège pour ce round précis et le garder secret jusque-là" }, "test": { "a": { "gameSense": 3, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "11-11. They fake A. Four of yours are waiting on B. The casters call it mind reading.", "fr": "11-11. Ils feintent A. Quatre des tiens attendent en B. Les commentateurs parlent de télépathie." }, "fx": { "bonus": 3, "aura": 4, "leadership": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "They changed the pattern this week. Your stack is on the wrong site.", "fr": "Ils ont changé d'habitude cette semaine. Ton stack est sur le mauvais site." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "Share it with the team and adapt round by round", "fr": "Le partager avec l'équipe et s'adapter round par round" }, "fx": { "bonus": 1, "comms": 1, "chemistry": 2 }, "result": { "en": "No miracle round, but nobody is ever surprised.", "fr": "Pas de round miracle, mais personne n'est jamais surpris." } }
+  ]
+ },
+ {
+  "id": "ld-own-stats", "type": "leader",
+  "text": { "en": "You finish a won series with 9 kills in two maps. The comments are split between \"genius caller\" and \"playing 4v5\".", "fr": "Tu finis une série gagnée avec 9 kills en deux maps. Les commentaires se partagent entre « génie du call » et « ils jouent à 4 contre 5 »." },
+  "choices": [
+   { "text": { "en": "Accept it. Your job is the other four's stats", "fr": "L'accepter. Ton travail, ce sont les stats des quatre autres" }, "fx": { "mental": 3, "leadership": 2, "style": -5 }, "result": { "en": "You stop opening the scoreboard after matches. You sleep better.", "fr": "Tu n'ouvres plus le tableau des scores après les matchs. Tu dors mieux." } },
+   { "text": { "en": "Give yourself easier positions and one hour of aim a day", "fr": "Te donner des positions plus faciles et une heure d'aim par jour" }, "fx": { "aim": 2, "gameSense": 1, "energy": -6 }, "result": { "en": "Fifteen kills a map is enough to quiet the comments.", "fr": "Quinze kills par map suffisent à calmer les commentaires." } },
+   { "text": { "en": "Take the entry role next match to prove a point", "fr": "Prendre l'entrée au prochain match pour prouver quelque chose" }, "test": { "a": { "aim": 2, "reflexes": 2 }, "d": 6 },
+     "win": { "text": { "en": "Twenty-four kills and the calls. Nobody types \"4v5\" tonight.", "fr": "Vingt-quatre kills et les calls. Personne n'écrit « 4 contre 5 » ce soir." }, "fx": { "confidence": 7, "aura": 3 } },
+     "lose": { "text": { "en": "You die first and call from the grave. The round plan dies with you.", "fr": "Tu meurs en premier et tu appelles depuis la tombe. Le plan du round meurt avec toi." }, "fx": { "confidence": -5, "chemistry": -3 } } }
+  ]
+ },
+ {
+  "id": "ld-timeout-major", "type": "leader", "when": { "tier": [1, 2] },
+  "text": { "en": "Deciding map, 10-12 down, last tactical timeout. You have thirty seconds and four exhausted players.", "fr": "Map décisive, mené 10-12, dernier temps mort tactique. Tu as trente secondes et quatre joueurs épuisés." },
+  "choices": [
+   { "text": { "en": "One simple round, explained in ten seconds. Then silence", "fr": "Un round simple, expliqué en dix secondes. Puis le silence" }, "test": { "a": { "leadership": 3, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "Simple works. Three rounds in a row, overtime, and the map.", "fr": "Le simple, ça marche. Trois rounds de suite, l'overtime, puis la map." }, "fx": { "bonus": 3, "leadership": 2, "aura": 3, "chemistry": 4 } },
+     "lose": { "text": { "en": "The round is simple. They read it simply.", "fr": "Le round est simple. Ils le lisent simplement." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "A round nobody has ever seen you play", "fr": "Un round que personne ne vous a jamais vu jouer" }, "test": { "a": { "gameSense": 3, "leadership": 2 }, "d": 6 },
+     "win": { "text": { "en": "A fake inside a fake. The other IGL takes his headset off and applauds.", "fr": "Une feinte dans la feinte. L'IGL d'en face retire son casque et applaudit." }, "fx": { "bonus": 4, "aura": 6, "pop": 3, "leadership": 2 } },
+     "lose": { "text": { "en": "Two of your players go to the wrong site. Too clever, too late.", "fr": "Deux de tes joueurs vont sur le mauvais site. Trop malin, trop tard." }, "fx": { "bonus": -3, "chemistry": -3 } } }
+  ]
+ },
+ {
+  "id": "ld-young-star", "type": "leader",
+  "text": { "en": "Management signs an 18-year-old prodigy and puts him in your hands. He out-aims everyone and has never held a site for a full round.", "fr": "La direction signe un prodige de 18 ans et le met entre tes mains. Il a plus d'aim que tout le monde et n'a jamais tenu un site un round entier." },
+  "choices": [
+   { "text": { "en": "Simplify his job: three rules, no more", "fr": "Lui simplifier le travail : trois règles, pas plus" }, "fx": { "leadership": 3, "chemistry": 6 }, "result": { "en": "\"Do not die first on CT. Trade or be traded. Tell me what you see.\" He blossoms.", "fr": "« Ne meurs pas en premier côté CT. Trade ou fais-toi trader. Dis-moi ce que tu vois. » Il s'épanouit." } },
+   { "text": { "en": "Spend your evenings reviewing his demos with him", "fr": "Passer tes soirées à revoir ses démos avec lui" }, "fx": { "leadership": 2, "gameSense": 1, "chemistry": 8, "energy": -10 }, "result": { "en": "In six months he reads rounds like a veteran. You are tired and proud.", "fr": "En six mois, il lit les rounds comme un vétéran. Tu es fatigué et fier." } },
+   { "text": { "en": "Let him run free and cover his mistakes yourself", "fr": "Le laisser libre et couvrir ses erreurs toi-même" }, "fx": { "utility": 2, "chemistry": 2, "confidence": -2 }, "result": { "en": "He gets the highlights. You get the trades.", "fr": "Il prend les highlights. Tu prends les trades." } }
+  ]
+ },
+ {
+  "id": "ld-legacy", "type": "leader", "when": { "minAge": 32 },
+  "text": { "en": "A young IGL from another team asks if he can pick your brain for an hour. He is your opponent next month.", "fr": "Un jeune IGL d'une autre équipe te demande s'il peut te poser des questions pendant une heure. C'est ton adversaire le mois prochain." },
+  "choices": [
+   { "text": { "en": "Tell him everything. The game needs good callers", "fr": "Tout lui dire. Le jeu a besoin de bons leaders" }, "fx": { "aura": 4, "pop": 3, "leadership": 1 }, "result": { "en": "He beats you with one of your own ideas, and thanks you on stage.", "fr": "Il te bat avec une de tes propres idées, et te remercie sur scène." } },
+   { "text": { "en": "Help him, but keep your playbook closed", "fr": "L'aider, mais garder ton playbook fermé" }, "fx": { "aura": 2, "leadership": 1, "gameSense": 1 }, "result": { "en": "Principles, not plays. He leaves with a full notebook anyway.", "fr": "Des principes, pas des strats. Il repart quand même avec un carnet plein." } }
+  ]
+ },
+ {
+  "id": "dc-duel", "type": "decline", "weight": 2,
+  "text": { "en": "Opening duel, same angle you have held for ten years. An 18-year-old swings and you are dead before your finger moves. It is the fourth time this map.", "fr": "Duel d'ouverture, le même angle que tu tiens depuis dix ans. Un joueur de 18 ans sort et tu es mort avant que ton doigt bouge. C'est la quatrième fois sur la map." },
+  "choices": [
+   { "text": { "en": "Stop taking the angle. Play off-angles and utility", "fr": "Arrêter de tenir cet angle. Jouer des angles décalés et des grenades" }, "fx": { "gameSense": 2, "utility": 2, "confidence": -2 }, "result": { "en": "You survive longer. You are no longer the player who opens rounds.", "fr": "Tu survis plus longtemps. Tu n'es plus le joueur qui ouvre les rounds." } },
+   { "text": { "en": "Take it again. You were faster than him at his age", "fr": "Le reprendre. Tu étais plus rapide que lui à son âge" }, "test": { "a": { "reflexes": 3, "aim": 2 }, "d": 6 },
+     "win": { "text": { "en": "One clean headshot. For one round you are 22 again.", "fr": "Un headshot propre. Le temps d'un round, tu as de nouveau 22 ans." }, "fx": { "confidence": 6, "aura": 2 } },
+     "lose": { "text": { "en": "Five times. The coach looks at the screen, then at his notes.", "fr": "Cinq fois. Le coach regarde l'écran, puis ses notes." }, "fx": { "confidence": -7, "chemistry": -3, "strike": 1 } } }
+  ]
+ },
+ {
+  "id": "dc-numbers", "type": "decline",
+  "text": { "en": "The analyst shows the yearly numbers. Your opening duel success rate has dropped twelve points. The slide stays on the screen a little too long.", "fr": "L'analyste montre les chiffres de l'année. Ton taux de réussite en duel d'ouverture a perdu douze points. La diapositive reste à l'écran un peu trop longtemps." },
+  "choices": [
+   { "text": { "en": "Ask for a different role in the system", "fr": "Demander un autre rôle dans le système" }, "fx": { "utility": 2, "gameSense": 1, "chemistry": 4, "confidence": -3 }, "result": { "en": "You become the second man in, the one who trades. It is not what you signed up for at 16.", "fr": "Tu deviens le deuxième à entrer, celui qui trade. Ce n'est pas ce pour quoi tu avais signé à 16 ans." } },
+   { "text": { "en": "\"Numbers do not show impact.\"", "fr": "« Les chiffres ne montrent pas l'impact. »" }, "fx": { "confidence": 2, "chemistry": -5, "strike": 1 }, "result": { "en": "Nobody answers. That is an answer.", "fr": "Personne ne répond. C'est une réponse." } },
+   { "text": { "en": "Two extra hours of aim every morning before practice", "fr": "Deux heures d'aim en plus chaque matin avant l'entraînement" }, "fx": { "aim": 2, "reflexes": 1, "energy": -16 }, "result": { "en": "You slow the slide down. You do not stop it.", "fr": "Tu ralentis la chute. Tu ne l'arrêtes pas." } }
+  ]
+ },
+ {
+  "id": "dc-wrist", "type": "decline",
+  "text": { "en": "After a five-map day, your forearm needs twenty minutes of stretching before your fingers work properly again. The younger players are already queueing.", "fr": "Après une journée à cinq maps, ton avant-bras demande vingt minutes d'étirements avant que tes doigts refonctionnent bien. Les plus jeunes relancent déjà une game." },
+  "choices": [
+   { "text": { "en": "Build a real routine: physio, sleep, shorter sessions", "fr": "Te construire une vraie routine : kiné, sommeil, sessions plus courtes" }, "fx": { "energy": 12, "mental": 2, "money": -3000 }, "result": { "en": "Less volume, more quality. It buys you time.", "fr": "Moins de volume, plus de qualité. Ça t'achète du temps." } },
+   { "text": { "en": "Keep up with the kids, hour for hour", "fr": "Suivre le rythme des jeunes, heure pour heure" }, "fx": { "aim": 1, "energy": -20, "reflexes": -1 }, "result": { "en": "You match their hours for a month. Your body sends the bill.", "fr": "Tu tiens leurs horaires pendant un mois. Ton corps envoie la facture." } }
+  ]
+ },
+ {
+  "id": "dc-replacement", "type": "decline", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "{rookie}, from the academy, is invited to \"observe\" the bootcamp. He plays your role. He sits behind you during scrims and takes notes on your positions.", "fr": "{rookie}, de l'académie, est invité à « observer » le bootcamp. Il joue ton rôle. Il s'assoit derrière toi pendant les scrims et prend des notes sur tes positions." },
+  "choices": [
+   { "text": { "en": "Teach him everything. If he takes your seat, he will deserve it", "fr": "Tout lui apprendre. S'il prend ta chaise, il l'aura méritée" }, "fx": { "leadership": 3, "aura": 3, "chemistry": 5 }, "result": { "en": "Management notices who the adult in the room is.", "fr": "La direction remarque qui est l'adulte dans la pièce." } },
+   { "text": { "en": "Give him nothing and out-play him in every scrim", "fr": "Ne rien lui donner et le dominer à chaque scrim" }, "test": { "a": { "aim": 2, "gameSense": 2 }, "d": 3 },
+     "win": { "text": { "en": "For two weeks you play like your seat is on fire. He goes back to the academy.", "fr": "Pendant deux semaines tu joues comme si ta chaise brûlait. Il retourne à l'académie." }, "fx": { "confidence": 6, "energy": -8 } },
+     "lose": { "text": { "en": "In the mixed scrim, he wins the duel against you. Twice. Everyone saw.", "fr": "Dans le scrim mélangé, il gagne le duel contre toi. Deux fois. Tout le monde a vu." }, "fx": { "confidence": -7, "strike": 1 } } }
+  ]
+ },
+ {
+  "id": "dc-second-thought", "type": "decline", "once": true, "when": { "flagAge": ["iglRefused", 1] },
+  "text": { "en": "A year after you refused the in-game leader role, the team's results are flat and your numbers keep sliding. The coach brings it up one last time: \"The offer still stands. It will not stand next year.\"", "fr": "Un an après ton refus du rôle de leader, les résultats de l'équipe stagnent et tes chiffres continuent de baisser. Le coach en reparle une dernière fois : « L'offre tient toujours. Elle ne tiendra plus l'an prochain. »" },
+  "choices": [
+   { "text": { "en": "Swallow your pride and take the notebook", "fr": "Ravaler ta fierté et prendre le carnet" }, "act": "igl", "fx": { "leadership": 5, "comms": 3, "gameSense": 2, "chemistry": 6, "flag": "iglPhase", "unflag": "iglRefused" }, "result": { "en": "A year late, but you get there. The team breathes out.", "fr": "Avec un an de retard, mais tu y viens. L'équipe souffle." } },
+   { "text": { "en": "No. You will go out with a rifle in your hands", "fr": "Non. Tu partiras le fusil à la main" }, "fx": { "confidence": 3, "chemistry": -5, "strike": 1 }, "result": { "en": "He nods slowly. You both know what that means.", "fr": "Il hoche lentement la tête. Vous savez tous les deux ce que ça veut dire." } }
+  ]
+ },
+ {
+  "id": "dc-old-clip", "type": "decline",
+  "text": { "en": "A highlights channel posts \"{name} in his prime\". Two million views. The top comment: \"What happened to this guy?\"", "fr": "Une chaîne de highlights poste « {name} à son prime ». Deux millions de vues. Le commentaire le plus aimé : « Il est devenu quoi, lui ? »" },
+  "choices": [
+   { "text": { "en": "Share it: \"Still here. Still annoying to play against.\"", "fr": "Le partager : « Toujours là. Toujours pénible à affronter. »" }, "fx": { "pop": 4, "aura": 3, "fansPct": 6 }, "result": { "en": "The scene has a soft spot for veterans who can laugh.", "fr": "La scène a de la tendresse pour les vétérans qui savent rire." } },
+   { "text": { "en": "Watch it alone, three times", "fr": "Le regarder seul, trois fois" }, "fx": { "confidence": -3, "mental": 1 }, "result": { "en": "He was fast, that kid.", "fr": "Il était rapide, ce gamin." } },
+   { "text": { "en": "Use it as fuel for one more big season", "fr": "T'en servir de carburant pour une dernière grosse saison" }, "test": { "a": { "mental": 3, "aim": 1 }, "d": 4 },
+     "win": { "text": { "en": "Your best month in two years. A new clip appears: \"He is BACK.\"", "fr": "Ton meilleur mois depuis deux ans. Un nouveau clip apparaît : « Il est DE RETOUR. »" }, "fx": { "aim": 2, "confidence": 8, "aura": 4, "pop": 3 } },
+     "lose": { "text": { "en": "You push too hard and your hand pushes back.", "fr": "Tu forces trop, et ta main te le fait payer." }, "fx": { "energy": -15, "confidence": -4 } } }
+  ]
+ },
+ {
+  "id": "dc-farewell-talk", "type": "decline", "when": { "minAge": 32 },
+  "text": { "en": "{journalist} asks the question during a press conference: \"Is this your last season?\" The room goes quiet.", "fr": "{journalist} pose la question en conférence de presse : « C'est ta dernière saison ? » La salle se tait." },
+  "choices": [
+   { "text": { "en": "\"I will stop when the kids stop being afraid of me.\"", "fr": "« J'arrêterai quand les jeunes n'auront plus peur de moi. »" }, "fx": { "aura": 5, "pop": 3, "confidence": 4, "style": 6 }, "result": { "en": "It is on a T-shirt by the end of the week.", "fr": "C'est sur un t-shirt à la fin de la semaine." } },
+   { "text": { "en": "\"I honestly do not know.\"", "fr": "« Honnêtement, je ne sais pas. »" }, "fx": { "pop": 2, "mental": 1 }, "result": { "en": "An honest answer. The article is kind.", "fr": "Une réponse honnête. L'article est bienveillant." } },
+   { "text": { "en": "\"Next question.\"", "fr": "« Question suivante. »" }, "fx": { "tox": 3, "confidence": -1 }, "result": { "en": "The headline writes itself: \"{name} dodges retirement question\".", "fr": "Le titre s'écrit tout seul : « {name} esquive la question de la retraite »." } }
+  ]
+ }
+]

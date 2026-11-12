@@ -27,6 +27,7 @@
 # Outils de fabrication (Node / Python)
 /build.js / 301
 /check.js / 301
+/career-sim.js / 301
 /render.js / 301
 /i18n.js / 301
 /images.js / 301
@@ -48,6 +49,7 @@
 # Une ligne par page, écrite par build.js : ne pas modifier entre HTML:START et HTML:END.
 # (Cloudflare : 2 000 redirections simples maximum ; une règle générale « *.html » n'est pas documentée.)
 # HTML:START
+/career.html /career 301
 /commands/alias.html /commands/alias 301
 /commands/bind.html /commands/bind 301
 /commands/bot_kick.html /commands/bot_kick 301
@@ -322,6 +324,7 @@
 /es/tools/index.html /es/tools/ 301
 /es/valorant.html /es/valorant 301
 /faq.html /faq 301
+/fr/career.html /fr/career 301
 /fr/commands/alias.html /fr/commands/alias 301
 /fr/commands/bind.html /fr/commands/bind 301
 /fr/commands/bot_kick.html /fr/commands/bot_kick 301
@@ -1054,6 +1057,7 @@
 /i18n/* / 301
 /fonts/src/* / 301
 /build/* / 301
+/career-src/* / 301
 # Dossiers et fichiers cachés du projet (notes pour Claude Code, automatisation GitHub, réglages) : rien à lire pour un visiteur
 /.claude/* / 301
 /.github/* / 301

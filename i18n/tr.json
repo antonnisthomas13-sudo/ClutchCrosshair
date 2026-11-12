@@ -142,6 +142,7 @@
         "faq": "SSS"
     },
     "nav": {
+        "career": "Kariyer",
         "crosshairs": "Crosshair'lar",
         "skins": "Pro skinleri",
         "guides": "Rehberler",
@@ -157,6 +158,7 @@
         "soon": "yakında"
     },
     "footer": {
+        "career": "Zero to Major: CS2 kariyer oyunu",
         "lists": "En iyi CS2 crosshair'ları",
         "teams": "Takım crosshair'ları",
         "generator": "Crosshair oluşturucu",
@@ -288,6 +290,9 @@
         "matesCreator": "Diğer içerik üreticisi crosshair'ları"
     },
     "home": {
+        "careerTag": "Yeni oyun",
+        "careerText": "Bir CS2 pro kariyeri oyna: 16 yaşında FACEIT'ten Major'a. İngilizce.",
+        "careerCta": "Oyna",
         "title": "CS2 Pro Oyuncu Crosshair Kodları ({year}) | ClutchCrosshair",
         "metaDescription": "donk, ZywOo, m0NESY, NiKo ve {count} pro oyuncunun CS2 crosshair kodlarını tek tıkla kopyala: gerçek boyutlu önizleme ve konsol komutları. Maç demolarından.",
         "ogTitle": "CS2 pro oyuncu ve yayıncı crosshair kodları",

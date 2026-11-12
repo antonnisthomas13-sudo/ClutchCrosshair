@@ -142,6 +142,7 @@
         "faq": "FAQ"
     },
     "nav": {
+        "career": "Career",
         "crosshairs": "Crosshairs",
         "skins": "Pro Skins",
         "guides": "Guides",
@@ -157,6 +158,7 @@
         "soon": "soon"
     },
     "footer": {
+        "career": "Zero to Major: CS2 career game",
         "lists": "Best CS2 Crosshairs",
         "teams": "Crosshairs by Team",
         "generator": "Crosshair Generator",
@@ -288,6 +290,9 @@
         "matesCreator": "Other creator crosshairs"
     },
     "home": {
+        "careerTag": "New game",
+        "careerText": "Play a CS2 pro career: from FACEIT at 16 to the Major.",
+        "careerCta": "Play now",
         "title": "CS2 Crosshair Codes of Pro Players ({year}) | ClutchCrosshair",
         "metaDescription": "Copy the CS2 crosshair codes of donk, ZywOo, m0NESY, NiKo and {count} pros in one click, with a real-size preview and console commands. Read from match demos.",
         "ogTitle": "CS2 Crosshair Codes of Pro Players & Creators",

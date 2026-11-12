@@ -1,0 +1,358 @@
+[
+ {
+  "id": "m-dust2-long-ct", "type": "match", "when": { "map": "dust2" },
+  "text": { "en": "{tournament}, Dust II, CT side. You hold Long A from Car. Two flashes fly over the corner and you hear four pairs of feet running through the doors.", "fr": "{tournament}, Dust II, côté CT. Tu tiens Long A depuis Car. Deux flashs passent au-dessus de l'angle et tu entends quatre paires de pieds courir dans les portes." },
+  "choices": [
+   { "text": { "en": "Fall back to the site and hold the cross from Goose", "fr": "Reculer sur le site et tenir le cross depuis Goose" }, "test": { "a": { "gameSense": 2, "aim": 2 }, "d": 0 },
+     "win": { "text": { "en": "They cross one by one into your crosshair. Two down before Short arrives.", "fr": "Ils traversent un par un dans ton viseur. Deux à terre avant que Short arrive." }, "fx": { "bonus": 3, "confidence": 4 } },
+     "lose": { "text": { "en": "A smoke lands on the cross. You see nothing until they are on you.", "fr": "Une smoke tombe sur le cross. Tu ne vois rien jusqu'à ce qu'ils soient sur toi." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Stay at Car and fight blind", "fr": "Rester à Car et te battre à l'aveugle" }, "test": { "a": { "reflexes": 3, "clutch": 1 }, "d": 6 },
+     "win": { "text": { "en": "You spray the corner by ear. Three kills you never saw.", "fr": "Tu sprayes l'angle à l'oreille. Trois kills que tu n'as jamais vus." }, "fx": { "bonus": 3, "aura": 3, "fans": 2000 } },
+     "lose": { "text": { "en": "White screen, then grey screen.", "fr": "Écran blanc, puis écran gris." }, "fx": { "bonus": -2, "confidence": -2 } } }
+  ]
+ },
+ {
+  "id": "m-dust2-short", "type": "match", "when": { "map": "dust2" },
+  "text": { "en": "{tournament}, Dust II, T side. Your team has Catwalk. One smoke left, forty seconds, and the CTs have not shown a single player on A.", "fr": "{tournament}, Dust II, côté T. Ton équipe a Catwalk. Une smoke restante, quarante secondes, et les CT n'ont montré aucun joueur en A." },
+  "choices": [
+   { "text": { "en": "Split: two up Short, three through Long", "fr": "Split : deux par Short, trois par Long" }, "test": { "a": { "comms": 2, "gameSense": 2 }, "d": 1 },
+     "win": { "text": { "en": "Both groups arrive together. The lone A player cannot look both ways.", "fr": "Les deux groupes arrivent ensemble. Le joueur seul en A ne peut pas regarder des deux côtés." }, "fx": { "bonus": 3, "comms": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "Long arrives five seconds late. Short dies alone.", "fr": "Long arrive avec cinq secondes de retard. Short meurt seul." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Drop to Mid and hit B through Mid Doors", "fr": "Descendre au Mid et taper B par Mid Doors" }, "test": { "a": { "utility": 2, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "They were stacked A. You plant B against one player.", "fr": "Ils étaient empilés en A. Tu plantes B contre un seul joueur." }, "fx": { "bonus": 3, "confidence": 4 } },
+     "lose": { "text": { "en": "The Window player was waiting for exactly that sound.", "fr": "Le joueur de Window attendait exactement ce bruit." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-mirage-b-rush", "type": "match", "when": { "map": "mirage" },
+  "text": { "en": "{tournament}, Mirage, CT side. You anchor B alone from Van. No utility has been thrown at A for fifteen seconds, and the Apartments are too silent.", "fr": "{tournament}, Mirage, côté CT. Tu tiens B seul depuis Van. Aucune grenade n'a été lancée en A depuis quinze secondes, et les Apartments sont trop silencieux." },
+  "choices": [
+   { "text": { "en": "Molotov the Apartments exit now and call for help", "fr": "Molotov sur la sortie des Apartments maintenant et demander de l'aide" }, "test": { "a": { "utility": 2, "gameSense": 2, "comms": 1 }, "d": 0 },
+     "win": { "text": { "en": "Five players stuck behind the fire for seven seconds. Your rotation arrives through Market just in time.", "fr": "Cinq joueurs bloqués derrière le feu pendant sept secondes. Ta rotation arrive par Market juste à temps." }, "fx": { "bonus": 3, "utility": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "Nobody was there. They hit A with your teammate out of position.", "fr": "Il n'y avait personne. Ils tapent A avec ton coéquipier hors de position." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Hide behind Bench and let them come", "fr": "Te cacher derrière Bench et les laisser venir" }, "test": { "a": { "aim": 2, "clutch": 2 }, "d": 4 },
+     "win": { "text": { "en": "They run past you. Three kills in the back before anyone turns.", "fr": "Ils passent devant toi. Trois kills dans le dos avant que quelqu'un se retourne." }, "fx": { "bonus": 3, "aura": 3, "fans": 1800, "clutch": 1 } },
+     "lose": { "text": { "en": "The second player checks Bench. It is his job.", "fr": "Le deuxième joueur vérifie Bench. C'est son travail." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-mirage-mid", "type": "match", "when": { "map": "mirage" },
+  "text": { "en": "{tournament}, Mirage, T side. You control Mid with a teammate. Connector is smoked, Window is not. Your IGL waits for your call: A through Connector, or B through Short?", "fr": "{tournament}, Mirage, côté T. Tu contrôles le Mid avec un coéquipier. Connector est smoké, Window ne l'est pas. Ton IGL attend ton call : A par Connector, ou B par Short ?" },
+  "choices": [
+   { "text": { "en": "B through Short, fast, before they read it", "fr": "B par Short, vite, avant qu'ils lisent" }, "test": { "a": { "reflexes": 2, "aim": 2 }, "d": 2 },
+     "win": { "text": { "en": "The Short player is looking at the smoke. You are already past him.", "fr": "Le joueur de Short regarde la smoke. Tu es déjà passé." }, "fx": { "bonus": 3, "confidence": 4 } },
+     "lose": { "text": { "en": "The Window AWP was not smoked for a reason.", "fr": "Si l'AWP de Window n'était pas smoké, ce n'était pas par hasard." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Wait in Connector smoke and pinch A with the team", "fr": "Attendre dans la smoke de Connector et prendre A en tenaille avec l'équipe" }, "test": { "a": { "gameSense": 2, "comms": 2 }, "d": 0 },
+     "win": { "text": { "en": "You step out of the smoke as the execute lands. Jungle and Stairs fall together.", "fr": "Tu sors de la smoke au moment où l'exec tombe. Jungle et Stairs tombent ensemble." }, "fx": { "bonus": 3, "gameSense": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "A CT pushes through the smoke into you.", "fr": "Un CT pousse à travers la smoke et te tombe dessus." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-inferno-pit", "type": "match", "when": { "map": "inferno" },
+  "text": { "en": "{tournament}, Inferno, CT side. You play Pit on A. They have Apartments and Second Mid, and a smoke lands exactly on your angle.", "fr": "{tournament}, Inferno, côté CT. Tu joues Pit en A. Ils ont Apartments et Second Mid, et une smoke tombe exactement sur ton angle." },
+  "choices": [
+   { "text": { "en": "Leave Pit through the smoke and play from Graveyard", "fr": "Quitter Pit par la smoke et jouer depuis Graveyard" }, "test": { "a": { "gameSense": 3, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "They clear an empty Pit with three grenades. You shoot from where nobody looks.", "fr": "Ils nettoient un Pit vide avec trois grenades. Tu tires de là où personne ne regarde." }, "fx": { "bonus": 3, "gameSense": 1 } },
+     "lose": { "text": { "en": "A molotov on Graveyard. They had done their homework.", "fr": "Un molotov sur Graveyard. Ils avaient fait leurs devoirs." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Stay in Pit, crouched, and wait for the first legs", "fr": "Rester en Pit, accroupi, et attendre les premières jambes" }, "test": { "a": { "aim": 2, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "Legs, then heads. Two kills from a place they thought was gone.", "fr": "Des jambes, puis des têtes. Deux kills depuis un endroit qu'ils croyaient vide." }, "fx": { "bonus": 3, "clutch": 1, "confidence": 4 } },
+     "lose": { "text": { "en": "The grenade arrives before the legs.", "fr": "La grenade arrive avant les jambes." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-inferno-boiler", "type": "match", "when": { "map": "inferno" },
+  "text": { "en": "{tournament}, Inferno, T side. You are the Boiler player on an A execute. The flashes are in the air. Go first, or let your entry go first?", "fr": "{tournament}, Inferno, côté T. Tu es le joueur de Boiler sur un exec A. Les flashs sont en l'air. Tu sors en premier, ou tu laisses ton entry sortir d'abord ?" },
+  "choices": [
+   { "text": { "en": "Go first and clear Library", "fr": "Sortir en premier et nettoyer Library" }, "test": { "a": { "reflexes": 2, "aim": 2 }, "d": 3 },
+     "win": { "text": { "en": "Library is blind. One tap and the site is cut in half.", "fr": "Library est aveugle. Un tap et le site est coupé en deux." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "He turned away from the flash. He was not blind at all.", "fr": "Il s'était retourné pour la flash. Il n'était pas aveugle du tout." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Trade behind your entry", "fr": "Trader derrière ton entry" }, "test": { "a": { "aim": 2, "gameSense": 1 }, "d": -2 },
+     "win": { "text": { "en": "He dies, you trade in half a second. That is how sites are taken.", "fr": "Il meurt, tu trades en une demi-seconde. C'est comme ça qu'on prend un site." }, "fx": { "bonus": 2, "chemistry": 3 } },
+     "lose": { "text": { "en": "You are a step too far behind. No trade.", "fr": "Tu es un pas trop loin derrière. Pas de trade." }, "fx": { "bonus": -2, "chemistry": -2 } } }
+  ]
+ },
+ {
+  "id": "m-nuke-vents", "type": "match", "when": { "map": "nuke" },
+  "text": { "en": "{tournament}, Nuke. The bomb is planted on the lower site and you are the last CT, upstairs, with 28 seconds. Vents is the fast way down. It is also the loud way.", "fr": "{tournament}, Nuke. La bombe est plantée en bas et tu es le dernier CT, en haut, avec 28 secondes. Vents est le chemin rapide. C'est aussi le chemin bruyant." },
+  "choices": [
+   { "text": { "en": "Vents, and shoot the moment you land", "fr": "Vents, et tirer dès que tu atterris" }, "test": { "a": { "reflexes": 3, "aim": 2 }, "d": 4 },
+     "win": { "text": { "en": "He is looking at the door. You drop behind him. Defuse with two seconds left.", "fr": "Il regarde la porte. Tu tombes derrière lui. Defuse à deux secondes de la fin." }, "fx": { "bonus": 3, "clutch": 2, "fans": 1500 } },
+     "lose": { "text": { "en": "He heard the vent break and aimed at the exit.", "fr": "Il a entendu la grille casser et il vise la sortie." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Take the long way round through Ramp, silently", "fr": "Faire le grand tour par Ramp, en silence" }, "test": { "a": { "gameSense": 2, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "You arrive with eight seconds and a kit. He never heard a thing.", "fr": "Tu arrives avec huit secondes et un kit. Il n'a rien entendu." }, "fx": { "bonus": 3, "mental": 1, "clutch": 1 } },
+     "lose": { "text": { "en": "Silent, and one second too late.", "fr": "Silencieux, et une seconde trop tard." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-nuke-lobby", "type": "match", "when": { "map": "nuke" },
+  "text": { "en": "{tournament}, Nuke, T side. Three rounds in a row, a CT has pushed Lobby through Squeaky and killed one of you. Your team wants revenge.", "fr": "{tournament}, Nuke, côté T. Trois rounds de suite, un CT a poussé Lobby par Squeaky et tué l'un de vous. Ton équipe veut sa revanche." },
+  "choices": [
+   { "text": { "en": "Set a trap: you wait behind the door with a shotgun", "fr": "Tendre un piège : tu attends derrière la porte avec un fusil à pompe" }, "test": { "a": { "gameSense": 2, "reflexes": 2 }, "d": 0 },
+     "win": { "text": { "en": "The door opens. One shot. He does not push Lobby again that half.", "fr": "La porte s'ouvre. Une cartouche. Il ne poussera plus Lobby de la mi-temps." }, "fx": { "bonus": 3, "confidence": 4, "chemistry": 2 } },
+     "lose": { "text": { "en": "This round, of course, he stays home. You have a shotgun and nowhere to use it.", "fr": "Ce round-ci, évidemment, il reste chez lui. Tu as un fusil à pompe et nulle part où t'en servir." }, "fx": { "bonus": -1 } } },
+   { "text": { "en": "Ignore him and rush Outside while he is away from his post", "fr": "L'ignorer et rusher Outside pendant qu'il a quitté son poste" }, "test": { "a": { "comms": 2, "reflexes": 1, "gameSense": 1 }, "d": 2 },
+     "win": { "text": { "en": "Their defence has a hole exactly where he should have been.", "fr": "Leur défense a un trou exactement là où il aurait dû être." }, "fx": { "bonus": 3, "gameSense": 1 } },
+     "lose": { "text": { "en": "He hears the rush and comes back through Garage behind you.", "fr": "Il entend le rush et revient par Garage dans votre dos." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-ancient-mid-ct", "type": "match", "when": { "map": "ancient" },
+  "text": { "en": "{tournament}, Ancient, CT side. You fight for Mid every round and you win it every round. This time the T side sends three players there.", "fr": "{tournament}, Ancient, côté CT. Tu te bats pour le Mid à chaque round et tu le gagnes à chaque round. Cette fois, les T y envoient trois joueurs." },
+  "choices": [
+   { "text": { "en": "Fall back towards Red Room and call it", "fr": "Reculer vers Red Room et l'annoncer" }, "test": { "a": { "comms": 2, "gameSense": 2 }, "d": -1 },
+     "win": { "text": { "en": "\"Three Mid, they are going Elbow.\" Your B players turn and the round is read.", "fr": "« Trois Mid, ils partent par Elbow. » Tes joueurs de B se tournent et le round est lu." }, "fx": { "bonus": 3, "comms": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "They went Donut. Your call sends everyone the wrong way.", "fr": "Ils sont passés par Donut. Ton call envoie tout le monde du mauvais côté." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Hold the angle. You have won it five times", "fr": "Tenir l'angle. Tu l'as gagné cinq fois" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 6 },
+     "win": { "text": { "en": "Six times. Then seven, then eight. A triple kill at Mid.", "fr": "Six fois. Puis sept, puis huit. Un triple kill au Mid." }, "fx": { "bonus": 3, "aura": 3, "confidence": 6 } },
+     "lose": { "text": { "en": "Three rifles against one is arithmetic.", "fr": "Trois fusils contre un, c'est de l'arithmétique." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-ancient-a", "type": "match", "when": { "map": "ancient" },
+  "text": { "en": "{tournament}, Ancient, T side. You are in A Main with the bomb and one teammate. The other three are dead at B. Twenty-five seconds.", "fr": "{tournament}, Ancient, côté T. Tu es en A Main avec la bombe et un coéquipier. Les trois autres sont morts en B. Vingt-cinq secondes." },
+  "choices": [
+   { "text": { "en": "Smoke Temple and plant in the open", "fr": "Smoker Temple et planter à découvert" }, "test": { "a": { "utility": 2, "clutch": 2 }, "d": 2 },
+     "win": { "text": { "en": "The plant goes down. Your teammate holds Donut and the CTs run out of time.", "fr": "Le plant passe. Ton coéquipier tient Donut et les CT manquent de temps." }, "fx": { "bonus": 3, "clutch": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "Someone was already on the site, behind the boxes.", "fr": "Quelqu'un était déjà sur le site, derrière les caisses." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Save both rifles", "fr": "Sauver les deux fusils" }, "fx": { "bonus": -1, "mental": 1 }, "result": { "en": "Two AKs for the next round. Nobody in the arena applauds a save.", "fr": "Deux AK pour le round suivant. Personne dans l'arène n'applaudit un save." } }
+  ]
+ },
+ {
+  "id": "m-anubis-b", "type": "match", "when": { "map": "anubis" },
+  "text": { "en": "{tournament}, Anubis, CT side. You hold B from Pillar. A smoke lands at the B Main entrance and you hear one, only one, set of footsteps in Water.", "fr": "{tournament}, Anubis, côté CT. Tu tiens B depuis Pillar. Une smoke tombe à l'entrée de B Main et tu entends des pas, une seule personne, dans Water." },
+  "choices": [
+   { "text": { "en": "It is a fake. Tell A to stay", "fr": "C'est une feinte. Dire à A de rester" }, "test": { "a": { "gameSense": 3, "comms": 1 }, "d": 1 },
+     "win": { "text": { "en": "Ten seconds later, four of them hit A into a full defence. Your call won the round.", "fr": "Dix secondes plus tard, ils tapent A à quatre sur une défense au complet. Ton call a gagné le round." }, "fx": { "bonus": 3, "gameSense": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "It was not a fake. The other four were walking.", "fr": "Ce n'était pas une feinte. Les quatre autres marchaient." }, "fx": { "bonus": -3, "chemistry": -2 } } },
+   { "text": { "en": "Push through the smoke and kill the lone player", "fr": "Pousser dans la smoke et tuer le joueur seul" }, "test": { "a": { "aim": 2, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "He is alone, with the bomb. You kill him and stand on it.", "fr": "Il est seul, avec la bombe. Tu le tues et tu restes dessus." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "He was the bait.", "fr": "C'était l'appât." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-anubis-palace", "type": "match", "when": { "map": "anubis" },
+  "text": { "en": "{tournament}, Anubis, T side. Your default has found nothing after a minute. You are near Palace with a flash and a decision to make.", "fr": "{tournament}, Anubis, côté T. Votre default n'a rien trouvé après une minute. Tu es près de Palace avec une flash et une décision à prendre." },
+  "choices": [
+   { "text": { "en": "Flash and take the space alone to open the round", "fr": "Flasher et prendre l'espace seul pour ouvrir le round" }, "test": { "a": { "aim": 2, "reflexes": 2, "utility": 1 }, "d": 3 },
+     "win": { "text": { "en": "One kill, one retreat, and the map opens. Your IGL calls the site in two words.", "fr": "Un kill, un recul, et la map s'ouvre. Ton IGL appelle le site en deux mots." }, "fx": { "bonus": 3, "confidence": 4 } },
+     "lose": { "text": { "en": "Two players were waiting. 4v5 with thirty seconds.", "fr": "Deux joueurs attendaient. 4 contre 5 avec trente secondes." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Wait and regroup for a five-man hit", "fr": "Attendre et se regrouper pour taper à cinq" }, "test": { "a": { "comms": 2, "gameSense": 1 }, "d": -1 },
+     "win": { "text": { "en": "Five players, four grenades, one site. Nothing clever, everything on time.", "fr": "Cinq joueurs, quatre grenades, un site. Rien de malin, tout à l'heure." }, "fx": { "bonus": 2, "chemistry": 2 } },
+     "lose": { "text": { "en": "The regroup takes too long. You plant with three seconds and no positions.", "fr": "Le regroupement prend trop de temps. Tu plantes à trois secondes de la fin, sans positions." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-cache-a-main", "type": "match", "when": { "map": "cache" },
+  "text": { "en": "{tournament}, Cache, T side. Your team is stacked in A Main. The first man out has died three rounds in a row to a player hidden at Forklift.", "fr": "{tournament}, Cache, côté T. Ton équipe est empilée en A Main. Le premier à sortir est mort trois rounds de suite face à un joueur caché à Forklift." },
+  "choices": [
+   { "text": { "en": "Molotov Forklift before anyone steps out", "fr": "Molotov sur Forklift avant que quiconque sorte" }, "test": { "a": { "utility": 3 }, "d": 0 },
+     "win": { "text": { "en": "He runs out of the flames into five crosshairs.", "fr": "Il sort des flammes en courant, dans cinq viseurs." }, "fx": { "bonus": 3, "utility": 1 } },
+     "lose": { "text": { "en": "The molotov hits the fork and burns nothing.", "fr": "Le molotov touche la fourche et ne brûle rien." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Go first yourself and pre-aim the spot", "fr": "Sortir toi-même en premier et pré-viser la position" }, "test": { "a": { "aim": 3, "reflexes": 1 }, "d": 3 },
+     "win": { "text": { "en": "Your crosshair is already on his head when you turn the corner.", "fr": "Ton viseur est déjà sur sa tête quand tu passes l'angle." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "This round he is in Quad instead.", "fr": "Ce round-ci, il est en Quad." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-cache-highway", "type": "match", "when": { "map": "cache" },
+  "text": { "en": "{tournament}, Cache, CT side. You rotate from B to A through Highway, alone, when a flash pops in front of you and the bomb sound says \"A\".", "fr": "{tournament}, Cache, côté CT. Tu tournes de B vers A par Highway, seul, quand une flash claque devant toi et que le son de la bombe indique « A »." },
+  "choices": [
+   { "text": { "en": "Wait for your second rotation before peeking", "fr": "Attendre ta deuxième rotation avant de peeker" }, "test": { "a": { "mental": 2, "comms": 2 }, "d": -1 },
+     "win": { "text": { "en": "Two angles at the same second. The retake takes six seconds.", "fr": "Deux angles à la même seconde. Le retake prend six secondes." }, "fx": { "bonus": 3, "chemistry": 3 } },
+     "lose": { "text": { "en": "The bomb is planted in the safest spot on the site while you wait.", "fr": "La bombe est plantée à l'endroit le plus sûr du site pendant que tu attends." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Peek now to stop the plant", "fr": "Peeker maintenant pour empêcher le plant" }, "test": { "a": { "aim": 2, "reflexes": 2 }, "d": 4 },
+     "win": { "text": { "en": "You kill the planter with the bomb at 90 %.", "fr": "Tu tues le planteur avec la bombe à 90 %." }, "fx": { "bonus": 3, "clutch": 1, "confidence": 4 } },
+     "lose": { "text": { "en": "Three players were watching Highway.", "fr": "Trois joueurs surveillaient Highway." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "t-playlist-coach", "type": "team",
+  "text": { "en": "The coach introduces a new rule: every lost scrim is reviewed in full the same evening, however late it is. The first review ends at 1 a.m.", "fr": "Le coach introduit une nouvelle règle : chaque scrim perdu est revu en entier le soir même, quelle que soit l'heure. La première review finit à 1 h du matin." },
+  "choices": [
+   { "text": { "en": "Back the rule in front of the team", "fr": "Soutenir la règle devant l'équipe" }, "fx": { "gameSense": 2, "chemistry": 2, "energy": -10 }, "result": { "en": "The scrims become very serious, very fast. Nobody wants a 1 a.m. review.", "fr": "Les scrims deviennent très sérieux, très vite. Personne ne veut d'une review à 1 h du matin." } },
+   { "text": { "en": "Propose a limit: forty-five minutes, the five worst rounds", "fr": "Proposer une limite : quarante-cinq minutes, les cinq pires rounds" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": 0 },
+     "win": { "text": { "en": "The coach agrees. The team owes you forty hours of sleep this year.", "fr": "Le coach accepte. L'équipe te doit quarante heures de sommeil cette année." }, "fx": { "chemistry": 7, "gameSense": 1, "leadership": 1 } },
+     "lose": { "text": { "en": "\"The five worst rounds are all of them.\" Tonight's review is longer.", "fr": "« Les cinq pires rounds, c'est tous les rounds. » La review de ce soir est plus longue." }, "fx": { "chemistry": 1, "energy": -8 } } }
+  ]
+ },
+ {
+  "id": "t-food", "type": "team",
+  "text": { "en": "The team hires a nutritionist. The energy drinks disappear from the practice room. So do the crisps. There is a bowl of almonds.", "fr": "L'équipe engage un nutritionniste. Les boissons énergisantes disparaissent de la salle d'entraînement. Les chips aussi. Il y a un bol d'amandes." },
+  "choices": [
+   { "text": { "en": "Follow the plan for a month", "fr": "Suivre le programme pendant un mois" }, "fx": { "energy": 14, "mental": 1, "reflexes": 1 }, "result": { "en": "The third map of a series no longer feels like the fifth.", "fr": "La troisième map d'une série ne ressemble plus à la cinquième." } },
+   { "text": { "en": "Start a secret snack drawer for the whole team", "fr": "Ouvrir un tiroir à snacks secret pour toute l'équipe" }, "fx": { "chemistry": 6, "energy": -3 }, "result": { "en": "The nutritionist finds it in a week. He takes a chocolate bar and says nothing.", "fr": "Le nutritionniste le trouve en une semaine. Il prend une barre chocolatée et ne dit rien." } }
+  ]
+ },
+ {
+  "id": "t-secret-santa", "type": "team",
+  "text": { "en": "End-of-year team dinner, with a gift exchange. You have drawn your IGL's name. Budget: twenty dollars.", "fr": "Dîner d'équipe de fin d'année, avec échange de cadeaux. Tu as tiré le pseudo de ton IGL. Budget : vingt dollars." },
+  "choices": [
+   { "text": { "en": "A notebook titled \"Strats that work (empty)\"", "fr": "Un carnet intitulé « Strats qui marchent (vide) »" }, "test": { "a": { "comms": 1, "mental": 1 }, "d": -4 },
+     "win": { "text": { "en": "He laughs until he cries and uses it for the whole next season.", "fr": "Il rit aux larmes et s'en sert toute la saison suivante." }, "fx": { "chemistry": 8 } },
+     "lose": { "text": { "en": "You lost a final last week on his call. Bad timing.", "fr": "Vous avez perdu une finale la semaine dernière sur son call. Mauvais moment." }, "fx": { "chemistry": -4 } } },
+   { "text": { "en": "A framed photo of the team's best moment of the year", "fr": "Une photo encadrée du meilleur moment de l'équipe cette année" }, "fx": { "chemistry": 6, "money": -20 }, "result": { "en": "It ends up on the wall of the practice room.", "fr": "Elle finit au mur de la salle d'entraînement." } }
+  ]
+ },
+ {
+  "id": "t-scrim-leak", "type": "team",
+  "text": { "en": "A strat you invented last week is used against you in an official match, grenade for grenade. Someone talked, or someone watched a scrim they should not have.", "fr": "Une strat que vous avez inventée la semaine dernière est utilisée contre vous en match officiel, grenade pour grenade. Quelqu'un a parlé, ou quelqu'un a regardé un scrim qu'il n'aurait pas dû." },
+  "choices": [
+   { "text": { "en": "Propose stricter rules: no streaming scrims, no sharing demos", "fr": "Proposer des règles plus strictes : pas de scrims en stream, pas de démos partagées" }, "fx": { "leadership": 2, "chemistry": 3 }, "result": { "en": "Nobody is accused. The leak stops.", "fr": "Personne n'est accusé. La fuite s'arrête." } },
+   { "text": { "en": "Ask out loud who has friends in that team", "fr": "Demander à voix haute qui a des amis dans cette équipe" }, "fx": { "chemistry": -7, "tox": 5 }, "result": { "en": "Everyone has friends in every team. Now everyone is a suspect.", "fr": "Tout le monde a des amis dans toutes les équipes. Maintenant, tout le monde est suspect." } },
+   { "text": { "en": "Turn it around: build a counter to your own strat", "fr": "Retourner la situation : construire le contre de votre propre strat" }, "test": { "a": { "gameSense": 3, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "Next time they copy you, they walk into a trap built for them.", "fr": "La prochaine fois qu'ils vous copient, ils entrent dans un piège fait pour eux." }, "fx": { "gameSense": 2, "chemistry": 4, "bonus": 1 } },
+     "lose": { "text": { "en": "A week of work on a counter nobody ever needs.", "fr": "Une semaine de travail sur un contre dont personne n'aura jamais besoin." }, "fx": { "energy": -6 } } }
+  ]
+ },
+ {
+  "id": "t-mental-coach", "type": "team", "once": true,
+  "text": { "en": "The club brings in a sports psychologist for group sessions. First exercise: say one thing you appreciate about the teammate on your left, out loud.", "fr": "Le club fait venir un psychologue du sport pour des séances de groupe. Premier exercice : dire à voix haute une chose que tu apprécies chez le coéquipier à ta gauche." },
+  "choices": [
+   { "text": { "en": "Take it seriously", "fr": "Le prendre au sérieux" }, "fx": { "chemistry": 9, "mental": 2, "tox": -6 }, "result": { "en": "It is awkward for exactly one minute. Then someone says something true, and the room changes.", "fr": "C'est gênant pendant exactement une minute. Puis quelqu'un dit quelque chose de vrai, et l'ambiance change." } },
+   { "text": { "en": "\"He has a very nice mousepad.\"", "fr": "« Il a un très beau tapis de souris. »" }, "fx": { "chemistry": 2, "style": 3 }, "result": { "en": "Laughter. The psychologist writes something down.", "fr": "Des rires. Le psychologue note quelque chose." } }
+  ]
+ },
+ {
+  "id": "t-contract-gap", "type": "team", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "A salary figure leaks in the team group chat by mistake. The newest player earns more than you, and everyone saw it before the message was deleted.", "fr": "Un montant de salaire fuite par erreur dans la conversation de l'équipe. Le dernier arrivé gagne plus que toi, et tout le monde l'a vu avant que le message soit supprimé." },
+  "choices": [
+   { "text": { "en": "Raise it with management, privately, with {agent}", "fr": "En parler à la direction, en privé, avec {agent}" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 1 },
+     "win": { "text": { "en": "{agent} gets you a quiet adjustment. Nobody in the team ever knows.", "fr": "{agent} t'obtient un ajustement discret. Personne dans l'équipe ne le saura jamais." }, "fx": { "salaryPct": 15, "confidence": 3 } },
+     "lose": { "text": { "en": "\"The market changed.\" Nothing else changes.", "fr": "« Le marché a changé. » Rien d'autre ne change." }, "fx": { "confidence": -3 } } },
+   { "text": { "en": "Let it go. He did not write his own contract", "fr": "Laisser couler. Ce n'est pas lui qui a rédigé son contrat" }, "fx": { "chemistry": 4, "mental": 1 }, "result": { "en": "He is visibly relieved when you sit next to him at lunch.", "fr": "Il est visiblement soulagé quand tu t'assois à côté de lui au déjeuner." } },
+   { "text": { "en": "Make a joke of it for a week: \"Ask the rich one.\"", "fr": "En faire une blague pendant une semaine : « Demande au riche. »" }, "fx": { "chemistry": -4, "tox": 5 }, "result": { "en": "Funny on Monday. Less funny on Friday.", "fr": "Drôle le lundi. Moins drôle le vendredi." } }
+  ]
+ },
+ {
+  "id": "t-comeback-night", "type": "team", "when": { "minChemistry": 50 },
+  "text": { "en": "You have just come back from 2-12 to win 16-14. Nobody can sleep. It is 1 a.m. in the hotel corridor and five adults are re-enacting rounds with their hands.", "fr": "Vous venez de revenir de 2-12 pour gagner 16-14. Personne n'arrive à dormir. Il est 1 h du matin dans le couloir de l'hôtel et cinq adultes rejouent des rounds avec les mains." },
+  "choices": [
+   { "text": { "en": "Stay up with them. Nights like this are rare", "fr": "Rester debout avec eux. Des nuits comme ça, c'est rare" }, "fx": { "chemistry": 9, "confidence": 4, "energy": -10 }, "result": { "en": "Tomorrow's match will be played tired and fearless.", "fr": "Le match de demain se jouera fatigué et sans peur." } },
+   { "text": { "en": "Send everyone to bed. The tournament is not over", "fr": "Envoyer tout le monde au lit. Le tournoi n'est pas fini" }, "fx": { "leadership": 2, "energy": 4, "chemistry": 1 }, "result": { "en": "Groans, then doors closing. Someone thanks you at breakfast.", "fr": "Des grognements, puis des portes qui se ferment. Quelqu'un te remercie au petit-déjeuner." } }
+  ]
+ },
+ {
+  "id": "t-visa", "type": "team",
+  "text": { "en": "Two days before an event abroad, a teammate's visa is refused. The team can play with the coach as fifth player, or withdraw.", "fr": "Deux jours avant un tournoi à l'étranger, le visa d'un coéquipier est refusé. L'équipe peut jouer avec le coach comme cinquième joueur, ou déclarer forfait." },
+  "choices": [
+   { "text": { "en": "Play. Take two roles yourself to cover the gap", "fr": "Jouer. Prendre deux rôles toi-même pour combler le trou" }, "test": { "a": { "gameSense": 2, "utility": 1, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "You win a map nobody thought you could. The coach gets one kill and frames the screenshot.", "fr": "Vous gagnez une map que personne n'imaginait. Le coach fait un kill et encadre la capture d'écran." }, "fx": { "chemistry": 9, "aura": 3, "pop": 2, "energy": -10 } },
+     "lose": { "text": { "en": "Out in two maps, but the absent teammate watched every round and will not forget it.", "fr": "Sortis en deux maps, mais le coéquipier absent a regardé chaque round et ne l'oubliera pas." }, "fx": { "chemistry": 5, "energy": -10 } } },
+   { "text": { "en": "Vote to withdraw and prepare the next event properly", "fr": "Voter pour le forfait et bien préparer le tournoi suivant" }, "fx": { "energy": 8, "chemistry": -1, "gameSense": 1 }, "result": { "en": "A sensible decision that feels like nothing.", "fr": "Une décision raisonnable, qui ne ressemble à rien." } }
+  ]
+ },
+ {
+  "id": "c-transfer-rumour", "type": "career",
+  "text": { "en": "{journalist} publishes it before anyone has called you: \"{rival} are interested in {name}.\" Your teammates read it at breakfast.", "fr": "{journalist} le publie avant que qui que ce soit t'ait appelé : « {rival} s'intéresse à {name}. » Tes coéquipiers le lisent au petit-déjeuner." },
+  "choices": [
+   { "text": { "en": "Tell the team first: \"I know nothing, and I am here.\"", "fr": "Parler d'abord à l'équipe : « Je ne sais rien, et je suis là. »" }, "fx": { "chemistry": 6, "leadership": 1 }, "result": { "en": "The rumour dies in the practice room, where it matters.", "fr": "La rumeur meurt dans la salle d'entraînement, là où ça compte." } },
+   { "text": { "en": "Say nothing and let your value go up", "fr": "Ne rien dire et laisser ta cote monter" }, "fx": { "pop": 3, "chemistry": -5, "salaryPct": 6 }, "result": { "en": "Management offers a small raise to \"clarify things\". The room is cooler.", "fr": "La direction propose une petite augmentation pour « clarifier les choses ». L'ambiance se refroidit." } },
+   { "text": { "en": "Ask {agent} to find out if it is real", "fr": "Demander à {agent} de vérifier si c'est vrai" }, "fx": { "gameSense": 1, "confidence": 3 }, "result": { "en": "\"Half real. They asked about your price, then about three other players.\"", "fr": "« À moitié vrai. Ils ont demandé ton prix, puis celui de trois autres joueurs. »" } }
+  ]
+ },
+ {
+  "id": "c-role-swap", "type": "career",
+  "text": { "en": "For a month the coach wants to try something: you play a different role in scrims, \"to understand what the others need from you\".", "fr": "Pendant un mois, le coach veut essayer quelque chose : tu joues un autre rôle en scrim, « pour comprendre ce que les autres attendent de toi »." },
+  "choices": [
+   { "text": { "en": "Commit to it fully", "fr": "T'y mettre à fond" }, "fx": { "gameSense": 2, "utility": 2, "comms": 1, "confidence": -2 }, "result": { "en": "You are bad at it. You also finally understand why your flash requests annoyed everyone.", "fr": "Tu es mauvais. Tu comprends aussi enfin pourquoi tes demandes de flash agaçaient tout le monde." } },
+   { "text": { "en": "Do it, but keep an hour a day on your real role", "fr": "Le faire, mais garder une heure par jour sur ton vrai rôle" }, "fx": { "gameSense": 1, "aim": 1, "energy": -6 }, "result": { "en": "You lose nothing and learn a little.", "fr": "Tu ne perds rien et tu apprends un peu." } }
+  ]
+ },
+ {
+  "id": "c-agent-first", "type": "career", "once": true, "when": { "tier": [2, 3] },
+  "text": { "en": "A message from someone called {agent}: \"I represent players. You are underpaid and you do not know it. Ten per cent, and I handle everything.\"", "fr": "Un message d'une personne qui s'appelle {agent} : « Je représente des joueurs. Tu es sous-payé et tu ne le sais pas. Dix pour cent, et je m'occupe de tout. »" },
+  "choices": [
+   { "text": { "en": "Sign with {agent}", "fr": "Signer avec {agent}" }, "fx": { "salaryPct": 14, "energy": 3, "flag": "hasAgent" }, "result": { "en": "Your next contract has four pages you would never have read. {agent} read them.", "fr": "Ton prochain contrat a quatre pages que tu n'aurais jamais lues. {agent} les a lues." } },
+   { "text": { "en": "Handle your own business", "fr": "Gérer tes affaires toi-même" }, "fx": { "comms": 1, "mental": 1 }, "result": { "en": "\"The offer stays open,\" writes {agent}. It does.", "fr": "« L'offre reste ouverte », écrit {agent}. C'est vrai." } }
+  ]
+ },
+ {
+  "id": "c-online-vs-lan", "type": "career",
+  "text": { "en": "Your online stats are excellent. On LAN, in front of people, your numbers drop every time. {journalist} writes the word everyone avoids: \"onliner\".", "fr": "Tes stats en ligne sont excellentes. En LAN, devant du monde, tes chiffres baissent à chaque fois. {journalist} écrit le mot que tout le monde évite : « onliner »." },
+  "choices": [
+   { "text": { "en": "Practise at the club with noise in your headset and people behind you", "fr": "T'entraîner au club avec du bruit dans le casque et des gens derrière toi" }, "fx": { "mental": 3, "clutch": 1, "energy": -8 }, "result": { "en": "The staff takes turns shouting behind your chair. It is ridiculous and it works.", "fr": "Le staff se relaie pour crier derrière ta chaise. C'est ridicule et ça marche." } },
+   { "text": { "en": "Prove it at the next LAN", "fr": "Le prouver à la prochaine LAN" }, "test": { "a": { "mental": 3, "aim": 1 }, "d": 3 },
+     "win": { "text": { "en": "MVP of the event. The article gets a follow-up with a different word.", "fr": "MVP du tournoi. L'article a droit à une suite, avec un autre mot." }, "fx": { "confidence": 8, "aura": 4, "pop": 3, "bonus": 2 } },
+     "lose": { "text": { "en": "You think about the word during every duel.", "fr": "Tu penses à ce mot pendant chaque duel." }, "fx": { "confidence": -6 } } }
+  ]
+ },
+ {
+  "id": "c-old-team", "type": "career", "when": { "minAge": 20, "tier": [1, 2] },
+  "text": { "en": "The draw puts you against the team that let you go years ago. Their manager, the one who said you were \"not ready\", is in the front row.", "fr": "Le tirage te met face à l'équipe qui t'avait laissé partir il y a des années. Leur manager, celui qui disait que tu n'étais « pas prêt », est au premier rang." },
+  "choices": [
+   { "text": { "en": "Play your normal game", "fr": "Jouer ton match normal" }, "fx": { "mental": 2, "bonus": 1 }, "result": { "en": "You win, shake every hand, his included. That is the whole revenge.", "fr": "Tu gagnes, tu serres toutes les mains, la sienne aussi. C'est toute la revanche." } },
+   { "text": { "en": "Make it a statement game", "fr": "En faire un match pour l'exemple" }, "test": { "a": { "aim": 2, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "Thirty-five kills. You look at the front row once. Only once.", "fr": "Trente-cinq kills. Tu regardes le premier rang une fois. Une seule." }, "fx": { "bonus": 2, "aura": 4, "confidence": 7, "style": 5 } },
+     "lose": { "text": { "en": "You force everything. He does not even need to smile.", "fr": "Tu forces tout. Il n'a même pas besoin de sourire." }, "fx": { "bonus": -2, "confidence": -5 } } }
+  ]
+ },
+ {
+  "id": "c-captain-media", "type": "career", "when": { "tier": [1] },
+  "text": { "en": "The club wants one player at every sponsor event this season: dinners, store openings, a television show. They ask for volunteers and everyone looks at their shoes.", "fr": "Le club veut un joueur à chaque événement de sponsor cette saison : dîners, ouvertures de magasins, une émission de télévision. Il demande des volontaires et tout le monde regarde ses chaussures." },
+  "choices": [
+   { "text": { "en": "Volunteer", "fr": "Te porter volontaire" }, "fx": { "pop": 5, "money": 15000, "chemistry": 4, "energy": -12, "style": 6 }, "result": { "en": "Your teammates owe you a lot of free evenings. Sponsors now ask for you by name.", "fr": "Tes coéquipiers te doivent beaucoup de soirées libres. Les sponsors te demandent maintenant par ton pseudo." } },
+   { "text": { "en": "Propose a rotation: one event each", "fr": "Proposer un roulement : un événement chacun" }, "fx": { "leadership": 1, "chemistry": 3, "pop": 1 }, "result": { "en": "Fair. Your AWPer gets the television show and is surprisingly good at it.", "fr": "Équitable. Ton AWPer hérite de l'émission de télévision et s'en sort étonnamment bien." } }
+  ]
+ },
+ {
+  "id": "l-move-abroad", "type": "life", "once": true,
+  "text": { "en": "The team asks everyone to move to the city where the practice facility is. For you, it means another country, another language, and your friends on video calls.", "fr": "L'équipe demande à tout le monde de s'installer dans la ville du centre d'entraînement. Pour toi, c'est un autre pays, une autre langue, et tes amis en appel vidéo." },
+  "choices": [
+   { "text": { "en": "Move, and take language lessons", "fr": "Déménager, et prendre des cours de langue" }, "fx": { "chemistry": 7, "comms": 2, "mental": -1, "energy": -6 }, "result": { "en": "The first winter is long. By spring you order food without pointing.", "fr": "Le premier hiver est long. Au printemps, tu commandes à manger sans montrer du doigt." } },
+   { "text": { "en": "Negotiate: two weeks there, two weeks at home", "fr": "Négocier : deux semaines là-bas, deux semaines chez toi" }, "fx": { "mental": 2, "chemistry": -2, "energy": -4 }, "result": { "en": "You live in airports, but you live near your people.", "fr": "Tu vis dans les aéroports, mais tu vis près des tiens." } }
+  ]
+ },
+ {
+  "id": "l-sleep", "type": "life",
+  "text": { "en": "Your sleep tracker shows the truth: five hours a night for a month, and a reaction time that gets worse every week.", "fr": "Ton bracelet de sommeil dit la vérité : cinq heures par nuit depuis un mois, et un temps de réaction qui empire chaque semaine." },
+  "choices": [
+   { "text": { "en": "Screens off at midnight, no exceptions", "fr": "Écrans éteints à minuit, sans exception" }, "fx": { "energy": 15, "reflexes": 1, "mental": 1, "fansPct": -3 }, "result": { "en": "Your late-night viewers complain. Your first duel of the morning does not.", "fr": "Tes spectateurs de nuit râlent. Ton premier duel du matin, non." } },
+   { "text": { "en": "Coffee exists for a reason", "fr": "Le café existe pour une raison" }, "fx": { "energy": -10, "aim": 1 }, "result": { "en": "It works until the afternoon. Every afternoon.", "fr": "Ça marche jusqu'à l'après-midi. Tous les après-midis." } }
+  ]
+ },
+ {
+  "id": "l-friend-visit", "type": "life",
+  "text": { "en": "Your oldest friend, the one you played your first games with in an internet café, is in town for one evening. You have an important scrim block at the same time.", "fr": "Ton plus vieil ami, celui avec qui tu as joué tes premières games dans un cybercafé, est en ville pour une soirée. Tu as un gros bloc de scrims au même moment." },
+  "choices": [
+   { "text": { "en": "Ask the coach for the evening off", "fr": "Demander la soirée au coach" }, "fx": { "mental": 3, "energy": 6, "chemistry": -2 }, "result": { "en": "Four hours of old stories. He still calls you by your very first nickname.", "fr": "Quatre heures de vieilles histoires. Il t'appelle encore par ton tout premier pseudo." } },
+   { "text": { "en": "Invite him to watch the scrims from behind your chair", "fr": "L'inviter à regarder les scrims derrière ta chaise" }, "fx": { "mental": 2, "confidence": 3, "chemistry": 2 }, "result": { "en": "You play like someone is watching, because someone is. Dinner at midnight.", "fr": "Tu joues comme si quelqu'un regardait, parce que quelqu'un regarde. Dîner à minuit." } }
+  ]
+ },
+ {
+  "id": "l-investment", "type": "life", "when": { "tier": [1, 2], "minAge": 22 },
+  "text": { "en": "With real money in your account for the first time, the proposals arrive: a friend's clothing brand, a share in an internet café, or a boring savings plan from the bank.", "fr": "Avec du vrai argent sur ton compte pour la première fois, les propositions arrivent : la marque de vêtements d'un ami, une part dans un cybercafé, ou un plan d'épargne ennuyeux à la banque." },
+  "choices": [
+   { "text": { "en": "The boring savings plan", "fr": "Le plan d'épargne ennuyeux" }, "fx": { "money": 5000, "mental": 1 }, "result": { "en": "Nothing to post about. Something to retire on.", "fr": "Rien à poster. De quoi préparer la retraite." } },
+   { "text": { "en": "The internet café, in your home town", "fr": "Le cybercafé, dans ta ville" }, "test": { "a": { "gameSense": 1, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "Full every weekend. There is a framed jersey of yours above the counter.", "fr": "Plein tous les week-ends. Il y a un de tes maillots encadré au-dessus du comptoir." }, "fx": { "money": 25000, "pop": 2, "aura": 2 } },
+     "lose": { "text": { "en": "It closes after a year. The kids who trained there still thank you.", "fr": "Il ferme au bout d'un an. Les gamins qui s'y entraînaient te remercient encore." }, "fx": { "money": -20000, "aura": 2 } } },
+   { "text": { "en": "The clothing brand, with your name on it", "fr": "La marque de vêtements, avec ton pseudo dessus" }, "test": { "a": { "comms": 1, "mental": 1 }, "d": 6 },
+     "win": { "text": { "en": "The first drop sells out in a day.", "fr": "La première collection part en une journée." }, "fx": { "money": 40000, "pop": 4, "style": 8 } },
+     "lose": { "text": { "en": "You own four hundred hoodies in size XL.", "fr": "Tu possèdes quatre cents sweats en taille XL." }, "fx": { "money": -25000, "style": 4 } } }
+  ]
+ },
+ {
+  "id": "g-meta-awp", "type": "game",
+  "text": { "en": "A patch changes the price of the AWP and of armour. Overnight, every team's economy plan is out of date, including yours.", "fr": "Un patch change le prix de l'AWP et de l'armure. Du jour au lendemain, le plan économique de toutes les équipes est dépassé, le vôtre aussi." },
+  "choices": [
+   { "text": { "en": "Do the maths tonight and propose new buy rules", "fr": "Faire les calculs ce soir et proposer de nouvelles règles d'achat" }, "fx": { "gameSense": 3, "leadership": 1, "chemistry": 3, "energy": -6 }, "result": { "en": "A spreadsheet with three colours. Your team is the first to adapt.", "fr": "Un tableur en trois couleurs. Ton équipe est la première à s'adapter." } },
+   { "text": { "en": "Play and feel it out", "fr": "Jouer et sentir les choses" }, "fx": { "aim": 1, "confidence": 1 }, "result": { "en": "You lose two rounds to a broken economy before the habit forms.", "fr": "Vous perdez deux rounds à cause d'une économie cassée avant que l'habitude se prenne." } }
+  ]
+ },
+ {
+  "id": "g-new-map", "type": "game",
+  "text": { "en": "A map returns to the competitive pool after years away. Half the scene has never played it at pro level. Your coach asks who wants to own it.", "fr": "Une map revient dans le pool compétitif après des années d'absence. La moitié de la scène ne l'a jamais jouée au niveau pro. Ton coach demande qui veut la prendre en main." },
+  "choices": [
+   { "text": { "en": "Take it: fifty hours alone on an empty server", "fr": "La prendre : cinquante heures seul sur un serveur vide" }, "fx": { "utility": 3, "gameSense": 2, "energy": -12, "chemistry": 3 }, "result": { "en": "You find a smoke nobody uses yet. For three months, it is your team's secret.", "fr": "Tu trouves une smoke que personne n'utilise encore. Pendant trois mois, c'est le secret de ton équipe." } },
+   { "text": { "en": "Watch how the best teams play it first", "fr": "Regarder d'abord comment les meilleures équipes la jouent" }, "fx": { "gameSense": 2 }, "result": { "en": "You copy the meta instead of making it. Safe.", "fr": "Tu copies la méta au lieu de la créer. Sûr." } }
+  ]
+ },
+ {
+  "id": "g-anti-eco", "type": "game",
+  "text": { "en": "Review session. The numbers are clear: your team loses one anti-eco round in four. Rounds you should win with your eyes closed.", "fr": "Séance de review. Les chiffres sont clairs : ton équipe perd un round anti-eco sur quatre. Des rounds à gagner les yeux fermés." },
+  "choices": [
+   { "text": { "en": "Propose a rule: nobody peeks alone against pistols", "fr": "Proposer une règle : personne ne peeke seul contre des pistolets" }, "fx": { "gameSense": 2, "chemistry": 3, "leadership": 1 }, "result": { "en": "Boring rounds. Won rounds.", "fr": "Des rounds ennuyeux. Des rounds gagnés." } },
+   { "text": { "en": "Admit that the one who peeks alone is usually you", "fr": "Reconnaître que celui qui peeke seul, c'est souvent toi" }, "fx": { "mental": 2, "chemistry": 5, "confidence": -2 }, "result": { "en": "Saying it first makes the rest of the meeting very short.", "fr": "Le dire en premier rend le reste de la réunion très court." } }
+  ]
+ }
+]

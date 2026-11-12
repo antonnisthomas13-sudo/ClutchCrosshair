@@ -1,0 +1,139 @@
+[
+ {
+  "id": "a-celebration", "type": "aura",
+  "text": { "en": "You win a 1v3 on stage to close out a map. The camera is on you, the crowd is on its feet. You have about two seconds to decide who you are.", "fr": "Tu gagnes un 1v3 sur scène pour conclure une map. La caméra est sur toi, le public est debout. Tu as environ deux secondes pour décider qui tu es." },
+  "choices": [
+   { "text": { "en": "Stand up, rip the headset off and roar", "fr": "Te lever, arracher le casque et rugir" }, "fx": { "aura": 5, "pop": 3, "style": 12, "confidence": 5, "fansPct": 6 }, "result": { "en": "The photo of that scream becomes the thumbnail of the tournament.", "fr": "La photo de ce cri devient la miniature du tournoi." } },
+   { "text": { "en": "A small fist bump with the teammate next to you", "fr": "Un petit check avec le coéquipier à côté de toi" }, "fx": { "aura": 3, "chemistry": 4, "style": -4 }, "result": { "en": "\"Ice in his veins,\" says the caster. That works too.", "fr": "« De la glace dans les veines », dit le commentateur. Ça marche aussi." } },
+   { "text": { "en": "Nothing. Next map", "fr": "Rien. Map suivante" }, "fx": { "aura": 4, "mental": 2, "style": -12 }, "result": { "en": "You adjust your mousepad. The clip of you doing nothing gets a million views.", "fr": "Tu replaces ton tapis de souris. Le clip de toi en train de ne rien faire fait un million de vues." } }
+  ]
+ },
+ {
+  "id": "a-trashtalk", "type": "aura",
+  "text": { "en": "Before a big series, the broadcast asks every player for a line about the opponent, to camera. Most will say \"they are a good team\".", "fr": "Avant une grosse série, la réalisation demande à chaque joueur une phrase sur l'adversaire, face caméra. La plupart diront « c'est une bonne équipe »." },
+  "choices": [
+   { "text": { "en": "\"They are a good team.\"", "fr": "« C'est une bonne équipe. »" }, "fx": { "style": -6, "mental": 1 }, "result": { "en": "It does not make the final cut.", "fr": "Ce n'est pas gardé au montage." } },
+   { "text": { "en": "A line with a smile, sharp but fair", "fr": "Une phrase avec le sourire, piquante mais correcte" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": -2 },
+     "win": { "text": { "en": "\"I have watched their demos. I slept very well.\" The crowd laughs, the opponents too.", "fr": "« J'ai regardé leurs démos. J'ai très bien dormi. » Le public rit, les adversaires aussi." }, "fx": { "aura": 4, "pop": 4, "style": 8 } },
+     "lose": { "text": { "en": "It comes out meaner than you meant. The other team pins it on their wall.", "fr": "Ça sort plus méchant que prévu. L'équipe d'en face l'affiche sur son mur." }, "fx": { "tox": 5, "pop": 2, "bonus": -1 } } },
+   { "text": { "en": "Go all in: \"We will be done before lunch.\"", "fr": "Y aller à fond : « On aura fini avant le déjeuner. »" }, "fx": { "aura": 3, "pop": 5, "style": 14, "tox": 6, "bonus": -1 }, "result": { "en": "It is the most replayed clip of the week. They have never been this motivated.", "fr": "C'est le clip le plus repassé de la semaine. Ils n'ont jamais été aussi motivés." } }
+  ]
+ },
+ {
+  "id": "a-knife", "type": "aura",
+  "text": { "en": "Last enemy alive, back turned, planting the bomb. You have a rifle with thirty bullets. You also have a knife, a full arena and a casting duo holding its breath.", "fr": "Dernier ennemi en vie, de dos, en train de planter. Tu as un fusil avec trente balles. Tu as aussi un couteau, une arène pleine et deux commentateurs qui retiennent leur souffle." },
+  "choices": [
+   { "text": { "en": "The knife", "fr": "Le couteau" }, "test": { "a": { "mental": 2, "clutch": 2 }, "d": 2 },
+     "win": { "text": { "en": "The arena comes down. He stares at his screen. Your coach has both hands on his head, smiling.", "fr": "L'arène s'écroule. Il fixe son écran. Ton coach a les deux mains sur la tête, en souriant." }, "fx": { "aura": 8, "pop": 5, "style": 12, "fans": 9000, "tox": 3 } },
+     "lose": { "text": { "en": "He hears a footstep, turns, and kills you. You lose the round, and you will see this clip for years.", "fr": "Il entend un pas, se retourne, et te tue. Vous perdez le round, et tu reverras ce clip pendant des années." }, "fx": { "aura": -4, "pop": 3, "chemistry": -6, "confidence": -5, "strike": 1 } } },
+   { "text": { "en": "One bullet. Rounds are not toys", "fr": "Une balle. Un round n'est pas un jouet" }, "fx": { "chemistry": 3, "mental": 1, "style": -5 }, "result": { "en": "Clean. The crowd sighs, your IGL exhales.", "fr": "Propre. Le public soupire, ton IGL respire." } }
+  ]
+ },
+ {
+  "id": "a-brand", "type": "aura", "when": { "minPop": 30 },
+  "text": { "en": "{agent} calls: an energy drink wants your face on a can and on a billboard near the next arena. The contract requires three posts a week \"in your own voice\".", "fr": "{agent} t'appelle : une boisson énergisante veut ta tête sur une canette et sur un panneau près de la prochaine arène. Le contrat exige trois posts par semaine « avec ta propre voix »." },
+  "choices": [
+   { "text": { "en": "Sign and play the game", "fr": "Signer et jouer le jeu" }, "fx": { "money": 60000, "pop": 4, "style": 8, "energy": -8 }, "result": { "en": "Your face, six metres tall. Your teammates take selfies under it and send them to you every day.", "fr": "Ta tête en six mètres de haut. Tes coéquipiers font des selfies dessous et te les envoient tous les jours." } },
+   { "text": { "en": "Sign for the can only, no posts", "fr": "Signer pour la canette seulement, sans les posts" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "{agent} gets it done. Less money, zero homework.", "fr": "{agent} l'obtient. Moins d'argent, zéro devoir à la maison." }, "fx": { "money": 30000, "pop": 2 } },
+     "lose": { "text": { "en": "They sign a streamer instead.", "fr": "Ils signent un streamer à la place." }, "fx": { "confidence": -2 } } },
+   { "text": { "en": "Decline. You are not a billboard", "fr": "Refuser. Tu n'es pas un panneau publicitaire" }, "fx": { "style": -8, "mental": 1, "aura": 1 }, "result": { "en": "\"You are the only client who makes me poorer on purpose,\" says {agent}.", "fr": "« Tu es mon seul client qui m'appauvrit exprès », dit {agent}." } }
+  ]
+ },
+ {
+  "id": "a-documentary", "type": "aura", "when": { "minPop": 40 }, "once": true,
+  "text": { "en": "A production company wants to follow you for a full season: cameras in the practice room, at home, in the hotel after losses.", "fr": "Une société de production veut te suivre pendant une saison entière : des caméras en salle d'entraînement, chez toi, à l'hôtel après les défaites." },
+  "choices": [
+   { "text": { "en": "Yes, with no topic off limits", "fr": "Oui, sans sujet interdit" }, "fx": { "pop": 8, "aura": 5, "fansPct": 25, "money": 40000, "chemistry": -4, "energy": -10, "style": 10 }, "result": { "en": "The episode after your worst defeat is the one everybody talks about. Your teammates are less sure they like the cameras.", "fr": "L'épisode après ta pire défaite est celui dont tout le monde parle. Tes coéquipiers aiment moins les caméras." } },
+   { "text": { "en": "Yes, but the practice room stays closed", "fr": "Oui, mais la salle d'entraînement reste fermée" }, "fx": { "pop": 5, "aura": 3, "fansPct": 12, "money": 20000 }, "result": { "en": "A portrait of you, not of the team. Everyone is comfortable.", "fr": "Un portrait de toi, pas de l'équipe. Tout le monde est à l'aise." } },
+   { "text": { "en": "No. What happens in the team stays in the team", "fr": "Non. Ce qui se passe dans l'équipe reste dans l'équipe" }, "fx": { "chemistry": 5, "style": -10 }, "result": { "en": "Your IGL buys you a coffee without saying why.", "fr": "Ton IGL te paie un café sans dire pourquoi." } }
+  ]
+ },
+ {
+  "id": "a-charity", "type": "aura",
+  "text": { "en": "A charity stream asks pros to play a showmatch with fans. It falls on your only day off this month.", "fr": "Un stream caritatif demande à des pros de jouer un showmatch avec des fans. Ça tombe sur ton seul jour de repos du mois." },
+  "choices": [
+   { "text": { "en": "Play, and auction your signed mousepad", "fr": "Jouer, et mettre aux enchères ton tapis de souris signé" }, "fx": { "aura": 5, "pop": 3, "energy": -8, "tox": -4 }, "result": { "en": "A twelve-year-old kills you with a Zeus and it is the best moment of the stream.", "fr": "Un enfant de douze ans te tue au Zeus et c'est le meilleur moment du stream." } },
+   { "text": { "en": "Send a donation and rest", "fr": "Envoyer un don et te reposer" }, "fx": { "money": -2000, "energy": 8, "aura": 1 }, "result": { "en": "Your name appears in the donor list. You sleep until noon.", "fr": "Ton pseudo apparaît dans la liste des donateurs. Tu dors jusqu'à midi." } }
+  ]
+ },
+ {
+  "id": "a-signature-move", "type": "aura", "when": { "minAura": 30 },
+  "text": { "en": "Fans have noticed that you always do the same thing after a big round. They want a name for it, and a gesture they can copy in the stands.", "fr": "Les fans ont remarqué que tu fais toujours la même chose après un gros round. Ils veulent un nom pour ça, et un geste à copier dans les tribunes." },
+  "choices": [
+   { "text": { "en": "Lean into it: make it your signature", "fr": "Assumer : en faire ta signature" }, "fx": { "aura": 6, "pop": 4, "style": 10, "fansPct": 10 }, "result": { "en": "By the next event, three hundred people do it at the same time.", "fr": "Au tournoi suivant, trois cents personnes le font en même temps." } },
+   { "text": { "en": "Stop doing it. You do not want to be a mascot", "fr": "Arrêter de le faire. Tu ne veux pas devenir une mascotte" }, "fx": { "style": -10, "mental": 1 }, "result": { "en": "The fans do it anyway, without you.", "fr": "Les fans le font quand même, sans toi." } }
+  ]
+ },
+ {
+  "id": "a-rival-callout", "type": "aura", "when": { "flag": "rvBeef" },
+  "text": { "en": "{rv} is asked about you in an interview: \"Overrated. He has been living off one good year.\" Your phone lights up with forty messages.", "fr": "On parle de toi à {rv} en interview : « Surcoté. Il vit sur une bonne année. » Ton téléphone s'allume avec quarante messages." },
+  "choices": [
+   { "text": { "en": "Answer in the next match, with your rifle", "fr": "Répondre au prochain match, avec ton fusil" }, "test": { "a": { "aim": 2, "mental": 2 }, "d": 2 },
+     "win": { "text": { "en": "Your best series of the season. You post the scoreboard with no caption.", "fr": "Ta meilleure série de la saison. Tu postes le tableau des scores sans légende." }, "fx": { "aura": 6, "pop": 4, "confidence": 7, "bonus": 1 } },
+     "lose": { "text": { "en": "You try so hard to prove him wrong that you prove him right.", "fr": "Tu veux tellement lui donner tort que tu lui donnes raison." }, "fx": { "confidence": -6, "aura": -2 } } },
+   { "text": { "en": "Answer in public: his trophy cabinet is easy to describe", "fr": "Répondre en public : son armoire à trophées est facile à décrire" }, "fx": { "pop": 5, "style": 10, "tox": 8, "fansPct": 8 }, "result": { "en": "The feud feeds content creators for a month.", "fr": "La querelle nourrit les créateurs de contenu pendant un mois." } },
+   { "text": { "en": "Invite him for a coffee at the next event", "fr": "L'inviter à boire un café au prochain tournoi" }, "fx": { "aura": 3, "tox": -6, "mental": 2, "unflag": "rvBeef", "flag": "rvRespect" }, "result": { "en": "It turns out he says that about everyone he fears. You end up comparing wrist exercises.", "fr": "Il s'avère qu'il dit ça de tous ceux qu'il craint. Vous finissez par comparer vos exercices pour le poignet." } }
+  ]
+ },
+ {
+  "id": "a-rival-duo", "type": "aura", "when": { "flag": "rvRespect", "minAge": 22 }, "once": true,
+  "text": { "en": "{rv}, your oldest opponent, proposes something: a charity 2v2 tournament, the two of you on the same side for once.", "fr": "{rv}, ton plus vieil adversaire, te propose quelque chose : un tournoi caritatif en 2v2, vous deux du même côté pour une fois." },
+  "choices": [
+   { "text": { "en": "Accept. The scene has waited years for this", "fr": "Accepter. La scène attend ça depuis des années" }, "fx": { "aura": 6, "pop": 5, "fansPct": 12, "energy": -5 }, "result": { "en": "You win it without dropping a map. \"Imagine these two on one team\" trends for a day.", "fr": "Vous gagnez sans perdre une map. « Imaginez ces deux-là dans la même équipe » fait le tour des réseaux pendant une journée." } },
+   { "text": { "en": "Decline. Some rivalries should stay rivalries", "fr": "Refuser. Certaines rivalités doivent rester des rivalités" }, "fx": { "aura": 2, "style": -4 }, "result": { "en": "\"Fair. See you on the server.\"", "fr": "« Normal. On se voit sur le serveur. »" } }
+  ]
+ },
+ {
+  "id": "a-crosshair", "type": "aura", "when": { "minPop": 25 },
+  "text": { "en": "Thousands of players are copying your crosshair code. A fan site lists it between two world champions. Someone asks on stream why you use that tiny dot.", "fr": "Des milliers de joueurs copient ton code de crosshair. Un site de fans le classe entre deux champions du monde. Quelqu'un te demande en stream pourquoi tu utilises ce tout petit point." },
+  "choices": [
+   { "text": { "en": "Explain every setting, with examples", "fr": "Expliquer chaque réglage, avec des exemples" }, "fx": { "pop": 3, "fansPct": 8, "comms": 1 }, "result": { "en": "Your twenty-minute crosshair video is your most watched ever.", "fr": "Ta vidéo de vingt minutes sur ton crosshair est ta plus regardée." } },
+   { "text": { "en": "\"It is the player, not the crosshair.\"", "fr": "« C'est le joueur, pas le crosshair. »" }, "fx": { "aura": 3, "style": -3 }, "result": { "en": "They copy it twice as much.", "fr": "Ils le copient deux fois plus." } },
+   { "text": { "en": "Change it every week to mess with them", "fr": "Le changer chaque semaine pour les embêter" }, "fx": { "pop": 2, "style": 8, "aim": -1 }, "result": { "en": "Funny for the fans. Your own muscle memory is less amused.", "fr": "Drôle pour les fans. Ta mémoire musculaire rigole moins." } }
+  ]
+ },
+ {
+  "id": "a-award-speech", "type": "aura", "when": { "tier": [1, 2], "minPop": 35 },
+  "text": { "en": "End-of-year awards show. You are nominated in a fan-voted category and you have to prepare thirty seconds, just in case.", "fr": "Cérémonie de fin d'année. Tu es nommé dans une catégorie votée par les fans et tu dois préparer trente secondes, au cas où." },
+  "choices": [
+   { "text": { "en": "Thank your teammates by name, one by one", "fr": "Remercier tes coéquipiers par leur pseudo, un par un" }, "fx": { "chemistry": 8, "aura": 3, "pop": 2 }, "result": { "en": "You win. Four people at your table pretend they have something in their eye.", "fr": "Tu gagnes. Quatre personnes à ta table font semblant d'avoir une poussière dans l'œil." } },
+   { "text": { "en": "A funny speech about your worst round of the year", "fr": "Un discours drôle sur ton pire round de l'année" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "The room cries laughing. The clip outlives the award.", "fr": "La salle pleure de rire. Le clip survit au trophée." }, "fx": { "pop": 6, "aura": 5, "style": 8 } },
+     "lose": { "text": { "en": "The joke lands in silence. Thirty seconds can be very long.", "fr": "La blague tombe dans le silence. Trente secondes, ça peut être très long." }, "fx": { "confidence": -3, "pop": 1 } } }
+  ]
+ },
+ {
+  "id": "a-hate-wave", "type": "aura", "when": { "minPop": 20 },
+  "text": { "en": "You lose a 1v1 with the bomb in your hands, in front of the biggest audience of the year. Your mentions are a wall of clown emojis.", "fr": "Tu perds un 1v1 avec la bombe dans les mains, devant la plus grosse audience de l'année. Tes mentions sont un mur d'émojis clown." },
+  "choices": [
+   { "text": { "en": "Post the clip yourself with \"I have seen it. Thank you.\"", "fr": "Poster le clip toi-même avec « Je l'ai vu. Merci. »" }, "fx": { "aura": 4, "pop": 3, "mental": 2 }, "result": { "en": "You take the weapon out of their hands. The wave turns into respect.", "fr": "Tu leur retires l'arme des mains. La vague se transforme en respect." } },
+   { "text": { "en": "Delete the apps for two weeks", "fr": "Supprimer les applis pendant deux semaines" }, "fx": { "mental": 3, "energy": 5, "pop": -1, "style": -5 }, "result": { "en": "The internet forgets in four days. You needed ten.", "fr": "Internet oublie en quatre jours. Il t'en fallait dix." } },
+   { "text": { "en": "Read everything, answer the worst ones", "fr": "Tout lire, répondre aux pires" }, "fx": { "confidence": -6, "tox": 8, "energy": -8, "pop": 2 }, "result": { "en": "You win no argument and lose three nights of sleep.", "fr": "Tu ne gagnes aucun débat et tu perds trois nuits de sommeil." } }
+  ]
+ },
+ {
+  "id": "a-kids-camp", "type": "aura", "when": { "minAge": 23 },
+  "text": { "en": "Your first club, the small one from your home town, asks you to come back for a weekend and coach thirty kids who all use your nickname as a prefix.", "fr": "Ton premier club, le petit de ta ville, te demande de revenir un week-end pour entraîner trente gamins qui mettent tous ton pseudo en préfixe du leur." },
+  "choices": [
+   { "text": { "en": "Go, and stay until the last question", "fr": "Y aller, et rester jusqu'à la dernière question" }, "fx": { "aura": 5, "pop": 3, "leadership": 2, "energy": -6 }, "result": { "en": "One of them asks how to stop being nervous. You realise you have an answer now.", "fr": "L'un d'eux demande comment ne plus stresser. Tu réalises que tu as une réponse, maintenant." } },
+   { "text": { "en": "Record a video message instead", "fr": "Enregistrer un message vidéo à la place" }, "fx": { "pop": 1 }, "result": { "en": "They watch it on a big screen. It is not the same and everyone knows it.", "fr": "Ils le regardent sur grand écran. Ce n'est pas pareil et tout le monde le sait." } }
+  ]
+ },
+ {
+  "id": "a-quiet-star", "type": "aura", "when": { "style": ["discreet"] },
+  "text": { "en": "{journalist} publishes a long piece about you: \"The best player nobody talks about.\" No stream, no drama, no quotes. Just numbers.", "fr": "{journalist} publie un long article sur toi : « Le meilleur joueur dont personne ne parle. » Pas de stream, pas de drama, pas de citations. Juste des chiffres." },
+  "choices": [
+   { "text": { "en": "Give your first long interview", "fr": "Donner ta première longue interview" }, "fx": { "pop": 6, "aura": 4, "style": 8 }, "result": { "en": "People discover that you are funny. It was a well-kept secret.", "fr": "Les gens découvrent que tu es drôle. C'était un secret bien gardé." } },
+   { "text": { "en": "Stay silent. The article says it better", "fr": "Rester silencieux. L'article le dit mieux" }, "fx": { "aura": 5, "mental": 1 }, "result": { "en": "The mystery becomes part of the legend.", "fr": "Le mystère fait partie de la légende." } }
+  ]
+ },
+ {
+  "id": "a-showman-limit", "type": "aura", "when": { "style": ["showman"] },
+  "text": { "en": "Your coach takes you aside: \"The dances, the taunts, the interviews, I do not mind. But yesterday you were filming a story two minutes before the knife round.\"", "fr": "Ton coach te prend à part : « Les danses, les provocations, les interviews, ça ne me dérange pas. Mais hier, tu filmais une story deux minutes avant le round au couteau. »" },
+  "choices": [
+   { "text": { "en": "He is right. Phone in the bag on match days", "fr": "Il a raison. Téléphone dans le sac les jours de match" }, "fx": { "chemistry": 6, "mental": 2, "style": -8 }, "result": { "en": "The show starts after the handshake. It is a better show anyway.", "fr": "Le spectacle commence après la poignée de main. C'est un meilleur spectacle, de toute façon." } },
+   { "text": { "en": "\"The show is why this team sells jerseys.\"", "fr": "« C'est le spectacle qui fait vendre les maillots de cette équipe. »" }, "fx": { "chemistry": -6, "pop": 2, "tox": 4, "strike": 1 }, "result": { "en": "Not false. Not what he wanted to hear.", "fr": "Pas faux. Pas ce qu'il voulait entendre." } }
+  ]
+ }
+]

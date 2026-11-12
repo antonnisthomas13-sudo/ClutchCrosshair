@@ -1,0 +1,145 @@
+[
+ {
+  "id": "cu-1g", "type": "culture", "when": { "free": false },
+  "text": { "en": "Official match, on stream. You retreat through a doorway with 3 HP and a molotov lands exactly on your feet. As you burn, the live chat fills with the same two characters, thousands of times: \"1G\".", "fr": "Match officiel, en stream. Tu recules dans une porte avec 3 HP et un molotov atterrit pile sur tes pieds. Pendant que tu brûles, le chat du direct se remplit des deux mêmes caractères, des milliers de fois : « 1G »." },
+  "choices": [
+   { "text": { "en": "After the match, post the clip yourself with \"1G\"", "fr": "Après le match, poster le clip toi-même avec « 1G »" }, "fx": { "pop": 3, "aura": 2, "fansPct": 6, "style": 5 }, "result": { "en": "The community loves a player who knows his classics.", "fr": "La communauté adore un joueur qui connaît ses classiques." } },
+   { "text": { "en": "Ask a teammate what \"1G\" even means", "fr": "Demander à un coéquipier ce que « 1G » veut dire" }, "fx": { "chemistry": 4, "gameSense": 1 }, "result": { "en": "A twenty-minute history lesson about molotovs, memes and why chat never forgets.", "fr": "Vingt minutes de cours d'histoire sur les molotovs, les mèmes et pourquoi le chat n'oublie jamais." } },
+   { "text": { "en": "Next time, check your feet", "fr": "La prochaine fois, regarder tes pieds" }, "fx": { "utility": 2, "mental": 1 }, "result": { "en": "You spend an hour learning where molotovs land on that doorway. Never again.", "fr": "Tu passes une heure à apprendre où tombent les molotovs sur cette porte. Plus jamais." } }
+  ]
+ },
+ {
+  "id": "cu-anthem", "type": "culture", "when": { "free": false, "tier": [1, 2] },
+  "text": { "en": "Your team is on a winning streak and the fans have rewritten an old CS fan anthem for you. In the arena, a whole stand sings \"EZ4{team}\" while you set up your gear.", "fr": "Ton équipe enchaîne les victoires et les fans ont réécrit pour vous un vieil hymne de supporters de CS. Dans l'arène, une tribune entière chante « EZ4{team} » pendant que tu installes ton matériel." },
+  "choices": [
+   { "text": { "en": "Conduct the stand like an orchestra", "fr": "Diriger la tribune comme un orchestre" }, "fx": { "pop": 4, "aura": 3, "style": 10, "confidence": 4 }, "result": { "en": "The broadcast keeps the shot for a full minute.", "fr": "La réalisation garde le plan pendant une minute entière." } },
+   { "text": { "en": "Smile, and remind the team that nothing is \"EZ\"", "fr": "Sourire, et rappeler à l'équipe que rien n'est « EZ »" }, "fx": { "leadership": 2, "mental": 1, "bonus": 1 }, "result": { "en": "Every team that got a song lost the match after. You know your history.", "fr": "Toutes les équipes qui ont eu une chanson ont perdu le match d'après. Tu connais ton histoire." } }
+  ]
+ },
+ {
+  "id": "cu-graffiti", "type": "culture", "when": { "free": false },
+  "text": { "en": "Scrim on Mirage. A teammate stops near the A site and points at the graffiti of a jumping AWP player on the wall. \"One play. One play at a Major, and you are painted on the map forever.\"", "fr": "Scrim sur Mirage. Un coéquipier s'arrête près du site A et montre le graffiti d'un AWPer en plein saut sur le mur. « Une action. Une seule action dans un Major, et tu es peint sur la map pour toujours. »" },
+  "choices": [
+   { "text": { "en": "\"Then I need my own wall.\" Train the craziest shots for an hour", "fr": "« Alors il me faut mon mur. » Travailler les tirs les plus fous pendant une heure" }, "fx": { "aim": 1, "clutch": 2, "confidence": 3, "style": 5 }, "result": { "en": "Jumping shots, no-scopes, wallbangs. Mostly useless. Mostly.", "fr": "Tirs sautés, no-scopes, tirs à travers les murs. Presque inutile. Presque." } },
+   { "text": { "en": "\"Graffiti come from winning the round first.\"", "fr": "« Un graffiti, ça vient d'abord d'un round gagné. »" }, "fx": { "gameSense": 2, "mental": 1, "style": -4 }, "result": { "en": "You go back to the default. The wall can wait.", "fr": "Tu retournes au default. Le mur peut attendre." } }
+  ]
+ },
+ {
+  "id": "cu-mouse", "type": "culture", "when": { "free": false, "tier": [1, 2] },
+  "text": { "en": "One week before an event, the team's new peripheral sponsor delivers its mouse. Different shape, different weight, and a clause in the contract: every player uses it on stage.", "fr": "Une semaine avant un tournoi, le nouveau sponsor périphériques de l'équipe livre sa souris. Autre forme, autre poids, et une clause du contrat : chaque joueur l'utilise sur scène." },
+  "choices": [
+   { "text": { "en": "Switch now and grind until it feels like yours", "fr": "Changer tout de suite et t'entraîner jusqu'à ce qu'elle soit la tienne" }, "fx": { "aim": -1, "energy": -10, "chemistry": 3, "money": 5000 }, "result": { "en": "Forty hours later your hand has almost stopped complaining.", "fr": "Quarante heures plus tard, ta main a presque arrêté de protester." } },
+   { "text": { "en": "Keep your old mouse and put the sponsor's sticker on it", "fr": "Garder ton ancienne souris et coller le sticker du sponsor dessus" }, "test": { "a": { "mental": 1, "gameSense": 1 }, "d": 6 },
+     "win": { "text": { "en": "Nobody looks closely. You play your best event of the year with a disguised mouse.", "fr": "Personne ne regarde de près. Tu joues ton meilleur tournoi de l'année avec une souris déguisée." }, "fx": { "bonus": 1, "confidence": 3 } },
+     "lose": { "text": { "en": "A close-up on the broadcast. The sponsor's marketing team zooms in. Your manager gets a call.", "fr": "Un gros plan à l'antenne. L'équipe marketing du sponsor zoome. Ton manager reçoit un appel." }, "fx": { "money": -8000, "chemistry": -4, "pop": 2, "strike": 1 } } },
+   { "text": { "en": "Ask the sponsor to build their sensor into your old shell", "fr": "Demander au sponsor de monter son capteur dans ton ancienne coque" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "Their engineers love the challenge. Six months later it is sold as your signature model.", "fr": "Leurs ingénieurs adorent le défi. Six mois plus tard, elle est vendue comme ton modèle signature." }, "fx": { "money": 20000, "pop": 3, "aura": 2 } },
+     "lose": { "text": { "en": "\"The contract says our mouse.\" You switch, a week late.", "fr": "« Le contrat dit notre souris. » Tu changes, avec une semaine de retard." }, "fx": { "aim": -1, "confidence": -2 } } }
+  ]
+ },
+ {
+  "id": "cu-kick-text", "type": "culture", "when": { "free": false, "minSeasonsInTeam": 1 },
+  "text": { "en": "Holiday, beach, phone at 4 %. A message from your IGL lights up the screen: \"bro, you are kicked\". Nothing else. The phone dies.", "fr": "Vacances, plage, téléphone à 4 %. Un message de ton IGL s'affiche : « frérot, t'es kick ». Rien d'autre. Le téléphone s'éteint." },
+  "choices": [
+   { "text": { "en": "Run to the hotel, charge the phone, call him", "fr": "Courir à l'hôtel, charger le téléphone, l'appeler" }, "fx": { "energy": -6, "chemistry": 4, "mental": 1 }, "result": { "en": "He is crying with laughter. It was meant for the team's FACEIT party, where you had gone AFK. The whole roster has heard the voicemail you left.", "fr": "Il pleure de rire. Le message était pour le groupe FACEIT de l'équipe, où tu étais resté AFK. Tout l'effectif a entendu le message vocal que tu as laissé." } },
+   { "text": { "en": "Call {agent} first. Calmly. Very calmly", "fr": "Appeler d'abord {agent}. Calmement. Très calmement" }, "fx": { "money": -500, "confidence": -2, "gameSense": 1 }, "result": { "en": "{agent} has already drafted a statement when the IGL explains it was about a FACEIT lobby. {agent} bills you for the hour.", "fr": "{agent} a déjà rédigé un communiqué quand l'IGL explique qu'il parlait d'un lobby FACEIT. {agent} te facture l'heure." } },
+   { "text": { "en": "Finish your swim. Whatever it is, it can wait", "fr": "Finir ta baignade. Quoi que ce soit, ça peut attendre" }, "test": { "a": { "mental": 3 }, "d": 0 },
+     "win": { "text": { "en": "Two hours later: it was a joke about a FACEIT lobby. Your calm becomes a team legend.", "fr": "Deux heures plus tard : c'était une blague sur un lobby FACEIT. Ton calme entre dans la légende de l'équipe." }, "fx": { "mental": 2, "aura": 2, "chemistry": 5 } },
+     "lose": { "text": { "en": "You do not swim. You stand in the water for two hours writing a farewell post in your head.", "fr": "Tu ne nages pas. Tu restes debout dans l'eau pendant deux heures à écrire un message d'adieu dans ta tête." }, "fx": { "energy": -8, "chemistry": 3 } } }
+  ]
+ },
+ {
+  "id": "cu-legend", "type": "culture", "when": { "free": false, "tier": [1, 2] }, "once": true,
+  "text": { "en": "For one bootcamp, the team brings in a retired legend as guest coach, a player you grew up watching. His method: fourteen-hour days, every round of every scrim reviewed, phones in a box.", "fr": "Pour un bootcamp, l'équipe fait venir une légende à la retraite comme coach invité, un joueur que tu regardais enfant. Sa méthode : des journées de quatorze heures, chaque round de chaque scrim revu, les téléphones dans une boîte." },
+  "choices": [
+   { "text": { "en": "Follow him to the letter", "fr": "Le suivre à la lettre" }, "fx": { "all": 1, "gameSense": 2, "energy": -25, "chemistry": 4 }, "result": { "en": "You learn more in ten days than in the last year. You also sleep twelve hours when it ends.", "fr": "Tu apprends plus en dix jours qu'en un an. Tu dors aussi douze heures quand c'est fini." } },
+   { "text": { "en": "Take what suits you and protect your sleep", "fr": "Prendre ce qui te convient et protéger ton sommeil" }, "fx": { "gameSense": 2, "utility": 1, "energy": -10 }, "result": { "en": "He notices you leaving at midnight. He says nothing. He left at midnight too, at your age.", "fr": "Il te voit partir à minuit. Il ne dit rien. Lui aussi partait à minuit, à ton âge." } },
+   { "text": { "en": "Ask him for an hour alone, about your role", "fr": "Lui demander une heure seul à seul, sur ton rôle" }, "test": { "a": { "comms": 1, "gameSense": 2 }, "d": 0 },
+     "win": { "text": { "en": "One hour, three ideas that change how you see your position. You write them on your hand.", "fr": "Une heure, trois idées qui changent ta façon de voir ta position. Tu les notes sur ta main." }, "fx": { "gameSense": 3, "clutch": 1, "confidence": 5, "energy": -8, "potential": 1 } },
+     "lose": { "text": { "en": "He answers with stories from his own career. Great stories. No advice.", "fr": "Il répond avec des histoires de sa propre carrière. De très bonnes histoires. Aucun conseil." }, "fx": { "mental": 1, "energy": -6 } } }
+  ]
+ },
+ {
+  "id": "cu-bootcamp-ban", "type": "culture", "when": { "tier": [3] },
+  "text": { "en": "The team bootcamps in a rented house, the cheapest one online. At 3 a.m., during an overtime, five people scream at the same time. In the morning the owner is at the door with two neighbours: you have until noon to leave.", "fr": "L'équipe fait son bootcamp dans une maison louée, la moins chère du site. À 3 h du matin, pendant un overtime, cinq personnes hurlent en même temps. Le matin, le propriétaire est à la porte avec deux voisins : vous avez jusqu'à midi pour partir." },
+  "choices": [
+   { "text": { "en": "Negotiate: apologies, a cake, a curfew at 22:00", "fr": "Négocier : des excuses, un gâteau, un couvre-feu à 22 h" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": -2 },
+     "win": { "text": { "en": "The owner stays for coffee and asks how the game works. You keep the house.", "fr": "Le propriétaire reste pour un café et demande comment marche le jeu. Vous gardez la maison." }, "fx": { "chemistry": 6, "comms": 1 } },
+     "lose": { "text": { "en": "\"I heard the word 'bomb' forty times.\" Noon it is.", "fr": "« J'ai entendu le mot bombe quarante fois. » Ce sera midi." }, "fx": { "chemistry": 2, "energy": -8 } } },
+   { "text": { "en": "Pack up and finish the bootcamp in an internet café", "fr": "Faire les sacs et finir le bootcamp dans un cybercafé" }, "fx": { "chemistry": 5, "energy": -10, "money": -300 }, "result": { "en": "Five pros between teenagers playing other games. Nobody recognises you. It is the funniest week of the year.", "fr": "Cinq pros au milieu d'ados qui jouent à d'autres jeux. Personne ne vous reconnaît. C'est la semaine la plus drôle de l'année." } },
+   { "text": { "en": "Point at the teammate who screamed the loudest", "fr": "Désigner le coéquipier qui a crié le plus fort" }, "fx": { "chemistry": -6, "tox": 4 }, "result": { "en": "It was you. There is a recording.", "fr": "C'était toi. Il y a un enregistrement." } }
+  ]
+ },
+ {
+  "id": "cu-slope", "type": "culture", "when": { "free": false, "minSeasonsInTeam": 1 },
+  "text": { "en": "{rookie}, the academy stand-in who lives at the team house, opens cases every night after practice. Last night he spent a month's salary chasing a knife. This morning he asks if you can lend him some money \"until Friday\".", "fr": "{rookie}, le remplaçant de l'académie qui vit dans la gaming house, ouvre des caisses tous les soirs après l'entraînement. Hier, il a dépensé un mois de salaire à courir après un couteau. Ce matin, il te demande si tu peux lui prêter de l'argent « jusqu'à vendredi »." },
+  "choices": [
+   { "text": { "en": "No loan, but sit down with him and look at the numbers together", "fr": "Pas de prêt, mais t'asseoir avec lui et regarder les chiffres ensemble" }, "test": { "a": { "comms": 2, "leadership": 2 }, "d": 0 },
+     "win": { "text": { "en": "Seeing the total on one page does what no speech could. He uninstalls the case site in front of you.", "fr": "Voir le total sur une seule page fait ce qu'aucun discours n'aurait fait. Il désinstalle le site de caisses devant toi." }, "fx": { "leadership": 3, "chemistry": 6, "aura": 2 } },
+     "lose": { "text": { "en": "\"You sound like my father.\" He asks someone else.", "fr": "« On dirait mon père. » Il demande à quelqu'un d'autre." }, "fx": { "chemistry": -2 } } },
+   { "text": { "en": "Lend him the money", "fr": "Lui prêter l'argent" }, "fx": { "money": -1500, "chemistry": 2 }, "result": { "en": "Friday comes. Then another Friday.", "fr": "Vendredi arrive. Puis un autre vendredi." } },
+   { "text": { "en": "Tell the coach, quietly", "fr": "En parler au coach, discrètement" }, "fx": { "chemistry": -1, "mental": 1, "leadership": 1 }, "result": { "en": "The club finds him someone to talk to. He is angry with you for a month, and thanks you a year later.", "fr": "Le club lui trouve quelqu'un à qui parler. Il t'en veut pendant un mois, et te remercie un an plus tard." } }
+  ]
+ },
+ {
+  "id": "cu-door", "type": "culture", "when": { "free": true, "maxAge": 20 },
+  "text": { "en": "FACEIT, pistol round, five-man rush. You and a teammate reach the same doorway at the same time and get stuck shoulder to shoulder. Behind you, three players pile up. In voice chat, someone screams: \"DOOR STUCK!\"", "fr": "FACEIT, pistol round, rush à cinq. Toi et un coéquipier arrivez à la même porte en même temps et restez coincés épaule contre épaule. Derrière, trois joueurs s'entassent. Dans le vocal, quelqu'un hurle : « DOOR STUCK ! »" },
+  "choices": [
+   { "text": { "en": "Laugh so hard you cannot shoot", "fr": "Rire tellement que tu ne peux plus tirer" }, "fx": { "mental": 2, "confidence": 3, "elo": -30, "tox": -4 }, "result": { "en": "You lose the round 0-5 and win the game 13-4. Nobody tilts after a laugh like that.", "fr": "Vous perdez le round 0-5 et gagnez la game 13-4. Personne ne tilt après un fou rire pareil." } },
+   { "text": { "en": "Clip it and post it with the caption everyone expects", "fr": "En faire un clip et le poster avec la légende que tout le monde attend" }, "fx": { "fans": 1500, "pop": 2, "style": 6 }, "result": { "en": "The oldest joke in Counter-Strike still works. Your biggest post so far.", "fr": "La plus vieille blague de Counter-Strike marche toujours. Ton plus gros post jusqu'ici." } },
+   { "text": { "en": "Blame the teammate, loudly", "fr": "Accuser le coéquipier, fort" }, "fx": { "tox": 6, "elo": -60, "mental": -1 }, "result": { "en": "He blames you back. The other three mute you both.", "fr": "Il t'accuse en retour. Les trois autres vous mutent tous les deux." } }
+  ]
+ },
+ {
+  "id": "cu-sneaky", "type": "culture", "when": { "free": true, "maxAge": 20 },
+  "text": { "en": "FACEIT, round one. Nobody has said a word. Then a teammate asks, in a perfect imitation of the old in-game radio voice: \"Are we rushing in? Or are we going sneaky-beaky like?\"", "fr": "FACEIT, premier round. Personne n'a dit un mot. Puis un coéquipier demande, en imitant à la perfection la vieille voix radio du jeu : « Are we rushing in? Or are we going sneaky-beaky like? »" },
+  "choices": [
+   { "text": { "en": "\"Rushing in.\" Five through one door", "fr": "« Rushing in. » À cinq par la même porte" }, "test": { "a": { "reflexes": 2, "aim": 2 }, "d": 0 },
+     "win": { "text": { "en": "Nobody expects a five-man rush at this Elo. Round won in eleven seconds, and the team talks for the rest of the game.", "fr": "Personne n'attend un rush à cinq à cet Elo. Round gagné en onze secondes, et l'équipe parle tout le reste de la game." }, "fx": { "elo": 140, "confidence": 4, "comms": 1 } },
+     "lose": { "text": { "en": "One molotov, five problems.", "fr": "Un molotov, cinq problèmes." }, "fx": { "elo": -60, "utility": 1 } } },
+   { "text": { "en": "\"Sneaky-beaky.\" A slow default, in a whisper", "fr": "« Sneaky-beaky. » Un default lent, en chuchotant" }, "test": { "a": { "gameSense": 2, "comms": 1, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "You walk onto an empty site with forty seconds left. Everyone whispers for the whole half, for no reason.", "fr": "Vous entrez en marchant sur un site vide avec quarante secondes au compteur. Tout le monde chuchote pendant toute la mi-temps, sans raison." }, "fx": { "elo": 140, "gameSense": 1, "comms": 1 } },
+     "lose": { "text": { "en": "So sneaky that you run out of time.", "fr": "Tellement discrets que vous manquez de temps." }, "fx": { "elo": -50 } } }
+  ]
+ },
+ {
+  "id": "cu-zeus", "type": "culture", "when": { "free": false },
+  "text": { "en": "Eco round in an official match, $400 in your pocket. On the team channel, a teammate whispers: \"Zeus. Do it. I will give you a hundred dollars.\"", "fr": "Round d'eco en match officiel, 400 $ en poche. Dans le canal de l'équipe, un coéquipier chuchote : « Zeus. Fais-le. Je te donne cent dollars. »" },
+  "choices": [
+   { "text": { "en": "Buy the Zeus and hide around a corner", "fr": "Acheter le Zeus et te cacher derrière un angle" }, "test": { "a": { "gameSense": 2, "mental": 1, "clutch": 1 }, "d": 2 },
+     "win": { "text": { "en": "Bzzt. The casters lose their composure. You collect a hundred dollars and a week of highlights.", "fr": "Bzzt. Les commentateurs perdent leur sérieux. Tu récupères cent dollars et une semaine de highlights." }, "fx": { "aura": 5, "pop": 3, "money": 100, "style": 8, "chemistry": 4, "fans": 4000 } },
+     "lose": { "text": { "en": "He sees you from ten metres. You die holding a taser.", "fr": "Il te voit à dix mètres. Tu meurs un taser à la main." }, "fx": { "chemistry": 2, "confidence": -2, "pop": 1 } } },
+   { "text": { "en": "\"Save your hundred. We need this round.\"", "fr": "« Garde tes cent dollars. On a besoin de ce round. »" }, "fx": { "leadership": 1, "mental": 1, "style": -4 }, "result": { "en": "A proper eco: five pistols, one site, no jokes.", "fr": "Une eco sérieuse : cinq pistolets, un site, pas de blague." } }
+  ]
+ },
+ {
+  "id": "cu-chicken", "type": "culture",
+  "text": { "en": "Inferno, 1v1, you are hiding in silence with the bomb ticking. A chicken walks up to you, stops at your feet and starts clucking, loudly.", "fr": "Inferno, 1v1, tu es caché en silence avec la bombe qui tourne. Un poulet s'approche, s'arrête à tes pieds et se met à caqueter, fort." },
+  "choices": [
+   { "text": { "en": "Stay still and trust the chicken", "fr": "Rester immobile et faire confiance au poulet" }, "test": { "a": { "mental": 2, "clutch": 2 }, "d": 0 },
+     "win": { "text": { "en": "The enemy checks the wrong corner. You win the round and salute the chicken in the kill cam.", "fr": "L'adversaire vérifie le mauvais angle. Tu gagnes le round et tu salues le poulet à la caméra." }, "fx": { "clutch": 1, "confidence": 4, "aura": 2 } },
+     "lose": { "text": { "en": "The enemy follows the noise straight to you. Betrayed by poultry.", "fr": "L'adversaire suit le bruit jusqu'à toi. Trahi par une volaille." }, "fx": { "confidence": -2, "mental": 1 } } },
+   { "text": { "en": "Shoot the chicken", "fr": "Tirer sur le poulet" }, "fx": { "confidence": -1, "gameSense": 1 }, "result": { "en": "One bullet, one cloud of feathers, and your exact position given away. You learn something about sound.", "fr": "Une balle, un nuage de plumes, et ta position exacte dévoilée. Tu apprends quelque chose sur le son." } }
+  ]
+ },
+ {
+  "id": "cu-boost", "type": "culture", "when": { "free": false, "tier": [1, 2] },
+  "text": { "en": "Your analyst has found something on {map}: a three-man boost onto a ledge nobody has ever used, with a view over half the map. Every CS fan knows the story of a boost like that turning a famous quarter-final upside down, years ago.", "fr": "Ton analyste a trouvé quelque chose sur {map} : un boost à trois sur un rebord que personne n'a jamais utilisé, avec une vue sur la moitié de la map. Tous les fans de CS connaissent l'histoire d'un boost de ce genre qui a renversé un quart de finale célèbre, il y a des années." },
+  "choices": [
+   { "text": { "en": "Show it to the tournament admins before using it", "fr": "Le montrer aux arbitres du tournoi avant de l'utiliser" }, "fx": { "bonus": 1, "aura": 2, "leadership": 1 }, "result": { "en": "They allow it, with one restriction. You use it once, legally, and win the round that matters.", "fr": "Ils l'autorisent, avec une restriction. Tu l'utilises une fois, dans les règles, et tu gagnes le round qui compte." } },
+   { "text": { "en": "Keep it secret and pull it out at 3-9 down", "fr": "Le garder secret et le sortir à 3-9" }, "test": { "a": { "gameSense": 2, "comms": 1 }, "d": 6 },
+     "win": { "text": { "en": "The comeback of the year, and the admins rule the spot legal. They will name it after your team.", "fr": "Le retour de l'année, et les arbitres jugent la position légale. Elle portera le nom de ton équipe." }, "fx": { "bonus": 4, "aura": 8, "pop": 6, "fans": 12000 } },
+     "lose": { "text": { "en": "The opponents protest, the admins order the half replayed, and the internet has an opinion.", "fr": "Les adversaires protestent, les arbitres font rejouer la mi-temps, et Internet a un avis." }, "fx": { "bonus": -2, "pop": 3, "aura": -4, "chemistry": -3, "strike": 1 } } },
+   { "text": { "en": "Leave it in the notebook", "fr": "Le laisser dans le carnet" }, "fx": { "mental": 1 }, "result": { "en": "Someone else finds it six months later.", "fr": "Quelqu'un d'autre le trouve six mois plus tard." } }
+  ]
+ },
+ {
+  "id": "cu-knife-drop", "type": "culture", "when": { "free": true, "maxAge": 20 }, "once": true,
+  "text": { "en": "You open one case, the only one you have ever bought. The wheel slows down on gold. A knife worth more than your whole setup.", "fr": "Tu ouvres une caisse, la seule que tu aies jamais achetée. La roue ralentit sur du doré. Un couteau qui vaut plus cher que tout ton setup." },
+  "choices": [
+   { "text": { "en": "Sell it and upgrade your PC and monitor", "fr": "Le vendre et changer ton PC et ton écran" }, "fx": { "money": 800, "reflexes": 2, "aim": 1 }, "result": { "en": "360 fps. The knife is gone and you do not miss it.", "fr": "360 fps. Le couteau est parti et il ne te manque pas." } },
+   { "text": { "en": "Keep it. You inspect it between every round", "fr": "Le garder. Tu l'inspectes entre chaque round" }, "fx": { "confidence": 5, "aura": 2, "style": 6 }, "result": { "en": "People in your lobbies drop a \"nice knife\" before the game starts. It is worth a few intimidated opponents.", "fr": "Dans tes lobbys, on te lâche un « nice knife » avant le début. Ça vaut quelques adversaires intimidés." } },
+   { "text": { "en": "Sell it and never open a case again", "fr": "Le vendre et ne plus jamais ouvrir une caisse" }, "fx": { "money": 2500, "mental": 2 }, "result": { "en": "You quit while you are ahead. Almost nobody does.", "fr": "Tu t'arrêtes sur une victoire. Presque personne ne le fait." } }
+  ]
+ }
+]

@@ -1,0 +1,129 @@
+[
+ {
+  "id": "mj-sticker", "type": "major", "once": true,
+  "text": { "en": "Before your first Major, an email from the organisers: \"Please send your autograph for the player sticker capsule.\" A share of every sticker sold goes to you. You have one white page and a marker.", "fr": "Avant ton premier Major, un e-mail des organisateurs : « Merci d'envoyer ton autographe pour la capsule de stickers des joueurs. » Une part de chaque sticker vendu te revient. Tu as une page blanche et un feutre." },
+  "choices": [
+   { "text": { "en": "A clean, readable signature", "fr": "Une signature propre et lisible" }, "fx": { "money": 15000, "pop": 2 }, "result": { "en": "It looks good on an AK. Your mother buys one.", "fr": "Ça rend bien sur une AK. Ta mère en achète un." } },
+   { "text": { "en": "Add a tiny drawing that will become your trademark", "fr": "Ajouter un petit dessin qui deviendra ta marque de fabrique" }, "test": { "a": { "comms": 1, "mental": 1 }, "d": -6 },
+     "win": { "text": { "en": "The community loves the little doodle. Your sticker outsells half the playoff teams.", "fr": "La communauté adore le petit dessin. Ton sticker se vend mieux que la moitié des équipes en playoffs." }, "fx": { "money": 40000, "pop": 4, "aura": 4, "style": 8 } },
+     "lose": { "text": { "en": "It prints as a blob. \"What is it?\" becomes a meme, a friendly one.", "fr": "À l'impression, c'est une tache. « C'est quoi ? » devient un mème, plutôt gentil." }, "fx": { "money": 12000, "pop": 3 } } }
+  ]
+ },
+ {
+  "id": "mj-media-day", "type": "major",
+  "text": { "en": "Media day at {tournament}. Six hours of photos, slow-motion walks and the same three questions in front of a green screen. Your first match is tomorrow.", "fr": "Journée médias à {tournament}. Six heures de photos, de marches au ralenti et les trois mêmes questions devant un fond vert. Ton premier match est demain." },
+  "choices": [
+   { "text": { "en": "Give the cameras everything: poses, jokes, the stare", "fr": "Tout donner aux caméras : les poses, les blagues, le regard" }, "fx": { "pop": 4, "aura": 3, "style": 8, "energy": -8 }, "result": { "en": "Your intro video is the one the broadcast plays before every match.", "fr": "Ta vidéo d'intro est celle que la réalisation passe avant chaque match." } },
+   { "text": { "en": "Do the minimum and save your energy", "fr": "Faire le minimum et garder ton énergie" }, "fx": { "energy": 4, "style": -6, "mental": 1 }, "result": { "en": "Arms crossed, one take. Back to the practice room by noon.", "fr": "Bras croisés, une seule prise. De retour en salle d'entraînement à midi." } }
+  ]
+ },
+ {
+  "id": "mj-crowd-against", "type": "major",
+  "text": { "en": "{tournament}. You play the home team. Twelve thousand people boo your name during the introductions, and they have not even seen you play yet.", "fr": "{tournament}. Vous jouez l'équipe locale. Douze mille personnes sifflent ton pseudo pendant les présentations, alors qu'elles ne t'ont même pas encore vu jouer." },
+  "choices": [
+   { "text": { "en": "Cup your ear at the crowd and smile", "fr": "Mettre la main à l'oreille vers le public et sourire" }, "test": { "a": { "mental": 3, "clutch": 1 }, "d": 3 },
+     "win": { "text": { "en": "You feed on it. Every round you win, the arena gets quieter. By the end, some of them clap.", "fr": "Tu t'en nourris. À chaque round gagné, l'arène se tait un peu plus. À la fin, certains applaudissent." }, "fx": { "bonus": 3, "aura": 6, "pop": 3, "style": 8, "confidence": 6 } },
+     "lose": { "text": { "en": "You asked for noise. You get it after every round you lose.", "fr": "Tu as demandé du bruit. Tu en as à chaque round perdu." }, "fx": { "bonus": -2, "confidence": -5, "aura": 1 } } },
+   { "text": { "en": "Headset on, eyes on the monitor, nothing exists", "fr": "Casque sur les oreilles, yeux sur l'écran, rien n'existe" }, "test": { "a": { "mental": 3 }, "d": -2 },
+     "win": { "text": { "en": "White noise. You play it like an online match.", "fr": "Un bruit blanc. Tu joues ça comme un match en ligne." }, "fx": { "bonus": 2, "mental": 2 } },
+     "lose": { "text": { "en": "You can feel the floor shake through the chair.", "fr": "Tu sens le sol trembler à travers la chaise." }, "fx": { "bonus": -1, "confidence": -3 } } }
+  ]
+ },
+ {
+  "id": "mj-crowd-for", "type": "major",
+  "text": { "en": "{tournament}. Somewhere in the stands, a group of fans has made a banner with your name and your crosshair on it. They start a chant during the tech pause.", "fr": "{tournament}. Quelque part dans les tribunes, un groupe de fans a fabriqué une banderole avec ton pseudo et ton crosshair. Ils lancent un chant pendant la pause technique." },
+  "choices": [
+   { "text": { "en": "Stand up and wave at them", "fr": "Te lever et leur faire signe" }, "fx": { "pop": 3, "aura": 2, "confidence": 5, "fans": 3000, "style": 4 }, "result": { "en": "The section explodes. You will sign that banner after the match.", "fr": "La tribune explose. Tu signeras cette banderole après le match." } },
+   { "text": { "en": "Stay in your bubble, thank them after", "fr": "Rester dans ta bulle, les remercier après" }, "fx": { "mental": 2, "bonus": 1, "style": -4 }, "result": { "en": "You find them at the exit, an hour later. They did not expect that.", "fr": "Tu les retrouves à la sortie, une heure plus tard. Ils ne s'y attendaient pas." } }
+  ]
+ },
+ {
+  "id": "mj-swiss-0-2", "type": "major",
+  "text": { "en": "{tournament}. Two losses in two matches. One more and you fly home. At the hotel, nobody wants to be the first to speak.", "fr": "{tournament}. Deux défaites en deux matchs. Encore une et c'est l'avion du retour. À l'hôtel, personne ne veut parler en premier." },
+  "choices": [
+   { "text": { "en": "\"We need three wins. Others have done it. Why not us?\"", "fr": "« Il nous faut trois victoires. D'autres l'ont fait. Pourquoi pas nous ? »" }, "test": { "a": { "leadership": 2, "mental": 2 }, "d": 2 },
+     "win": { "text": { "en": "Something shifts in the room. Tomorrow you play with nothing to lose.", "fr": "Quelque chose bouge dans la pièce. Demain, vous jouez sans rien à perdre." }, "fx": { "bonus": 3, "chemistry": 6, "leadership": 2 } },
+     "lose": { "text": { "en": "The speech sounds like a film. Nobody believes it, including you.", "fr": "Le discours sonne comme dans un film. Personne n'y croit, toi non plus." }, "fx": { "confidence": -3 } } },
+   { "text": { "en": "No speech. Order pizza and put a comedy on", "fr": "Pas de discours. Commander des pizzas et lancer une comédie" }, "fx": { "bonus": 1, "chemistry": 5, "energy": 5 }, "result": { "en": "Nobody talks about Counter-Strike until breakfast. It helps.", "fr": "Personne ne parle de Counter-Strike avant le petit-déjeuner. Ça aide." } },
+   { "text": { "en": "Review both losses until 3 a.m.", "fr": "Revoir les deux défaites jusqu'à 3 h du matin" }, "fx": { "gameSense": 2, "energy": -12, "bonus": 1 }, "result": { "en": "You find the leak. You also find the bottom of the coffee machine.", "fr": "Tu trouves la faille. Tu trouves aussi le fond de la machine à café." } }
+  ]
+ },
+ {
+  "id": "mj-pickem", "type": "major",
+  "text": { "en": "The Pick'Em predictions are public: most viewers have picked your team to go out 0-3. Someone prints the graph and tapes it to the practice room door.", "fr": "Les pronostics du Pick'Em sont publics : la plupart des spectateurs voient ton équipe sortir en 0-3. Quelqu'un imprime le graphique et le scotche sur la porte de la salle d'entraînement." },
+  "choices": [
+   { "text": { "en": "Leave it there. Free motivation", "fr": "Le laisser là. De la motivation gratuite" }, "fx": { "bonus": 2, "confidence": 3, "chemistry": 3 }, "result": { "en": "Everyone touches the sheet on the way out, like a lucky charm in reverse.", "fr": "Tout le monde touche la feuille en sortant, comme un porte-bonheur à l'envers." } },
+   { "text": { "en": "Post it yourself: \"Sorry for your Pick'Em.\"", "fr": "Le poster toi-même : « Désolé pour votre Pick'Em. »" }, "test": { "a": { "mental": 2, "aim": 1 }, "d": 3 },
+     "win": { "text": { "en": "You back it up on the server. The post ages like fine wine.", "fr": "Tu assumes sur le serveur. Le post vieillit comme un grand vin." }, "fx": { "bonus": 2, "pop": 5, "aura": 5, "style": 10, "fansPct": 10 } },
+     "lose": { "text": { "en": "The replies are waiting for you after the loss. Thousands of them.", "fr": "Les réponses t'attendent après la défaite. Par milliers." }, "fx": { "pop": 2, "confidence": -5, "aura": -2 } } }
+  ]
+ },
+ {
+  "id": "mj-tech-pause", "type": "major",
+  "text": { "en": "{tournament}, 11-10 for you. A technical pause that lasts twenty-five minutes. Your hands are cooling down and the momentum is draining away.", "fr": "{tournament}, 11-10 pour vous. Une pause technique qui dure vingt-cinq minutes. Tes mains refroidissent et l'élan s'évapore." },
+  "choices": [
+   { "text": { "en": "Keep the team talking about the next two rounds", "fr": "Garder l'équipe en train de parler des deux prochains rounds" }, "test": { "a": { "comms": 2, "leadership": 2 }, "d": 0 },
+     "win": { "text": { "en": "When the game resumes, you are the only team still in the match.", "fr": "À la reprise, vous êtes la seule équipe encore dans le match." }, "fx": { "bonus": 3, "chemistry": 3 } },
+     "lose": { "text": { "en": "Too much talk. You over-think the first round back.", "fr": "Trop de paroles. Vous réfléchissez trop sur le round de reprise." }, "fx": { "bonus": -1 } } },
+   { "text": { "en": "Hand warmers, jokes, no tactics", "fr": "Chaufferettes, blagues, pas de tactique" }, "fx": { "bonus": 1, "chemistry": 4, "mental": 1 }, "result": { "en": "The admin has to ask you to stop laughing so loudly.", "fr": "L'arbitre doit vous demander de rire moins fort." } }
+  ]
+ },
+ {
+  "id": "mj-legend-opp", "type": "major", "when": { "maxAge": 24 },
+  "text": { "en": "{tournament}. Across the stage sits {star} of {rival}, whose poster was on your bedroom wall. He nods at you during the sound check.", "fr": "{tournament}. De l'autre côté de la scène, {star} de {rival}, dont tu avais le poster dans ta chambre. Il te fait un signe de tête pendant les essais son." },
+  "choices": [
+   { "text": { "en": "Nod back. Today he is just another opponent", "fr": "Lui rendre son signe. Aujourd'hui, c'est un adversaire comme un autre" }, "test": { "a": { "mental": 3, "aim": 1 }, "d": 2 },
+     "win": { "text": { "en": "You win your duels against him. At the handshake he says: \"You are for real.\"", "fr": "Tu gagnes tes duels contre lui. À la poignée de main, il te dit : « Toi, t'es un vrai. »" }, "fx": { "bonus": 2, "confidence": 8, "aura": 4, "pop": 2 } },
+     "lose": { "text": { "en": "You hesitate on every peek against him. He is still very, very good.", "fr": "Tu hésites à chaque peek contre lui. Il est encore très, très fort." }, "fx": { "bonus": -1, "confidence": -3, "gameSense": 1 } } },
+   { "text": { "en": "Tell him about the poster", "fr": "Lui parler du poster" }, "fx": { "pop": 3, "confidence": 2, "chemistry": 2 }, "result": { "en": "He laughs and asks you to sign his mousepad after the match, \"for when you are famous\".", "fr": "Il rit et te demande de signer son tapis de souris après le match, « pour quand tu seras célèbre »." } }
+  ]
+ },
+ {
+  "id": "mj-family", "type": "major", "once": true,
+  "text": { "en": "Your parents are in the arena for the first time. The same parents who used to switch the router off at 22:00. The camera finds them in the crowd before the match.", "fr": "Tes parents sont dans l'arène pour la première fois. Les mêmes qui coupaient la box à 22 h. La caméra les trouve dans le public avant le match." },
+  "choices": [
+   { "text": { "en": "Play for them", "fr": "Jouer pour eux" }, "test": { "a": { "mental": 2, "clutch": 2 }, "d": 0 },
+     "win": { "text": { "en": "After your clutch, the broadcast cuts to your father on his feet, shouting a callout he does not understand.", "fr": "Après ton clutch, la réalisation montre ton père debout, en train de crier un callout qu'il ne comprend pas." }, "fx": { "bonus": 3, "confidence": 8, "pop": 3, "aura": 3 } },
+     "lose": { "text": { "en": "You want it too much. They hug you just the same.", "fr": "Tu en as trop envie. Ils te serrent dans leurs bras quand même." }, "fx": { "bonus": -1, "mental": 2 } } },
+   { "text": { "en": "Forget they are there until the last round", "fr": "Oublier qu'ils sont là jusqu'au dernier round" }, "fx": { "bonus": 1, "mental": 2 }, "result": { "en": "You find them after the match. Your mother asks why everyone was shouting \"banana\".", "fr": "Tu les retrouves après le match. Ta mère demande pourquoi tout le monde criait « banana »." } }
+  ]
+ },
+ {
+  "id": "mj-interview-stage", "type": "major",
+  "text": { "en": "You have just won. A microphone, a full arena, and the interviewer's question: \"A word for your next opponent?\"", "fr": "Vous venez de gagner. Un micro, une arène pleine, et la question de l'intervieweur : « Un mot pour votre prochain adversaire ? »" },
+  "choices": [
+   { "text": { "en": "\"Respect to them. May the best team win.\"", "fr": "« Respect à eux. Que la meilleure équipe gagne. »" }, "fx": { "pop": 2, "style": -6, "mental": 1 }, "result": { "en": "Polite applause. Clean.", "fr": "Des applaudissements polis. Propre." } },
+   { "text": { "en": "\"Tell them to pack light. It is a short trip.\"", "fr": "« Dites-leur de voyager léger. Le séjour sera court. »" }, "fx": { "pop": 5, "aura": 4, "style": 12, "tox": 4, "fansPct": 8 }, "result": { "en": "The arena roars. The clip is everywhere within the hour. Now you have to win.", "fr": "L'arène rugit. Le clip est partout dans l'heure. Maintenant, il faut gagner." } },
+   { "text": { "en": "Give the microphone to the teammate who carried the map", "fr": "Donner le micro au coéquipier qui a porté la map" }, "fx": { "chemistry": 7, "pop": 1, "style": -4 }, "result": { "en": "He was not ready. He will remember it all his life.", "fr": "Il n'était pas prêt. Il s'en souviendra toute sa vie." } }
+  ]
+ },
+ {
+  "id": "mj-night-before", "type": "major",
+  "text": { "en": "The night before the biggest match of your career. It is 1 a.m. and you are staring at the hotel ceiling, replaying rounds that have not happened yet.", "fr": "La veille du plus gros match de ta carrière. Il est 1 h du matin et tu fixes le plafond de l'hôtel en rejouant des rounds qui n'ont pas encore eu lieu." },
+  "choices": [
+   { "text": { "en": "Get up and do thirty minutes of deathmatch to empty your head", "fr": "Te lever et faire trente minutes de deathmatch pour te vider la tête" }, "fx": { "aim": 1, "energy": -8, "confidence": 3 }, "result": { "en": "Your hands remember what to do. You fall asleep at 2.", "fr": "Tes mains savent quoi faire. Tu t'endors à 2 h." } },
+   { "text": { "en": "Breathing exercises from the mental coach", "fr": "Les exercices de respiration du préparateur mental" }, "test": { "a": { "mental": 3 }, "d": -2 },
+     "win": { "text": { "en": "Four seconds in, six out. You do not remember the tenth breath.", "fr": "Quatre secondes d'inspiration, six d'expiration. Tu ne te souviens pas de la dixième." }, "fx": { "energy": 10, "bonus": 1, "mental": 1 } },
+     "lose": { "text": { "en": "You count breaths until 4 a.m.", "fr": "Tu comptes tes respirations jusqu'à 4 h." }, "fx": { "energy": -10 } } },
+   { "text": { "en": "Knock on a teammate's door. He is not sleeping either", "fr": "Frapper à la porte d'un coéquipier. Lui non plus ne dort pas" }, "fx": { "chemistry": 6, "energy": -4, "mental": 1 }, "result": { "en": "Two hours of talking about everything. You will both remember this more than the match.", "fr": "Deux heures à parler de tout. Vous vous en souviendrez tous les deux plus que du match." } }
+  ]
+ },
+ {
+  "id": "mj-rival-bracket", "type": "major", "when": { "flag": "rvMet" },
+  "text": { "en": "The bracket is out. On the other side of the stage: {rv}, the player who has followed you since your FACEIT days. He posts a photo of the draw with one word: \"Finally.\"", "fr": "Le tableau est sorti. De l'autre côté de la scène : {rv}, le joueur qui te suit depuis tes années FACEIT. Il poste une photo du tirage avec un seul mot : « Enfin. »" },
+  "choices": [
+   { "text": { "en": "Reply: \"Bring a pen. You will want my autograph.\"", "fr": "Répondre : « Prends un stylo. Tu voudras mon autographe. »" }, "test": { "a": { "aim": 2, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "You win the duel that decides the map and point at his side of the stage. The story of the tournament.", "fr": "Tu gagnes le duel qui décide de la map et tu pointes son côté de la scène. L'histoire du tournoi." }, "fx": { "bonus": 3, "aura": 6, "pop": 5, "style": 8, "confidence": 6 } },
+     "lose": { "text": { "en": "He gets you three times in a row and mimes signing an autograph.", "fr": "Il t'élimine trois fois de suite et mime une signature d'autographe." }, "fx": { "bonus": -2, "confidence": -5, "pop": 2 } } },
+   { "text": { "en": "Like the post and say nothing", "fr": "Liker le post et ne rien dire" }, "fx": { "mental": 2, "bonus": 1, "style": -5 }, "result": { "en": "Ten years of history, settled on the server and nowhere else.", "fr": "Dix ans d'histoire, réglés sur le serveur et nulle part ailleurs." } }
+  ]
+ },
+ {
+  "id": "mj-souvenir", "type": "major",
+  "text": { "en": "A fan waits two hours at the players' exit with a printed screenshot of your best round and a silver pen. Your shuttle leaves in three minutes.", "fr": "Un fan attend depuis deux heures à la sortie des joueurs avec une capture imprimée de ton meilleur round et un stylo argenté. Ta navette part dans trois minutes." },
+  "choices": [
+   { "text": { "en": "Sign it, take the photo, miss the shuttle", "fr": "Signer, faire la photo, rater la navette" }, "fx": { "pop": 3, "aura": 3, "fans": 1500, "energy": -3 }, "result": { "en": "You walk back to the hotel. His post about it reaches more people than your match did.", "fr": "Tu rentres à l'hôtel à pied. Son post touche plus de monde que ton match." } },
+   { "text": { "en": "A quick signature through the window", "fr": "Une signature rapide par la fenêtre" }, "fx": { "pop": 1 }, "result": { "en": "Ten seconds. He looks at the paper all the way home.", "fr": "Dix secondes. Il regarde la feuille pendant tout le trajet du retour." } }
+  ]
+ }
+]

@@ -4170,6 +4170,1165 @@ body.light .team-badge img[src*="fut"] {
     line-height: var(--lh-ui);
 }
 
+/* ===== Bloc du jeu « Zero to Major » dans l'en-tête de l'accueil =====
+   Sur grand écran il se pose à droite de la recherche (aucune place perdue en hauteur) ; sinon sous les accès rapides. */
+.hero {
+    position: relative;
+}
+
+.career-promo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2px 16px;
+    max-width: 640px;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.18s var(--ease);
+}
+
+.career-promo:hover {
+    border-color: var(--accent-line);
+}
+
+.career-promo-tag {
+    grid-column: 1;
+    color: var(--link);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.career-promo strong {
+    grid-column: 1;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    line-height: var(--lh-tight);
+}
+
+.career-promo-text {
+    grid-column: 1;
+    color: var(--text-body);
+    font-size: var(--fs-ui);
+    line-height: var(--lh-ui);
+}
+
+.career-promo-cta {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    padding: 10px 16px;
+    background-color: var(--accent);
+    color: var(--accent-text);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    white-space: nowrap;
+}
+
+.career-promo:hover .career-promo-cta {
+    background-color: var(--accent-hover);
+}
+
+@media (min-width: 1360px) {
+    .career-promo {
+        position: absolute;
+        top: 40px;
+        right: 32px;
+        width: 320px;
+        margin-top: 0;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px;
+    }
+
+    .career-promo-cta {
+        grid-column: 1;
+        grid-row: auto;
+        justify-self: start;
+        margin-top: 6px;
+    }
+}
+
+/* ===== Le jeu « Zero to Major » (page /career, affichage : career.js) ===== */
+.zm-page {
+    max-width: 1160px;
+}
+
+.zm-tagline {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-body);
+    font-family: var(--font-ui);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    letter-spacing: normal;
+}
+
+.zm {
+    margin: 12px 0 8px;
+    min-height: 420px;
+}
+
+.zm-note,
+.player-page .zm-credits {
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.player-page .zm-credits {
+    max-width: none;
+    margin-top: 16px;
+}
+
+/* Les règles générales des pages (titres, listes) ne s'appliquent pas dans le jeu */
+.zm h2::before {
+    content: none;
+}
+
+.player-page .zm h2,
+.player-page .zm h3,
+.player-page .zm ol,
+.player-page .zm ul {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    list-style: none;
+}
+
+.player-page .zm ul:not(.related) > li + li,
+.player-page .zm ol > li + li {
+    margin-top: 0;
+}
+
+.zm [hidden] {
+    display: none;
+}
+
+/* Boutons du jeu */
+.zm-btn {
+    min-height: 44px;
+    padding: 10px 16px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+
+.zm-btn:hover {
+    border-color: var(--accent-line);
+}
+
+.zm-btn-main,
+.zm-next {
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-text);
+}
+
+.zm-btn-main:hover,
+.zm-next:hover {
+    border-color: var(--accent-hover);
+    background-color: var(--accent-hover);
+}
+
+.zm-next {
+    justify-self: start;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 2px;
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    transition: background-color 0.15s var(--ease);
+}
+
+.player-page .zm-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px 16px;
+    max-width: none;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.zm-link {
+    padding: 10px 0;
+    border: 0;
+    background: none;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.zm-link:hover {
+    color: var(--text);
+}
+
+/* Drapeaux et écussons d'équipe */
+.zm-flag {
+    flex: none;
+    width: 32px;
+    height: 24px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+
+.zm-flag-sm {
+    width: 24px;
+    height: 18px;
+}
+
+.zm-flag-none {
+    display: inline-block;
+    background-color: var(--panel2);
+}
+
+.zm-badge {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background-color: var(--tc, var(--panel2));
+    color: var(--on, var(--text));
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+}
+
+.zm-badge img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Jauge à 10 segments : lisible d'un coup d'œil, comme un tableau de score */
+.zm-seg {
+    flex: 1;
+    height: 8px;
+    background: linear-gradient(90deg, var(--fill, var(--text)) var(--v), var(--panel2) var(--v));
+    -webkit-mask: repeating-linear-gradient(90deg, #000 0 calc(10% - 2px), transparent calc(10% - 2px) 10%);
+    mask: repeating-linear-gradient(90deg, #000 0 calc(10% - 2px), transparent calc(10% - 2px) 10%);
+}
+
+/* Création du joueur */
+.zm-create {
+    display: grid;
+    gap: 12px;
+    max-width: 760px;
+}
+
+.zm-resume {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-line);
+    background-color: var(--panel);
+}
+
+.player-page .zm-resume p {
+    flex: 1;
+    min-width: 160px;
+    color: var(--text);
+}
+
+.zm-form {
+    display: grid;
+    gap: 18px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+}
+
+.player-page .zm-form h2 {
+    font-size: var(--fs-2xl);
+}
+
+.zm-field {
+    display: grid;
+    gap: 6px;
+}
+
+.zm-label {
+    padding: 0;
+    color: var(--muted);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.zm-help {
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+.zm-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+}
+
+.zm-country {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zm-flagbox {
+    display: flex;
+}
+
+.zm-roles,
+.zm-maps {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.zm-roles {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.zm-maps {
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.zm-roles legend,
+.zm-maps legend {
+    margin-bottom: 6px;
+}
+
+.zm-maps .zm-help {
+    grid-column: 1 / -1;
+}
+
+.zm-role,
+.zm-map {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.zm-role input,
+.zm-map input {
+    position: absolute;
+    opacity: 0;
+}
+
+.zm-role span,
+.zm-map span {
+    display: grid;
+    gap: 2px;
+    height: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    transition: border-color 0.15s var(--ease);
+}
+
+.zm-map span {
+    place-items: center;
+    color: var(--text);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-role strong {
+    font-size: var(--fs-body);
+}
+
+.zm-role small {
+    color: var(--muted);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-ui);
+}
+
+.zm-role:hover span,
+.zm-map:hover span {
+    border-color: var(--muted);
+}
+
+.zm-role input:checked + span,
+.zm-map input:checked + span {
+    border-color: var(--accent-line);
+    box-shadow: inset 3px 0 0 var(--accent-line);
+}
+
+.zm-role input:focus-visible + span,
+.zm-map input:focus-visible + span {
+    outline: 2px solid var(--accent-line);
+    outline-offset: 2px;
+}
+
+.zm-form .zm-btn-main {
+    justify-self: start;
+    min-height: 48px;
+    padding: 0 24px;
+}
+
+/* Le bandeau du haut : qui je suis, où je joue, ce que je gagne */
+.zm-game {
+    display: grid;
+    gap: 12px;
+}
+
+.zm-hud {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) auto;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    background-color: var(--sidebar);
+}
+
+.zm-hud > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 16px;
+}
+
+.zm-hud > div > div {
+    min-width: 0;
+}
+
+.zm-hud > div + div {
+    border-left: 1px solid var(--line);
+}
+
+.zm-hud b {
+    display: block;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-size: var(--fs-name);
+    line-height: var(--lh-tight);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zm-hud span {
+    display: block;
+    overflow: hidden;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zm-hud .zm-badge {
+    display: grid;
+    place-items: center;
+    overflow: visible;
+    margin-top: 0;
+    color: var(--on, var(--text));
+    font-size: var(--fs-lg);
+    line-height: var(--lh-tight);
+}
+
+.zm-hud-team b {
+    font-size: var(--fs-xl);
+}
+
+.zm-hud .zm-rank {
+    color: var(--text);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-hud .zm-hud-stats {
+    gap: 22px;
+}
+
+.zm-stat small,
+.zm-ovr small,
+.zm-trio small {
+    display: block;
+    color: var(--muted);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    line-height: var(--lh-ui);
+    text-transform: uppercase;
+}
+
+.zm-stat strong {
+    display: block;
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-ui);
+    white-space: nowrap;
+}
+
+.zm-chem {
+    min-width: 150px;
+}
+
+.zm-chem-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.zm-chem-row strong {
+    margin: 0;
+    font-size: var(--fs-body);
+}
+
+/* Deux colonnes : la fiche du joueur, la scène */
+.zm-board {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.zm-sheet,
+.zm-scene,
+.zm-rankbox,
+.zm-end {
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+}
+
+.zm-ovr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 14px;
+    align-items: end;
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.zm-ovr b {
+    grid-row: 1 / span 2;
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 0.85;
+}
+
+.zm-ovr em {
+    color: var(--text-body);
+    font-size: var(--fs-sm);
+    font-style: normal;
+    line-height: var(--lh-ui);
+}
+
+.zm-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--line);
+}
+
+.zm-tabs button {
+    min-height: 44px;
+    border: 0;
+    border-right: 1px solid var(--line);
+    background: none;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+}
+
+.zm-tabs button:last-child {
+    border-right: 0;
+}
+
+.zm-tabs button:hover {
+    color: var(--text);
+}
+
+.zm-tabs button[aria-selected="true"] {
+    color: var(--text);
+    box-shadow: inset 0 -2px 0 var(--accent-line);
+}
+
+.zm-pane {
+    display: grid;
+    gap: 10px;
+    padding: 14px 16px 16px;
+}
+
+.zm-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 8px;
+    align-items: center;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+}
+
+.zm-row span {
+    color: var(--text-body);
+}
+
+.zm-row i {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-style: normal;
+}
+
+.zm-row .zm-seg {
+    grid-column: 1 / -1;
+    height: 6px;
+}
+
+.zm-row.zm-key span {
+    color: var(--text);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-row.zm-key .zm-seg {
+    --fill: var(--accent-line);
+}
+
+.zm-season-row {
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+}
+
+.player-page .zm-empty {
+    color: var(--muted);
+    font-size: var(--fs-sm);
+}
+
+.zm-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 4px;
+    border: 1px solid var(--line);
+    background-color: var(--line);
+}
+
+.zm-trio div {
+    min-width: 0;
+    padding: 8px 10px;
+    background-color: var(--panel2);
+}
+
+.zm-trio strong {
+    display: block;
+    overflow: hidden;
+    margin-top: 2px;
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-ui);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zm-style-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-ui);
+}
+
+.zm-style-head span {
+    color: var(--text);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-style-head i {
+    color: var(--text-body);
+    font-style: normal;
+}
+
+.zm-style-line {
+    position: relative;
+    height: 8px;
+    margin: 8px 0 4px;
+    background-color: var(--panel2);
+}
+
+.zm-style-line u {
+    position: absolute;
+    top: -4px;
+    left: clamp(0px, var(--v), calc(100% - 4px));
+    width: 4px;
+    height: 16px;
+    background-color: var(--accent-line);
+}
+
+.zm-style-ends {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+/* La scène : la situation et ses choix */
+.zm-scene:focus {
+    outline: none;
+}
+
+.zm-scene-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--sidebar);
+}
+
+.zm-chip {
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    color: var(--text-body);
+    font-size: var(--fs-2xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.05em;
+    line-height: var(--lh-ui);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.zm-chip:empty {
+    display: none;
+}
+
+.zm-chip.zm-hot {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--accent-text);
+}
+
+.zm-scene-top time {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+.zm-scene-body {
+    display: grid;
+    gap: 14px;
+    padding: 22px 22px 18px;
+}
+
+.player-page .zm-scene-body h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-2xl);
+    line-height: 1.05;
+}
+
+.player-page .zm-txt {
+    max-width: 60ch;
+    color: var(--text);
+    font-size: var(--fs-lg);
+    line-height: 1.5;
+}
+
+.zm-choices {
+    display: grid;
+    gap: 8px;
+}
+
+.zm-choice {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4px 12px;
+    min-height: 60px;
+    padding: 8px 12px 8px 8px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-ui);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s var(--ease), transform 0.15s var(--ease);
+}
+
+.zm-choice:hover {
+    border-color: var(--accent-line);
+    transform: translateX(3px);
+}
+
+.zm-choice kbd {
+    grid-row: 1 / span 2;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    background-color: var(--bg);
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: var(--fs-ui);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-choice > span {
+    grid-column: 2;
+}
+
+.zm-choice > span .zm-flag {
+    margin-right: 8px;
+    vertical-align: -3px;
+}
+
+.zm-choice small {
+    grid-column: 2;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+.zm-choice em {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    padding: 3px 9px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--fs-xs);
+    font-style: normal;
+    font-weight: var(--fw-semibold);
+    white-space: nowrap;
+}
+
+.zm-choice em.zm-risky {
+    border-color: var(--accent-line);
+    color: var(--link);
+}
+
+.zm-season {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 16px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+.zm-season i {
+    width: 14px;
+    height: 4px;
+    background-color: var(--panel2);
+}
+
+.zm-season i.zm-done {
+    background-color: var(--muted);
+}
+
+.zm-season i.zm-now {
+    background-color: var(--accent-line);
+}
+
+.zm-season i.zm-big {
+    width: 26px;
+}
+
+.zm-season span {
+    margin-left: auto;
+}
+
+/* Résultat : le « geste signature » du site (la barre qui balaie), en version verdict */
+.zm-verdict {
+    position: relative;
+    overflow: hidden;
+    justify-self: start;
+    min-width: 220px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.02em;
+    line-height: var(--lh-heading);
+    text-transform: uppercase;
+}
+
+.zm-verdict::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--accent);
+    transform: translateX(-101%);
+}
+
+.zm-verdict.zm-ok {
+    border-color: var(--text);
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.zm-verdict.zm-ko {
+    border-color: var(--accent-line);
+    color: var(--link);
+}
+
+.zm-gains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.zm-gains:empty {
+    display: none;
+}
+
+.zm-gains li {
+    padding: 4px 9px;
+    border: 1px solid var(--line);
+    background-color: var(--panel2);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+}
+
+.zm-gains li.zm-down {
+    color: var(--link);
+}
+
+/* Classement mondial de fin d'année */
+.zm-ranks {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.player-page .zm-rankbox h3 {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background-color: var(--sidebar);
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: var(--lh-heading);
+}
+
+.zm-rankbox li {
+    display: grid;
+    grid-template-columns: 34px 24px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px;
+    min-height: 36px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+    font-size: var(--fs-ui);
+}
+
+.zm-rankbox li:last-child {
+    border-bottom: 0;
+}
+
+.zm-rankbox li b {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+}
+
+.zm-rankbox li span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.zm-rankbox li span small {
+    margin-left: 6px;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+.zm-rankbox li i {
+    color: var(--text-body);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-style: normal;
+}
+
+.zm-rankbox li.zm-me {
+    background-color: var(--panel2);
+    box-shadow: inset 3px 0 0 var(--accent-line);
+    font-weight: var(--fw-semibold);
+}
+
+.zm-rankbox li.zm-me b {
+    color: var(--text);
+}
+
+.zm-rankbox li.zm-gap {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: 22px;
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
+
+/* Fin de carrière */
+.zm-end {
+    max-width: 760px;
+}
+
+.zm-end-id {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.zm-score {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.zm-score strong {
+    font-family: var(--font-display);
+    font-size: 88px;
+    line-height: 0.85;
+}
+
+.zm-score span {
+    color: var(--muted);
+    font-size: var(--fs-lg);
+}
+
+.zm-score em {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: var(--fs-2xs);
+    font-style: normal;
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--track-caps);
+    text-transform: uppercase;
+}
+
+.zm-parts {
+    display: grid;
+    gap: 10px;
+}
+
+.player-page .zm-end h3 {
+    margin-bottom: 6px;
+    font-family: var(--font-display);
+    font-size: var(--fs-xl);
+    line-height: var(--lh-heading);
+}
+
+.zm-titles li,
+.zm-path li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-body);
+    font-size: var(--fs-ui);
+}
+
+.zm-path li i {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-style: normal;
+}
+
+.zm-titles li.zm-major {
+    color: var(--text);
+    font-weight: var(--fw-semibold);
+    box-shadow: inset 3px 0 0 var(--accent-line);
+    padding-left: 10px;
+}
+
+/* Animations (coupées si le visiteur demande moins d'animations) */
+@media (prefers-reduced-motion: no-preference) {
+    .zm-scene-body > * {
+        animation: zm-rise 0.32s var(--ease) both;
+    }
+
+    .zm-scene-body > *:nth-child(2) {
+        animation-delay: 0.05s;
+    }
+
+    .zm-scene-body > *:nth-child(3) {
+        animation-delay: 0.1s;
+    }
+
+    .zm-scene-body > *:nth-child(4) {
+        animation-delay: 0.15s;
+    }
+
+    .zm-verdict::after {
+        animation: zm-sweep 0.7s var(--ease) both;
+    }
+
+    .zm-rankbox li {
+        animation: zm-rise 0.3s var(--ease) both;
+        animation-delay: calc(var(--i, 0) * 28ms);
+    }
+}
+
+@keyframes zm-rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@keyframes zm-sweep {
+    0% {
+        transform: translateX(-101%);
+    }
+
+    45% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(101%);
+    }
+}
+
 @media (max-width: 800px) {
     .layout {
         flex-direction: column;
@@ -4578,5 +5737,118 @@ body.light .team-badge img[src*="fut"] {
 
     .ps-player {
         flex-shrink: 0;
+    }
+
+    /* Le jeu « Zero to Major » sur téléphone : la situation d'abord, la fiche du joueur en dessous */
+    .zm-playing .zm-intro,
+    .zm-playing .zm-tagline {
+        display: none;
+    }
+
+    .zm-hud {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .zm-hud > div {
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .zm-hud b {
+        font-size: 20px;
+    }
+
+    .zm-hud-team b {
+        font-size: 16px;
+    }
+
+    .zm-hud span {
+        margin-top: 2px;
+        font-size: var(--fs-xs);
+        white-space: normal;
+    }
+
+    .zm-hud .zm-flag {
+        width: 26px;
+        height: 20px;
+    }
+
+    .zm-hud .zm-badge {
+        width: 34px;
+        height: 34px;
+        font-size: var(--fs-ui);
+    }
+
+    .zm-hud .zm-badge img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .zm-hud .zm-hud-stats {
+        grid-column: 1 / -1;
+        justify-content: space-between;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+    }
+
+    .zm-stat strong {
+        font-size: 16px;
+    }
+
+    .zm-board,
+    .zm-ranks {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .zm-scene {
+        order: -1;
+    }
+
+    .zm-scene-body {
+        gap: 12px;
+        padding: 14px 12px;
+    }
+
+    .player-page .zm-scene-body h2 {
+        font-size: var(--fs-xl);
+    }
+
+    .player-page .zm-txt {
+        font-size: 16px;
+    }
+
+    .zm-choice {
+        grid-template-columns: 30px minmax(0, 1fr);
+    }
+
+    .zm-choice kbd {
+        width: 30px;
+        height: 30px;
+    }
+
+    .zm-choice em {
+        grid-column: 2;
+        grid-row: auto;
+        justify-self: start;
+    }
+
+    .zm-ovr b {
+        font-size: var(--fs-3xl);
+    }
+
+    .zm-form {
+        padding: 14px;
+    }
+
+    .zm-score strong {
+        font-size: 56px;
+    }
+
+    .zm-rankbox li {
+        padding: 0 10px;
+    }
+
+    .career-promo {
+        max-width: none;
     }
 }

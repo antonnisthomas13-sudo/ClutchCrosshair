@@ -1,5 +1,6 @@
 {
   "": {"hash":"28715de022","date":"2026-11-12"},
+  "career.html": {"hash":"55a6b202ac","date":"2026-11-02"},
   "commands/": {"hash":"b122b6b802","date":"2026-10-19"},
   "commands/alias.html": {"hash":"76c32d9ac3","date":"2026-10-19"},
   "commands/bind.html": {"hash":"c284544ac8","date":"2026-10-19"},
@@ -273,6 +274,7 @@
   "es/tools/bind-generator.html": {"hash":"6e9b8312f6","date":"2026-10-19"},
   "faq.html": {"hash":"261ebbf60a","date":"2026-11-03"},
   "fr/": {"hash":"3696f6100c","date":"2026-11-12"},
+  "fr/career.html": {"hash":"e64b770117","date":"2026-11-02"},
   "fr/commands/": {"hash":"f49e195c7c","date":"2026-10-19"},
   "fr/commands/alias.html": {"hash":"43a99484d9","date":"2026-10-19"},
   "fr/commands/bind.html": {"hash":"6012018bd7","date":"2026-10-19"},

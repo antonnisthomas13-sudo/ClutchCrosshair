@@ -8,6 +8,7 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 
 - [CS2 pro crosshairs](https://clutchcrosshair.com/): all pro and creator crosshair codes, searchable, grouped by team
 - [CS2 crosshairs by team](https://clutchcrosshair.com/teams/): one page per pro team with the crosshair of each player
+- [Zero to Major](https://clutchcrosshair.com/career): free browser game, a text-based CS2 pro career from FACEIT at 16 to the Major (fiction; real team names from Valve's ranking)
 - [CS2 crosshair lists](https://clutchcrosshair.com/crosshairs/): most used pro codes, dot crosshairs, small crosshairs, crosshairs by color
 - [CS2 crosshair generator](https://clutchcrosshair.com/generator): build a crosshair and get a working CS2 share code
 - [CS2 crosshair FAQ](https://clutchcrosshair.com/faq): importing codes, CSGO- codes, pro crosshair statistics

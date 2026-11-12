@@ -27,6 +27,9 @@ const { LANGS, SOON, NAMES, makeI18n, readJson } = require("./i18n.js");
 
 const SITE_URL = "https://clutchcrosshair.com";
 
+// Le jeu « Zero to Major » (/career) n'existe que dans ces langues (voir build/career.js et career-src/)
+const CAREER_LANGS = ["en", "fr"];
+
 // Mentions légales : À REMPLIR avant de publier
 const PUBLISHER_NAME = "Anto";
 const PUBLISHER_EMAIL = "clutchcrosshair@gmail.com";
@@ -168,6 +171,9 @@ async function main() {
         }
         return code.replace("var TEXTS = {};", "var TEXTS = " + JSON.stringify(texts) + ";");
     });
+    // Le jeu « Zero to Major » : les règles (career-engine.js) puis l'affichage (career.js, qui les importe)
+    const CAREER_ENGINE_HASH = minify("career-engine.js", "career-engine.min.js", "js");
+    const CAREER_HASH = minify("career.js", "career.min.js", "js", [{ from: "career-engine.js", to: "career-engine.min.js", hash: CAREER_ENGINE_HASH }]);
     const SCRIPT_HASH = minify("script.js", "script.min.js", "js", [
         { from: "crosshair.js", to: "crosshair.min.js", hash: CROSSHAIR_HASH },
         { from: "generator.js", to: "generator.min.js", hash: GENERATOR_HASH }
@@ -430,10 +436,12 @@ async function main() {
         // Langues : liens hreflang pour Google + petit script (sélecteur : change de page).
         // Plus aucune redirection automatique selon la langue du navigateur (26/10/2026) : lang-banner.js propose
         // la bonne langue dans un bandeau ; il lit les adresses traduites dans window.ccAlternates.
-        function langHead(prefix, rel, withLinks) {
+        // langs (facultatif) = les langues dans lesquelles la page existe (par défaut : toutes)
+        function langHead(prefix, rel, withLinks, langs) {
+            const list = langs || LANGS;
             const alts = {};
-            LANGS.forEach(function (l) { alts[l] = altHref(prefix, l, rel); });
-            const links = !withLinks ? "" : LANGS.map(function (l) {
+            list.forEach(function (l) { alts[l] = altHref(prefix, l, rel); });
+            const links = !withLinks ? "" : list.map(function (l) {
                 return `
     <link rel="alternate" hreflang="${l}" href="${SITE_URL}/${l === "en" ? "" : l + "/"}${rel}">`;
             }).join("") + `
@@ -451,9 +459,9 @@ async function main() {
         }
 
         // Le sélecteur de langue (le même partout) : les langues publiées + celles qui arrivent bientôt
-        function langSelect() {
+        function langSelect(langs) {
             return `<select id="lang" class="lang" aria-label="${t("nav.language")}">
-                    ${LANGS.map(function (l) {
+                    ${(langs || LANGS).map(function (l) {
                         return `<option value="${l}"${l === lang ? " selected" : ""}>${l === lang ? l.toUpperCase() : l.toUpperCase() + " · " + NAMES[l]}</option>`;
                     }).join("\n                    ")}
                     ${SOON.map(function (l) {
@@ -478,7 +486,7 @@ async function main() {
     <title>${seoTitle(o.title)}</title>
     <meta name="description" content="${esc(o.description)}">
     ${o.noindex ? '<meta name="robots" content="noindex">' : `<meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="${o.url}">`}${langHead(o.prefix, o.path, !o.noindex)}
+    <link rel="canonical" href="${o.url}">`}${langHead(o.prefix, o.path, !o.noindex, o.langs)}
     <link rel="icon" href="${p}favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="${p}apple-touch-icon.png">
     <link rel="manifest" href="${p}site.webmanifest">
@@ -533,6 +541,8 @@ async function main() {
         function mainNav(prefix, current) {
             const sections = [
                 { key: "crosshairs", label: t("nav.crosshairs"), href: "" },
+                // Le jeu en 2e position : il reste visible sur téléphone, où le menu défile en largeur
+                { key: "career", label: t("nav.career"), href: "career.html", english: !CAREER_LANGS.includes(lang) },
                 { key: "skins", label: t("nav.skins"), href: "skins/", show: skinPlayers.length > 0 },
                 { key: "guides", label: t("nav.guides"), href: "guides/", show: Boolean(guideData) },
                 { key: "commands", label: t("nav.commands"), href: "commands/", show: Boolean(commandData) },
@@ -543,13 +553,14 @@ async function main() {
             ].filter(function (s) { return s.show !== false; });
             return `<nav class="main-nav" aria-label="${t("nav.mainAria")}">
             ${sections.map(function (s) {
-                return `<a href="${(prefix + s.href) || "./"}"${s.key === current ? ' aria-current="page"' : ""}>${s.label}</a>`;
+                const href = s.english ? ap(prefix) + s.href : (prefix + s.href) || "./";
+                return `<a href="${href}"${s.english ? ' hreflang="en"' : ""}${s.key === current ? ' aria-current="page"' : ""}>${s.label}</a>`;
             }).join("\n            ")}
         </nav>`;
         }
 
         // En haut des pages : le logo (retour à l'accueil) + le menu principal + le sélecteur de langue
-        function pageTop(prefix, current) {
+        function pageTop(prefix, current, langs) {
             const a = ap(prefix);
             return `<header class="page-top">
         <a href="${prefix}" class="logo" aria-label="${t("nav.homeAria")}">
@@ -557,7 +568,7 @@ async function main() {
             <img class="logo-img logo-light" src="${a}logo-horizontal-light.svg" alt="ClutchCrosshair" width="114" height="40">
         </a>
         ${mainNav(prefix, current)}
-        ${langSelect()}
+        ${langSelect(langs)}
     </header>`;
         }
 
@@ -566,6 +577,7 @@ async function main() {
         <nav class="footer-links" aria-label="${t("nav.footerAria")}">
             <a href="${prefix}generator.html">${t("footer.generator")}</a>
             <a href="${prefix}tools/bind-generator.html">${t("footer.bind")}</a>
+            <a href="${CAREER_LANGS.includes(lang) ? prefix : ap(prefix)}career.html"${CAREER_LANGS.includes(lang) ? "" : ' hreflang="en"'}>${t("footer.career")}</a>
             <a href="${prefix}crosshairs/">${t("footer.lists")}</a>
             <a href="${prefix}teams/">${t("footer.teams")}</a>
             <a href="${prefix}skins/">${t("footer.skins")}</a>
@@ -1078,6 +1090,8 @@ ${faqItems(pageFaq, "h3")}` : ""}
             langHead: langHead("", "", true),
             langSelect: langSelect(),
             consent: consentScript(""),
+            careerHref: (CAREER_LANGS.includes(lang) ? "" : A) + "career.html",
+            careerLang: CAREER_LANGS.includes(lang) ? "" : ' hreflang="en"',
             htmlStyle: EN ? "" : ` style="--copied: '${t("js.copiedBar")}'"`
         };
         let index = fs.readFileSync("index.template.html", "utf8").replace(/^<!-- MODÈLE[\s\S]*?-->\r?\n/, "")
@@ -1117,6 +1131,14 @@ ${faqItems(pageFaq, "h3")}` : ""}
 
         // Emplacement sponsorisé de l'accueil (vide tant que sponsors.json est vide)
         index = replaceBetween(index, "SPONSOR", sponsorSlot("home", A), "            ");
+
+        // Le bloc du jeu « Zero to Major » dans l'en-tête de l'accueil (lien vers la page anglaise si la langue n'a pas le jeu)
+        index = replaceBetween(index, "CAREER", `<a class="career-promo" href="${CAREER_LANGS.includes(lang) ? "" : A}career.html"${CAREER_LANGS.includes(lang) ? "" : ' hreflang="en"'}>
+                    <span class="career-promo-tag">${t("home.careerTag")}</span>
+                    <strong>Zero to Major</strong>
+                    <span class="career-promo-text">${t("home.careerText")}</span>
+                    <span class="career-promo-cta">${t("home.careerCta")}</span>
+                </a>`, "                ");
 
         // Le menu principal (le même que sur les autres pages)
         index = replaceBetween(index, "MAINNAV", mainNav("", "crosshairs"), "                ");
@@ -1209,6 +1231,11 @@ ${faqItems(pageFaq, "h3")}` : ""}
 
         // ===== 6. La page 404 (adresses absolues : elle peut s'afficher à n'importe quelle adresse) : voir build/notfound.js =====
         require("./build/notfound.js").build(ctx);
+
+        // ===== Le jeu « Zero to Major » (career.html), seulement dans les langues du jeu : voir build/career.js =====
+        if (CAREER_LANGS.includes(lang)) {
+            require("./build/career.js").build(Object.assign({}, ctx, { CAREER_LANGS: CAREER_LANGS, CAREER_HASH: CAREER_HASH }));
+        }
     }
 
     // ===== 5. Le sitemap : toutes les pages dans toutes les langues, leur date de mise à jour, les photos (Google Images)
@@ -1241,13 +1268,14 @@ ${faqItems(pageFaq, "h3")}` : ""}
     }
     let urls = "";
     [{ path: "", lastmod: newest }].concat(sitemapPages).forEach(function (page) {
-        const alternates = LANGS.map(function (l) {
+        const langs = page.langs || LANGS; // page.langs : la page n'existe que dans ces langues (ex. le jeu)
+        const alternates = langs.map(function (l) {
             return `<xhtml:link rel="alternate" hreflang="${l}" href="${pageUrl(l, page.path)}"/>`;
         }).join("") + `<xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl("en", page.path)}"/>`;
         const images = (page.images || []).map(function (src) {
             return `<image:image><image:loc>${esc(src)}</image:loc></image:image>`;
         }).join("");
-        LANGS.forEach(function (l) {
+        langs.forEach(function (l) {
             const lastmod = lastmodOf(l, page);
             urls += `    <url><loc>${pageUrl(l, page.path)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}${alternates}${images}</url>\n`;
         });
@@ -1285,6 +1313,7 @@ Codes are in the current CS2 format (they start with "CS", no dashes). To use on
 
 - [CS2 pro crosshairs](${SITE_URL}/): all pro and creator crosshair codes, searchable, grouped by team
 - [CS2 crosshairs by team](${pagesUrl("teams/index.html")}): one page per pro team with the crosshair of each player
+- [Zero to Major](${pagesUrl("career.html")}): free browser game, a text-based CS2 pro career from FACEIT at 16 to the Major (fiction; real team names from Valve's ranking)
 - [CS2 crosshair lists](${pagesUrl("crosshairs/index.html")}): most used pro codes, dot crosshairs, small crosshairs, crosshairs by color
 - [CS2 crosshair generator](${pagesUrl("generator.html")}): build a crosshair and get a working CS2 share code
 - [CS2 crosshair FAQ](${pagesUrl("faq.html")}): importing codes, CSGO- codes, pro crosshair statistics
@@ -1343,7 +1372,7 @@ ${llmsCreators.map(llmsPlayer).join("\n")}`);
     const generated = ["sitemap.xml"];
     LANGS.forEach(function (lang) {
         const dir = lang === "en" ? "" : lang + "/";
-        ["index.html", "404.html", "faq.html", "methodology.html", "generator.html", "legal.html", "valorant.html"].forEach(function (f) { generated.push(dir + f); });
+        ["index.html", "404.html", "faq.html", "methodology.html", "generator.html", "legal.html", "valorant.html", "career.html"].forEach(function (f) { generated.push(dir + f); });
         ["players", "teams", "crosshairs", "commands", "guides", "skins", "tools"].forEach(function (sub) {
             if (fs.existsSync(dir + sub)) {
                 fs.readdirSync(dir + sub).filter(function (f) { return f.endsWith(".html"); }).forEach(function (f) { generated.push(dir + sub + "/" + f); });

@@ -1,0 +1,204 @@
+[
+ {
+  "id": "focus", "type": "focus", "repeat": true,
+  "text": { "en": "Off-season. You have a few weeks before the next season starts. What do you work on?", "fr": "Intersaison. Tu as quelques semaines avant la reprise. Sur quoi tu travailles ?" },
+  "choices": [
+   { "text": { "en": "Aim maps and deathmatch, every single day", "fr": "Maps d'aim et deathmatch, tous les jours" }, "fx": { "aim": 3, "reflexes": 2, "energy": -8 }, "result": { "en": "Thousands of bots later, your crosshair sticks to heads.", "fr": "Des milliers de bots plus tard, ton viseur colle aux têtes." } },
+   { "text": { "en": "Demos, utility lineups and theory", "fr": "Démos, lineups de grenades et théorie" }, "fx": { "gameSense": 3, "utility": 2, "energy": -5 }, "result": { "en": "You fill a notebook with lineups and timings.", "fr": "Tu remplis un carnet de lineups et de timings." } },
+   { "text": { "en": "Communication and leading the team", "fr": "Communication et rôle de leader" }, "fx": { "comms": 3, "leadership": 2, "energy": -5 }, "result": { "en": "Your calls get shorter, clearer, earlier.", "fr": "Tes calls deviennent plus courts, plus clairs, plus tôt." } },
+   { "text": { "en": "Mental work and clutch situations", "fr": "Travail mental et situations de clutch" }, "fx": { "mental": 3, "clutch": 2, "energy": -5 }, "result": { "en": "You replay your lost 1vX rounds until they stop hurting.", "fr": "Tu rejoues tes 1vX perdus jusqu'à ce qu'ils ne fassent plus mal." } },
+   { "text": { "en": "A real break: friends, sleep, no CS", "fr": "Une vraie pause : amis, sommeil, pas de CS" }, "fx": { "energy": 25, "mental": 1, "confidence": 4, "tox": -3 }, "result": { "en": "You come back hungry.", "fr": "Tu reviens avec la faim." } }
+  ]
+ },
+ {
+  "id": "fq-toxic", "type": "faceit",
+  "text": { "en": "FACEIT level 10 lobby, 4-9 on {map}. One teammate has been screaming in voice chat since the pistol round.", "fr": "Lobby FACEIT niveau 10, 4-9 sur {map}. Un coéquipier hurle dans le vocal depuis le pistol round." },
+  "choices": [
+   { "text": { "en": "Mute him and focus on your own game", "fr": "Le mute et te concentrer sur ton jeu" }, "test": { "a": { "mental": 2, "aim": 1 }, "d": -4 },
+     "win": { "text": { "en": "Silence helps. You drop 30 and drag the game to overtime, then win it.", "fr": "Le silence aide. Tu mets 30 kills, tu arraches l'overtime et tu gagnes." }, "fx": { "elo": 150, "mental": 2, "confidence": 4 } },
+     "lose": { "text": { "en": "You play well, but 4v5 on comms is too much. Loss.", "fr": "Tu joues bien, mais à 4 sur le vocal c'est trop. Défaite." }, "fx": { "elo": -70, "mental": 1 } } },
+   { "text": { "en": "Take over the calls and calm everyone down", "fr": "Prendre les calls et calmer tout le monde" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": 0 },
+     "win": { "text": { "en": "\"Reset. B execute, I flash.\" Nine rounds in a row.", "fr": "« On reset. Exec B, je flash. » Neuf rounds de suite." }, "fx": { "elo": 180, "comms": 2, "leadership": 2 } },
+     "lose": { "text": { "en": "Nobody listens to a 16-year-old voice. The game falls apart.", "fr": "Personne n'écoute une voix de 16 ans. La game part en vrille." }, "fx": { "elo": -80, "confidence": -3 } } },
+   { "text": { "en": "Scream back, louder", "fr": "Lui hurler dessus, plus fort" }, "fx": { "elo": -100, "mental": -2, "tox": 8 }, "result": { "en": "It feels good for ten seconds. You lose 5-13 and queue the next one tilted.", "fr": "Ça fait du bien dix secondes. Tu perds 5-13 et tu relances en tilt." } }
+  ]
+ },
+ {
+  "id": "fq-grind", "type": "faceit", "when": { "maxAge": 18 },
+  "text": { "en": "School tomorrow, and your Elo is climbing: {elo}. It is 23:40 and the queue button is right there.", "fr": "Cours demain, et ton Elo grimpe : {elo}. Il est 23 h 40 et le bouton de la file est juste là." },
+  "choices": [
+   { "text": { "en": "\"One more.\" Until 4 a.m.", "fr": "« Une dernière. » Jusqu'à 4 h du matin" }, "fx": { "elo": 170, "aim": 2, "energy": -18, "mental": -1 }, "result": { "en": "Six games, five wins. You sleep through two classes.", "fr": "Six games, cinq victoires. Tu dors pendant deux heures de cours." } },
+   { "text": { "en": "One game, then bed", "fr": "Une game, puis au lit" }, "fx": { "elo": 50, "aim": 1, "energy": 4 }, "result": { "en": "A clean win. You wake up fresh.", "fr": "Une victoire propre. Tu te lèves en forme." } },
+   { "text": { "en": "Close the PC, watch a pro demo on your phone", "fr": "Éteindre le PC, regarder une démo de pro sur ton téléphone" }, "fx": { "gameSense": 2, "energy": 6 }, "result": { "en": "You fall asleep counting smokes on Inferno.", "fr": "Tu t'endors en comptant les smokes sur Inferno." } }
+  ]
+ },
+ {
+  "id": "fq-hub", "type": "faceit", "when": { "minElo": 2600 }, "once": true,
+  "text": { "en": "A message on FACEIT: you are invited to try out for an invite-only hub where semi-pros and scouts play every night.", "fr": "Un message sur FACEIT : on t'invite à un essai dans un hub privé où des semi-pros et des recruteurs jouent tous les soirs." },
+  "choices": [
+   { "text": { "en": "Play your natural game and take the duels", "fr": "Jouer ton jeu et prendre les duels" }, "test": { "a": { "aim": 2, "reflexes": 1, "mental": 1 }, "d": 6 },
+     "win": { "text": { "en": "You top the scoreboard three nights in a row. People ask who you are.", "fr": "Tu finis en tête du tableau trois soirs de suite. On demande qui tu es." }, "fx": { "elo": 250, "pop": 4, "aura": 3, "confidence": 6, "flag": "scouted" } },
+     "lose": { "text": { "en": "The pace is brutal. You get traded out of every round.", "fr": "Le rythme est brutal. Tu te fais punir à chaque round." }, "fx": { "confidence": -5, "gameSense": 2 } } },
+   { "text": { "en": "Play for the team: utility, trades, clear comms", "fr": "Jouer pour l'équipe : grenades, trades, comms claires" }, "test": { "a": { "utility": 2, "comms": 2, "gameSense": 1 }, "d": 3 },
+     "win": { "text": { "en": "A semi-pro IGL adds you after the game: \"You make everyone better.\"", "fr": "Un IGL semi-pro t'ajoute après la game : « Tu rends tout le monde meilleur. »" }, "fx": { "elo": 180, "pop": 3, "comms": 2, "flag": "scouted" } },
+     "lose": { "text": { "en": "Solid, invisible. Nobody remembers your name.", "fr": "Solide, invisible. Personne ne retient ton pseudo." }, "fx": { "utility": 1, "gameSense": 1 } } },
+   { "text": { "en": "Not ready yet. Decline", "fr": "Pas encore prêt. Refuser" }, "fx": { "confidence": -2, "mental": 1 }, "result": { "en": "You keep grinding in the open queue. The invite will not come twice.", "fr": "Tu continues en file ouverte. L'invitation ne reviendra pas deux fois." } }
+  ]
+ },
+ {
+  "id": "fq-lan", "type": "faceit",
+  "text": { "en": "A friend finds a local LAN this weekend: 16 teams, a small prize, a real stage with four chairs taken. He needs a fifth.", "fr": "Un pote trouve une LAN locale ce week-end : 16 équipes, une petite dotation, une vraie scène avec quatre chaises prises. Il lui faut un cinquième." },
+  "choices": [
+   { "text": { "en": "Go. First time playing with a crowd behind you", "fr": "Y aller. Première fois avec du public derrière toi" }, "test": { "a": { "mental": 2, "clutch": 1, "aim": 1 }, "d": 0 },
+     "win": { "text": { "en": "You win the final on Inferno with a 1v2 on B. Your hands shake for an hour.", "fr": "Tu gagnes la finale sur Inferno avec un 1v2 sur B. Tes mains tremblent pendant une heure." }, "fx": { "pop": 3, "aura": 3, "fans": 300, "money": 400, "clutch": 2, "confidence": 6 } },
+     "lose": { "text": { "en": "Out in the quarters. On LAN, your aim felt two sizes too small.", "fr": "Éliminé en quarts. En LAN, ton aim te paraissait deux tailles trop petit." }, "fx": { "mental": 2, "confidence": -2 } } },
+   { "text": { "en": "Stay home and farm Elo while everyone is away", "fr": "Rester à la maison et farmer l'Elo pendant que tout le monde est parti" }, "fx": { "elo": 140, "aim": 1 }, "result": { "en": "Easy lobbies all weekend.", "fr": "Des lobbys faciles tout le week-end." } }
+  ]
+ },
+ {
+  "id": "fq-parents", "type": "faceit", "when": { "maxAge": 18 }, "once": true,
+  "text": { "en": "Dinner. Your parents have seen your report card and your playtime. \"This game is not a job.\"", "fr": "Dîner. Tes parents ont vu ton bulletin et ton temps de jeu. « Ce jeu, ce n'est pas un métier. »" },
+  "choices": [
+   { "text": { "en": "Show them prize pools, salaries and your Elo graph", "fr": "Leur montrer les dotations, les salaires et ta courbe d'Elo" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "\"One year. Keep your grades up and we will see.\" It is a deal.", "fr": "« Un an. Garde tes notes et on verra. » Marché conclu." }, "fx": { "confidence": 6, "mental": 2, "potential": 1 } },
+     "lose": { "text": { "en": "\"Twitch is not a career plan.\" The router goes off at 22:00 now.", "fr": "« Twitch n'est pas un projet de vie. » La box s'éteint à 22 h maintenant." }, "fx": { "energy": 6, "elo": -80, "confidence": -3 } } },
+   { "text": { "en": "Promise better grades, and mean it", "fr": "Promettre de meilleures notes, et le penser" }, "fx": { "mental": 2, "energy": -6, "elo": -40 }, "result": { "en": "Less playtime, more discipline. Not the worst trade.", "fr": "Moins de temps de jeu, plus de discipline. Pas le pire des échanges." } },
+   { "text": { "en": "Slam the door", "fr": "Claquer la porte" }, "fx": { "mental": -2, "aim": 1, "tox": 4 }, "result": { "en": "You play angry all night. It does not help.", "fr": "Tu joues énervé toute la nuit. Ça n'aide pas." } }
+  ]
+ },
+ {
+  "id": "fq-demo", "type": "faceit",
+  "text": { "en": "You keep losing the same way on the CT side of {map}. You have one free evening to fix it.", "fr": "Tu perds toujours de la même façon côté CT sur {map}. Tu as une soirée libre pour corriger ça." },
+  "choices": [
+   { "text": { "en": "Watch your own demos, round by round", "fr": "Regarder tes propres démos, round par round" }, "fx": { "gameSense": 2, "mental": 1 }, "result": { "en": "You were peeking {spot} the same way every round. Everyone knew.", "fr": "Tu peekais {spot} de la même façon à chaque round. Tout le monde le savait." } },
+   { "text": { "en": "Watch how {star} of {rival} plays the position", "fr": "Regarder comment {star} de {rival} joue la position" }, "fx": { "gameSense": 2, "utility": 1 }, "result": { "en": "You copy two setups and one very good habit.", "fr": "Tu copies deux setups et une très bonne habitude." } },
+   { "text": { "en": "Just queue. You learn by playing", "fr": "Relancer. On apprend en jouant" }, "fx": { "aim": 1, "elo": 40 }, "result": { "en": "Same mistakes, slightly faster.", "fr": "Les mêmes erreurs, un peu plus vite." } }
+  ]
+ },
+ {
+  "id": "fq-cheater", "type": "faceit",
+  "text": { "en": "Match point. The enemy AWPer has pre-fired you through three smokes. Your whole team is furious.", "fr": "Balle de match. L'AWPer adverse t'a pré-tiré à travers trois smokes. Toute ton équipe est furieuse." },
+  "choices": [
+   { "text": { "en": "Report, close the game, move on", "fr": "Signaler, fermer la game, passer à autre chose" }, "fx": { "mental": 2 }, "result": { "en": "He is banned two days later and your Elo comes back. You never think about it again.", "fr": "Il est banni deux jours plus tard et ton Elo revient. Tu n'y penses plus jamais." } },
+   { "text": { "en": "Queue again right now to get the Elo back", "fr": "Relancer tout de suite pour récupérer l'Elo" }, "test": { "a": { "mental": 3 }, "d": 4 },
+     "win": { "text": { "en": "You channel it. 28 kills, Elo recovered.", "fr": "Tu canalises. 28 kills, Elo récupéré." }, "fx": { "elo": 110, "mental": 1 } },
+     "lose": { "text": { "en": "Tilted from round one. Two more losses.", "fr": "En tilt dès le premier round. Deux défaites de plus." }, "fx": { "elo": -150, "confidence": -4 } } },
+   { "text": { "en": "Clip the round and post it", "fr": "Faire un clip du round et le poster" }, "fx": { "fans": 250, "pop": 1, "style": 6 }, "result": { "en": "The clip does numbers. \"Is this guy even trying to hide it?\"", "fr": "Le clip tourne bien. « Il essaie même de se cacher, lui ? »" } }
+  ]
+ },
+ {
+  "id": "fq-mix", "type": "faceit",
+  "text": { "en": "Four players you often meet in queue want to form a mix team and play an open league. They need someone in your role.", "fr": "Quatre joueurs que tu croises souvent en file veulent monter une mix et jouer une ligue ouverte. Il leur manque quelqu'un à ton rôle." },
+  "choices": [
+   { "text": { "en": "Join. Scrims, strats, a real team structure", "fr": "Rejoindre. Scrims, strats, une vraie structure d'équipe" }, "fx": { "comms": 2, "utility": 2, "gameSense": 1, "elo": -40, "energy": -6 }, "result": { "en": "Less Elo, but for the first time you play real Counter-Strike.", "fr": "Moins d'Elo, mais pour la première fois tu joues du vrai Counter-Strike." } },
+   { "text": { "en": "Stay solo. Elo is what scouts look at", "fr": "Rester solo. C'est l'Elo que regardent les recruteurs" }, "fx": { "elo": 130, "aim": 1 }, "result": { "en": "You keep climbing alone.", "fr": "Tu continues de grimper seul." } }
+  ]
+ },
+ {
+  "id": "fq-clip", "type": "faceit",
+  "text": { "en": "You just hit a 1v4 with a Desert Eagle on Dust II, four headshots from Long A. It is recorded.", "fr": "Tu viens de sortir un 1v4 au Desert Eagle sur Dust II, quatre headshots depuis Long A. C'est enregistré." },
+  "choices": [
+   { "text": { "en": "Edit it properly and post it everywhere", "fr": "Le monter proprement et le poster partout" }, "fx": { "fans": 900, "pop": 2, "aura": 3, "style": 8, "energy": -4 }, "result": { "en": "A big CS account reposts it. Your notifications explode.", "fr": "Un gros compte CS le reposte. Tes notifications explosent." } },
+   { "text": { "en": "Send it only to your friends", "fr": "L'envoyer seulement à tes potes" }, "fx": { "confidence": 4, "style": -6 }, "result": { "en": "\"No way.\" \"Fake.\" \"Clean.\"", "fr": "« Impossible. » « Fake. » « Propre. »" } }
+  ]
+ },
+ {
+  "id": "fq-pc", "type": "faceit", "once": true,
+  "text": { "en": "Your PC drops to 110 fps in smokes and your 60 Hz monitor is older than your little cousin.", "fr": "Ton PC tombe à 110 fps dans les smokes et ton écran 60 Hz est plus vieux que ton petit cousin." },
+  "choices": [
+   { "text": { "en": "Take a summer job and buy a real setup", "fr": "Prendre un job d'été et acheter un vrai setup" }, "fx": { "reflexes": 3, "aim": 2, "energy": -15, "elo": -60 }, "result": { "en": "240 Hz. It feels like the game was patched just for you.", "fr": "240 Hz. On dirait que le jeu a été patché juste pour toi." } },
+   { "text": { "en": "Lower every setting and adapt", "fr": "Baisser tous les réglages et t'adapter" }, "fx": { "mental": 1, "gameSense": 1 }, "result": { "en": "You learn to win with information instead of reactions.", "fr": "Tu apprends à gagner avec l'information plutôt qu'avec les réflexes." } }
+  ]
+ },
+ {
+  "id": "fq-streak", "type": "faceit",
+  "text": { "en": "Seven losses in a row. Your Elo is in free fall and every teammate looks like a bot.", "fr": "Sept défaites de suite. Ton Elo est en chute libre et tous tes coéquipiers ressemblent à des bots." },
+  "choices": [
+   { "text": { "en": "Two days without CS", "fr": "Deux jours sans CS" }, "fx": { "energy": 14, "confidence": 4, "mental": 1, "elo": 60 }, "result": { "en": "You come back and win four in a row.", "fr": "Tu reviens et tu enchaînes quatre victoires." } },
+   { "text": { "en": "Keep queueing. The streak has to end", "fr": "Relancer. La série doit bien s'arrêter" }, "test": { "a": { "mental": 3, "aim": 1 }, "d": 6 },
+     "win": { "text": { "en": "Game eight is a 16-kill half. You are back.", "fr": "La huitième, c'est 16 kills en une mi-temps. Tu es de retour." }, "fx": { "elo": 200, "mental": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "Ten in a row now.", "fr": "Dix de suite maintenant." }, "fx": { "elo": -220, "confidence": -6, "energy": -8 } } }
+  ]
+ },
+ {
+  "id": "fq-rival", "type": "faceit", "once": true, "weight": 3,
+  "text": { "en": "Third night in a row you get matched against the same player: {rv}. Your age, your role, your Elo. Tonight he types in all chat: \"you again? free elo.\"", "fr": "Troisième soir de suite que tu tombes contre le même joueur : {rv}. Ton âge, ton rôle, ton Elo. Ce soir il écrit dans le chat général : « encore toi ? elo gratuit. »" },
+  "choices": [
+   { "text": { "en": "Answer on the server, not in chat", "fr": "Répondre sur le serveur, pas dans le chat" }, "test": { "a": { "aim": 2, "mental": 2 }, "d": 3 },
+     "win": { "text": { "en": "You win the duel that matters, then the game. He adds you: \"gg. see you in the pros.\"", "fr": "Tu gagnes le duel qui compte, puis la game. Il t'ajoute : « gg. on se revoit chez les pros. »" }, "fx": { "elo": 160, "confidence": 6, "aura": 2, "flag": ["rvMet", "rvRespect"] } },
+     "lose": { "text": { "en": "He drops 31 on you and leaves with a \"?\" in chat. You will remember that name.", "fr": "Il te met 31 kills et part avec un « ? » dans le chat. Tu vas retenir ce pseudo." }, "fx": { "elo": -110, "confidence": -4, "flag": ["rvMet", "rvBeef"] } } },
+   { "text": { "en": "Type back, and make it personal", "fr": "Répondre dans le chat, et en faire une affaire personnelle" }, "fx": { "tox": 8, "aura": 2, "style": 8, "flag": ["rvMet", "rvBeef"] }, "result": { "en": "The chat war lasts longer than the game. A rivalry is born, and people are screenshotting it.", "fr": "La guerre de chat dure plus longtemps que la game. Une rivalité est née, et des gens font des captures." } },
+   { "text": { "en": "\"gl hf\" and nothing else", "fr": "« gl hf » et rien d'autre" }, "fx": { "mental": 2, "style": -6, "flag": "rvMet" }, "result": { "en": "He gets nothing to feed on. You play your game.", "fr": "Il n'a rien à se mettre sous la dent. Tu joues ton jeu." } }
+  ]
+ },
+ {
+  "id": "fq-mentor", "type": "faceit", "once": true,
+  "text": { "en": "After a game, a private message from an account you do not know: \"{coach}, I coach an academy team. Your aim is fine. Your second round after a lost pistol is a disaster. Want the demo review?\"", "fr": "Après une game, un message privé d'un compte que tu ne connais pas : « {coach}, je coache une équipe académie. Ton aim est correct. Ton deuxième round après un pistol perdu est une catastrophe. Tu veux la review de la démo ? »" },
+  "choices": [
+   { "text": { "en": "Say yes and take notes for two hours", "fr": "Dire oui et prendre des notes pendant deux heures" }, "fx": { "gameSense": 3, "utility": 1, "confidence": -1, "flag": "mentor" }, "result": { "en": "It hurts, and every word is true. {coach} ends with: \"Send me a demo every month.\"", "fr": "Ça pique, et chaque mot est vrai. {coach} conclut : « Envoie-moi une démo par mois. »" } },
+   { "text": { "en": "\"My Elo says I am doing fine.\"", "fr": "« Mon Elo dit que je m'en sors très bien. »" }, "fx": { "confidence": 3, "tox": 3 }, "result": { "en": "\"Elo is not a team sport, kid.\" He does not write again.", "fr": "« L'Elo, c'est pas un sport d'équipe, petit. » Il n'écrit plus." } }
+  ]
+ },
+ {
+  "id": "fq-ladder", "type": "faceit", "when": { "minElo": 3200 },
+  "text": { "en": "{elo} Elo. You enter the top 500 of your region, where the same fifty names queue every night, some of them pros on their day off.", "fr": "{elo} d'Elo. Tu entres dans le top 500 de ta région, là où les cinquante mêmes pseudos lancent tous les soirs, dont des pros en jour de repos." },
+  "choices": [
+   { "text": { "en": "Play your role and let the pros do their thing", "fr": "Jouer ton rôle et laisser les pros faire leur jeu" }, "test": { "a": { "gameSense": 2, "utility": 1, "comms": 1 }, "d": 4 },
+     "win": { "text": { "en": "A pro you have watched for years says \"nice flash\" in voice. You replay it in your head all week.", "fr": "Un pro que tu regardes depuis des années dit « nice flash » dans le vocal. Tu te le repasses dans la tête toute la semaine." }, "fx": { "elo": 180, "confidence": 6, "gameSense": 1, "pop": 2 } },
+     "lose": { "text": { "en": "At this level every mistake is punished within two seconds.", "fr": "À ce niveau, chaque erreur est punie dans les deux secondes." }, "fx": { "elo": -120, "gameSense": 1 } } },
+   { "text": { "en": "Take every duel against them. That is why you are here", "fr": "Prendre tous les duels contre eux. Tu es là pour ça" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 8 },
+     "win": { "text": { "en": "You out-aim a tier 1 player three rounds in a row. Someone clips it.", "fr": "Tu gagnes le duel contre un joueur tier 1 trois rounds de suite. Quelqu'un en fait un clip." }, "fx": { "elo": 260, "aura": 5, "pop": 3, "confidence": 8, "flag": "scouted" } },
+     "lose": { "text": { "en": "They read you like a tutorial.", "fr": "Ils te lisent comme un tutoriel." }, "fx": { "elo": -180, "confidence": -5 } } }
+  ]
+ },
+ {
+  "id": "fq-academy", "type": "faceit", "when": { "minElo": 3000 }, "once": true,
+  "text": { "en": "An academy team runs open tryouts this weekend: two days of scrims, forty candidates, one contract.", "fr": "Une équipe académie organise des essais ouverts ce week-end : deux jours de scrims, quarante candidats, un contrat." },
+  "choices": [
+   { "text": { "en": "Show up and play like it is a final", "fr": "Y aller et jouer comme si c'était une finale" }, "test": { "a": { "aim": 2, "gameSense": 2, "mental": 1 }, "d": 6 },
+     "win": { "text": { "en": "You make the last five. No contract yet, but your name is now in a scout's spreadsheet.", "fr": "Tu finis dans les cinq derniers. Pas encore de contrat, mais ton pseudo est maintenant dans le tableur d'un recruteur." }, "fx": { "confidence": 7, "pop": 3, "flag": "scouted" } },
+     "lose": { "text": { "en": "Cut after day one. You learned what the level really is.", "fr": "Recalé après le premier jour. Tu as vu le vrai niveau." }, "fx": { "confidence": -4, "gameSense": 2, "mental": 1 } } },
+   { "text": { "en": "Skip it. Forty candidates is a lottery", "fr": "Passer ton tour. Quarante candidats, c'est une loterie" }, "fx": { "elo": 100 }, "result": { "en": "You spend the weekend in queue instead.", "fr": "Tu passes le week-end en file à la place." } }
+  ]
+ },
+ {
+  "id": "fq-stream", "type": "faceit",
+  "text": { "en": "A friend says you should stream your FACEIT games: \"Level 10 at your age, people would watch.\"", "fr": "Un pote te dit que tu devrais streamer tes games FACEIT : « Niveau 10 à ton âge, les gens regarderaient. »" },
+  "choices": [
+   { "text": { "en": "Go live with a webcam and talk through every round", "fr": "Lancer le live avec une webcam et commenter chaque round" }, "fx": { "fans": 700, "pop": 3, "style": 10, "comms": 1, "elo": -50, "energy": -6 }, "result": { "en": "Forty viewers, then two hundred. Talking while playing costs you a few rounds.", "fr": "Quarante spectateurs, puis deux cents. Parler en jouant te coûte quelques rounds." } },
+   { "text": { "en": "Stream with no camera, no voice, just the game", "fr": "Streamer sans caméra, sans voix, juste le jeu" }, "fx": { "fans": 200, "pop": 1 }, "result": { "en": "A few regulars come for the crosshair placement.", "fr": "Quelques habitués viennent pour le placement de viseur." } },
+   { "text": { "en": "No. The game first", "fr": "Non. Le jeu d'abord" }, "fx": { "elo": 60, "style": -8, "mental": 1 }, "result": { "en": "Nobody knows your face. Everybody in your lobbies knows your name.", "fr": "Personne ne connaît ton visage. Tout le monde dans tes lobbys connaît ton pseudo." } }
+  ]
+ },
+ {
+  "id": "fq-exam", "type": "faceit", "when": { "maxAge": 18 }, "once": true,
+  "text": { "en": "Final exams in three weeks. An online qualifier with your mix team falls on the exact same days.", "fr": "Examens de fin d'année dans trois semaines. Un qualifier en ligne avec ta mix tombe exactement les mêmes jours." },
+  "choices": [
+   { "text": { "en": "Exams first. The team finds a stand-in", "fr": "Les examens d'abord. L'équipe trouve un remplaçant" }, "fx": { "mental": 3, "elo": -60, "energy": 5 }, "result": { "en": "You pass. Your parents stop counting your hours for a while.", "fr": "Tu réussis. Tes parents arrêtent de compter tes heures pendant un moment." } },
+   { "text": { "en": "Do both and sleep in July", "fr": "Faire les deux et dormir en juillet" }, "test": { "a": { "mental": 3, "gameSense": 1 }, "d": 4 },
+     "win": { "text": { "en": "You pass the exams and reach the last round of the qualifier. Nobody knows how.", "fr": "Tu as tes examens et tu atteins le dernier tour du qualifier. Personne ne sait comment." }, "fx": { "mental": 3, "confidence": 6, "pop": 2, "energy": -20 } },
+     "lose": { "text": { "en": "You scrape through the exams and throw the deciding map, half asleep.", "fr": "Tu passes tes examens de justesse et tu lâches la map décisive, à moitié endormi." }, "fx": { "energy": -22, "confidence": -4 } } },
+   { "text": { "en": "The qualifier. School can wait a year", "fr": "Le qualifier. L'école peut attendre un an" }, "fx": { "aim": 2, "gameSense": 1, "mental": -2 }, "result": { "en": "You play well. The conversation at home is harder than any match.", "fr": "Tu joues bien. La discussion à la maison est plus dure que n'importe quel match." } }
+  ]
+ },
+ {
+  "id": "fq-smurf", "type": "faceit",
+  "text": { "en": "A friend at level 6 begs you to play on his account for an evening to get him out of \"Elo hell\".", "fr": "Un pote niveau 6 te supplie de jouer sur son compte une soirée pour le sortir de « l'enfer de l'Elo »." },
+  "choices": [
+   { "text": { "en": "No. Coach him through his own games instead", "fr": "Non. Le coacher sur ses propres games à la place" }, "fx": { "leadership": 2, "comms": 2, "gameSense": 1 }, "result": { "en": "Explaining why you rotate teaches you why you rotate.", "fr": "Expliquer pourquoi tu tournes t'apprend pourquoi tu tournes." } },
+   { "text": { "en": "One evening cannot hurt", "fr": "Une soirée, ça ne peut pas faire de mal" }, "test": { "a": { "mental": 1, "gameSense": 1 }, "d": 10 },
+     "win": { "text": { "en": "Nobody notices. You feel a bit dirty and promise yourself it was the last time.", "fr": "Personne ne remarque rien. Tu te sens un peu sale et tu te promets que c'était la dernière fois." }, "fx": { "confidence": 2, "tox": 3 } },
+     "lose": { "text": { "en": "Account sharing is against the rules: his account gets flagged and yours gets a warning.", "fr": "Le partage de compte est interdit : son compte est signalé et le tien reçoit un avertissement." }, "fx": { "elo": -200, "pop": -2, "confidence": -4 } } }
+  ]
+ },
+ {
+  "id": "fq-pug-star", "type": "faceit", "when": { "minElo": 2800 },
+  "text": { "en": "Loading screen: on the other team, {star} from {rival}, playing a casual FACEIT game on stream with 20,000 viewers.", "fr": "Écran de chargement : en face, {star} de {rival}, qui joue une game FACEIT tranquille en stream devant 20 000 spectateurs." },
+  "choices": [
+   { "text": { "en": "Play the best game of your life", "fr": "Jouer la game de ta vie" }, "test": { "a": { "aim": 2, "reflexes": 1, "mental": 2 }, "d": 6 },
+     "win": { "text": { "en": "You top frag. On stream, {star} checks your profile and says: \"He is how old?\"", "fr": "Tu finis top frag. En stream, {star} ouvre ton profil et lâche : « Il a quel âge, lui ? »" }, "fx": { "elo": 200, "fans": 2500, "pop": 4, "aura": 4, "confidence": 8 } },
+     "lose": { "text": { "en": "Your hands are cold all game. Twenty thousand people watched you whiff.", "fr": "Tu as les mains froides toute la game. Vingt mille personnes t'ont vu rater." }, "fx": { "elo": -90, "confidence": -4, "mental": 1 } } },
+   { "text": { "en": "Treat it like any other game", "fr": "La jouer comme n'importe quelle autre game" }, "fx": { "mental": 2, "elo": 60 }, "result": { "en": "A normal game, a normal win. You only check the stream VOD twice.", "fr": "Une game normale, une victoire normale. Tu ne regardes la rediffusion que deux fois." } }
+  ]
+ }
+]

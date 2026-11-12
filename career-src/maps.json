@@ -1,0 +1,13 @@
+{
+ "about": "Pool de maps compétitif de CS2 utilisé par le jeu (Cache a remplacé Overpass en juillet 2026). callouts = noms des positions utilisés dans les situations de match (à relire par Anto, surtout Cache). Quand Valve change le pool : modifier cette liste et les situations de career-src/events/match.json.",
+ "updated": "12/11/2026",
+ "maps": [
+  { "id": "ancient", "name": "Ancient", "callouts": ["A Main", "Donut", "Temple", "Mid", "Red Room", "Elbow", "B Ramp", "Cave", "Pillar", "Lane"] },
+  { "id": "anubis", "name": "Anubis", "callouts": ["A Main", "Heaven", "Camera", "Mid", "Connector", "Canal", "Water", "B Main", "Pillar", "Palace"] },
+  { "id": "cache", "name": "Cache", "callouts": ["A Main", "Quad", "Highway", "Squeaky", "Forklift", "Mid", "Z Connector", "Checkers", "Sunroom", "Heaven", "B Main"] },
+  { "id": "dust2", "name": "Dust II", "callouts": ["Long A", "Pit", "Car", "Short", "Catwalk", "Goose", "Mid Doors", "Xbox", "B Tunnels", "Window", "Platform"] },
+  { "id": "inferno", "name": "Inferno", "callouts": ["Banana", "Car", "Coffins", "New Box", "Apartments", "Pit", "Library", "Arch", "Graveyard", "Boiler", "Second Mid"] },
+  { "id": "mirage", "name": "Mirage", "callouts": ["A Ramp", "Palace", "Jungle", "Connector", "Stairs", "Ticket", "Window", "Short", "Apartments", "Market", "Bench", "Van"] },
+  { "id": "nuke", "name": "Nuke", "callouts": ["Outside", "Secret", "Ramp", "Lobby", "Hut", "Heaven", "Hell", "Vents", "Mini", "Garage", "Squeaky"] }
+ ]
+}

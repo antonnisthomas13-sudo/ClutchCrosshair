@@ -1,0 +1,2188 @@
+{
+ "about": "Équipes du jeu Zero to Major. Source : classement mondial officiel de Valve (github.com/ValveSoftware/counter-strike_regional_standings). country = pays de la majorité des joueurs (code ISO). Fabriqué par career-src/update-data.js : ne pas modifier à la main.",
+ "updated": "02/11/2026",
+ "teams": [
+  {
+   "id": "mouz",
+   "name": "MOUZ",
+   "rank": 1,
+   "points": 1960,
+   "tier": 1,
+   "roster": [
+    "PR",
+    "Spinx",
+    "torzsi",
+    "xelex",
+    "xertioN"
+   ]
+  },
+  {
+   "id": "vitality",
+   "name": "Vitality",
+   "rank": 2,
+   "points": 1922,
+   "tier": 1,
+   "roster": [
+    "flameZ",
+    "jL",
+    "mezii",
+    "ropz",
+    "ZywOo"
+   ]
+  },
+  {
+   "id": "furia",
+   "name": "FURIA",
+   "rank": 3,
+   "points": 1912,
+   "tier": 1,
+   "roster": [
+    "FalleN",
+    "KSCERATO",
+    "molodoy",
+    "YEKINDAR",
+    "yuurih"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "aurora",
+   "name": "Aurora",
+   "rank": 4,
+   "points": 1860,
+   "tier": 1,
+   "roster": [
+    "Jimpphat",
+    "kyxsan",
+    "Wicadia",
+    "woxic",
+    "XANTARES"
+   ],
+   "country": "TR"
+  },
+  {
+   "id": "spirit",
+   "name": "Spirit",
+   "rank": 5,
+   "points": 1842,
+   "tier": 1,
+   "roster": [
+    "donk",
+    "magixx",
+    "sh1ro",
+    "tN1R",
+    "zont1x"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "betboom",
+   "name": "BETBOOM",
+   "rank": 6,
+   "points": 1786,
+   "tier": 1,
+   "roster": [
+    "Boombl4",
+    "d1Ledez",
+    "Magnojez",
+    "S1ren",
+    "zorte"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "falcons",
+   "name": "Falcons",
+   "rank": 7,
+   "points": 1764,
+   "tier": 1,
+   "roster": [
+    "karrigan",
+    "kyousuke",
+    "m0NESY",
+    "NiKo",
+    "TeSeS"
+   ]
+  },
+  {
+   "id": "fut",
+   "name": "FUT",
+   "rank": 8,
+   "points": 1721,
+   "tier": 1,
+   "roster": [
+    "cmtry",
+    "dem0n",
+    "dziugss",
+    "Krabeni",
+    "xfl0ud"
+   ]
+  },
+  {
+   "id": "legacy",
+   "name": "Legacy",
+   "rank": 9,
+   "points": 1662,
+   "tier": 1,
+   "roster": [
+    "arT",
+    "dumau",
+    "latto",
+    "n1ssim",
+    "try"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "nemiga",
+   "name": "Nemiga",
+   "rank": 10,
+   "points": 1650,
+   "tier": 1,
+   "roster": [
+    "KaiR0N-",
+    "khaN",
+    "robo",
+    "syph0",
+    "Xant3r"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "g2",
+   "name": "G2",
+   "rank": 11,
+   "points": 1616,
+   "tier": 1,
+   "roster": [
+    "HeavyGod",
+    "huNter-",
+    "MATYS",
+    "NertZ",
+    "r1nkle"
+   ]
+  },
+  {
+   "id": "1win",
+   "name": "1win",
+   "rank": 12,
+   "points": 1598,
+   "tier": 1,
+   "roster": [
+    "ArtFr0st",
+    "Ax1Le",
+    "BELCHONOKK",
+    "fame",
+    "nafany"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "natus-vincere",
+   "name": "Natus Vincere",
+   "rank": 13,
+   "points": 1589,
+   "tier": 1,
+   "roster": [
+    "Aleksib",
+    "b1t",
+    "iM",
+    "makazze",
+    "w0nderful"
+   ]
+  },
+  {
+   "id": "astralis",
+   "name": "Astralis",
+   "rank": 14,
+   "points": 1572,
+   "tier": 1,
+   "roster": [
+    "jabbi",
+    "phzy",
+    "ryu",
+    "siuhy",
+    "Staehr"
+   ]
+  },
+  {
+   "id": "ninjas-in-pyjamas",
+   "name": "Ninjas in Pyjamas",
+   "rank": 15,
+   "points": 1564,
+   "tier": 1,
+   "roster": [
+    "adamb",
+    "Krimbo",
+    "sjuush",
+    "stavn",
+    "xKacpersky"
+   ]
+  },
+  {
+   "id": "parivision",
+   "name": "PARIVISION",
+   "rank": 16,
+   "points": 1560,
+   "tier": 1,
+   "roster": [
+    "FL1T",
+    "HObbit",
+    "Jame",
+    "xiELO",
+    "zweih"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "the-mongolz",
+   "name": "The MongolZ",
+   "rank": 17,
+   "points": 1554,
+   "tier": 1,
+   "roster": [
+    "910",
+    "bLitz",
+    "cobrazera",
+    "nin9",
+    "Techno"
+   ],
+   "country": "MN"
+  },
+  {
+   "id": "heroic",
+   "name": "HEROIC",
+   "rank": 18,
+   "points": 1548,
+   "tier": 1,
+   "roster": [
+    "Brollan",
+    "Chr1zN",
+    "MartinezSa",
+    "nilo",
+    "susp"
+   ],
+   "country": "SE"
+  },
+  {
+   "id": "mibr",
+   "name": "MIBR",
+   "rank": 19,
+   "points": 1546,
+   "tier": 1,
+   "roster": [
+    "insani",
+    "LNZ",
+    "nqz",
+    "tomaszin",
+    "venomzera"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "faze",
+   "name": "FaZe",
+   "rank": 20,
+   "points": 1539,
+   "tier": 1,
+   "roster": [
+    "frozen",
+    "JBOEN",
+    "jcobbb",
+    "Neityu",
+    "Twistzz"
+   ]
+  },
+  {
+   "id": "liquid",
+   "name": "Liquid",
+   "rank": 21,
+   "points": 1528,
+   "tier": 2,
+   "roster": [
+    "EliGE",
+    "Jorko",
+    "JT",
+    "malbsMd",
+    "NAF"
+   ]
+  },
+  {
+   "id": "eternal-fire",
+   "name": "Eternal Fire",
+   "rank": 22,
+   "points": 1513,
+   "tier": 2,
+   "roster": [
+    "jottAAA",
+    "Kvem",
+    "MisteM",
+    "regali",
+    "soulfly"
+   ]
+  },
+  {
+   "id": "100-thieves",
+   "name": "100 Thieves",
+   "rank": 23,
+   "points": 1511,
+   "tier": 2,
+   "roster": [
+    "device",
+    "Gizmy",
+    "poiii",
+    "rain",
+    "sirah"
+   ]
+  },
+  {
+   "id": "9z",
+   "name": "9z",
+   "rank": 24,
+   "points": 1490,
+   "tier": 2,
+   "roster": [
+    "dgt",
+    "HUASOPEEK",
+    "luchov",
+    "max",
+    "meyern"
+   ]
+  },
+  {
+   "id": "m80",
+   "name": "M80",
+   "rank": 25,
+   "points": 1489,
+   "tier": 2,
+   "roster": [
+    "JBa",
+    "Lake",
+    "s1n",
+    "slaxz-",
+    "Swisher"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "hotu",
+   "name": "HOTU",
+   "rank": 26,
+   "points": 1488,
+   "tier": 2,
+   "roster": [
+    "dwushka",
+    "frontales",
+    "kade0",
+    "mizu",
+    "n0rb3r7"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "fnatic",
+   "name": "fnatic",
+   "rank": 27,
+   "points": 1488,
+   "tier": 2,
+   "roster": [
+    "cairne",
+    "fEAR",
+    "jackasmo",
+    "jambo",
+    "mazay"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "b8",
+   "name": "B8",
+   "rank": 28,
+   "points": 1472,
+   "tier": 2,
+   "roster": [
+    "alex666",
+    "esenthial",
+    "kensizor",
+    "npl",
+    "s1zzi"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "dendele",
+   "name": "DENDELE",
+   "rank": 29,
+   "points": 1466,
+   "tier": 2,
+   "roster": [
+    "doc",
+    "gafolo",
+    "koala",
+    "maxxkor",
+    "rdnzao"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "inner-circle",
+   "name": "Inner Circle",
+   "rank": 30,
+   "points": 1423,
+   "tier": 2,
+   "roster": [
+    "cptkurtka023",
+    "Dawy",
+    "headtr1ck",
+    "onic",
+    "zeRRoFIX"
+   ]
+  },
+  {
+   "id": "virtus-pro",
+   "name": "Virtus.pro",
+   "rank": 31,
+   "points": 1421,
+   "tier": 2,
+   "roster": [
+    "AquaRS",
+    "b1st",
+    "mir",
+    "Patsi",
+    "tO0RO"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "big",
+   "name": "BIG",
+   "rank": 32,
+   "points": 1408,
+   "tier": 2,
+   "roster": [
+    "blameF",
+    "faveN",
+    "gr1ks",
+    "JDC",
+    "tabseN"
+   ],
+   "country": "DE"
+  },
+  {
+   "id": "sinners",
+   "name": "SINNERS",
+   "rank": 33,
+   "points": 1408,
+   "tier": 2,
+   "roster": [
+    "beastik",
+    "kisserek",
+    "MoDo",
+    "SHOCK",
+    "stressarN"
+   ]
+  },
+  {
+   "id": "k27",
+   "name": "K27",
+   "rank": 34,
+   "points": 1407,
+   "tier": 2,
+   "roster": [
+    "clax",
+    "kashl1d",
+    "qw1nk1",
+    "X5G7V",
+    "xeedo"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "imperial",
+   "name": "Imperial",
+   "rank": 35,
+   "points": 1406,
+   "tier": 2,
+   "roster": [
+    "chelo",
+    "decenty",
+    "noway",
+    "saadzin",
+    "VINI"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "jijiehao",
+   "name": "JiJieHao",
+   "rank": 36,
+   "points": 1400,
+   "tier": 2,
+   "roster": [
+    "0SAMAS",
+    "Bibu",
+    "CacaNito",
+    "m1N1",
+    "sinnopsyy"
+   ]
+  },
+  {
+   "id": "gamerlegion",
+   "name": "GamerLegion",
+   "rank": 37,
+   "points": 1392,
+   "tier": 2,
+   "roster": [
+    "FL4MUS",
+    "hypex",
+    "REZ",
+    "shalfey",
+    "Tauson"
+   ]
+  },
+  {
+   "id": "wildcard",
+   "name": "Wildcard",
+   "rank": 38,
+   "points": 1391,
+   "tier": 2,
+   "roster": [
+    "Cxzi",
+    "fr3nd",
+    "HexT",
+    "nEMANHA",
+    "reck"
+   ]
+  },
+  {
+   "id": "nemesis",
+   "name": "Nemesis",
+   "rank": 39,
+   "points": 1371,
+   "tier": 2,
+   "roster": [
+    "mag1k3Y",
+    "r3salt",
+    "Sdaim",
+    "SELLTER",
+    "tex1y"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "luminosity",
+   "name": "Luminosity",
+   "rank": 40,
+   "points": 1371,
+   "tier": 2,
+   "roster": [
+    "afro",
+    "AZUWU",
+    "lux",
+    "Rainwaker",
+    "yxngstxr"
+   ]
+  },
+  {
+   "id": "magic",
+   "name": "magic",
+   "rank": 41,
+   "points": 1365,
+   "tier": 2,
+   "roster": [
+    "AW",
+    "lattykk",
+    "MaSvAl",
+    "sFade8",
+    "tenzy"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "bbl",
+   "name": "BBL",
+   "rank": 42,
+   "points": 1365,
+   "tier": 2,
+   "roster": [
+    "IceBerg",
+    "leakz",
+    "MistR",
+    "NickyB",
+    "salazar"
+   ],
+   "country": "DK"
+  },
+  {
+   "id": "envy",
+   "name": "Envy",
+   "rank": 43,
+   "points": 1359,
+   "tier": 2,
+   "roster": [
+    "Graviti",
+    "Kursy",
+    "Lucky",
+    "Maka",
+    "misutaaa"
+   ],
+   "country": "FR"
+  },
+  {
+   "id": "sangal",
+   "name": "Sangal",
+   "rank": 44,
+   "points": 1359,
+   "tier": 2,
+   "roster": [
+    "adamS",
+    "bnox",
+    "Joey",
+    "puuha",
+    "R4DYX"
+   ]
+  },
+  {
+   "id": "bc-game",
+   "name": "BC.Game",
+   "rank": 45,
+   "points": 1337,
+   "tier": 2,
+   "roster": [
+    "asap",
+    "Magisk",
+    "mzinho",
+    "s1mple",
+    "Senzu"
+   ]
+  },
+  {
+   "id": "private",
+   "name": "PRIVATE",
+   "rank": 46,
+   "points": 1335,
+   "tier": 2,
+   "roster": [
+    "1eeR",
+    "H4SAN4TOR",
+    "sh1nejezzz",
+    "sowalio",
+    "z1k4"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "nrg",
+   "name": "NRG",
+   "rank": 47,
+   "points": 1322,
+   "tier": 2,
+   "roster": [
+    "Grim",
+    "hallzerk",
+    "Jeorge",
+    "nitr0",
+    "Sonic"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "flyquest",
+   "name": "FlyQuest",
+   "rank": 48,
+   "points": 1318,
+   "tier": 2,
+   "roster": [
+    "aliStair",
+    "INS",
+    "jks",
+    "nettik",
+    "Vexite"
+   ],
+   "country": "AU"
+  },
+  {
+   "id": "bestia",
+   "name": "BESTIA",
+   "rank": 49,
+   "points": 1312,
+   "tier": 2,
+   "roster": [
+    "buda",
+    "cass1n",
+    "drop",
+    "kauez",
+    "timo"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "betclic",
+   "name": "Betclic",
+   "rank": 50,
+   "points": 1306,
+   "tier": 2,
+   "roster": [
+    "Demho",
+    "ex1st",
+    "Prism",
+    "Qlocuu",
+    "ultimate"
+   ],
+   "country": "PL"
+  },
+  {
+   "id": "fokus",
+   "name": "FOKUS",
+   "rank": 51,
+   "points": 1304,
+   "tier": 3,
+   "roster": [
+    "Banjo",
+    "jocab",
+    "Matheos",
+    "podi",
+    "ztr"
+   ]
+  },
+  {
+   "id": "alliance",
+   "name": "Alliance",
+   "rank": 52,
+   "points": 1300,
+   "tier": 3,
+   "roster": [
+    "avid",
+    "bobeksde",
+    "eraa",
+    "twist",
+    "upE"
+   ],
+   "country": "SE"
+  },
+  {
+   "id": "pain",
+   "name": "paiN",
+   "rank": 53,
+   "points": 1295,
+   "tier": 3,
+   "roster": [
+    "biguzera",
+    "Rkzinho",
+    "saffee",
+    "snow",
+    "Tatu"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "iberian-soul",
+   "name": "Iberian Soul",
+   "rank": 54,
+   "points": 1290,
+   "tier": 3,
+   "roster": [
+    "Ag1l",
+    "alex",
+    "dav1g",
+    "mopoz",
+    "sausol"
+   ],
+   "country": "ES"
+  },
+  {
+   "id": "chinggis-warriors",
+   "name": "Chinggis Warriors",
+   "rank": 55,
+   "points": 1272,
+   "tier": 3,
+   "roster": [
+    "cool4st",
+    "fury5k",
+    "ROUX",
+    "sk0R",
+    "tikuak"
+   ],
+   "country": "MN"
+  },
+  {
+   "id": "lynn-vision",
+   "name": "Lynn Vision",
+   "rank": 56,
+   "points": 1267,
+   "tier": 3,
+   "roster": [
+    "C4LLM3SU3",
+    "EmiliaQAQ",
+    "Starry",
+    "Westmelon",
+    "z4KR"
+   ],
+   "country": "CN"
+  },
+  {
+   "id": "metizport",
+   "name": "Metizport",
+   "rank": 57,
+   "points": 1266,
+   "tier": 3,
+   "roster": [
+    "F1KU",
+    "forsyy",
+    "MaiL09",
+    "Plopski",
+    "stanislaw"
+   ]
+  },
+  {
+   "id": "nuclear-tigeres",
+   "name": "Nuclear TigeRES",
+   "rank": 58,
+   "points": 1266,
+   "tier": 3,
+   "roster": [
+    "ayuki",
+    "Djon8",
+    "flouzer",
+    "senka",
+    "tronic"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "tyloo",
+   "name": "TYLOO",
+   "rank": 59,
+   "points": 1264,
+   "tier": 3,
+   "roster": [
+    "JamYoung",
+    "Mercury",
+    "Moseyuh",
+    "Zero",
+    "zhokiNg"
+   ],
+   "country": "CN"
+  },
+  {
+   "id": "fluxo",
+   "name": "Fluxo",
+   "rank": 60,
+   "points": 1249,
+   "tier": 3,
+   "roster": [
+    "dav1deuS",
+    "exit",
+    "kye",
+    "Ltz",
+    "zevy"
+   ]
+  },
+  {
+   "id": "phantom",
+   "name": "Phantom",
+   "rank": 61,
+   "points": 1224,
+   "tier": 3,
+   "roster": [
+    "KEi",
+    "Kunai",
+    "Kylar",
+    "nicoodoz",
+    "TMB"
+   ],
+   "country": "PL"
+  },
+  {
+   "id": "saw",
+   "name": "SAW",
+   "rank": 62,
+   "points": 1223,
+   "tier": 3,
+   "roster": [
+    "ewjerkz",
+    "krazy",
+    "MUTiRiS",
+    "NOPEEj",
+    "story"
+   ],
+   "country": "PT"
+  },
+  {
+   "id": "eyeballers",
+   "name": "EYEBALLERS",
+   "rank": 63,
+   "points": 1221,
+   "tier": 3,
+   "roster": [
+    "dex",
+    "JW",
+    "KRIMZ",
+    "maxster",
+    "Ro1f"
+   ],
+   "country": "SE"
+  },
+  {
+   "id": "unity",
+   "name": "UNiTY",
+   "rank": 64,
+   "points": 1220,
+   "tier": 3,
+   "roster": [
+    "2high",
+    "Dytor",
+    "KWERTZZ",
+    "M1key",
+    "Sn0w"
+   ]
+  },
+  {
+   "id": "nexus",
+   "name": "Nexus",
+   "rank": 65,
+   "points": 1187,
+   "tier": 3,
+   "roster": [
+    "fNk",
+    "HOLY",
+    "Nexius",
+    "s0und",
+    "shield"
+   ],
+   "country": "RO"
+  },
+  {
+   "id": "pure",
+   "name": "PURE",
+   "rank": 66,
+   "points": 1182,
+   "tier": 3,
+   "roster": [
+    "aNdu",
+    "keen",
+    "Polbandana",
+    "POLO",
+    "tein"
+   ]
+  },
+  {
+   "id": "brute",
+   "name": "BRUTE",
+   "rank": 67,
+   "points": 1175,
+   "tier": 3,
+   "roster": [
+    "aidKiT",
+    "nbqq",
+    "oontoma",
+    "tAk",
+    "ZEDKO"
+   ]
+  },
+  {
+   "id": "5star",
+   "name": "5star",
+   "rank": 68,
+   "points": 1169,
+   "tier": 3,
+   "roster": [
+    "ariucle",
+    "clouden",
+    "hoolig4n",
+    "NEUZ",
+    "rate"
+   ],
+   "country": "MN"
+  },
+  {
+   "id": "sportsbetexpert",
+   "name": "SportsBetExpert",
+   "rank": 69,
+   "points": 1164,
+   "tier": 3,
+   "roster": [
+    "consti",
+    "Infinite",
+    "motm",
+    "Peeping",
+    "shane"
+   ]
+  },
+  {
+   "id": "wbt",
+   "name": "WBT",
+   "rank": 70,
+   "points": 1163,
+   "tier": 3,
+   "roster": [
+    "DemQQ",
+    "Psycho",
+    "s4ltovsk1yy",
+    "Smash",
+    "tyr1k"
+   ]
+  },
+  {
+   "id": "nexvoid",
+   "name": "NEXVOID",
+   "rank": 71,
+   "points": 1158,
+   "tier": 3,
+   "roster": [
+    "AccuracyTG",
+    "erkaSt",
+    "MiQ",
+    "xerolte",
+    "Zesta"
+   ],
+   "country": "MN"
+  },
+  {
+   "id": "infinite",
+   "name": "INFINITE",
+   "rank": 72,
+   "points": 1158,
+   "tier": 3,
+   "roster": [
+    "Blytz",
+    "kyuubii",
+    "ScrunK",
+    "sl3nd",
+    "volt"
+   ]
+  },
+  {
+   "id": "acend",
+   "name": "Acend",
+   "rank": 73,
+   "points": 1142,
+   "tier": 3,
+   "roster": [
+    "AwaykeN",
+    "REDSTAR",
+    "SHiPZ",
+    "Skrimo",
+    "SPELLAN"
+   ],
+   "country": "BG"
+  },
+  {
+   "id": "quazar",
+   "name": "QUAZAR",
+   "rank": 74,
+   "points": 1142,
+   "tier": 3,
+   "roster": [
+    "gehji",
+    "kaiori",
+    "Ne1XXX",
+    "newt",
+    "Porya"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "barca",
+   "name": "BARCA",
+   "rank": 75,
+   "points": 1141,
+   "tier": 3,
+   "roster": [
+    "Alisson",
+    "divine",
+    "happ",
+    "pancc",
+    "zmb"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "color",
+   "name": "Color",
+   "rank": 76,
+   "points": 1134,
+   "tier": 3,
+   "roster": [
+    "cronuss",
+    "lattykk",
+    "oz1k",
+    "Patsi",
+    "reyoz"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "ex-zero-tenacity",
+   "name": "ex-Zero Tenacity",
+   "rank": 77,
+   "points": 1129,
+   "tier": 3,
+   "roster": [
+    "brutmonster",
+    "Cjoffo",
+    "Dragon",
+    "Kind0",
+    "VLDN"
+   ],
+   "country": "RS"
+  },
+  {
+   "id": "black-phoenix",
+   "name": "Black Phoenix",
+   "rank": 78,
+   "points": 1127,
+   "tier": 3,
+   "roster": [
+    "4X1s",
+    "karnez",
+    "MRcreed",
+    "Salazar",
+    "topo"
+   ]
+  },
+  {
+   "id": "voca",
+   "name": "Voca",
+   "rank": 79,
+   "points": 1127,
+   "tier": 3,
+   "roster": [
+    "dare",
+    "junior",
+    "MarKE",
+    "nosraC",
+    "snav"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "navi-junior",
+   "name": "NAVI Junior",
+   "rank": 80,
+   "points": 1125,
+   "tier": 3,
+   "roster": [
+    "FAZERY",
+    "kodak",
+    "MahaR",
+    "skizzyee",
+    "yoki"
+   ]
+  },
+  {
+   "id": "basement-boys",
+   "name": "BASEMENT BOYS",
+   "rank": 81,
+   "points": 1097,
+   "tier": 3,
+   "roster": [
+    "kAlash",
+    "kr1vda",
+    "maggent",
+    "OWNER",
+    "Tr0ublE"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "lazer-cats",
+   "name": "Lazer Cats",
+   "rank": 82,
+   "points": 1097,
+   "tier": 3,
+   "roster": [
+    "Kiy0o",
+    "Magic",
+    "n0rths",
+    "nikitea",
+    "tripex17"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "shinden",
+   "name": "ShindeN",
+   "rank": 83,
+   "points": 1096,
+   "tier": 3,
+   "roster": [
+    "abizz",
+    "guty",
+    "naz",
+    "reNTU",
+    "tom1jed"
+   ],
+   "country": "AR"
+  },
+  {
+   "id": "upgrade",
+   "name": "UPGRADE",
+   "rank": 84,
+   "points": 1095,
+   "tier": 3,
+   "roster": [
+    "DAN9ARMATURA",
+    "pleynnn",
+    "SquEzxc",
+    "synyx",
+    "tw1sterzaza"
+   ]
+  },
+  {
+   "id": "forze-reload",
+   "name": "FORZE Reload",
+   "rank": 85,
+   "points": 1095,
+   "tier": 3,
+   "roster": [
+    "HeCkBNk",
+    "KusMe",
+    "Lack1",
+    "relaxxie",
+    "YumsaN"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "rbls",
+   "name": "RBLS",
+   "rank": 86,
+   "points": 1094,
+   "tier": 3,
+   "roster": [
+    "aragornN",
+    "arrozdoce",
+    "Icarus",
+    "Shr",
+    "stadodo"
+   ]
+  },
+  {
+   "id": "galorys",
+   "name": "Galorys",
+   "rank": 87,
+   "points": 1092,
+   "tier": 3,
+   "roster": [
+    "destiny",
+    "detr0ittJ",
+    "gbb",
+    "PKL",
+    "tomate"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "aimclub",
+   "name": "aimclub",
+   "rank": 88,
+   "points": 1083,
+   "tier": 3,
+   "roster": [
+    "mhN1",
+    "ragga",
+    "waZz",
+    "XELLOW",
+    "zewts"
+   ],
+   "country": "RO"
+  },
+  {
+   "id": "nt",
+   "name": "NT",
+   "rank": 89,
+   "points": 1081,
+   "tier": 3,
+   "roster": [
+    "fakerealityy",
+    "m4d4ra",
+    "Ryuzak1",
+    "ta9z",
+    "Woro2k"
+   ]
+  },
+  {
+   "id": "ex-inox",
+   "name": "ex-INOX",
+   "rank": 90,
+   "points": 1074,
+   "tier": 3,
+   "roster": [
+    "El1an",
+    "finW",
+    "gooddeph",
+    "k1slll",
+    "m1QUSE"
+   ]
+  },
+  {
+   "id": "without-a-roof",
+   "name": "Without a Roof",
+   "rank": 91,
+   "points": 1071,
+   "tier": 3,
+   "roster": [
+    "autimatic",
+    "Brehze",
+    "CeRq",
+    "FaNg",
+    "Stewie2K"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "alter-ego",
+   "name": "Alter Ego",
+   "rank": 92,
+   "points": 1069,
+   "tier": 3,
+   "roster": [
+    "adeX",
+    "Bloody",
+    "laxiee",
+    "PokemoN",
+    "shadiy"
+   ]
+  },
+  {
+   "id": "omega",
+   "name": "Omega",
+   "rank": 93,
+   "points": 1068,
+   "tier": 3,
+   "roster": [
+    "adai",
+    "Aldikon",
+    "Botpa1",
+    "dan4o",
+    "def1zer"
+   ],
+   "country": "KZ"
+  },
+  {
+   "id": "bounty-hunters",
+   "name": "Bounty Hunters",
+   "rank": 94,
+   "points": 1057,
+   "tier": 3,
+   "roster": [
+    "KAISER",
+    "pepe",
+    "ponter",
+    "urban0",
+    "zock"
+   ]
+  },
+  {
+   "id": "cybershoke",
+   "name": "CYBERSHOKE",
+   "rank": 95,
+   "points": 1055,
+   "tier": 3,
+   "roster": [
+    "Alkaren",
+    "alpha",
+    "H4SAN4TOR",
+    "Mokuj1n",
+    "nota"
+   ]
+  },
+  {
+   "id": "baks",
+   "name": "BAKS",
+   "rank": 96,
+   "points": 1055,
+   "tier": 3,
+   "roster": [
+    "danistzz",
+    "glowiing",
+    "Norwi",
+    "turbo",
+    "whisper"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "spirit-academy",
+   "name": "Spirit Academy",
+   "rank": 97,
+   "points": 1055,
+   "tier": 3,
+   "roster": [
+    "k0gaSs",
+    "Kiryasoo",
+    "Netrix",
+    "s1nside",
+    "VILBy"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "bet-m",
+   "name": "BET-M",
+   "rank": 98,
+   "points": 1049,
+   "tier": 3,
+   "roster": [
+    "bluewh1te",
+    "executor",
+    "Raijin",
+    "z1Nny"
+   ]
+  },
+  {
+   "id": "astral",
+   "name": "ASTRAL",
+   "rank": 99,
+   "points": 1048,
+   "tier": 3,
+   "roster": [
+    "gxx-",
+    "meowpop",
+    "Neqy",
+    "RaY5ive",
+    "swiz"
+   ]
+  },
+  {
+   "id": "9ine",
+   "name": "9INE",
+   "rank": 100,
+   "points": 1043,
+   "tier": 3,
+   "roster": [
+    "b1elany",
+    "flayy",
+    "kraghen",
+    "raalz",
+    "rigoN"
+   ]
+  },
+  {
+   "id": "lag",
+   "name": "LAG",
+   "rank": 101,
+   "points": 1041,
+   "tier": 3,
+   "roster": [
+    "Bwills",
+    "Cryptic",
+    "djay",
+    "Sandman",
+    "SLIGHT"
+   ]
+  },
+  {
+   "id": "genone",
+   "name": "GenOne",
+   "rank": 102,
+   "points": 1041,
+   "tier": 3,
+   "roster": [
+    "bL4SEZ",
+    "Brooxsy",
+    "Djoko",
+    "Keoz",
+    "SIXER"
+   ],
+   "country": "FR"
+  },
+  {
+   "id": "wbt-academy",
+   "name": "WBT Academy",
+   "rank": 103,
+   "points": 1033,
+   "tier": 3,
+   "roster": [
+    "fl1peR",
+    "kL1o",
+    "marat2k",
+    "NxStep",
+    "tired73"
+   ]
+  },
+  {
+   "id": "the-huns",
+   "name": "The Huns",
+   "rank": 104,
+   "points": 1032,
+   "tier": 3,
+   "roster": [
+    "Bart4k",
+    "bexyz",
+    "controlez",
+    "Cozen",
+    "DarkMeister"
+   ],
+   "country": "MN"
+  },
+  {
+   "id": "sashi",
+   "name": "Sashi",
+   "rank": 105,
+   "points": 1030,
+   "tier": 3,
+   "roster": [
+    "acoR",
+    "Anlelele",
+    "Hatz",
+    "TjP",
+    "Zyphon"
+   ]
+  },
+  {
+   "id": "ex-rustec",
+   "name": "ex-RUSTEC",
+   "rank": 106,
+   "points": 1016,
+   "tier": 3,
+   "roster": [
+    "bl1x1",
+    "Brilliance",
+    "jakekeS",
+    "yiksrezo",
+    "youka"
+   ]
+  },
+  {
+   "id": "ence",
+   "name": "ENCE",
+   "rank": 107,
+   "points": 1011,
+   "tier": 3,
+   "roster": [
+    "HENU",
+    "joeski",
+    "millert",
+    "Schwarz",
+    "teme"
+   ]
+  },
+  {
+   "id": "ww",
+   "name": "WW",
+   "rank": 108,
+   "points": 1000,
+   "tier": 3,
+   "roster": [
+    "kelieN",
+    "m3wsu",
+    "Ryujin",
+    "StRoGo",
+    "tried"
+   ]
+  },
+  {
+   "id": "just-players",
+   "name": "Just Players",
+   "rank": 109,
+   "points": 999,
+   "tier": 3,
+   "roster": [
+    "h1te",
+    "sm3t",
+    "sstiNiX",
+    "Temny Prince",
+    "wh1teout"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "inner-circle-academy",
+   "name": "Inner Circle Academy",
+   "rank": 110,
+   "points": 997,
+   "tier": 3,
+   "roster": [
+    "3ippoch",
+    "Flierax",
+    "L1seYoung",
+    "NaYz",
+    "Tamefear"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "rune-eaters",
+   "name": "Rune Eaters",
+   "rank": 111,
+   "points": 995,
+   "tier": 3,
+   "roster": [
+    "demente",
+    "dukefissura",
+    "forkyz",
+    "her1tage",
+    "noni"
+   ],
+   "country": "KZ"
+  },
+  {
+   "id": "turma-do-pagode",
+   "name": "Turma do Pagode",
+   "rank": 112,
+   "points": 989,
+   "tier": 3,
+   "roster": [
+    "matios",
+    "naitte",
+    "pesadelo",
+    "Tuurtle",
+    "WOOD7"
+   ],
+   "country": "BR"
+  },
+  {
+   "id": "butterfly",
+   "name": "Butterfly",
+   "rank": 113,
+   "points": 987,
+   "tier": 3,
+   "roster": [
+    "ayano",
+    "Forester",
+    "k1ssly",
+    "Kurama",
+    "nitzie"
+   ],
+   "country": "RU"
+  },
+  {
+   "id": "the-last-resort",
+   "name": "The Last Resort",
+   "rank": 114,
+   "points": 986,
+   "tier": 3,
+   "roster": [
+    "arTisT",
+    "bevve",
+    "Extinct",
+    "Girafffe",
+    "Vacancy"
+   ],
+   "country": "GB"
+  },
+  {
+   "id": "johnny-speeds",
+   "name": "Johnny Speeds",
+   "rank": 115,
+   "points": 986,
+   "tier": 3,
+   "roster": [
+    "bsover",
+    "draken",
+    "hampus",
+    "Rack",
+    "Svedjehed"
+   ],
+   "country": "SE"
+  },
+  {
+   "id": "sparta",
+   "name": "SPARTA",
+   "rank": 116,
+   "points": 984,
+   "tier": 3,
+   "roster": [
+    "El1an",
+    "glowiing",
+    "interz",
+    "NickelBack",
+    "TRAVIS"
+   ]
+  },
+  {
+   "id": "havu",
+   "name": "HAVU",
+   "rank": 117,
+   "points": 982,
+   "tier": 3,
+   "roster": [
+    "8Juho8",
+    "Alxc",
+    "ottob",
+    "p3kko",
+    "uli"
+   ],
+   "country": "FI"
+  },
+  {
+   "id": "state",
+   "name": "STATE",
+   "rank": 118,
+   "points": 982,
+   "tier": 3,
+   "roster": [
+    "Altekz",
+    "kwezz",
+    "Queenix",
+    "sL1m3",
+    "Zanto"
+   ]
+  },
+  {
+   "id": "depo",
+   "name": "DEPO",
+   "rank": 119,
+   "points": 977,
+   "tier": 3,
+   "roster": [
+    "buster",
+    "Krad",
+    "sh1seido",
+    "shoxs",
+    "wetfy"
+   ],
+   "country": "UZ"
+  },
+  {
+   "id": "illyrians",
+   "name": "Illyrians",
+   "rank": 120,
+   "points": 960,
+   "tier": 3,
+   "roster": [
+    "ammar",
+    "BledarD",
+    "cerber",
+    "Lewis",
+    "rosoneriii"
+   ],
+   "country": "XK"
+  },
+  {
+   "id": "pcific",
+   "name": "PCIFIC",
+   "rank": 121,
+   "points": 959,
+   "tier": 3,
+   "roster": [
+    "jresy",
+    "lugseN",
+    "oyesil",
+    "scolleN"
+   ],
+   "country": "TR"
+  },
+  {
+   "id": "rare-atom",
+   "name": "Rare Atom",
+   "rank": 122,
+   "points": 956,
+   "tier": 3,
+   "roster": [
+    "3gl",
+    "ChildKing",
+    "kaze",
+    "L1haNg",
+    "Summer"
+   ],
+   "country": "CN"
+  },
+  {
+   "id": "eac",
+   "name": "EAC",
+   "rank": 123,
+   "points": 955,
+   "tier": 3,
+   "roster": [
+    "anber",
+    "bekker",
+    "Fessor",
+    "n1Xen",
+    "sSen"
+   ]
+  },
+  {
+   "id": "leo",
+   "name": "Leo",
+   "rank": 124,
+   "points": 955,
+   "tier": 3,
+   "roster": [
+    "aimy",
+    "drac",
+    "leen",
+    "next1me",
+    "Tarkky"
+   ]
+  },
+  {
+   "id": "marsborne",
+   "name": "Marsborne",
+   "rank": 125,
+   "points": 955,
+   "tier": 3,
+   "roster": [
+    "freshie",
+    "Grizz",
+    "nicx",
+    "ogwizard",
+    "WUMBO"
+   ],
+   "country": "US"
+  },
+  {
+   "id": "abyssal",
+   "name": "Abyssal",
+   "rank": 126,
+   "points": 949,
+   "tier": 3,
+   "roster": [
+    "blood",
+    "dangeR",
+    "Forleks",
+    "vinhy",
+    "zune"
+   ],
+   "country": "AU"
+  },
+  {
+   "id": "lavked",
+   "name": "Lavked",
+   "rank": 127,
+   "points": 943,
+   "tier": 3,
+   "roster": [
+    "azukay",
+    "FREXEMP",
+    "k4nfuz",
+    "takanashi",
+    "xm1nd"
+   ]
+  },
+  {
+   "id": "off-chops",
+   "name": "Off Chops",
+   "rank": 128,
+   "points": 935,
+   "tier": 3,
+   "roster": [
+    "damyo",
+    "dexter",
+    "Gratisfaction",
+    "Liazz",
+    "viridian"
+   ],
+   "country": "AU"
+  },
+  {
+   "id": "g2-ares",
+   "name": "G2 Ares",
+   "rank": 129,
+   "points": 935,
+   "tier": 3,
+   "roster": [
+    "hitori",
+    "Junyme",
+    "SHiNE",
+    "TMKj",
+    "yksjupe"
+   ]
+  },
+  {
+   "id": "ex-6666",
+   "name": "ex-6666",
+   "rank": 130,
+   "points": 935,
+   "tier": 3,
+   "roster": [
+    "amster",
+    "kL1o",
+    "rendysky",
+    "skcH",
+    "stefienson"
+   ],
+   "country": "UA"
+  },
+  {
+   "id": "fire-flux",
+   "name": "Fire Flux",
+   "rank": 131,
+   "points": 929,
+   "tier": 3,
+   "roster": [
+    "Cizzx",
+    "Quality",
+    "xEternaLxx",
+    "zemix",
+    "zer0UKY"
+   ],
+   "country": "TR"
+  },
+  {
+   "id": "og",
+   "name": "OG",
+   "rank": 132,
+   "points": 928,
+   "tier": 3,
+   "roster": [
+    "adamb",
+    "bodyy",
+    "cadiaN",
+    "pr1metapz",
+    "spooke"
+   ]
+  },
+  {
+   "id": "bushido-wildcats",
+   "name": "Bushido Wildcats",
+   "rank": 133,
+   "points": 927,
+   "tier": 3,
+   "roster": [
+    "cacan",
+    "cadnyx",
+    "Darendeli",
+    "Muk0s",
+    "Vej"
+   ],
+   "country": "TR"
+  },
+  {
+   "id": "ex-cybershoke",
+   "name": "ex-CYBERSHOKE",
+   "rank": 134,
+   "points": 923,
+   "tier": 3,
+   "roster": [
+    "Alkaren",
+    "alpha",
+    "Mokuj1n",
+    "nota",
+    "yiksrezo"
+   ]
+  },
+  {
+   "id": "mellren",
+   "name": "mellren",
+   "rank": 135,
+   "points": 920,
+   "tier": 3,
+   "roster": [
+    "lollipop21k",
+    "Maksilvl",
+    "mdl",
+    "menddel",
+    "shootic"
+   ],
+   "country": "BY"
+  },
+  {
+   "id": "hyperspirit",
+   "name": "HYPERSPIRIT",
+   "rank": 136,
+   "points": 917,
+   "tier": 3,
+   "roster": [
+    "Ciocardau",
+    "d1maje",
+    "Q-Q",
+    "Scr0b",
+    "starplajerz"
+   ],
+   "country": "DK"
+  },
+  {
+   "id": "saint-sinners",
+   "name": "Saint Sinners",
+   "rank": 137,
+   "points": 914,
+   "tier": 3,
+   "roster": [
+    "Caleyy",
+    "deb0",
+    "halfjix",
+    "iRV1NG",
+    "pavlysha666"
+   ]
+  },
+  {
+   "id": "ground-zero",
+   "name": "Ground Zero",
+   "rank": 138,
+   "points": 911,
+   "tier": 3,
+   "roster": [
+    "apocdud",
+    "hazr",
+    "Omichella",
+    "sliimey",
+    "vision"
+   ],
+   "country": "AU"
+  },
+  {
+   "id": "6yubojlbl",
+   "name": "6yuBoJlbl",
+   "rank": 139,
+   "points": 911,
+   "tier": 3,
+   "roster": [
+    "ICY",
+    "neaLaN",
+    "Pump",
+    "stratefly",
+    "tasman"
+   ]
+  },
+  {
+   "id": "procyon",
+   "name": "Procyon",
+   "rank": 140,
+   "points": 905,
+   "tier": 3,
+   "roster": [
+    "laser",
+    "lenci",
+    "MaxOff",
+    "next",
+    "pavv"
+   ],
+   "country": "AR"
+  },
+  {
+   "id": "nordic-partners",
+   "name": "Nordic Partners",
+   "rank": 141,
+   "points": 901,
+   "tier": 3,
+   "roster": [
+    "k1to",
+    "Marix",
+    "Maze",
+    "Muciek",
+    "myltsi"
+   ]
+  },
+  {
+   "id": "tropa-do-kingui",
+   "name": "Tropa do KinGui",
+   "rank": 142,
+   "points": 891,
+   "tier": 3,
+   "roster": [
+    "ALLE",
+    "ckzao",
+    "drg",
+    "lash",
+    "xureba"
+   ]
+  },
+  {
+   "id": "low-cortisol-br",
+   "name": "Low Cortisol BR",
+   "rank": 143,
+   "points": 875,
+   "tier": 3,
+   "roster": [
+    "fokiu",
+    "levi",
+    "stormzyn",
+    "t9rnay",
+    "zede"
+   ]
+  },
+  {
+   "id": "falcons-force",
+   "name": "Falcons Force",
+   "rank": 144,
+   "points": 858,
+   "tier": 3,
+   "roster": [
+    "clockzi",
+    "grecu",
+    "NucleonZ",
+    "Tapewaare",
+    "VENO"
+   ]
+  },
+  {
+   "id": "mouz-nxt",
+   "name": "MOUZ NXT",
+   "rank": 145,
+   "points": 853,
+   "tier": 3,
+   "roster": [
+    "ay0k",
+    "deeN",
+    "eSx",
+    "mixer",
+    "Nikodeon"
+   ]
+  },
+  {
+   "id": "misa",
+   "name": "Misa",
+   "rank": 146,
+   "points": 852,
+   "tier": 3,
+   "roster": [
+    "cyber",
+    "EMSTAR",
+    "h0kz",
+    "souv",
+    "Zuedsta"
+   ],
+   "country": "TR"
+  },
+  {
+   "id": "inox-division",
+   "name": "INOX Division",
+   "rank": 147,
+   "points": 852,
+   "tier": 3,
+   "roster": [
+    "FenomeN",
+    "finW",
+    "k0s",
+    "k1slll",
+    "notineki"
+   ]
+  },
+  {
+   "id": "saw-youngsters",
+   "name": "SAW Youngsters",
+   "rank": 148,
+   "points": 848,
+   "tier": 3,
+   "roster": [
+    "Jayy2s",
+    "jERK0z",
+    "M1KA",
+    "snowiee",
+    "tuxa"
+   ]
+  },
+  {
+   "id": "naocopulas",
+   "name": "NAOCOPULAS",
+   "rank": 149,
+   "points": 846,
+   "tier": 3,
+   "roster": [
+    "Ceruttera",
+    "diozera",
+    "fks",
+    "nardes",
+    "NEKIZ"
+   ]
+  },
+  {
+   "id": "rooster",
+   "name": "Rooster",
+   "rank": 150,
+   "points": 844,
+   "tier": 3,
+   "roster": [
+    "chelleos",
+    "cookie",
+    "foggers",
+    "rekonz",
+    "SkulL"
+   ],
+   "country": "AU"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+[
+ {
+  "id": "t-dinner", "type": "team",
+  "text": { "en": "Team dinner after a long scrim day. The bill arrives and everyone suddenly studies their phone.", "fr": "Dîner d'équipe après une longue journée de scrims. L'addition arrive et tout le monde regarde soudain son téléphone." },
+  "choices": [
+   { "text": { "en": "Pay for the table", "fr": "Payer pour toute la table" }, "fx": { "money": -400, "chemistry": 6 }, "result": { "en": "\"Next one is on me.\" It never is, but nobody forgets tonight.", "fr": "« La prochaine est pour moi. » Ce n'est jamais le cas, mais personne n'oublie ce soir." } },
+   { "text": { "en": "Loser of a 1v1 on aim_map pays", "fr": "Le perdant d'un 1v1 sur aim_map paie" }, "test": { "a": { "aim": 2, "reflexes": 1 }, "d": 0 },
+     "win": { "text": { "en": "You win the bracket on a laptop trackpad. Legend status in the group chat.", "fr": "Tu gagnes le tableau sur le pavé tactile d'un portable. Statut de légende dans la conversation de groupe." }, "fx": { "chemistry": 7, "confidence": 4, "aura": 1 } },
+     "lose": { "text": { "en": "You lose the final 16-14 and pay for five desserts.", "fr": "Tu perds la finale 16-14 et tu paies cinq desserts." }, "fx": { "money": -500, "chemistry": 5 } } },
+   { "text": { "en": "Split it to the cent", "fr": "Diviser au centime près" }, "fx": { "chemistry": -2 }, "result": { "en": "Fair. A little cold.", "fr": "Juste. Un peu froid." } }
+  ]
+ },
+ {
+  "id": "t-latecomer", "type": "team",
+  "text": { "en": "A teammate arrives forty minutes late to practice for the third time this month. The coach says nothing. The room waits for someone to.", "fr": "Un coéquipier arrive avec quarante minutes de retard à l'entraînement pour la troisième fois du mois. Le coach ne dit rien. La salle attend que quelqu'un le fasse." },
+  "choices": [
+   { "text": { "en": "Talk to him alone after practice", "fr": "Lui parler seul à seul après l'entraînement" }, "test": { "a": { "comms": 2, "leadership": 2 }, "d": 0 },
+     "win": { "text": { "en": "There was a reason, and it was not laziness. He is on time from now on.", "fr": "Il y avait une raison, et ce n'était pas de la flemme. Il est à l'heure à partir de maintenant." }, "fx": { "chemistry": 8, "leadership": 2 } },
+     "lose": { "text": { "en": "\"Who made you captain?\" The conversation ends there.", "fr": "« Qui t'a nommé capitaine ? » La discussion s'arrête là." }, "fx": { "chemistry": -4 } } },
+   { "text": { "en": "Call him out in front of everyone", "fr": "Le reprendre devant tout le monde" }, "fx": { "chemistry": -5, "tox": 6, "leadership": 1 }, "result": { "en": "He is on time the next day, and does not speak to you for a week.", "fr": "Il est à l'heure le lendemain, et ne t'adresse plus la parole pendant une semaine." } },
+   { "text": { "en": "Not your problem", "fr": "Ce n'est pas ton problème" }, "fx": { "chemistry": -2, "energy": 2 }, "result": { "en": "Nobody says anything. The habit spreads.", "fr": "Personne ne dit rien. L'habitude s'installe." } }
+  ]
+ },
+ {
+  "id": "t-roommate", "type": "team",
+  "text": { "en": "Hotel rooms are shared at this event. Your roommate plays deathmatch until 3 a.m. with his keyboard on the desk next to your pillow.", "fr": "Les chambres d'hôtel sont partagées sur ce tournoi. Ton colocataire fait du deathmatch jusqu'à 3 h du matin, clavier posé à côté de ton oreiller." },
+  "choices": [
+   { "text": { "en": "Agree on a curfew, like adults", "fr": "Se mettre d'accord sur une heure, comme des adultes" }, "fx": { "chemistry": 4, "energy": 6 }, "result": { "en": "Midnight, headphones, lights off. Simple.", "fr": "Minuit, casque, lumière éteinte. Simple." } },
+   { "text": { "en": "Join him. Sleep is for the flight home", "fr": "Le rejoindre. On dormira dans l'avion du retour" }, "fx": { "aim": 2, "chemistry": 5, "energy": -14 }, "result": { "en": "Two hours of 1v1s and laughing. Tomorrow will be long.", "fr": "Deux heures de 1v1 et de fous rires. Demain sera long." } },
+   { "text": { "en": "Ask the manager for a single room", "fr": "Demander une chambre seul au manager" }, "fx": { "energy": 10, "chemistry": -3, "money": -300 }, "result": { "en": "You sleep nine hours. He learns about it from the manager.", "fr": "Tu dors neuf heures. Il l'apprend par le manager." } }
+  ]
+ },
+ {
+  "id": "t-blame", "type": "team", "when": { "maxChemistry": 55 },
+  "text": { "en": "Lost round, mid-scrim. A teammate throws his hands up: \"Where was the flash? Every time.\" He is looking at you.", "fr": "Round perdu, en plein scrim. Un coéquipier lève les bras : « Elle était où, la flash ? À chaque fois. » Il te regarde." },
+  "choices": [
+   { "text": { "en": "\"My bad. Next round I call it earlier.\"", "fr": "« Ma faute. Au prochain, j'annonce plus tôt. »" }, "fx": { "chemistry": 5, "comms": 1, "tox": -3 }, "result": { "en": "The tension drops in one sentence.", "fr": "La tension retombe en une phrase." } },
+   { "text": { "en": "\"Watch the demo. You peeked before my call.\"", "fr": "« Regarde la démo. Tu as peeké avant mon call. »" }, "test": { "a": { "gameSense": 2, "comms": 1 }, "d": 2 },
+     "win": { "text": { "en": "The demo agrees with you. He nods, annoyed. Fair is fair.", "fr": "La démo te donne raison. Il hoche la tête, agacé. C'est de bonne guerre." }, "fx": { "chemistry": 2, "confidence": 3 } },
+     "lose": { "text": { "en": "The demo shows your flash landing behind a wall.", "fr": "La démo montre ta flash qui finit derrière un mur." }, "fx": { "chemistry": -5, "confidence": -3 } } },
+   { "text": { "en": "Explode. You have been carrying his rounds for weeks", "fr": "Exploser. Ça fait des semaines que tu portes ses rounds" }, "fx": { "chemistry": -9, "tox": 10, "confidence": 2, "strike": 1 }, "result": { "en": "The scrim ends early. The coach wants to see you both tomorrow.", "fr": "Le scrim s'arrête plus tôt. Le coach veut vous voir tous les deux demain." } }
+  ]
+ },
+ {
+  "id": "t-birthday", "type": "team",
+  "text": { "en": "It is {mate}'s birthday in the middle of a bootcamp. The manager forgot. Practice starts in an hour.", "fr": "C'est l'anniversaire de {mate} en plein bootcamp. Le manager a oublié. L'entraînement commence dans une heure." },
+  "choices": [
+   { "text": { "en": "Run out, find a cake, hide it in the practice room", "fr": "Sortir en courant, trouver un gâteau, le cacher dans la salle d'entraînement" }, "fx": { "chemistry": 8, "money": -60, "energy": -3 }, "result": { "en": "Five players singing badly around a supermarket cake. A good day.", "fr": "Cinq joueurs qui chantent faux autour d'un gâteau de supermarché. Une bonne journée." } },
+   { "text": { "en": "Dedicate your first ace of the day to him", "fr": "Lui dédier ton premier ace de la journée" }, "test": { "a": { "aim": 2, "clutch": 1 }, "d": 3 },
+     "win": { "text": { "en": "Third map, pistol round, five kills. \"Happy birthday.\" The room loses it.", "fr": "Troisième map, pistol round, cinq kills. « Joyeux anniversaire. » La salle explose de rire." }, "fx": { "chemistry": 9, "confidence": 4, "aura": 1 } },
+     "lose": { "text": { "en": "No ace all day. You announce it anyway at dinner, as a debt.", "fr": "Pas d'ace de la journée. Tu l'annonces quand même au dîner, comme une dette." }, "fx": { "chemistry": 4 } } }
+  ]
+ },
+ {
+  "id": "t-newguy", "type": "team", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "A new player joins the roster. He is quiet, eats alone, and plays scrims as if he were afraid to make a call.", "fr": "Un nouveau rejoint l'effectif. Il parle peu, mange seul, et joue les scrims comme s'il avait peur de faire un call." },
+  "choices": [
+   { "text": { "en": "Sit with him and ask about his old team", "fr": "T'asseoir avec lui et lui parler de son ancienne équipe" }, "fx": { "chemistry": 7, "leadership": 1 }, "result": { "en": "By the end of the week he is the loudest voice in the trades.", "fr": "À la fin de la semaine, c'est la voix la plus forte dans les trades." } },
+   { "text": { "en": "Let him settle in at his own pace", "fr": "Le laisser s'installer à son rythme" }, "fx": { "chemistry": 1 }, "result": { "en": "It takes him two months.", "fr": "Ça lui prend deux mois." } },
+   { "text": { "en": "Test him: steal his position in a scrim to see how he reacts", "fr": "Le tester : lui piquer sa position en scrim pour voir sa réaction" }, "fx": { "chemistry": -5, "tox": 5, "gameSense": 1 }, "result": { "en": "He says nothing. The others noticed.", "fr": "Il ne dit rien. Les autres ont remarqué." } }
+  ]
+ },
+ {
+  "id": "t-groupchat", "type": "team",
+  "text": { "en": "Someone posts your worst whiff of the day in the team group chat, in slow motion, with circus music.", "fr": "Quelqu'un poste ton pire raté de la journée dans la conversation de l'équipe, au ralenti, avec une musique de cirque." },
+  "choices": [
+   { "text": { "en": "Reply with an even worse clip of yourself", "fr": "Répondre avec un clip de toi encore pire" }, "fx": { "chemistry": 6, "tox": -3, "mental": 1 }, "result": { "en": "It becomes a weekly tradition: the Friday fail.", "fr": "Ça devient une tradition : le raté du vendredi." } },
+   { "text": { "en": "Dig up his worst round and post it with a full edit", "fr": "Ressortir son pire round et le poster avec un vrai montage" }, "test": { "a": { "comms": 1, "mental": 1 }, "d": -2 },
+     "win": { "text": { "en": "The edit is so good the social media manager asks for the file.", "fr": "Le montage est tellement bon que le community manager demande le fichier." }, "fx": { "chemistry": 6, "aura": 1, "style": 4 } },
+     "lose": { "text": { "en": "It was a round from the series you lost. Too soon.", "fr": "C'était un round de la série que vous avez perdue. Trop tôt." }, "fx": { "chemistry": -4 } } },
+   { "text": { "en": "Leave the chat on read", "fr": "Laisser la conversation en vu" }, "fx": { "confidence": -2, "chemistry": -1 }, "result": { "en": "The joke dies. So does the mood.", "fr": "La blague retombe. L'ambiance aussi." } }
+  ]
+ },
+ {
+  "id": "t-music", "type": "team",
+  "text": { "en": "Bus to the arena. One speaker, five opinions. Your IGL wants silence, your AWPer wants techno, and someone hands you the phone.", "fr": "Bus vers l'arène. Une enceinte, cinq avis. Ton IGL veut le silence, ton AWPer veut de la techno, et quelqu'un te tend le téléphone." },
+  "choices": [
+   { "text": { "en": "Put on the cheesiest song you know and sing", "fr": "Lancer la chanson la plus ringarde que tu connais et chanter" }, "fx": { "chemistry": 6, "confidence": 2, "style": 4 }, "result": { "en": "By the second chorus the whole bus is in. Nobody is nervous any more.", "fr": "Au deuxième refrain tout le bus chante. Plus personne n'est stressé." } },
+   { "text": { "en": "Headphones for everyone, each his own", "fr": "Casque pour tout le monde, chacun le sien" }, "fx": { "mental": 1, "energy": 2 }, "result": { "en": "A quiet bus, five different playlists.", "fr": "Un bus silencieux, cinq playlists différentes." } }
+  ]
+ },
+ {
+  "id": "t-money", "type": "team", "when": { "tier": [2, 3] },
+  "text": { "en": "Salaries are two weeks late. The manager says \"it is being processed\". In the practice room, the talk is no longer about strats.", "fr": "Les salaires ont deux semaines de retard. Le manager dit que « c'est en cours ». Dans la salle d'entraînement, on ne parle plus de strats." },
+  "choices": [
+   { "text": { "en": "Speak for the team, calmly, with the manager", "fr": "Parler au nom de l'équipe, calmement, avec le manager" }, "test": { "a": { "comms": 2, "leadership": 2 }, "d": 2 },
+     "win": { "text": { "en": "The money arrives in three days, with an apology. The team now looks at you differently.", "fr": "L'argent arrive en trois jours, avec des excuses. L'équipe te regarde autrement maintenant." }, "fx": { "chemistry": 8, "leadership": 2, "confidence": 3 } },
+     "lose": { "text": { "en": "\"Processing\" for another month. At least you tried.", "fr": "« En cours » pendant encore un mois. Au moins tu as essayé." }, "fx": { "chemistry": 3, "energy": -4 } } },
+   { "text": { "en": "Post about it publicly", "fr": "En parler publiquement" }, "fx": { "pop": 3, "chemistry": -3, "tox": 4, "strike": 1 }, "result": { "en": "The money arrives the next morning. So does a very formal email.", "fr": "L'argent arrive le lendemain matin. Un e-mail très officiel aussi." } },
+   { "text": { "en": "Keep your head down and keep practising", "fr": "Faire profil bas et continuer à t'entraîner" }, "fx": { "mental": 1, "confidence": -2 }, "result": { "en": "You get paid eventually. Nobody played well in the meantime.", "fr": "Tu finis par être payé. Personne n'a bien joué entre-temps." } }
+  ]
+ },
+ {
+  "id": "t-roles", "type": "team",
+  "text": { "en": "Role meeting. Two players want the same spot on the T side of {map}, the one that gets the opening duels and the highlights. You are one of them.", "fr": "Réunion sur les rôles. Deux joueurs veulent la même position côté T sur {map}, celle qui prend les duels d'ouverture et les highlights. Tu es l'un des deux." },
+  "choices": [
+   { "text": { "en": "Offer a trial: one week each, the stats decide", "fr": "Proposer un essai : une semaine chacun, les stats tranchent" }, "test": { "a": { "aim": 2, "gameSense": 1, "reflexes": 1 }, "d": 2 },
+     "win": { "text": { "en": "Your week is clearly better. He shakes your hand: \"It is yours.\"", "fr": "Ta semaine est nettement meilleure. Il te serre la main : « Elle est à toi. »" }, "fx": { "chemistry": 4, "confidence": 6, "aura": 1 } },
+     "lose": { "text": { "en": "His week is better. You take the support spot without a word.", "fr": "Sa semaine est meilleure. Tu prends la position de soutien sans un mot." }, "fx": { "chemistry": 4, "confidence": -4, "utility": 2 } } },
+   { "text": { "en": "Give it to him. The team matters more", "fr": "La lui laisser. L'équipe passe avant" }, "fx": { "chemistry": 7, "utility": 1, "style": -5 }, "result": { "en": "He owes you one, and he knows it.", "fr": "Il t'en doit une, et il le sait." } },
+   { "text": { "en": "Refuse to move. You are the better player", "fr": "Refuser de bouger. Tu es le meilleur joueur" }, "fx": { "chemistry": -7, "tox": 6, "confidence": 3, "strike": 1 }, "result": { "en": "You keep the spot and lose the room.", "fr": "Tu gardes la position et tu perds le vestiaire." } }
+  ]
+ },
+ {
+  "id": "t-language", "type": "team",
+  "text": { "en": "In the heat of a round, two teammates switch to their native language. You and the fourth player hear noise, not information.", "fr": "Dans le feu d'un round, deux coéquipiers passent dans leur langue maternelle. Toi et le quatrième joueur, vous entendez du bruit, pas de l'information." },
+  "choices": [
+   { "text": { "en": "Propose ten fixed words everyone must use", "fr": "Proposer dix mots fixes que tout le monde doit utiliser" }, "fx": { "comms": 2, "chemistry": 5 }, "result": { "en": "A laminated sheet above every monitor. It works.", "fr": "Une feuille plastifiée au-dessus de chaque écran. Ça marche." } },
+   { "text": { "en": "Learn their fifty most used words", "fr": "Apprendre leurs cinquante mots les plus utilisés" }, "fx": { "comms": 1, "chemistry": 7, "energy": -5 }, "result": { "en": "Your accent makes them cry laughing. Your calls land.", "fr": "Ton accent les fait pleurer de rire. Tes calls passent." } },
+   { "text": { "en": "Complain to the coach", "fr": "T'en plaindre au coach" }, "fx": { "chemistry": -3 }, "result": { "en": "He raises it in the next meeting. The two of them know who talked.", "fr": "Il en parle à la réunion suivante. Les deux savent qui a parlé." } }
+  ]
+ },
+ {
+  "id": "t-day-off", "type": "team",
+  "text": { "en": "One free day in a foreign city between two events. The team asks what you want to do.", "fr": "Un jour libre dans une ville étrangère entre deux tournois. L'équipe te demande ce que tu veux faire." },
+  "choices": [
+   { "text": { "en": "Go-karting. Loser carries the bags tomorrow", "fr": "Karting. Le dernier porte les sacs demain" }, "fx": { "chemistry": 7, "energy": -3, "confidence": 2 }, "result": { "en": "Your IGL drives exactly the way he calls: slow, then all at once.", "fr": "Ton IGL conduit exactement comme il appelle : lentement, puis tout d'un coup." } },
+   { "text": { "en": "Everyone rests. Meet at dinner", "fr": "Chacun se repose. Rendez-vous au dîner" }, "fx": { "energy": 12, "chemistry": 2 }, "result": { "en": "A long nap and a long dinner.", "fr": "Une longue sieste et un long dîner." } },
+   { "text": { "en": "Extra practice. Free days are for other teams", "fr": "Entraînement en plus. Les jours libres, c'est pour les autres équipes" }, "fx": { "all": 1, "chemistry": -4, "energy": -12 }, "result": { "en": "Sharp aim, heavy sighs.", "fr": "Un aim affûté, de gros soupirs." } }
+  ]
+ },
+ {
+  "id": "t-standin", "type": "team",
+  "text": { "en": "A teammate is ill the morning of an online match. The stand-in is a kid from the academy, {rookie}, who has never played an official game.", "fr": "Un coéquipier est malade le matin d'un match en ligne. Le remplaçant est un jeune de l'académie, {rookie}, qui n'a jamais joué un match officiel." },
+  "choices": [
+   { "text": { "en": "Give him the easy role and talk him through every round", "fr": "Lui donner le rôle facile et l'accompagner à chaque round" }, "test": { "a": { "leadership": 2, "comms": 2 }, "d": 0 },
+     "win": { "text": { "en": "{rookie} plays the game of his life. He will remember who made it easy.", "fr": "{rookie} joue le match de sa vie. Il se souviendra de qui lui a facilité la tâche." }, "fx": { "chemistry": 6, "leadership": 2, "bonus": 1, "flag": "rookieFriend" } },
+     "lose": { "text": { "en": "He freezes anyway. You lose, but he thanks you after.", "fr": "Il se crispe quand même. Vous perdez, mais il te remercie après." }, "fx": { "chemistry": 3, "flag": "rookieFriend" } } },
+   { "text": { "en": "Play your own game and let him sink or swim", "fr": "Jouer ton jeu et le laisser se débrouiller" }, "fx": { "aim": 1, "chemistry": -2 }, "result": { "en": "He survives the map. Barely.", "fr": "Il survit à la map. De justesse." } }
+  ]
+ },
+ {
+  "id": "t-rookie-returns", "type": "team", "when": { "flag": "rookieFriend", "minAge": 24 }, "once": true,
+  "text": { "en": "{rookie}, the academy kid you once helped through his first official match, is now a starter in a rival team. He sends you a message before you play each other.", "fr": "{rookie}, le jeune de l'académie que tu avais aidé pour son premier match officiel, est maintenant titulaire dans une équipe adverse. Il t'écrit avant votre match." },
+  "choices": [
+   { "text": { "en": "\"Proud of you. I am still going to destroy you.\"", "fr": "« Fier de toi. Je vais quand même te détruire. »" }, "fx": { "confidence": 5, "aura": 2, "chemistry": 2 }, "result": { "en": "He posts the screenshot. The community loves it.", "fr": "Il poste la capture. La communauté adore." } },
+   { "text": { "en": "Give him one last piece of advice", "fr": "Lui donner un dernier conseil" }, "fx": { "leadership": 2, "pop": 2 }, "result": { "en": "In his next interview he calls you the reason he made it.", "fr": "Dans son interview suivante, il dit que c'est grâce à toi qu'il a percé." } }
+  ]
+ },
+ {
+  "id": "t-prank", "type": "team", "when": { "minChemistry": 55 },
+  "text": { "en": "The team is in a great mood. Someone suggests swapping the IGL's mouse sensitivity before the warm-up, \"just to see\".", "fr": "L'équipe est d'excellente humeur. Quelqu'un propose de changer la sensibilité de la souris de l'IGL avant l'échauffement, « juste pour voir »." },
+  "choices": [
+   { "text": { "en": "Do it, and film his face", "fr": "Le faire, et filmer sa tête" }, "test": { "a": { "comms": 1, "mental": 1 }, "d": -4 },
+     "win": { "text": { "en": "He spins 720 degrees on his first peek and laughs harder than anyone.", "fr": "Il fait deux tours complets sur son premier peek et rit plus fort que tout le monde." }, "fx": { "chemistry": 6, "fans": 800, "style": 5 } },
+     "lose": { "text": { "en": "He does not find it funny today. At all.", "fr": "Aujourd'hui, ça ne le fait pas rire. Du tout." }, "fx": { "chemistry": -5 } } },
+   { "text": { "en": "Not before an official match", "fr": "Pas avant un match officiel" }, "fx": { "mental": 1, "leadership": 1 }, "result": { "en": "Someone calls you \"dad\" for the rest of the day.", "fr": "Quelqu'un t'appelle « papa » pour le reste de la journée." } }
+  ]
+ },
+ {
+  "id": "t-cliques", "type": "team", "when": { "maxChemistry": 45 },
+  "text": { "en": "The team has split in two: three who eat together and two who do not. You are invited to both tables, never at the same time.", "fr": "L'équipe s'est coupée en deux : trois qui mangent ensemble et deux qui mangent ailleurs. On t'invite aux deux tables, jamais en même temps." },
+  "choices": [
+   { "text": { "en": "Book one big table and do not ask anyone's opinion", "fr": "Réserver une grande table et ne demander l'avis de personne" }, "test": { "a": { "leadership": 3, "comms": 1 }, "d": 2 },
+     "win": { "text": { "en": "Awkward for ten minutes. Then someone tells the story of his worst LAN, and it is over.", "fr": "Gênant pendant dix minutes. Puis quelqu'un raconte sa pire LAN, et c'est fini." }, "fx": { "chemistry": 12, "leadership": 2 } },
+     "lose": { "text": { "en": "Two of them do not show up.", "fr": "Deux d'entre eux ne viennent pas." }, "fx": { "chemistry": -3 } } },
+   { "text": { "en": "Pick the bigger table", "fr": "Choisir la plus grande table" }, "fx": { "chemistry": -4 }, "result": { "en": "Now it is four against one.", "fr": "Maintenant, c'est quatre contre un." } },
+   { "text": { "en": "Eat alone with a demo on your phone", "fr": "Manger seul avec une démo sur ton téléphone" }, "fx": { "gameSense": 1, "chemistry": -2 }, "result": { "en": "Three tables.", "fr": "Trois tables." } }
+  ]
+ },
+ {
+  "id": "t-toxic-warning", "type": "team", "when": { "minTox": 45 }, "weight": 3,
+  "text": { "en": "The manager asks to see you. \"Your level is not the problem. The way you talk to people is. Two of your teammates came to me.\"", "fr": "Le manager demande à te voir. « Ton niveau n'est pas le problème. Ta façon de parler aux gens, si. Deux de tes coéquipiers sont venus me voir. »" },
+  "choices": [
+   { "text": { "en": "Listen, and apologise to the team the same day", "fr": "Écouter, et t'excuser auprès de l'équipe le jour même" }, "fx": { "tox": -15, "chemistry": 8, "confidence": -2 }, "result": { "en": "It costs you more than a lost final. It changes the room.", "fr": "Ça te coûte plus qu'une finale perdue. Ça change l'ambiance." } },
+   { "text": { "en": "\"I talk like someone who wants to win.\"", "fr": "« Je parle comme quelqu'un qui veut gagner. »" }, "fx": { "tox": 6, "chemistry": -6, "confidence": 3, "strike": 1 }, "result": { "en": "\"Then win. Because right now that is the only thing keeping your seat.\"", "fr": "« Alors gagne. Parce que là, c'est la seule chose qui garde ta chaise. »" } },
+   { "text": { "en": "Ask to work with the team's mental coach", "fr": "Demander à travailler avec le préparateur mental de l'équipe" }, "fx": { "tox": -10, "mental": 2, "energy": -4 }, "result": { "en": "Six sessions. You learn to hear how you sound.", "fr": "Six séances. Tu apprends à entendre comment tu parles." } }
+  ]
+ },
+ {
+  "id": "t-halftime-fire", "type": "team", "when": { "minTox": 30 },
+  "text": { "en": "Half-time of an official match, 4-8 down. The room is flat. You feel the words coming, and they are not polite.", "fr": "Mi-temps d'un match officiel, mené 4-8. Le vestiaire est éteint. Tu sens les mots monter, et ils ne sont pas polis." },
+  "choices": [
+   { "text": { "en": "Let it out: nobody here is playing like he wants it", "fr": "Tout lâcher : personne ici ne joue comme s'il en avait envie" }, "test": { "a": { "leadership": 2, "mental": 1 }, "d": 4 },
+     "win": { "text": { "en": "Silence, then your IGL: \"He is right.\" You win the second half 9-2.", "fr": "Un silence, puis ton IGL : « Il a raison. » Vous gagnez la deuxième mi-temps 9-2." }, "fx": { "chemistry": 5, "bonus": 2, "aura": 3, "tox": 4 } },
+     "lose": { "text": { "en": "Two players stop talking for the rest of the match.", "fr": "Deux joueurs ne disent plus un mot du reste du match." }, "fx": { "chemistry": -8, "tox": 8, "strike": 1 } } },
+   { "text": { "en": "Breathe. One calm sentence about the next round", "fr": "Respirer. Une phrase calme sur le prochain round" }, "fx": { "chemistry": 3, "mental": 1, "tox": -4 }, "result": { "en": "Nothing magical. The second half is tighter.", "fr": "Rien de magique. La deuxième mi-temps est plus serrée." } }
+  ]
+ },
+ {
+  "id": "t-captain", "type": "team", "when": { "minSeasonsInTeam": 2, "minChemistry": 60 }, "once": true,
+  "text": { "en": "After two seasons, the team votes for a captain: the one who speaks to management and to the press. Three votes out of four have your name.", "fr": "Après deux saisons, l'équipe vote pour un capitaine : celui qui parle à la direction et à la presse. Trois votes sur quatre portent ton pseudo." },
+  "choices": [
+   { "text": { "en": "Accept", "fr": "Accepter" }, "fx": { "leadership": 4, "pop": 3, "chemistry": 4, "energy": -6 }, "result": { "en": "More meetings, more interviews, more weight. It suits you.", "fr": "Plus de réunions, plus d'interviews, plus de poids. Ça te va bien." } },
+   { "text": { "en": "Decline and nominate the fourth vote", "fr": "Refuser et proposer celui qui a eu le quatrième vote" }, "fx": { "chemistry": 6, "style": -8, "mental": 1 }, "result": { "en": "He never forgets it.", "fr": "Il ne l'oubliera jamais." } }
+  ]
+ },
+ {
+  "id": "t-loss-flight", "type": "team",
+  "text": { "en": "Eleven-hour flight home after going out in the first round. You are seated between your coach and the teammate who lost the deciding 1v1.", "fr": "Onze heures de vol retour après une élimination au premier tour. Tu es assis entre ton coach et le coéquipier qui a perdu le 1v1 décisif." },
+  "choices": [
+   { "text": { "en": "Talk to the teammate about anything but the game", "fr": "Parler au coéquipier de tout sauf du jeu" }, "fx": { "chemistry": 7, "mental": 1 }, "result": { "en": "Football, films, his dog. Somewhere over the ocean he says thanks.", "fr": "Foot, films, son chien. Quelque part au-dessus de l'océan, il te dit merci." } },
+   { "text": { "en": "Review the demo with the coach, right now", "fr": "Revoir la démo avec le coach, tout de suite" }, "fx": { "gameSense": 2, "chemistry": -2, "energy": -6 }, "result": { "en": "Useful. The teammate pretends to sleep.", "fr": "Utile. Le coéquipier fait semblant de dormir." } },
+   { "text": { "en": "Headphones, hood, sleep", "fr": "Casque, capuche, dodo" }, "fx": { "energy": 8 }, "result": { "en": "You land rested. Nothing was said.", "fr": "Tu atterris reposé. Rien n'a été dit." } }
+  ]
+ },
+ {
+  "id": "t-skin-bet", "type": "team",
+  "text": { "en": "Before a scrim, a teammate proposes a bet: the bottom fragger changes his in-game name to \"bot\" for a week, on stream too.", "fr": "Avant un scrim, un coéquipier propose un pari : le dernier au tableau change son pseudo en jeu en « bot » pendant une semaine, en stream aussi." },
+  "choices": [
+   { "text": { "en": "Accept, obviously", "fr": "Accepter, évidemment" }, "test": { "a": { "aim": 2, "gameSense": 1 }, "d": 0 },
+     "win": { "text": { "en": "Your IGL is \"bot\" for seven days. Viewers love it.", "fr": "Ton IGL s'appelle « bot » pendant sept jours. Les spectateurs adorent." }, "fx": { "chemistry": 5, "confidence": 3 } },
+     "lose": { "text": { "en": "You are \"bot\" for seven days. Your chat will never let it go.", "fr": "Tu t'appelles « bot » pendant sept jours. Ton chat ne lâchera jamais l'affaire." }, "fx": { "chemistry": 6, "confidence": -2, "fans": 600 } } },
+   { "text": { "en": "Refuse. Scrims are for work", "fr": "Refuser. Un scrim, c'est du travail" }, "fx": { "chemistry": -2, "mental": 1 }, "result": { "en": "\"Okay, coach.\"", "fr": "« OK, coach. »" } }
+  ]
+ },
+ {
+  "id": "t-kick-vote", "type": "team", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "The coach gathers four of you, without the fifth. \"Management wants to replace him. I want to know what you think before I answer.\"", "fr": "Le coach réunit quatre d'entre vous, sans le cinquième. « La direction veut le remplacer. Je veux savoir ce que vous en pensez avant de répondre. »" },
+  "choices": [
+   { "text": { "en": "Defend him: he needs a different role, not the door", "fr": "Le défendre : il lui faut un autre rôle, pas la porte" }, "test": { "a": { "leadership": 2, "gameSense": 2 }, "d": 2 },
+     "win": { "text": { "en": "The role change works. He never learns how close it was. The coach does not forget who spoke.", "fr": "Le changement de rôle marche. Il ne saura jamais à quoi ça a tenu. Le coach n'oublie pas qui a parlé." }, "fx": { "chemistry": 9, "leadership": 3 } },
+     "lose": { "text": { "en": "They replace him anyway, and the results do not improve.", "fr": "Ils le remplacent quand même, et les résultats ne s'améliorent pas." }, "fx": { "chemistry": -3 } } },
+   { "text": { "en": "Say nothing either way", "fr": "Ne rien dire, ni dans un sens ni dans l'autre" }, "fx": { "chemistry": -2 }, "result": { "en": "He is gone within a week. You were in the room.", "fr": "Il part dans la semaine. Tu étais dans la pièce." } },
+   { "text": { "en": "Agree with management", "fr": "Donner raison à la direction" }, "fx": { "chemistry": -4, "gameSense": 1 }, "result": { "en": "The new player is better. The old one unfollows all four of you.", "fr": "Le nouveau est meilleur. L'ancien se désabonne de vous quatre." } }
+  ]
+ }
+]

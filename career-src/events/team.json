@@ -1,0 +1,246 @@
+[
+ {
+  "id": "c-position", "type": "career",
+  "text": { "en": "Your coach wants you to give up your favourite CT position so the team can fix a weak spot.", "fr": "Ton coach veut que tu lâches ta position CT préférée pour que l'équipe corrige un point faible." },
+  "choices": [
+   { "text": { "en": "Accept and learn the new spot seriously", "fr": "Accepter et apprendre sérieusement la nouvelle position" }, "test": { "a": { "gameSense": 2, "utility": 1 }, "d": 0 },
+     "win": { "text": { "en": "Two weeks later you hold it better than the player you replaced.", "fr": "Deux semaines plus tard, tu la tiens mieux que celui que tu as remplacé." }, "fx": { "chemistry": 6, "gameSense": 2, "utility": 2 } },
+     "lose": { "text": { "en": "You look lost for a month. The team still appreciates the effort.", "fr": "Tu as l'air perdu pendant un mois. L'équipe apprécie quand même l'effort." }, "fx": { "chemistry": 3, "confidence": -4 } } },
+   { "text": { "en": "Refuse. That spot is where you win rounds", "fr": "Refuser. C'est là que tu gagnes des rounds" }, "fx": { "chemistry": -6, "confidence": 3 }, "result": { "en": "You keep the position. The coach keeps the note.", "fr": "Tu gardes la position. Le coach garde la remarque." } }
+  ]
+ },
+ {
+  "id": "c-contract", "type": "career", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "{team} offers to extend your contract. The number on the page is the same as last year.", "fr": "{team} te propose de prolonger. Le chiffre sur la page est le même que l'an dernier." },
+  "choices": [
+   { "text": { "en": "Ask for a real raise, with your stats on the table", "fr": "Demander une vraie augmentation, stats sur la table" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 2 },
+     "win": { "text": { "en": "They fold faster than expected.", "fr": "Ils cèdent plus vite que prévu." }, "fx": { "salaryPct": 18, "confidence": 4 } },
+     "lose": { "text": { "en": "\"We will talk again after the next event.\" The room is cold.", "fr": "« On en reparle après le prochain tournoi. » L'ambiance est froide." }, "fx": { "chemistry": -3, "confidence": -2 } } },
+   { "text": { "en": "Sign as it is. You are here to win", "fr": "Signer tel quel. Tu es là pour gagner" }, "fx": { "chemistry": 4 }, "result": { "en": "Management notes your attitude.", "fr": "La direction note ton état d'esprit." } },
+   { "text": { "en": "Hire an agent to handle it", "fr": "Prendre un agent pour s'en occuper" }, "fx": { "salaryPct": 9, "energy": 4 }, "result": { "en": "He takes his cut, you take the rest and stop thinking about it.", "fr": "Il prend sa part, tu prends le reste et tu n'y penses plus." } }
+  ]
+ },
+ {
+  "id": "c-bootcamp", "type": "career",
+  "text": { "en": "Two weeks of bootcamp before the next event: twelve hours a day in the same room, same hotel, same five faces.", "fr": "Deux semaines de bootcamp avant le prochain tournoi : douze heures par jour dans la même salle, le même hôtel, les cinq mêmes têtes." },
+  "choices": [
+   { "text": { "en": "All in. First to arrive, last to leave", "fr": "À fond. Premier arrivé, dernier parti" }, "fx": { "all": 1, "chemistry": 5, "energy": -20 }, "result": { "en": "The team has never looked this sharp. You are exhausted.", "fr": "L'équipe n'a jamais été aussi affûtée. Tu es épuisé." } },
+   { "text": { "en": "Do the work, protect your sleep", "fr": "Faire le travail, protéger ton sommeil" }, "fx": { "utility": 1, "gameSense": 1, "chemistry": 2, "energy": -6 }, "result": { "en": "Steady progress. You arrive at the event fresh.", "fr": "Des progrès réguliers. Tu arrives au tournoi en forme." } },
+   { "text": { "en": "Ask for a lighter schedule", "fr": "Demander un programme allégé" }, "fx": { "chemistry": -4, "energy": 8, "strike": 1 }, "result": { "en": "You get it. Two teammates raise an eyebrow.", "fr": "Tu l'obtiens. Deux coéquipiers haussent un sourcil." } }
+  ]
+ },
+ {
+  "id": "c-badrun", "type": "career", "when": { "maxChemistry": 45 },
+  "text": { "en": "Three bad results in a row. In the practice room nobody speaks, and management \"wants to review the roster\".", "fr": "Trois mauvais résultats de suite. Dans la salle d'entraînement personne ne parle, et la direction « veut revoir l'effectif »." },
+  "choices": [
+   { "text": { "en": "Call a team talk and say what nobody says", "fr": "Provoquer une discussion d'équipe et dire ce que personne ne dit" }, "test": { "a": { "leadership": 2, "comms": 2 }, "d": 3 },
+     "win": { "text": { "en": "An hour of honesty. The next scrim feels like a different team.", "fr": "Une heure de franchise. Le scrim suivant, c'est une autre équipe." }, "fx": { "chemistry": 12, "leadership": 2, "reputation": 1 } },
+     "lose": { "text": { "en": "It turns into a blame game. You started it.", "fr": "Ça tourne au règlement de comptes. Et c'est toi qui as lancé." }, "fx": { "chemistry": -8, "confidence": -3 } } },
+   { "text": { "en": "Shut up and fix your own game", "fr": "Te taire et corriger ton propre jeu" }, "fx": { "aim": 2, "chemistry": -2 }, "result": { "en": "Your numbers go up. The silence stays.", "fr": "Tes stats montent. Le silence reste." } },
+   { "text": { "en": "Tell management you are not the problem", "fr": "Dire à la direction que le problème, ce n'est pas toi" }, "fx": { "chemistry": -10, "confidence": 2, "tox": 5, "strike": 1 }, "result": { "en": "It leaks to the team within a day.", "fr": "Ça revient aux oreilles de l'équipe dans la journée." } }
+  ]
+ },
+ {
+  "id": "c-rookie", "type": "career", "when": { "minSeasonsInTeam": 1, "minAge": 21 },
+  "text": { "en": "A 17-year-old from the academy joins practice. He is fast, loud and makes the same mistakes you made at his age.", "fr": "Un joueur de 17 ans de l'académie rejoint l'entraînement. Il est rapide, bruyant, et fait les mêmes erreurs que toi à son âge." },
+  "choices": [
+   { "text": { "en": "Take him under your wing", "fr": "Le prendre sous ton aile" }, "fx": { "leadership": 3, "chemistry": 4, "energy": -5 }, "result": { "en": "Teaching the game makes you understand it better.", "fr": "Expliquer le jeu te le fait mieux comprendre." } },
+   { "text": { "en": "Let him figure it out. Nobody helped you", "fr": "Le laisser se débrouiller. Personne ne t'a aidé" }, "fx": { "aim": 1 }, "result": { "en": "He figures it out. Slowly.", "fr": "Il se débrouille. Lentement." } }
+  ]
+ },
+ {
+  "id": "c-interview", "type": "career",
+  "text": { "en": "You just lost a series you should have won. A microphone appears: \"What went wrong today?\"", "fr": "Tu viens de perdre une série que vous deviez gagner. Un micro apparaît : « Qu'est-ce qui n'a pas marché aujourd'hui ? »" },
+  "choices": [
+   { "text": { "en": "\"I missed shots I have to hit. That one is on me.\"", "fr": "« J'ai raté des balles que je dois mettre. Celle-là est pour moi. »" }, "fx": { "pop": 2, "aura": 2, "chemistry": 4, "confidence": -2 }, "result": { "en": "The clip gets shared with one word: \"Professional.\"", "fr": "L'extrait est partagé avec un seul mot : « Professionnel. »" } },
+   { "text": { "en": "\"The veto was lost before we sat down.\"", "fr": "« Le veto était perdu avant même de s'asseoir. »" }, "fx": { "pop": 1, "chemistry": -7, "tox": 4, "strike": 1 }, "result": { "en": "Your coach reads the interview on the bus.", "fr": "Ton coach lit l'interview dans le bus." } },
+   { "text": { "en": "Short answers, walk away", "fr": "Réponses courtes, et tu t'en vas" }, "fx": { "mental": 1 }, "result": { "en": "Nothing to quote. Nothing to regret.", "fr": "Rien à citer. Rien à regretter." } }
+  ]
+ },
+ {
+  "id": "c-scrim", "type": "career",
+  "text": { "en": "{rival} offers a week of scrims. Their star, {star}, is in the form of his life.", "fr": "{rival} propose une semaine de scrims. Leur star, {star}, est dans la forme de sa vie." },
+  "choices": [
+   { "text": { "en": "Play your real strats and learn from the beating", "fr": "Jouer vos vraies strats et apprendre de la raclée" }, "fx": { "gameSense": 2, "reflexes": 1, "confidence": -2 }, "result": { "en": "You lose most maps and learn more than in a month of wins.", "fr": "Vous perdez la plupart des maps et vous apprenez plus qu'en un mois de victoires." } },
+   { "text": { "en": "Hide everything, play defaults", "fr": "Tout cacher, jouer des defaults" }, "fx": { "utility": 1, "confidence": 2 }, "result": { "en": "Nobody shows anything. It is basically a deathmatch with smokes.", "fr": "Personne ne montre rien. C'est en gros un deathmatch avec des smokes." } }
+  ]
+ },
+ {
+  "id": "c-igl-doubt", "type": "career", "when": { "role": ["igl"] },
+  "text": { "en": "9-12 down. In the timeout, a teammate cuts you off: \"Your calls are not working. Let us just play loose.\"", "fr": "9-12. Au temps mort, un coéquipier te coupe : « Tes calls ne marchent pas. Laisse-nous jouer libre. »" },
+  "choices": [
+   { "text": { "en": "Hold your ground and call the round you prepared", "fr": "Tenir bon et appeler le round que tu avais préparé" }, "test": { "a": { "leadership": 3, "gameSense": 2 }, "d": 3 },
+     "win": { "text": { "en": "The call works. So does the next one. Nobody questions you again.", "fr": "Le call passe. Le suivant aussi. Plus personne ne te remet en cause." }, "fx": { "leadership": 3, "chemistry": 6, "confidence": 5 } },
+     "lose": { "text": { "en": "The round fails. You can hear what they are thinking.", "fr": "Le round échoue. Tu entends ce qu'ils pensent." }, "fx": { "chemistry": -6, "confidence": -5 } } },
+   { "text": { "en": "Let them play loose for a half", "fr": "Les laisser jouer libre une mi-temps" }, "fx": { "chemistry": 3, "leadership": -1 }, "result": { "en": "It half works. Your authority takes the hit.", "fr": "Ça marche à moitié. C'est ton autorité qui encaisse." } }
+  ]
+ },
+ {
+  "id": "c-awp-eco", "type": "career", "when": { "role": ["awper"] },
+  "text": { "en": "The economy is broken after two lost force-buys. There is money for rifles for everyone, or for your AWP and two pistols.", "fr": "L'économie est cassée après deux force-buys perdus. Il y a de quoi payer des fusils à tout le monde, ou ton AWP et deux pistolets." },
+  "choices": [
+   { "text": { "en": "Insist on the AWP. That is your job", "fr": "Insister pour l'AWP. C'est ton boulot" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "Opening pick, then a second one. The gamble pays.", "fr": "Un pick d'entrée, puis un deuxième. Le pari paie." }, "fx": { "confidence": 6, "aim": 1 } },
+     "lose": { "text": { "en": "You miss the first shot and the AWP ends up in enemy hands.", "fr": "Tu rates la première balle et l'AWP finit entre les mains adverses." }, "fx": { "chemistry": -6, "confidence": -5 } } },
+   { "text": { "en": "Take a rifle so everyone can buy", "fr": "Prendre un fusil pour que tout le monde achète" }, "fx": { "chemistry": 5, "utility": 1 }, "result": { "en": "A full buy wins the round. The AWP can wait.", "fr": "Un achat complet gagne le round. L'AWP peut attendre." } }
+  ]
+ },
+ {
+  "id": "c-entry-dry", "type": "career", "when": { "role": ["entry"] },
+  "text": { "en": "You have died first in four T rounds in a row, without a trade. A teammate offers to take the entry for the rest of the half.", "fr": "Tu es mort en premier sur quatre rounds T de suite, sans être tradé. Un coéquipier propose de prendre l'entrée pour le reste de la mi-temps." },
+  "choices": [
+   { "text": { "en": "Keep the entry and ask for a flash this time", "fr": "Garder l'entrée et demander une flash cette fois" }, "test": { "a": { "reflexes": 2, "aim": 2, "comms": 1 }, "d": 2 },
+     "win": { "text": { "en": "The flash pops, you take two. The site opens.", "fr": "La flash claque, tu en prends deux. Le site s'ouvre." }, "fx": { "confidence": 6, "comms": 2, "chemistry": 3 } },
+     "lose": { "text": { "en": "Dead first again.", "fr": "Encore mort en premier." }, "fx": { "confidence": -6 } } },
+   { "text": { "en": "Swap and play the trade behind him", "fr": "Échanger et jouer le trade derrière lui" }, "fx": { "gameSense": 2, "chemistry": 3 }, "result": { "en": "From second position you finally see why it was not working.", "fr": "En deuxième position, tu vois enfin pourquoi ça ne passait pas." } }
+  ]
+ },
+ {
+  "id": "c-lurk-patience", "type": "career", "when": { "role": ["lurker"] },
+  "text": { "en": "Your IGL wants you closer to the pack: \"We need a fifth gun on executes, not a ghost on the other side of the map.\"", "fr": "Ton IGL te veut plus près du groupe : « Il nous faut un cinquième fusil sur les execs, pas un fantôme à l'autre bout de la map. »" },
+  "choices": [
+   { "text": { "en": "Show him your timings on the demo", "fr": "Lui montrer tes timings sur la démo" }, "test": { "a": { "gameSense": 3, "comms": 1 }, "d": 2 },
+     "win": { "text": { "en": "\"Fine. Keep the lurk, but call earlier.\" You both win.", "fr": "« OK. Garde le lurk, mais annonce plus tôt. » Vous y gagnez tous les deux." }, "fx": { "chemistry": 5, "gameSense": 2, "comms": 1 } },
+     "lose": { "text": { "en": "The demo shows three rounds where you arrived ten seconds late.", "fr": "La démo montre trois rounds où tu arrives dix secondes trop tard." }, "fx": { "chemistry": -3, "confidence": -3 } } },
+   { "text": { "en": "Play with the pack for now", "fr": "Jouer avec le groupe pour l'instant" }, "fx": { "utility": 2, "chemistry": 3, "clutch": -1 }, "result": { "en": "The executes are cleaner. You miss the flanks.", "fr": "Les execs sont plus propres. Les contournements te manquent." } }
+  ]
+ },
+ {
+  "id": "c-support-credit", "type": "career", "when": { "role": ["support"] },
+  "text": { "en": "After a big win, every highlight is about your star player. Nobody mentions the four flashes that set him up.", "fr": "Après une grosse victoire, tous les highlights parlent de votre star. Personne ne mentionne les quatre flashs qui l'ont lancé." },
+  "choices": [
+   { "text": { "en": "That is the job. Keep feeding him", "fr": "C'est le rôle. Continuer à le servir" }, "fx": { "chemistry": 6, "utility": 2, "mental": 1 }, "result": { "en": "In the team house, everyone knows who wins those rounds.", "fr": "Dans la gaming house, tout le monde sait qui gagne ces rounds." } },
+   { "text": { "en": "Ask for a few rounds built around you", "fr": "Demander quelques rounds construits autour de toi" }, "test": { "a": { "aim": 2, "comms": 1 }, "d": 3 },
+     "win": { "text": { "en": "You get them, and you deliver. Your rating jumps.", "fr": "Tu les obtiens, et tu assures. Ton rating bondit." }, "fx": { "confidence": 6, "fans": 600, "aim": 1 } },
+     "lose": { "text": { "en": "The rounds go badly. The request is remembered.", "fr": "Les rounds se passent mal. La demande reste dans les mémoires." }, "fx": { "chemistry": -4, "confidence": -4 } } }
+  ]
+ },
+ {
+  "id": "l-stream", "type": "life",
+  "text": { "en": "Fans keep asking when you will stream. You have two free evenings a week.", "fr": "Les fans demandent sans arrêt quand tu vas streamer. Tu as deux soirées libres par semaine." },
+  "choices": [
+   { "text": { "en": "Stream both evenings", "fr": "Streamer les deux soirs" }, "fx": { "fansPct": 18, "pop": 3, "style": 8, "money": 1500, "energy": -12 }, "result": { "en": "The channel grows fast. Your sleep does not.", "fr": "La chaîne grossit vite. Ton sommeil, non." } },
+   { "text": { "en": "One relaxed stream a week", "fr": "Un stream tranquille par semaine" }, "fx": { "fansPct": 8, "money": 500, "energy": -4 }, "result": { "en": "A small, loyal chat.", "fr": "Un petit chat fidèle." } },
+   { "text": { "en": "No stream. Evenings are for recovery", "fr": "Pas de stream. Les soirées servent à récupérer" }, "fx": { "energy": 8, "mental": 1, "style": -6 }, "result": { "en": "You are the freshest player at practice.", "fr": "Tu es le plus frais à l'entraînement." } }
+  ]
+ },
+ {
+  "id": "l-bait", "type": "life",
+  "text": { "en": "After a bad game, an account with 200k followers posts your worst round with the caption \"Paid actor?\".", "fr": "Après un mauvais match, un compte à 200 000 abonnés poste ton pire round avec la légende « Acteur payé ? »." },
+  "choices": [
+   { "text": { "en": "Ignore it. Phone face down", "fr": "Ignorer. Téléphone retourné" }, "fx": { "mental": 2 }, "result": { "en": "By tomorrow they have a new target.", "fr": "Demain ils auront une autre cible." } },
+   { "text": { "en": "Reply with a joke at your own expense", "fr": "Répondre par une blague sur toi-même" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "Your reply gets more likes than the post.", "fr": "Ta réponse fait plus de likes que le post." }, "fx": { "fansPct": 12, "reputation": 2 } },
+     "lose": { "text": { "en": "It reads as salty. Screenshots everywhere.", "fr": "Ça passe pour de la rage. Des captures partout." }, "fx": { "reputation": -3, "confidence": -3 } } },
+   { "text": { "en": "Fire back in the replies", "fr": "Répliquer sèchement dans les réponses" }, "fx": { "pop": 2, "aura": -2, "fansPct": 5, "mental": -2, "tox": 6, "style": 6 }, "result": { "en": "It becomes the story of the week. Your team's manager calls.", "fr": "Ça devient l'histoire de la semaine. Le manager de l'équipe t'appelle." } }
+  ]
+ },
+ {
+  "id": "l-jetlag", "type": "life",
+  "text": { "en": "Fourteen hours of flight, seven time zones, first match in 36 hours.", "fr": "Quatorze heures de vol, sept fuseaux horaires, premier match dans 36 heures." },
+  "choices": [
+   { "text": { "en": "Follow the sleep plan from the team's performance coach", "fr": "Suivre le plan de sommeil du préparateur de l'équipe" }, "fx": { "energy": 10, "mental": 1 }, "result": { "en": "Boring, effective.", "fr": "Ennuyeux, efficace." } },
+   { "text": { "en": "Cannot sleep anyway: deathmatch until sunrise", "fr": "Impossible de dormir de toute façon : deathmatch jusqu'au lever du soleil" }, "fx": { "aim": 2, "energy": -15 }, "result": { "en": "Your aim is warm. Your brain is not.", "fr": "Ton aim est chaud. Ton cerveau, non." } }
+  ]
+ },
+ {
+  "id": "l-gym", "type": "life", "once": true,
+  "text": { "en": "The team hires a physical trainer. First session is at 8 a.m., optional.", "fr": "L'équipe engage un préparateur physique. Première séance à 8 h, facultative." },
+  "choices": [
+   { "text": { "en": "Go, and keep going", "fr": "Y aller, et continuer" }, "fx": { "energy": 12, "mental": 2, "reflexes": 1 }, "result": { "en": "By the third week, long best-of-threes stop feeling long.", "fr": "À la troisième semaine, les longs best-of-three ne paraissent plus longs." } },
+   { "text": { "en": "Optional means optional", "fr": "Facultatif, ça veut dire facultatif" }, "fx": { "energy": 2 }, "result": { "en": "You sleep in.", "fr": "Tu fais la grasse matinée." } }
+  ]
+ },
+ {
+  "id": "l-family", "type": "life",
+  "text": { "en": "Your sister's wedding is on the same weekend as an online qualifier. The team can play with a stand-in.", "fr": "Le mariage de ta sœur tombe le même week-end qu'un qualifier en ligne. L'équipe peut jouer avec un remplaçant." },
+  "choices": [
+   { "text": { "en": "Go to the wedding", "fr": "Aller au mariage" }, "fx": { "mental": 3, "energy": 8, "chemistry": -4 }, "result": { "en": "The team scrapes through without you. You do not regret it.", "fr": "L'équipe passe de justesse sans toi. Tu ne regrettes pas." } },
+   { "text": { "en": "Play the qualifier", "fr": "Jouer le qualifier" }, "fx": { "chemistry": 5, "mental": -3 }, "result": { "en": "You qualify. The family group chat is very quiet.", "fr": "Vous vous qualifiez. La conversation de famille est très silencieuse." } }
+  ]
+ },
+ {
+  "id": "l-sponsor", "type": "life", "when": { "minPop": 20 },
+  "text": { "en": "A peripherals brand offers you a personal deal: your name on a mouse, four content days a year.", "fr": "Une marque de périphériques te propose un contrat personnel : ton pseudo sur une souris, quatre jours de tournage par an." },
+  "choices": [
+   { "text": { "en": "Sign it", "fr": "Signer" }, "fx": { "money": 25000, "fansPct": 6, "energy": -6 }, "result": { "en": "The mouse sells. The shooting days are long.", "fr": "La souris se vend. Les journées de tournage sont longues." } },
+   { "text": { "en": "Negotiate: more money, fewer days", "fr": "Négocier : plus d'argent, moins de jours" }, "test": { "a": { "comms": 2, "leadership": 1 }, "d": 2 },
+     "win": { "text": { "en": "Double the fee, two days. Done.", "fr": "Le double, deux jours. Affaire conclue." }, "fx": { "money": 50000, "fansPct": 6 } },
+     "lose": { "text": { "en": "They sign someone else.", "fr": "Ils signent quelqu'un d'autre." }, "fx": { "confidence": -2 } } },
+   { "text": { "en": "Decline. No distractions", "fr": "Refuser. Pas de distraction" }, "fx": { "mental": 1 }, "result": { "en": "Your schedule stays empty. So does your inbox.", "fr": "Ton agenda reste vide. Ta boîte mail aussi." } }
+  ]
+ },
+ {
+  "id": "l-burnout", "type": "life", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "For the first time, you launch the game and feel nothing. The season is only half done.", "fr": "Pour la première fois, tu lances le jeu et tu ne ressens rien. La saison n'est qu'à moitié finie." },
+  "choices": [
+   { "text": { "en": "Tell the coach and take a week off", "fr": "Le dire au coach et prendre une semaine" }, "fx": { "energy": 22, "mental": 2, "chemistry": -2 }, "result": { "en": "A week of nothing. The itch comes back.", "fr": "Une semaine de rien. L'envie revient." } },
+   { "text": { "en": "Push through. Everyone is tired", "fr": "Serrer les dents. Tout le monde est fatigué" }, "test": { "a": { "mental": 3 }, "d": 4 },
+     "win": { "text": { "en": "You find a second wind.", "fr": "Tu trouves un second souffle." }, "fx": { "mental": 3, "confidence": 3 } },
+     "lose": { "text": { "en": "Your form collapses for a month.", "fr": "Ta forme s'effondre pendant un mois." }, "fx": { "energy": -15, "confidence": -6, "aim": -1 } } }
+  ]
+ },
+ {
+  "id": "l-wrist", "type": "life", "when": { "minAge": 20 },
+  "text": { "en": "A dull pain in your wrist after every long session. It has been three weeks.", "fr": "Une douleur sourde au poignet après chaque longue session. Ça fait trois semaines." },
+  "choices": [
+   { "text": { "en": "See a physiotherapist and follow the exercises", "fr": "Voir un kiné et suivre les exercices" }, "fx": { "money": -1500, "energy": 6, "mental": 1 }, "result": { "en": "Ten minutes of stretching a day. The pain fades.", "fr": "Dix minutes d'étirements par jour. La douleur s'estompe." } },
+   { "text": { "en": "Play through it", "fr": "Jouer malgré tout" }, "test": { "a": { "mental": 2 }, "d": 6 },
+     "win": { "text": { "en": "It goes away on its own. This time.", "fr": "Ça passe tout seul. Cette fois." }, "fx": { "mental": 1 } },
+     "lose": { "text": { "en": "It gets worse. Two weeks without touching a mouse.", "fr": "Ça empire. Deux semaines sans toucher une souris." }, "fx": { "aim": -3, "reflexes": -2, "confidence": -3 } } }
+  ]
+ },
+ {
+  "id": "l-oldclip", "type": "life", "when": { "minPop": 25 }, "once": true,
+  "text": { "en": "Someone digs up a voice clip of you at 16, raging at a teammate in a FACEIT game. It is spreading.", "fr": "Quelqu'un ressort un extrait vocal de toi à 16 ans, en pleine rage contre un coéquipier sur FACEIT. Ça tourne." },
+  "choices": [
+   { "text": { "en": "Short apology: \"I was a kid. I am not proud of it.\"", "fr": "Courtes excuses : « J'étais un gamin. Je n'en suis pas fier. »" }, "fx": { "reputation": 1, "mental": 1 }, "result": { "en": "The story dies in a day.", "fr": "L'histoire meurt en un jour." } },
+   { "text": { "en": "Say nothing", "fr": "Ne rien dire" }, "fx": { "reputation": -3 }, "result": { "en": "It lingers for a week, then fades.", "fr": "Ça traîne une semaine, puis ça s'éteint." } },
+   { "text": { "en": "Turn it into a joke", "fr": "En faire une blague" }, "test": { "a": { "comms": 2 }, "d": 4 },
+     "win": { "text": { "en": "It becomes a meme, and you own it.", "fr": "Ça devient un mème, et il est à toi." }, "fx": { "fansPct": 10, "reputation": 2 } },
+     "lose": { "text": { "en": "People read it as not taking it seriously.", "fr": "Les gens y voient quelqu'un qui ne prend pas ça au sérieux." }, "fx": { "reputation": -5 } } }
+  ]
+ },
+ {
+  "id": "g-update", "type": "game",
+  "text": { "en": "A CS2 update lands the week before an event: smoke timings change and half of your team's lineups no longer work.", "fr": "Une mise à jour de CS2 tombe une semaine avant un tournoi : les timings des smokes changent et la moitié des lineups de l'équipe ne marchent plus." },
+  "choices": [
+   { "text": { "en": "Spend two nights on an empty server relearning everything", "fr": "Passer deux nuits sur un serveur vide à tout réapprendre" }, "fx": { "utility": 3, "energy": -10, "chemistry": 2 }, "result": { "en": "You post the new lineups in the team chat before breakfast.", "fr": "Tu postes les nouveaux lineups dans le chat de l'équipe avant le petit-déjeuner." } },
+   { "text": { "en": "Wait for the coach to send the fixes", "fr": "Attendre que le coach envoie les corrections" }, "fx": { "energy": 3 }, "result": { "en": "They arrive the day before the match.", "fr": "Elles arrivent la veille du match." } }
+  ]
+ },
+ {
+  "id": "g-mappool", "type": "game",
+  "text": { "en": "Valve rotates the map pool. Your team's best map is gone, and nobody has ever played the new one seriously.", "fr": "Valve fait tourner le pool de maps. La meilleure map de l'équipe disparaît, et personne n'a jamais joué sérieusement la nouvelle." },
+  "choices": [
+   { "text": { "en": "Volunteer to learn it first and brief the team", "fr": "Te porter volontaire pour l'apprendre en premier et briefer l'équipe" }, "fx": { "gameSense": 3, "leadership": 1, "energy": -8, "chemistry": 3 }, "result": { "en": "For a month, you are the team's expert on it.", "fr": "Pendant un mois, c'est toi l'expert de l'équipe dessus." } },
+   { "text": { "en": "Ban it in every veto and hope", "fr": "La bannir à chaque veto et espérer" }, "fx": { "confidence": -1 }, "result": { "en": "It works until somebody notices.", "fr": "Ça marche jusqu'à ce que quelqu'un le remarque." } }
+  ]
+ },
+ {
+  "id": "g-newcoach", "type": "game", "when": { "minSeasonsInTeam": 1 },
+  "text": { "en": "A new coach arrives with a strict system: fixed roles, fixed positions, a written playbook.", "fr": "Un nouveau coach arrive avec un système strict : rôles fixes, positions fixes, playbook écrit." },
+  "choices": [
+   { "text": { "en": "Buy in completely", "fr": "Adhérer complètement" }, "fx": { "chemistry": 6, "utility": 2, "gameSense": 1 }, "result": { "en": "The team finally looks like one team.", "fr": "L'équipe ressemble enfin à une équipe." } },
+   { "text": { "en": "Challenge the parts that hurt your game", "fr": "Contester ce qui abîme ton jeu" }, "test": { "a": { "leadership": 2, "comms": 2 }, "d": 3 },
+     "win": { "text": { "en": "He adapts two setups for you. Respect earned.", "fr": "Il adapte deux setups pour toi. Respect gagné." }, "fx": { "chemistry": 4, "leadership": 2, "confidence": 3 } },
+     "lose": { "text": { "en": "\"My system or the bench.\"", "fr": "« Mon système ou le banc. »" }, "fx": { "chemistry": -7, "confidence": -3, "strike": 1 } } }
+  ]
+ },
+ {
+  "id": "g-style", "type": "game",
+  "text": { "en": "Team meeting about identity: play fast and take map control early, or slow defaults and late executes?", "fr": "Réunion d'équipe sur l'identité de jeu : jouer vite et prendre le contrôle de la map tôt, ou des defaults lents et des execs tardifs ?" },
+  "choices": [
+   { "text": { "en": "Vote fast: duels, trades, pressure", "fr": "Voter rapide : duels, trades, pression" }, "fx": { "reflexes": 2, "aim": 1, "confidence": 2 }, "result": { "en": "The team plays on instinct.", "fr": "L'équipe joue à l'instinct." } },
+   { "text": { "en": "Vote slow: information, utility, structure", "fr": "Voter lent : information, grenades, structure" }, "fx": { "gameSense": 2, "utility": 1, "chemistry": 2 }, "result": { "en": "Fewer highlights, more rounds.", "fr": "Moins de highlights, plus de rounds." } }
+  ]
+ },
+ {
+  "id": "g-antistrat", "type": "game",
+  "text": { "en": "The analyst sends a 40-page document on {rival} the night before you play them.", "fr": "L'analyste envoie un document de 40 pages sur {rival} la veille du match contre eux." },
+  "choices": [
+   { "text": { "en": "Read all of it", "fr": "Tout lire" }, "fx": { "gameSense": 2, "energy": -7, "bonus": 1 }, "result": { "en": "You know their pistol rounds better than they do.", "fr": "Tu connais leurs pistol rounds mieux qu'eux." } },
+   { "text": { "en": "Read your positions only, then sleep", "fr": "Lire seulement tes positions, puis dormir" }, "fx": { "gameSense": 1, "energy": 4 }, "result": { "en": "Enough to not be surprised.", "fr": "Assez pour ne pas être surpris." } }
+  ]
+ }
+]

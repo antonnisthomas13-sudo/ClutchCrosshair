@@ -117,14 +117,20 @@ report("Images sans texte alternatif (alt)", all.filter(function (p) { return p.
 report("Images sans dimensions (la page saute au chargement)", all.filter(function (p) { return p.noSize; }).map(function (p) { return p.file + " (" + p.noSize + ")"; }));
 
 // hreflang : les 5 langues + x-default, chaque page se cite elle-même, et les autres langues la citent en retour
-const wanted = LANGS.concat("x-default").sort().join(",");
+// Une page peut n'exister que dans certaines langues (le jeu /career : anglais et français) : on attend alors
+// seulement ces langues-là, plus x-default.
+function wantedFor(p) {
+    const rel = p.lang === "en" ? p.file : p.file.slice(p.lang.length + 1);
+    const langs = LANGS.filter(function (l) { return pages[l === "en" ? rel : l + "/" + rel]; });
+    return langs.concat("x-default").sort().join(",");
+}
 function fileOf(url) {
     const rel = url.replace(SITE + "/", "");
     return [rel + ".html", rel + "index.html", rel === "" ? "index.html" : ""].find(function (f) { return f && pages[f]; });
 }
 const hreflang = [];
 indexable.forEach(function (p) {
-    if (Object.keys(p.hreflang).sort().join(",") !== wanted) {
+    if (Object.keys(p.hreflang).sort().join(",") !== wantedFor(p)) {
         hreflang.push(p.file + " : langues " + Object.keys(p.hreflang).join(","));
         return;
     }

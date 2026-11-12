@@ -1,0 +1,4010 @@
+{
+ "about": "Joueurs des équipes du jeu. Effectifs : classement de Valve. Rôle et pays : Liquipedia (CC-BY-SA 3.0). Fabriqué par career-src/update-data.js : ne pas modifier à la main.",
+ "updated": "02/11/2026",
+ "pros": [
+  {
+   "name": "PR",
+   "team": "mouz",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "Spinx",
+   "team": "mouz",
+   "role": "lurker",
+   "country": "IL"
+  },
+  {
+   "name": "torzsi",
+   "team": "mouz",
+   "role": "awper",
+   "country": "HU"
+  },
+  {
+   "name": "xelex",
+   "team": "mouz",
+   "role": "rifler",
+   "country": "HU"
+  },
+  {
+   "name": "xertioN",
+   "team": "mouz",
+   "role": "igl",
+   "country": "IL"
+  },
+  {
+   "name": "flameZ",
+   "team": "vitality",
+   "role": "entry",
+   "country": "IL"
+  },
+  {
+   "name": "jL",
+   "team": "vitality"
+  },
+  {
+   "name": "mezii",
+   "team": "vitality",
+   "role": "rifler",
+   "country": "GB"
+  },
+  {
+   "name": "ropz",
+   "team": "vitality",
+   "role": "lurker",
+   "country": "EE"
+  },
+  {
+   "name": "ZywOo",
+   "team": "vitality",
+   "role": "awper",
+   "country": "FR"
+  },
+  {
+   "name": "FalleN",
+   "team": "furia",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "KSCERATO",
+   "team": "furia",
+   "role": "lurker",
+   "country": "BR"
+  },
+  {
+   "name": "molodoy",
+   "team": "furia",
+   "role": "awper",
+   "country": "KZ"
+  },
+  {
+   "name": "YEKINDAR",
+   "team": "furia",
+   "role": "entry",
+   "country": "LV"
+  },
+  {
+   "name": "yuurih",
+   "team": "furia",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "Jimpphat",
+   "team": "aurora",
+   "role": "support",
+   "country": "FI"
+  },
+  {
+   "name": "kyxsan",
+   "team": "aurora",
+   "role": "igl",
+   "country": "MK"
+  },
+  {
+   "name": "Wicadia",
+   "team": "aurora",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "woxic",
+   "team": "aurora",
+   "role": "awper",
+   "country": "TR"
+  },
+  {
+   "name": "XANTARES",
+   "team": "aurora",
+   "country": "TR"
+  },
+  {
+   "name": "donk",
+   "team": "spirit",
+   "role": "entry",
+   "country": "RU"
+  },
+  {
+   "name": "magixx",
+   "team": "spirit",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "sh1ro",
+   "team": "spirit",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "tN1R",
+   "team": "spirit",
+   "role": "rifler",
+   "country": "BY"
+  },
+  {
+   "name": "zont1x",
+   "team": "spirit",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "Boombl4",
+   "team": "betboom",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "d1Ledez",
+   "team": "betboom",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "Magnojez",
+   "team": "betboom",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "S1ren",
+   "team": "betboom",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "zorte",
+   "team": "betboom",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "karrigan",
+   "team": "falcons",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "kyousuke",
+   "team": "falcons",
+   "role": "entry",
+   "country": "RU"
+  },
+  {
+   "name": "m0NESY",
+   "team": "falcons",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "NiKo",
+   "team": "falcons",
+   "role": "entry",
+   "country": "BA"
+  },
+  {
+   "name": "TeSeS",
+   "team": "falcons",
+   "role": "entry",
+   "country": "DK"
+  },
+  {
+   "name": "cmtry",
+   "team": "fut"
+  },
+  {
+   "name": "dem0n",
+   "team": "fut",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "dziugss",
+   "team": "fut",
+   "role": "rifler",
+   "country": "LT"
+  },
+  {
+   "name": "Krabeni",
+   "team": "fut",
+   "role": "igl",
+   "country": "XK"
+  },
+  {
+   "name": "xfl0ud",
+   "team": "fut",
+   "role": "support",
+   "country": "TR"
+  },
+  {
+   "name": "arT",
+   "team": "legacy",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "dumau",
+   "team": "legacy",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "latto",
+   "team": "legacy",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "n1ssim",
+   "team": "legacy",
+   "country": "BR"
+  },
+  {
+   "name": "try",
+   "team": "legacy",
+   "role": "awper",
+   "country": "AR"
+  },
+  {
+   "name": "KaiR0N-",
+   "team": "nemiga",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "khaN",
+   "team": "nemiga",
+   "role": "awper",
+   "country": "KZ"
+  },
+  {
+   "name": "robo",
+   "team": "nemiga",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "syph0",
+   "team": "nemiga",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "Xant3r",
+   "team": "nemiga",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "HeavyGod",
+   "team": "g2",
+   "role": "rifler",
+   "country": "IL"
+  },
+  {
+   "name": "huNter-",
+   "team": "g2",
+   "role": "igl",
+   "country": "BA"
+  },
+  {
+   "name": "MATYS",
+   "team": "g2"
+  },
+  {
+   "name": "NertZ",
+   "team": "g2",
+   "role": "rifler",
+   "country": "IL"
+  },
+  {
+   "name": "r1nkle",
+   "team": "g2",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "ArtFr0st",
+   "team": "1win",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "Ax1Le",
+   "team": "1win",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "BELCHONOKK",
+   "team": "1win",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "fame",
+   "team": "1win",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "nafany",
+   "team": "1win",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "Aleksib",
+   "team": "natus-vincere",
+   "role": "igl",
+   "country": "FI"
+  },
+  {
+   "name": "b1t",
+   "team": "natus-vincere",
+   "role": "support",
+   "country": "UA"
+  },
+  {
+   "name": "iM",
+   "team": "natus-vincere",
+   "role": "entry",
+   "country": "RO"
+  },
+  {
+   "name": "makazze",
+   "team": "natus-vincere",
+   "role": "rifler",
+   "country": "XK"
+  },
+  {
+   "name": "w0nderful",
+   "team": "natus-vincere",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "jabbi",
+   "team": "astralis",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "phzy",
+   "team": "astralis",
+   "role": "awper",
+   "country": "SE"
+  },
+  {
+   "name": "ryu",
+   "team": "astralis"
+  },
+  {
+   "name": "siuhy",
+   "team": "astralis",
+   "role": "igl",
+   "country": "PL"
+  },
+  {
+   "name": "Staehr",
+   "team": "astralis",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "adamb",
+   "team": "ninjas-in-pyjamas",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "Krimbo",
+   "team": "ninjas-in-pyjamas",
+   "role": "lurker",
+   "country": "DE"
+  },
+  {
+   "name": "sjuush",
+   "team": "ninjas-in-pyjamas",
+   "role": "support",
+   "country": "DK"
+  },
+  {
+   "name": "stavn",
+   "team": "ninjas-in-pyjamas",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "xKacpersky",
+   "team": "ninjas-in-pyjamas",
+   "role": "rifler",
+   "country": "PL"
+  },
+  {
+   "name": "FL1T",
+   "team": "parivision",
+   "role": "lurker",
+   "country": "RU"
+  },
+  {
+   "name": "HObbit",
+   "team": "parivision",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "Jame",
+   "team": "parivision",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "xiELO",
+   "team": "parivision",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "zweih",
+   "team": "parivision",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "910",
+   "team": "the-mongolz",
+   "role": "awper",
+   "country": "MN"
+  },
+  {
+   "name": "bLitz",
+   "team": "the-mongolz",
+   "role": "igl",
+   "country": "MN"
+  },
+  {
+   "name": "cobrazera",
+   "team": "the-mongolz",
+   "country": "MN"
+  },
+  {
+   "name": "nin9",
+   "team": "the-mongolz",
+   "role": "igl",
+   "country": "MN"
+  },
+  {
+   "name": "Techno",
+   "team": "the-mongolz",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "Brollan",
+   "team": "heroic",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "Chr1zN",
+   "team": "heroic",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "MartinezSa",
+   "team": "heroic",
+   "role": "awper",
+   "country": "ES"
+  },
+  {
+   "name": "nilo",
+   "team": "heroic",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "susp",
+   "team": "heroic",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "insani",
+   "team": "mibr",
+   "role": "support",
+   "country": "BR"
+  },
+  {
+   "name": "LNZ",
+   "team": "mibr",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "nqz",
+   "team": "mibr",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "tomaszin",
+   "team": "mibr",
+   "country": "AR"
+  },
+  {
+   "name": "venomzera",
+   "team": "mibr",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "frozen",
+   "team": "faze",
+   "role": "rifler",
+   "country": "SK"
+  },
+  {
+   "name": "JBOEN",
+   "team": "faze",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "jcobbb",
+   "team": "faze",
+   "role": "rifler",
+   "country": "PL"
+  },
+  {
+   "name": "Neityu",
+   "team": "faze",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "Twistzz",
+   "team": "faze",
+   "role": "igl",
+   "country": "CA"
+  },
+  {
+   "name": "EliGE",
+   "team": "liquid",
+   "country": "US"
+  },
+  {
+   "name": "Jorko",
+   "team": "liquid",
+   "role": "awper",
+   "country": "BG"
+  },
+  {
+   "name": "JT",
+   "team": "liquid",
+   "role": "igl",
+   "country": "ZA"
+  },
+  {
+   "name": "malbsMd",
+   "team": "liquid",
+   "role": "entry",
+   "country": "GT"
+  },
+  {
+   "name": "NAF",
+   "team": "liquid",
+   "role": "rifler",
+   "country": "CA"
+  },
+  {
+   "name": "jottAAA",
+   "team": "eternal-fire",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "Kvem",
+   "team": "eternal-fire",
+   "country": "UA"
+  },
+  {
+   "name": "MisteM",
+   "team": "eternal-fire",
+   "role": "igl",
+   "country": "ZA"
+  },
+  {
+   "name": "regali",
+   "team": "eternal-fire",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "soulfly",
+   "team": "eternal-fire",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "device",
+   "team": "100-thieves",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "Gizmy",
+   "team": "100-thieves",
+   "role": "igl",
+   "country": "GB"
+  },
+  {
+   "name": "poiii",
+   "team": "100-thieves",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "rain",
+   "team": "100-thieves",
+   "role": "igl",
+   "country": "NO"
+  },
+  {
+   "name": "sirah",
+   "team": "100-thieves",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "dgt",
+   "team": "9z",
+   "country": "UY"
+  },
+  {
+   "name": "HUASOPEEK",
+   "team": "9z",
+   "role": "entry",
+   "country": "CL"
+  },
+  {
+   "name": "luchov",
+   "team": "9z",
+   "role": "entry",
+   "country": "AR"
+  },
+  {
+   "name": "max",
+   "team": "9z",
+   "role": "igl",
+   "country": "UY"
+  },
+  {
+   "name": "meyern",
+   "team": "9z",
+   "role": "awper",
+   "country": "AR"
+  },
+  {
+   "name": "JBa",
+   "team": "m80",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "Lake",
+   "team": "m80",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "s1n",
+   "team": "m80",
+   "role": "igl",
+   "country": "DE"
+  },
+  {
+   "name": "slaxz-",
+   "team": "m80",
+   "role": "awper",
+   "country": "DE"
+  },
+  {
+   "name": "Swisher",
+   "team": "m80",
+   "role": "entry",
+   "country": "US"
+  },
+  {
+   "name": "dwushka",
+   "team": "hotu",
+   "country": "RU"
+  },
+  {
+   "name": "frontales",
+   "team": "hotu",
+   "country": "RU"
+  },
+  {
+   "name": "kade0",
+   "team": "hotu",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "mizu",
+   "team": "hotu"
+  },
+  {
+   "name": "n0rb3r7",
+   "team": "hotu",
+   "role": "support",
+   "country": "RU"
+  },
+  {
+   "name": "cairne",
+   "team": "fnatic",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "fEAR",
+   "team": "fnatic"
+  },
+  {
+   "name": "jackasmo",
+   "team": "fnatic",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "jambo",
+   "team": "fnatic",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "mazay",
+   "team": "fnatic",
+   "role": "entry",
+   "country": "UA"
+  },
+  {
+   "name": "alex666",
+   "team": "b8",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "esenthial",
+   "team": "b8",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "kensizor",
+   "team": "b8",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "npl",
+   "team": "b8",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "s1zzi",
+   "team": "b8",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "doc",
+   "team": "dendele",
+   "country": "BR"
+  },
+  {
+   "name": "gafolo",
+   "team": "dendele",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "koala",
+   "team": "dendele",
+   "country": "BR"
+  },
+  {
+   "name": "maxxkor",
+   "team": "dendele",
+   "role": "awper",
+   "country": "AR"
+  },
+  {
+   "name": "rdnzao",
+   "team": "dendele",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "cptkurtka023",
+   "team": "inner-circle"
+  },
+  {
+   "name": "Dawy",
+   "team": "inner-circle"
+  },
+  {
+   "name": "headtr1ck",
+   "team": "inner-circle"
+  },
+  {
+   "name": "onic",
+   "team": "inner-circle"
+  },
+  {
+   "name": "zeRRoFIX",
+   "team": "inner-circle"
+  },
+  {
+   "name": "AquaRS",
+   "team": "virtus-pro"
+  },
+  {
+   "name": "b1st",
+   "team": "virtus-pro",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "mir",
+   "team": "virtus-pro",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "Patsi",
+   "team": "virtus-pro",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "tO0RO",
+   "team": "virtus-pro",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "blameF",
+   "team": "big",
+   "role": "lurker",
+   "country": "DK"
+  },
+  {
+   "name": "faveN",
+   "team": "big",
+   "role": "rifler",
+   "country": "DE"
+  },
+  {
+   "name": "gr1ks",
+   "team": "big",
+   "role": "awper",
+   "country": "BY"
+  },
+  {
+   "name": "JDC",
+   "team": "big",
+   "role": "support",
+   "country": "DE"
+  },
+  {
+   "name": "tabseN",
+   "team": "big",
+   "role": "rifler",
+   "country": "DE"
+  },
+  {
+   "name": "beastik",
+   "team": "sinners",
+   "role": "igl",
+   "country": "CZ"
+  },
+  {
+   "name": "kisserek",
+   "team": "sinners",
+   "country": "PL"
+  },
+  {
+   "name": "MoDo",
+   "team": "sinners",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "SHOCK",
+   "team": "sinners",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "stressarN",
+   "team": "sinners",
+   "role": "rifler",
+   "country": "MK"
+  },
+  {
+   "name": "clax",
+   "team": "k27",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "kashl1d",
+   "team": "k27",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "qw1nk1",
+   "team": "k27",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "X5G7V",
+   "team": "k27",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "xeedo",
+   "team": "k27",
+   "role": "rifler",
+   "country": "BY"
+  },
+  {
+   "name": "chelo",
+   "team": "imperial",
+   "role": "entry",
+   "country": "BR"
+  },
+  {
+   "name": "decenty",
+   "team": "imperial",
+   "country": "BR"
+  },
+  {
+   "name": "noway",
+   "team": "imperial",
+   "country": "BR"
+  },
+  {
+   "name": "saadzin",
+   "team": "imperial",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "VINI",
+   "team": "imperial",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "0SAMAS",
+   "team": "jijiehao",
+   "role": "rifler",
+   "country": "PS"
+  },
+  {
+   "name": "Bibu",
+   "team": "jijiehao",
+   "role": "rifler",
+   "country": "IQ"
+  },
+  {
+   "name": "CacaNito",
+   "team": "jijiehao",
+   "role": "rifler",
+   "country": "MK"
+  },
+  {
+   "name": "m1N1",
+   "team": "jijiehao",
+   "role": "awper",
+   "country": "LB"
+  },
+  {
+   "name": "sinnopsyy",
+   "team": "jijiehao",
+   "role": "igl",
+   "country": "XK"
+  },
+  {
+   "name": "FL4MUS",
+   "team": "gamerlegion",
+   "country": "RU"
+  },
+  {
+   "name": "hypex",
+   "team": "gamerlegion",
+   "role": "awper",
+   "country": "PL"
+  },
+  {
+   "name": "REZ",
+   "team": "gamerlegion",
+   "role": "awper",
+   "country": "SE"
+  },
+  {
+   "name": "shalfey",
+   "team": "gamerlegion",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "Tauson",
+   "team": "gamerlegion",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "Cxzi",
+   "team": "wildcard",
+   "role": "awper",
+   "country": "US"
+  },
+  {
+   "name": "fr3nd",
+   "team": "wildcard",
+   "role": "awper",
+   "country": "PL"
+  },
+  {
+   "name": "HexT",
+   "team": "wildcard",
+   "role": "entry",
+   "country": "CA"
+  },
+  {
+   "name": "nEMANHA",
+   "team": "wildcard",
+   "role": "igl",
+   "country": "RS"
+  },
+  {
+   "name": "reck",
+   "team": "wildcard",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "mag1k3Y",
+   "team": "nemesis",
+   "role": "awper",
+   "country": "KZ"
+  },
+  {
+   "name": "r3salt",
+   "team": "nemesis",
+   "country": "RU"
+  },
+  {
+   "name": "Sdaim",
+   "team": "nemesis",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "SELLTER",
+   "team": "nemesis",
+   "country": "RU"
+  },
+  {
+   "name": "tex1y",
+   "team": "nemesis",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "afro",
+   "team": "luminosity",
+   "role": "awper",
+   "country": "FR"
+  },
+  {
+   "name": "AZUWU",
+   "team": "luminosity",
+   "role": "rifler",
+   "country": "GB"
+  },
+  {
+   "name": "lux",
+   "team": "luminosity",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "Rainwaker",
+   "team": "luminosity",
+   "role": "lurker",
+   "country": "BG"
+  },
+  {
+   "name": "yxngstxr",
+   "team": "luminosity",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "AW",
+   "team": "magic",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "lattykk",
+   "team": "magic",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "MaSvAl",
+   "team": "magic",
+   "country": "BY"
+  },
+  {
+   "name": "sFade8",
+   "team": "magic",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "tenzy",
+   "team": "magic",
+   "role": "entry",
+   "country": "RU"
+  },
+  {
+   "name": "IceBerg",
+   "team": "bbl",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "leakz",
+   "team": "bbl",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "MistR",
+   "team": "bbl",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "NickyB",
+   "team": "bbl",
+   "country": "DK"
+  },
+  {
+   "name": "salazar",
+   "team": "bbl",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "Graviti",
+   "team": "envy",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "Kursy",
+   "team": "envy",
+   "role": "awper",
+   "country": "FR"
+  },
+  {
+   "name": "Lucky",
+   "team": "envy"
+  },
+  {
+   "name": "Maka",
+   "team": "envy",
+   "role": "igl",
+   "country": "FR"
+  },
+  {
+   "name": "misutaaa",
+   "team": "envy",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "adamS",
+   "team": "sangal",
+   "role": "rifler",
+   "country": "RO"
+  },
+  {
+   "name": "bnox",
+   "team": "sangal",
+   "role": "rifler",
+   "country": "PL"
+  },
+  {
+   "name": "Joey",
+   "team": "sangal",
+   "role": "rifler",
+   "country": "ES"
+  },
+  {
+   "name": "puuha",
+   "team": "sangal",
+   "role": "igl",
+   "country": "FI"
+  },
+  {
+   "name": "R4DYX",
+   "team": "sangal",
+   "role": "awper",
+   "country": "TR"
+  },
+  {
+   "name": "asap",
+   "team": "bc-game",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "Magisk",
+   "team": "bc-game",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "mzinho",
+   "team": "bc-game",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "s1mple",
+   "team": "bc-game",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "Senzu",
+   "team": "bc-game",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "1eeR",
+   "team": "private",
+   "role": "support",
+   "country": "BY"
+  },
+  {
+   "name": "H4SAN4TOR",
+   "team": "private",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "sh1nejezzz",
+   "team": "private",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "sowalio",
+   "team": "private",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "z1k4",
+   "team": "private",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "Grim",
+   "team": "nrg",
+   "role": "entry",
+   "country": "US"
+  },
+  {
+   "name": "hallzerk",
+   "team": "nrg",
+   "role": "awper",
+   "country": "NO"
+  },
+  {
+   "name": "Jeorge",
+   "team": "nrg",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "nitr0",
+   "team": "nrg",
+   "role": "igl",
+   "country": "US"
+  },
+  {
+   "name": "Sonic",
+   "team": "nrg"
+  },
+  {
+   "name": "aliStair",
+   "team": "flyquest",
+   "role": "awper",
+   "country": "AU"
+  },
+  {
+   "name": "INS",
+   "team": "flyquest",
+   "role": "igl",
+   "country": "AU"
+  },
+  {
+   "name": "jks",
+   "team": "flyquest",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "nettik",
+   "team": "flyquest",
+   "role": "rifler",
+   "country": "NZ"
+  },
+  {
+   "name": "Vexite",
+   "team": "flyquest",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "buda",
+   "team": "bestia",
+   "role": "entry",
+   "country": "AR"
+  },
+  {
+   "name": "cass1n",
+   "team": "bestia",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "drop",
+   "team": "bestia",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "kauez",
+   "team": "bestia",
+   "role": "lurker",
+   "country": "BR"
+  },
+  {
+   "name": "timo",
+   "team": "bestia",
+   "role": "rifler",
+   "country": "UY"
+  },
+  {
+   "name": "Demho",
+   "team": "betclic",
+   "country": "PL"
+  },
+  {
+   "name": "ex1st",
+   "team": "betclic",
+   "country": "PL"
+  },
+  {
+   "name": "Prism",
+   "team": "betclic",
+   "role": "igl",
+   "country": "PL"
+  },
+  {
+   "name": "Qlocuu",
+   "team": "betclic",
+   "country": "PL"
+  },
+  {
+   "name": "ultimate",
+   "team": "betclic",
+   "country": "PL"
+  },
+  {
+   "name": "Banjo",
+   "team": "fokus",
+   "role": "rifler",
+   "country": "FI"
+  },
+  {
+   "name": "jocab",
+   "team": "fokus",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "Matheos",
+   "team": "fokus",
+   "role": "rifler",
+   "country": "HR"
+  },
+  {
+   "name": "podi",
+   "team": "fokus",
+   "role": "awper",
+   "country": "FI"
+  },
+  {
+   "name": "ztr",
+   "team": "fokus",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "avid",
+   "team": "alliance",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "bobeksde",
+   "team": "alliance",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "eraa",
+   "team": "alliance",
+   "role": "awper",
+   "country": "SE"
+  },
+  {
+   "name": "twist",
+   "team": "alliance",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "upE",
+   "team": "alliance",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "biguzera",
+   "team": "pain",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "Rkzinho",
+   "team": "pain"
+  },
+  {
+   "name": "saffee",
+   "team": "pain",
+   "role": "awper",
+   "country": "BR"
+  },
+  {
+   "name": "snow",
+   "team": "pain",
+   "role": "support",
+   "country": "BR"
+  },
+  {
+   "name": "Tatu",
+   "team": "pain"
+  },
+  {
+   "name": "Ag1l",
+   "team": "iberian-soul"
+  },
+  {
+   "name": "alex",
+   "team": "iberian-soul"
+  },
+  {
+   "name": "dav1g",
+   "team": "iberian-soul",
+   "role": "entry",
+   "country": "ES"
+  },
+  {
+   "name": "mopoz",
+   "team": "iberian-soul",
+   "role": "entry",
+   "country": "ES"
+  },
+  {
+   "name": "sausol",
+   "team": "iberian-soul",
+   "role": "lurker",
+   "country": "ES"
+  },
+  {
+   "name": "cool4st",
+   "team": "chinggis-warriors",
+   "role": "igl",
+   "country": "MN"
+  },
+  {
+   "name": "fury5k",
+   "team": "chinggis-warriors",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "ROUX",
+   "team": "chinggis-warriors",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "sk0R",
+   "team": "chinggis-warriors",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "tikuak",
+   "team": "chinggis-warriors",
+   "country": "MN"
+  },
+  {
+   "name": "C4LLM3SU3",
+   "team": "lynn-vision",
+   "country": "CN"
+  },
+  {
+   "name": "EmiliaQAQ",
+   "team": "lynn-vision",
+   "role": "rifler",
+   "country": "CN"
+  },
+  {
+   "name": "Starry",
+   "team": "lynn-vision",
+   "role": "rifler",
+   "country": "CN"
+  },
+  {
+   "name": "Westmelon",
+   "team": "lynn-vision",
+   "role": "igl",
+   "country": "CN"
+  },
+  {
+   "name": "z4KR",
+   "team": "lynn-vision"
+  },
+  {
+   "name": "F1KU",
+   "team": "metizport",
+   "role": "rifler",
+   "country": "PL"
+  },
+  {
+   "name": "forsyy",
+   "team": "metizport",
+   "role": "awper",
+   "country": "CZ"
+  },
+  {
+   "name": "MaiL09",
+   "team": "metizport",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "Plopski",
+   "team": "metizport",
+   "role": "entry",
+   "country": "SE"
+  },
+  {
+   "name": "stanislaw",
+   "team": "metizport",
+   "role": "igl",
+   "country": "CA"
+  },
+  {
+   "name": "ayuki",
+   "team": "nuclear-tigeres",
+   "country": "RU"
+  },
+  {
+   "name": "Djon8",
+   "team": "nuclear-tigeres",
+   "country": "RU"
+  },
+  {
+   "name": "flouzer",
+   "team": "nuclear-tigeres",
+   "country": "RU"
+  },
+  {
+   "name": "senka",
+   "team": "nuclear-tigeres",
+   "role": "igl",
+   "country": "BY"
+  },
+  {
+   "name": "tronic",
+   "team": "nuclear-tigeres",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "JamYoung",
+   "team": "tyloo",
+   "role": "rifler",
+   "country": "CN"
+  },
+  {
+   "name": "Mercury",
+   "team": "tyloo",
+   "role": "igl",
+   "country": "CN"
+  },
+  {
+   "name": "Moseyuh",
+   "team": "tyloo",
+   "role": "igl",
+   "country": "CN"
+  },
+  {
+   "name": "Zero",
+   "team": "tyloo"
+  },
+  {
+   "name": "zhokiNg",
+   "team": "tyloo",
+   "country": "CN"
+  },
+  {
+   "name": "dav1deuS",
+   "team": "fluxo",
+   "country": "CL"
+  },
+  {
+   "name": "exit",
+   "team": "fluxo",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "kye",
+   "team": "fluxo"
+  },
+  {
+   "name": "Ltz",
+   "team": "fluxo"
+  },
+  {
+   "name": "zevy",
+   "team": "fluxo"
+  },
+  {
+   "name": "KEi",
+   "team": "phantom",
+   "role": "entry",
+   "country": "PL"
+  },
+  {
+   "name": "Kunai",
+   "team": "phantom",
+   "country": "PL"
+  },
+  {
+   "name": "Kylar",
+   "team": "phantom",
+   "role": "lurker",
+   "country": "PL"
+  },
+  {
+   "name": "nicoodoz",
+   "team": "phantom",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "TMB",
+   "team": "phantom",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "ewjerkz",
+   "team": "saw",
+   "country": "PT"
+  },
+  {
+   "name": "krazy",
+   "team": "saw",
+   "role": "rifler",
+   "country": "PT"
+  },
+  {
+   "name": "MUTiRiS",
+   "team": "saw",
+   "role": "igl",
+   "country": "PT"
+  },
+  {
+   "name": "NOPEEj",
+   "team": "saw",
+   "role": "rifler",
+   "country": "PT"
+  },
+  {
+   "name": "story",
+   "team": "saw",
+   "role": "awper",
+   "country": "PT"
+  },
+  {
+   "name": "dex",
+   "team": "eyeballers",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "JW",
+   "team": "eyeballers",
+   "role": "awper",
+   "country": "SE"
+  },
+  {
+   "name": "KRIMZ",
+   "team": "eyeballers",
+   "role": "support",
+   "country": "SE"
+  },
+  {
+   "name": "maxster",
+   "team": "eyeballers",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "Ro1f",
+   "team": "eyeballers",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "2high",
+   "team": "unity",
+   "role": "igl",
+   "country": "MK"
+  },
+  {
+   "name": "Dytor",
+   "team": "unity",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "KWERTZZ",
+   "team": "unity",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "M1key",
+   "team": "unity",
+   "role": "lurker",
+   "country": "SK"
+  },
+  {
+   "name": "Sn0w",
+   "team": "unity",
+   "role": "awper",
+   "country": "SE"
+  },
+  {
+   "name": "fNk",
+   "team": "nexus",
+   "role": "igl",
+   "country": "RO"
+  },
+  {
+   "name": "HOLY",
+   "team": "nexus",
+   "role": "rifler",
+   "country": "RO"
+  },
+  {
+   "name": "Nexius",
+   "team": "nexus",
+   "role": "rifler",
+   "country": "BE"
+  },
+  {
+   "name": "s0und",
+   "team": "nexus",
+   "role": "rifler",
+   "country": "RO"
+  },
+  {
+   "name": "shield",
+   "team": "nexus",
+   "role": "awper",
+   "country": "LV"
+  },
+  {
+   "name": "aNdu",
+   "team": "pure",
+   "role": "rifler",
+   "country": "EE"
+  },
+  {
+   "name": "keen",
+   "team": "pure",
+   "role": "igl",
+   "country": "LV"
+  },
+  {
+   "name": "Polbandana",
+   "team": "pure",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "POLO",
+   "team": "pure"
+  },
+  {
+   "name": "tein",
+   "team": "pure",
+   "country": "PL"
+  },
+  {
+   "name": "aidKiT",
+   "team": "brute",
+   "role": "awper",
+   "country": "MK"
+  },
+  {
+   "name": "nbqq",
+   "team": "brute",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "oontoma",
+   "team": "brute"
+  },
+  {
+   "name": "tAk",
+   "team": "brute",
+   "role": "rifler",
+   "country": "LT"
+  },
+  {
+   "name": "ZEDKO",
+   "team": "brute",
+   "role": "rifler",
+   "country": "CZ"
+  },
+  {
+   "name": "ariucle",
+   "team": "5star",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "clouden",
+   "team": "5star",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "hoolig4n",
+   "team": "5star",
+   "role": "awper",
+   "country": "MN"
+  },
+  {
+   "name": "NEUZ",
+   "team": "5star",
+   "role": "igl",
+   "country": "MN"
+  },
+  {
+   "name": "rate",
+   "team": "5star",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "consti",
+   "team": "sportsbetexpert"
+  },
+  {
+   "name": "Infinite",
+   "team": "sportsbetexpert"
+  },
+  {
+   "name": "motm",
+   "team": "sportsbetexpert"
+  },
+  {
+   "name": "Peeping",
+   "team": "sportsbetexpert"
+  },
+  {
+   "name": "shane",
+   "team": "sportsbetexpert"
+  },
+  {
+   "name": "DemQQ",
+   "team": "wbt"
+  },
+  {
+   "name": "Psycho",
+   "team": "wbt"
+  },
+  {
+   "name": "s4ltovsk1yy",
+   "team": "wbt"
+  },
+  {
+   "name": "Smash",
+   "team": "wbt"
+  },
+  {
+   "name": "tyr1k",
+   "team": "wbt"
+  },
+  {
+   "name": "AccuracyTG",
+   "team": "nexvoid",
+   "role": "awper",
+   "country": "MN"
+  },
+  {
+   "name": "erkaSt",
+   "team": "nexvoid",
+   "role": "igl",
+   "country": "MN"
+  },
+  {
+   "name": "MiQ",
+   "team": "nexvoid",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "xerolte",
+   "team": "nexvoid",
+   "country": "MN"
+  },
+  {
+   "name": "Zesta",
+   "team": "nexvoid",
+   "country": "MN"
+  },
+  {
+   "name": "Blytz",
+   "team": "infinite",
+   "role": "rifler",
+   "country": "RO"
+  },
+  {
+   "name": "kyuubii",
+   "team": "infinite",
+   "role": "rifler",
+   "country": "DE"
+  },
+  {
+   "name": "ScrunK",
+   "team": "infinite",
+   "role": "igl",
+   "country": "DE"
+  },
+  {
+   "name": "sl3nd",
+   "team": "infinite",
+   "role": "awper",
+   "country": "HU"
+  },
+  {
+   "name": "volt",
+   "team": "infinite",
+   "role": "rifler",
+   "country": "RO"
+  },
+  {
+   "name": "AwaykeN",
+   "team": "acend",
+   "role": "awper",
+   "country": "BG"
+  },
+  {
+   "name": "REDSTAR",
+   "team": "acend",
+   "role": "awper",
+   "country": "BG"
+  },
+  {
+   "name": "SHiPZ",
+   "team": "acend",
+   "role": "rifler",
+   "country": "BG"
+  },
+  {
+   "name": "Skrimo",
+   "team": "acend",
+   "country": "BG"
+  },
+  {
+   "name": "SPELLAN",
+   "team": "acend",
+   "role": "igl",
+   "country": "BG"
+  },
+  {
+   "name": "gehji",
+   "team": "quazar",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "kaiori",
+   "team": "quazar",
+   "country": "RU"
+  },
+  {
+   "name": "Ne1XXX",
+   "team": "quazar",
+   "country": "RU"
+  },
+  {
+   "name": "newt",
+   "team": "quazar",
+   "country": "RU"
+  },
+  {
+   "name": "Porya",
+   "team": "quazar",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "Alisson",
+   "team": "barca",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "divine",
+   "team": "barca"
+  },
+  {
+   "name": "happ",
+   "team": "barca",
+   "country": "BR"
+  },
+  {
+   "name": "pancc",
+   "team": "barca",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "zmb",
+   "team": "barca",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "cronuss",
+   "team": "color",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "lattykk",
+   "team": "color"
+  },
+  {
+   "name": "oz1k",
+   "team": "color",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "Patsi",
+   "team": "color"
+  },
+  {
+   "name": "reyoz",
+   "team": "color",
+   "country": "RU"
+  },
+  {
+   "name": "brutmonster",
+   "team": "ex-zero-tenacity",
+   "role": "awper",
+   "country": "BA"
+  },
+  {
+   "name": "Cjoffo",
+   "team": "ex-zero-tenacity",
+   "role": "rifler",
+   "country": "ME"
+  },
+  {
+   "name": "Dragon",
+   "team": "ex-zero-tenacity",
+   "role": "awper",
+   "country": "RS"
+  },
+  {
+   "name": "Kind0",
+   "team": "ex-zero-tenacity",
+   "role": "rifler",
+   "country": "RS"
+  },
+  {
+   "name": "VLDN",
+   "team": "ex-zero-tenacity",
+   "role": "support",
+   "country": "RS"
+  },
+  {
+   "name": "4X1s",
+   "team": "black-phoenix"
+  },
+  {
+   "name": "karnez",
+   "team": "black-phoenix"
+  },
+  {
+   "name": "MRcreed",
+   "team": "black-phoenix"
+  },
+  {
+   "name": "Salazar",
+   "team": "black-phoenix"
+  },
+  {
+   "name": "topo",
+   "team": "black-phoenix"
+  },
+  {
+   "name": "dare",
+   "team": "voca",
+   "role": "awper",
+   "country": "US"
+  },
+  {
+   "name": "junior",
+   "team": "voca",
+   "role": "awper",
+   "country": "US"
+  },
+  {
+   "name": "MarKE",
+   "team": "voca",
+   "role": "support",
+   "country": "MX"
+  },
+  {
+   "name": "nosraC",
+   "team": "voca",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "snav",
+   "team": "voca",
+   "role": "igl",
+   "country": "US"
+  },
+  {
+   "name": "FAZERY",
+   "team": "navi-junior"
+  },
+  {
+   "name": "kodak",
+   "team": "navi-junior"
+  },
+  {
+   "name": "MahaR",
+   "team": "navi-junior"
+  },
+  {
+   "name": "skizzyee",
+   "team": "navi-junior"
+  },
+  {
+   "name": "yoki",
+   "team": "navi-junior"
+  },
+  {
+   "name": "kAlash",
+   "team": "basement-boys",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "kr1vda",
+   "team": "basement-boys",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "maggent",
+   "team": "basement-boys",
+   "country": "UA"
+  },
+  {
+   "name": "OWNER",
+   "team": "basement-boys",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "Tr0ublE",
+   "team": "basement-boys",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "Kiy0o",
+   "team": "lazer-cats",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "Magic",
+   "team": "lazer-cats"
+  },
+  {
+   "name": "n0rths",
+   "team": "lazer-cats"
+  },
+  {
+   "name": "nikitea",
+   "team": "lazer-cats",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "tripex17",
+   "team": "lazer-cats",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "abizz",
+   "team": "shinden",
+   "role": "support",
+   "country": "AR"
+  },
+  {
+   "name": "guty",
+   "team": "shinden",
+   "country": "AR"
+  },
+  {
+   "name": "naz",
+   "team": "shinden",
+   "role": "support",
+   "country": "AR"
+  },
+  {
+   "name": "reNTU",
+   "team": "shinden"
+  },
+  {
+   "name": "tom1jed",
+   "team": "shinden",
+   "role": "igl",
+   "country": "AR"
+  },
+  {
+   "name": "DAN9ARMATURA",
+   "team": "upgrade"
+  },
+  {
+   "name": "pleynnn",
+   "team": "upgrade"
+  },
+  {
+   "name": "SquEzxc",
+   "team": "upgrade"
+  },
+  {
+   "name": "synyx",
+   "team": "upgrade"
+  },
+  {
+   "name": "tw1sterzaza",
+   "team": "upgrade"
+  },
+  {
+   "name": "HeCkBNk",
+   "team": "forze-reload",
+   "country": "RU"
+  },
+  {
+   "name": "KusMe",
+   "team": "forze-reload",
+   "country": "RU"
+  },
+  {
+   "name": "Lack1",
+   "team": "forze-reload",
+   "role": "igl",
+   "country": "KZ"
+  },
+  {
+   "name": "relaxxie",
+   "team": "forze-reload"
+  },
+  {
+   "name": "YumsaN",
+   "team": "forze-reload",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "aragornN",
+   "team": "rbls"
+  },
+  {
+   "name": "arrozdoce",
+   "team": "rbls"
+  },
+  {
+   "name": "Icarus",
+   "team": "rbls"
+  },
+  {
+   "name": "Shr",
+   "team": "rbls"
+  },
+  {
+   "name": "stadodo",
+   "team": "rbls"
+  },
+  {
+   "name": "destiny",
+   "team": "galorys",
+   "role": "entry",
+   "country": "BR"
+  },
+  {
+   "name": "detr0ittJ",
+   "team": "galorys",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "gbb",
+   "team": "galorys",
+   "role": "support",
+   "country": "BR"
+  },
+  {
+   "name": "PKL",
+   "team": "galorys",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "tomate",
+   "team": "galorys",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "mhN1",
+   "team": "aimclub",
+   "role": "entry",
+   "country": "RO"
+  },
+  {
+   "name": "ragga",
+   "team": "aimclub",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "waZz",
+   "team": "aimclub"
+  },
+  {
+   "name": "XELLOW",
+   "team": "aimclub",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "zewts",
+   "team": "aimclub",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "fakerealityy",
+   "team": "nt",
+   "country": "UA"
+  },
+  {
+   "name": "m4d4ra",
+   "team": "nt"
+  },
+  {
+   "name": "Ryuzak1",
+   "team": "nt"
+  },
+  {
+   "name": "ta9z",
+   "team": "nt"
+  },
+  {
+   "name": "Woro2k",
+   "team": "nt"
+  },
+  {
+   "name": "El1an",
+   "team": "ex-inox"
+  },
+  {
+   "name": "finW",
+   "team": "ex-inox"
+  },
+  {
+   "name": "gooddeph",
+   "team": "ex-inox"
+  },
+  {
+   "name": "k1slll",
+   "team": "ex-inox"
+  },
+  {
+   "name": "m1QUSE",
+   "team": "ex-inox"
+  },
+  {
+   "name": "autimatic",
+   "team": "without-a-roof",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "Brehze",
+   "team": "without-a-roof",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "CeRq",
+   "team": "without-a-roof",
+   "role": "awper",
+   "country": "BG"
+  },
+  {
+   "name": "FaNg",
+   "team": "without-a-roof",
+   "role": "entry",
+   "country": "CA"
+  },
+  {
+   "name": "Stewie2K",
+   "team": "without-a-roof",
+   "role": "igl",
+   "country": "US"
+  },
+  {
+   "name": "adeX",
+   "team": "alter-ego",
+   "role": "awper",
+   "country": "RO"
+  },
+  {
+   "name": "Bloody",
+   "team": "alter-ego",
+   "role": "rifler",
+   "country": "PK"
+  },
+  {
+   "name": "laxiee",
+   "team": "alter-ego",
+   "country": "MN"
+  },
+  {
+   "name": "PokemoN",
+   "team": "alter-ego",
+   "country": "PK"
+  },
+  {
+   "name": "shadiy",
+   "team": "alter-ego",
+   "role": "rifler",
+   "country": "LV"
+  },
+  {
+   "name": "adai",
+   "team": "omega",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "Aldikon",
+   "team": "omega",
+   "role": "awper",
+   "country": "KZ"
+  },
+  {
+   "name": "Botpa1",
+   "team": "omega",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "dan4o",
+   "team": "omega",
+   "country": "KZ"
+  },
+  {
+   "name": "def1zer",
+   "team": "omega",
+   "role": "igl",
+   "country": "KZ"
+  },
+  {
+   "name": "KAISER",
+   "team": "bounty-hunters",
+   "role": "igl",
+   "country": "AR"
+  },
+  {
+   "name": "pepe",
+   "team": "bounty-hunters",
+   "country": "BR"
+  },
+  {
+   "name": "ponter",
+   "team": "bounty-hunters"
+  },
+  {
+   "name": "urban0",
+   "team": "bounty-hunters",
+   "country": "BR"
+  },
+  {
+   "name": "zock",
+   "team": "bounty-hunters"
+  },
+  {
+   "name": "Alkaren",
+   "team": "cybershoke"
+  },
+  {
+   "name": "alpha",
+   "team": "cybershoke",
+   "role": "igl"
+  },
+  {
+   "name": "H4SAN4TOR",
+   "team": "cybershoke"
+  },
+  {
+   "name": "Mokuj1n",
+   "team": "cybershoke",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "nota",
+   "team": "cybershoke"
+  },
+  {
+   "name": "danistzz",
+   "team": "baks",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "glowiing",
+   "team": "baks",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "Norwi",
+   "team": "baks",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "turbo",
+   "team": "baks",
+   "country": "RU"
+  },
+  {
+   "name": "whisper",
+   "team": "baks",
+   "country": "RU"
+  },
+  {
+   "name": "k0gaSs",
+   "team": "spirit-academy"
+  },
+  {
+   "name": "Kiryasoo",
+   "team": "spirit-academy",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "Netrix",
+   "team": "spirit-academy"
+  },
+  {
+   "name": "s1nside",
+   "team": "spirit-academy"
+  },
+  {
+   "name": "VILBy",
+   "team": "spirit-academy",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "bluewh1te",
+   "team": "bet-m"
+  },
+  {
+   "name": "executor",
+   "team": "bet-m"
+  },
+  {
+   "name": "Raijin",
+   "team": "bet-m"
+  },
+  {
+   "name": "z1Nny",
+   "team": "bet-m"
+  },
+  {
+   "name": "gxx-",
+   "team": "astral",
+   "role": "awper",
+   "country": "XK"
+  },
+  {
+   "name": "meowpop",
+   "team": "astral"
+  },
+  {
+   "name": "Neqy",
+   "team": "astral"
+  },
+  {
+   "name": "RaY5ive",
+   "team": "astral",
+   "country": "LT"
+  },
+  {
+   "name": "swiz",
+   "team": "astral",
+   "role": "rifler",
+   "country": "PL"
+  },
+  {
+   "name": "b1elany",
+   "team": "9ine",
+   "country": "PL"
+  },
+  {
+   "name": "flayy",
+   "team": "9ine",
+   "country": "PL"
+  },
+  {
+   "name": "kraghen",
+   "team": "9ine",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "raalz",
+   "team": "9ine",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "rigoN",
+   "team": "9ine"
+  },
+  {
+   "name": "Bwills",
+   "team": "lag"
+  },
+  {
+   "name": "Cryptic",
+   "team": "lag"
+  },
+  {
+   "name": "djay",
+   "team": "lag"
+  },
+  {
+   "name": "Sandman",
+   "team": "lag"
+  },
+  {
+   "name": "SLIGHT",
+   "team": "lag"
+  },
+  {
+   "name": "bL4SEZ",
+   "team": "genone",
+   "country": "FR"
+  },
+  {
+   "name": "Brooxsy",
+   "team": "genone",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "Djoko",
+   "team": "genone",
+   "role": "entry",
+   "country": "FR"
+  },
+  {
+   "name": "Keoz",
+   "team": "genone",
+   "role": "igl",
+   "country": "BE"
+  },
+  {
+   "name": "SIXER",
+   "team": "genone"
+  },
+  {
+   "name": "fl1peR",
+   "team": "wbt-academy"
+  },
+  {
+   "name": "kL1o",
+   "team": "wbt-academy"
+  },
+  {
+   "name": "marat2k",
+   "team": "wbt-academy"
+  },
+  {
+   "name": "NxStep",
+   "team": "wbt-academy"
+  },
+  {
+   "name": "tired73",
+   "team": "wbt-academy"
+  },
+  {
+   "name": "Bart4k",
+   "team": "the-huns",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "bexyz",
+   "team": "the-huns",
+   "country": "MN"
+  },
+  {
+   "name": "controlez",
+   "team": "the-huns",
+   "role": "rifler",
+   "country": "MN"
+  },
+  {
+   "name": "Cozen",
+   "team": "the-huns"
+  },
+  {
+   "name": "DarkMeister",
+   "team": "the-huns"
+  },
+  {
+   "name": "acoR",
+   "team": "sashi",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "Anlelele",
+   "team": "sashi",
+   "role": "rifler",
+   "country": "VN"
+  },
+  {
+   "name": "Hatz",
+   "team": "sashi"
+  },
+  {
+   "name": "TjP",
+   "team": "sashi"
+  },
+  {
+   "name": "Zyphon",
+   "team": "sashi",
+   "country": "DK"
+  },
+  {
+   "name": "bl1x1",
+   "team": "ex-rustec"
+  },
+  {
+   "name": "Brilliance",
+   "team": "ex-rustec",
+   "role": "rifler",
+   "country": "BY"
+  },
+  {
+   "name": "jakekeS",
+   "team": "ex-rustec",
+   "country": "RU"
+  },
+  {
+   "name": "yiksrezo",
+   "team": "ex-rustec"
+  },
+  {
+   "name": "youka",
+   "team": "ex-rustec",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "HENU",
+   "team": "ence"
+  },
+  {
+   "name": "joeski",
+   "team": "ence"
+  },
+  {
+   "name": "millert",
+   "team": "ence"
+  },
+  {
+   "name": "Schwarz",
+   "team": "ence"
+  },
+  {
+   "name": "teme",
+   "team": "ence"
+  },
+  {
+   "name": "kelieN",
+   "team": "ww",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "m3wsu",
+   "team": "ww",
+   "country": "RU"
+  },
+  {
+   "name": "Ryujin",
+   "team": "ww"
+  },
+  {
+   "name": "StRoGo",
+   "team": "ww",
+   "country": "TJ"
+  },
+  {
+   "name": "tried",
+   "team": "ww"
+  },
+  {
+   "name": "h1te",
+   "team": "just-players",
+   "role": "awper",
+   "country": "RU"
+  },
+  {
+   "name": "sm3t",
+   "team": "just-players",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "sstiNiX",
+   "team": "just-players",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "Temny Prince",
+   "team": "just-players"
+  },
+  {
+   "name": "wh1teout",
+   "team": "just-players"
+  },
+  {
+   "name": "3ippoch",
+   "team": "inner-circle-academy",
+   "role": "igl",
+   "country": "UA"
+  },
+  {
+   "name": "Flierax",
+   "team": "inner-circle-academy",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "L1seYoung",
+   "team": "inner-circle-academy"
+  },
+  {
+   "name": "NaYz",
+   "team": "inner-circle-academy",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "Tamefear",
+   "team": "inner-circle-academy"
+  },
+  {
+   "name": "demente",
+   "team": "rune-eaters",
+   "role": "igl",
+   "country": "KZ"
+  },
+  {
+   "name": "dukefissura",
+   "team": "rune-eaters",
+   "role": "igl",
+   "country": "KZ"
+  },
+  {
+   "name": "forkyz",
+   "team": "rune-eaters",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "her1tage",
+   "team": "rune-eaters",
+   "role": "rifler",
+   "country": "KZ"
+  },
+  {
+   "name": "noni",
+   "team": "rune-eaters",
+   "role": "awper",
+   "country": "KZ"
+  },
+  {
+   "name": "matios",
+   "team": "turma-do-pagode",
+   "country": "BR"
+  },
+  {
+   "name": "naitte",
+   "team": "turma-do-pagode",
+   "country": "BR"
+  },
+  {
+   "name": "pesadelo",
+   "team": "turma-do-pagode",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "Tuurtle",
+   "team": "turma-do-pagode",
+   "role": "rifler",
+   "country": "BR"
+  },
+  {
+   "name": "WOOD7",
+   "team": "turma-do-pagode",
+   "role": "igl",
+   "country": "BR"
+  },
+  {
+   "name": "ayano",
+   "team": "butterfly",
+   "country": "RU"
+  },
+  {
+   "name": "Forester",
+   "team": "butterfly",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "k1ssly",
+   "team": "butterfly",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "Kurama",
+   "team": "butterfly",
+   "country": "RU"
+  },
+  {
+   "name": "nitzie",
+   "team": "butterfly",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "arTisT",
+   "team": "the-last-resort",
+   "role": "igl",
+   "country": "IE"
+  },
+  {
+   "name": "bevve",
+   "team": "the-last-resort",
+   "country": "GB"
+  },
+  {
+   "name": "Extinct",
+   "team": "the-last-resort",
+   "role": "rifler",
+   "country": "IE"
+  },
+  {
+   "name": "Girafffe",
+   "team": "the-last-resort",
+   "role": "support",
+   "country": "GB"
+  },
+  {
+   "name": "Vacancy",
+   "team": "the-last-resort",
+   "role": "rifler",
+   "country": "GB"
+  },
+  {
+   "name": "bsover",
+   "team": "johnny-speeds",
+   "country": "SE"
+  },
+  {
+   "name": "draken",
+   "team": "johnny-speeds"
+  },
+  {
+   "name": "hampus",
+   "team": "johnny-speeds",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "Rack",
+   "team": "johnny-speeds",
+   "country": "SE"
+  },
+  {
+   "name": "Svedjehed",
+   "team": "johnny-speeds",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "El1an",
+   "team": "sparta"
+  },
+  {
+   "name": "glowiing",
+   "team": "sparta"
+  },
+  {
+   "name": "interz",
+   "team": "sparta"
+  },
+  {
+   "name": "NickelBack",
+   "team": "sparta"
+  },
+  {
+   "name": "TRAVIS",
+   "team": "sparta"
+  },
+  {
+   "name": "8Juho8",
+   "team": "havu",
+   "country": "FI"
+  },
+  {
+   "name": "Alxc",
+   "team": "havu",
+   "role": "rifler",
+   "country": "FI"
+  },
+  {
+   "name": "ottob",
+   "team": "havu",
+   "role": "awper",
+   "country": "FI"
+  },
+  {
+   "name": "p3kko",
+   "team": "havu",
+   "role": "igl",
+   "country": "FI"
+  },
+  {
+   "name": "uli",
+   "team": "havu",
+   "role": "rifler",
+   "country": "FI"
+  },
+  {
+   "name": "Altekz",
+   "team": "state"
+  },
+  {
+   "name": "kwezz",
+   "team": "state"
+  },
+  {
+   "name": "Queenix",
+   "team": "state"
+  },
+  {
+   "name": "sL1m3",
+   "team": "state"
+  },
+  {
+   "name": "Zanto",
+   "team": "state"
+  },
+  {
+   "name": "buster",
+   "team": "depo"
+  },
+  {
+   "name": "Krad",
+   "team": "depo",
+   "role": "igl",
+   "country": "RU"
+  },
+  {
+   "name": "sh1seido",
+   "team": "depo",
+   "role": "rifler",
+   "country": "UZ"
+  },
+  {
+   "name": "shoxs",
+   "team": "depo",
+   "role": "rifler",
+   "country": "UZ"
+  },
+  {
+   "name": "wetfy",
+   "team": "depo",
+   "role": "awper",
+   "country": "UZ"
+  },
+  {
+   "name": "ammar",
+   "team": "illyrians",
+   "role": "rifler",
+   "country": "XK"
+  },
+  {
+   "name": "BledarD",
+   "team": "illyrians",
+   "country": "XK"
+  },
+  {
+   "name": "cerber",
+   "team": "illyrians",
+   "role": "rifler",
+   "country": "XK"
+  },
+  {
+   "name": "Lewis",
+   "team": "illyrians"
+  },
+  {
+   "name": "rosoneriii",
+   "team": "illyrians"
+  },
+  {
+   "name": "jresy",
+   "team": "pcific",
+   "role": "entry",
+   "country": "TR"
+  },
+  {
+   "name": "lugseN",
+   "team": "pcific",
+   "role": "awper",
+   "country": "TR"
+  },
+  {
+   "name": "oyesil",
+   "team": "pcific",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "scolleN",
+   "team": "pcific",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "3gl",
+   "team": "rare-atom",
+   "role": "awper",
+   "country": "CN"
+  },
+  {
+   "name": "ChildKing",
+   "team": "rare-atom",
+   "role": "rifler",
+   "country": "CN"
+  },
+  {
+   "name": "kaze",
+   "team": "rare-atom",
+   "role": "awper",
+   "country": "MY"
+  },
+  {
+   "name": "L1haNg",
+   "team": "rare-atom",
+   "country": "CN"
+  },
+  {
+   "name": "Summer",
+   "team": "rare-atom",
+   "role": "igl",
+   "country": "CN"
+  },
+  {
+   "name": "anber",
+   "team": "eac"
+  },
+  {
+   "name": "bekker",
+   "team": "eac"
+  },
+  {
+   "name": "Fessor",
+   "team": "eac"
+  },
+  {
+   "name": "n1Xen",
+   "team": "eac"
+  },
+  {
+   "name": "sSen",
+   "team": "eac"
+  },
+  {
+   "name": "aimy",
+   "team": "leo",
+   "country": "PL"
+  },
+  {
+   "name": "drac",
+   "team": "leo",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "leen",
+   "team": "leo",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "next1me",
+   "team": "leo",
+   "role": "awper",
+   "country": "PL"
+  },
+  {
+   "name": "Tarkky",
+   "team": "leo",
+   "role": "rifler",
+   "country": "FR"
+  },
+  {
+   "name": "freshie",
+   "team": "marsborne",
+   "role": "rifler",
+   "country": "CA"
+  },
+  {
+   "name": "Grizz",
+   "team": "marsborne",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "nicx",
+   "team": "marsborne",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "ogwizard",
+   "team": "marsborne",
+   "role": "awper",
+   "country": "US"
+  },
+  {
+   "name": "WUMBO",
+   "team": "marsborne",
+   "role": "rifler",
+   "country": "US"
+  },
+  {
+   "name": "blood",
+   "team": "abyssal"
+  },
+  {
+   "name": "dangeR",
+   "team": "abyssal",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "Forleks",
+   "team": "abyssal",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "vinhy",
+   "team": "abyssal"
+  },
+  {
+   "name": "zune",
+   "team": "abyssal"
+  },
+  {
+   "name": "azukay",
+   "team": "lavked",
+   "country": "RU"
+  },
+  {
+   "name": "FREXEMP",
+   "team": "lavked"
+  },
+  {
+   "name": "k4nfuz",
+   "team": "lavked"
+  },
+  {
+   "name": "takanashi",
+   "team": "lavked"
+  },
+  {
+   "name": "xm1nd",
+   "team": "lavked"
+  },
+  {
+   "name": "damyo",
+   "team": "off-chops",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "dexter",
+   "team": "off-chops",
+   "role": "igl",
+   "country": "AU"
+  },
+  {
+   "name": "Gratisfaction",
+   "team": "off-chops",
+   "role": "awper",
+   "country": "NZ"
+  },
+  {
+   "name": "Liazz",
+   "team": "off-chops",
+   "role": "lurker",
+   "country": "AU"
+  },
+  {
+   "name": "viridian",
+   "team": "off-chops",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "hitori",
+   "team": "g2-ares",
+   "role": "rifler",
+   "country": "UZ"
+  },
+  {
+   "name": "Junyme",
+   "team": "g2-ares",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "SHiNE",
+   "team": "g2-ares",
+   "role": "igl",
+   "country": "SE"
+  },
+  {
+   "name": "TMKj",
+   "team": "g2-ares",
+   "role": "rifler",
+   "country": "PT"
+  },
+  {
+   "name": "yksjupe",
+   "team": "g2-ares",
+   "country": "FI"
+  },
+  {
+   "name": "amster",
+   "team": "ex-6666",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "kL1o",
+   "team": "ex-6666",
+   "role": "rifler",
+   "country": "UA"
+  },
+  {
+   "name": "rendysky",
+   "team": "ex-6666",
+   "role": "awper",
+   "country": "UA"
+  },
+  {
+   "name": "skcH",
+   "team": "ex-6666"
+  },
+  {
+   "name": "stefienson",
+   "team": "ex-6666"
+  },
+  {
+   "name": "Cizzx",
+   "team": "fire-flux",
+   "role": "igl",
+   "country": "TR"
+  },
+  {
+   "name": "Quality",
+   "team": "fire-flux"
+  },
+  {
+   "name": "xEternaLxx",
+   "team": "fire-flux",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "zemix",
+   "team": "fire-flux",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "zer0UKY",
+   "team": "fire-flux",
+   "role": "awper",
+   "country": "TR"
+  },
+  {
+   "name": "adamb",
+   "team": "og"
+  },
+  {
+   "name": "bodyy",
+   "team": "og",
+   "role": "igl",
+   "country": "FR"
+  },
+  {
+   "name": "cadiaN",
+   "team": "og",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "pr1metapz",
+   "team": "og",
+   "role": "rifler",
+   "country": "DE"
+  },
+  {
+   "name": "spooke",
+   "team": "og",
+   "role": "rifler",
+   "country": "SE"
+  },
+  {
+   "name": "cacan",
+   "team": "bushido-wildcats",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "cadnyx",
+   "team": "bushido-wildcats",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "Darendeli",
+   "team": "bushido-wildcats",
+   "role": "entry",
+   "country": "TR"
+  },
+  {
+   "name": "Muk0s",
+   "team": "bushido-wildcats"
+  },
+  {
+   "name": "Vej",
+   "team": "bushido-wildcats",
+   "role": "awper",
+   "country": "TR"
+  },
+  {
+   "name": "Alkaren",
+   "team": "ex-cybershoke"
+  },
+  {
+   "name": "alpha",
+   "team": "ex-cybershoke",
+   "role": "igl"
+  },
+  {
+   "name": "Mokuj1n",
+   "team": "ex-cybershoke",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "nota",
+   "team": "ex-cybershoke"
+  },
+  {
+   "name": "yiksrezo",
+   "team": "ex-cybershoke"
+  },
+  {
+   "name": "lollipop21k",
+   "team": "mellren",
+   "role": "rifler",
+   "country": "BY"
+  },
+  {
+   "name": "Maksilvl",
+   "team": "mellren",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "mdl",
+   "team": "mellren",
+   "country": "BY"
+  },
+  {
+   "name": "menddel",
+   "team": "mellren",
+   "role": "rifler",
+   "country": "BY"
+  },
+  {
+   "name": "shootic",
+   "team": "mellren",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "Ciocardau",
+   "team": "hyperspirit"
+  },
+  {
+   "name": "d1maje",
+   "team": "hyperspirit"
+  },
+  {
+   "name": "Q-Q",
+   "team": "hyperspirit",
+   "role": "rifler",
+   "country": "DK"
+  },
+  {
+   "name": "Scr0b",
+   "team": "hyperspirit",
+   "role": "awper",
+   "country": "DK"
+  },
+  {
+   "name": "starplajerz",
+   "team": "hyperspirit"
+  },
+  {
+   "name": "Caleyy",
+   "team": "saint-sinners"
+  },
+  {
+   "name": "deb0",
+   "team": "saint-sinners"
+  },
+  {
+   "name": "halfjix",
+   "team": "saint-sinners"
+  },
+  {
+   "name": "iRV1NG",
+   "team": "saint-sinners"
+  },
+  {
+   "name": "pavlysha666",
+   "team": "saint-sinners"
+  },
+  {
+   "name": "apocdud",
+   "team": "ground-zero",
+   "role": "igl",
+   "country": "AU"
+  },
+  {
+   "name": "hazr",
+   "team": "ground-zero"
+  },
+  {
+   "name": "Omichella",
+   "team": "ground-zero",
+   "country": "AU"
+  },
+  {
+   "name": "sliimey",
+   "team": "ground-zero",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "vision",
+   "team": "ground-zero",
+   "country": "AU"
+  },
+  {
+   "name": "ICY",
+   "team": "6yubojlbl"
+  },
+  {
+   "name": "neaLaN",
+   "team": "6yubojlbl"
+  },
+  {
+   "name": "Pump",
+   "team": "6yubojlbl"
+  },
+  {
+   "name": "stratefly",
+   "team": "6yubojlbl"
+  },
+  {
+   "name": "tasman",
+   "team": "6yubojlbl"
+  },
+  {
+   "name": "laser",
+   "team": "procyon",
+   "country": "KZ"
+  },
+  {
+   "name": "lenci",
+   "team": "procyon",
+   "role": "entry",
+   "country": "AR"
+  },
+  {
+   "name": "MaxOff",
+   "team": "procyon",
+   "country": "AR"
+  },
+  {
+   "name": "next",
+   "team": "procyon"
+  },
+  {
+   "name": "pavv",
+   "team": "procyon",
+   "role": "rifler",
+   "country": "AR"
+  },
+  {
+   "name": "k1to",
+   "team": "nordic-partners",
+   "role": "rifler",
+   "country": "DE"
+  },
+  {
+   "name": "Marix",
+   "team": "nordic-partners",
+   "role": "rifler",
+   "country": "LU"
+  },
+  {
+   "name": "Maze",
+   "team": "nordic-partners"
+  },
+  {
+   "name": "Muciek",
+   "team": "nordic-partners"
+  },
+  {
+   "name": "myltsi",
+   "team": "nordic-partners"
+  },
+  {
+   "name": "ALLE",
+   "team": "tropa-do-kingui"
+  },
+  {
+   "name": "ckzao",
+   "team": "tropa-do-kingui"
+  },
+  {
+   "name": "drg",
+   "team": "tropa-do-kingui"
+  },
+  {
+   "name": "lash",
+   "team": "tropa-do-kingui"
+  },
+  {
+   "name": "xureba",
+   "team": "tropa-do-kingui"
+  },
+  {
+   "name": "fokiu",
+   "team": "low-cortisol-br"
+  },
+  {
+   "name": "levi",
+   "team": "low-cortisol-br"
+  },
+  {
+   "name": "stormzyn",
+   "team": "low-cortisol-br"
+  },
+  {
+   "name": "t9rnay",
+   "team": "low-cortisol-br"
+  },
+  {
+   "name": "zede",
+   "team": "low-cortisol-br"
+  },
+  {
+   "name": "clockzi",
+   "team": "falcons-force"
+  },
+  {
+   "name": "grecu",
+   "team": "falcons-force"
+  },
+  {
+   "name": "NucleonZ",
+   "team": "falcons-force",
+   "country": "MK"
+  },
+  {
+   "name": "Tapewaare",
+   "team": "falcons-force",
+   "role": "igl",
+   "country": "NO"
+  },
+  {
+   "name": "VENO",
+   "team": "falcons-force"
+  },
+  {
+   "name": "ay0k",
+   "team": "mouz-nxt",
+   "role": "awper",
+   "country": "LV"
+  },
+  {
+   "name": "deeN",
+   "team": "mouz-nxt"
+  },
+  {
+   "name": "eSx",
+   "team": "mouz-nxt"
+  },
+  {
+   "name": "mixer",
+   "team": "mouz-nxt"
+  },
+  {
+   "name": "Nikodeon",
+   "team": "mouz-nxt",
+   "role": "igl",
+   "country": "DK"
+  },
+  {
+   "name": "cyber",
+   "team": "misa",
+   "country": "TR"
+  },
+  {
+   "name": "EMSTAR",
+   "team": "misa",
+   "role": "igl",
+   "country": "TR"
+  },
+  {
+   "name": "h0kz",
+   "team": "misa"
+  },
+  {
+   "name": "souv",
+   "team": "misa"
+  },
+  {
+   "name": "Zuedsta",
+   "team": "misa",
+   "role": "rifler",
+   "country": "TR"
+  },
+  {
+   "name": "FenomeN",
+   "team": "inox-division"
+  },
+  {
+   "name": "finW",
+   "team": "inox-division",
+   "country": "RU"
+  },
+  {
+   "name": "k0s",
+   "team": "inox-division",
+   "role": "rifler",
+   "country": "RU"
+  },
+  {
+   "name": "k1slll",
+   "team": "inox-division",
+   "country": "BY"
+  },
+  {
+   "name": "notineki",
+   "team": "inox-division"
+  },
+  {
+   "name": "Jayy2s",
+   "team": "saw-youngsters"
+  },
+  {
+   "name": "jERK0z",
+   "team": "saw-youngsters"
+  },
+  {
+   "name": "M1KA",
+   "team": "saw-youngsters",
+   "role": "rifler",
+   "country": "PT"
+  },
+  {
+   "name": "snowiee",
+   "team": "saw-youngsters"
+  },
+  {
+   "name": "tuxa",
+   "team": "saw-youngsters"
+  },
+  {
+   "name": "Ceruttera",
+   "team": "naocopulas"
+  },
+  {
+   "name": "diozera",
+   "team": "naocopulas"
+  },
+  {
+   "name": "fks",
+   "team": "naocopulas"
+  },
+  {
+   "name": "nardes",
+   "team": "naocopulas"
+  },
+  {
+   "name": "NEKIZ",
+   "team": "naocopulas"
+  },
+  {
+   "name": "chelleos",
+   "team": "rooster"
+  },
+  {
+   "name": "cookie",
+   "team": "rooster"
+  },
+  {
+   "name": "foggers",
+   "team": "rooster",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "rekonz",
+   "team": "rooster",
+   "role": "rifler",
+   "country": "AU"
+  },
+  {
+   "name": "SkulL",
+   "team": "rooster"
+  }
+ ]
+}

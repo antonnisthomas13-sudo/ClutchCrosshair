@@ -133,6 +133,13 @@ Classé par sujet. Dans chaque sujet, du plus ancien au plus récent.
 - « Photos des créateurs » et « Search Console » étaient encore dans la liste À faire alors que c'est fait.
 - « Photos HLTV : décision à prendre » alors que la décision du 19/10/2026 était notée ailleurs.
 
+## Jeu « Zero to Major » (page /career)
+- 12/11/2026 : première version jouable (FACEIT à 16 ans, trois tiers, tournois, note sur 100), en anglais et en français seulement. Nom choisi par Claude à la demande d'Anto (« un nom de jeu CS »).
+- 12/11/2026 : version 2, d'après une liste de 15 demandes d'Anto : départ directement niveau 10 FACEIT, nationalité avec drapeau, 150 équipes et 63 séries de tournois, Major en trois stages puis quarts, demies, finale, banc, reconversion en leader à 30 ans, toxicité, aura et popularité, personnages fictifs qui reviennent, veto des maps, classement mondial de fin d'année, nouvel écran validé sur maquette (`.impeccable/mocks/career/`).
+- Décisions d'Anto : « suis la réalité » pour le Major (pas de qualification, les 32 premières équipes du classement sont invitées) ; drapeaux = jeu d'images libre (flag-icons, MIT) chargé seulement sur la page du jeu ; logos seulement pour les 15 équipes du site, initiales pour les autres ; une carrière de 20 à 25 minutes est acceptable ; le classement s'appelle « Top 20 mondial », pas « HLTV ».
+- Anecdotes vérifiées sur le web le 12/11/2026 : le « kick surprise » et la « souris du sponsor » n'ont pas pu être confirmés, donc personnages sans nom ou fictifs ; « 1G », « EZ4… » et le graffiti de Mirage sont des faits connus, cités sans nommer personne.
+- Équilibrage par simulation (`node career-sim.js 300`) : chiffres dans `.claude/rules/career.md`.
+
 ## Points flous au 10/11/2026
 - #17 « cache Cloudflare » de l'audit du 19/10 : `_headers` met déjà le cache à 1 an ; ce que ce point voulait dire d'autre n'est pas noté.
 - Mentions légales en espagnol : la règle dit « vouvoiement partout », le texte tutoie.

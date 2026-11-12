@@ -1,0 +1,117 @@
+[
+ {
+  "id": "b-first-day", "type": "bench", "when": { "free": false }, "once": true,
+  "text": { "en": "First day of the season on the bench. The team scrims in the next room. You can hear the calls through the wall, including the ones that used to be yours.", "fr": "Premier jour de la saison sur le banc. L'équipe scrime dans la pièce d'à côté. Tu entends les calls à travers le mur, y compris ceux qui étaient les tiens." },
+  "choices": [
+   { "text": { "en": "Ask the coach exactly what you need to fix, and write it down", "fr": "Demander au coach exactement ce que tu dois corriger, et le noter" }, "fx": { "gameSense": 2, "mental": 2, "confidence": -2, "flag": "benchPlan" }, "result": { "en": "Three points on a sticky note above your monitor. It is a plan.", "fr": "Trois points sur un post-it au-dessus de ton écran. C'est un plan." } },
+   { "text": { "en": "Grind individual practice twice as hard as the starters", "fr": "T'entraîner seul deux fois plus que les titulaires" }, "fx": { "aim": 3, "reflexes": 2, "energy": -15 }, "result": { "en": "Your numbers on the aim trainer have never been this good. Nobody is watching them yet.", "fr": "Tes chiffres sur les maps d'aim n'ont jamais été aussi bons. Personne ne les regarde encore." } },
+   { "text": { "en": "Stay home. You are not going to sit there and watch", "fr": "Rester chez toi. Tu ne vas pas t'asseoir là pour regarder" }, "fx": { "energy": 10, "chemistry": -6, "tox": 4, "strike": 1 }, "result": { "en": "The team notices the empty chair behind them.", "fr": "L'équipe remarque la chaise vide derrière elle." } }
+  ]
+ },
+ {
+  "id": "b-standin-call", "type": "bench", "when": { "free": false },
+  "text": { "en": "The night before an official match, a starter gets food poisoning. The coach calls you at 23:00: \"You are in tomorrow.\"", "fr": "La veille d'un match officiel, un titulaire fait une intoxication alimentaire. Le coach t'appelle à 23 h : « Tu joues demain. »" },
+  "choices": [
+   { "text": { "en": "Play simple, play the system, make no mistake", "fr": "Jouer simple, jouer le système, ne faire aucune erreur" }, "test": { "a": { "gameSense": 2, "utility": 1, "mental": 2 }, "d": 0 },
+     "win": { "text": { "en": "A clean, quiet game and a win. The coach nods at you for the first time in months.", "fr": "Un match propre, discret, et une victoire. Le coach te fait un signe de tête pour la première fois depuis des mois." }, "fx": { "confidence": 8, "chemistry": 6, "flag": "benchBack" } },
+     "lose": { "text": { "en": "Rusty. You are a second late on every rotation.", "fr": "Rouillé. Tu as une seconde de retard sur chaque rotation." }, "fx": { "confidence": -5 } } },
+   { "text": { "en": "Play like a man with a point to prove", "fr": "Jouer comme quelqu'un qui a quelque chose à prouver" }, "test": { "a": { "aim": 3, "reflexes": 1, "clutch": 1 }, "d": 5 },
+     "win": { "text": { "en": "Thirty kills. The clip of your 1v3 is captioned \"Why is this guy benched?\"", "fr": "Trente kills. Le clip de ton 1v3 est légendé « Pourquoi ce joueur est sur le banc ? »" }, "fx": { "confidence": 10, "aura": 5, "pop": 4, "fans": 4000, "flag": "benchBack" } },
+     "lose": { "text": { "en": "You force every duel and lose most of them. The bench feels further away than yesterday.", "fr": "Tu forces tous les duels et tu en perds la plupart. Le banc paraît plus loin qu'hier." }, "fx": { "confidence": -7, "chemistry": -3 } } }
+  ]
+ },
+ {
+  "id": "b-analyst", "type": "bench", "when": { "free": false },
+  "text": { "en": "The analyst is drowning before a big event. He asks if you would break down the next opponent's T sides with him.", "fr": "L'analyste est débordé avant un gros tournoi. Il te demande si tu veux décortiquer avec lui les côtés T du prochain adversaire." },
+  "choices": [
+   { "text": { "en": "Yes. Twenty demos in four days", "fr": "Oui. Vingt démos en quatre jours" }, "fx": { "gameSense": 4, "leadership": 1, "chemistry": 6, "energy": -8 }, "result": { "en": "The team wins the series with a read you found at 2 a.m. The IGL says your name in the interview.", "fr": "L'équipe gagne la série grâce à une lecture que tu as trouvée à 2 h du matin. L'IGL cite ton pseudo en interview." } },
+   { "text": { "en": "\"I am a player, not an analyst.\"", "fr": "« Je suis joueur, pas analyste. »" }, "fx": { "chemistry": -5, "tox": 3, "aim": 1 }, "result": { "en": "He does not ask again.", "fr": "Il ne redemande pas." } }
+  ]
+ },
+ {
+  "id": "b-loan", "type": "bench", "when": { "free": false },
+  "text": { "en": "{agent}, your agent, calls: a smaller team wants you for one online tournament, as a guest. No contract, no promise. Just games.", "fr": "{agent}, ton agent, t'appelle : une équipe plus petite te veut pour un tournoi en ligne, en invité. Pas de contrat, pas de promesse. Juste des matchs." },
+  "choices": [
+   { "text": { "en": "Take it. Official matches are oxygen", "fr": "Accepter. Les matchs officiels, c'est de l'oxygène" }, "test": { "a": { "aim": 2, "gameSense": 2 }, "d": -2 },
+     "win": { "text": { "en": "You carry them to the final. Your own club watches the stream.", "fr": "Tu les portes jusqu'en finale. Ton propre club regarde le stream." }, "fx": { "confidence": 8, "pop": 3, "money": 2000, "flag": "benchBack" } },
+     "lose": { "text": { "en": "Out early, with a team you met on Monday. At least you played.", "fr": "Sorti tôt, avec une équipe rencontrée lundi. Au moins tu as joué." }, "fx": { "confidence": -2, "gameSense": 1 } } },
+   { "text": { "en": "Refuse. You are worth more than a guest spot", "fr": "Refuser. Tu vaux mieux qu'une place d'invité" }, "fx": { "confidence": 2, "tox": 2 }, "result": { "en": "\"Your call,\" says {agent}. The line stays quiet for a while.", "fr": "« C'est toi qui vois », dit {agent}. La ligne reste silencieuse un moment." } }
+  ]
+ },
+ {
+  "id": "b-interview", "type": "bench",
+  "text": { "en": "{journalist} wants an interview: \"Your side of the story.\" It would be the most read piece of the week.", "fr": "{journalist} veut une interview : « Ta version de l'histoire. » Ce serait l'article le plus lu de la semaine." },
+  "choices": [
+   { "text": { "en": "Speak, and take your share of the blame", "fr": "Parler, et prendre ta part de responsabilité" }, "fx": { "pop": 4, "aura": 3, "mental": 1 }, "result": { "en": "\"I was not good enough for the role. I am working on it.\" Three teams read it twice.", "fr": "« Je n'étais pas assez bon pour le rôle. J'y travaille. » Trois équipes le lisent deux fois." } },
+   { "text": { "en": "Speak, and settle the score", "fr": "Parler, et régler tes comptes" }, "fx": { "pop": 6, "fans": 5000, "tox": 12, "chemistry": -10, "style": 10, "strike": 2 }, "result": { "en": "Huge numbers. Every manager in the scene now knows how you leave a team.", "fr": "Des chiffres énormes. Tous les managers de la scène savent maintenant comment tu quittes une équipe." } },
+   { "text": { "en": "Decline politely", "fr": "Refuser poliment" }, "fx": { "mental": 1, "style": -5 }, "result": { "en": "\"No comment\" is its own headline, a small one.", "fr": "« Pas de commentaire », c'est un titre aussi, un petit." } }
+  ]
+ },
+ {
+  "id": "b-fpl-grind", "type": "bench",
+  "text": { "en": "No officials for weeks. The only place left to prove something is the top of the FACEIT ladder, where scouts and coaches lurk.", "fr": "Pas de match officiel depuis des semaines. Le seul endroit où prouver quelque chose, c'est le haut du classement FACEIT, où traînent recruteurs et coachs." },
+  "choices": [
+   { "text": { "en": "Ten games a day until your name is in the top 10", "fr": "Dix games par jour jusqu'à voir ton pseudo dans le top 10" }, "test": { "a": { "aim": 2, "reflexes": 1, "mental": 2 }, "d": 2 },
+     "win": { "text": { "en": "Top 5 of the month. Two managers ask {agent} about your contract.", "fr": "Top 5 du mois. Deux managers demandent à {agent} où en est ton contrat." }, "fx": { "elo": 300, "aim": 2, "pop": 3, "confidence": 6, "energy": -12, "flag": "benchBack" } },
+     "lose": { "text": { "en": "You plateau outside the top 100 and burn out.", "fr": "Tu plafonnes hors du top 100 et tu t'épuises." }, "fx": { "energy": -18, "confidence": -4, "aim": 1 } } },
+   { "text": { "en": "Three focused games a day, each one reviewed", "fr": "Trois games concentrées par jour, chacune revue ensuite" }, "fx": { "gameSense": 2, "aim": 1, "mental": 1, "elo": 100 }, "result": { "en": "Slow, steady. You are a better player than three months ago.", "fr": "Lent, régulier. Tu es un meilleur joueur qu'il y a trois mois." } }
+  ]
+ },
+ {
+  "id": "b-stream-era", "type": "bench",
+  "text": { "en": "With no matches to play, your stream is suddenly your main stage. Viewers ask for everything: ranked games, reactions to pro matches, your opinion on your old team.", "fr": "Sans match à jouer, ton stream devient ta scène principale. Les spectateurs demandent de tout : des games classées, des réactions aux matchs pros, ton avis sur ton ancienne équipe." },
+  "choices": [
+   { "text": { "en": "Become the best watch-party in the scene", "fr": "Devenir la meilleure watch-party de la scène" }, "fx": { "pop": 5, "fansPct": 20, "money": 6000, "style": 10, "gameSense": 1 }, "result": { "en": "Your analysis is sharp and funny. Some people now know you as a streamer first.", "fr": "Ton analyse est précise et drôle. Certains te connaissent maintenant d'abord comme streamer." } },
+   { "text": { "en": "Stream only your practice, eight hours a day", "fr": "Streamer seulement ton entraînement, huit heures par jour" }, "fx": { "aim": 2, "pop": 2, "fansPct": 8, "energy": -8 }, "result": { "en": "A small chat watches you shoot bots for hours. Teams watch too.", "fr": "Un petit chat te regarde tirer sur des bots pendant des heures. Des équipes regardent aussi." } },
+   { "text": { "en": "Roast your old team's matches live", "fr": "Démonter en direct les matchs de ton ancienne équipe" }, "fx": { "pop": 4, "fansPct": 15, "tox": 10, "aura": -2, "strike": 1 }, "result": { "en": "The clips travel far. So does your reputation.", "fr": "Les clips voyagent loin. Ta réputation aussi." } }
+  ]
+ },
+ {
+  "id": "b-free-tryout", "type": "bench", "when": { "free": true },
+  "text": { "en": "{agent} gets you a tryout: three days of scrims with a team that has not decided between you and two other players.", "fr": "{agent} te décroche un essai : trois jours de scrims avec une équipe qui hésite entre toi et deux autres joueurs." },
+  "choices": [
+   { "text": { "en": "Be the easiest teammate they have ever had", "fr": "Être le coéquipier le plus facile qu'ils aient jamais eu" }, "test": { "a": { "comms": 2, "utility": 2, "gameSense": 1 }, "d": 0 },
+     "win": { "text": { "en": "\"We did not have to explain anything twice.\" It is the best compliment in the business.", "fr": "« On n'a rien eu à lui expliquer deux fois. » C'est le plus beau compliment du métier." }, "fx": { "confidence": 6, "pop": 2, "flag": "scouted" } },
+     "lose": { "text": { "en": "Pleasant, forgettable. They pick the one who topped the scoreboard.", "fr": "Agréable, oubliable. Ils prennent celui qui a fini en tête du tableau." }, "fx": { "confidence": -4 } } },
+   { "text": { "en": "Top the scoreboard, whatever it takes", "fr": "Finir en tête du tableau, coûte que coûte" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "Best rating of the three days. They ask when you can travel.", "fr": "Meilleur rating des trois jours. Ils te demandent quand tu peux voyager." }, "fx": { "confidence": 8, "aura": 2, "flag": "scouted" } },
+     "lose": { "text": { "en": "You bait two teammates for kills and everyone sees it.", "fr": "Tu te sers de deux coéquipiers comme appâts pour des kills, et tout le monde le voit." }, "fx": { "confidence": -5, "tox": 4 } } }
+  ]
+ },
+ {
+  "id": "b-free-money", "type": "bench", "when": { "free": true },
+  "text": { "en": "No salary this month. Your savings are fine for now, but your accountant uses the word \"runway\".", "fr": "Pas de salaire ce mois-ci. Tes économies tiennent pour l'instant, mais ton comptable emploie le mot « réserve »." },
+  "choices": [
+   { "text": { "en": "Coaching sessions for amateur teams, paid by the hour", "fr": "Des séances de coaching pour des équipes amateurs, payées à l'heure" }, "fx": { "money": 4000, "leadership": 2, "comms": 1, "energy": -6 }, "result": { "en": "Explaining the basics to five strangers reminds you why you love them.", "fr": "Expliquer les bases à cinq inconnus te rappelle pourquoi tu les aimes." } },
+   { "text": { "en": "A sponsored showmatch with streamers", "fr": "Un showmatch sponsorisé avec des streamers" }, "fx": { "money": 7000, "pop": 3, "style": 8, "confidence": -1 }, "result": { "en": "Easy money, big laughs. A voice in your head says \"exhibition player\".", "fr": "De l'argent facile, de gros rires. Une voix dans ta tête dit « joueur d'exhibition »." } },
+   { "text": { "en": "Nothing. Every hour goes into getting back", "fr": "Rien. Chaque heure sert à revenir" }, "fx": { "aim": 2, "gameSense": 1, "money": -2000 }, "result": { "en": "You live small and play a lot.", "fr": "Tu vis petit et tu joues beaucoup." } }
+  ]
+ },
+ {
+  "id": "b-free-doubt", "type": "bench", "when": { "free": true },
+  "text": { "en": "Sunday evening. No team, no scrim tomorrow, no flight to catch. A friend from school sends a job offer: \"They are hiring. Just saying.\"", "fr": "Dimanche soir. Pas d'équipe, pas de scrim demain, pas d'avion à prendre. Un ami du lycée t'envoie une offre d'emploi : « Ils recrutent. Je dis ça comme ça. »" },
+  "choices": [
+   { "text": { "en": "Close the message and open the aim trainer", "fr": "Fermer le message et lancer une map d'aim" }, "test": { "a": { "mental": 3 }, "d": 0 },
+     "win": { "text": { "en": "The doubt becomes fuel. Your best practice week in a year.", "fr": "Le doute devient du carburant. Ta meilleure semaine d'entraînement depuis un an." }, "fx": { "mental": 3, "aim": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "You shoot bots for an hour without seeing them.", "fr": "Tu tires sur des bots pendant une heure sans les voir." }, "fx": { "confidence": -5, "energy": -5 } } },
+   { "text": { "en": "Call {coach}, the one who has known you since FACEIT", "fr": "Appeler {coach}, celui qui te connaît depuis FACEIT" }, "fx": { "mental": 3, "confidence": 4, "gameSense": 1 }, "result": { "en": "\"You are not finished. You are between two teams. Send me a demo.\"", "fr": "« T'es pas fini. T'es entre deux équipes. Envoie-moi une démo. »" } }
+  ]
+ },
+ {
+  "id": "b-watch-final", "type": "bench", "when": { "free": false },
+  "text": { "en": "Your team reaches a final without you. The manager offers you a seat in the arena, in team colours, behind the stage.", "fr": "Ton équipe atteint une finale sans toi. Le manager te propose une place dans l'arène, aux couleurs de l'équipe, derrière la scène." },
+  "choices": [
+   { "text": { "en": "Go, and be the loudest voice behind them", "fr": "Y aller, et être la voix la plus forte derrière eux" }, "fx": { "chemistry": 9, "mental": 2, "confidence": -2, "flag": "benchBack" }, "result": { "en": "The cameras catch you celebrating a round like it was yours. The team sees the replay.", "fr": "Les caméras te filment en train de fêter un round comme si c'était le tien. L'équipe voit le ralenti." } },
+   { "text": { "en": "Watch from home, alone", "fr": "Regarder de chez toi, seul" }, "fx": { "energy": 4, "chemistry": -3 }, "result": { "en": "You turn the stream off before the trophy ceremony.", "fr": "Tu coupes le stream avant la remise du trophée." } }
+  ]
+ },
+ {
+  "id": "b-new-role", "type": "bench",
+  "text": { "en": "{coach} writes: \"Teams are not looking for another you. They are looking for a second AWP, an anchor, a caller. Add one string to your bow this year.\"", "fr": "{coach} t'écrit : « Les équipes ne cherchent pas un deuxième toi. Elles cherchent un second AWP, un anchor, quelqu'un qui appelle. Ajoute une corde à ton arc cette année. »" },
+  "choices": [
+   { "text": { "en": "Learn to anchor a site alone", "fr": "Apprendre à tenir un site seul" }, "fx": { "clutch": 3, "utility": 2, "gameSense": 1 }, "result": { "en": "Hundreds of retakes against bots, then against people. You become hard to kill.", "fr": "Des centaines de retakes contre des bots, puis contre des gens. Tu deviens difficile à tuer." } },
+   { "text": { "en": "Learn to call mid-rounds", "fr": "Apprendre à appeler les milieux de round" }, "fx": { "leadership": 3, "comms": 2, "gameSense": 1 }, "result": { "en": "You start hearing the game instead of only seeing it.", "fr": "Tu commences à entendre le jeu au lieu de seulement le voir." } },
+   { "text": { "en": "Double down on what you already do best", "fr": "Miser encore plus sur ce que tu fais déjà le mieux" }, "fx": { "aim": 2, "reflexes": 2 }, "result": { "en": "Sharper than ever at one thing.", "fr": "Plus affûté que jamais dans un seul domaine." } }
+  ]
+ }
+]

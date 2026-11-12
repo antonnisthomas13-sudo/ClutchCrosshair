@@ -1,0 +1,283 @@
+[
+ {
+  "id": "m-dust2-mid", "type": "match", "when": { "map": "dust2" },
+  "text": { "en": "{tournament}, Dust II, CT side. Their AWPer has killed your Mid player through Mid Doors two rounds in a row, at the very first second.", "fr": "{tournament}, Dust II, côté CT. Leur AWPer a tué votre joueur du Mid à travers Mid Doors deux rounds de suite, dès la première seconde." },
+  "choices": [
+   { "text": { "en": "Smoke Mid Doors from spawn and cross behind it", "fr": "Smoker Mid Doors depuis le spawn et traverser derrière" }, "test": { "a": { "utility": 3, "gameSense": 1 }, "d": 0 },
+     "win": { "text": { "en": "The smoke lands on the pixel. He shoots at nothing and you own Mid.", "fr": "La smoke tombe au pixel près. Il tire dans le vide et le Mid est à vous." }, "fx": { "bonus": 2, "utility": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "The smoke is a metre short. He takes the shot through the gap.", "fr": "La smoke est trop courte d'un mètre. Il tire dans le trou." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Take the duel yourself, jumping across", "fr": "Prendre le duel toi-même, en traversant en saut" }, "test": { "a": { "reflexes": 3, "aim": 2 }, "d": 6 },
+     "win": { "text": { "en": "A mid-air shot through the doors. Their AWP is on the floor before the round has started.", "fr": "Un tir en plein saut à travers les portes. Leur AWP est par terre avant que le round ait commencé." }, "fx": { "bonus": 3, "aura": 4, "fans": 2500, "confidence": 6 } },
+     "lose": { "text": { "en": "Three rounds in a row now.", "fr": "Trois rounds de suite, maintenant." }, "fx": { "bonus": -2, "confidence": -4 } } }
+  ]
+ },
+ {
+  "id": "m-dust2-b", "type": "match", "when": { "map": "dust2" },
+  "text": { "en": "{tournament}, Dust II. You are the last player on the B site, on Platform, when four of them pour out of B Tunnels behind two flashes.", "fr": "{tournament}, Dust II. Tu es le dernier joueur sur le site B, sur Platform, quand quatre d'entre eux sortent de B Tunnels derrière deux flashs." },
+  "choices": [
+   { "text": { "en": "Turn away from the flashes, then spray the tunnel exit", "fr": "Te retourner pour éviter les flashs, puis sprayer la sortie du tunnel" }, "test": { "a": { "aim": 2, "reflexes": 2, "mental": 1 }, "d": 4 },
+     "win": { "text": { "en": "Three kills in one spray. The fourth plants alone and your rotation finishes him.", "fr": "Trois kills dans le même spray. Le quatrième plante seul et ta rotation le termine." }, "fx": { "bonus": 3, "aura": 3, "fans": 2000, "confidence": 6 } },
+     "lose": { "text": { "en": "You turn back half a second too early. White screen.", "fr": "Tu te retournes une demi-seconde trop tôt. Écran blanc." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "Drop through Window and play the retake with your team", "fr": "Sauter par Window et jouer le retake avec ton équipe" }, "test": { "a": { "gameSense": 3, "comms": 1 }, "d": -1 },
+     "win": { "text": { "en": "You stay alive, call four on B, and the 5v4 retake is clean.", "fr": "Tu restes en vie, tu annonces quatre en B, et le retake à 5 contre 4 est propre." }, "fx": { "bonus": 2, "gameSense": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "The retake comes through Mid Doors one by one.", "fr": "Le retake arrive par Mid Doors, un par un." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-mirage-apps", "type": "match", "when": { "map": "mirage" },
+  "text": { "en": "{tournament}, Mirage, T side. Your team has lost three rounds hitting A. Your IGL asks for one piece of information before he calls: is anyone holding Apartments?", "fr": "{tournament}, Mirage, côté T. Ton équipe a perdu trois rounds en tapant A. Ton IGL veut une information avant d'appeler : est-ce que quelqu'un tient Apartments ?" },
+  "choices": [
+   { "text": { "en": "Walk up silently and listen", "fr": "Monter en silence et écouter" }, "test": { "a": { "gameSense": 2, "mental": 1, "comms": 1 }, "d": 0 },
+     "win": { "text": { "en": "One footstep on the Van. \"Solo B, he is on Van.\" The execute takes eight seconds.", "fr": "Un pas sur Van. « Solo B, il est sur Van. » L'exec prend huit secondes." }, "fx": { "bonus": 2, "comms": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "He was waiting for you in silence too. He was better at it.", "fr": "Lui aussi t'attendait en silence. Il le faisait mieux." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Flash yourself through the window and take the space", "fr": "Te flasher par la fenêtre et prendre l'espace" }, "test": { "a": { "reflexes": 2, "aim": 2, "utility": 1 }, "d": 3 },
+     "win": { "text": { "en": "Pop flash, one kill at Bench, and Market is yours.", "fr": "Pop flash, un kill sur Bench, et Market est à toi." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "Two of them were stacked there. You trade one.", "fr": "Ils étaient deux empilés là. Tu en emmènes un." }, "fx": { "bonus": -1 } } }
+  ]
+ },
+ {
+  "id": "m-mirage-palace", "type": "match", "when": { "map": "mirage" },
+  "text": { "en": "{tournament}, Mirage. 2v2 after the plant on A. You are in Palace, your teammate is at Ticket with 20 HP. The defuse sound starts.", "fr": "{tournament}, Mirage. 2v2 après le plant en A. Tu es en Palace, ton coéquipier est à Ticket avec 20 HP. Le son du defuse commence." },
+  "choices": [
+   { "text": { "en": "Wait. It is a fake", "fr": "Attendre. C'est un faux" }, "test": { "a": { "gameSense": 3, "mental": 2 }, "d": 2 },
+     "win": { "text": { "en": "It stops after a second. He peeks Palace and finds you already aiming.", "fr": "Il s'arrête au bout d'une seconde. Il peeke Palace et te trouve déjà en train de viser." }, "fx": { "bonus": 3, "clutch": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "It was not a fake. He had a kit and a smoke.", "fr": "Ce n'était pas un faux. Il avait un kit et une smoke." }, "fx": { "bonus": -3, "confidence": -4 } } },
+   { "text": { "en": "Jump out and spray the bomb", "fr": "Sauter et sprayer la bombe" }, "test": { "a": { "aim": 3, "reflexes": 1 }, "d": 3 },
+     "win": { "text": { "en": "You catch him on the bomb. Your teammate trades the last one from Ticket.", "fr": "Tu le prends sur la bombe. Ton coéquipier trade le dernier depuis Ticket." }, "fx": { "bonus": 3, "confidence": 4, "chemistry": 2 } },
+     "lose": { "text": { "en": "The second CT was watching Palace from Jungle the whole time.", "fr": "Le deuxième CT surveillait Palace depuis Jungle depuis le début." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-inferno-apps", "type": "match", "when": { "map": "inferno" },
+  "text": { "en": "{tournament}, Inferno, T side. You are alone in Apartments while your team fakes Banana. The A site is quiet. Too quiet, or really empty?", "fr": "{tournament}, Inferno, côté T. Tu es seul dans Apartments pendant que ton équipe feinte Banana. Le site A est silencieux. Trop silencieux, ou vraiment vide ?" },
+  "choices": [
+   { "text": { "en": "Wait for the rotation sound, then walk out", "fr": "Attendre le bruit de la rotation, puis sortir en marchant" }, "test": { "a": { "gameSense": 3, "mental": 1 }, "d": 1 },
+     "win": { "text": { "en": "You hear them run through Arch. You plant for Pit and call your team back.", "fr": "Tu les entends courir par Arch. Tu plantes pour Pit et tu rappelles ton équipe." }, "fx": { "bonus": 3, "gameSense": 1, "confidence": 4 } },
+     "lose": { "text": { "en": "Nobody rotated. The Pit player lets you walk out, then shoots you in the back.", "fr": "Personne n'a tourné. Le joueur de Pit te laisse sortir, puis te tire dans le dos." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Go now, fast, and check Pit first", "fr": "Y aller maintenant, vite, et vérifier Pit d'abord" }, "test": { "a": { "aim": 2, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "He is in Pit. You are faster. The site is open.", "fr": "Il est en Pit. Tu es plus rapide. Le site est ouvert." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "He was in Library, not in Pit.", "fr": "Il était en Library, pas en Pit." }, "fx": { "bonus": -2, "confidence": -2 } } }
+  ]
+ },
+ {
+  "id": "m-inferno-retake", "type": "match", "when": { "map": "inferno" },
+  "text": { "en": "{tournament}, Inferno. 3v3 retake on B, bomb planted behind Coffins. You come from CT with a molotov. One of them is somewhere near New Box.", "fr": "{tournament}, Inferno. Retake B en 3v3, bombe plantée derrière Coffins. Tu arrives par CT avec un molotov. L'un d'eux est quelque part vers New Box." },
+  "choices": [
+   { "text": { "en": "Molotov New Box and take the site together", "fr": "Molotov sur New Box et reprendre le site ensemble" }, "test": { "a": { "utility": 3, "comms": 1 }, "d": 0 },
+     "win": { "text": { "en": "He has to leave the fire and runs into two rifles.", "fr": "Il doit sortir du feu et tombe sur deux fusils." }, "fx": { "bonus": 2, "utility": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "The molotov bounces off the box and burns your own teammate.", "fr": "Le molotov rebondit sur la caisse et brûle ton propre coéquipier." }, "fx": { "bonus": -2, "chemistry": -2 } } },
+   { "text": { "en": "Keep the molotov for the bomb, to block the last second", "fr": "Garder le molotov pour la bombe, pour bloquer la dernière seconde" }, "fx": { "bonus": 1, "gameSense": 1 }, "result": { "en": "Not pretty, but the planter cannot hold his angle through the flames.", "fr": "Pas joli, mais celui qui a planté ne peut pas tenir son angle dans les flammes." } }
+  ]
+ },
+ {
+  "id": "m-nuke-outside", "type": "match", "when": { "map": "nuke" },
+  "text": { "en": "{tournament}, Nuke, T side. The plan is to cross Outside towards Secret. The wall of smokes is one smoke short: there is a gap, and an AWP is probably looking at it.", "fr": "{tournament}, Nuke, côté T. Le plan est de traverser Outside vers Secret. Il manque une smoke au mur : il y a un trou, et un AWP le regarde sûrement." },
+  "choices": [
+   { "text": { "en": "Cross anyway, jumping, one by one", "fr": "Traverser quand même, en sautant, un par un" }, "test": { "a": { "reflexes": 2, "mental": 1, "comms": 1 }, "d": 3 },
+     "win": { "text": { "en": "He misses the first, hesitates on the second. Four of you are in Secret.", "fr": "Il rate le premier, hésite sur le deuxième. Vous êtes quatre en Secret." }, "fx": { "bonus": 2, "confidence": 3 } },
+     "lose": { "text": { "en": "He does not miss the first.", "fr": "Il ne rate pas le premier." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Cancel and hit Ramp instead, late", "fr": "Annuler et taper Ramp à la place, tard" }, "test": { "a": { "gameSense": 2, "leadership": 1, "comms": 1 }, "d": 1 },
+     "win": { "text": { "en": "Their rotation is already Outside. Ramp is held by one player with a pistol.", "fr": "Leur rotation est déjà Outside. Ramp est tenue par un seul joueur au pistolet." }, "fx": { "bonus": 3, "gameSense": 1 } },
+     "lose": { "text": { "en": "Twenty seconds is not enough to take Ramp.", "fr": "Vingt secondes, ça ne suffit pas pour prendre Ramp." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-nuke-heaven", "type": "match", "when": { "map": "nuke" },
+  "text": { "en": "{tournament}, Nuke, CT side. You hold the A site from Heaven. A noise in Vents, a flash over Hut, and footsteps in Lobby, all in the same second.", "fr": "{tournament}, Nuke, côté CT. Tu tiens le site A depuis Heaven. Un bruit dans Vents, une flash par-dessus Hut et des pas en Lobby, tout dans la même seconde." },
+  "choices": [
+   { "text": { "en": "Hold your position and call exactly what you hear", "fr": "Tenir ta position et annoncer exactement ce que tu entends" }, "test": { "a": { "comms": 3, "gameSense": 2 }, "d": 0 },
+     "win": { "text": { "en": "\"One vents, four Hut, I hold Heaven.\" Your team is exactly where it should be.", "fr": "« Un Vents, quatre Hut, je tiens Heaven. » Ton équipe est exactement là où il faut." }, "fx": { "bonus": 3, "comms": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "You call five A. Four of them were going down.", "fr": "Tu annonces cinq en A. Quatre d'entre eux descendaient." }, "fx": { "bonus": -2, "chemistry": -2 } } },
+   { "text": { "en": "Drop down and fight Hut before they are ready", "fr": "Descendre et te battre sur Hut avant qu'ils soient prêts" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 5 },
+     "win": { "text": { "en": "Two kills through the door of Hut. The execute never starts.", "fr": "Deux kills à travers la porte de Hut. L'exec ne démarre jamais." }, "fx": { "bonus": 3, "confidence": 6, "fans": 1200 } },
+     "lose": { "text": { "en": "You fall into four crosshairs.", "fr": "Tu tombes dans quatre viseurs." }, "fx": { "bonus": -2, "confidence": -3 } } }
+  ]
+ },
+ {
+  "id": "m-ancient-cave", "type": "match", "when": { "map": "ancient" },
+  "text": { "en": "{tournament}, Ancient, CT side. You hold B alone from Pillar. A smoke blooms at the top of B Ramp and you hear someone drop into Cave.", "fr": "{tournament}, Ancient, côté CT. Tu tiens B seul depuis Pillar. Une smoke s'ouvre en haut de B Ramp et tu entends quelqu'un descendre dans Cave." },
+  "choices": [
+   { "text": { "en": "Spam through the smoke, then fall back", "fr": "Tirer à travers la smoke, puis reculer" }, "test": { "a": { "aim": 2, "gameSense": 2 }, "d": 2 },
+     "win": { "text": { "en": "One kill through the smoke, 70 damage on another. They hesitate for ten precious seconds.", "fr": "Un kill à travers la smoke, 70 de dégâts sur un autre. Ils hésitent pendant dix secondes précieuses." }, "fx": { "bonus": 2, "aim": 1, "confidence": 3 } },
+     "lose": { "text": { "en": "The Cave player was already behind you.", "fr": "Le joueur de Cave était déjà derrière toi." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Leave the site and play the retake from Lane", "fr": "Lâcher le site et jouer le retake depuis Lane" }, "fx": { "bonus": 1, "gameSense": 1 }, "result": { "en": "You give them the plant and keep five players. The retake is a coin flip you chose.", "fr": "Tu leur donnes le plant et vous restez à cinq. Le retake est un pile ou face que tu as choisi." } }
+  ]
+ },
+ {
+  "id": "m-ancient-donut", "type": "match", "when": { "map": "ancient" },
+  "text": { "en": "{tournament}, Ancient. 1v1, you are a CT in Temple, the bomb is down in A Main with the last T. Fifteen seconds. He has to come to you, or you have to go to him?", "fr": "{tournament}, Ancient. 1v1, tu es CT en Temple, la bombe est tombée en A Main avec le dernier T. Quinze secondes. C'est à lui de venir, ou à toi d'y aller ?" },
+  "choices": [
+   { "text": { "en": "Stay. The clock is on your side", "fr": "Rester. Le chrono joue pour toi" }, "test": { "a": { "mental": 3, "clutch": 2 }, "d": 0 },
+     "win": { "text": { "en": "He runs out with five seconds left, straight into your crosshair.", "fr": "Il sort en courant à cinq secondes de la fin, droit dans ton viseur." }, "fx": { "bonus": 3, "clutch": 1, "mental": 1 } },
+     "lose": { "text": { "en": "He flashes over the wall. You never see him plant.", "fr": "Il flashe par-dessus le mur. Tu ne le vois jamais planter." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Push through Donut and surprise him", "fr": "Pousser par Donut et le surprendre" }, "test": { "a": { "aim": 2, "reflexes": 2, "clutch": 1 }, "d": 4 },
+     "win": { "text": { "en": "He is looking at the site. You are behind him.", "fr": "Il regarde le site. Tu es derrière lui." }, "fx": { "bonus": 3, "aura": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "He was waiting for exactly that.", "fr": "Il attendait exactement ça." }, "fx": { "bonus": -2, "confidence": -3 } } }
+  ]
+ },
+ {
+  "id": "m-anubis-mid", "type": "match", "when": { "map": "anubis" },
+  "text": { "en": "{tournament}, Anubis, T side. You have taken Mid for free three rounds in a row. This round, the silence at Connector feels different.", "fr": "{tournament}, Anubis, côté T. Vous avez pris le Mid gratuitement trois rounds de suite. Ce round-ci, le silence à Connector n'est pas le même." },
+  "choices": [
+   { "text": { "en": "Throw a molotov deep before stepping in", "fr": "Lancer un molotov au fond avant d'entrer" }, "test": { "a": { "utility": 2, "gameSense": 2 }, "d": 0 },
+     "win": { "text": { "en": "Two CTs jump out of the fire. Their trap becomes your two free kills.", "fr": "Deux CT sortent du feu en sautant. Leur piège devient vos deux kills gratuits." }, "fx": { "bonus": 3, "gameSense": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "Nobody was there. You hit a site without your molotov.", "fr": "Il n'y avait personne. Vous tapez un site sans ton molotov." }, "fx": { "bonus": -1 } } },
+   { "text": { "en": "Trust the habit and walk in", "fr": "Faire confiance à l'habitude et entrer" }, "test": { "a": { "reflexes": 2, "aim": 2 }, "d": 6 },
+     "win": { "text": { "en": "They are there, and you are faster.", "fr": "Ils sont là, et tu es plus rapide." }, "fx": { "bonus": 3, "confidence": 6 } },
+     "lose": { "text": { "en": "Two shotguns at point-blank range.", "fr": "Deux fusils à pompe à bout portant." }, "fx": { "bonus": -3, "confidence": -3 } } }
+  ]
+ },
+ {
+  "id": "m-anubis-heaven", "type": "match", "when": { "map": "anubis" },
+  "text": { "en": "{tournament}, Anubis. Post-plant on A, 2v2. You are in Heaven with the AK of a dead teammate and twelve bullets. One CT is at Camera, the other is unknown.", "fr": "{tournament}, Anubis. Post-plant en A, 2v2. Tu es en Heaven avec l'AK d'un coéquipier mort et douze balles. Un CT est à Camera, l'autre est introuvable." },
+  "choices": [
+   { "text": { "en": "Let them come to the bomb and shoot the defuser", "fr": "Les laisser venir à la bombe et tirer sur celui qui désamorce" }, "test": { "a": { "mental": 2, "aim": 2, "clutch": 1 }, "d": 1 },
+     "win": { "text": { "en": "Six bullets for the defuser, six for his friend. Empty magazine, full arena.", "fr": "Six balles pour celui qui désamorce, six pour son ami. Chargeur vide, arène pleine." }, "fx": { "bonus": 3, "clutch": 2, "aura": 3, "fans": 1800 } },
+     "lose": { "text": { "en": "They smoke the bomb. Twelve bullets into grey.", "fr": "Ils smokent la bombe. Douze balles dans le gris." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Peek Camera now, while it is a 1v1", "fr": "Peeker Camera maintenant, tant que c'est un 1v1" }, "test": { "a": { "aim": 3, "reflexes": 1 }, "d": 3 },
+     "win": { "text": { "en": "One tap. The last CT saves his rifle.", "fr": "Un tap. Le dernier CT sauve son fusil." }, "fx": { "bonus": 3, "confidence": 5 } },
+     "lose": { "text": { "en": "The unknown one was right under you.", "fr": "L'introuvable était juste en dessous de toi." }, "fx": { "bonus": -2, "confidence": -2 } } }
+  ]
+ },
+ {
+  "id": "m-cache-mid", "type": "match", "when": { "map": "cache" },
+  "text": { "en": "{tournament}, Cache, T side. The round is slow. You are at Mid and you notice the CT at Z Connector has been throwing his smoke at the same second every round.", "fr": "{tournament}, Cache, côté T. Le round est lent. Tu es au Mid et tu remarques que le CT de Z Connector lance sa smoke à la même seconde à chaque round." },
+  "choices": [
+   { "text": { "en": "Run through the smoke the moment it lands", "fr": "Traverser la smoke au moment où elle tombe" }, "test": { "a": { "reflexes": 2, "gameSense": 2 }, "d": 3 },
+     "win": { "text": { "en": "He is still putting his rifle back in his hands. You are in their spawn with the whole map open.", "fr": "Il est encore en train de reprendre son fusil. Tu es dans leur spawn avec toute la map ouverte." }, "fx": { "bonus": 3, "gameSense": 1, "confidence": 5 } },
+     "lose": { "text": { "en": "This round, his teammate was waiting behind it.", "fr": "Ce round-ci, son coéquipier attendait derrière." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Tell your IGL and let him use it later", "fr": "Le dire à ton IGL et le laisser s'en servir plus tard" }, "fx": { "bonus": 1, "comms": 1, "chemistry": 3 }, "result": { "en": "He keeps it for the round at 10-10. It works.", "fr": "Il le garde pour le round à 10-10. Ça marche." } }
+  ]
+ },
+ {
+  "id": "m-cache-b", "type": "match", "when": { "map": "cache" },
+  "text": { "en": "{tournament}, Cache. Match point for them. They run through B Main with the bomb, and you are in Sunroom with one flash. Your B partner is already dead in Checkers.", "fr": "{tournament}, Cache. Balle de match pour eux. Ils courent en B Main avec la bombe, et tu es en Sunroom avec une flash. Ton partenaire de B est déjà mort en Checkers." },
+  "choices": [
+   { "text": { "en": "Flash out of Sunroom and take them from the side", "fr": "Flasher en sortant de Sunroom et les prendre de côté" }, "test": { "a": { "aim": 2, "utility": 2, "reflexes": 1 }, "d": 4 },
+     "win": { "text": { "en": "Three blind players on the site and one rifle on their flank. You save the match.", "fr": "Trois joueurs aveugles sur le site et un fusil sur leur flanc. Tu sauves le match." }, "fx": { "bonus": 4, "aura": 4, "fans": 3000, "confidence": 7 } },
+     "lose": { "text": { "en": "The flash bounces back into the room. You blind yourself.", "fr": "La flash rebondit dans la pièce. Tu t'aveugles toi-même." }, "fx": { "bonus": -2, "confidence": -4 } } },
+   { "text": { "en": "Hide, let them plant, wait for your team", "fr": "Te cacher, les laisser planter, attendre ton équipe" }, "test": { "a": { "mental": 2, "gameSense": 2 }, "d": 0 },
+     "win": { "text": { "en": "They never check Sunroom. When the retake starts, you are behind all of them.", "fr": "Ils ne vérifient jamais Sunroom. Quand le retake commence, tu es derrière eux tous." }, "fx": { "bonus": 3, "clutch": 1, "gameSense": 1 } },
+     "lose": { "text": { "en": "They check Sunroom.", "fr": "Ils vérifient Sunroom." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-pistol", "type": "match",
+  "text": { "en": "{tournament}, {map}. Pistol round. $800: armour and nothing else, or a better pistol and utility with no armour?", "fr": "{tournament}, {map}. Pistol round. 800 $ : une armure et rien d'autre, ou un meilleur pistolet et des grenades sans armure ?" },
+  "choices": [
+   { "text": { "en": "Armour, and fight at close range", "fr": "L'armure, et te battre de près" }, "test": { "a": { "aim": 2, "reflexes": 2 }, "d": 0 },
+     "win": { "text": { "en": "You tank two body shots at {spot} and win both duels.", "fr": "Tu encaisses deux balles dans le corps à {spot} et tu gagnes les deux duels." }, "fx": { "bonus": 2, "confidence": 4 } },
+     "lose": { "text": { "en": "One headshot. Armour does not help against those.", "fr": "Un headshot. L'armure ne sert à rien contre ça." }, "fx": { "bonus": -1 } } },
+   { "text": { "en": "Utility for the team: a smoke and two flashes", "fr": "Des grenades pour l'équipe : une smoke et deux flashs" }, "test": { "a": { "utility": 3, "comms": 1 }, "d": -2 },
+     "win": { "text": { "en": "Your flashes win the round for the four players with armour.", "fr": "Tes flashs gagnent le round pour les quatre joueurs en armure." }, "fx": { "bonus": 2, "utility": 1, "chemistry": 2 } },
+     "lose": { "text": { "en": "Good flashes, lost duels. It happens.", "fr": "De bonnes flashs, des duels perdus. Ça arrive." }, "fx": { "bonus": -1 } } }
+  ]
+ },
+ {
+  "id": "m-save-or-hunt", "type": "match",
+  "text": { "en": "{tournament}, {map}. The round is lost: 1v3, bomb planted. You have an AWP worth $4,750 and a healthy bank. Three hunters are spreading out to find you.", "fr": "{tournament}, {map}. Le round est perdu : 1v3, bombe plantée. Tu as un AWP à 4 750 $ et une banque correcte. Trois chasseurs se déploient pour te trouver." },
+  "choices": [
+   { "text": { "en": "Save the AWP in the furthest corner of the map", "fr": "Sauver l'AWP dans le coin le plus éloigné de la map" }, "test": { "a": { "gameSense": 2, "mental": 1 }, "d": -3 },
+     "win": { "text": { "en": "They do not find you. Next round, your AWP wins the opening duel.", "fr": "Ils ne te trouvent pas. Au round suivant, ton AWP gagne le duel d'ouverture." }, "fx": { "bonus": 1, "gameSense": 1 } },
+     "lose": { "text": { "en": "They find you at {spot}. They leave with your AWP.", "fr": "Ils te trouvent à {spot}. Ils repartent avec ton AWP." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Hunt one of the hunters for an exit kill", "fr": "Chasser un des chasseurs pour un kill de sortie" }, "test": { "a": { "aim": 2, "clutch": 2 }, "d": 2 },
+     "win": { "text": { "en": "Two exit kills. Their economy takes the hit and yours survives.", "fr": "Deux kills de sortie. Leur économie prend le coup et la vôtre survit." }, "fx": { "bonus": 2, "clutch": 1, "confidence": 3 } },
+     "lose": { "text": { "en": "You lose the AWP and the duel. Your IGL sighs into the microphone.", "fr": "Tu perds l'AWP et le duel. Ton IGL soupire dans le micro." }, "fx": { "bonus": -2, "chemistry": -2 } } }
+  ]
+ },
+ {
+  "id": "m-overtime", "type": "match",
+  "text": { "en": "{tournament}, {map}. Overtime, 15-15. Your legs are shaking under the desk and your mouse feels heavier than in the first round.", "fr": "{tournament}, {map}. Overtime, 15-15. Tes jambes tremblent sous le bureau et ta souris paraît plus lourde qu'au premier round." },
+  "choices": [
+   { "text": { "en": "Slow everything down: one breath before every peek", "fr": "Tout ralentir : une respiration avant chaque peek" }, "test": { "a": { "mental": 3, "clutch": 1 }, "d": 0 },
+     "win": { "text": { "en": "Your hands stop shaking. You win the two duels that decide it.", "fr": "Tes mains ne tremblent plus. Tu gagnes les deux duels qui décident de tout." }, "fx": { "bonus": 3, "mental": 2, "confidence": 5 } },
+     "lose": { "text": { "en": "You breathe, you peek, you miss.", "fr": "Tu respires, tu peekes, tu rates." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "Ride the adrenaline and play faster than them", "fr": "Surfer sur l'adrénaline et jouer plus vite qu'eux" }, "test": { "a": { "reflexes": 3, "aim": 2 }, "d": 3 },
+     "win": { "text": { "en": "They are tired too, and you are quicker. Four rounds in a row.", "fr": "Eux aussi sont fatigués, et tu es plus rapide. Quatre rounds de suite." }, "fx": { "bonus": 3, "aura": 2, "confidence": 6 } },
+     "lose": { "text": { "en": "Fast and wrong.", "fr": "Rapide et faux." }, "fx": { "bonus": -2, "energy": -5 } } }
+  ]
+ },
+ {
+  "id": "m-teammate-tilt", "type": "match",
+  "text": { "en": "{tournament}, {map}. Your star has missed three easy shots and has stopped talking. He is one bad round away from disappearing from the match.", "fr": "{tournament}, {map}. Votre star a raté trois balles faciles et ne parle plus. Il est à un mauvais round de disparaître du match." },
+  "choices": [
+   { "text": { "en": "Give him your position and an easy round", "fr": "Lui donner ta position et un round facile" }, "fx": { "bonus": 2, "chemistry": 5, "leadership": 1 }, "result": { "en": "Two free kills at {spot} and he is back. You saw nothing of that round, and it was the most important one you played.", "fr": "Deux kills gratuits à {spot} et il est de retour. Tu n'as rien vu de ce round, et c'est le plus important que tu aies joué." } },
+   { "text": { "en": "A joke on comms to break the tension", "fr": "Une blague dans le vocal pour casser la tension" }, "test": { "a": { "comms": 2, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "He laughs despite himself. Next round, a triple kill.", "fr": "Il rit malgré lui. Au round suivant, un triple kill." }, "fx": { "bonus": 3, "chemistry": 4 } },
+     "lose": { "text": { "en": "Wrong moment. He mutes the channel for a round.", "fr": "Mauvais moment. Il coupe le canal pendant un round." }, "fx": { "bonus": -1, "chemistry": -3 } } },
+   { "text": { "en": "\"Wake up.\"", "fr": "« Réveille-toi. »" }, "fx": { "bonus": -1, "chemistry": -4, "tox": 5 }, "result": { "en": "He wakes up angry, at you.", "fr": "Il se réveille en colère, contre toi." } }
+  ]
+ },
+ {
+  "id": "m-rival-duel", "type": "match", "when": { "flag": "rvMet" },
+  "text": { "en": "{tournament}, {map}. Across the server: {rv}. He has taken the same duel against you at {spot} three times, and won two. He will come a fourth time.", "fr": "{tournament}, {map}. En face : {rv}. Il a pris le même duel contre toi à {spot} trois fois, et en a gagné deux. Il viendra une quatrième fois." },
+  "choices": [
+   { "text": { "en": "Change your angle by one metre and wait", "fr": "Décaler ton angle d'un mètre et attendre" }, "test": { "a": { "gameSense": 3, "mental": 1 }, "d": 0 },
+     "win": { "text": { "en": "He pre-fires the old angle. You are not there. He is dead.", "fr": "Il pré-tire l'ancien angle. Tu n'y es pas. Il est mort." }, "fx": { "bonus": 3, "gameSense": 1, "confidence": 5 } },
+     "lose": { "text": { "en": "He guessed the new angle too. He knows you too well.", "fr": "Il a deviné le nouvel angle aussi. Il te connaît trop bien." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "Same angle, same duel. This is personal", "fr": "Même angle, même duel. C'est personnel" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 3 },
+     "win": { "text": { "en": "2-2. The caster says both your names in the same breath.", "fr": "2-2. Le commentateur prononce vos deux pseudos dans le même souffle." }, "fx": { "bonus": 3, "aura": 3, "confidence": 6 } },
+     "lose": { "text": { "en": "3-1 for him. He types nothing. That is worse.", "fr": "3-1 pour lui. Il n'écrit rien. C'est pire." }, "fx": { "bonus": -2, "confidence": -5 } } }
+  ]
+ },
+ {
+  "id": "m-igl-read", "type": "match", "when": { "role": ["igl"] },
+  "text": { "en": "{tournament}, {map}, T side, 9-9. They have rotated early on your last three executes. Thirty seconds on the clock and your team is set up for the same site again.", "fr": "{tournament}, {map}, côté T, 9-9. Ils ont tourné tôt sur tes trois derniers execs. Trente secondes au chrono et ton équipe est de nouveau placée pour le même site." },
+  "choices": [
+   { "text": { "en": "Throw the full execute as a fake, then go the other way", "fr": "Lancer tout l'exec comme une feinte, puis partir de l'autre côté" }, "test": { "a": { "leadership": 3, "gameSense": 2 }, "d": 2 },
+     "win": { "text": { "en": "Four CTs arrive on an empty site. You plant on the other one, walking.", "fr": "Quatre CT arrivent sur un site vide. Tu plantes sur l'autre, en marchant." }, "fx": { "bonus": 3, "leadership": 2, "aura": 2 } },
+     "lose": { "text": { "en": "This time they did not rotate. And you have no utility left.", "fr": "Cette fois, ils n'ont pas tourné. Et tu n'as plus de grenades." }, "fx": { "bonus": -2, "confidence": -3 } } },
+   { "text": { "en": "Same execute, two seconds faster", "fr": "Le même exec, deux secondes plus vite" }, "test": { "a": { "comms": 2, "leadership": 2 }, "d": 1 },
+     "win": { "text": { "en": "The rotation arrives to find the bomb already down.", "fr": "La rotation arrive et trouve la bombe déjà posée." }, "fx": { "bonus": 2, "chemistry": 2 } },
+     "lose": { "text": { "en": "Two seconds faster means two flashes too early.", "fr": "Deux secondes plus vite, c'est deux flashs trop tôt." }, "fx": { "bonus": -2 } } }
+  ]
+ },
+ {
+  "id": "m-support-flash", "type": "match", "when": { "role": ["support"] },
+  "text": { "en": "{tournament}, {map}. Your entry fragger is ready at {spot} and asks for a flash. You have one left, and you were keeping it for the retake.", "fr": "{tournament}, {map}. Ton entry fragger est prêt à {spot} et demande une flash. Il t'en reste une, et tu la gardais pour le retake." },
+  "choices": [
+   { "text": { "en": "Throw it now, the way you practised", "fr": "La lancer maintenant, comme à l'entraînement" }, "test": { "a": { "utility": 3, "comms": 1 }, "d": -1 },
+     "win": { "text": { "en": "It pops above their heads. He takes two before they can see the floor.", "fr": "Elle claque au-dessus de leurs têtes. Il en prend deux avant qu'ils revoient le sol." }, "fx": { "bonus": 3, "utility": 1, "chemistry": 4 } },
+     "lose": { "text": { "en": "It pops in his face. He says nothing. You know.", "fr": "Elle lui claque au visage. Il ne dit rien. Tu sais." }, "fx": { "bonus": -2, "chemistry": -2 } } },
+   { "text": { "en": "Keep it and go in with him as a second rifle", "fr": "La garder et entrer avec lui comme deuxième fusil" }, "test": { "a": { "aim": 2, "reflexes": 1 }, "d": 3 },
+     "win": { "text": { "en": "He dies, you trade, and you still have the flash for the retake.", "fr": "Il meurt, tu trades, et tu as encore la flash pour le retake." }, "fx": { "bonus": 2, "confidence": 3 } },
+     "lose": { "text": { "en": "He dies without the flash he asked for.", "fr": "Il meurt sans la flash qu'il avait demandée." }, "fx": { "bonus": -2, "chemistry": -3 } } }
+  ]
+ },
+ {
+  "id": "m-entry-first", "type": "match", "when": { "role": ["entry"] },
+  "text": { "en": "{tournament}, {map}. You are first through {spot}, as always. In the corner of your eye: a shadow that should not be there.", "fr": "{tournament}, {map}. Tu es le premier à passer {spot}, comme toujours. Du coin de l'œil : une ombre qui ne devrait pas être là." },
+  "choices": [
+   { "text": { "en": "Flick to the shadow", "fr": "Flick sur l'ombre" }, "test": { "a": { "reflexes": 3, "aim": 2 }, "d": 3 },
+     "win": { "text": { "en": "A close-range hider, dead before he fires. The site opens like a door.", "fr": "Un joueur caché à bout portant, mort avant d'avoir tiré. Le site s'ouvre comme une porte." }, "fx": { "bonus": 3, "reflexes": 1, "confidence": 5 } },
+     "lose": { "text": { "en": "It was a decoy position. The real one was on the other side.", "fr": "C'était une fausse piste. Le vrai était de l'autre côté." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Call it and keep running to make space", "fr": "L'annoncer et continuer à courir pour faire de la place" }, "test": { "a": { "comms": 2, "gameSense": 1 }, "d": -2 },
+     "win": { "text": { "en": "You die, but your call gives the trade and the site. That is the job.", "fr": "Tu meurs, mais ton call donne le trade et le site. C'est le métier." }, "fx": { "bonus": 2, "comms": 1, "chemistry": 3 } },
+     "lose": { "text": { "en": "You die mid-sentence.", "fr": "Tu meurs au milieu de ta phrase." }, "fx": { "bonus": -1 } } }
+  ]
+ },
+ {
+  "id": "m-lurk-timing", "type": "match", "when": { "role": ["lurker"] },
+  "text": { "en": "{tournament}, {map}. You have been alone near {spot} for a minute. Your team is about to hit the other site. Go now, and you are early. Wait, and you may be late.", "fr": "{tournament}, {map}. Tu es seul près de {spot} depuis une minute. Ton équipe va taper l'autre site. Si tu y vas maintenant, tu es en avance. Si tu attends, tu seras peut-être en retard." },
+  "choices": [
+   { "text": { "en": "Wait for the first shot, then move", "fr": "Attendre le premier tir, puis bouger" }, "test": { "a": { "gameSense": 3, "clutch": 1 }, "d": 0 },
+     "win": { "text": { "en": "The rotation runs past you, backs turned. Two kills they never see coming.", "fr": "La rotation passe devant toi, de dos. Deux kills qu'ils ne voient jamais venir." }, "fx": { "bonus": 3, "gameSense": 1, "confidence": 4 } },
+     "lose": { "text": { "en": "The rotation went the other way. You arrive at a finished round.", "fr": "La rotation est passée de l'autre côté. Tu arrives sur un round terminé." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Go now and take their attention", "fr": "Y aller maintenant et attirer leur attention" }, "test": { "a": { "aim": 2, "mental": 1, "clutch": 1 }, "d": 2 },
+     "win": { "text": { "en": "One kill, two CTs turning towards you, and your team hits a half-empty site.", "fr": "Un kill, deux CT qui se retournent vers toi, et ton équipe tape un site à moitié vide." }, "fx": { "bonus": 2, "confidence": 3, "chemistry": 2 } },
+     "lose": { "text": { "en": "You die alone, far from everyone, with no trade.", "fr": "Tu meurs seul, loin de tout le monde, sans trade." }, "fx": { "bonus": -2, "chemistry": -2 } } }
+  ]
+ },
+ {
+  "id": "m-awp-miss", "type": "match", "when": { "role": ["awper"] },
+  "text": { "en": "{tournament}, {map}. You missed the opening shot at {spot} and they know where you are. Your rifler shouts for you to fall back.", "fr": "{tournament}, {map}. Tu as raté le tir d'ouverture à {spot} et ils savent où tu es. Ton rifler te crie de reculer." },
+  "choices": [
+   { "text": { "en": "Fall back, reposition, hold a new angle", "fr": "Reculer, te replacer, tenir un nouvel angle" }, "test": { "a": { "gameSense": 2, "mental": 2 }, "d": -2 },
+     "win": { "text": { "en": "They push the old spot. You are ten metres away with a loaded AWP.", "fr": "Ils poussent l'ancienne position. Tu es dix mètres plus loin avec un AWP chargé." }, "fx": { "bonus": 2, "gameSense": 1, "confidence": 3 } },
+     "lose": { "text": { "en": "They flash you on the way out.", "fr": "Ils te flashent pendant que tu recules." }, "fx": { "bonus": -2 } } },
+   { "text": { "en": "Re-peek the same angle. He will not expect it", "fr": "Re-peeker le même angle. Il ne s'y attendra pas" }, "test": { "a": { "aim": 3, "reflexes": 2 }, "d": 6 },
+     "win": { "text": { "en": "He expected nothing. One shot, and the confidence of a whole map.", "fr": "Il ne s'attendait à rien. Une balle, et la confiance pour toute une map." }, "fx": { "bonus": 3, "aura": 3, "confidence": 7 } },
+     "lose": { "text": { "en": "He expected it. Their AWPer now holds your AWP.", "fr": "Il s'y attendait. Leur AWPer tient maintenant ton AWP." }, "fx": { "bonus": -3, "confidence": -4 } } }
+  ]
+ }
+]

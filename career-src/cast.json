@@ -1,0 +1,10 @@
+{
+ "about": "Personnages FICTIFS du jeu Zero to Major. Au début d'une carrière, le jeu en tire un de chaque sorte : il revient ensuite dans plusieurs situations ({rv} = le rival, {agent}, {journalist}, {coach}, {rookie} = le jeune). Aucun de ces noms ne doit être celui d'un vrai joueur, coach ou journaliste : assemble.js refuse un pseudo déjà porté par un joueur du classement.",
+ "cast": {
+  "rival": ["vexor", "KROMA", "nyxt", "Dravik", "soltar", "HAZEN", "mirko9", "tyvek", "Orvek", "zukai", "FENRO", "balt0", "quorin", "skaldr"],
+  "agent": ["Marcus Hale", "Elena Voss", "Tomás Reyes", "Ingrid Solberg", "Viktor Adamek", "Samira Haddad", "Jonas Keller", "Claire Monet"],
+  "journalist": ["Dana Whitlock", "Pavel Zorin", "Lucas Ferrand", "Mila Novak", "Henrik Dahl", "Rafael Couto", "Aylin Demir", "Owen Pryce"],
+  "coach": ["Bergmann", "Kowal", "Lindqvist", "Marchetti", "Dvorak", "Halloran", "Petrov", "Sandoval", "Okafor", "Varga"],
+  "rookie": ["lumo", "p1xo", "takkun", "brisq", "n0ahh", "zigzo", "kyro9", "fynnx", "dexo", "mirq"]
+ }
+}

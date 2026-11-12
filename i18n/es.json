@@ -142,6 +142,7 @@
         "faq": "FAQ"
     },
     "nav": {
+        "career": "Carrera",
         "crosshairs": "Crosshairs",
         "skins": "Skins de pros",
         "guides": "Guías",
@@ -157,6 +158,7 @@
         "soon": "pronto"
     },
     "footer": {
+        "career": "Zero to Major: juego de carrera de CS2",
         "lists": "Mejores crosshairs de CS2",
         "teams": "Crosshairs por equipo",
         "generator": "Generador de crosshair",
@@ -288,6 +290,9 @@
         "matesCreator": "Otros crosshairs de creadores"
     },
     "home": {
+        "careerTag": "Juego nuevo",
+        "careerText": "Juega una carrera de pro de CS2: de FACEIT a los 16 años hasta el Major. En inglés.",
+        "careerCta": "Jugar",
         "title": "Códigos de crosshair de pros de CS2 ({year}) | ClutchCrosshair",
         "metaDescription": "Copia en un clic los códigos de crosshair de CS2 de donk, ZywOo, m0NESY, NiKo y {count} pros, con vista previa a tamaño real y comandos de consola. Leídos de demos.",
         "ogTitle": "Códigos de crosshair de pros y creadores de CS2",

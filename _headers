@@ -48,6 +48,19 @@ https://:version.:project.pages.dev/*
   Cache-Control: public, max-age=31536000, immutable
 /lang-banner.min.js
   Cache-Control: public, max-age=31536000, immutable
+# Le jeu « Zero to Major » (/career) : code et données, appelés avec une empreinte ?v=
+/career.js
+  Cache-Control: public, max-age=31536000, immutable
+/career.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/career-engine.js
+  Cache-Control: public, max-age=31536000, immutable
+/career-engine.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/career.en.json
+  Cache-Control: public, max-age=31536000, immutable
+/career.fr.json
+  Cache-Control: public, max-age=31536000, immutable
 
 # Polices : ne changent jamais -> 1 an
 /fonts/*
@@ -55,6 +68,9 @@ https://:version.:project.pages.dev/*
 
 # Librairie de décodage (appelée sans ?v=, change très rarement) -> 30 jours
 /lib/*
+  Cache-Control: public, max-age=2592000
+# Drapeaux du jeu « Zero to Major » (appelés sans ?v=, ne changent presque jamais) -> 30 jours
+/flags/*
   Cache-Control: public, max-age=2592000
 
 # Images : 1 an. Une photo, un logo ou un fond remplacé garde son nom, mais build.js l'appelle avec une empreinte ?v=

@@ -25,3 +25,6 @@ faceit-test/
 
 # Outils installes par npm (esbuild) : se reinstallent avec "npm ci", jamais sur GitHub
 node_modules/
+
+# Jeu Zero to Major : reponses de Liquipedia gardees 7 jours (se refabrique avec node career-src/update-data.js)
+career-src/liquipedia-cache.json
