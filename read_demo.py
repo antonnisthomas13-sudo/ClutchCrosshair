@@ -34,6 +34,7 @@ TEAM_ALIASES = {
     "spirit": "Team Spirit",
     "vitality": "Team Vitality",
     "mousesports": "MOUZ",
+    "pvision": "PARIVISION",  # nom dans les démos du PGL Major Singapore (25/11/2026)
     "navi": "Natus Vincere",
     "na'vi": "Natus Vincere",
     "g2": "G2 Esports",

@@ -875,11 +875,19 @@
         "steamid": "76561197995817501",
         "team": "PARIVISION",
         "category": "pro",
-        "code": "CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA",
-        "updated": "07/10/2026",
-        "since": "07/10/2026",
+        "code": "CSNwnFVVRJS6ELiuXro3UkaHapcCniCDV6sQJ72jcAh3Jc",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
-        "liquipedia": "FL1T"
+        "liquipedia": "FL1T",
+        "matchTime": "2026-11-25T09:16",
+        "history": [
+            {
+                "code": "CSVwm4hdM42kKnG3aayZtP2pKzFLaemHSvc2tHpxVNsaiA",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            }
+        ]
     },
     {
         "name": "huNter-",
@@ -915,11 +923,19 @@
         "steamid": "76561198028292758",
         "team": "PARIVISION",
         "category": "pro",
-        "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
-        "updated": "07/10/2026",
-        "since": "07/10/2026",
+        "code": "CSF68EZcNUK2tnJpxOs4a6YRNmBNMJMBaH5AjAS63CFNqF",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
-        "liquipedia": "HObbit"
+        "liquipedia": "HObbit",
+        "matchTime": "2026-11-25T09:16",
+        "history": [
+            {
+                "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            }
+        ]
     },
     {
         "name": "Jame",
@@ -927,10 +943,11 @@
         "team": "PARIVISION",
         "category": "pro",
         "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
-        "updated": "07/10/2026",
+        "updated": "25/11/2026",
         "since": "07/10/2026",
         "trending": false,
-        "liquipedia": "Jame"
+        "liquipedia": "Jame",
+        "matchTime": "2026-11-25T09:16"
     },
     {
         "name": "NertZ",
@@ -980,22 +997,38 @@
         "steamid": "76561198141272052",
         "team": "PARIVISION",
         "category": "pro",
-        "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
-        "updated": "07/10/2026",
-        "since": "07/10/2026",
+        "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
-        "liquipedia": "XiELO"
+        "liquipedia": "XiELO",
+        "matchTime": "2026-11-25T09:16",
+        "history": [
+            {
+                "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            }
+        ]
     },
     {
         "name": "zweih",
         "steamid": "76561198210626739",
         "team": "PARIVISION",
         "category": "pro",
-        "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
-        "updated": "07/10/2026",
-        "since": "07/10/2026",
+        "code": "CSzrKbuq3hojokeQB7E4FQ4u7ksFyXoRzhQ9yM5oQjMWQj",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
-        "liquipedia": "Zweih"
+        "liquipedia": "Zweih",
+        "matchTime": "2026-11-25T09:16",
+        "history": [
+            {
+                "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
+                "from": "07/10/2026",
+                "to": "07/10/2026"
+            }
+        ]
     },
     {
         "name": "r1nkle",
@@ -1176,40 +1209,52 @@
         "team": "FaZe Clan",
         "category": "pro",
         "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
-        "updated": "22/10/2026",
+        "updated": "25/11/2026",
         "since": "10/10/2026",
         "trending": false,
         "liquipedia": "JBOEN",
-        "matchTime": "2026-10-22T17:33"
+        "matchTime": "2026-11-25T09:16"
     },
     {
         "name": "Twistzz",
         "steamid": "76561198016255205",
         "team": "FaZe Clan",
         "category": "pro",
-        "code": "CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL",
-        "updated": "22/10/2026",
-        "since": "10/10/2026",
+        "code": "CSFscmuTV5hDEztsry8cLXjfXSBRvkpYSpTFAnYxUrz4Qh",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
         "liquipedia": "Twistzz",
-        "matchTime": "2026-10-22T17:33"
+        "matchTime": "2026-11-25T09:16",
+        "history": [
+            {
+                "code": "CSyAqUtN69wWNvDFi89hfa9qHCnj5JURoPsvD99oC8V6wL",
+                "from": "10/10/2026",
+                "to": "22/10/2026"
+            }
+        ]
     },
     {
         "name": "frozen",
         "steamid": "76561198068422762",
         "team": "FaZe Clan",
         "category": "pro",
-        "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
-        "updated": "22/10/2026",
-        "since": "22/10/2026",
+        "code": "CSaAsoy9DT4B5riyhSW3nbE7EfjF5ib5psc4LDd7byXdxJ",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
         "liquipedia": "Frozen",
-        "matchTime": "2026-10-22T17:33",
+        "matchTime": "2026-11-25T09:16",
         "history": [
             {
                 "code": "CScXhZSHMUZNYVUac5ZDbGnwjtbwhSQoYtvymtMuZLrsXG",
                 "from": "10/10/2026",
                 "to": "10/10/2026"
+            },
+            {
+                "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
             }
         ]
     },
@@ -1218,17 +1263,22 @@
         "steamid": "76561198178737429",
         "team": "FaZe Clan",
         "category": "pro",
-        "code": "CSc5yCFvhsVwrv5HVFFSzDcAvTizywLh3tJOnGSeoX8jyE",
-        "updated": "22/10/2026",
-        "since": "22/10/2026",
+        "code": "CSC6ezAOXQSejRKRHpBwPtDSFY7ot9AtVCkK2xH6xw4pzA",
+        "updated": "25/11/2026",
+        "since": "25/11/2026",
         "trending": false,
         "liquipedia": "Jcobbb",
-        "matchTime": "2026-10-22T17:33",
+        "matchTime": "2026-11-25T09:16",
         "history": [
             {
                 "code": "CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS",
                 "from": "10/10/2026",
                 "to": "10/10/2026"
+            },
+            {
+                "code": "CSc5yCFvhsVwrv5HVFFSzDcAvTizywLh3tJOnGSeoX8jyE",
+                "from": "22/10/2026",
+                "to": "22/10/2026"
             }
         ]
     },
@@ -1238,11 +1288,11 @@
         "team": "FaZe Clan",
         "category": "pro",
         "code": "CSo5h7uxi9ROKHD2qb3DJRW9Ff6XUDbQsDDs8txismsc9B",
-        "updated": "22/10/2026",
+        "updated": "25/11/2026",
         "since": "10/10/2026",
         "trending": false,
         "liquipedia": "Neityu",
-        "matchTime": "2026-10-22T17:33"
+        "matchTime": "2026-11-25T09:16"
     },
     {
         "name": "Staehr",
